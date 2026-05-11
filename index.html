@@ -200,7 +200,7 @@ function CursorGlow() {
 const WA_NUMBER = '919864245687';
 function openWhatsApp(teaName = '') {
   const msg = teaName
-    ? `Hi Nevisan! I would like to order *${teaName}* (₹499 · 45% off). Please help me with the order details.`
+    ? `Hi Nevisan! I would like to order *${teaName}* (₹275 · 45% off MRP ₹499). Please help me with the order details.`
     : 'Hi Nevisan! I would like to order your tea. Please help me with the details.';
   window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 }
@@ -910,8 +910,8 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: `1px solid ${T.border}`, paddingTop: 14 }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 2 }}>
-              <span style={{ fontFamily: "'Inter'", fontSize: 18, fontWeight: 700, color: T.teal }}>₹{tea.price}</span>
-              <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹907</span>
+              <span style={{ fontFamily: "'Inter'", fontSize: 18, fontWeight: 700, color: T.teal }}>₹275</span>
+              <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
             </div>
             <span style={{ fontFamily: "'Inter'", fontSize: 11, color: '#e8312a', fontWeight: 600 }}>45% off MRP</span>
           </div>
@@ -1026,8 +1026,8 @@ function CollectionPage({ setPage }) {
             <div style={{ padding: 32 }}>
               <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 26, color: T.text, marginBottom: 8 }}>{selected.name}</h2>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
-                <span style={{ fontFamily: "'Inter'", fontSize: 24, fontWeight: 700, color: T.teal }}>₹{selected.price}</span>
-                <span style={{ fontFamily: "'Inter'", fontSize: 15, color: '#999', textDecoration: 'line-through' }}>₹907</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: 24, fontWeight: 700, color: T.teal }}>₹275</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: 15, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
                 <span style={{ fontFamily: "'Inter'", fontSize: 11, background: '#e8312a', color: '#fff', fontWeight: 700, padding: '3px 8px', borderRadius: 9999 }}>45% OFF</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 16 }}>

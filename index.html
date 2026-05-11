@@ -662,7 +662,7 @@ const TEAS = [
     short: 'Refreshing citrus lift. Aids digestion and boosts metabolism.',
     tags: ['DIGESTION', 'METABOLISM'],
     bg: '#d4edd8', color: '#3a7a50',
-    img: 'teas/lemongrass.png',
+    img: 'teas/chamomile.png',
     price: 499,
   },
   {
@@ -670,7 +670,7 @@ const TEAS = [
     short: 'Butterfly pea flower. Calming, antioxidant-rich, visually stunning.',
     tags: ['CALMING', 'ANTIOXIDANT'],
     bg: '#c8dff0', color: '#2a5a8a',
-    img: 'teas/blue-flower.png',
+    img: 'teas/tulsi.png',
     price: 499,
   },
   {
@@ -678,7 +678,7 @@ const TEAS = [
     short: 'Exotic, non-alcoholic, warm and indulgent. Utterly unique.',
     tags: ['NON-ALC', 'EXOTIC'],
     bg: '#f5e9a0', color: '#8a6a10',
-    img: 'teas/rum.png',
+    img: 'teas/spearmint.png',
     price: 499,
     bestseller: true,
   },
@@ -687,7 +687,7 @@ const TEAS = [
     short: 'Hormonal balance. Reduces acne. Skin-friendly.',
     tags: ['HORMONAL', 'SKIN'],
     bg: '#e8d4f0', color: '#6a3a8a',
-    img: 'teas/spearmint.png',
+    img: 'teas/rum.png',
     price: 499,
   },
   {
@@ -695,7 +695,7 @@ const TEAS = [
     short: 'Sacred basil with Assam green. Natural immunity support.',
     tags: ['IMMUNITY', 'STRESS'],
     bg: '#d4edd8', color: '#3a7a50',
-    img: 'teas/tulsi.png',
+    img: 'teas/whiskey.png',
     price: 499,
   },
   {
@@ -703,7 +703,7 @@ const TEAS = [
     short: 'Naturally calming floral blend. Aids restful, deeper sleep.',
     tags: ['SLEEP', 'CALMING'],
     bg: '#f5e9a0', color: '#8a6a10',
-    img: 'teas/chamomile.png',
+    img: 'teas/organic.png',
     price: 499,
   },
   {
@@ -711,7 +711,7 @@ const TEAS = [
     short: 'Bold, smoky, non-alcoholic. Exotic indulgence in every sip.',
     tags: ['NON-ALC', 'BOLD'],
     bg: '#e0d4c8', color: '#5a4030',
-    img: 'teas/whiskey.png',
+    img: 'teas/blue-flower.png',
     price: 499,
   },
   {
@@ -719,7 +719,7 @@ const TEAS = [
     short: 'Natural GABA. Deep relaxation, mental clarity, stress relief.',
     tags: ['RELAXATION', 'FOCUS'],
     bg: '#c0e0dc', color: '#1b7a82',
-    img: 'teas/gaba.png',
+    img: 'teas/lemongrass.png',
     price: 499,
   },
   {
@@ -727,7 +727,7 @@ const TEAS = [
     short: 'Pure single-origin Assam green. PGS-India certified organic. Clean, grassy, whole.',
     tags: ['ORGANIC', 'PURE'],
     bg: '#c8e8c0', color: '#2a6a2a',
-    img: 'teas/organic.png',
+    img: 'teas/gaba.png',
     price: 499,
     badge: 'ORGANIC',
   },
@@ -1306,6 +1306,133 @@ function OurStoryPage({ setPage }) {
   );
 }
 
+/* ── JOURNAL PAGE ─────────────────────────────────────────────── */
+const POSTS = [
+  { title: 'Why Whole Leaf Tea Tastes Different', date: 'April 2025', tag: 'CRAFT', excerpt: 'Most commercial teas use broken leaves and dust — it brews fast but loses the complex flavour compounds locked in whole leaves. Here\'s what you\'re actually tasting.' },
+  { title: 'The Science Behind GABA Tea', date: 'March 2025', tag: 'WELLNESS', excerpt: 'GABA (gamma-aminobutyric acid) is a naturally calming neurotransmitter. When oolong leaves are processed in nitrogen-rich environments, GABA content multiplies. The result: deep relaxation without drowsiness.' },
+  { title: 'Golaghat: India\'s Hidden Tea Belt', date: 'February 2025', tag: 'ORIGIN', excerpt: 'While Darjeeling gets the headlines, Golaghat in upper Assam quietly produces some of the boldest, most complex teas in the world. Meet the garden behind every Nevisan pack.' },
+  { title: 'How to Get Three Steeps from One Serving', date: 'January 2025', tag: 'BREWING', excerpt: 'Whole leaf teas open up with each steep. The first is bold, the second more rounded, the third surprisingly sweet. Here\'s the exact temperature and timing for each.' },
+  { title: 'Rum Green Tea: How We Made It', date: 'December 2024', tag: 'CRAFT', excerpt: 'No alcohol, no artificial flavour — just a precise cold-infusion technique using natural botanicals that captures the warmth and depth of aged rum. The process took 14 attempts.' },
+  { title: 'Morning vs Evening Teas: A Simple Guide', date: 'November 2024', tag: 'WELLNESS', excerpt: 'Lemongrass and Spearmint for mornings. Chamomile and GABA for evenings. We break down why each tea works best at certain times — and which ones work any time.' },
+];
+
+function JournalPage({ setPage }) {
+  const { isMobile } = useViewport();
+  return (
+    <div style={{ paddingTop: 72, background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: isMobile ? '48px 20px 80px' : '64px 40px 100px' }}>
+        <div style={{ textAlign: 'center', marginBottom: isMobile ? 40 : 60 }}>
+          <p style={{ fontFamily: "'Inter'", fontSize: 12, letterSpacing: '0.18em', color: T.gold, textTransform: 'uppercase', marginBottom: 14 }}>The Nevisan Journal</p>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 34 : 48, color: T.text, lineHeight: 1.2, marginBottom: 16 }}>Stories from the garden</h1>
+          <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted, maxWidth: 480, margin: '0 auto' }}>Craft, origin, wellness and brewing guides — everything tea.</p>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: isMobile ? 20 : 28 }}>
+          {POSTS.map((post, i) => (
+            <div key={i} style={{ background: T.white, borderRadius: 16, padding: '28px 24px', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', cursor: 'pointer', transition: 'transform 200ms, box-shadow 200ms' }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(0,0,0,0.10)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(0,0,0,0.06)'; }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
+                <span style={{ fontFamily: "'Inter'", fontSize: 10, letterSpacing: '0.14em', color: T.gold, background: 'rgba(201,168,76,0.12)', padding: '4px 10px', borderRadius: 9999 }}>{post.tag}</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>{post.date}</span>
+              </div>
+              <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 18, color: T.text, lineHeight: 1.4, marginBottom: 12 }}>{post.title}</h3>
+              <p style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.7 }}>{post.excerpt}</p>
+              <div style={{ marginTop: 18, fontFamily: "'Inter'", fontSize: 12, color: T.teal, fontWeight: 500, letterSpacing: '0.05em' }}>Read more →</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <Footer setPage={setPage} />
+    </div>
+  );
+}
+
+/* ── CONTACT PAGE ─────────────────────────────────────────────── */
+function ContactPage({ setPage }) {
+  const { isMobile } = useViewport();
+  const [form, setForm] = React.useState({ name: '', email: '', message: '' });
+  const [sent, setSent] = React.useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const msg = `Hi Nevisan! My name is ${form.name}. ${form.message} (Reply to: ${form.email})`;
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    setSent(true);
+  };
+  const inputStyle = { width: '100%', padding: '12px 16px', border: '1.5px solid #e0dcd4', borderRadius: 10, fontFamily: "'Inter'", fontSize: 14, color: T.text, background: T.white, outline: 'none', boxSizing: 'border-box', transition: 'border-color 200ms' };
+  return (
+    <div style={{ paddingTop: 72, background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+      <div style={{ maxWidth: 960, margin: '0 auto', padding: isMobile ? '48px 20px 80px' : '64px 40px 100px' }}>
+        <div style={{ textAlign: 'center', marginBottom: isMobile ? 40 : 56 }}>
+          <p style={{ fontFamily: "'Inter'", fontSize: 12, letterSpacing: '0.18em', color: T.gold, textTransform: 'uppercase', marginBottom: 14 }}>Get in Touch</p>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 34 : 48, color: T.text, marginBottom: 16 }}>We'd love to hear from you</h1>
+          <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted }}>Orders, wholesale enquiries, or just a question about tea.</p>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 32 : 48, alignItems: 'start' }}>
+          {/* Contact details */}
+          <div>
+            {[
+              { icon: '💬', label: 'WhatsApp (fastest)', value: '+91 98642 45687', action: () => openWhatsApp() },
+              { icon: '📧', label: 'Email', value: 'nevisan12@gmail.com', action: () => window.open('mailto:nevisan12@gmail.com') },
+              { icon: '📍', label: 'Address', value: 'Mahabir Enterprise, Guwahati, Assam, India', action: null },
+              { icon: '🌐', label: 'Website', value: 'nevisan.in', action: null },
+            ].map((item, i) => (
+              <div key={i} onClick={item.action || undefined} style={{ display: 'flex', gap: 16, alignItems: 'flex-start', marginBottom: 28, cursor: item.action ? 'pointer' : 'default' }}>
+                <div style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(27,122,130,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0 }}>{item.icon}</div>
+                <div>
+                  <div style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.12em', color: T.textMuted, textTransform: 'uppercase', marginBottom: 4 }}>{item.label}</div>
+                  <div style={{ fontFamily: "'Inter'", fontSize: 15, color: item.action ? T.teal : T.text, fontWeight: item.action ? 500 : 400 }}>{item.value}</div>
+                </div>
+              </div>
+            ))}
+            <div style={{ marginTop: 8, padding: '20px 24px', background: T.teal, borderRadius: 14 }}>
+              <p style={{ fontFamily: "'Inter'", fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, marginBottom: 14 }}>Fastest way to order or ask anything — WhatsApp us directly.</p>
+              <button onClick={() => openWhatsApp()} style={{ background: '#25D366', color: T.white, border: 'none', borderRadius: 9999, padding: '10px 24px', cursor: 'pointer', fontFamily: "'Inter'", fontSize: 13, fontWeight: 600 }}>
+                💬 Open WhatsApp
+              </button>
+            </div>
+          </div>
+          {/* Message form */}
+          <div style={{ background: T.white, borderRadius: 20, padding: isMobile ? '28px 20px' : '36px 32px', boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}>
+            {sent ? (
+              <div style={{ textAlign: 'center', padding: '40px 0' }}>
+                <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
+                <h3 style={{ fontFamily: "'Playfair Display'", fontSize: 22, color: T.text, marginBottom: 10 }}>Message sent!</h3>
+                <p style={{ fontFamily: "'Inter'", fontSize: 14, color: T.textMuted }}>We've opened WhatsApp with your message. We'll reply within a few hours.</p>
+                <button onClick={() => setSent(false)} style={{ marginTop: 20, background: T.teal, color: T.white, border: 'none', borderRadius: 9999, padding: '10px 28px', cursor: 'pointer', fontFamily: "'Inter'", fontSize: 13 }}>Send another</button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 22, color: T.text, marginBottom: 24 }}>Send a message</h3>
+                <div style={{ marginBottom: 16 }}>
+                  <label style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted, letterSpacing: '0.08em', display: 'block', marginBottom: 6 }}>YOUR NAME</label>
+                  <input required style={inputStyle} placeholder="e.g. Priya Sharma" value={form.name} onChange={e => setForm(f => ({...f, name: e.target.value}))}
+                    onFocus={e => e.target.style.borderColor = T.teal} onBlur={e => e.target.style.borderColor = '#e0dcd4'} />
+                </div>
+                <div style={{ marginBottom: 16 }}>
+                  <label style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted, letterSpacing: '0.08em', display: 'block', marginBottom: 6 }}>EMAIL</label>
+                  <input required type="email" style={inputStyle} placeholder="you@example.com" value={form.email} onChange={e => setForm(f => ({...f, email: e.target.value}))}
+                    onFocus={e => e.target.style.borderColor = T.teal} onBlur={e => e.target.style.borderColor = '#e0dcd4'} />
+                </div>
+                <div style={{ marginBottom: 24 }}>
+                  <label style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted, letterSpacing: '0.08em', display: 'block', marginBottom: 6 }}>MESSAGE</label>
+                  <textarea required rows={4} style={{...inputStyle, resize: 'vertical'}} placeholder="I'd like to order / ask about wholesale / ..." value={form.message} onChange={e => setForm(f => ({...f, message: e.target.value}))}
+                    onFocus={e => e.target.style.borderColor = T.teal} onBlur={e => e.target.style.borderColor = '#e0dcd4'} />
+                </div>
+                <button type="submit" style={{ width: '100%', background: T.teal, color: T.white, border: 'none', borderRadius: 12, padding: '14px', cursor: 'pointer', fontFamily: "'Inter'", fontSize: 14, fontWeight: 600, transition: 'filter 200ms' }}
+                  onMouseEnter={e => e.currentTarget.style.filter = 'brightness(1.1)'}
+                  onMouseLeave={e => e.currentTarget.style.filter = 'none'}
+                >Send via WhatsApp →</button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+      <Footer setPage={setPage} />
+    </div>
+  );
+}
+
 /* ── APP ──────────────────────────────────────────────────────── */
 function App() {
   const [page, setPage] = useState('Home');
@@ -1328,18 +1455,9 @@ function App() {
   if (page === 'Home')           content = <HomePage setPage={handleSetPage} />;
   else if (page === 'Collection') content = <><CollectionPage setPage={handleSetPage} /><Footer setPage={handleSetPage} /></>;
   else if (page === 'Our Story')  content = <OurStoryPage setPage={handleSetPage} />;
-  else content = (
-    <div style={{ paddingTop: 68, minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: T.cream, animation: 'page-enter 0.4s ease both', flexDirection: 'column', gap: 0 }}>
-      <div style={{ textAlign: 'center', padding: '0 24px' }}>
-        <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 32, color: T.text, marginBottom: 16 }}>{page}</h2>
-        <p style={{ fontFamily: "'Inter'", color: T.textMuted }}>This page is a placeholder in the prototype.</p>
-        <button onClick={() => handleSetPage('Home')} style={{ marginTop: 24, background: T.teal, color: T.white, border: 'none', borderRadius: 9999, padding: '12px 32px', cursor: 'pointer', fontFamily: "'Inter'", fontSize: 14, transition: 'filter 200ms' }}
-          onMouseEnter={e => e.currentTarget.style.filter = 'brightness(1.1)'}
-          onMouseLeave={e => e.currentTarget.style.filter = 'none'}
-        >← Back to Home</button>
-      </div>
-    </div>
-  );
+  else if (page === 'Journal')    content = <JournalPage setPage={handleSetPage} />;
+  else if (page === 'Contact')    content = <ContactPage setPage={handleSetPage} />;
+  else content = <HomePage setPage={handleSetPage} />;
 
   return (
     <ViewportCtx.Provider value={viewport}>

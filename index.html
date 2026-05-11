@@ -200,7 +200,7 @@ function CursorGlow() {
 const WA_NUMBER = '919864245687';
 function openWhatsApp(teaName = '') {
   const msg = teaName
-    ? `Hi Nevisan! I would like to order *${teaName}* (₹499). Please help me with the order details.`
+    ? `Hi Nevisan! I would like to order *${teaName}* (₹499 · 45% off). Please help me with the order details.`
     : 'Hi Nevisan! I would like to order your tea. Please help me with the details.';
   window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 }
@@ -746,7 +746,7 @@ function TagChip({ label, color }) {
 }
 
 /* ── Tea Card ─────────────────────────────────────────────────── */
-function TeaCard({ tea, onView, index = 0 }) {
+function TeaCard({ tea, onView, onImageClick, index = 0 }) {
   const [hovered, setHovered] = useState(false);
   const [touched, setTouched] = useState(false);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -792,7 +792,10 @@ function TeaCard({ tea, onView, index = 0 }) {
       }}
     >
       {/* Card image area */}
-      <div style={{ background: tea.bg, height: 200, overflow: 'hidden', position: 'relative' }}>
+      <div
+        style={{ background: tea.bg, height: 200, overflow: 'hidden', position: 'relative', cursor: 'zoom-in' }}
+        onClick={(e) => { e.stopPropagation(); if (onImageClick) onImageClick(tea.img, tea.name); }}
+      >
         {tea.img ? (
           <img
             src={tea.img}
@@ -815,6 +818,8 @@ function TeaCard({ tea, onView, index = 0 }) {
           opacity: hovered ? 1 : 0,
           transition: 'opacity 300ms ease',
         }} />
+        {/* 45% OFF badge */}
+        <div style={{ position: 'absolute', top: 12, left: 12, background: '#e8312a', color: '#fff', fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', padding: '4px 10px', borderRadius: 9999, boxShadow: '0 2px 8px rgba(232,49,42,0.4)' }}>45% OFF</div>
         {tea.bestseller && (
           <div style={{ position: 'absolute', top: 12, right: 12, background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 9999, boxShadow: '0 2px 8px rgba(201,168,76,0.4)' }}>★ BESTSELLER</div>
         )}
@@ -832,9 +837,11 @@ function TeaCard({ tea, onView, index = 0 }) {
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: `1px solid ${T.border}`, paddingTop: 14 }}>
           <div>
-            <span style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>50 gm</span>
-            <span style={{ fontFamily: "'Inter'", fontSize: 16, fontWeight: 700, color: T.teal, marginLeft: 6 }}>₹{tea.price}</span>
-            <span style={{ fontFamily: "'Inter'", fontSize: 11, color: T.textMuted, marginLeft: 4 }}>MRP</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 2 }}>
+              <span style={{ fontFamily: "'Inter'", fontSize: 18, fontWeight: 700, color: T.teal }}>₹{tea.price}</span>
+              <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹899</span>
+            </div>
+            <span style={{ fontFamily: "'Inter'", fontSize: 11, color: '#e8312a', fontWeight: 600 }}>Save ₹400 · 45% off MRP</span>
           </div>
           <button
             onClick={(e) => { e.stopPropagation(); onView(tea); }}
@@ -853,8 +860,32 @@ function TeaCard({ tea, onView, index = 0 }) {
 }
 
 /* ── COLLECTION PAGE ──────────────────────────────────────────── */
+function ImageLightbox({ img, name, onClose }) {
+  useEffect(() => {
+    const handler = (e) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
+  return (
+    <div
+      onClick={onClose}
+      style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.92)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24, animation: 'overlay-fade 0.2s ease both', cursor: 'zoom-out' }}
+    >
+      <button onClick={onClose} style={{ position: 'absolute', top: 20, right: 20, background: 'rgba(255,255,255,0.15)', border: 'none', borderRadius: '50%', width: 44, height: 44, cursor: 'pointer', fontSize: 20, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)' }}>✕</button>
+      <img
+        src={img}
+        alt={name}
+        onClick={e => e.stopPropagation()}
+        style={{ maxWidth: '90vw', maxHeight: '88vh', objectFit: 'contain', borderRadius: 12, boxShadow: '0 32px 100px rgba(0,0,0,0.6)', animation: 'page-enter 0.25s ease both' }}
+      />
+      <div style={{ position: 'absolute', bottom: 28, left: '50%', transform: 'translateX(-50%)', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 16, color: 'rgba(255,255,255,0.75)', pointerEvents: 'none', whiteSpace: 'nowrap' }}>{name}</div>
+    </div>
+  );
+}
+
 function CollectionPage({ setPage }) {
   const [selected, setSelected] = useState(null);
+  const [lightbox, setLightbox] = useState(null);
   const { isMobile, isTablet } = useViewport();
   const cols = isMobile ? '1fr' : isTablet ? 'repeat(2,1fr)' : 'repeat(3, 1fr)';
 
@@ -875,7 +906,7 @@ function CollectionPage({ setPage }) {
 
         {/* Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: cols, gap: isMobile ? 16 : 24 }}>
-          {TEAS.map((tea, i) => <TeaCard key={tea.name} tea={tea} onView={setSelected} index={i} />)}
+          {TEAS.map((tea, i) => <TeaCard key={tea.name} tea={tea} onView={setSelected} onImageClick={(img, name) => setLightbox({ img, name })} index={i} />)}
         </div>
       </div>
 
@@ -889,28 +920,47 @@ function CollectionPage({ setPage }) {
             style={{ background: T.white, borderRadius: 20, maxWidth: 500, width: '100%', overflow: 'hidden', boxShadow: '0 32px 100px rgba(0,0,0,0.35)', animation: 'page-enter 0.3s ease both' }}
             onClick={e => e.stopPropagation()}
           >
-            {/* Modal image */}
-            <div style={{ height: 220, overflow: 'hidden', position: 'relative', background: selected.bg }}>
+            {/* Modal image — click to open lightbox */}
+            <div
+              style={{ height: 260, overflow: 'hidden', position: 'relative', background: selected.bg, cursor: 'zoom-in' }}
+              onClick={(e) => { e.stopPropagation(); setSelected(null); setLightbox({ img: selected.img, name: selected.name }); }}
+            >
               {selected.img ? (
-                <img src={selected.img} alt={selected.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={selected.img} alt={selected.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 400ms ease' }}
+                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
+                  onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                />
               ) : (
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                   <span style={{ fontSize: 72, opacity: 0.7 }}>🍃</span>
                 </div>
               )}
+              <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0)', transition: 'background 200ms' }}
+                onMouseEnter={e => e.currentTarget.style.background = 'rgba(0,0,0,0.18)'}
+                onMouseLeave={e => e.currentTarget.style.background = 'rgba(0,0,0,0)'}
+              >
+                <span style={{ color: '#fff', fontSize: 13, fontFamily: "'Inter'", fontWeight: 500, letterSpacing: '0.08em', background: 'rgba(0,0,0,0.45)', padding: '6px 14px', borderRadius: 9999, opacity: 0, transition: 'opacity 200ms', pointerEvents: 'none' }}
+                  className="zoom-hint">🔍 View full image</span>
+              </div>
               <button
-                onClick={() => setSelected(null)}
-                style={{ position: 'absolute', top: 14, right: 14, background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '50%', width: 32, height: 32, cursor: 'pointer', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', color: T.text }}
+                onClick={(e) => { e.stopPropagation(); setSelected(null); }}
+                style={{ position: 'absolute', top: 14, right: 14, background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '50%', width: 32, height: 32, cursor: 'pointer', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', color: T.text, zIndex: 2 }}
               >✕</button>
+              <div style={{ position: 'absolute', top: 14, left: 14, background: '#e8312a', color: '#fff', fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', padding: '4px 10px', borderRadius: 9999 }}>45% OFF</div>
               {selected.bestseller && (
-                <div style={{ position: 'absolute', top: 14, left: 14, background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 9999 }}>★ BESTSELLER</div>
+                <div style={{ position: 'absolute', top: 42, left: 14, background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 9999 }}>★ BESTSELLER</div>
               )}
             </div>
             <div style={{ padding: 32 }}>
               <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 26, color: T.text, marginBottom: 8 }}>{selected.name}</h2>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
-                <span style={{ fontFamily: "'Inter'", fontSize: 22, fontWeight: 700, color: T.teal }}>₹{selected.price}</span>
-                <span style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted }}>/ 50 gm · MRP</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
+                <span style={{ fontFamily: "'Inter'", fontSize: 24, fontWeight: 700, color: T.teal }}>₹{selected.price}</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: 15, color: '#999', textDecoration: 'line-through' }}>₹899</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: 11, background: '#e8312a', color: '#fff', fontWeight: 700, padding: '3px 8px', borderRadius: 9999 }}>45% OFF</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 16 }}>
+                <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#e8312a', fontWeight: 600 }}>You save ₹400</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>· 50 gm pack</span>
               </div>
               <p style={{ fontFamily: "'Inter'", fontSize: 14, color: T.textMuted, lineHeight: 1.65, marginBottom: 20 }}>{selected.short}</p>
               <div style={{ display: 'flex', gap: 8, marginBottom: 28, flexWrap: 'wrap' }}>
@@ -948,6 +998,9 @@ function CollectionPage({ setPage }) {
           </div>
         </div>
       )}
+
+      {/* Full-screen image lightbox */}
+      {lightbox && <ImageLightbox img={lightbox.img} name={lightbox.name} onClose={() => setLightbox(null)} />}
     </div>
   );
 }

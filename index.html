@@ -68,6 +68,51 @@
     50%       { box-shadow: 0 0 0 6px rgba(27,122,130,0.12); }
   }
 
+  /* ── Tea garden animated scene ── */
+  @keyframes sky-shift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes mist-rise {
+    0%   { transform: translateY(0px) scaleX(1);   opacity: 0.18; }
+    50%  { transform: translateY(-22px) scaleX(1.04); opacity: 0.28; }
+    100% { transform: translateY(0px) scaleX(1);   opacity: 0.18; }
+  }
+  @keyframes mist-rise2 {
+    0%   { transform: translateY(0px) scaleX(1);   opacity: 0.12; }
+    50%  { transform: translateY(-30px) scaleX(1.06); opacity: 0.22; }
+    100% { transform: translateY(0px) scaleX(1);   opacity: 0.12; }
+  }
+  @keyframes hill-sway {
+    0%, 100% { transform: scaleX(1) translateX(0); }
+    50%       { transform: scaleX(1.008) translateX(-6px); }
+  }
+  @keyframes sun-glow {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50%       { opacity: 0.75; transform: scale(1.08); }
+  }
+  @keyframes ray-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @keyframes firefly {
+    0%   { transform: translate(0,0);      opacity: 0; }
+    10%  { opacity: 0.9; }
+    50%  { transform: translate(var(--fx), var(--fy)); opacity: 0.6; }
+    90%  { opacity: 0.8; }
+    100% { transform: translate(0,0);      opacity: 0; }
+  }
+  @keyframes tea-leaf-fly {
+    0%   { transform: translate(0,0)       rotate(var(--r0)) scale(1);    opacity: 0; }
+    8%   { opacity: 0.85; }
+    100% { transform: translate(var(--lx), var(--ly)) rotate(var(--r1)) scale(0.5); opacity: 0; }
+  }
+  @keyframes overlay-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-thumb { background: #1b7a82; border-radius: 2px; }
 
@@ -451,30 +496,140 @@ function Hero({ setPage }) {
   return (
     <div style={{ position: 'relative', height: '100vh', minHeight: 620, overflow: 'hidden', background: T.tealDark }}>
 
-      {/* Tea garden video background with parallax */}
+      {/* ── Animated tea garden scene ── */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
-        <video
-          src="tea-garden.mp4"
-          autoPlay muted loop playsInline
-          style={{
-            position: 'absolute', top: '50%', left: '50%',
-            minWidth: '100%', minHeight: '100%',
-            width: 'auto', height: 'auto',
-            transform: `translate(-50%, calc(-50% + ${parallax}px)) scale(1.1)`,
-            objectFit: 'cover',
-            filter: 'saturate(1.15) contrast(1.05)',
-          }}
-        />
-      </div>
 
-      {/* Animated shimmer orbs */}
-      <div style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none' }}>
-        <div style={{ position: 'absolute', top: '20%', left: '5%', width: 380, height: 380, borderRadius: '50%', background: 'radial-gradient(circle, rgba(100,200,120,0.12) 0%, transparent 70%)', animation: 'shimmer 6s ease-in-out infinite' }} />
-        <div style={{ position: 'absolute', top: '40%', right: '8%', width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(201,168,76,0.10) 0%, transparent 70%)', animation: 'shimmer 8s ease-in-out 2s infinite' }} />
-        <div style={{ position: 'absolute', bottom: '15%', left: '30%', width: 260, height: 260, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%)', animation: 'shimmer 7s ease-in-out 1s infinite' }} />
-        <div style={{ position: 'absolute', top: '12%', left: '6%', width: 340, height: 340, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.08)', animation: 'float-slow 10s ease-in-out infinite' }} />
-        <div style={{ position: 'absolute', top: '28%', left: '18%', width: 200, height: 200, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.05)', animation: 'float-slow 14s ease-in-out 3s infinite' }} />
-        <div style={{ position: 'absolute', top: '8%', right: '10%', width: 180, height: 180, borderRadius: '50%', border: '1px solid rgba(201,168,76,0.12)', animation: 'float 9s ease-in-out 1s infinite' }} />
+        {/* Sky — slow breathing gradient */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(160deg, #0a1f1a 0%, #0f3f45 30%, #1b5e52 55%, #2d7a3a 80%, #1a4a20 100%)',
+          backgroundSize: '300% 300%',
+          animation: 'sky-shift 18s ease infinite',
+        }} />
+
+        {/* Golden sunrise glow at horizon */}
+        <div style={{
+          position: 'absolute', bottom: '28%', left: '50%',
+          transform: 'translateX(-50%)',
+          width: '140%', height: 320,
+          background: 'radial-gradient(ellipse 60% 100% at 50% 100%, rgba(201,168,76,0.28) 0%, rgba(255,200,80,0.10) 40%, transparent 70%)',
+          animation: 'sun-glow 7s ease-in-out infinite',
+        }} />
+
+        {/* Sun disc */}
+        <div style={{
+          position: 'absolute', bottom: '34%', left: '62%',
+          width: 90, height: 90, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(255,220,100,0.55) 0%, rgba(201,168,76,0.25) 50%, transparent 70%)',
+          animation: 'sun-glow 7s ease-in-out 1s infinite',
+          filter: 'blur(8px)',
+        }} />
+
+        {/* Light rays from sun */}
+        <div style={{
+          position: 'absolute', bottom: '34%', left: '62%',
+          width: 500, height: 500,
+          marginLeft: -250, marginBottom: -250,
+          background: 'conic-gradient(from 0deg, transparent 0deg, rgba(201,168,76,0.04) 8deg, transparent 16deg, transparent 20deg, rgba(201,168,76,0.03) 28deg, transparent 36deg, transparent 40deg, rgba(255,220,100,0.05) 48deg, transparent 56deg)',
+          animation: 'ray-spin 40s linear infinite',
+          borderRadius: '50%',
+        }} />
+
+        {/* Far hills — layer 3 (lightest, most distant) */}
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none"
+          style={{ position: 'absolute', bottom: '42%', width: '110%', left: '-5%', animation: 'hill-sway 14s ease-in-out infinite' }}>
+          <path d="M0,220 C120,160 200,200 320,180 C440,160 520,140 640,160 C760,180 840,150 960,165 C1080,180 1180,155 1300,170 C1380,180 1420,175 1440,172 L1440,320 L0,320 Z"
+            fill="rgba(18,60,35,0.55)" />
+        </svg>
+
+        {/* Mid hills — layer 2 */}
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none"
+          style={{ position: 'absolute', bottom: '30%', width: '110%', left: '-5%', animation: 'hill-sway 10s ease-in-out 2s infinite' }}>
+          <path d="M0,240 C80,200 180,220 300,200 C400,182 500,205 620,195 C740,185 840,210 960,200 C1060,192 1200,215 1340,205 C1400,200 1430,208 1440,210 L1440,320 L0,320 Z"
+            fill="rgba(15,50,28,0.70)" />
+        </svg>
+
+        {/* Near hills — layer 1 (darkest, closest) */}
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none"
+          style={{ position: 'absolute', bottom: '14%', width: '112%', left: '-6%', animation: 'hill-sway 8s ease-in-out 1s infinite' }}>
+          <path d="M0,260 C100,220 200,250 360,230 C480,215 560,240 700,228 C820,218 900,245 1060,232 C1180,222 1300,240 1440,235 L1440,320 L0,320 Z"
+            fill="rgba(10,38,18,0.88)" />
+        </svg>
+
+        {/* Foreground ground */}
+        <div style={{
+          position: 'absolute', bottom: 0, left: 0, right: 0, height: '16%',
+          background: 'linear-gradient(to top, #061410 0%, rgba(8,28,16,0.95) 70%, transparent 100%)',
+        }} />
+
+        {/* Tea plant rows on near hill — subtle parallel curves */}
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none"
+          style={{ position: 'absolute', bottom: '14%', width: '112%', left: '-6%', opacity: 0.35 }}>
+          {[0,12,24,36,48].map(offset => (
+            <path key={offset}
+              d={`M0,${60+offset} C200,${50+offset} 400,${65+offset} 600,${55+offset} C800,${45+offset} 1000,${60+offset} 1200,${52+offset} C1350,${46+offset} 1420,${55+offset} 1440,${56+offset}`}
+              fill="none" stroke="rgba(80,160,60,0.5)" strokeWidth="1.5" />
+          ))}
+        </svg>
+
+        {/* Mist layer 1 */}
+        <div style={{
+          position: 'absolute', bottom: '24%', left: '-10%', right: '-10%', height: 120,
+          background: 'linear-gradient(to top, transparent 0%, rgba(180,220,200,0.18) 40%, rgba(200,240,220,0.22) 60%, transparent 100%)',
+          borderRadius: '50%',
+          animation: 'mist-rise 9s ease-in-out infinite',
+          filter: 'blur(18px)',
+        }} />
+
+        {/* Mist layer 2 */}
+        <div style={{
+          position: 'absolute', bottom: '32%', left: '-15%', right: '-15%', height: 90,
+          background: 'linear-gradient(to top, transparent 0%, rgba(180,220,200,0.13) 50%, transparent 100%)',
+          borderRadius: '50%',
+          animation: 'mist-rise2 12s ease-in-out 3s infinite',
+          filter: 'blur(24px)',
+        }} />
+
+        {/* Fireflies / glowing particles */}
+        {[
+          { l:'18%', b:'28%', d:'0s',  fx:'24px',  fy:'-18px' },
+          { l:'35%', b:'22%', d:'2s',  fx:'-18px', fy:'-24px' },
+          { l:'55%', b:'35%', d:'4s',  fx:'20px',  fy:'-14px' },
+          { l:'72%', b:'26%', d:'1s',  fx:'-22px', fy:'-20px' },
+          { l:'82%', b:'30%', d:'3.5s',fx:'16px',  fy:'-28px' },
+          { l:'45%', b:'20%', d:'5s',  fx:'-14px', fy:'-18px' },
+          { l:'28%', b:'38%', d:'2.5s',fx:'18px',  fy:'-12px' },
+          { l:'65%', b:'40%', d:'6s',  fx:'-20px', fy:'-16px' },
+        ].map((f,i) => (
+          <div key={i} style={{
+            position: 'absolute', left: f.l, bottom: f.b,
+            width: 4, height: 4, borderRadius: '50%',
+            background: 'rgba(220,255,160,0.9)',
+            boxShadow: '0 0 6px 3px rgba(180,255,120,0.5)',
+            animation: `firefly ${7+i*1.3}s ease-in-out ${f.d} infinite`,
+            '--fx': f.fx, '--fy': f.fy,
+          }} />
+        ))}
+
+        {/* Animated flying tea leaves */}
+        {[
+          { l:'8%',  b:'18%', d:'0s',  lx:'120px', ly:'-180px', r0:'0deg',   r1:'200deg',  s:'0.7' },
+          { l:'22%', b:'15%', d:'3s',  lx:'90px',  ly:'-220px', r0:'45deg',  r1:'-160deg', s:'0.5' },
+          { l:'55%', b:'20%', d:'6s',  lx:'-110px',ly:'-200px', r0:'-20deg', r1:'180deg',  s:'0.6' },
+          { l:'70%', b:'16%', d:'1.5s',lx:'80px',  ly:'-240px', r0:'10deg',  r1:'-200deg', s:'0.8' },
+          { l:'85%', b:'22%', d:'4.5s',lx:'-90px', ly:'-190px', r0:'-30deg', r1:'160deg',  s:'0.55'},
+          { l:'38%', b:'14%', d:'8s',  lx:'100px', ly:'-210px', r0:'20deg',  r1:'-180deg', s:'0.65'},
+        ].map((leaf,i) => (
+          <div key={i} style={{
+            position: 'absolute', left: leaf.l, bottom: leaf.b,
+            fontSize: `${14 * parseFloat(leaf.s)}px`,
+            animation: `tea-leaf-fly ${11+i*1.8}s ease-in ${leaf.d} infinite`,
+            '--lx': leaf.lx, '--ly': leaf.ly,
+            '--r0': leaf.r0, '--r1': leaf.r1,
+            userSelect: 'none', pointerEvents: 'none',
+          }}>🍃</div>
+        ))}
+
       </div>
 
       <FloatingLeaves />

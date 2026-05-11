@@ -913,7 +913,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
               <span style={{ fontFamily: "'Inter'", fontSize: 18, fontWeight: 700, color: T.teal }}>₹{tea.price}</span>
               <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹907</span>
             </div>
-            <span style={{ fontFamily: "'Inter'", fontSize: 11, color: '#e8312a', fontWeight: 600 }}>Save ₹408 · 45% off MRP</span>
+            <span style={{ fontFamily: "'Inter'", fontSize: 11, color: '#e8312a', fontWeight: 600 }}>45% off MRP</span>
           </div>
           <button
             onClick={(e) => { e.stopPropagation(); onView(tea); }}
@@ -1031,8 +1031,7 @@ function CollectionPage({ setPage }) {
                 <span style={{ fontFamily: "'Inter'", fontSize: 11, background: '#e8312a', color: '#fff', fontWeight: 700, padding: '3px 8px', borderRadius: 9999 }}>45% OFF</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 16 }}>
-                <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#e8312a', fontWeight: 600 }}>You save ₹408</span>
-                <span style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>· 50 gm pack</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>50 gm pack</span>
               </div>
               <p style={{ fontFamily: "'Inter'", fontSize: 14, color: T.textMuted, lineHeight: 1.65, marginBottom: 14 }}>{selected.short}</p>
               <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>

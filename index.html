@@ -75,42 +75,50 @@
     100% { background-position: 0% 50%; }
   }
   @keyframes mist-rise {
-    0%   { transform: translateY(0px) scaleX(1);   opacity: 0.18; }
-    50%  { transform: translateY(-22px) scaleX(1.04); opacity: 0.28; }
-    100% { transform: translateY(0px) scaleX(1);   opacity: 0.18; }
+    0%   { transform: translateY(0px) scaleX(1);   opacity: 0.22; }
+    50%  { transform: translateY(-28px) scaleX(1.05); opacity: 0.38; }
+    100% { transform: translateY(0px) scaleX(1);   opacity: 0.22; }
   }
-  @keyframes mist-rise2 {
-    0%   { transform: translateY(0px) scaleX(1);   opacity: 0.12; }
-    50%  { transform: translateY(-30px) scaleX(1.06); opacity: 0.22; }
-    100% { transform: translateY(0px) scaleX(1);   opacity: 0.12; }
+  @keyframes mist-drift {
+    0%   { transform: translateX(0) translateY(0); opacity: 0.28; }
+    50%  { transform: translateX(40px) translateY(-18px); opacity: 0.42; }
+    100% { transform: translateX(0) translateY(0); opacity: 0.28; }
   }
-  @keyframes hill-sway {
-    0%, 100% { transform: scaleX(1) translateX(0); }
-    50%       { transform: scaleX(1.008) translateX(-6px); }
+  @keyframes bush-sway {
+    0%, 100% { transform: translateX(0) scaleX(1); }
+    25%       { transform: translateX(-4px) scaleX(1.002); }
+    75%       { transform: translateX(4px) scaleX(0.999); }
   }
   @keyframes sun-glow {
-    0%, 100% { opacity: 0.55; transform: scale(1); }
-    50%       { opacity: 0.75; transform: scale(1.08); }
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50%       { opacity: 0.9; transform: scale(1.06); }
   }
   @keyframes ray-spin {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
   }
-  @keyframes firefly {
-    0%   { transform: translate(0,0);      opacity: 0; }
-    10%  { opacity: 0.9; }
-    50%  { transform: translate(var(--fx), var(--fy)); opacity: 0.6; }
-    90%  { opacity: 0.8; }
-    100% { transform: translate(0,0);      opacity: 0; }
+  @keyframes bird-fly {
+    0%   { transform: translateX(0) translateY(0); opacity:0; }
+    4%   { opacity: 1; }
+    92%  { opacity: 1; }
+    100% { transform: translateX(calc(-100vw - 200px)) translateY(var(--by)); opacity:0; }
+  }
+  @keyframes dew-flash {
+    0%,100% { opacity:0; transform:scale(0.6); }
+    50%      { opacity:0.9; transform:scale(1.2); }
   }
   @keyframes tea-leaf-fly {
-    0%   { transform: translate(0,0)       rotate(var(--r0)) scale(1);    opacity: 0; }
+    0%   { transform: translate(0,0) rotate(var(--r0)) scale(1); opacity: 0; }
     8%   { opacity: 0.85; }
     100% { transform: translate(var(--lx), var(--ly)) rotate(var(--r1)) scale(0.5); opacity: 0; }
   }
   @keyframes overlay-fade {
     from { opacity: 0; }
     to   { opacity: 1; }
+  }
+  @keyframes cloud-drift {
+    0%,100% { transform: translateX(0); opacity: 0.18; }
+    50%      { transform: translateX(30px); opacity: 0.28; }
   }
 
   ::-webkit-scrollbar { width: 4px; }
@@ -476,6 +484,16 @@ function FloatingLeaves() {
 }
 
 /* ── HERO ─────────────────────────────────────────────────────── */
+function teaRow(w, bumpW, bumpH, rowH) {
+  const n = Math.ceil(w / bumpW) + 2;
+  let d = `M0,${rowH}`;
+  for (let i = 0; i < n; i++) {
+    d += ` Q${i*bumpW+bumpW/2},${rowH-bumpH} ${(i+1)*bumpW},${rowH}`;
+  }
+  d += ` L${n*bumpW},${rowH+90} L0,${rowH+90} Z`;
+  return d;
+}
+
 function Hero({ setPage }) {
   const [visible, setVisible] = useState(false);
   const [statsRef, statsInView] = useInView(0.1);
@@ -496,148 +514,228 @@ function Hero({ setPage }) {
   return (
     <div style={{ position: 'relative', height: '100vh', minHeight: 620, overflow: 'hidden', background: T.tealDark }}>
 
-      {/* ── Animated tea garden scene ── */}
+      {/* ── Vivid Assam tea garden scene ── */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
 
-        {/* Sky — slow breathing gradient */}
+        {/* Sky — golden dawn gradient */}
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(160deg, #0a1f1a 0%, #0f3f45 30%, #1b5e52 55%, #2d7a3a 80%, #1a4a20 100%)',
-          backgroundSize: '300% 300%',
-          animation: 'sky-shift 18s ease infinite',
+          background: 'linear-gradient(180deg, #0a1628 0%, #122248 10%, #1e3a6a 22%, #2e5a8a 34%, #4a82a8 44%, #7ab4c0 54%, #a8cc90 63%, #d4c052 73%, #e89820 83%, #c06010 92%, #8a3a08 100%)',
         }} />
 
-        {/* Golden sunrise glow at horizon */}
+        {/* Horizon glow */}
         <div style={{
-          position: 'absolute', bottom: '28%', left: '50%',
-          transform: 'translateX(-50%)',
-          width: '140%', height: 320,
-          background: 'radial-gradient(ellipse 60% 100% at 50% 100%, rgba(201,168,76,0.28) 0%, rgba(255,200,80,0.10) 40%, transparent 70%)',
-          animation: 'sun-glow 7s ease-in-out infinite',
+          position: 'absolute', bottom: '30%', left: '50%', transform: 'translateX(-50%)',
+          width: '130%', height: 260,
+          background: 'radial-gradient(ellipse 65% 100% at 50% 100%, rgba(240,170,30,0.55) 0%, rgba(220,130,20,0.25) 45%, transparent 70%)',
+          animation: 'sun-glow 9s ease-in-out infinite',
         }} />
 
         {/* Sun disc */}
         <div style={{
-          position: 'absolute', bottom: '34%', left: '62%',
-          width: 90, height: 90, borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(255,220,100,0.55) 0%, rgba(201,168,76,0.25) 50%, transparent 70%)',
-          animation: 'sun-glow 7s ease-in-out 1s infinite',
-          filter: 'blur(8px)',
+          position: 'absolute', bottom: '36%', left: '70%',
+          width: 64, height: 64, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(255,245,150,1) 25%, rgba(255,210,60,0.7) 55%, transparent 80%)',
+          boxShadow: '0 0 50px 25px rgba(240,190,30,0.45), 0 0 100px 50px rgba(240,160,10,0.2)',
+          animation: 'sun-glow 9s ease-in-out 1s infinite',
         }} />
 
-        {/* Light rays from sun */}
+        {/* Sun rays */}
         <div style={{
-          position: 'absolute', bottom: '34%', left: '62%',
-          width: 500, height: 500,
-          marginLeft: -250, marginBottom: -250,
-          background: 'conic-gradient(from 0deg, transparent 0deg, rgba(201,168,76,0.04) 8deg, transparent 16deg, transparent 20deg, rgba(201,168,76,0.03) 28deg, transparent 36deg, transparent 40deg, rgba(255,220,100,0.05) 48deg, transparent 56deg)',
-          animation: 'ray-spin 40s linear infinite',
-          borderRadius: '50%',
+          position: 'absolute', bottom: 'calc(36% - 220px)', left: 'calc(70% - 220px)',
+          width: 440, height: 440, borderRadius: '50%',
+          background: 'conic-gradient(from 0deg, transparent 0deg, rgba(255,210,60,0.07) 5deg, transparent 10deg, transparent 15deg, rgba(255,200,40,0.05) 20deg, transparent 25deg, transparent 30deg, rgba(255,215,70,0.08) 35deg, transparent 40deg)',
+          animation: 'ray-spin 55s linear infinite',
         }} />
 
-        {/* Far hills — layer 3 (lightest, most distant) */}
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none"
-          style={{ position: 'absolute', bottom: '42%', width: '110%', left: '-5%', animation: 'hill-sway 14s ease-in-out infinite' }}>
-          <path d="M0,220 C120,160 200,200 320,180 C440,160 520,140 640,160 C760,180 840,150 960,165 C1080,180 1180,155 1300,170 C1380,180 1420,175 1440,172 L1440,320 L0,320 Z"
-            fill="rgba(18,60,35,0.55)" />
-        </svg>
-
-        {/* Mid hills — layer 2 */}
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none"
-          style={{ position: 'absolute', bottom: '30%', width: '110%', left: '-5%', animation: 'hill-sway 10s ease-in-out 2s infinite' }}>
-          <path d="M0,240 C80,200 180,220 300,200 C400,182 500,205 620,195 C740,185 840,210 960,200 C1060,192 1200,215 1340,205 C1400,200 1430,208 1440,210 L1440,320 L0,320 Z"
-            fill="rgba(15,50,28,0.70)" />
-        </svg>
-
-        {/* Near hills — layer 1 (darkest, closest) */}
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none"
-          style={{ position: 'absolute', bottom: '14%', width: '112%', left: '-6%', animation: 'hill-sway 8s ease-in-out 1s infinite' }}>
-          <path d="M0,260 C100,220 200,250 360,230 C480,215 560,240 700,228 C820,218 900,245 1060,232 C1180,222 1300,240 1440,235 L1440,320 L0,320 Z"
-            fill="rgba(10,38,18,0.88)" />
-        </svg>
-
-        {/* Foreground ground */}
-        <div style={{
-          position: 'absolute', bottom: 0, left: 0, right: 0, height: '16%',
-          background: 'linear-gradient(to top, #061410 0%, rgba(8,28,16,0.95) 70%, transparent 100%)',
-        }} />
-
-        {/* Tea plant rows on near hill — subtle parallel curves */}
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none"
-          style={{ position: 'absolute', bottom: '14%', width: '112%', left: '-6%', opacity: 0.35 }}>
-          {[0,12,24,36,48].map(offset => (
-            <path key={offset}
-              d={`M0,${60+offset} C200,${50+offset} 400,${65+offset} 600,${55+offset} C800,${45+offset} 1000,${60+offset} 1200,${52+offset} C1350,${46+offset} 1420,${55+offset} 1440,${56+offset}`}
-              fill="none" stroke="rgba(80,160,60,0.5)" strokeWidth="1.5" />
-          ))}
-        </svg>
-
-        {/* Mist layer 1 */}
-        <div style={{
-          position: 'absolute', bottom: '24%', left: '-10%', right: '-10%', height: 120,
-          background: 'linear-gradient(to top, transparent 0%, rgba(180,220,200,0.18) 40%, rgba(200,240,220,0.22) 60%, transparent 100%)',
-          borderRadius: '50%',
-          animation: 'mist-rise 9s ease-in-out infinite',
-          filter: 'blur(18px)',
-        }} />
-
-        {/* Mist layer 2 */}
-        <div style={{
-          position: 'absolute', bottom: '32%', left: '-15%', right: '-15%', height: 90,
-          background: 'linear-gradient(to top, transparent 0%, rgba(180,220,200,0.13) 50%, transparent 100%)',
-          borderRadius: '50%',
-          animation: 'mist-rise2 12s ease-in-out 3s infinite',
-          filter: 'blur(24px)',
-        }} />
-
-        {/* Fireflies / glowing particles */}
+        {/* Cloud wisps */}
         {[
-          { l:'18%', b:'28%', d:'0s',  fx:'24px',  fy:'-18px' },
-          { l:'35%', b:'22%', d:'2s',  fx:'-18px', fy:'-24px' },
-          { l:'55%', b:'35%', d:'4s',  fx:'20px',  fy:'-14px' },
-          { l:'72%', b:'26%', d:'1s',  fx:'-22px', fy:'-20px' },
-          { l:'82%', b:'30%', d:'3.5s',fx:'16px',  fy:'-28px' },
-          { l:'45%', b:'20%', d:'5s',  fx:'-14px', fy:'-18px' },
-          { l:'28%', b:'38%', d:'2.5s',fx:'18px',  fy:'-12px' },
-          { l:'65%', b:'40%', d:'6s',  fx:'-20px', fy:'-16px' },
-        ].map((f,i) => (
+          { t:'16%', l:'8%',  w:220, h:28, delay:'0s',  dur:'22s' },
+          { t:'20%', l:'30%', w:180, h:20, delay:'5s',  dur:'28s' },
+          { t:'14%', l:'55%', w:260, h:24, delay:'10s', dur:'24s' },
+          { t:'24%', l:'78%', w:150, h:18, delay:'3s',  dur:'32s' },
+        ].map((c,i) => (
           <div key={i} style={{
-            position: 'absolute', left: f.l, bottom: f.b,
-            width: 4, height: 4, borderRadius: '50%',
-            background: 'rgba(220,255,160,0.9)',
-            boxShadow: '0 0 6px 3px rgba(180,255,120,0.5)',
-            animation: `firefly ${7+i*1.3}s ease-in-out ${f.d} infinite`,
-            '--fx': f.fx, '--fy': f.fy,
+            position: 'absolute', top: c.t, left: c.l, width: c.w, height: c.h,
+            background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.22) 0%, transparent 70%)',
+            borderRadius: '50%', filter: 'blur(10px)',
+            animation: `cloud-drift ${c.dur} ease-in-out ${c.delay} infinite`,
           }} />
         ))}
 
-        {/* Animated flying tea leaves */}
+        {/* Distant mountains — blue-purple silhouette */}
+        <svg viewBox="0 0 1440 280" preserveAspectRatio="none"
+          style={{ position: 'absolute', bottom: '40%', width: '105%', left: '-2.5%' }}>
+          <defs>
+            <linearGradient id="mtnG" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#5a78a8" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#2a3e60" stopOpacity="0.4" />
+            </linearGradient>
+          </defs>
+          <path d="M0,260 L60,190 L140,220 L240,145 L340,185 L430,115 L530,158 L620,92 L720,138 L820,82 L910,118 L1010,72 L1110,105 L1210,68 L1310,98 L1390,130 L1440,112 L1440,280 L0,280 Z"
+            fill="url(#mtnG)" />
+        </svg>
+
+        {/* Second mountain range — darker green */}
+        <svg viewBox="0 0 1440 260" preserveAspectRatio="none"
+          style={{ position: 'absolute', bottom: '33%', width: '106%', left: '-3%' }}>
+          <defs>
+            <linearGradient id="mtn2G" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#2a5835" />
+              <stop offset="100%" stopColor="#162e1c" />
+            </linearGradient>
+          </defs>
+          <path d="M0,240 L100,175 L210,205 L320,148 L440,188 L540,135 L660,168 L770,122 L870,155 L980,112 L1080,142 L1190,108 L1300,138 L1400,160 L1440,148 L1440,260 L0,260 Z"
+            fill="url(#mtn2G)" />
+        </svg>
+
+        {/* ── FAR TERRACE — tea rows ── */}
+        <svg viewBox="0 0 1500 160" preserveAspectRatio="none"
+          style={{ position: 'absolute', bottom: '27%', width: '107%', left: '-3.5%', animation: 'bush-sway 16s ease-in-out infinite' }}>
+          <defs>
+            <linearGradient id="farRow1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#5aaa30" />
+              <stop offset="100%" stopColor="#2e6018" />
+            </linearGradient>
+            <linearGradient id="farRow2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#4a9828" />
+              <stop offset="100%" stopColor="#244e12" />
+            </linearGradient>
+            <linearGradient id="farBase" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#326020" />
+              <stop offset="100%" stopColor="#1a3610" />
+            </linearGradient>
+          </defs>
+          {/* Base hill */}
+          <path d="M0,90 C300,75 600,85 900,78 C1100,73 1300,80 1500,76 L1500,160 L0,160 Z" fill="url(#farBase)" />
+          {/* Row 1 */}
+          <path d={teaRow(1500, 32, 18, 88)} fill="url(#farRow1)" />
+          {/* Row 2 */}
+          <path d={teaRow(1500, 28, 14, 108)} fill="url(#farRow2)" />
+        </svg>
+
+        {/* ── VALLEY MIST between far and mid terrace ── */}
+        <div style={{
+          position: 'absolute', bottom: '24%', left: '-8%', right: '-8%', height: 80,
+          background: 'linear-gradient(to top, transparent 0%, rgba(210,240,225,0.42) 45%, rgba(225,245,235,0.52) 60%, transparent 100%)',
+          borderRadius: '50%', filter: 'blur(20px)',
+          animation: 'mist-rise 11s ease-in-out infinite',
+        }} />
+        <div style={{
+          position: 'absolute', bottom: '22%', left: '-12%', right: '-12%', height: 60,
+          background: 'linear-gradient(to top, transparent 0%, rgba(200,235,218,0.32) 50%, transparent 100%)',
+          borderRadius: '50%', filter: 'blur(28px)',
+          animation: 'mist-drift 15s ease-in-out 4s infinite',
+        }} />
+
+        {/* ── MID TERRACE — tea rows ── */}
+        <svg viewBox="0 0 1500 180" preserveAspectRatio="none"
+          style={{ position: 'absolute', bottom: '16%', width: '108%', left: '-4%', animation: 'bush-sway 12s ease-in-out 2s infinite' }}>
+          <defs>
+            <linearGradient id="midRow1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#72c840" />
+              <stop offset="100%" stopColor="#3a7820" />
+            </linearGradient>
+            <linearGradient id="midRow2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#62b835" />
+              <stop offset="100%" stopColor="#306818" />
+            </linearGradient>
+            <linearGradient id="midRow3" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#52a828" />
+              <stop offset="100%" stopColor="#285810" />
+            </linearGradient>
+            <linearGradient id="midBase" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#3a7020" />
+              <stop offset="100%" stopColor="#1e3e10" />
+            </linearGradient>
+          </defs>
+          <path d="M0,85 C250,70 550,82 800,72 C1050,63 1280,75 1500,70 L1500,180 L0,180 Z" fill="url(#midBase)" />
+          <path d={teaRow(1500, 38, 22, 82)} fill="url(#midRow1)" />
+          <path d={teaRow(1500, 34, 18, 104)} fill="url(#midRow2)" />
+          <path d={teaRow(1500, 30, 15, 122)} fill="url(#midRow3)" />
+        </svg>
+
+        {/* ── NEAR MIST ── */}
+        <div style={{
+          position: 'absolute', bottom: '13%', left: '-5%', right: '-5%', height: 70,
+          background: 'linear-gradient(to top, transparent 0%, rgba(215,242,228,0.48) 50%, transparent 100%)',
+          borderRadius: '50%', filter: 'blur(16px)',
+          animation: 'mist-rise 8s ease-in-out 2s infinite',
+        }} />
+
+        {/* ── NEAR TERRACE — vivid tea rows (most detailed, foreground) ── */}
+        <svg viewBox="0 0 1500 200" preserveAspectRatio="none"
+          style={{ position: 'absolute', bottom: '0%', width: '110%', left: '-5%', animation: 'bush-sway 9s ease-in-out 1s infinite' }}>
+          <defs>
+            <linearGradient id="nearRow1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#88e048" />
+              <stop offset="100%" stopColor="#4a9828" />
+            </linearGradient>
+            <linearGradient id="nearRow2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#78d03a" />
+              <stop offset="100%" stopColor="#3e8820" />
+            </linearGradient>
+            <linearGradient id="nearRow3" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#68c030" />
+              <stop offset="100%" stopColor="#347818" />
+            </linearGradient>
+            <linearGradient id="nearRow4" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#56a825" />
+              <stop offset="100%" stopColor="#2a6010" />
+            </linearGradient>
+            <linearGradient id="nearBase" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#3e8020" />
+              <stop offset="100%" stopColor="#0e2008" />
+            </linearGradient>
+          </defs>
+          <path d="M0,75 C200,58 450,70 700,60 C900,52 1150,65 1500,58 L1500,200 L0,200 Z" fill="url(#nearBase)" />
+          <path d={teaRow(1500, 44, 28, 72)} fill="url(#nearRow1)" />
+          <path d={teaRow(1500, 40, 24, 96)} fill="url(#nearRow2)" />
+          <path d={teaRow(1500, 36, 20, 116)} fill="url(#nearRow3)" />
+          <path d={teaRow(1500, 32, 17, 133)} fill="url(#nearRow4)" />
+        </svg>
+
+        {/* Dew sparkles on near tea rows */}
         {[
-          { l:'8%',  b:'18%', d:'0s',  lx:'120px', ly:'-180px', r0:'0deg',   r1:'200deg',  s:'0.7' },
-          { l:'22%', b:'15%', d:'3s',  lx:'90px',  ly:'-220px', r0:'45deg',  r1:'-160deg', s:'0.5' },
-          { l:'55%', b:'20%', d:'6s',  lx:'-110px',ly:'-200px', r0:'-20deg', r1:'180deg',  s:'0.6' },
-          { l:'70%', b:'16%', d:'1.5s',lx:'80px',  ly:'-240px', r0:'10deg',  r1:'-200deg', s:'0.8' },
-          { l:'85%', b:'22%', d:'4.5s',lx:'-90px', ly:'-190px', r0:'-30deg', r1:'160deg',  s:'0.55'},
-          { l:'38%', b:'14%', d:'8s',  lx:'100px', ly:'-210px', r0:'20deg',  r1:'-180deg', s:'0.65'},
-        ].map((leaf,i) => (
+          {l:'12%',b:'18%',d:'0s'}, {l:'26%',b:'22%',d:'1.5s'}, {l:'40%',b:'17%',d:'3s'},
+          {l:'55%',b:'20%',d:'0.8s'}, {l:'68%',b:'16%',d:'2.2s'}, {l:'80%',b:'19%',d:'4s'},
+          {l:'33%',b:'14%',d:'5s'}, {l:'72%',b:'23%',d:'1.2s'}, {l:'88%',b:'15%',d:'3.5s'},
+        ].map((s,i) => (
           <div key={i} style={{
-            position: 'absolute', left: leaf.l, bottom: leaf.b,
-            fontSize: `${14 * parseFloat(leaf.s)}px`,
-            animation: `tea-leaf-fly ${11+i*1.8}s ease-in ${leaf.d} infinite`,
-            '--lx': leaf.lx, '--ly': leaf.ly,
-            '--r0': leaf.r0, '--r1': leaf.r1,
-            userSelect: 'none', pointerEvents: 'none',
-          }}>🍃</div>
+            position:'absolute', left:s.l, bottom:s.b,
+            width:5, height:5, borderRadius:'50%',
+            background:'rgba(255,255,220,0.95)',
+            boxShadow:'0 0 8px 4px rgba(255,255,160,0.6)',
+            animation:`dew-flash ${4+i*0.7}s ease-in-out ${s.d} infinite`,
+            pointerEvents:'none',
+          }} />
+        ))}
+
+        {/* Birds flying across the sky */}
+        {[
+          { t:'18%', l:'105%', d:'0s',   dur:'22s', by:'-20px', scale:1.0 },
+          { t:'14%', l:'108%', d:'7s',   dur:'28s', by:'10px',  scale:0.75 },
+          { t:'22%', l:'106%', d:'13s',  dur:'24s', by:'-30px', scale:0.85 },
+          { t:'16%', l:'110%', d:'19s',  dur:'20s', by:'5px',   scale:0.65 },
+          { t:'10%', l:'107%', d:'25s',  dur:'32s', by:'-15px', scale:0.9 },
+        ].map((b,i) => (
+          <svg key={i} viewBox="0 0 30 12" width={30 * parseFloat(b.scale)} height={12 * parseFloat(b.scale)}
+            style={{
+              position:'absolute', top:b.t, left:b.l,
+              animation:`bird-fly ${b.dur} linear ${b.d} infinite`,
+              '--by': b.by, opacity:0.85,
+            }}>
+            <path d="M0,8 Q7,2 15,6 Q23,2 30,8" stroke="rgba(255,255,255,0.9)" strokeWidth="1.8" fill="none" strokeLinecap="round" />
+          </svg>
         ))}
 
       </div>
 
       <FloatingLeaves />
 
-      {/* Gradient overlays */}
-      <div style={{ position: 'absolute', inset: 0, zIndex: 3, background: `linear-gradient(to right, rgba(15,63,69,0.92) 0%, rgba(15,63,69,0.55) 55%, rgba(15,63,69,0.2) 100%)`, pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', inset: 0, zIndex: 3, background: `linear-gradient(to top, rgba(15,63,69,0.95) 0%, transparent 45%)`, pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', bottom: '18%', left: 0, right: 0, height: 120, zIndex: 3, background: 'linear-gradient(to top, rgba(201,168,76,0.08), transparent)', pointerEvents: 'none' }} />
+      {/* Gradient overlays — left side darkened for text legibility, garden visible on right */}
+      <div style={{ position: 'absolute', inset: 0, zIndex: 3, background: 'linear-gradient(to right, rgba(8,28,18,0.88) 0%, rgba(8,28,18,0.65) 40%, rgba(8,28,18,0.25) 70%, rgba(8,28,18,0.05) 100%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', inset: 0, zIndex: 3, background: 'linear-gradient(to top, rgba(5,18,10,0.96) 0%, rgba(5,18,10,0.3) 22%, transparent 42%)', pointerEvents: 'none' }} />
 
       {/* Hero content */}
       <div style={{ position: 'relative', zIndex: 10, maxWidth: 1200, margin: '0 auto', padding: isMobile ? '0 22px' : '0 40px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

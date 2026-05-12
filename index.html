@@ -1542,6 +1542,124 @@ function ReviewCard({ r, inView, index }) {
   );
 }
 
+function StarRating({ value, onChange }) {
+  const [hovered, setHovered] = React.useState(0);
+  return (
+    <div style={{ display: 'flex', gap: 4 }}>
+      {[1,2,3,4,5].map(star => (
+        <span key={star}
+          onMouseEnter={() => onChange && setHovered(star)}
+          onMouseLeave={() => onChange && setHovered(0)}
+          onClick={() => onChange && onChange(star)}
+          style={{
+            fontSize: 28, cursor: onChange ? 'pointer' : 'default',
+            color: star <= (hovered || value) ? '#f5a623' : '#ddd',
+            transition: 'color 120ms, transform 120ms',
+            transform: star <= (hovered || value) ? 'scale(1.15)' : 'scale(1)',
+            display: 'inline-block',
+          }}>★</span>
+      ))}
+    </div>
+  );
+}
+
+function ReviewForm() {
+  const { isMobile } = useViewport();
+  const [form, setForm] = React.useState({ name: '', loc: '', tea: '', rating: 0, text: '' });
+  const [sent, setSent] = React.useState(false);
+  const [error, setError] = React.useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (form.rating === 0) { setError('Please select a star rating.'); return; }
+    if (form.text.trim().length < 15) { setError('Please write at least a sentence about your experience.'); return; }
+    setError('');
+    const stars = '★'.repeat(form.rating) + '☆'.repeat(5 - form.rating);
+    const msg = `🌿 *New Nevisan Review*\n\n${stars} ${form.rating}/5\n\n*Customer:* ${form.name}${form.loc ? ` (${form.loc})` : ''}\n*Tea:* ${form.tea || 'Not specified'}\n\n*Review:*\n"${form.text}"\n\n_Submitted via nevisan.in_`;
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    setSent(true);
+  };
+
+  const inputStyle = {
+    width: '100%', padding: '11px 14px', border: '1.5px solid #e0dcd4', borderRadius: 10,
+    fontFamily: "'Inter'", fontSize: 14, color: '#1a1a1a', background: '#fff',
+    outline: 'none', boxSizing: 'border-box', transition: 'border-color 200ms',
+  };
+
+  if (sent) return (
+    <div style={{ textAlign: 'center', padding: '48px 24px' }}>
+      <div style={{ fontSize: 52, marginBottom: 16 }}>🙏</div>
+      <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 24, color: '#1a1a1a', marginBottom: 10 }}>Thank you for your review!</h3>
+      <p style={{ fontFamily: "'Inter'", fontSize: 14, color: '#666', lineHeight: 1.7, maxWidth: 360, margin: '0 auto 20px' }}>Your review has been sent to us on WhatsApp. We read every one and feature the best on this page.</p>
+      <button onClick={() => { setSent(false); setForm({ name:'', loc:'', tea:'', rating:0, text:'' }); }}
+        style={{ background: '#1b7a82', color: '#fff', border: 'none', borderRadius: 9999, padding: '10px 28px', cursor: 'pointer', fontFamily: "'Inter'", fontSize: 13 }}>
+        Write another review
+      </button>
+    </div>
+  );
+
+  return (
+    <form onSubmit={handleSubmit} style={{ padding: isMobile ? '28px 20px' : '36px 40px' }}>
+      <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 22, color: '#1a1a1a', marginBottom: 6 }}>Share your experience</h3>
+      <p style={{ fontFamily: "'Inter'", fontSize: 13, color: '#888', marginBottom: 24 }}>Your review goes directly to us and may be featured on this page.</p>
+
+      {/* Star rating */}
+      <div style={{ marginBottom: 20 }}>
+        <div style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.1em', color: '#888', textTransform: 'uppercase', marginBottom: 8 }}>Your Rating *</div>
+        <StarRating value={form.rating} onChange={r => setForm(f => ({...f, rating: r}))} />
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 12, marginBottom: 12 }}>
+        <div>
+          <label style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.1em', color: '#888', textTransform: 'uppercase', display: 'block', marginBottom: 6 }}>Your Name *</label>
+          <input required style={inputStyle} placeholder="e.g. Priya M." value={form.name}
+            onChange={e => setForm(f => ({...f, name: e.target.value}))}
+            onFocus={e => e.target.style.borderColor = '#1b7a82'} onBlur={e => e.target.style.borderColor = '#e0dcd4'} />
+        </div>
+        <div>
+          <label style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.1em', color: '#888', textTransform: 'uppercase', display: 'block', marginBottom: 6 }}>City</label>
+          <input style={inputStyle} placeholder="e.g. Mumbai" value={form.loc}
+            onChange={e => setForm(f => ({...f, loc: e.target.value}))}
+            onFocus={e => e.target.style.borderColor = '#1b7a82'} onBlur={e => e.target.style.borderColor = '#e0dcd4'} />
+        </div>
+      </div>
+
+      <div style={{ marginBottom: 12 }}>
+        <label style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.1em', color: '#888', textTransform: 'uppercase', display: 'block', marginBottom: 6 }}>Which Tea?</label>
+        <select style={{...inputStyle, appearance: 'none', background: '#fff url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\'%3E%3Cpath d=\'M1 1l5 5 5-5\' stroke=\'%23888\' fill=\'none\' stroke-width=\'1.5\'/%3E%3C/svg%3E") no-repeat right 14px center'}}
+          value={form.tea} onChange={e => setForm(f => ({...f, tea: e.target.value}))}
+          onFocus={e => e.target.style.borderColor = '#1b7a82'} onBlur={e => e.target.style.borderColor = '#e0dcd4'}>
+          <option value="">Select a tea (optional)</option>
+          {TEAS.map(t => <option key={t.name} value={t.name}>{t.name}</option>)}
+        </select>
+      </div>
+
+      <div style={{ marginBottom: 20 }}>
+        <label style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.1em', color: '#888', textTransform: 'uppercase', display: 'block', marginBottom: 6 }}>Your Review *</label>
+        <textarea required rows={4} style={{...inputStyle, resize: 'vertical'}}
+          placeholder="What did you love about it? How does it taste? How do you drink it?"
+          value={form.text} onChange={e => setForm(f => ({...f, text: e.target.value}))}
+          onFocus={e => e.target.style.borderColor = '#1b7a82'} onBlur={e => e.target.style.borderColor = '#e0dcd4'} />
+      </div>
+
+      {error && <div style={{ fontFamily: "'Inter'", fontSize: 13, color: '#e8312a', marginBottom: 14 }}>⚠ {error}</div>}
+
+      <button type="submit" style={{
+        width: '100%', background: '#1b7a82', color: '#fff', border: 'none', borderRadius: 12,
+        padding: '14px', cursor: 'pointer', fontFamily: "'Inter'", fontSize: 14, fontWeight: 600,
+        transition: 'filter 200ms',
+      }}
+        onMouseEnter={e => e.currentTarget.style.filter = 'brightness(1.1)'}
+        onMouseLeave={e => e.currentTarget.style.filter = 'none'}>
+        Submit Review via WhatsApp →
+      </button>
+      <p style={{ fontFamily: "'Inter'", fontSize: 11, color: '#aaa', textAlign: 'center', marginTop: 10 }}>
+        Your review opens WhatsApp pre-filled — just tap Send.
+      </p>
+    </form>
+  );
+}
+
 function Testimonials() {
   const reviews = [
     { text: 'The Rum Green Tea is like nothing I have ever tasted. Warm, indulgent, and totally unique. My evening ritual now.', name: 'Priya M.', loc: 'Bengaluru', rating: 5 },
@@ -1560,10 +1678,28 @@ function Testimonials() {
             <span style={{ fontFamily: "'Inter'", fontSize: 12, fontWeight: 600, letterSpacing: '0.14em', color: T.teal, textTransform: 'uppercase' }}>Reviews</span>
             <div style={{ height: 1, width: 60, background: T.gold }}/>
           </div>
-          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 'clamp(24px, 3.5vw, 44px)', color: T.text }}>What people are saying</h2>
+          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 'clamp(24px, 3.5vw, 44px)', color: T.text, marginBottom: 12 }}>What people are saying</h2>
+          <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted }}>Real customers, real experiences.</p>
         </div>
-        <div ref={ref} style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : isTablet ? 'repeat(2,1fr)' : 'repeat(3,1fr)', gap: isMobile ? 16 : 28 }}>
+
+        {/* Existing reviews */}
+        <div ref={ref} style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : isTablet ? 'repeat(2,1fr)' : 'repeat(3,1fr)', gap: isMobile ? 16 : 28, marginBottom: isMobile ? 48 : 72 }}>
           {reviews.map((r, i) => <ReviewCard key={r.name} r={r} inView={inView} index={i} />)}
+        </div>
+
+        {/* Write a review */}
+        <div style={{ maxWidth: 680, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 32 }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, marginBottom: 14 }}>
+              <div style={{ height: 1, width: 48, background: T.gold }}/>
+              <span style={{ fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: T.teal, textTransform: 'uppercase' }}>Share Yours</span>
+              <div style={{ height: 1, width: 48, background: T.gold }}/>
+            </div>
+            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 'clamp(22px, 3vw, 34px)', color: T.text }}>Tried Nevisan tea?</h3>
+          </div>
+          <div style={{ background: T.white, borderRadius: 20, boxShadow: '0 4px 28px rgba(0,0,0,0.08)', overflow: 'hidden' }}>
+            <ReviewForm />
+          </div>
         </div>
       </div>
     </div>

@@ -875,24 +875,40 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
         <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
           {tea.tags.map(t => <TagChip key={t} label={t} color={tea.color} />)}
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: `1px solid ${T.border}`, paddingTop: 14 }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 2 }}>
-              <span style={{ fontFamily: "'Inter'", fontSize: 18, fontWeight: 700, color: T.teal }}>₹275</span>
-              <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
+        <div style={{ borderTop: `1px solid ${T.border}`, paddingTop: 14 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 2 }}>
+                <span style={{ fontFamily: "'Inter'", fontSize: 18, fontWeight: 700, color: T.teal }}>₹275</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
+              </div>
+              <span style={{ fontFamily: "'Inter'", fontSize: 11, color: '#e8312a', fontWeight: 600 }}>45% off · 50 gm</span>
             </div>
-            <span style={{ fontFamily: "'Inter'", fontSize: 11, color: '#e8312a', fontWeight: 600 }}>45% off MRP</span>
+            <button
+              onClick={(e) => { e.stopPropagation(); onView(tea); }}
+              style={{
+                background: 'transparent', color: T.teal, border: `1px solid ${T.teal}`, borderRadius: 8,
+                padding: '7px 14px', fontSize: 11, fontWeight: 500, cursor: 'pointer',
+                fontFamily: "'Inter'", letterSpacing: '0.04em', transition: 'background 200ms',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(27,122,130,0.07)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; }}
+            >Details</button>
           </div>
           <button
-            onClick={(e) => { e.stopPropagation(); onView(tea); }}
+            onClick={(e) => { e.stopPropagation(); openWhatsApp(tea.name); }}
             style={{
-              background: hovered ? T.tealMid : T.teal, color: T.white, border: 'none', borderRadius: 8,
-              padding: '8px 18px', fontSize: 12, fontWeight: 500, cursor: 'pointer',
-              fontFamily: "'Inter'", letterSpacing: '0.04em',
-              transition: 'background 200ms, transform 150ms',
-              transform: hovered ? 'scale(1.04)' : 'scale(1)',
+              width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 8,
+              padding: '10px', fontSize: 13, fontWeight: 600, cursor: 'pointer',
+              fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
+              transition: 'filter 200ms, transform 150ms',
+              transform: hovered ? 'scale(1.02)' : 'scale(1)',
             }}
-          >VIEW</button>
+            onMouseEnter={e => e.currentTarget.style.filter = 'brightness(1.06)'}
+            onMouseLeave={e => e.currentTarget.style.filter = 'none'}
+          >
+            <span style={{ fontSize: 15 }}>💬</span> Order on WhatsApp
+          </button>
         </div>
       </div>
     </div>

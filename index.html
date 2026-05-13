@@ -437,14 +437,15 @@ function Hero({ setPage }) {
   return (
     <div ref={heroRef} style={{ position: 'relative', height: '100vh', minHeight: 620, overflow: 'hidden', background: T.tealDark }}>
 
-      {/* ── Photo background ── */}
+      {/* ── Video background ── */}
       <div ref={sceneRef} style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
-        <img
-          src="hero-bg.jpg"
-          alt="Nevisan tea garden, Assam"
-          style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', filter:'saturate(1.2) brightness(0.72)' }}
-        />
-
+        <video
+          autoPlay muted loop playsInline
+          poster="hero-bg.jpg"
+          style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', filter:'saturate(1.15) brightness(0.78)' }}
+        >
+          <source src="tea-garden.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Gradient overlays */}

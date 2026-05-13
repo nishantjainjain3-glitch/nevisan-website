@@ -1859,11 +1859,167 @@ function CollectionSection({ setPage }) {
   );
 }
 
+/* ── BREW SCENE ───────────────────────────────────────────────── */
+function BrewScene() {
+  const wrapperRef = useRef(null);
+  const packRef    = useRef(null);
+  const flapRef    = useRef(null);
+  const streamGRef = useRef(null);
+  const pathRef    = useRef(null);
+  const cupRef     = useRef(null);
+  const liquidRef  = useRef(null);
+  const s1 = useRef(null), s2 = useRef(null), s3 = useRef(null);
+  const labelRef   = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.set(streamGRef.current, { opacity: 0 });
+      gsap.set(pathRef.current,    { strokeDashoffset: 300 });
+      gsap.set(cupRef.current,     { opacity: 0, y: 40 });
+      gsap.set([s1.current, s2.current, s3.current], { opacity: 0 });
+      gsap.set(labelRef.current,   { opacity: 0 });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: wrapperRef.current,
+          start: 'top top',
+          end:   'bottom bottom',
+          scrub: 1.5,
+        }
+      });
+
+      /* Phase 1 – pack tilts, flap tears open */
+      tl.to(packRef.current, { rotation: -22, y: -45, x: -25, svgOrigin: '200 163', duration: 1 }, 0)
+        .to(flapRef.current,  { scaleY: 0, transformOrigin: 'center top', duration: 0.5 }, 0.5);
+
+      /* Phase 2 – liquid stream pours, cup rises */
+      tl.to(streamGRef.current, { opacity: 1, duration: 0.25 }, 1.0)
+        .to(pathRef.current,    { strokeDashoffset: 0, duration: 0.9, ease: 'none' }, 1.1)
+        .to(cupRef.current,     { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, 1.5);
+
+      /* Phase 3 – cup fills, tea turns green, steam rises */
+      tl.to(liquidRef.current, { attr: { height: 58, y: 360 }, duration: 0.9 }, 2.0)
+        .to(liquidRef.current, { attr: { fill: '#5aaa28' }, duration: 0.7, ease: 'none' }, 2.5)
+        .to([s1.current, s2.current, s3.current], { opacity: 0.55, y: -35, stagger: 0.12, duration: 0.7 }, 2.4)
+        .to(labelRef.current,  { opacity: 1, duration: 0.5 }, 2.8);
+    });
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div ref={wrapperRef} style={{ position: 'relative', height: '400vh' }}>
+      <div style={{
+        position: 'sticky', top: 0, height: '100vh', overflow: 'hidden',
+        background: 'linear-gradient(160deg, #060f07 0%, #0e2412 60%, #0a1a10 100%)',
+        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+      }}>
+        {/* ambient glow */}
+        <div style={{ position:'absolute', inset:0, pointerEvents:'none',
+          background:'radial-gradient(ellipse 55% 55% at 50% 52%, rgba(27,122,130,0.10) 0%, transparent 70%)' }} />
+
+        <p style={{ fontFamily:"'Inter'", fontSize:10, fontWeight:600, letterSpacing:'0.22em',
+          color:'rgba(255,255,255,0.25)', textTransform:'uppercase', marginBottom:20, position:'relative', zIndex:1 }}>
+          Scroll to brew
+        </p>
+
+        <svg viewBox="0 0 400 540" style={{ width:'min(88vw, 400px)', height:'auto', position:'relative', zIndex:1 }}>
+          <defs>
+            <clipPath id="cupClipBrew">
+              <path d="M132 350 L148 420 L252 420 L268 350 Z" />
+            </clipPath>
+            <linearGradient id="streamGold" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%"   stopColor="#c9a84c" stopOpacity="0.95" />
+              <stop offset="100%" stopColor="#f0c84a" stopOpacity="0.55" />
+            </linearGradient>
+            <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b" />
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          {/* ── TEA PACK ── */}
+          <g ref={packRef}>
+            {/* body */}
+            <rect x="120" y="56" width="160" height="214" rx="10" fill="#162c1a" />
+            <rect x="129" y="65" width="142" height="196" rx="6"  fill="#0c1e10" />
+            {/* brand block */}
+            <rect x="135" y="74" width="130" height="90" rx="5" fill="#1b7a82" />
+            <text x="200" y="114" textAnchor="middle" fill="white"
+              fontSize="14" fontFamily="Georgia,serif" letterSpacing="2.5" fontWeight="600">NEVISAN</text>
+            <text x="200" y="134" textAnchor="middle" fill="rgba(255,255,255,0.6)"
+              fontSize="7.5" fontFamily="Inter,sans-serif" letterSpacing="1.8">PREMIUM TEA</text>
+            {/* gold divider + origin text */}
+            <line x1="136" y1="180" x2="264" y2="180" stroke="#c9a84c" strokeWidth="0.8" opacity="0.5" />
+            <text x="200" y="198" textAnchor="middle" fill="#c9a84c"
+              fontSize="8" fontFamily="Georgia,serif" fontStyle="italic">Single Origin · Golaghat, Assam</text>
+            {/* bottom seal */}
+            <rect x="120" y="254" width="160" height="16" rx="4" fill="#0c1e10" />
+            <ellipse cx="200" cy="254" rx="12" ry="5" fill="#162c1a" />
+            {/* FLAP */}
+            <g ref={flapRef} style={{ transformBox:'fill-box', transformOrigin:'center top' }}>
+              <rect x="120" y="24" width="160" height="36" rx="8" fill="#1e3f22" />
+              <line x1="148" y1="42" x2="252" y2="42" stroke="rgba(255,255,255,0.14)" strokeWidth="1" />
+              <text x="200" y="46" textAnchor="middle" fill="rgba(255,255,255,0.2)"
+                fontSize="6.5" fontFamily="Inter,sans-serif" letterSpacing="1">TEAR HERE</text>
+            </g>
+          </g>
+
+          {/* ── STREAM ── */}
+          <g ref={streamGRef}>
+            <path ref={pathRef}
+              d="M 200 60 C 192 150 208 240 200 348"
+              stroke="url(#streamGold)" strokeWidth="5.5"
+              fill="none" strokeLinecap="round"
+              strokeDasharray="300" strokeDashoffset="300"
+              filter="url(#softGlow)" />
+          </g>
+
+          {/* ── CUP ── */}
+          <g ref={cupRef}>
+            <path d="M130 350 L146 420 L254 420 L270 350 Z" fill="#162c1a" stroke="#c9a84c" strokeWidth="1.5" />
+            <rect ref={liquidRef} x="132" y="418" width="136" height="0"
+              fill="#c9a84c" clipPath="url(#cupClipBrew)" />
+            <line x1="130" y1="350" x2="270" y2="350" stroke="#c9a84c" strokeWidth="3" strokeLinecap="round" />
+            <path d="M268 368 Q310 385 252 408" fill="none" stroke="#c9a84c" strokeWidth="2.5" strokeLinecap="round" />
+            <ellipse cx="200" cy="428" rx="78" ry="7" fill="#0c1e10" stroke="#c9a84c" strokeWidth="1" />
+          </g>
+
+          {/* ── STEAM ── */}
+          <path ref={s1} d="M182 342 Q174 322 182 302"
+            stroke="rgba(200,240,210,0.4)" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0" />
+          <path ref={s2} d="M200 338 Q210 316 200 294"
+            stroke="rgba(200,240,210,0.35)" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0" />
+          <path ref={s3} d="M218 342 Q226 320 218 298"
+            stroke="rgba(200,240,210,0.4)" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0" />
+
+          {/* label at end */}
+          <text ref={labelRef} x="200" y="496" textAnchor="middle"
+            fill="#c9a84c" fontSize="12" fontFamily="Georgia,serif" fontStyle="italic" opacity="0">
+            Your perfect cup, from Golaghat
+          </text>
+        </svg>
+
+        {/* floating leaf particles */}
+        {[{l:'13%',t:'18%',d:'0s'},{l:'82%',t:'32%',d:'4s'},{l:'10%',t:'68%',d:'7s'},{l:'86%',t:'72%',d:'2.5s'}].map((p,i) => (
+          <div key={i} style={{
+            position:'absolute', left:p.l, top:p.t,
+            width:8, height:14, borderRadius:'50% 10% 50% 10%',
+            background:'rgba(90,170,40,0.22)',
+            animation:`leaf-drift ${9+i*1.4}s ease-in-out ${p.d} infinite`,
+            pointerEvents:'none',
+          }} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 /* ── HOME PAGE ────────────────────────────────────────────────── */
 function HomePage({ setPage }) {
   return (
     <div style={{ animation: 'page-enter 0.4s ease both' }}>
       <Hero setPage={setPage} />
+      <BrewScene />
       <Ticker />
       <CollectionSection setPage={setPage} />
       <PhilosophySection />

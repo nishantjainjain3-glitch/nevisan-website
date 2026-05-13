@@ -559,10 +559,14 @@ function Hero({ setPage }) {
   return (
     <div ref={heroRef} style={{ position: 'relative', height: '100vh', minHeight: 620, overflow: 'hidden', background: T.tealDark }}>
 
-      {/* ── Vivid Assam tea garden scene ── */}
+      {/* ── Photo background ── */}
       <div ref={sceneRef} style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
-
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, #0a1628 0%, #122248 10%, #1e3a6a 22%, #2e5a8a 34%, #4a82a8 44%, #7ab4c0 54%, #a8cc90 63%, #d4c052 73%, #e89820 83%, #c06010 92%, #8a3a08 100%)' }} />
+        <img
+          src="https://images.unsplash.com/photo-nPUPi2FKfGI?auto=format&fit=crop&w=1920&q=85"
+          alt="Nevisan tea garden, Assam"
+          style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', filter:'saturate(1.2) brightness(0.72)' }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, #0a1628 0%, #122248 10%, #1e3a6a 22%, #2e5a8a 34%, #4a82a8 44%, #7ab4c0 54%, #a8cc90 63%, #d4c052 73%, #e89820 83%, #c06010 92%, #8a3a08 100%)', opacity: 0 }} />
         <div style={{ position: 'absolute', bottom: '30%', left: '50%', transform: 'translateX(-50%)', width: '130%', height: 260, background: 'radial-gradient(ellipse 65% 100% at 50% 100%, rgba(240,170,30,0.55) 0%, rgba(220,130,20,0.25) 45%, transparent 70%)', animation: 'sun-glow 9s ease-in-out infinite' }} />
         <div style={{ position: 'absolute', bottom: '36%', left: '70%', width: 64, height: 64, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,245,150,1) 25%, rgba(255,210,60,0.7) 55%, transparent 80%)', boxShadow: '0 0 50px 25px rgba(240,190,30,0.45), 0 0 100px 50px rgba(240,160,10,0.2)', animation: 'sun-glow 9s ease-in-out 1s infinite' }} />
         <div style={{ position: 'absolute', bottom: 'calc(36% - 220px)', left: 'calc(70% - 220px)', width: 440, height: 440, borderRadius: '50%', background: 'conic-gradient(from 0deg, transparent 0deg, rgba(255,210,60,0.07) 5deg, transparent 10deg, transparent 15deg, rgba(255,200,40,0.05) 20deg, transparent 25deg, transparent 30deg, rgba(255,215,70,0.08) 35deg, transparent 40deg)', animation: 'ray-spin 55s linear infinite' }} />
@@ -1112,7 +1116,8 @@ function CollectionPage({ setPage }) {
   const cols = isMobile ? '1fr' : isTablet ? 'repeat(2,1fr)' : 'repeat(3, 1fr)';
 
   return (
-    <div style={{ background: T.cream, minHeight: '100vh', paddingTop: 68, animation: 'page-enter 0.45s ease both' }}>
+    <div style={{ background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+      <PageHero photo={PAGE_PHOTOS.collection} label="The Collection" title="Nine varieties, one origin" subtitle="Every leaf from Golaghat — whole, unblended, handcrafted." />
       <Ticker />
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '40px 20px' : '64px 32px' }}>
         {/* Section header */}
@@ -1726,10 +1731,45 @@ function HomePage({ setPage }) {
   );
 }
 
+/* ── PAGE HERO ────────────────────────────────────────────────── */
+const PAGE_PHOTOS = {
+  ourStory:       'https://images.unsplash.com/photo-CEGcSJ4h-40?auto=format&fit=crop&w=1920&q=85',
+  about:          'https://images.unsplash.com/photo-dYxx-jPaF34?auto=format&fit=crop&w=1920&q=85',
+  collection:     'https://images.unsplash.com/photo-fMQQ4BWoZGw?auto=format&fit=crop&w=1920&q=85',
+  journal:        'https://images.unsplash.com/photo-keuIxFZmPYg?auto=format&fit=crop&w=1920&q=85',
+  contact:        'https://images.unsplash.com/photo-cPTZp8BBMas?auto=format&fit=crop&w=1920&q=85',
+  certifications: 'https://images.unsplash.com/photo-Z-hvocTfR_s?auto=format&fit=crop&w=1920&q=85',
+  wholesale:      'https://images.unsplash.com/photo-0zPGOUuZqEs?auto=format&fit=crop&w=1920&q=85',
+};
+
+function PageHero({ photo, label, title, subtitle }) {
+  const { isMobile } = useViewport();
+  return (
+    <div style={{ position:'relative', height: isMobile ? 300 : 420, overflow:'hidden', marginTop: 68 }}>
+      <img
+        src={photo}
+        alt={title}
+        style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', filter:'brightness(0.55) saturate(1.15)' }}
+      />
+      {/* Gradient overlay */}
+      <div style={{ position:'absolute', inset:0, background:'linear-gradient(to bottom, rgba(5,18,10,0.35) 0%, rgba(5,18,10,0.65) 100%)' }} />
+      {/* Content */}
+      <div style={{ position:'relative', zIndex:1, height:'100%', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', textAlign:'center', padding: isMobile ? '0 24px' : '0 48px' }}>
+        <div style={{ fontFamily:"'Inter'", fontSize:11, fontWeight:600, letterSpacing:'0.2em', color:T.gold, textTransform:'uppercase', marginBottom:16, display:'flex', alignItems:'center', gap:12 }}>
+          <div style={{ width:28, height:1, background:T.gold }} />{label}<div style={{ width:28, height:1, background:T.gold }} />
+        </div>
+        <h1 style={{ fontFamily:"'Playfair Display', Georgia, serif", fontWeight:400, fontSize:'clamp(28px, 5vw, 58px)', color:'#fff', lineHeight:1.15, marginBottom: subtitle ? 16 : 0, animation:'page-enter 0.5s ease both' }}>{title}</h1>
+        {subtitle && <p style={{ fontFamily:"'Inter'", fontSize: isMobile ? 14 : 16, color:'rgba(255,255,255,0.72)', maxWidth:500, lineHeight:1.65 }}>{subtitle}</p>}
+      </div>
+    </div>
+  );
+}
+
 /* ── OUR STORY PAGE ───────────────────────────────────────────── */
 function OurStoryPage({ setPage }) {
   return (
-    <div style={{ paddingTop: 72, animation: 'page-enter 0.45s ease both' }}>
+    <div style={{ animation: 'page-enter 0.45s ease both' }}>
+      <PageHero photo={PAGE_PHOTOS.ourStory} label="Single Origin · Golaghat, Assam" title="Where every leaf begins" subtitle="A misty garden in Assam. A family obsession with quality. The whole story in every cup." />
       <PhilosophySection />
       <div style={{ background: T.cream, padding: '80px 32px' }}>
         <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
@@ -1851,13 +1891,10 @@ function JournalPage({ setPage }) {
   const { isMobile } = useViewport();
   const [activePost, setActivePost] = useState(null);
   return (
-    <div style={{ paddingTop: 72, background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+    <div style={{ background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+      <PageHero photo={PAGE_PHOTOS.journal} label="The Nevisan Journal" title="Stories from the garden" subtitle="Craft, origin, wellness and brewing guides — everything tea." />
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: isMobile ? '48px 20px 80px' : '64px 40px 100px' }}>
-        <div style={{ textAlign: 'center', marginBottom: isMobile ? 40 : 60 }}>
-          <p style={{ fontFamily: "'Inter'", fontSize: 12, letterSpacing: '0.18em', color: T.gold, textTransform: 'uppercase', marginBottom: 14 }}>The Nevisan Journal</p>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 34 : 48, color: T.text, lineHeight: 1.2, marginBottom: 16 }}>Stories from the garden</h1>
-          <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted, maxWidth: 480, margin: '0 auto' }}>Craft, origin, wellness and brewing guides — everything tea.</p>
-        </div>
+        <div style={{ display: 'none' }}></div>
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: isMobile ? 20 : 28 }}>
           {POSTS.map((post, i) => (
             <div key={i} onClick={() => setActivePost(post)} style={{ background: T.white, borderRadius: 16, padding: '28px 24px', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', cursor: 'pointer', transition: 'transform 200ms, box-shadow 200ms' }}
@@ -1885,12 +1922,10 @@ function JournalPage({ setPage }) {
 function AboutPage({ setPage }) {
   const { isMobile } = useViewport();
   return (
-    <div style={{ paddingTop: 72, background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+    <div style={{ background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+      <PageHero photo={PAGE_PHOTOS.about} label="Our Story" title="Tea as it was meant to grow." subtitle="A family from Guwahati, a garden in Golaghat, and an obsession with the whole leaf." />
       <div style={{ maxWidth: 900, margin: '0 auto', padding: isMobile ? '48px 20px 80px' : '64px 40px 100px' }}>
-        <div style={{ textAlign: 'center', marginBottom: 56 }}>
-          <p style={{ fontFamily: "'Inter'", fontSize: 12, letterSpacing: '0.18em', color: T.gold, textTransform: 'uppercase', marginBottom: 14 }}>Our Story</p>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 34 : 48, color: T.text, marginBottom: 20 }}>Tea as it was meant to grow.</h1>
-        </div>
+        <div style={{ display: 'none' }}></div>
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 48, marginBottom: 64 }}>
           <div>
             <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 24, color: T.text, marginBottom: 16 }}>Why Nevisan exists</h2>
@@ -1934,13 +1969,10 @@ function CertificationsPage({ setPage }) {
     { name: 'Whole Leaf Standard', number: 'No CTC · No Dust · No Fannings', icon: '🍃', color: '#1b7a82', desc: 'All Nevisan teas use only whole or large-broken leaves. We do not use CTC (cut-tear-curl) processed tea, fannings, or dust in any product.' },
   ];
   return (
-    <div style={{ paddingTop: 72, background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+    <div style={{ background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+      <PageHero photo={PAGE_PHOTOS.certifications} label="Trust & Transparency" title="Our Certifications" subtitle="Every claim we make is backed by a third-party certification or verifiable standard." />
       <div style={{ maxWidth: 900, margin: '0 auto', padding: isMobile ? '48px 20px 80px' : '64px 40px 100px' }}>
-        <div style={{ textAlign: 'center', marginBottom: 56 }}>
-          <p style={{ fontFamily: "'Inter'", fontSize: 12, letterSpacing: '0.18em', color: T.gold, textTransform: 'uppercase', marginBottom: 14 }}>Trust & Transparency</p>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 34 : 48, color: T.text, marginBottom: 16 }}>Our Certifications</h1>
-          <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted, maxWidth: 480, margin: '0 auto' }}>Every claim we make is backed by a third-party certification or verifiable standard.</p>
-        </div>
+        <div style={{ display: 'none' }}></div>
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(2,1fr)', gap: 24 }}>
           {certs.map((c, i) => (
             <div key={i} style={{ background: T.white, borderRadius: 16, padding: '28px', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
@@ -1964,13 +1996,10 @@ function CertificationsPage({ setPage }) {
 function WholesalePage({ setPage }) {
   const { isMobile } = useViewport();
   return (
-    <div style={{ paddingTop: 72, background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+    <div style={{ background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+      <PageHero photo={PAGE_PHOTOS.wholesale} label="For Businesses" title="Wholesale & Bulk Orders" subtitle="Supply your café, restaurant, hotel or retail store with premium single-origin Assam teas." />
       <div style={{ maxWidth: 800, margin: '0 auto', padding: isMobile ? '48px 20px 80px' : '64px 40px 100px' }}>
-        <div style={{ textAlign: 'center', marginBottom: 48 }}>
-          <p style={{ fontFamily: "'Inter'", fontSize: 12, letterSpacing: '0.18em', color: T.gold, textTransform: 'uppercase', marginBottom: 14 }}>For Businesses</p>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 34 : 48, color: T.text, marginBottom: 16 }}>Wholesale & Bulk Orders</h1>
-          <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted, maxWidth: 520, margin: '0 auto' }}>Supply your café, restaurant, hotel or retail store with premium single-origin Assam teas directly from Nevisan.</p>
-        </div>
+        <div style={{ display: 'none' }}></div>
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3,1fr)', gap: 20, marginBottom: 48 }}>
           {[
             { icon: '☕', title: 'Cafés & Restaurants', desc: 'Premium loose leaf or custom-packaged portions for your menu. White-label options available.' },
@@ -2008,13 +2037,10 @@ function ContactPage({ setPage }) {
   };
   const inputStyle = { width: '100%', padding: '12px 16px', border: '1.5px solid #e0dcd4', borderRadius: 10, fontFamily: "'Inter'", fontSize: 14, color: T.text, background: T.white, outline: 'none', boxSizing: 'border-box', transition: 'border-color 200ms' };
   return (
-    <div style={{ paddingTop: 72, background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+    <div style={{ background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
+      <PageHero photo={PAGE_PHOTOS.contact} label="Get in Touch" title="We'd love to hear from you" subtitle="Orders, wholesale enquiries, or just a question about tea." />
       <div style={{ maxWidth: 960, margin: '0 auto', padding: isMobile ? '48px 20px 80px' : '64px 40px 100px' }}>
-        <div style={{ textAlign: 'center', marginBottom: isMobile ? 40 : 56 }}>
-          <p style={{ fontFamily: "'Inter'", fontSize: 12, letterSpacing: '0.18em', color: T.gold, textTransform: 'uppercase', marginBottom: 14 }}>Get in Touch</p>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 34 : 48, color: T.text, marginBottom: 16 }}>We'd love to hear from you</h1>
-          <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted }}>Orders, wholesale enquiries, or just a question about tea.</p>
-        </div>
+        <div style={{ display: 'none' }}></div>
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 32 : 48, alignItems: 'start' }}>
           {/* Contact details */}
           <div>

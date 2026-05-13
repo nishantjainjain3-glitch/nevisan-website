@@ -440,7 +440,7 @@ function Hero({ setPage }) {
       {/* ── Photo background ── */}
       <div ref={sceneRef} style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
         <img
-          src="https://images.pexels.com/photos/6128955/pexels-photo-6128955.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          src="hero-bg.jpg"
           alt="Nevisan tea garden, Assam"
           style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', filter:'saturate(1.2) brightness(0.72)' }}
         />
@@ -1546,13 +1546,13 @@ function HomePage({ setPage }) {
 
 /* ── PAGE HERO ────────────────────────────────────────────────── */
 const PAGE_PHOTOS = {
-  ourStory:       'https://images.pexels.com/photos/34604770/pexels-photo-34604770.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  about:          'https://images.pexels.com/photos/5707071/pexels-photo-5707071.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  collection:     'https://images.pexels.com/photos/2321839/pexels-photo-2321839.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  journal:        'https://images.pexels.com/photos/5975975/pexels-photo-5975975.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  contact:        'https://images.pexels.com/photos/7018209/pexels-photo-7018209.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  certifications: 'https://images.pexels.com/photos/32908162/pexels-photo-32908162.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  wholesale:      'https://images.pexels.com/photos/5663388/pexels-photo-5663388.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  ourStory:       'story-bg.jpg',
+  about:          'about-bg.jpg',
+  collection:     'collection-bg.jpg',
+  journal:        'journal-bg.jpg',
+  contact:        'contact-bg.jpg',
+  certifications: 'certifications-bg.jpg',
+  wholesale:      'wholesale-bg.jpg',
 };
 
 function PageHero({ photo, label, title, subtitle }) {

@@ -1925,6 +1925,69 @@ function InstagramReels() {
   );
 }
 
+function HowToBrewSection() {
+  const { isMobile } = useViewport();
+  const steps = [
+    { step: '01', icon: '💧', title: 'Heat the Water', desc: 'Bring fresh water to 80–90°C. Never use boiling water — it burns the leaves and makes the tea bitter.' },
+    { step: '02', icon: '🍃', title: 'Measure Your Tea', desc: 'Use 1 teaspoon (approx. 2g) of Nevisan tea per cup. For a stronger cup, add a little more — never over-steep.' },
+    { step: '03', icon: '⏱', title: 'Steep with Patience', desc: 'Pour water over the leaves and steep for 2–4 minutes depending on the variety. Check the pack for exact timing.' },
+    { step: '04', icon: '🫖', title: 'Strain & Serve', desc: 'Remove or strain the leaves. Enjoy as is — no milk, no sugar needed. The flavour speaks for itself.' },
+    { step: '05', icon: '♻️', title: 'Steep Again', desc: 'Don\'t throw the leaves away. Whole leaf tea can be steeped a second time — the second cup is equally rewarding.' },
+  ];
+  const tips = [
+    { icon: '🌡️', text: 'Never use boiling water (100°C) — 80–90°C is ideal' },
+    { icon: '🧊', text: 'Let it cool slightly, then pour over ice for cold brew' },
+    { icon: '🍯', text: 'A touch of honey pairs beautifully with herbal varieties' },
+    { icon: '🫙', text: 'Store tea in an airtight container away from sunlight' },
+  ];
+  return (
+    <section style={{ background: '#fff', padding: isMobile ? '64px 20px' : '100px 32px' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: isMobile ? 40 : 64 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, marginBottom: 14 }}>
+            <div style={{ height: 1, width: 48, background: T.gold }} />
+            <span style={{ fontFamily: "'Inter'", fontSize: 12, fontWeight: 600, letterSpacing: '0.14em', color: T.teal, textTransform: 'uppercase' }}>The Ritual</span>
+            <div style={{ height: 1, width: 48, background: T.gold }} />
+          </div>
+          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 'clamp(26px, 3.5vw, 44px)', color: T.text, marginBottom: 14 }}>How to Brew the Perfect Cup</h2>
+          <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted, maxWidth: 500, margin: '0 auto', lineHeight: 1.7 }}>Five simple steps. One perfect cup. Every single time.</p>
+        </div>
+
+        {/* Steps */}
+        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(5, 1fr)', gap: isMobile ? 16 : 24, marginBottom: isMobile ? 48 : 72, position: 'relative' }}>
+          {!isMobile && <div style={{ position: 'absolute', top: 36, left: '10%', right: '10%', height: 1, background: `linear-gradient(90deg, transparent, ${T.gold}, transparent)`, zIndex: 0 }} />}
+          {steps.map((s, i) => (
+            <div key={i} style={{ display: 'flex', flexDirection: isMobile ? 'row' : 'column', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 16 : 0, background: T.cream, borderRadius: 16, padding: isMobile ? '18px 20px' : '28px 20px', textAlign: isMobile ? 'left' : 'center', position: 'relative', zIndex: 1 }}>
+              <div style={{ width: 56, height: 56, borderRadius: '50%', background: '#fff', border: `2px solid ${T.gold}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, flexShrink: 0, margin: isMobile ? '0' : '0 auto 16px' }}>{s.icon}</div>
+              <div>
+                <div style={{ fontFamily: "'Inter'", fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', color: T.gold, textTransform: 'uppercase', marginBottom: 6 }}>Step {s.step}</div>
+                <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: isMobile ? 16 : 15, fontWeight: 400, color: T.text, marginBottom: 8 }}>{s.title}</div>
+                <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted, lineHeight: 1.65 }}>{s.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Tips */}
+        <div style={{ background: T.teal, borderRadius: 20, padding: isMobile ? '28px 20px' : '40px 48px' }}>
+          <div style={{ textAlign: 'center', marginBottom: 28 }}>
+            <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: isMobile ? 20 : 24, fontWeight: 400, color: '#fff' }}>Pro Tips from Our Garden</span>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)', gap: isMobile ? 14 : 20 }}>
+            {tips.map((t, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 14, background: 'rgba(255,255,255,0.1)', borderRadius: 12, padding: '14px 18px' }}>
+                <span style={{ fontSize: 22, flexShrink: 0 }}>{t.icon}</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: 13, color: 'rgba(255,255,255,0.9)', lineHeight: 1.5 }}>{t.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FAQSection() {
   const { isMobile } = useViewport();
   const [open, setOpen] = useState(null);
@@ -2015,6 +2078,7 @@ function HomePage({ setPage }) {
       <TrustBadges />
       <CollectionSection setPage={setPage} />
       <PhilosophySection />
+      <HowToBrewSection />
       <WhereToBuy />
       <Testimonials />
       <InstagramReels />

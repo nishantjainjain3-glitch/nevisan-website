@@ -1093,7 +1093,7 @@ function CollectionPage({ setPage }) {
       </div>
 
       {/* Product Modal */}
-      {selected && (
+      {selected && ReactDOM.createPortal(
         <div
           style={{ position: 'fixed', inset: 0, background: 'rgba(15,63,69,0.75)', zIndex: 200, display: 'flex', alignItems: isMobile ? 'flex-end' : 'center', justifyContent: 'center', padding: isMobile ? 0 : 24, backdropFilter: 'blur(4px)' }}
           onClick={() => setSelected(null)}
@@ -1226,7 +1226,8 @@ function CollectionPage({ setPage }) {
               </>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       {/* Full-screen image lightbox */}
@@ -1698,7 +1699,7 @@ function CollectionSection({ setPage }) {
       </div>
 
       {/* Product Modal — bottom sheet on mobile */}
-      {selected && (
+      {selected && ReactDOM.createPortal(
         <div
           style={{ position: 'fixed', inset: 0, background: 'rgba(15,63,69,0.75)', zIndex: 200, display: 'flex', alignItems: isMobile ? 'flex-end' : 'center', justifyContent: 'center', padding: isMobile ? 0 : 24, backdropFilter: 'blur(4px)' }}
           onClick={() => setSelected(null)}
@@ -1820,7 +1821,8 @@ function CollectionSection({ setPage }) {
               </>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

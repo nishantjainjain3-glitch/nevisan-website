@@ -1858,21 +1858,11 @@ function CollectionSection({ setPage }) {
 function InstagramReels() {
   const { isMobile } = useViewport();
   const reels = [
-    { url: 'https://www.instagram.com/reel/DYELcq4xsH7/', bg: 'collection-bg.jpg' },
-    { url: 'https://www.instagram.com/reel/DXvomNwRm32/', bg: 'story-bg.jpg' },
-    { url: 'https://www.instagram.com/reel/DYRB_piR_vB/', bg: 'about-bg.jpg' },
-    { url: 'https://www.instagram.com/reel/DYGw0YQxn40/', bg: 'wholesale-bg.jpg' },
+    { url: 'https://www.instagram.com/reel/DYELcq4xsH7/', bg: 'reel1.jpg.jpg' },
+    { url: 'https://www.instagram.com/reel/DXvomNwRm32/', bg: 'reel2.jpg.jpg' },
+    { url: 'https://www.instagram.com/reel/DYRB_piR_vB/', bg: 'reel3.jpg.jpg' },
+    { url: 'https://www.instagram.com/reel/DYGw0YQxn40/', bg: 'reel4.jpg.jpg' },
   ];
-  const [thumbs, setThumbs] = useState({});
-
-  useEffect(() => {
-    reels.forEach(reel => {
-      fetch(`https://api.instagram.com/oembed/?url=${encodeURIComponent(reel.url)}&format=json`)
-        .then(r => r.json())
-        .then(data => { if (data.thumbnail_url) setThumbs(p => ({ ...p, [reel.url]: data.thumbnail_url })); })
-        .catch(() => {});
-    });
-  }, []);
 
   return (
     <section style={{ background: '#fff', padding: isMobile ? '56px 0' : '80px 0', overflow: 'hidden' }}>
@@ -1916,7 +1906,7 @@ function InstagramReels() {
               onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.12)'; }}
             >
               {/* Background photo — real Instagram thumbnail if available, else fallback */}
-              <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${thumbs[reel.url] || reel.bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+              <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${reel.bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
               {/* Gradient overlay */}
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.2) 100%)' }} />
               {/* Play button */}
@@ -2165,7 +2155,7 @@ function OurStoryPage({ setPage }) {
 const POSTS = [
   {
     title: 'Why Whole Leaf Tea Tastes Different',
-    date: 'April 2025', tag: 'CRAFT',
+    date: 'August 2025', tag: 'CRAFT',
     excerpt: 'Most commercial teas use broken leaves and dust — it brews fast but loses the complex flavour compounds locked in whole leaves.',
     body: [
       'Walk into any supermarket and pick up a tea bag. Tear it open. What you\'ll find is CTC — Cut, Tear, Curl — a method that reduces whole tea leaves into tiny granules optimised for speed and colour, not taste.',
@@ -2176,7 +2166,7 @@ const POSTS = [
   },
   {
     title: 'The Science Behind GABA Tea',
-    date: 'March 2025', tag: 'WELLNESS',
+    date: 'September 2025', tag: 'WELLNESS',
     excerpt: 'GABA is your brain\'s natural calming signal. Here\'s how Nevisan\'s oolong leaves are processed to naturally amplify it.',
     body: [
       'GABA — gamma-aminobutyric acid — is the primary inhibitory neurotransmitter in your brain. In simple terms, it\'s the signal your nervous system sends to slow down, stop over-firing, and relax. Low GABA is associated with anxiety, poor sleep, and mental restlessness.',
@@ -2187,7 +2177,7 @@ const POSTS = [
   },
   {
     title: 'Golaghat: India\'s Hidden Tea Belt',
-    date: 'February 2025', tag: 'ORIGIN',
+    date: 'October 2025', tag: 'ORIGIN',
     excerpt: 'While Darjeeling gets the headlines, Golaghat in upper Assam quietly produces some of the boldest, most complex teas in the world.',
     body: [
       'Ask most people to name an Indian tea region and they\'ll say Darjeeling. The "Champagne of teas" has built an unmatched reputation over 150 years of marketing. But among tea professionals and serious drinkers, a different region commands deep respect: Golaghat, in upper Assam.',
@@ -2198,7 +2188,7 @@ const POSTS = [
   },
   {
     title: 'How to Get Three Steeps from One Serving',
-    date: 'January 2025', tag: 'BREWING',
+    date: 'November 2025', tag: 'BREWING',
     excerpt: 'Whole leaf teas open up with each steep. The first is bold, the second more rounded, the third surprisingly sweet.',
     body: [
       'One of the most common mistakes people make with whole leaf tea is throwing it away after the first steep. This is like eating only the crust of a sourdough loaf.',
@@ -2211,7 +2201,7 @@ const POSTS = [
   },
   {
     title: 'Rum Green Tea: How We Made It',
-    date: 'December 2024', tag: 'CRAFT',
+    date: 'December 2025', tag: 'CRAFT',
     excerpt: 'No alcohol. No artificial flavour. Just 14 attempts and a precise cold-infusion technique using natural botanicals.',
     body: [
       'The idea came from a simple question: what if you could drink something that felt like a warm evening without the alcohol? Not a mocktail — those still require mixing and equipment. A tea. Something you could brew in a cup and that would genuinely evoke the character of aged rum.',
@@ -2222,7 +2212,7 @@ const POSTS = [
   },
   {
     title: 'Morning vs Evening Teas: A Simple Guide',
-    date: 'November 2024', tag: 'WELLNESS',
+    date: 'January 2026', tag: 'WELLNESS',
     excerpt: 'Lemongrass and Spearmint for mornings. Chamomile and GABA for evenings. Here\'s why each tea works best at certain times.',
     body: [
       'Not all teas are equal at all hours. The compounds in each variety interact differently with your body depending on where you are in your daily rhythm. Here\'s how to match your Nevisan tea to your time of day:',

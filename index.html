@@ -1925,6 +1925,65 @@ function InstagramReels() {
   );
 }
 
+function FAQSection() {
+  const { isMobile } = useViewport();
+  const [open, setOpen] = useState(null);
+  const faqs = [
+    { q: 'Do you deliver across India?', a: 'Yes! We deliver pan-India via Amazon and Flipkart. You can also order directly on WhatsApp for personal assistance.' },
+    { q: 'How long does delivery take?', a: 'Amazon and Flipkart orders typically arrive in 3–5 business days. WhatsApp orders are dispatched within 24 hours.' },
+    { q: 'What is the shelf life of the tea?', a: 'All Nevisan teas have a shelf life of 24 months from the date of manufacture when stored in a cool, dry place away from direct sunlight.' },
+    { q: 'Is your tea organic and chemical free?', a: 'Yes. Every batch is PGS-India organic certified and grown without pesticides or chemicals. From soil to seal, we guarantee it.' },
+    { q: 'Can the tea be steeped more than once?', a: 'Absolutely. Because we use 100% whole leaf tea, most of our varieties can be steeped twice — the second cup is just as rewarding.' },
+    { q: 'Do you offer bulk or wholesale orders?', a: 'Yes! For bulk orders for hotels, cafes, offices or gifting, reach out to us directly on WhatsApp at +91 98642 45687.' },
+    { q: 'What is your return policy?', a: 'If you receive a damaged or incorrect product, contact us on WhatsApp within 48 hours of delivery and we will replace it immediately.' },
+  ];
+  return (
+    <section style={{ background: T.cream, padding: isMobile ? '60px 20px' : '100px 32px' }}>
+      <div style={{ maxWidth: 760, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: isMobile ? 36 : 56 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, marginBottom: 14 }}>
+            <div style={{ height: 1, width: 48, background: T.gold }} />
+            <span style={{ fontFamily: "'Inter'", fontSize: 12, fontWeight: 600, letterSpacing: '0.14em', color: T.teal, textTransform: 'uppercase' }}>Got Questions?</span>
+            <div style={{ height: 1, width: 48, background: T.gold }} />
+          </div>
+          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 'clamp(24px, 3.5vw, 42px)', color: T.text }}>Frequently Asked Questions</h2>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          {faqs.map((faq, i) => (
+            <div key={i}
+              style={{ background: '#fff', borderRadius: 14, overflow: 'hidden', boxShadow: open === i ? '0 4px 24px rgba(0,0,0,0.08)' : '0 1px 4px rgba(0,0,0,0.05)', transition: 'box-shadow 0.2s ease' }}
+            >
+              <button
+                onClick={() => setOpen(open === i ? null : i)}
+                style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: isMobile ? '16px 18px' : '20px 28px', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: 16 }}
+              >
+                <span style={{ fontFamily: "'Inter'", fontSize: isMobile ? 14 : 15, fontWeight: 600, color: T.text, lineHeight: 1.4 }}>{faq.q}</span>
+                <span style={{ fontSize: 18, color: T.teal, flexShrink: 0, transition: 'transform 0.25s ease', transform: open === i ? 'rotate(45deg)' : 'rotate(0deg)', display: 'inline-block' }}>+</span>
+              </button>
+              {open === i && (
+                <div style={{ padding: isMobile ? '0 18px 18px' : '0 28px 24px' }}>
+                  <div style={{ height: 1, background: '#f0ede8', marginBottom: isMobile ? 14 : 18 }} />
+                  <p style={{ fontFamily: "'Inter'", fontSize: isMobile ? 13 : 14, color: T.textMuted, lineHeight: 1.7, margin: 0 }}>{faq.a}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 40 }}>
+          <p style={{ fontFamily: "'Inter'", fontSize: 14, color: T.textMuted, marginBottom: 16 }}>Still have a question?</p>
+          <a href="https://wa.me/919864245687?text=Hi%20Nevisan!%20I%20have%20a%20question."
+            target="_blank" rel="noopener noreferrer"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#25D366', color: '#fff', borderRadius: 9999, padding: '12px 28px', fontFamily: "'Inter'", fontSize: 14, fontWeight: 600, textDecoration: 'none' }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.523 5.836L.057 23.643a.5.5 0 00.625.601l5.963-1.583A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.045-1.395l-.361-.214-3.741.993.984-3.648-.235-.374A9.808 9.808 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+            Ask us on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function TrustBadges() {
   const { isMobile } = useViewport();
   const badges = [
@@ -1959,6 +2018,7 @@ function HomePage({ setPage }) {
       <WhereToBuy />
       <Testimonials />
       <InstagramReels />
+      <FAQSection />
       <Footer setPage={setPage} />
     </div>
   );

@@ -1844,6 +1844,40 @@ function AboutPage({ setPage }) {
             ))}
           </div>
         </div>
+        {/* ── Founders ── */}
+        <div style={{ marginBottom: 64 }}>
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <div style={{ fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: '0.18em', color: T.teal, textTransform: 'uppercase', marginBottom: 12 }}>The People Behind Nevisan</div>
+            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 28 : 36, color: T.text, lineHeight: 1.2, marginBottom: 16 }}>Founded in 2025 by a husband &amp; wife</h2>
+            <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted, lineHeight: 1.75, maxWidth: 560, margin: '0 auto' }}>Nevisan began with a shared conviction — that India deserves better tea than what's in most homes. Two people, one idea, and a garden in Golaghat.</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 24 : 40 }}>
+            {[
+              {
+                initials: 'NJ',
+                name: 'Nishant Jain',
+                role: 'Founder',
+                bio: 'Nishant drives the sourcing, operations and vision for Nevisan. Growing up in Guwahati with Assam\'s tea gardens as a backdrop, he always believed the region\'s finest teas deserved a better story — and a brand worthy of telling it.',
+              },
+              {
+                initials: 'UJ',
+                name: 'Uditi Jain',
+                role: 'Founder & Creative Director',
+                bio: 'Uditi shapes everything you see and feel about Nevisan — the design, the words, the experience. She brings the brand\'s warmth to life, ensuring that every touchpoint reflects the care that goes into every leaf.',
+              },
+            ].map((founder) => (
+              <div key={founder.name} style={{ background: T.white, borderRadius: 20, padding: isMobile ? '28px 24px' : '36px 32px', boxShadow: '0 2px 16px rgba(0,0,0,0.06)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <div style={{ width: 80, height: 80, borderRadius: '50%', background: `linear-gradient(135deg, ${T.teal}, ${T.tealMid})`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20, boxShadow: '0 4px 16px rgba(27,122,130,0.25)' }}>
+                  <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 26, color: '#fff', fontWeight: 400 }}>{founder.initials}</span>
+                </div>
+                <div style={{ fontFamily: "'Inter'", fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', color: T.gold, textTransform: 'uppercase', marginBottom: 6 }}>{founder.role}</div>
+                <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 22, color: T.text, marginBottom: 14 }}>{founder.name}</h3>
+                <p style={{ fontFamily: "'Inter'", fontSize: 14, color: T.textMuted, lineHeight: 1.75 }}>{founder.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div style={{ background: T.teal, borderRadius: 20, padding: isMobile ? '32px 24px' : '48px 56px', textAlign: 'center' }}>
           <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 28, color: '#fff', marginBottom: 16 }}>From Mahabir Enterprise, Guwahati</h3>
           <p style={{ fontFamily: "'Inter'", fontSize: 15, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, maxWidth: 540, margin: '0 auto 28px' }}>We are a family-run business from Guwahati, Assam. Every decision — from which garden to source from to what price to charge — is made with one question in mind: is this good for the person drinking it?</p>

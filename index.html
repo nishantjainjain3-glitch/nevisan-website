@@ -223,6 +223,25 @@ const T = {
 
 /* ── Viewport Context ───────────────────────────────────────── */
 const ViewportCtx = React.createContext({ isMobile: false, isTablet: false });
+
+/* ── CART CONTEXT ────────────────────────────────────────────── */
+const CartCtx = React.createContext({ cart: [], addToCart: () => {}, updateQty: () => {}, clearCart: () => {} });
+function CartProvider({ children }) {
+  const [cart, setCart] = useState([]);
+  const addToCart = (tea) => {
+    setCart(prev => {
+      const ex = prev.find(i => i.tea.name === tea.name);
+      if (ex) return prev.map(i => i.tea.name === tea.name ? { ...i, qty: i.qty + 1 } : i);
+      return [...prev, { tea, qty: 1 }];
+    });
+  };
+  const updateQty = (name, delta) => setCart(prev =>
+    prev.map(i => i.tea.name === name ? { ...i, qty: Math.max(0, i.qty + delta) } : i).filter(i => i.qty > 0)
+  );
+  const clearCart = () => setCart([]);
+  return <CartCtx.Provider value={{ cart, addToCart, updateQty, clearCart }}>{children}</CartCtx.Provider>;
+}
+function useCart() { return React.useContext(CartCtx); }
 const useViewport = () => React.useContext(ViewportCtx);
 
 /* ── Scroll Progress Bar ────────────────────────────────────── */
@@ -1143,15 +1162,16 @@ function CollectionPage({ setPage }) {
                 </div>
                 {/* BUY BUTTONS — immediately visible */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
+                  <AddToCartBtn tea={selected} onAdded={() => setSelected(null)} />
                   <RippleButton onClick={() => openWhatsApp(selected.name)}
-                    style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '13px', fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
+                    style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
                     hoverStyle={{ transform: 'scale(1.02)', filter: 'brightness(1.05)' }}
                   ><span>💬</span> Order via WhatsApp</RippleButton>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
                     <button onClick={() => window.open('https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln', '_blank')}
-                      style={{ background: '#FF9900', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Amazon</button>
+                      style={{ background: '#FF9900', color: '#fff', border: 'none', borderRadius: 9999, padding: '9px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Amazon</button>
                     <button onClick={() => window.open('https://www.flipkart.com/store/nevisan', '_blank')}
-                      style={{ background: '#2874F0', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Flipkart</button>
+                      style={{ background: '#2874F0', color: '#fff', border: 'none', borderRadius: 9999, padding: '9px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Flipkart</button>
                   </div>
                 </div>
                 {/* Details below (scrollable) */}
@@ -1747,15 +1767,16 @@ function CollectionSection({ setPage }) {
                     style={{ position: 'absolute', top: 0, right: 0, background: 'rgba(0,0,0,0.08)', border: 'none', borderRadius: '50%', width: 30, height: 30, cursor: 'pointer', fontSize: 15, display: 'flex', alignItems: 'center', justifyContent: 'center', color: T.text }}>✕</button>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
+                  <AddToCartBtn tea={selected} onAdded={() => setSelected(null)} />
                   <RippleButton onClick={() => openWhatsApp(selected.name)}
-                    style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '13px', fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
+                    style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
                     hoverStyle={{ transform: 'scale(1.02)', filter: 'brightness(1.05)' }}
                   ><span>💬</span> Order via WhatsApp</RippleButton>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
                     <button onClick={() => window.open('https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln', '_blank')}
-                      style={{ background: '#FF9900', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Amazon</button>
+                      style={{ background: '#FF9900', color: '#fff', border: 'none', borderRadius: 9999, padding: '9px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Amazon</button>
                     <button onClick={() => window.open('https://www.flipkart.com/store/nevisan', '_blank')}
-                      style={{ background: '#2874F0', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Flipkart</button>
+                      style={{ background: '#2874F0', color: '#fff', border: 'none', borderRadius: 9999, padding: '9px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Flipkart</button>
                   </div>
                 </div>
                 <div style={{ borderTop: '1px solid #f0f0f0', paddingTop: 14 }}>
@@ -2629,13 +2650,103 @@ function App() {
   else content = <HomePage setPage={handleSetPage} />;
 
   return (
-    <ViewportCtx.Provider value={viewport}>
-      <ScrollProgress />
-      <CursorGlow />
-      <Nav page={page} setPage={handleSetPage} />
-      {content}
-      <WhatsAppFAB />
-    </ViewportCtx.Provider>
+    <CartProvider>
+      <ViewportCtx.Provider value={viewport}>
+        <ScrollProgress />
+        <CursorGlow />
+        <Nav page={page} setPage={handleSetPage} />
+        {content}
+        <CartFAB />
+        <WhatsAppFAB />
+      </ViewportCtx.Provider>
+    </CartProvider>
+  );
+}
+
+function CartSheet({ onClose }) {
+  const { cart, updateQty, clearCart } = useCart();
+  const { isMobile } = useViewport();
+  const totalAmt = cart.reduce((s, i) => s + i.qty * 275, 0);
+  const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+  const sendOrder = () => {
+    const lines = cart.map(i => `• ${i.tea.name} x${i.qty} = ₹${i.qty * 275}`).join('\n');
+    const msg = `Hi Nevisan! I'd like to place an order:\n\n${lines}\n\nTotal: ₹${totalAmt} (${totalQty} packs × 50gm)\n\nPlease confirm my order and share delivery details.`;
+    window.open(`https://wa.me/919864245687?text=${encodeURIComponent(msg)}`, '_blank');
+    clearCart(); onClose();
+  };
+  return ReactDOM.createPortal(
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.55)', zIndex: 400, display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }} onClick={onClose}>
+      <div style={{ background: '#fff', borderRadius: '20px 20px 0 0', width: '100%', maxWidth: 500, maxHeight: '85vh', display: 'flex', flexDirection: 'column', animation: 'slide-up 0.3s ease both' }} onClick={e => e.stopPropagation()}>
+        <div style={{ padding: '14px 20px 12px', borderBottom: '1px solid #f0f0f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 }}>
+          <div>
+            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 20, color: T.text, margin: 0 }}>Your Order</h3>
+            <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted, marginTop: 2 }}>{totalQty} pack{totalQty !== 1 ? 's' : ''} · 50gm each</div>
+          </div>
+          <button onClick={onClose} style={{ background: 'rgba(0,0,0,0.07)', border: 'none', borderRadius: '50%', width: 32, height: 32, cursor: 'pointer', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✕</button>
+        </div>
+        <div style={{ overflowY: 'auto', flex: 1, padding: '12px 20px' }}>
+          {cart.map(item => (
+            <div key={item.tea.name} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 0', borderBottom: '1px solid #f8f8f8' }}>
+              <div style={{ width: 54, height: 54, borderRadius: 10, overflow: 'hidden', background: item.tea.bg, flexShrink: 0 }}>
+                {item.tea.img ? <img src={item.tea.img} alt={item.tea.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', fontSize: 22 }}>🍃</div>}
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontFamily: "'Inter'", fontSize: 13, fontWeight: 600, color: T.text, marginBottom: 2, lineHeight: 1.3 }}>{item.tea.name}</div>
+                <div style={{ fontFamily: "'Inter'", fontSize: 13, fontWeight: 700, color: T.teal }}>₹{item.qty * 275}</div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
+                <button onClick={() => updateQty(item.tea.name, -1)} style={{ width: 30, height: 30, borderRadius: '50%', border: `1.5px solid ${T.teal}`, background: 'none', color: T.teal, fontSize: 18, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', lineHeight: 1 }}>−</button>
+                <span style={{ fontFamily: "'Inter'", fontSize: 16, fontWeight: 700, color: T.text, minWidth: 18, textAlign: 'center' }}>{item.qty}</span>
+                <button onClick={() => updateQty(item.tea.name, +1)} style={{ width: 30, height: 30, borderRadius: '50%', background: T.teal, border: 'none', color: '#fff', fontSize: 18, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', lineHeight: 1 }}>+</button>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ padding: '16px 20px 28px', borderTop: '1px solid #f0f0f0', flexShrink: 0 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
+            <span style={{ fontFamily: "'Inter'", fontSize: 14, color: T.textMuted }}>Total Amount</span>
+            <span style={{ fontFamily: "'Inter'", fontSize: 22, fontWeight: 700, color: T.teal }}>₹{totalAmt}</span>
+          </div>
+          <button onClick={sendOrder} style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '14px', fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.523 5.836L.057 23.643a.5.5 0 00.625.601l5.963-1.583A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.045-1.395l-.361-.214-3.741.993.984-3.648-.235-.374A9.808 9.808 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+            Place Order via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+function CartFAB() {
+  const { cart } = useCart();
+  const [open, setOpen] = useState(false);
+  const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+  if (totalQty === 0) return null;
+  return (
+    <>
+      <button onClick={() => setOpen(true)} style={{ position: 'fixed', bottom: 90, right: 20, zIndex: 998, width: 56, height: 56, borderRadius: '50%', background: T.teal, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 20px rgba(27,122,130,0.45)', border: 'none', cursor: 'pointer', fontSize: 22 }}>
+        🛒
+        <div style={{ position: 'absolute', top: -4, right: -4, background: '#e8312a', color: '#fff', borderRadius: '50%', width: 22, height: 22, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, fontFamily: "'Inter'" }}>{totalQty}</div>
+      </button>
+      {open && <CartSheet onClose={() => setOpen(false)} />}
+    </>
+  );
+}
+
+function AddToCartBtn({ tea, onAdded }) {
+  const { addToCart } = useCart();
+  const [added, setAdded] = useState(false);
+  const handle = () => {
+    addToCart(tea);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
+    if (onAdded) onAdded();
+  };
+  return (
+    <button onClick={handle} style={{ width: '100%', background: added ? T.teal : T.tealDark, color: '#fff', border: 'none', borderRadius: 9999, padding: '13px', fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, transition: 'background 0.2s' }}>
+      {added ? '✓ Added to Cart!' : '🛒 Add to Cart'}
+    </button>
   );
 }
 

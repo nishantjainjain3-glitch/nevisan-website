@@ -1121,6 +1121,31 @@ function CollectionPage({ setPage }) {
               <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
                 {selected.tags.map(t => <TagChip key={t} label={t} color={selected.color} />)}
               </div>
+              {selected.benefits && (
+                <div style={{ marginBottom: 20 }}>
+                  <div style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.13em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 12 }}>Key Benefits</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    {selected.benefits.map((b, i) => (
+                      <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                        <span style={{ fontSize: 18, lineHeight: 1, flexShrink: 0, marginTop: 1 }}>{b.icon}</span>
+                        <div>
+                          <div style={{ fontFamily: "'Inter'", fontSize: 13, fontWeight: 600, color: T.text, marginBottom: 2 }}>{b.title}</div>
+                          <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted, lineHeight: 1.55 }}>{b.desc}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {selected.brew && (
+                <div style={{ background: 'rgba(27,122,130,0.07)', borderRadius: 10, padding: '10px 14px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span style={{ fontSize: 16 }}>🍵</span>
+                  <div>
+                    <div style={{ fontFamily: "'Inter'", fontSize: 10, letterSpacing: '0.12em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 2 }}>Brewing Guide</div>
+                    <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>{selected.brew}</div>
+                  </div>
+                </div>
+              )}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <RippleButton onClick={() => openWhatsApp(selected.name)}
                   style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '14px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}

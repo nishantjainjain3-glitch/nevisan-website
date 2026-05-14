@@ -1917,11 +1917,35 @@ function InstagramReels() {
   );
 }
 
+function TrustBadges() {
+  const { isMobile } = useViewport();
+  const badges = [
+    { icon: '🌿', label: 'PGS Organic Certified' },
+    { icon: '📍', label: 'Single Origin, Golaghat' },
+    { icon: '🚫', label: 'Chemical Free, Always' },
+    { icon: '🍃', label: '100% Whole Leaf' },
+    { icon: '⭐', label: '4.8★ Rated on Amazon' },
+  ];
+  return (
+    <div style={{ background: '#fff', borderBottom: '1px solid #f0ede8', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: isMobile ? 'flex-start' : 'center', gap: isMobile ? 0 : 0, minWidth: 'max-content', margin: '0 auto', padding: isMobile ? '0 16px' : '0' }}>
+        {badges.map((b, i) => (
+          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: isMobile ? '14px 18px' : '16px 28px', borderRight: i < badges.length - 1 ? '1px solid #f0ede8' : 'none', flexShrink: 0 }}>
+            <span style={{ fontSize: 16 }}>{b.icon}</span>
+            <span style={{ fontFamily: "'Inter'", fontSize: isMobile ? 12 : 13, fontWeight: 500, color: '#3d3d3d', whiteSpace: 'nowrap', letterSpacing: '0.01em' }}>{b.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HomePage({ setPage }) {
   return (
     <div style={{ animation: 'page-enter 0.4s ease both' }}>
       <Hero setPage={setPage} />
       <Ticker />
+      <TrustBadges />
       <CollectionSection setPage={setPage} />
       <PhilosophySection />
       <WhereToBuy />

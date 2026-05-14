@@ -502,13 +502,21 @@ function Hero({ setPage }) {
 
       {/* ── Video background ── */}
       <div ref={sceneRef} style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
-        <video
-          autoPlay muted loop playsInline
-          poster="hero-bg.jpg"
-          style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', filter:'saturate(1.15) brightness(0.78)' }}
-        >
-          <source src="tea-garden.mp4" type="video/mp4" />
-        </video>
+        {isMobile ? (
+          <img
+            src="hero-bg.jpg"
+            alt="Nevisan tea garden"
+            style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', filter:'saturate(1.15) brightness(0.78)' }}
+          />
+        ) : (
+          <video
+            autoPlay muted loop playsInline
+            poster="hero-bg.jpg"
+            style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', filter:'saturate(1.15) brightness(0.78)' }}
+          >
+            <source src="tea-garden.mp4" type="video/mp4" />
+          </video>
+        )}
       </div>
 
       {/* Gradient overlays */}
@@ -878,7 +886,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
       onMouseLeave={() => { setHovered(false); setTilt({ x: 0, y: 0 }); setShowBuy(false); }}
       onMouseMove={handleMouseMove}
       onTouchStart={() => setTouched(true)}
-      onTouchEnd={() => { setTouched(false); }}
+      onTouchEnd={(e) => { setTouched(false); e.currentTarget.click(); }}
       onClick={() => onView(tea)}
       style={{
         background: T.white, borderRadius: 16, overflow: 'hidden',
@@ -1077,11 +1085,11 @@ function CollectionPage({ setPage }) {
       {/* Product Modal */}
       {selected && (
         <div
-          style={{ position: 'fixed', inset: 0, background: 'rgba(15,63,69,0.75)', zIndex: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24, backdropFilter: 'blur(4px)' }}
+          style={{ position: 'fixed', inset: 0, background: 'rgba(15,63,69,0.75)', zIndex: 200, display: 'flex', alignItems: isMobile ? 'flex-end' : 'center', justifyContent: 'center', padding: isMobile ? 0 : 24, backdropFilter: 'blur(4px)' }}
           onClick={() => setSelected(null)}
         >
           <div
-            style={{ background: T.white, borderRadius: 20, maxWidth: 500, width: '100%', overflow: 'hidden', boxShadow: '0 32px 100px rgba(0,0,0,0.35)', animation: 'page-enter 0.3s ease both' }}
+            style={{ background: T.white, borderRadius: isMobile ? '20px 20px 0 0' : 20, maxWidth: 500, width: '100%', maxHeight: isMobile ? '92vh' : '88vh', overflowY: 'auto', boxShadow: '0 32px 100px rgba(0,0,0,0.35)', animation: 'page-enter 0.3s ease both' }}
             onClick={e => e.stopPropagation()}
           >
             {/* Modal image — click to open lightbox */}

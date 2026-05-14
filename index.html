@@ -299,7 +299,7 @@ function CursorGlow() {
 const WA_NUMBER = '919864245687';
 function openWhatsApp(teaName = '') {
   const msg = teaName
-    ? `Hi Nevisan! I would like to order *${teaName}* (₹275 · 45% off MRP ₹499). Please help me with the order details.`
+    ? `Hi Nevisan! I would like to order *${teaName}* (₹275 · 50 gm). Please help me with the order details.`
     : 'Hi Nevisan! I would like to order your tea. Please help me with the details.';
   window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 }
@@ -970,8 +970,6 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
           opacity: hovered ? 1 : 0,
           transition: 'opacity 300ms ease',
         }} />
-        {/* 45% OFF badge */}
-        <div style={{ position: 'absolute', top: 12, left: 12, background: '#e8312a', color: '#fff', fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', padding: '4px 10px', borderRadius: 9999, boxShadow: '0 2px 8px rgba(232,49,42,0.4)' }}>45% OFF</div>
         {tea.bestseller && (
           <div style={{ position: 'absolute', top: 12, right: 12, background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 9999, boxShadow: '0 2px 8px rgba(201,168,76,0.4)' }}>★ BESTSELLER</div>
         )}
@@ -992,9 +990,8 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 2 }}>
                 <span style={{ fontFamily: "'Inter'", fontSize: 18, fontWeight: 700, color: T.teal }}>₹275</span>
-                <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: 11, color: T.textMuted }}>· 50 gm</span>
               </div>
-              <span style={{ fontFamily: "'Inter'", fontSize: 11, color: '#e8312a', fontWeight: 600 }}>45% off · 50 gm</span>
             </div>
             <button
               onClick={(e) => { e.stopPropagation(); onView(tea); }}
@@ -1141,13 +1138,12 @@ function CollectionPage({ setPage }) {
                     {selected.img
                       ? <img src={selected.img} alt={selected.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       : <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}><span style={{ fontSize: 40 }}>🍃</span></div>}
-                    <div style={{ position: 'absolute', bottom: 6, left: 6, background: '#e8312a', color: '#fff', fontSize: 8, fontWeight: 700, padding: '3px 7px', borderRadius: 9999 }}>45% OFF</div>
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 17, color: T.text, marginBottom: 6, lineHeight: 1.3 }}>{selected.name}</h2>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
                       <span style={{ fontFamily: "'Inter'", fontSize: 20, fontWeight: 700, color: T.teal }}>₹275</span>
-                      <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹499</span>
+                      <span style={{ fontFamily: "'Inter'", fontSize: 11, color: T.textMuted }}>· 50 gm</span>
                     </div>
                     {selected.bestseller && <div style={{ display: 'inline-block', background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, padding: '3px 9px', borderRadius: 9999 }}>★ BESTSELLER</div>}
                   </div>
@@ -1204,15 +1200,13 @@ function CollectionPage({ setPage }) {
                 >
                   {selected.img ? <img src={selected.img} alt={selected.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}><span style={{ fontSize: 72, opacity: 0.7 }}>🍃</span></div>}
                   <button onClick={(e) => { e.stopPropagation(); setSelected(null); }} style={{ position: 'absolute', top: 14, right: 14, background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '50%', width: 32, height: 32, cursor: 'pointer', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', color: T.text, zIndex: 2 }}>✕</button>
-                  <div style={{ position: 'absolute', top: 14, left: 14, background: '#e8312a', color: '#fff', fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', padding: '4px 10px', borderRadius: 9999 }}>45% OFF</div>
                   {selected.bestseller && <div style={{ position: 'absolute', top: 42, left: 14, background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 9999 }}>★ BESTSELLER</div>}
                 </div>
                 <div style={{ padding: '32px' }}>
                   <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 26, color: T.text, marginBottom: 6 }}>{selected.name}</h2>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
                     <span style={{ fontFamily: "'Inter'", fontSize: 24, fontWeight: 700, color: T.teal }}>₹275</span>
-                    <span style={{ fontFamily: "'Inter'", fontSize: 13, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
-                    <span style={{ fontFamily: "'Inter'", fontSize: 10, background: '#e8312a', color: '#fff', fontWeight: 700, padding: '3px 8px', borderRadius: 9999 }}>45% OFF · 50 gm</span>
+                    <span style={{ fontFamily: "'Inter'", fontSize: 11, color: T.textMuted }}>· 50 gm</span>
                   </div>
                   <p style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.6, marginBottom: 12 }}>{selected.short}</p>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
@@ -1741,13 +1735,12 @@ function CollectionSection({ setPage }) {
                     {selected.img
                       ? <img src={selected.img} alt={selected.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       : <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}><span style={{ fontSize: 40 }}>🍃</span></div>}
-                    <div style={{ position: 'absolute', bottom: 6, left: 6, background: '#e8312a', color: '#fff', fontSize: 8, fontWeight: 700, padding: '3px 7px', borderRadius: 9999 }}>45% OFF</div>
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 17, color: T.text, marginBottom: 6, lineHeight: 1.3 }}>{selected.name}</h2>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
                       <span style={{ fontFamily: "'Inter'", fontSize: 20, fontWeight: 700, color: T.teal }}>₹275</span>
-                      <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹499</span>
+                      <span style={{ fontFamily: "'Inter'", fontSize: 11, color: T.textMuted }}>· 50 gm</span>
                     </div>
                     {selected.bestseller && <div style={{ display: 'inline-block', background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, padding: '3px 9px', borderRadius: 9999 }}>★ BESTSELLER</div>}
                   </div>
@@ -1799,15 +1792,13 @@ function CollectionSection({ setPage }) {
                 <div style={{ height: 260, overflow: 'hidden', position: 'relative', background: selected.bg }}>
                   {selected.img ? <img src={selected.img} alt={selected.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}><span style={{ fontSize: 72, opacity: 0.7 }}>🍃</span></div>}
                   <button onClick={(e) => { e.stopPropagation(); setSelected(null); }} style={{ position: 'absolute', top: 14, right: 14, background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '50%', width: 32, height: 32, cursor: 'pointer', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', color: T.text, zIndex: 2 }}>✕</button>
-                  <div style={{ position: 'absolute', top: 14, left: 14, background: '#e8312a', color: '#fff', fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', padding: '4px 10px', borderRadius: 9999 }}>45% OFF</div>
                   {selected.bestseller && <div style={{ position: 'absolute', top: 42, left: 14, background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 9999 }}>★ BESTSELLER</div>}
                 </div>
                 <div style={{ padding: '32px' }}>
                   <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 26, color: T.text, marginBottom: 6 }}>{selected.name}</h2>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
                     <span style={{ fontFamily: "'Inter'", fontSize: 24, fontWeight: 700, color: T.teal }}>₹275</span>
-                    <span style={{ fontFamily: "'Inter'", fontSize: 13, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
-                    <span style={{ fontFamily: "'Inter'", fontSize: 10, background: '#e8312a', color: '#fff', fontWeight: 700, padding: '3px 8px', borderRadius: 9999 }}>45% OFF · 50 gm</span>
+                    <span style={{ fontFamily: "'Inter'", fontSize: 11, color: T.textMuted }}>· 50 gm</span>
                   </div>
                   <p style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.6, marginBottom: 12 }}>{selected.short}</p>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>

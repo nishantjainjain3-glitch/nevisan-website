@@ -310,7 +310,7 @@ function HamburgerIcon({ open }) {
 }
 
 function Nav({ page, setPage }) {
-  const links = ['Home', 'Collection', 'Our Story', 'Journal', 'Contact'];
+  const links = ['Home', 'Collection', 'Our Story', 'Wholesale', 'Contact'];
   const isHero = page === 'Home';
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -2391,28 +2391,116 @@ function CertificationsPage({ setPage }) {
 
 function WholesalePage({ setPage }) {
   const { isMobile } = useViewport();
+  const [form, setForm] = React.useState({ name: '', business: '', type: '', qty: '', message: '' });
+  const buyers = [
+    { icon: '☕', title: 'Cafés & Restaurants', desc: 'Serve premium single-origin Assam tea on your menu. Loose leaf or portion-packed options available.' },
+    { icon: '🏨', title: 'Hotels & Resorts', desc: 'In-room and restaurant tea service with branded packaging available for premium properties.' },
+    { icon: '🎁', title: 'Corporate Gifting', desc: 'Curated tea gift boxes for employees, clients and events. Custom branding on request.' },
+    { icon: '🛒', title: 'Retail Stores', desc: 'Stock Nevisan in your store. Competitive margins and consistent supply guaranteed.' },
+    { icon: '🏥', title: 'Wellness Centres', desc: 'Herbal and green tea blends for spas, yoga studios and wellness retreats.' },
+    { icon: '📦', title: 'Online Resellers', desc: 'Resell Nevisan through your own platform. Dropshipping and bulk fulfilment available.' },
+  ];
+  const perks = [
+    { icon: '✓', text: 'Minimum order: 500g per variety' },
+    { icon: '✓', text: 'Custom branded packaging available' },
+    { icon: '✓', text: 'Pan-India delivery' },
+    { icon: '✓', text: 'Dedicated account manager' },
+    { icon: '✓', text: 'Response within 24 hours' },
+    { icon: '✓', text: 'PGS Organic certified supply' },
+  ];
+  const handleInquiry = () => {
+    const msg = `Hi Nevisan! I'd like to inquire about wholesale/bulk ordering.\n\nName: ${form.name}\nBusiness: ${form.business}\nBusiness Type: ${form.type}\nEstimated Quantity: ${form.qty}\nMessage: ${form.message}`;
+    window.open(`https://wa.me/919864245687?text=${encodeURIComponent(msg)}`, '_blank');
+  };
   return (
     <div style={{ background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
-      <PageHero photo={PAGE_PHOTOS.wholesale} label="For Businesses" title="Wholesale & Bulk Orders" subtitle="Supply your café, restaurant, hotel or retail store with premium single-origin Assam teas." />
-      <div style={{ maxWidth: 800, margin: '0 auto', padding: isMobile ? '48px 20px 80px' : '64px 40px 100px' }}>
-        <div style={{ display: 'none' }}></div>
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3,1fr)', gap: 20, marginBottom: 48 }}>
-          {[
-            { icon: '☕', title: 'Cafés & Restaurants', desc: 'Premium loose leaf or custom-packaged portions for your menu. White-label options available.' },
-            { icon: '🏨', title: 'Hotels & Resorts', desc: 'In-room and restaurant tea service. Branded packaging available for 5-star properties.' },
-            { icon: '🛒', title: 'Retail Stores', desc: 'Stock Nevisan in your store. Minimum order quantities and margin structure on request.' },
-          ].map((item, i) => (
-            <div key={i} style={{ background: T.white, borderRadius: 14, padding: '24px 20px', textAlign: 'center', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
-              <div style={{ fontSize: 32, marginBottom: 12 }}>{item.icon}</div>
-              <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 17, color: T.text, marginBottom: 8 }}>{item.title}</div>
-              <div style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.6 }}>{item.desc}</div>
+      <PageHero photo={PAGE_PHOTOS.wholesale} label="For Businesses" title="Wholesale & Bulk Orders" subtitle="Premium single-origin Assam teas for cafés, hotels, gifting and retail — straight from Golaghat." />
+
+      {/* Who is this for */}
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: isMobile ? '48px 20px 0' : '72px 32px 0' }}>
+        <div style={{ textAlign: 'center', marginBottom: isMobile ? 32 : 48 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, marginBottom: 14 }}>
+            <div style={{ height: 1, width: 48, background: T.gold }} />
+            <span style={{ fontFamily: "'Inter'", fontSize: 12, fontWeight: 600, letterSpacing: '0.14em', color: T.teal, textTransform: 'uppercase' }}>Who We Supply</span>
+            <div style={{ height: 1, width: 48, background: T.gold }} />
+          </div>
+          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 'clamp(24px, 3vw, 38px)', color: T.text }}>Built for businesses that value quality</h2>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: isMobile ? 14 : 20, marginBottom: isMobile ? 48 : 72 }}>
+          {buyers.map((b, i) => (
+            <div key={i} style={{ background: '#fff', borderRadius: 16, padding: '24px 22px', boxShadow: '0 2px 12px rgba(0,0,0,0.05)' }}>
+              <div style={{ fontSize: 30, marginBottom: 12 }}>{b.icon}</div>
+              <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 17, color: T.text, marginBottom: 8 }}>{b.title}</div>
+              <div style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.65 }}>{b.desc}</div>
             </div>
           ))}
         </div>
-        <div style={{ background: T.teal, borderRadius: 20, padding: isMobile ? '32px 24px' : '48px 56px', textAlign: 'center' }}>
-          <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 26, color: '#fff', marginBottom: 12 }}>Get a wholesale quote</h3>
-          <p style={{ fontFamily: "'Inter'", fontSize: 15, color: 'rgba(255,255,255,0.8)', marginBottom: 28, lineHeight: 1.6 }}>WhatsApp us with your requirements — volume, variety, and packaging preferences. We'll respond within 24 hours with pricing.</p>
-          <button onClick={() => { const msg = 'Hi Nevisan! I\'m interested in wholesale / bulk ordering. Please share your pricing and minimum order details.'; window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank'); }} style={{ background: T.gold, color: T.tealDark, border: 'none', borderRadius: 9999, padding: '14px 36px', cursor: 'pointer', fontFamily: "'Inter'", fontSize: 15, fontWeight: 700 }}>💬 WhatsApp for Wholesale Pricing</button>
+      </div>
+
+      {/* Perks + Inquiry form */}
+      <div style={{ background: '#fff', padding: isMobile ? '48px 20px' : '72px 32px' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 40 : 64, alignItems: 'start' }}>
+
+          {/* Left: perks */}
+          <div>
+            <div style={{ fontFamily: "'Inter'", fontSize: 12, fontWeight: 600, letterSpacing: '0.14em', color: T.teal, textTransform: 'uppercase', marginBottom: 14 }}>What You Get</div>
+            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 24 : 30, color: T.text, marginBottom: 24, lineHeight: 1.3 }}>Simple, transparent and reliable</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 36 }}>
+              {perks.map((p, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <div style={{ width: 24, height: 24, borderRadius: '50%', background: T.teal, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <span style={{ color: '#fff', fontSize: 12, fontWeight: 700 }}>✓</span>
+                  </div>
+                  <span style={{ fontFamily: "'Inter'", fontSize: 14, color: T.text }}>{p.text}</span>
+                </div>
+              ))}
+            </div>
+            <div style={{ background: T.cream, borderRadius: 14, padding: '20px 22px' }}>
+              <div style={{ fontFamily: "'Inter'", fontSize: 12, fontWeight: 600, color: T.teal, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>Direct Contact</div>
+              <div style={{ fontFamily: "'Inter'", fontSize: 14, color: T.textMuted, lineHeight: 1.6 }}>Call or WhatsApp us directly at <strong style={{ color: T.text }}>+91 98642 45687</strong>. We respond within 24 hours, every day.</div>
+            </div>
+          </div>
+
+          {/* Right: inquiry form */}
+          <div style={{ background: T.cream, borderRadius: 20, padding: isMobile ? '28px 20px' : '36px 32px' }}>
+            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 22, color: T.text, marginBottom: 6 }}>Send an Inquiry</h3>
+            <p style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, marginBottom: 24, lineHeight: 1.6 }}>Fill in the details below — we'll send you pricing and availability on WhatsApp.</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              {[
+                { key: 'name', label: 'Your Name', placeholder: 'Rahul Sharma' },
+                { key: 'business', label: 'Business Name', placeholder: 'The Green Café' },
+                { key: 'type', label: 'Business Type', placeholder: 'Café / Hotel / Retail / Gifting…' },
+                { key: 'qty', label: 'Estimated Monthly Quantity', placeholder: 'e.g. 5kg, 20 boxes' },
+              ].map(f => (
+                <div key={f.key}>
+                  <label style={{ fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, color: T.teal, textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: 6 }}>{f.label}</label>
+                  <input
+                    value={form[f.key]}
+                    onChange={e => setForm(p => ({ ...p, [f.key]: e.target.value }))}
+                    placeholder={f.placeholder}
+                    style={{ width: '100%', padding: '11px 14px', borderRadius: 10, border: '1.5px solid #e8e4de', fontFamily: "'Inter'", fontSize: 14, color: T.text, background: '#fff', outline: 'none', boxSizing: 'border-box' }}
+                  />
+                </div>
+              ))}
+              <div>
+                <label style={{ fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, color: T.teal, textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: 6 }}>Additional Requirements</label>
+                <textarea
+                  value={form.message}
+                  onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
+                  placeholder="Custom packaging, specific varieties, delivery frequency…"
+                  rows={3}
+                  style={{ width: '100%', padding: '11px 14px', borderRadius: 10, border: '1.5px solid #e8e4de', fontFamily: "'Inter'", fontSize: 14, color: T.text, background: '#fff', outline: 'none', resize: 'vertical', boxSizing: 'border-box' }}
+                />
+              </div>
+              <button
+                onClick={handleInquiry}
+                style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '14px', fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 4 }}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.523 5.836L.057 23.643a.5.5 0 00.625.601l5.963-1.583A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.045-1.395l-.361-.214-3.741.993.984-3.648-.235-.374A9.808 9.808 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+                Send Inquiry via WhatsApp
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <Footer setPage={setPage} />

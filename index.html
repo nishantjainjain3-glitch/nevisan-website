@@ -1125,11 +1125,11 @@ function CollectionPage({ setPage }) {
       {/* Product Modal */}
       {selected && ReactDOM.createPortal(
         <div
-          style={{ position: 'fixed', inset: 0, background: 'rgba(15,63,69,0.75)', zIndex: 200, display: 'flex', alignItems: isMobile ? 'flex-end' : 'center', justifyContent: 'center', padding: isMobile ? 0 : 24, backdropFilter: 'blur(4px)' }}
+          style={{ position: 'fixed', inset: 0, background: isMobile ? 'transparent' : 'rgba(15,63,69,0.75)', zIndex: 200, display: 'flex', alignItems: isMobile ? 'flex-end' : 'center', justifyContent: 'center', padding: isMobile ? 0 : 24, backdropFilter: isMobile ? 'none' : 'blur(4px)', pointerEvents: 'none' }}
           onClick={() => setSelected(null)}
         >
           <div
-            style={{ background: T.white, borderRadius: isMobile ? '20px 20px 0 0' : 20, maxWidth: isMobile ? '100%' : 500, width: '100%', maxHeight: isMobile ? '88vh' : '90vh', overflowY: 'auto', boxShadow: '0 -8px 40px rgba(0,0,0,0.25)', animation: isMobile ? 'slide-up 0.3s ease both' : 'page-enter 0.3s ease both' }}
+            style={{ background: T.white, borderRadius: isMobile ? '20px 20px 0 0' : 20, maxWidth: isMobile ? '100%' : 500, width: '100%', maxHeight: isMobile ? '88vh' : '90vh', overflowY: 'auto', boxShadow: '0 -8px 40px rgba(0,0,0,0.25)', animation: isMobile ? 'slide-up 0.3s ease both' : 'page-enter 0.3s ease both', pointerEvents: 'auto' }}
             onClick={e => e.stopPropagation()}
           >
             {isMobile && <div style={{ width: 40, height: 4, background: '#ddd', borderRadius: 9999, margin: '12px auto 0' }} />}
@@ -1726,11 +1726,11 @@ function CollectionSection({ setPage }) {
       {/* Product Modal — bottom sheet on mobile */}
       {selected && ReactDOM.createPortal(
         <div
-          style={{ position: 'fixed', inset: 0, background: 'rgba(15,63,69,0.75)', zIndex: 200, display: 'flex', alignItems: isMobile ? 'flex-end' : 'center', justifyContent: 'center', padding: isMobile ? 0 : 24, backdropFilter: 'blur(4px)' }}
+          style={{ position: 'fixed', inset: 0, background: isMobile ? 'transparent' : 'rgba(15,63,69,0.75)', zIndex: 200, display: 'flex', alignItems: isMobile ? 'flex-end' : 'center', justifyContent: 'center', padding: isMobile ? 0 : 24, backdropFilter: isMobile ? 'none' : 'blur(4px)', pointerEvents: 'none' }}
           onClick={() => setSelected(null)}
         >
           <div
-            style={{ background: T.white, borderRadius: isMobile ? '20px 20px 0 0' : 20, maxWidth: isMobile ? '100%' : 500, width: '100%', maxHeight: isMobile ? '88vh' : '90vh', overflowY: 'auto', boxShadow: '0 -8px 40px rgba(0,0,0,0.25)', animation: isMobile ? 'slide-up 0.3s ease both' : 'page-enter 0.3s ease both' }}
+            style={{ background: T.white, borderRadius: isMobile ? '20px 20px 0 0' : 20, maxWidth: isMobile ? '100%' : 500, width: '100%', maxHeight: isMobile ? '88vh' : '90vh', overflowY: 'auto', boxShadow: '0 -8px 40px rgba(0,0,0,0.25)', animation: isMobile ? 'slide-up 0.3s ease both' : 'page-enter 0.3s ease both', pointerEvents: 'auto' }}
             onClick={e => e.stopPropagation()}
           >
             {isMobile && <div style={{ width: 40, height: 4, background: '#ddd', borderRadius: 9999, margin: '12px auto 0' }} />}

@@ -111,6 +111,10 @@
     from { opacity: 0; }
     to   { opacity: 1; }
   }
+  @keyframes slide-up {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+  }
 
   @media (hover: none) {
     .card-hover-lift { transition: transform 0.15s ease !important; }
@@ -1085,80 +1089,136 @@ function CollectionPage({ setPage }) {
       {/* Product Modal */}
       {selected && (
         <div
-          style={{ position: 'fixed', inset: 0, background: 'rgba(15,63,69,0.75)', zIndex: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24, backdropFilter: 'blur(4px)' }}
+          style={{ position: 'fixed', inset: 0, background: 'rgba(15,63,69,0.75)', zIndex: 200, display: 'flex', alignItems: isMobile ? 'flex-end' : 'center', justifyContent: 'center', padding: isMobile ? 0 : 24, backdropFilter: 'blur(4px)' }}
           onClick={() => setSelected(null)}
         >
           <div
-            style={{ background: T.white, borderRadius: 20, maxWidth: 500, width: '100%', overflow: 'hidden', boxShadow: '0 32px 100px rgba(0,0,0,0.35)', animation: 'page-enter 0.3s ease both' }}
+            style={{ background: T.white, borderRadius: isMobile ? '20px 20px 0 0' : 20, maxWidth: isMobile ? '100%' : 500, width: '100%', maxHeight: isMobile ? '88vh' : '90vh', overflowY: 'auto', boxShadow: '0 -8px 40px rgba(0,0,0,0.25)', animation: isMobile ? 'slide-up 0.3s ease both' : 'page-enter 0.3s ease both' }}
             onClick={e => e.stopPropagation()}
           >
-            <div style={{ height: isMobile ? 150 : 260, overflow: 'hidden', position: 'relative', background: selected.bg, cursor: 'zoom-in', flexShrink: 0 }}
-              onClick={(e) => { e.stopPropagation(); setSelected(null); setLightbox({ img: selected.img, name: selected.name }); }}
-            >
-              {selected.img ? (
-                <img src={selected.img} alt={selected.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              ) : (
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
-                  <span style={{ fontSize: 72, opacity: 0.7 }}>🍃</span>
+            {isMobile && <div style={{ width: 40, height: 4, background: '#ddd', borderRadius: 9999, margin: '12px auto 0' }} />}
+            {isMobile ? (
+              /* ── MOBILE: side-by-side image + info, buy buttons always visible ── */
+              <div style={{ padding: '12px 16px 24px' }}>
+                <div style={{ display: 'flex', gap: 14, marginBottom: 14 }}>
+                  <div style={{ width: 110, height: 110, borderRadius: 14, overflow: 'hidden', flexShrink: 0, background: selected.bg, position: 'relative' }}>
+                    {selected.img
+                      ? <img src={selected.img} alt={selected.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      : <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}><span style={{ fontSize: 40 }}>🍃</span></div>}
+                    <div style={{ position: 'absolute', bottom: 6, left: 6, background: '#e8312a', color: '#fff', fontSize: 8, fontWeight: 700, padding: '3px 7px', borderRadius: 9999 }}>45% OFF</div>
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 17, color: T.text, marginBottom: 6, lineHeight: 1.3 }}>{selected.name}</h2>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
+                      <span style={{ fontFamily: "'Inter'", fontSize: 20, fontWeight: 700, color: T.teal }}>₹275</span>
+                      <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹499</span>
+                    </div>
+                    {selected.bestseller && <div style={{ display: 'inline-block', background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, padding: '3px 9px', borderRadius: 9999 }}>★ BESTSELLER</div>}
+                  </div>
+                  <button onClick={(e) => { e.stopPropagation(); setSelected(null); }}
+                    style={{ position: 'absolute', top: 14, right: 14, background: 'rgba(0,0,0,0.08)', border: 'none', borderRadius: '50%', width: 30, height: 30, cursor: 'pointer', fontSize: 15, display: 'flex', alignItems: 'center', justifyContent: 'center', color: T.text }}>✕</button>
                 </div>
-              )}
-              <button onClick={(e) => { e.stopPropagation(); setSelected(null); }}
-                style={{ position: 'absolute', top: 14, right: 14, background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '50%', width: 32, height: 32, cursor: 'pointer', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', color: T.text, zIndex: 2 }}>✕</button>
-              <div style={{ position: 'absolute', top: 14, left: 14, background: '#e8312a', color: '#fff', fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', padding: '4px 10px', borderRadius: 9999 }}>45% OFF</div>
-              {selected.bestseller && <div style={{ position: 'absolute', top: 42, left: 14, background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 9999 }}>★ BESTSELLER</div>}
-            </div>
-            <div style={{ padding: isMobile ? '12px 14px 14px' : '32px' }}>
-              <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 18 : 26, color: T.text, marginBottom: isMobile ? 4 : 6 }}>{selected.name}</h2>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: isMobile ? 10 : 4 }}>
-                <span style={{ fontFamily: "'Inter'", fontSize: isMobile ? 18 : 24, fontWeight: 700, color: T.teal }}>₹275</span>
-                <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
-                <span style={{ fontFamily: "'Inter'", fontSize: 10, background: '#e8312a', color: '#fff', fontWeight: 700, padding: '3px 8px', borderRadius: 9999 }}>45% OFF · 50 gm</span>
-              </div>
-              {!isMobile && <p style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.6, marginBottom: 12 }}>{selected.short}</p>}
-
-              {/* BUY BUTTONS — always visible first */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: isMobile ? 12 : 20 }}>
-                <RippleButton onClick={() => openWhatsApp(selected.name)}
-                  style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: isMobile ? '11px' : '13px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
-                  hoverStyle={{ transform: 'scale(1.02)', filter: 'brightness(1.05)' }}
-                ><span>💬</span> Order via WhatsApp</RippleButton>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-                  <button onClick={() => window.open('https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln', '_blank')}
-                    style={{ background: '#FF9900', color: '#fff', border: 'none', borderRadius: 9999, padding: isMobile ? '9px' : '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Amazon</button>
-                  <button onClick={() => window.open('https://www.flipkart.com/store/nevisan', '_blank')}
-                    style={{ background: '#2874F0', color: '#fff', border: 'none', borderRadius: 9999, padding: isMobile ? '9px' : '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Flipkart</button>
+                {/* BUY BUTTONS — immediately visible */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
+                  <RippleButton onClick={() => openWhatsApp(selected.name)}
+                    style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '13px', fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
+                    hoverStyle={{ transform: 'scale(1.02)', filter: 'brightness(1.05)' }}
+                  ><span>💬</span> Order via WhatsApp</RippleButton>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                    <button onClick={() => window.open('https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln', '_blank')}
+                      style={{ background: '#FF9900', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Amazon</button>
+                    <button onClick={() => window.open('https://www.flipkart.com/store/nevisan', '_blank')}
+                      style={{ background: '#2874F0', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Flipkart</button>
+                  </div>
                 </div>
-              </div>
-
-              <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
-                {selected.tags.map(t => <TagChip key={t} label={t} color={selected.color} />)}
-              </div>
-              {selected.benefits && (
-                <div style={{ marginBottom: 20 }}>
-                  <div style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.13em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 12 }}>Key Benefits</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                    {selected.benefits.map((b, i) => (
-                      <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                        <span style={{ fontSize: 18, lineHeight: 1, flexShrink: 0, marginTop: 1 }}>{b.icon}</span>
-                        <div>
-                          <div style={{ fontFamily: "'Inter'", fontSize: 13, fontWeight: 600, color: T.text, marginBottom: 2 }}>{b.title}</div>
-                          <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted, lineHeight: 1.55 }}>{b.desc}</div>
+                {/* Details below (scrollable) */}
+                <div style={{ borderTop: '1px solid #f0f0f0', paddingTop: 14 }}>
+                  <p style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.6, marginBottom: 12 }}>{selected.short}</p>
+                  {selected.benefits && (
+                    <div style={{ marginBottom: 16 }}>
+                      <div style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.13em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 10 }}>Key Benefits</div>
+                      {selected.benefits.map((b, i) => (
+                        <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 8 }}>
+                          <span style={{ fontSize: 16, lineHeight: 1, flexShrink: 0, marginTop: 1 }}>{b.icon}</span>
+                          <div>
+                            <div style={{ fontFamily: "'Inter'", fontSize: 12, fontWeight: 600, color: T.text }}>{b.title}</div>
+                            <div style={{ fontFamily: "'Inter'", fontSize: 11, color: T.textMuted, lineHeight: 1.5 }}>{b.desc}</div>
+                          </div>
                         </div>
+                      ))}
+                    </div>
+                  )}
+                  {selected.brew && (
+                    <div style={{ background: 'rgba(27,122,130,0.07)', borderRadius: 10, padding: '10px 14px', display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <span style={{ fontSize: 16 }}>🍵</span>
+                      <div>
+                        <div style={{ fontFamily: "'Inter'", fontSize: 10, letterSpacing: '0.12em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 2 }}>Brewing Guide</div>
+                        <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>{selected.brew}</div>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  )}
                 </div>
-              )}
-              {selected.brew && (
-                <div style={{ background: 'rgba(27,122,130,0.07)', borderRadius: 10, padding: '10px 14px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span style={{ fontSize: 16 }}>🍵</span>
-                  <div>
-                    <div style={{ fontFamily: "'Inter'", fontSize: 10, letterSpacing: '0.12em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 2 }}>Brewing Guide</div>
-                    <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>{selected.brew}</div>
-                  </div>
+              </div>
+            ) : (
+              /* ── DESKTOP: full modal layout ── */
+              <>
+                <div style={{ height: 260, overflow: 'hidden', position: 'relative', background: selected.bg, cursor: 'zoom-in' }}
+                  onClick={(e) => { e.stopPropagation(); setSelected(null); setLightbox({ img: selected.img, name: selected.name }); }}
+                >
+                  {selected.img ? <img src={selected.img} alt={selected.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}><span style={{ fontSize: 72, opacity: 0.7 }}>🍃</span></div>}
+                  <button onClick={(e) => { e.stopPropagation(); setSelected(null); }} style={{ position: 'absolute', top: 14, right: 14, background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '50%', width: 32, height: 32, cursor: 'pointer', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', color: T.text, zIndex: 2 }}>✕</button>
+                  <div style={{ position: 'absolute', top: 14, left: 14, background: '#e8312a', color: '#fff', fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', padding: '4px 10px', borderRadius: 9999 }}>45% OFF</div>
+                  {selected.bestseller && <div style={{ position: 'absolute', top: 42, left: 14, background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 9999 }}>★ BESTSELLER</div>}
                 </div>
-              )}
-            </div>
+                <div style={{ padding: '32px' }}>
+                  <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 26, color: T.text, marginBottom: 6 }}>{selected.name}</h2>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
+                    <span style={{ fontFamily: "'Inter'", fontSize: 24, fontWeight: 700, color: T.teal }}>₹275</span>
+                    <span style={{ fontFamily: "'Inter'", fontSize: 13, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
+                    <span style={{ fontFamily: "'Inter'", fontSize: 10, background: '#e8312a', color: '#fff', fontWeight: 700, padding: '3px 8px', borderRadius: 9999 }}>45% OFF · 50 gm</span>
+                  </div>
+                  <p style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.6, marginBottom: 12 }}>{selected.short}</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
+                    <RippleButton onClick={() => openWhatsApp(selected.name)}
+                      style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '13px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
+                      hoverStyle={{ transform: 'scale(1.02)', filter: 'brightness(1.05)' }}
+                    ><span>💬</span> Order via WhatsApp</RippleButton>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                      <button onClick={() => window.open('https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln', '_blank')} style={{ background: '#FF9900', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Amazon</button>
+                      <button onClick={() => window.open('https://www.flipkart.com/store/nevisan', '_blank')} style={{ background: '#2874F0', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Flipkart</button>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
+                    {selected.tags.map(t => <TagChip key={t} label={t} color={selected.color} />)}
+                  </div>
+                  {selected.benefits && (
+                    <div style={{ marginBottom: 20 }}>
+                      <div style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.13em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 12 }}>Key Benefits</div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                        {selected.benefits.map((b, i) => (
+                          <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                            <span style={{ fontSize: 18, lineHeight: 1, flexShrink: 0, marginTop: 1 }}>{b.icon}</span>
+                            <div>
+                              <div style={{ fontFamily: "'Inter'", fontSize: 13, fontWeight: 600, color: T.text, marginBottom: 2 }}>{b.title}</div>
+                              <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted, lineHeight: 1.55 }}>{b.desc}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {selected.brew && (
+                    <div style={{ background: 'rgba(27,122,130,0.07)', borderRadius: 10, padding: '10px 14px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <span style={{ fontSize: 16 }}>🍵</span>
+                      <div>
+                        <div style={{ fontFamily: "'Inter'", fontSize: 10, letterSpacing: '0.12em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 2 }}>Brewing Guide</div>
+                        <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>{selected.brew}</div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
@@ -1625,81 +1685,128 @@ function CollectionSection({ setPage }) {
         </div>
       </div>
 
-      {/* Product Modal */}
+      {/* Product Modal — bottom sheet on mobile */}
       {selected && (
         <div
-          style={{ position: 'fixed', inset: 0, background: 'rgba(15,63,69,0.75)', zIndex: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24, backdropFilter: 'blur(4px)' }}
+          style={{ position: 'fixed', inset: 0, background: 'rgba(15,63,69,0.75)', zIndex: 200, display: 'flex', alignItems: isMobile ? 'flex-end' : 'center', justifyContent: 'center', padding: isMobile ? 0 : 24, backdropFilter: 'blur(4px)' }}
           onClick={() => setSelected(null)}
         >
           <div
-            style={{ background: T.white, borderRadius: 20, maxWidth: 500, width: '100%', maxHeight: '90vh', overflowY: 'auto', boxShadow: '0 32px 100px rgba(0,0,0,0.35)', animation: 'page-enter 0.3s ease both' }}
+            style={{ background: T.white, borderRadius: isMobile ? '20px 20px 0 0' : 20, maxWidth: isMobile ? '100%' : 500, width: '100%', maxHeight: isMobile ? '88vh' : '90vh', overflowY: 'auto', boxShadow: '0 -8px 40px rgba(0,0,0,0.25)', animation: isMobile ? 'slide-up 0.3s ease both' : 'page-enter 0.3s ease both' }}
             onClick={e => e.stopPropagation()}
           >
-            <div style={{ height: isMobile ? 150 : 260, overflow: 'hidden', position: 'relative', background: selected.bg, flexShrink: 0 }}>
-              {selected.img ? (
-                <img src={selected.img} alt={selected.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              ) : (
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
-                  <span style={{ fontSize: 72, opacity: 0.7 }}>🍃</span>
+            {isMobile && <div style={{ width: 40, height: 4, background: '#ddd', borderRadius: 9999, margin: '12px auto 0' }} />}
+            {isMobile ? (
+              <div style={{ padding: '12px 16px 24px' }}>
+                <div style={{ display: 'flex', gap: 14, marginBottom: 14, position: 'relative' }}>
+                  <div style={{ width: 110, height: 110, borderRadius: 14, overflow: 'hidden', flexShrink: 0, background: selected.bg, position: 'relative' }}>
+                    {selected.img
+                      ? <img src={selected.img} alt={selected.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      : <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}><span style={{ fontSize: 40 }}>🍃</span></div>}
+                    <div style={{ position: 'absolute', bottom: 6, left: 6, background: '#e8312a', color: '#fff', fontSize: 8, fontWeight: 700, padding: '3px 7px', borderRadius: 9999 }}>45% OFF</div>
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 17, color: T.text, marginBottom: 6, lineHeight: 1.3 }}>{selected.name}</h2>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
+                      <span style={{ fontFamily: "'Inter'", fontSize: 20, fontWeight: 700, color: T.teal }}>₹275</span>
+                      <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹499</span>
+                    </div>
+                    {selected.bestseller && <div style={{ display: 'inline-block', background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, padding: '3px 9px', borderRadius: 9999 }}>★ BESTSELLER</div>}
+                  </div>
+                  <button onClick={(e) => { e.stopPropagation(); setSelected(null); }}
+                    style={{ position: 'absolute', top: 0, right: 0, background: 'rgba(0,0,0,0.08)', border: 'none', borderRadius: '50%', width: 30, height: 30, cursor: 'pointer', fontSize: 15, display: 'flex', alignItems: 'center', justifyContent: 'center', color: T.text }}>✕</button>
                 </div>
-              )}
-              <button onClick={(e) => { e.stopPropagation(); setSelected(null); }}
-                style={{ position: 'absolute', top: 14, right: 14, background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '50%', width: 32, height: 32, cursor: 'pointer', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', color: T.text, zIndex: 2 }}>✕</button>
-              <div style={{ position: 'absolute', top: 14, left: 14, background: '#e8312a', color: '#fff', fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', padding: '4px 10px', borderRadius: 9999 }}>45% OFF</div>
-              {selected.bestseller && <div style={{ position: 'absolute', top: 42, left: 14, background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 9999 }}>★ BESTSELLER</div>}
-            </div>
-            <div style={{ padding: isMobile ? '12px 14px 14px' : '32px' }}>
-              <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 18 : 26, color: T.text, marginBottom: isMobile ? 4 : 6 }}>{selected.name}</h2>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: isMobile ? 10 : 4 }}>
-                <span style={{ fontFamily: "'Inter'", fontSize: isMobile ? 18 : 24, fontWeight: 700, color: T.teal }}>₹275</span>
-                <span style={{ fontFamily: "'Inter'", fontSize: 12, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
-                <span style={{ fontFamily: "'Inter'", fontSize: 10, background: '#e8312a', color: '#fff', fontWeight: 700, padding: '3px 8px', borderRadius: 9999 }}>45% OFF · 50 gm</span>
-              </div>
-              {!isMobile && <p style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.6, marginBottom: 12 }}>{selected.short}</p>}
-
-              {/* BUY BUTTONS — always visible first */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: isMobile ? 12 : 20 }}>
-                <RippleButton onClick={() => openWhatsApp(selected.name)}
-                  style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: isMobile ? '11px' : '13px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
-                  hoverStyle={{ transform: 'scale(1.02)', filter: 'brightness(1.05)' }}
-                ><span>💬</span> Order via WhatsApp</RippleButton>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-                  <button onClick={() => window.open('https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln', '_blank')}
-                    style={{ background: '#FF9900', color: '#fff', border: 'none', borderRadius: 9999, padding: isMobile ? '9px' : '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Amazon</button>
-                  <button onClick={() => window.open('https://www.flipkart.com/store/nevisan', '_blank')}
-                    style={{ background: '#2874F0', color: '#fff', border: 'none', borderRadius: 9999, padding: isMobile ? '9px' : '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Flipkart</button>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
+                  <RippleButton onClick={() => openWhatsApp(selected.name)}
+                    style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '13px', fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
+                    hoverStyle={{ transform: 'scale(1.02)', filter: 'brightness(1.05)' }}
+                  ><span>💬</span> Order via WhatsApp</RippleButton>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                    <button onClick={() => window.open('https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln', '_blank')}
+                      style={{ background: '#FF9900', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Amazon</button>
+                    <button onClick={() => window.open('https://www.flipkart.com/store/nevisan', '_blank')}
+                      style={{ background: '#2874F0', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Flipkart</button>
+                  </div>
                 </div>
-              </div>
-
-              <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
-                {selected.tags.map(t => <TagChip key={t} label={t} color={selected.color} />)}
-              </div>
-              {selected.benefits && (
-                <div style={{ marginBottom: 20 }}>
-                  <div style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.13em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 12 }}>Key Benefits</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                    {selected.benefits.map((b, i) => (
-                      <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                        <span style={{ fontSize: 18, lineHeight: 1, flexShrink: 0, marginTop: 1 }}>{b.icon}</span>
-                        <div>
-                          <div style={{ fontFamily: "'Inter'", fontSize: 13, fontWeight: 600, color: T.text, marginBottom: 2 }}>{b.title}</div>
-                          <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted, lineHeight: 1.55 }}>{b.desc}</div>
+                <div style={{ borderTop: '1px solid #f0f0f0', paddingTop: 14 }}>
+                  <p style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.6, marginBottom: 12 }}>{selected.short}</p>
+                  {selected.benefits && (
+                    <div style={{ marginBottom: 16 }}>
+                      <div style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.13em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 10 }}>Key Benefits</div>
+                      {selected.benefits.map((b, i) => (
+                        <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 8 }}>
+                          <span style={{ fontSize: 16, lineHeight: 1, flexShrink: 0, marginTop: 1 }}>{b.icon}</span>
+                          <div>
+                            <div style={{ fontFamily: "'Inter'", fontSize: 12, fontWeight: 600, color: T.text }}>{b.title}</div>
+                            <div style={{ fontFamily: "'Inter'", fontSize: 11, color: T.textMuted, lineHeight: 1.5 }}>{b.desc}</div>
+                          </div>
                         </div>
+                      ))}
+                    </div>
+                  )}
+                  {selected.brew && (
+                    <div style={{ background: 'rgba(27,122,130,0.07)', borderRadius: 10, padding: '10px 14px', display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <span style={{ fontSize: 16 }}>🍵</span>
+                      <div>
+                        <div style={{ fontFamily: "'Inter'", fontSize: 10, letterSpacing: '0.12em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 2 }}>Brewing Guide</div>
+                        <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>{selected.brew}</div>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  )}
                 </div>
-              )}
-              {selected.brew && (
-                <div style={{ background: 'rgba(27,122,130,0.07)', borderRadius: 10, padding: '10px 14px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span style={{ fontSize: 16 }}>🍵</span>
-                  <div>
-                    <div style={{ fontFamily: "'Inter'", fontSize: 10, letterSpacing: '0.12em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 2 }}>Brewing Guide</div>
-                    <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>{selected.brew}</div>
-                  </div>
+              </div>
+            ) : (
+              <>
+                <div style={{ height: 260, overflow: 'hidden', position: 'relative', background: selected.bg }}>
+                  {selected.img ? <img src={selected.img} alt={selected.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}><span style={{ fontSize: 72, opacity: 0.7 }}>🍃</span></div>}
+                  <button onClick={(e) => { e.stopPropagation(); setSelected(null); }} style={{ position: 'absolute', top: 14, right: 14, background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '50%', width: 32, height: 32, cursor: 'pointer', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', color: T.text, zIndex: 2 }}>✕</button>
+                  <div style={{ position: 'absolute', top: 14, left: 14, background: '#e8312a', color: '#fff', fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', padding: '4px 10px', borderRadius: 9999 }}>45% OFF</div>
+                  {selected.bestseller && <div style={{ position: 'absolute', top: 42, left: 14, background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 9999 }}>★ BESTSELLER</div>}
                 </div>
-              )}
-            </div>
+                <div style={{ padding: '32px' }}>
+                  <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 26, color: T.text, marginBottom: 6 }}>{selected.name}</h2>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
+                    <span style={{ fontFamily: "'Inter'", fontSize: 24, fontWeight: 700, color: T.teal }}>₹275</span>
+                    <span style={{ fontFamily: "'Inter'", fontSize: 13, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
+                    <span style={{ fontFamily: "'Inter'", fontSize: 10, background: '#e8312a', color: '#fff', fontWeight: 700, padding: '3px 8px', borderRadius: 9999 }}>45% OFF · 50 gm</span>
+                  </div>
+                  <p style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.6, marginBottom: 12 }}>{selected.short}</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
+                    <RippleButton onClick={() => openWhatsApp(selected.name)}
+                      style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '13px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
+                      hoverStyle={{ transform: 'scale(1.02)', filter: 'brightness(1.05)' }}
+                    ><span>💬</span> Order via WhatsApp</RippleButton>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                      <button onClick={() => window.open('https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln', '_blank')} style={{ background: '#FF9900', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Amazon</button>
+                      <button onClick={() => window.open('https://www.flipkart.com/store/nevisan', '_blank')} style={{ background: '#2874F0', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Flipkart</button>
+                    </div>
+                  </div>
+                  {selected.benefits && (
+                    <div style={{ marginBottom: 20 }}>
+                      <div style={{ fontFamily: "'Inter'", fontSize: 11, letterSpacing: '0.13em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 12 }}>Key Benefits</div>
+                      {selected.benefits.map((b, i) => (
+                        <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 10 }}>
+                          <span style={{ fontSize: 18, lineHeight: 1, flexShrink: 0, marginTop: 1 }}>{b.icon}</span>
+                          <div>
+                            <div style={{ fontFamily: "'Inter'", fontSize: 13, fontWeight: 600, color: T.text, marginBottom: 2 }}>{b.title}</div>
+                            <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted, lineHeight: 1.55 }}>{b.desc}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {selected.brew && (
+                    <div style={{ background: 'rgba(27,122,130,0.07)', borderRadius: 10, padding: '10px 14px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <span style={{ fontSize: 16 }}>🍵</span>
+                      <div>
+                        <div style={{ fontFamily: "'Inter'", fontSize: 10, letterSpacing: '0.12em', color: T.teal, textTransform: 'uppercase', fontWeight: 600, marginBottom: 2 }}>Brewing Guide</div>
+                        <div style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>{selected.brew}</div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}

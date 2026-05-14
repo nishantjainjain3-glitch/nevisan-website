@@ -1107,18 +1107,30 @@ function CollectionPage({ setPage }) {
               <div style={{ position: 'absolute', top: 14, left: 14, background: '#e8312a', color: '#fff', fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', padding: '4px 10px', borderRadius: 9999 }}>45% OFF</div>
               {selected.bestseller && <div style={{ position: 'absolute', top: 42, left: 14, background: T.gold, color: T.tealDark, fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 9999 }}>★ BESTSELLER</div>}
             </div>
-            <div style={{ padding: 32 }}>
-              <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 26, color: T.text, marginBottom: 8 }}>{selected.name}</h2>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
-                <span style={{ fontFamily: "'Inter'", fontSize: 24, fontWeight: 700, color: T.teal }}>₹275</span>
-                <span style={{ fontFamily: "'Inter'", fontSize: 15, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
-                <span style={{ fontFamily: "'Inter'", fontSize: 11, background: '#e8312a', color: '#fff', fontWeight: 700, padding: '3px 8px', borderRadius: 9999 }}>45% OFF</span>
+            <div style={{ padding: isMobile ? '16px 16px 20px' : '32px' }}>
+              <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 20 : 26, color: T.text, marginBottom: 6 }}>{selected.name}</h2>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: isMobile ? 4 : 4 }}>
+                <span style={{ fontFamily: "'Inter'", fontSize: isMobile ? 20 : 24, fontWeight: 700, color: T.teal }}>₹275</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: 13, color: '#999', textDecoration: 'line-through' }}>₹499 MRP</span>
+                <span style={{ fontFamily: "'Inter'", fontSize: 10, background: '#e8312a', color: '#fff', fontWeight: 700, padding: '3px 8px', borderRadius: 9999 }}>45% OFF · 50 gm</span>
               </div>
-              <div style={{ marginBottom: 16 }}>
-                <span style={{ fontFamily: "'Inter'", fontSize: 12, color: T.textMuted }}>50 gm pack</span>
+              <p style={{ fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.6, marginBottom: 12 }}>{selected.short}</p>
+
+              {/* BUY BUTTONS — always visible first */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
+                <RippleButton onClick={() => openWhatsApp(selected.name)}
+                  style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '13px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
+                  hoverStyle={{ transform: 'scale(1.02)', filter: 'brightness(1.05)' }}
+                ><span>💬</span> Order via WhatsApp</RippleButton>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                  <button onClick={() => window.open('https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln', '_blank')}
+                    style={{ background: '#FF9900', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Amazon</button>
+                  <button onClick={() => window.open('https://www.flipkart.com/store/nevisan', '_blank')}
+                    style={{ background: '#2874F0', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'" }}>Flipkart</button>
+                </div>
               </div>
-              <p style={{ fontFamily: "'Inter'", fontSize: 14, color: T.textMuted, lineHeight: 1.65, marginBottom: 14 }}>{selected.short}</p>
-              <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
+
+              <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
                 {selected.tags.map(t => <TagChip key={t} label={t} color={selected.color} />)}
               </div>
               {selected.benefits && (
@@ -1146,24 +1158,6 @@ function CollectionPage({ setPage }) {
                   </div>
                 </div>
               )}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                <RippleButton onClick={() => openWhatsApp(selected.name)}
-                  style={{ width: '100%', background: '#25D366', color: '#fff', border: 'none', borderRadius: 9999, padding: '14px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
-                  hoverStyle={{ transform: 'scale(1.02)', filter: 'brightness(1.05)' }}
-                ><span>💬</span> Order via WhatsApp</RippleButton>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-                  <button onClick={() => window.open('https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln', '_blank')}
-                    style={{ background: '#FF9900', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'", transition: 'filter 200ms' }}
-                    onMouseEnter={e => e.currentTarget.style.filter = 'brightness(1.1)'}
-                    onMouseLeave={e => e.currentTarget.style.filter = 'none'}
-                  >Amazon</button>
-                  <button onClick={() => window.open('https://www.flipkart.com/store/nevisan', '_blank')}
-                    style={{ background: '#2874F0', color: '#fff', border: 'none', borderRadius: 9999, padding: '11px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Inter'", transition: 'filter 200ms' }}
-                    onMouseEnter={e => e.currentTarget.style.filter = 'brightness(1.1)'}
-                    onMouseLeave={e => e.currentTarget.style.filter = 'none'}
-                  >Flipkart</button>
-                </div>
-              </div>
             </div>
           </div>
         </div>

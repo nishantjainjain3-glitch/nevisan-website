@@ -2393,16 +2393,16 @@ function WholesalePage({ setPage }) {
   const { isMobile } = useViewport();
   const [form, setForm] = React.useState({ name: '', business: '', type: '', qty: '', message: '' });
   const buyers = [
-    { icon: '☕', title: 'Cafés & Restaurants', desc: 'Serve premium single-origin Assam tea on your menu. Loose leaf or portion-packed options available.' },
-    { icon: '🏨', title: 'Hotels & Resorts', desc: 'In-room and restaurant tea service with branded packaging available for premium properties.' },
-    { icon: '🎁', title: 'Corporate Gifting', desc: 'Curated tea gift boxes for employees, clients and events. Custom branding on request.' },
+    { icon: '☕', title: 'Cafés & Restaurants', desc: 'Serve premium single-origin Assam tea on your menu. Each pack is 50gm — minimum order 20–30 packs.' },
+    { icon: '🏨', title: 'Hotels & Resorts', desc: 'In-room and restaurant tea service. Each pack is 50gm, perfect for individual servings.' },
+    { icon: '🎁', title: 'Corporate Gifting', desc: 'Curated tea gift sets for employees, clients and events. Minimum 20 packs per order.' },
     { icon: '🛒', title: 'Retail Stores', desc: 'Stock Nevisan in your store. Competitive margins and consistent supply guaranteed.' },
     { icon: '🏥', title: 'Wellness Centres', desc: 'Herbal and green tea blends for spas, yoga studios and wellness retreats.' },
     { icon: '📦', title: 'Online Resellers', desc: 'Resell Nevisan through your own platform. Dropshipping and bulk fulfilment available.' },
   ];
   const perks = [
-    { icon: '✓', text: 'Minimum order: 500g per variety' },
-    { icon: '✓', text: 'Custom branded packaging available' },
+    { icon: '✓', text: 'Each pack is 50gm' },
+    { icon: '✓', text: 'Minimum order: 20–30 packs per variety' },
     { icon: '✓', text: 'Pan-India delivery' },
     { icon: '✓', text: 'Dedicated account manager' },
     { icon: '✓', text: 'Response within 24 hours' },
@@ -2470,7 +2470,7 @@ function WholesalePage({ setPage }) {
                 { key: 'name', label: 'Your Name', placeholder: 'Rahul Sharma' },
                 { key: 'business', label: 'Business Name', placeholder: 'The Green Café' },
                 { key: 'type', label: 'Business Type', placeholder: 'Café / Hotel / Retail / Gifting…' },
-                { key: 'qty', label: 'Estimated Monthly Quantity', placeholder: 'e.g. 5kg, 20 boxes' },
+                { key: 'qty', label: 'Estimated Monthly Quantity', placeholder: 'e.g. 20 packs, 50 packs (each 50gm)' },
               ].map(f => (
                 <div key={f.key}>
                   <label style={{ fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, color: T.teal, textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: 6 }}>{f.label}</label>

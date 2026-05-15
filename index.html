@@ -1266,10 +1266,26 @@ function PhilosophySection() {
   const leftRef = useGsapReveal();
   const [rightRef, rightInView] = useInView(0.15);
   const features = [
-    { icon: '⏱', title: 'Can be steeped twice', desc: 'Whole leaf quality means the second steep is as rewarding as the first. Better value, richer taste.' },
-    { icon: '◈', title: 'Chemical-free, always', desc: 'Pesticide-free from soil to seal. PGS-India organic certified. No exceptions.' },
-    { icon: 'A', title: 'Single origin, Golaghat', desc: 'Every variety from one region. Consistent quality. Traceable from garden to pack.' },
-    { icon: '⊡', title: 'Handcrafted, not manufactured', desc: 'Each batch made by Tailor Made Tea of Golaghat. Small batch, intentional process.' },
+    {
+      icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>,
+      title: 'Can be steeped twice',
+      desc: 'Whole leaf quality means the second steep is as rewarding as the first. Better value, richer taste.'
+    },
+    {
+      icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>,
+      title: 'Chemical-free, always',
+      desc: 'Pesticide-free from soil to seal. PGS-India organic certified. No exceptions.'
+    },
+    {
+      icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>,
+      title: 'Single origin, Golaghat',
+      desc: 'Every variety from one region. Consistent quality. Traceable from garden to pack.'
+    },
+    {
+      icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>,
+      title: 'Handcrafted, not manufactured',
+      desc: 'Each batch made by Tailor Made Tea of Golaghat. Small batch, intentional process.'
+    },
   ];
 
   const { isMobile } = useViewport();

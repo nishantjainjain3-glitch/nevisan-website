@@ -619,7 +619,7 @@ function Hero({ setPage }) {
             opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(24px)',
             transition: 'opacity 0.8s ease-out 0.65s, transform 0.8s ease-out 0.65s',
           }}>
-            Nine varieties. One garden. Every leaf from Golaghat — whole, unblended, handcrafted at golden hour.
+            Nine varieties. One garden in Golaghat, Assam. Whole leaf, chemical-free, steeped in nothing but intention.
           </p>
 
           {/* CTAs */}
@@ -741,7 +741,7 @@ const TEAS = [
     short: 'Refreshing citrus lift. Aids digestion and boosts metabolism.',
     tags: ['DIGESTION', 'METABOLISM'],
     bg: '#d4edd8', color: '#3a7a50',
-    img: 'teas/chamomile.png',
+    img: 'teas/lemongrass.png',
     price: 499,
     brew: '90°C · 2–3 min · Can steep twice',
     benefits: [
@@ -757,7 +757,7 @@ const TEAS = [
     short: 'Butterfly pea flower. Calming, antioxidant-rich, visually stunning.',
     tags: ['CALMING', 'ANTIOXIDANT'],
     bg: '#c8dff0', color: '#2a5a8a',
-    img: 'teas/tulsi.png',
+    img: 'teas/blue-flower.png',
     price: 499,
     brew: '85°C · 2–3 min · No milk needed',
     benefits: [
@@ -773,7 +773,7 @@ const TEAS = [
     short: 'Exotic, non-alcoholic, warm and indulgent. Utterly unique.',
     tags: ['NON-ALC', 'EXOTIC'],
     bg: '#f5e9a0', color: '#8a6a10',
-    img: 'teas/spearmint.png',
+    img: 'teas/rum.png',
     price: 499,
     bestseller: true,
     brew: '90°C · 3 min · Excellent hot or iced',
@@ -790,7 +790,7 @@ const TEAS = [
     short: 'Hormonal balance. Reduces acne. Skin-friendly.',
     tags: ['HORMONAL', 'SKIN'],
     bg: '#e8d4f0', color: '#6a3a8a',
-    img: 'teas/rum.png',
+    img: 'teas/spearmint.png',
     price: 499,
     brew: '85°C · 2 min · Light and refreshing',
     benefits: [
@@ -806,7 +806,7 @@ const TEAS = [
     short: 'Sacred basil with Assam green. Natural immunity support.',
     tags: ['IMMUNITY', 'STRESS'],
     bg: '#d4edd8', color: '#3a7a50',
-    img: 'teas/whiskey.png',
+    img: 'teas/tulsi.png',
     price: 499,
     brew: '90°C · 3–4 min · Best plain or with honey',
     benefits: [
@@ -822,7 +822,7 @@ const TEAS = [
     short: 'Naturally calming floral blend. Aids restful, deeper sleep.',
     tags: ['SLEEP', 'CALMING'],
     bg: '#f5e9a0', color: '#8a6a10',
-    img: 'teas/organic.png',
+    img: 'teas/chamomile.png',
     price: 499,
     brew: '85°C · 4 min · Best before bed',
     benefits: [
@@ -838,7 +838,7 @@ const TEAS = [
     short: 'Bold, smoky, non-alcoholic. Exotic indulgence in every sip.',
     tags: ['NON-ALC', 'BOLD'],
     bg: '#e0d4c8', color: '#5a4030',
-    img: 'teas/blue-flower.png',
+    img: 'teas/whiskey.png',
     price: 499,
     brew: '90°C · 3 min · Bold, best enjoyed slowly',
     benefits: [
@@ -854,7 +854,7 @@ const TEAS = [
     short: 'Natural GABA. Deep relaxation, mental clarity, stress relief.',
     tags: ['RELAXATION', 'FOCUS'],
     bg: '#c0e0dc', color: '#1b7a82',
-    img: 'teas/lemongrass.png',
+    img: 'teas/gaba.png',
     price: 499,
     brew: '85°C · 3 min · Nitrogen-anaerobic processed',
     benefits: [
@@ -870,7 +870,7 @@ const TEAS = [
     short: 'Pure single-origin Assam green. PGS-India certified organic. Clean, grassy, whole.',
     tags: ['ORGANIC', 'PURE'],
     bg: '#c8e8c0', color: '#2a6a2a',
-    img: 'teas/gaba.png',
+    img: 'teas/organic.png',
     price: 499,
     badge: 'ORGANIC',
     brew: '80°C · 2 min · Never boiling water',
@@ -1638,7 +1638,7 @@ function Footer({ setPage }) {
           <div style={{ gridColumn: isMobile ? '1 / -1' : 'auto' }}>
             <NevLogo size={isMobile ? 56 : 72} />
             <p style={{ fontFamily: "'Inter'", fontSize: 13, lineHeight: 1.7, color: 'rgba(255,255,255,0.55)', marginTop: 20, maxWidth: 280 }}>
-              Packed with care in Guwahati.<br/>nevisan12@gmail.com · 98642 45687
+              Packed with care in Guwahati.<br/>nevisan12@gmail.com · +91 98642 45687
             </p>
             <button
               onClick={() => openWhatsApp()}
@@ -2145,12 +2145,12 @@ function PageHero({ photo, label, title, subtitle }) {
 function OurStoryPage({ setPage }) {
   return (
     <div style={{ animation: 'page-enter 0.45s ease both' }}>
-      <PageHero photo={PAGE_PHOTOS.ourStory} label="Single Origin · Golaghat, Assam" title="Where every leaf begins" subtitle="A misty garden in Assam. A family obsession with quality. The whole story in every cup." />
+      <PageHero photo={PAGE_PHOTOS.ourStory} label="Single Origin · Golaghat, Assam" title="Where every leaf begins" subtitle="We grew up next to the world's best tea gardens — and decided the rest of India should taste them too." />
       <PhilosophySection />
       <div style={{ background: T.cream, padding: '80px 32px' }}>
         <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 36, color: T.text, marginBottom: 24 }}>From Golaghat, with intention</h2>
-          <p style={{ fontFamily: "'Inter'", fontSize: 16, color: T.textMuted, lineHeight: 1.8 }}>Nevisan was born from a simple belief: that tea should taste like where it comes from. Every pack traces to a single garden in Golaghat, Assam — one of the world's most prized tea regions. No blends. No fillers. Just whole leaves, whole story.</p>
+          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 36, color: T.text, marginBottom: 24 }}>The leaf that started it all</h2>
+          <p style={{ fontFamily: "'Inter'", fontSize: 16, color: T.textMuted, lineHeight: 1.8 }}>The question was simple: if Golaghat grows some of the world's finest tea, why does the tea in most Indian homes taste so ordinary? We didn't have a good answer. So we stopped waiting for one and went back to the garden — to bring the whole leaf, exactly as it grows, directly to you.</p>
         </div>
       </div>
       <Footer setPage={setPage} />

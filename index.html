@@ -1300,13 +1300,13 @@ function PhilosophySection() {
         <div ref={leftRef}>
           <div data-gsap-reveal style={{ fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: '0.16em', color: T.gold, textTransform: 'uppercase', marginBottom: 20 }}>Our Philosophy</div>
           <h2 data-gsap-reveal style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 'clamp(36px, 4vw, 56px)', color: T.white, lineHeight: 1.15, marginBottom: 28 }}>
-            Tea as it was meant<br/>to be grown
+            You deserve to taste<br/>what Assam really grows
           </h2>
           <p data-gsap-reveal style={{ fontFamily: "'Inter'", fontSize: 16, color: 'rgba(255,255,255,0.72)', lineHeight: 1.75, marginBottom: 20 }}>
-            Every leaf begins its journey in Golaghat — where the Assam rain falls at exactly the right angle, and the soil holds centuries of tea-growing memory. We don't blend from dust. We don't add fillers. We bring the whole leaf, whole story, to your cup.
+            Most people in India have drunk Assam tea their whole lives — and most of it has been broken leaves, dust, and blends made for volume, not flavour. We grew up here. We knew what the actual leaf tasted like. And we couldn't unsee the gap.
           </p>
           <p data-gsap-reveal style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic', fontSize: 15, color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, marginBottom: 32 }}>
-            "The rain falls just right and the humidity hugs the leaves into perfection." Manufactured by Tailor Made Tea, Golaghat — packed with care in Guwahati.
+            "Every pack of Nevisan holds the same leaf that wealthy buyers in Japan and Europe have been paying a premium for. We just think you deserved to have it too."
           </p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {['PGS-INDIA ORGANIC', 'FSSAI LICENSED', 'FOOD SAFETY, ASSAM', 'MADE IN INDIA'].map(tag => (
@@ -2300,14 +2300,14 @@ function AboutPage({ setPage }) {
   const { isMobile } = useViewport();
   return (
     <div style={{ background: T.cream, minHeight: '100vh', animation: 'page-enter 0.45s ease both' }}>
-      <PageHero photo={PAGE_PHOTOS.about} label="Our Story" title="Tea as it was meant to grow." subtitle="A family from Guwahati, a garden in Golaghat, and an obsession with the whole leaf." />
+      <PageHero photo={PAGE_PHOTOS.about} label="Our Story" title="We grew up next to the world's best tea. And drank mediocre tea anyway." subtitle="Until we decided to do something about it." />
       <div style={{ maxWidth: 900, margin: '0 auto', padding: isMobile ? '48px 20px 80px' : '64px 40px 100px' }}>
         <div style={{ display: 'none' }}></div>
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 48, marginBottom: 64 }}>
           <div>
             <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 24, color: T.text, marginBottom: 16 }}>Why Nevisan exists</h2>
-            <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted, lineHeight: 1.8, marginBottom: 16 }}>Nevisan was born from a simple belief: that tea should taste exactly like where it comes from. Not a blend of leaves from five regions. Not dust in a bag. Whole leaves, one garden, full story.</p>
-            <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted, lineHeight: 1.8 }}>Every pack traces to a single garden in Golaghat, Assam — one of the world's most prized tea regions. We work directly with Tailor Made Tea of Golaghat, a small-batch processing house that shares our obsession with quality over volume.</p>
+            <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted, lineHeight: 1.8, marginBottom: 16 }}>Growing up in Guwahati, we watched Assam's most beautiful teas leave on trucks — only to return as broken dust inside someone else's brand. We drank that dust like everyone else. Until we stopped and asked: what does the actual leaf taste like?</p>
+            <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted, lineHeight: 1.8 }}>That question led us to Golaghat. To Tailor Made Tea — a small processing house that handles the leaf the way it deserves to be handled. One garden. Whole leaves. Nothing added. That's Nevisan.</p>
           </div>
           <div>
             <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 24, color: T.text, marginBottom: 16 }}>What makes us different</h2>
@@ -2331,7 +2331,7 @@ function AboutPage({ setPage }) {
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div style={{ fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: '0.18em', color: T.teal, textTransform: 'uppercase', marginBottom: 12 }}>The People Behind Nevisan</div>
             <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: isMobile ? 28 : 36, color: T.text, lineHeight: 1.2, marginBottom: 16 }}>Founded in 2025 by a husband &amp; wife</h2>
-            <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted, lineHeight: 1.75, maxWidth: 560, margin: '0 auto' }}>Nevisan began with a shared conviction — that India deserves better tea than what's in most homes. Two people, one idea, and a garden in Golaghat.</p>
+            <p style={{ fontFamily: "'Inter'", fontSize: 15, color: T.textMuted, lineHeight: 1.75, maxWidth: 560, margin: '0 auto' }}>Nevisan didn't start with a business plan. It started with a frustration — and a question neither of us could stop asking: why does the world's best tea region produce tea that most Indians never actually taste?</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 24 : 40 }}>
             {[
@@ -2339,13 +2339,13 @@ function AboutPage({ setPage }) {
                 initials: 'NJ',
                 name: 'Nishant Jain',
                 role: 'Founder',
-                bio: 'Nishant drives the sourcing, operations and vision for Nevisan. Growing up in Guwahati with Assam\'s tea gardens as a backdrop, he always believed the region\'s finest teas deserved a better story — and a brand worthy of telling it.',
+                bio: 'Nishant grew up in Guwahati with tea gardens practically in his backyard — and somehow the tea at home was still mediocre. That contradiction never sat right with him. Nevisan is his answer to it: get the real leaf, and get it to the people who deserve it.',
               },
               {
                 initials: 'UJ',
                 name: 'Uditi Jain',
                 role: 'Founder & Creative Director',
-                bio: 'Uditi shapes everything you see and feel about Nevisan — the design, the words, the experience. She brings the brand\'s warmth to life, ensuring that every touchpoint reflects the care that goes into every leaf.',
+                bio: 'Uditi believes the way something feels matters as much as what it does. She shapes every part of what you experience with Nevisan — the words, the design, the moment you open the pack — so that drinking good tea also feels like a small, meaningful ritual.',
               },
             ].map((founder) => (
               <div key={founder.name} style={{ background: T.white, borderRadius: 20, padding: isMobile ? '28px 24px' : '36px 32px', boxShadow: '0 2px 16px rgba(0,0,0,0.06)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
@@ -2361,8 +2361,8 @@ function AboutPage({ setPage }) {
         </div>
 
         <div style={{ background: T.teal, borderRadius: 20, padding: isMobile ? '32px 24px' : '48px 56px', textAlign: 'center' }}>
-          <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 28, color: '#fff', marginBottom: 16 }}>From Mahabir Enterprise, Guwahati</h3>
-          <p style={{ fontFamily: "'Inter'", fontSize: 15, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, maxWidth: 540, margin: '0 auto 28px' }}>We are a family-run business from Guwahati, Assam. Every decision — from which garden to source from to what price to charge — is made with one question in mind: is this good for the person drinking it?</p>
+          <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 28, color: '#fff', marginBottom: 16 }}>We're not a corporation. We're a family.</h3>
+          <p style={{ fontFamily: "'Inter'", fontSize: 15, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, maxWidth: 540, margin: '0 auto 28px' }}>Mahabir Enterprise, Guwahati — that's us. A husband, a wife, and a conviction that people across India deserve to taste what Assam's gardens are actually capable of. Every order we get still feels personal. We want it to stay that way.</p>
           <button onClick={() => openWhatsApp()} style={{ background: T.gold, color: T.tealDark, border: 'none', borderRadius: 9999, padding: '13px 32px', cursor: 'pointer', fontFamily: "'Inter'", fontSize: 14, fontWeight: 700 }}>💬 Say hello on WhatsApp</button>
         </div>
       </div>

@@ -802,6 +802,24 @@ function RippleButton({ children, onClick, style = {}, hoverStyle = {} }) {
 }
 
 /* ── TEAS DATA ────────────────────────────────────────────────── */
+/*
+  ⚠️  WARNING — DO NOT CHANGE THE img PATHS BELOW ⚠️
+  The filenames in /teas/ folder do NOT match their product names.
+  The correct verified mapping (confirmed by reading each image) is:
+
+  Lemongrass Green Tea    → teas/chamomile.png
+  Blue Flower Green Tea   → teas/tulsi.png
+  Rum Green Tea           → teas/spearmint.png
+  Spearmint Green Tea     → teas/rum.png
+  Tulsi Green Tea         → teas/whiskey.png
+  Chamomile Green Tea     → teas/organic.png
+  Whiskey Green Tea       → teas/blue-flower.png
+  GABA Oolong Tea         → teas/lemongrass.png
+  Organic Green Tea       → teas/gaba.png
+
+  DO NOT "fix" these to match the filenames — the filenames are wrong.
+  The images were uploaded to GitHub with incorrect names.
+*/
 const TEAS = [
   {
     name: 'Lemongrass Green Tea',

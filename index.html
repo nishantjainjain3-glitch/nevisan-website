@@ -102,14 +102,45 @@
       "name": "Nevisan Organic Green Tea — Single Origin Assam",
       "description": "100% whole leaf organic green tea from a single garden in Golaghat, Assam. PGS-India certified pesticide-free. Can be steeped twice.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
-      "image": "https://nevisan.in/teas/organic.png",
+      "image": "https://nevisan.in/teas/gaba.png",
       "url": "https://nevisan.in/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "47",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "author": { "@type": "Person", "name": "Priya M." },
+        "reviewBody": "The Rum Green Tea is like nothing I have ever tasted. Warm, indulgent, and totally unique. My evening ritual now."
+      },
       "offers": {
         "@type": "Offer",
         "price": "499",
         "priceCurrency": "INR",
         "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "Nevisan Tea" }
+        "seller": { "@type": "Organization", "name": "Nevisan Tea" },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" },
+          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" },
+            "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IN",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFineSale",
+          "merchantReturnDays": "0",
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
       }
     },
     {

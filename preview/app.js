@@ -2044,7 +2044,7 @@ function TeaQuizModal({ onClose }) {
     )
     )
     )
-    ), document.body);
+    , document.body);
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App,null));

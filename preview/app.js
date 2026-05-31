@@ -888,7 +888,7 @@
             }
           }, "The Catalog"),
           React.createElement("div", { style: { height: 1, width: 60, background: T.gold } })
-        }),
+        ),
         React.createElement("h2", {
           style: {
             fontFamily: "'PP Mondwest', 'Playfair Display', serif",

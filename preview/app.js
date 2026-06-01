@@ -2560,41 +2560,19 @@ useEffect(() => {
   return () => window.removeEventListener("mousemove", onMove);
 }, []);
 let r;if(isLoading){return React.createElement("div",{className:"preloader-screen",style:{background:"#0f3f45",opacity:loadingCount===100?0:1,transition:"opacity 0.3s ease-in-out",fontFamily:"'PP Neue Montreal', 'Inter', sans-serif"}},React.createElement("div",{className:"preloader-words",style:{fontFamily:"'PP Mondwest', 'Playfair Display', serif",color:T.gold,letterSpacing:"0.05em"}},["Single Origin","PGS-Organic","Whole Leaf","Assam Tea","Nevisan"][loadingWordIndex]),React.createElement("div",{className:"preloader-counter",style:{fontFamily:"'PP Mondwest', 'Playfair Display', serif",color:T.white}},String(loadingCount).padStart(3,"0")),React.createElement("div",{className:"preloader-bar",style:{width:`${loadingCount}%`,background:`linear-gradient(90deg, ${T.gold} 0%, ${T.teal} 100%)`}}))}return r="Home"===e?React.createElement(HomePage,{setPage:i}):"Collection"===e?React.createElement(React.Fragment,null,React.createElement(CollectionPage,{setPage:i}),React.createElement(Footer,{setPage:i})):"Our Story"===e?React.createElement(OurStoryPage,{setPage:i}):"About"===e?React.createElement(AboutPage,{setPage:i}):"Journal"===e?React.createElement(JournalPage,{setPage:i}):"Contact"===e?React.createElement(ContactPage,{setPage:i}):"Certifications"===e?React.createElement(CertificationsPage,{setPage:i}):"Wholesale"===e?React.createElement(WholesalePage,{setPage:i}):"FAQ"===e?React.createElement(FAQPage,{setPage:i}):React.createElement(HomePage,{setPage:i}),React.createElement(CartProvider,null,React.createElement(ViewportCtx.Provider,{value:o},React.createElement(ScrollProgress,null),React.createElement(CursorGlow,null),React.createElement(Nav,{page:e,setPage:i,openQuiz:()=>setQuizOpen(!0)}),React.createElement("div",{id:"active-page",key:e},r),quizOpen&&React.createElement(TeaQuizModal,{onClose:()=>setQuizOpen(!1)}),React.createElement(CartFAB,null),React.createElement(WhatsAppFAB,null),React.createElement(BottomFloatingNav,null)))}function CartSheet({onClose:e}){const{cart:t,updateQty:a,clearCart:n}=useCart(),o=(useViewport(),t.reduce((e,t)=>e+499*t.qty,0)),i=t.reduce((e,t)=>e+t.qty,0);return ReactDOM.createPortal(React.createElement("div",{style:{position:"fixed",inset:0,background:"rgba(0,0,0,0.55)",zIndex:400,display:"flex",alignItems:"flex-end",justifyContent:"center"},onClick:e},React.createElement("div",{style:{background:"rgba(255, 255, 255, 0.72)",backdropFilter:"blur(20px)",WebkitBackdropFilter:"blur(20px)",borderTop:"1px solid rgba(201, 168, 76, 0.3)",borderRadius:"20px 20px 0 0",width:"100%",maxWidth:500,maxHeight:"85vh",display:"flex",flexDirection:"column",animation:"slide-up 0.3s ease both"},onClick:e=>e.stopPropagation()},React.createElement("div",{style:{padding:"14px 20px 12px",borderBottom:"1px solid #f0f0f0",display:"flex",justifyContent:"space-between",alignItems:"center",flexShrink:0}},React.createElement("div",null,React.createElement("h3",{style:{fontFamily:"'Playfair Display', Georgia, serif",fontWeight:400,fontSize:20,color:T.text,margin:0}},"Your Order"),React.createElement("div",{style:{fontFamily:"'Inter'",fontSize:12,color:T.textMuted,marginTop:2}},i," pack",1!==i?"s":""," \u00b7 50gm each")),React.createElement("button",{onClick:e,style:{background:"rgba(0,0,0,0.07)",border:"none",borderRadius:"50%",width:32,height:32,cursor:"pointer",fontSize:16,display:"flex",alignItems:"center",justifyContent:"center"}},"\u2715")),React.createElement("div",{style:{overflowY:"auto",flex:1,padding:"12px 20px"}},t.map(e=>React.createElement("div",{key:e.tea.name,style:{display:"flex",alignItems:"center",gap:12,padding:"12px 0",borderBottom:"1px solid #f8f8f8"}},React.createElement("div",{style:{width:54,height:54,borderRadius:10,overflow:"hidden",background:e.tea.bg,flexShrink:0}},e.tea.img?React.createElement("img",{src:e.tea.img,alt:e.tea.name,loading:"lazy",style:{width:"100%",height:"100%",objectFit:"cover"}}):React.createElement("div",{style:{display:"flex",alignItems:"center",justifyContent:"center",height:"100%",fontSize:22}},"\ud83c\udf43")),React.createElement("div",{style:{flex:1,minWidth:0}},React.createElement("div",{style:{fontFamily:"'Inter'",fontSize:13,fontWeight:600,color:T.text,marginBottom:2,lineHeight:1.3}},e.tea.name),React.createElement("div",{style:{fontFamily:"'Inter'",fontSize:13,fontWeight:700,color:T.teal}},"\u20b9",275*e.qty)),React.createElement("div",{style:{display:"flex",alignItems:"center",gap:10,flexShrink:0}},React.createElement("button",{onClick:()=>a(e.tea.name,-1),style:{width:30,height:30,borderRadius:"50%",border:`1.5px solid ${T.teal}`,background:"none",color:T.teal,fontSize:18,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",lineHeight:1}},"\u2212"),React.createElement("span",{style:{fontFamily:"'Inter'",fontSize:16,fontWeight:700,color:T.text,minWidth:18,textAlign:"center"}},e.qty),React.createElement("button",{onClick:()=>a(e.tea.name,1),style:{width:30,height:30,borderRadius:"50%",background:T.teal,border:"none",color:"#fff",fontSize:18,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",lineHeight:1}},"+"))))),React.createElement("div",{style:{padding:"16px 20px 28px",borderTop:"1px solid #f0f0f0",flexShrink:0}},React.createElement("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:14}},React.createElement("span",{style:{fontFamily:"'Inter'",fontSize:14,color:T.textMuted}},"Total Amount"),React.createElement("span",{style:{fontFamily:"'Inter'",fontSize:22,fontWeight:700,color:T.teal}},"\u20b9",o)),React.createElement("button",{onClick:()=>{try{const m={"Lemongrass Green Tea":"KT-8GBE-8MZG","Blue Flower Green Tea":"Blue Flower-1","Rum Green Tea":"RUM-1","Spearmint Green Tea":"Spearmint","Tulsi Green Tea":"MK-H5LY-IRK3","Chamomile Green Tea":"Chamomile-1","Whiskey Green Tea":"9E-23FO-LL8Q","GABA Oolong Tea":"GABA","Organic Green Tea":"Unflavoured-1"};const skus=t.map(item=>m[item.tea.name]).filter(Boolean);if(skus.length>0&&typeof fbq!=="undefined"){fbq("track","Purchase",{content_ids:skus,content_type:"product",value:o,currency:"INR"})}}catch(err){}const a=t.map(e=>`\u2022 ${e.tea.name} x${e.qty} = \u20b9${275*e.qty}`).join("\n");window.open(`https://wa.me/919864245687?text=${encodeURIComponent(`Hi Nevisan! I'd like to place an order:\n\n${a}\n\nTotal: \u20b9${o} (${i} packs \u00d7 50gm)\n\nPlease confirm my order and share delivery details.`)}`,"_blank"),n(),e()},style:{width:"100%",background:"#25D366",color:"#fff",border:"none",borderRadius:9999,padding:"14px",fontSize:15,fontWeight:700,cursor:"pointer",fontFamily:"'Inter'",display:"flex",alignItems:"center",justifyContent:"center",gap:8}},React.createElement("svg",{width:"18",height:"18",viewBox:"0 0 24 24",fill:"#fff"},React.createElement("path",{d:"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"}),React.createElement("path",{d:"M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.523 5.836L.057 23.643a.5.5 0 00.625.601l5.963-1.583A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.045-1.395l-.361-.214-3.741.993.984-3.648-.235-.374A9.808 9.808 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"})),"Place Order via WhatsApp")))),document.body)}function CartFAB(){const{cart:e}=useCart(),[t,a]=useState(!1),n=e.reduce((e,t)=>e+t.qty,0);return 0===n?null:React.createElement(React.Fragment,null,React.createElement("button",{onClick:()=>a(!0),style:{position:"fixed",bottom:90,right:20,zIndex:998,width:56,height:56,borderRadius:"50%",background:T.teal,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 20px rgba(27,122,130,0.45)",border:"none",cursor:"pointer",fontSize:22}},"\ud83d\uded2",React.createElement("div",{style:{position:"absolute",top:-4,right:-4,background:"#e8312a",color:"#fff",borderRadius:"50%",width:22,height:22,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:700,fontFamily:"'Inter'"}},n)),t&&React.createElement(CartSheet,{onClose:()=>a(!1)}))}function AddToCartBtn({tea:e,onAdded:t}){const{addToCart:a}=useCart(),[n,o]=useState(!1);return React.createElement("button",{onClick:()=>{a(e),o(!0),setTimeout(()=>o(!1),1500),t&&t()},style:{width:"100%",background:n?T.teal:T.tealDark,color:"#fff",border:"none",borderRadius:9999,padding:"13px",fontSize:14,fontWeight:700,cursor:"pointer",fontFamily:"'Inter'",display:"flex",alignItems:"center",justifyContent:"center",gap:8,transition:"background 0.2s"}},n?"\u2713 Added to Cart!":"\ud83d\uded2 Add to Cart")}function WhatsAppFAB(){const[e,t]=useState(!1);return useEffect(()=>{const e=()=>t(window.scrollY>200);return window.addEventListener("scroll",e,{passive:!0}),()=>window.removeEventListener("scroll",e)},[]),React.createElement("a",{href:"https://wa.me/919864245687?text=Hi%20Nevisan!%20I%27d%20like%20to%20order%20some%20tea.",target:"_blank",rel:"noopener noreferrer",style:{position:"fixed",bottom:24,right:20,zIndex:999,width:56,height:56,borderRadius:"50%",background:"#25D366",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 20px rgba(37,211,102,0.5)",opacity:e?1:0,transform:e?"scale(1)":"scale(0.7)",transition:"opacity 0.25s ease, transform 0.25s ease",pointerEvents:e?"auto":"none",textDecoration:"none"},"aria-label":"Chat on WhatsApp"},React.createElement("svg",{width:"28",height:"28",viewBox:"0 0 24 24",fill:"#fff"},React.createElement("path",{d:"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"}),React.createElement("path",{d:"M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.523 5.836L.057 23.643a.5.5 0 00.625.601l5.963-1.583A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.045-1.395l-.361-.214-3.741.993.984-3.648-.235-.374A9.808 9.808 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"})))}function SandTransitionImage({ src, alt, bg, className, style }) {
-  const [currentSrc, setCurrentSrc] = useState(src);
-  const [displacementScale, setDisplacementScale] = useState(0);
-  const [opacity, setOpacity] = useState(1);
-  const prevSrc = useRef(src);
+  const [displaySrc, setDisplaySrc] = useState(src);
+  const [prevSrc, setPrevSrc] = useState(null);
 
   useEffect(() => {
-    if (src !== prevSrc.current) {
-      let startTime = performance.now();
-      const duration = 650;
-      const animate = (now) => {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        if (progress < 0.5) {
-          const p = progress / 0.5;
-          setDisplacementScale(p * 90);
-          setOpacity(1 - p);
-        } else {
-          if (currentSrc !== src) {
-            setCurrentSrc(src);
-          }
-          const p = (progress - 0.5) / 0.5;
-          setDisplacementScale((1 - p) * 90);
-          setOpacity(p);
-        }
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          setDisplacementScale(0);
-          setOpacity(1);
-          prevSrc.current = src;
-        }
-      };
-      requestAnimationFrame(animate);
+    if (src !== displaySrc) {
+      setPrevSrc(displaySrc);
+      setDisplaySrc(src);
+      const timer = setTimeout(() => {
+        setPrevSrc(null);
+      }, 450);
+      return () => clearTimeout(timer);
     }
-  }, [src, currentSrc]);
+  }, [src, displaySrc]);
 
   return React.createElement("div", {
     style: {
@@ -2611,30 +2589,41 @@ let r;if(isLoading){return React.createElement("div",{className:"preloader-scree
       ...style
     }
   },
-    React.createElement("img", {
-      src: src,
+    React.createElement("style", null, `
+      @keyframes crossFadeOut {
+        0% { opacity: 1; transform: scale(1) translateY(0); }
+        100% { opacity: 0; transform: scale(0.94) translateY(10px); }
+      }
+      @keyframes crossFadeIn {
+        0% { opacity: 0; transform: scale(1.06) translateY(-10px); }
+        100% { opacity: 1; transform: scale(1) translateY(0); }
+      }
+    `),
+    prevSrc && React.createElement("img", {
+      key: prevSrc + "-prev",
+      src: prevSrc,
       alt: alt,
       className: className,
       style: {
+        position: "absolute",
         width: "85%",
         height: "85%",
         objectFit: "contain",
-        opacity: opacity,
-        filter: `url(#sand-dissolve-filter)`
+        animation: "crossFadeOut 450ms cubic-bezier(0.25, 1, 0.5, 1) both",
+        pointerEvents: "none"
       }
     }),
-    React.createElement("span", {
-      style: { display: "none" },
-      ref: el => {
-        if (el) {
-          const filter = document.getElementById("sand-dissolve-filter");
-          if (filter) {
-            const map = filter.querySelector("feDisplacementMap");
-            if (map) {
-              map.setAttribute("scale", displacementScale);
-            }
-          }
-        }
+    React.createElement("img", {
+      key: displaySrc + "-new",
+      src: displaySrc,
+      alt: alt,
+      className: className,
+      style: {
+        position: prevSrc ? "absolute" : "relative",
+        width: "85%",
+        height: "85%",
+        objectFit: "contain",
+        animation: "crossFadeIn 450ms cubic-bezier(0.25, 1, 0.5, 1) both"
       }
     })
   );

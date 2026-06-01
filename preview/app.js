@@ -239,7 +239,7 @@
         },
         onMouseEnter: e => { e.currentTarget.style.transform = "scale(1.1)"; },
         onMouseLeave: e => { e.currentTarget.style.transform = "scale(1)"; }
-      }, "\u00e2\u2020\u2019")
+      }, "\u2192")
     ),
     React.createElement("div", {
       style: {
@@ -309,7 +309,7 @@
             gap: "8px",
             boxShadow: "0 4px 15px rgba(37,211,102,0.4)"
           }
-        }, "\u00f0\u0178\u2019\u00ac Order via WhatsApp (MRP \u20b9499)"),
+        }, "\ud83d\udcac Order via WhatsApp (MRP \u20b9499)"),
         React.createElement("button", {
           onClick: () => setPage("Collection"),
           style: {
@@ -574,7 +574,7 @@
             }
           },
             React.createElement("div", null,
-              React.createElement("div", { style: { color: T.gold, fontSize: "14px", marginBottom: "12px" } }, "\u00e2\u02dc\u2026".repeat(r.rating)),
+              React.createElement("div", { style: { color: T.gold, fontSize: "14px", marginBottom: "12px" } }, "\u2605".repeat(r.rating)),
               React.createElement("p", {
                 style: {
                   fontFamily: "'PP Neue Montreal', 'Inter', sans-serif",
@@ -1229,7 +1229,7 @@
                     justifyContent: "center",
                     gap: "6px"
                   }
-                }, "\u00f0\u0178\u2019\u00ac WhatsApp"),
+                }, "\ud83d\udcac WhatsApp"),
                 React.createElement("button", {
                   onClick: () => setDetailOpen(true),
                   style: {

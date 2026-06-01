@@ -219,7 +219,7 @@
         },
         onMouseEnter: e => { e.currentTarget.style.transform = "scale(1.1)"; },
         onMouseLeave: e => { e.currentTarget.style.transform = "scale(1)"; }
-      }, "\u00e2\u2020\u0090"),
+      }, "\u2190"),
       React.createElement("button", {
         onClick: handleNext,
         style: {
@@ -340,22 +340,22 @@
   const { isMobile, isTablet } = useViewport();
   const list = [
     {
-      icon: "\u00f0\u0178\u008d\u00b5",
+      icon: React.createElement("svg",{width:"20",height:"20",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"1.8",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"}),React.createElement("path",{d:"M3 3v5h5"}),React.createElement("path",{d:"M12 7v5l4 2"})),
       title: "Steep twice, enjoy twice",
       desc: "Whole leaf quality means the second steep is as rich and aromatic as the first. Double the value, double the experience."
     },
     {
-      icon: "\u00f0\u0178\u203a\u00a1\u00ef\u00b8\u008f",
+      icon: React.createElement("svg",{width:"20",height:"20",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"1.8",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"}),React.createElement("path",{d:"m9 12 2 2 4-4"})),
       title: "100% Chemical-Free",
       desc: "Grown under strict organic standards without synthetic pesticides or chemical fertilizers. PGS-India certified."
     },
     {
-      icon: "\u00f0\u0178\u201c\u008d",
+      icon: React.createElement("svg",{width:"20",height:"20",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"1.8",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"}),React.createElement("circle",{cx:"12",cy:"10",r:"3"})),
       title: "Single Origin (Golaghat)",
       desc: "Every single leaf is harvested from our exclusive garden in Upper Assam. Fully traceable, unblended, and consistent."
     },
     {
-      icon: "\u00f0\u0178\u00a4\u009d",
+      icon: React.createElement("svg",{width:"20",height:"20",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"1.8",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"}),React.createElement("path",{d:"M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"}),React.createElement("path",{d:"M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"}),React.createElement("path",{d:"M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"})),
       title: "Handcrafted in Batches",
       desc: "Made using traditional small-batch techniques to preserve natural essential oils. Never mass-manufactured."
     }
@@ -468,7 +468,8 @@
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "24px"
+                fontSize: "24px",
+                color: T.gold
               }
             }, item.icon),
             React.createElement("h3", {

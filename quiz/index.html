@@ -235,7 +235,7 @@ function renderResult(){
           <div class="tea-desc">${t.desc}</div>
           <div class="chips">${t.chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
           <div class="cta-row">
-            <a class="btn-primary" href="https://nevisan.in/#collection">Shop ${t.name} →</a>
+            <a class="btn-primary" href="https://nevisan.in/?tea=${encodeURIComponent(t.name)}">Shop ${t.name} →</a>
             <a class="btn-wa" href="https://wa.me/${WA}?text=${waMsg}" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
           </div>
         </div>

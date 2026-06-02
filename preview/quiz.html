@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tea Quiz – Nevisan</title>
+  <link rel="stylesheet" href="../theme.css" />
+  <style>
+    body {font-family: 'Inter', sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem;}
+    .question {margin-bottom: 1.5rem;}
+    .options button {display: block; width: 100%; margin: 0.3rem 0; padding: 0.6rem; background: var(--color-teal-light); border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s;}
+    .options button:hover {background: var(--color-teal-mid); color:#fff;}
+    .result {font-size: 1.2rem; margin-top: 2rem; text-align:center;}
+    .quiz-header {text-align:center; margin-bottom:2rem;}
+  </style>
+</head>
+<body>
+  <div class="quiz-header">
+    <h1>Tea Quiz</h1>
+    <p>Test your knowledge about Nevisan&rsquo;s premium teas.</p>
+  </div>
+  <div id="quiz-container"></div>
+  <script>
+    const quizData = [
+      {question: "Which tea is known for its calming, antioxidant‑rich properties?", options: ["Lemongrass Green Tea", "Blue Flower Green Tea", "Rum Green Tea"], answer: 1},
+      {question: "What is the recommended brewing temperature for Organic Green Tea?", options: ["80°C", "85°C", "90°C"], answer: 0},
+      {question: "Which ingredient makes the Blue Flower tea change colour with lemon?", options: ["Butterfly pea flower", "Chamomile", "Tulsi"], answer: 0},
+      {question: "How many times can you steep the Lemongrass tea effectively?", options: ["Once", "Twice", "Three times"], answer: 1},
+      {question: "Which tea is 100% non‑alcoholic yet has a smoky profile?", options: ["Whiskey Green Tea", "Rum Green Tea", "Spearmint Green Tea"], answer: 0},
+    ];
+    let current = 0, score = 0;
+    const container = document.getElementById('quiz-container');
+    function renderQuestion(){
+      if(current >= quizData.length){
+        container.innerHTML = `<div class="result">You scored <strong>${score}/${quizData.length}</strong>! 🎉</div>`;
+        return;
+      }
+      const q = quizData[current];
+      container.innerHTML = `
+        <div class="question"><strong>Q${current+1}.</strong> ${q.question}</div>
+        <div class="options">${q.options.map((opt,i)=>`<button data-index="${i}">${opt}</button>`).join('')}</div>
+      `;
+      document.querySelectorAll('.options button').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          if(parseInt(btn.dataset.index)===q.answer) score++;
+          current++;
+          renderQuestion();
+        });
+      });
+    }
+    renderQuestion();
+  </script>
+</body>
+</html>

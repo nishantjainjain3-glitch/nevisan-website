@@ -240,9 +240,15 @@ function renderResult(){
           </div>
         </div>
       </div>
-      <button class="retake" id="retake">↺ Retake the quiz</button>
+      <button class="retake" id="share">↗ Share this quiz</button><button class="retake" id="retake">↺ Retake the quiz</button>
     </div>`;
   document.getElementById('retake').onclick = ()=>{ reset(); renderIntro(); };
+  document.getElementById('share').onclick = async ()=>{
+    const url='https://nevisan.in/quiz';
+    const txt='I found my perfect Nevisan tea \u2014 '+t.name+'! Find yours:';
+    if(navigator.share){ try{ await navigator.share({title:'Nevisan Tea Quiz',text:txt,url:url}); }catch(e){} }
+    else{ try{ await navigator.clipboard.writeText(txt+' '+url); alert('Link copied \u2014 share it with a friend!'); }catch(e){ prompt('Copy this link:',url); } }
+  };
 }
 
 renderIntro();

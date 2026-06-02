@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://nevisan.in/sitemap.xml
+
+# AI assistants: structured plain-text content for LLMs
+# https://nevisan.in/llms.txt
+# https://nevisan.in/llms-full.txt

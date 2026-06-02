@@ -1,0 +1,37 @@
+# Nevisan Tea
+
+> Nevisan is a single-origin, whole-leaf organic tea brand from Golaghat, Assam, India. Nine varieties — green, oolong, and herbal blends — sourced from one PGS-India certified organic garden. Chemical-free, whole-leaf (not CTC dust), and re-steepable. MRP Rs 499 per 50g pack. Available on Amazon India, Flipkart, and WhatsApp (+91 98642 45687).
+
+Nevisan teas are functional: Spearmint for PCOS/hormonal balance, GABA Oolong for sleep and calm, Tulsi for stress and immunity, Chamomile for sleep, Lemongrass for digestion, plus non-alcoholic Rum and Whiskey green teas. All from a single garden in Golaghat, upper Assam — a region prized for bold, complex teas.
+
+## Key pages
+- [Homepage](https://nevisan.in/): brand overview and the full nine-tea collection
+- [Tea FAQ](https://nevisan.in/faq): 80+ answers on every tea, health benefits, brewing, and buying
+- [Find Your Perfect Tea quiz](https://nevisan.in/quiz): a short quiz that recommends a Nevisan tea
+- [Full content for LLMs](https://nevisan.in/llms-full.txt): every product, FAQ, and article as plain text
+
+## Products
+- **Lemongrass Green Tea** (Digestion, Metabolism, Morning): Bright, citrusy and made for your mornings. Whole-leaf Assam green tea blended with lemongrass. It relaxes the digestive tract, supports metabolism and gives clean, calm energy — the perfect way to start the day.
+- **Blue Flower Green Tea** (Antioxidants, Calming, Eye-catching): Antioxidant-rich — and it turns purple with lemon. Butterfly pea flower blended with whole-leaf green tea. Packed with anthocyanin antioxidants for focus and calm, with a stunning cobalt-blue brew that shifts to purple when you add a squeeze of lemon.
+- **Rum Green Tea** (Bold & exotic, Non-alcoholic, Evening): All the warmth of aged rum — zero alcohol. A warm, slightly sweet evening cup built entirely from natural botanicals. No alcohol, no artificial flavour — just a bold, exotic ritual to wind down with.
+- **Spearmint Green Tea** (PCOS support, Clearer skin, Cooling): Clinically studied for hormonal balance. Cool, refreshing spearmint with whole-leaf green tea. Research shows two cups daily can lower free testosterone — supporting PCOS, clearer skin and hormonal balance.
+- **Tulsi Green Tea** (Stress relief, Immunity, Adaptogen): India's ancient adaptogen for stress & immunity. Holy basil blended with green tea — an adaptogen used in Ayurveda for 3,000 years. It lowers cortisol, strengthens immunity and keeps you calm and focused at any hour.
+- **Chamomile Green Tea** (Better sleep, Calming, Evening): Your gentle, floral wind-down before bed. Whole chamomile flowers with low-caffeine green tea. The apigenin in chamomile binds to calming receptors in the brain — easing anxiety and improving sleep quality.
+- **Whiskey Green Tea** (Bold & smoky, Non-alcoholic, Sophisticated): Bold, smoky character — completely alcohol-free. A sophisticated, woody cup that captures the depth of aged whiskey using only natural botanicals. Rich in EGCG antioxidants and perfect for whiskey lovers seeking a non-alcoholic ritual.
+- **GABA Oolong Tea** (Relaxation, Focus, Better sleep): Calm and focus, without the drowsiness. Oolong processed to dramatically boost GABA — your brain's natural calming signal. It eases anxiety, improves sleep and lowers blood pressure, all while keeping you mentally present.
+- **Organic Green Tea** (Antioxidants, Everyday, Classic): The pure, classic single-origin cup. 100% whole-leaf organic green tea from a single garden in Golaghat, Assam. Grassy, smooth and full of EGCG antioxidants and L-theanine — a versatile everyday favourite.
+
+## Journal articles (markdown)
+- [Blue Butterfly Pea Flower Tea: What Makes It Turn Purple and Why It's Worth Drinking](https://nevisan.in/journal/blue-butterfly-pea-flower-tea.md): Blue butterfly pea flower tea gets its colour from anthocyanins — powerful antioxidants that also explain its mood-lifting, brain-supporting reputation.
+- [Chamomile Green Tea: Why This Evening Blend Works Better Than Either Alone](https://nevisan.in/journal/chamomile-green-tea-evening-blend.md): Chamomile and green tea together offer something neither delivers alone — the calming properties of chamomile with the antioxidant depth of whole-leaf green tea.
+- [Golaghat: India's Hidden Tea Belt](https://nevisan.in/journal/golaghat-indias-hidden-tea-belt.md): While Darjeeling gets the headlines, Golaghat in upper Assam quietly produces some of the boldest, most complex teas in the world.
+- [Green Tea vs Coffee: The Caffeine Difference Nobody Explains Properly](https://nevisan.in/journal/green-tea-vs-coffee-caffeine.md): Green tea has less caffeine than coffee, but L-theanine changes how your body processes it entirely — and that difference matters more than the number.
+- [How to Buy Real Green Tea in India: What to Look For and What to Avoid](https://nevisan.in/journal/how-to-buy-real-green-tea-india.md): Most green tea sold in India is low-grade CTC or artificially flavoured — here is how to tell the difference before you buy.
+- [How to Get Three Steeps from One Serving](https://nevisan.in/journal/how-to-get-three-steeps.md): Whole leaf teas open up with each steep. The first is bold, the second more rounded, the third surprisingly sweet.
+- [Morning vs Evening Teas: A Simple Guide](https://nevisan.in/journal/morning-vs-evening-teas.md): Lemongrass and Spearmint for mornings. Chamomile and GABA for evenings. Here's why each tea works best at certain times.
+- [Rum Green Tea: How We Made It](https://nevisan.in/journal/rum-green-tea-how-we-made-it.md): No alcohol. No artificial flavour. Just 14 attempts and a precise cold-infusion technique using natural botanicals.
+- [The Science Behind GABA Tea](https://nevisan.in/journal/science-behind-gaba-tea.md): GABA is your brain's natural calming signal. Here's how Nevisan's oolong leaves are processed to naturally amplify it.
+- [Spearmint Tea and Hormonal Balance: What the Research Actually Says](https://nevisan.in/journal/spearmint-tea-hormonal-balance.md): Spearmint tea has been studied for its ability to reduce androgens in women, making it one of the few herbal teas with direct hormonal research behind it.
+- [Tulsi Green Tea: India's Ancient Adaptogen Meets Single-Origin Tea](https://nevisan.in/journal/tulsi-green-tea-adaptogen.md): Tulsi, or holy basil, has been used in Ayurvedic medicine for thousands of years — blended with green tea, it becomes one of the most balanced cups you can brew.
+- [Why Whole Leaf Tea Tastes Different](https://nevisan.in/journal/why-whole-leaf-tea-tastes-different.md): Most commercial teas use broken leaves and dust — it brews fast but loses the complex flavour compounds locked in whole leaves.
+

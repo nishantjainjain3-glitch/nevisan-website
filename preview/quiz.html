@@ -1,53 +1,649 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tea Quiz – Nevisan</title>
-  <link rel="stylesheet" href="../theme.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tea Match Quiz — Find Your Perfect Blend | Nevisan Tea</title>
+  <meta name="description" content="Take our quick 3-step quiz to find the perfect single-origin Assam tea for your mood, health goals, and taste preferences.">
+  <link rel="canonical" href="https://nevisan.in/quiz">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    body {font-family: 'Inter', sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem;}
-    .question {margin-bottom: 1.5rem;}
-    .options button {display: block; width: 100%; margin: 0.3rem 0; padding: 0.6rem; background: var(--color-teal-light); border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s;}
-    .options button:hover {background: var(--color-teal-mid); color:#fff;}
-    .result {font-size: 1.2rem; margin-top: 2rem; text-align:center;}
-    .quiz-header {text-align:center; margin-bottom:2rem;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --teal: #1b7a82;
+      --teal-dark: #0f3f45;
+      --gold: #c9a84c;
+      --cream: #f9f6f0;
+      --cream-dark: #f2ede4;
+      --text: #1a1a1a;
+      --muted: #5a6a6b;
+      --border: rgba(201, 168, 76, 0.3);
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--teal-dark);
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      color: #fff;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+    .nav-shop {
+      background: var(--gold);
+      color: var(--teal-dark);
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+    }
+    .nav-shop:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+
+    /* CONTAINER */
+    .quiz-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .quiz-card {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 600px;
+      padding: 40px;
+      box-shadow: 0 12px 40px rgba(15, 63, 69, 0.08);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .quiz-header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--teal-dark);
+      margin-bottom: 8px;
+    }
+
+    .quiz-header p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* STEP INDICATOR */
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .step-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      transition: all 0.3s ease;
+    }
+
+    .step-dot.active {
+      background: var(--teal);
+      transform: scale(1.2);
+    }
+
+    /* QUESTION & OPTIONS */
+    .question-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      color: var(--teal-dark);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-btn {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
+    }
+
+    .option-btn:hover {
+      border-color: var(--teal);
+      background: rgba(27, 122, 130, 0.03);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(27, 122, 130, 0.06);
+    }
+
+    .option-emoji {
+      font-size: 20px;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* RESULTS SCREEN */
+    .result-view {
+      text-align: center;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .result-badge {
+      display: inline-block;
+      background: rgba(201, 168, 76, 0.15);
+      color: #967215;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 6px 14px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .result-image-container {
+      width: 180px;
+      height: 180px;
+      border-radius: 20px;
+      margin: 0 auto 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .result-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .result-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--teal-dark);
+      margin-bottom: 12px;
+    }
+
+    .result-benefit {
+      color: var(--teal);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .result-desc {
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+      padding: 0 10px;
+    }
+
+    /* BUY BUTTONS */
+    .buy-options-header {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .buy-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .buy-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .buy-whatsapp {
+      background: #25D366;
+      color: #fff;
+    }
+    .buy-whatsapp:hover {
+      background: #20ba59;
+    }
+
+    .buy-amazon {
+      background: #FF9900;
+      color: #000;
+    }
+    .buy-amazon:hover {
+      background: #e68a00;
+    }
+
+    .buy-flipkart {
+      background: #2874F0;
+      color: #fff;
+    }
+    .buy-flipkart:hover {
+      background: #1e62d4;
+    }
+
+    .restart-btn {
+      background: transparent;
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      width: 100%;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .restart-btn:hover {
+      background: rgba(27, 122, 130, 0.05);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--teal-dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      margin-top: auto;
+    }
+    footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 16px; }
+      .quiz-card { padding: 24px; }
+      .quiz-wrapper { padding: 20px 10px; }
+    }
   </style>
 </head>
 <body>
-  <div class="quiz-header">
-    <h1>Tea Quiz</h1>
-    <p>Test your knowledge about Nevisan&rsquo;s premium teas.</p>
+
+  <nav>
+    <a href="https://nevisan.in" class="nav-logo">NEVISAN</a>
+    <a href="https://nevisan.in/#collection" class="nav-shop">Shop Now</a>
+  </nav>
+
+  <div class="quiz-wrapper">
+    <div class="quiz-card" id="quiz-card">
+      <div id="quiz-flow">
+        <div class="quiz-header">
+          <h1>Find Your Perfect Blend</h1>
+          <p>Answer 3 quick questions to discover your personalized Nevisan tea match.</p>
+        </div>
+        
+        <div class="steps">
+          <div class="step-dot active" id="dot-0"></div>
+          <div class="step-dot" id="dot-1"></div>
+          <div class="step-dot" id="dot-2"></div>
+        </div>
+
+        <div id="quiz-question-container">
+          <!-- Question content dynamically rendered -->
+        </div>
+      </div>
+    </div>
   </div>
-  <div id="quiz-container"></div>
+
+  <footer>
+    <p>&copy; 2026 Nevisan Tea. Grown in Golaghat, Assam. Sourced honestly. <a href="https://nevisan.in">Back to Homepage</a></p>
+  </footer>
+
   <script>
-    const quizData = [
-      {question: "Which tea is known for its calming, antioxidant‑rich properties?", options: ["Lemongrass Green Tea", "Blue Flower Green Tea", "Rum Green Tea"], answer: 1},
-      {question: "What is the recommended brewing temperature for Organic Green Tea?", options: ["80°C", "85°C", "90°C"], answer: 0},
-      {question: "Which ingredient makes the Blue Flower tea change colour with lemon?", options: ["Butterfly pea flower", "Chamomile", "Tulsi"], answer: 0},
-      {question: "How many times can you steep the Lemongrass tea effectively?", options: ["Once", "Twice", "Three times"], answer: 1},
-      {question: "Which tea is 100% non‑alcoholic yet has a smoky profile?", options: ["Whiskey Green Tea", "Rum Green Tea", "Spearmint Green Tea"], answer: 0},
-    ];
-    let current = 0, score = 0;
-    const container = document.getElementById('quiz-container');
-    function renderQuestion(){
-      if(current >= quizData.length){
-        container.innerHTML = `<div class="result">You scored <strong>${score}/${quizData.length}</strong>! 🎉</div>`;
-        return;
+    // Teas Database
+    const teas = {
+      gaba: {
+        name: "GABA Oolong Tea",
+        img: "../teas/gaba.png",
+        benefit: "Calm Focus & Anxiety Relief",
+        desc: "Premium nitrogen-processed oolong tea with elevated natural GABA levels. Quietens mental chatter, improves sleep quality, and lowers blood pressure. A clean, amber-gold cup that acts as a natural reset button for your nervous system.",
+        bg: "radial-gradient(circle, #eedfc5 0%, #fff 100%)",
+        amazon: "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+        flipkart: "https://www.flipkart.com/store/nevisan"
+      },
+      chamomile: {
+        name: "Chamomile Green Tea",
+        img: "../teas/chamomile.png",
+        benefit: "Restful Sleep & Anxiety Support",
+        desc: "Whole chamomile flowers blended with low-caffeine Assam green tea. Chamomile contains apigenin, which gently binds to calming receptors in the brain to reduce anxiety and prepare your body for a peaceful, deep night's sleep.",
+        bg: "radial-gradient(circle, #fffbe8 0%, #fff 100%)",
+        amazon: "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+        flipkart: "https://www.flipkart.com/store/nevisan"
+      },
+      spearmint: {
+        name: "Spearmint Green Tea",
+        img: "../teas/spearmint.png",
+        benefit: "PCOS, Acne & Hormonal Balance",
+        desc: "Cool, sweet spearmint blended with whole leaf green tea. Spearmint has been clinically shown to naturally lower free testosterone levels, making it a highly effective daily ritual for women managing PCOS, hormonal acne, or unwanted facial hair.",
+        bg: "radial-gradient(circle, #eaf6ee 0%, #fff 100%)",
+        amazon: "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+        flipkart: "https://www.flipkart.com/store/nevisan"
+      },
+      lemongrass: {
+        name: "Lemongrass Green Tea",
+        img: "../teas/lemongrass.png",
+        benefit: "Digestion, Bloating & Metabolism",
+        desc: "Zesty, refreshing lemongrass paired with whole leaf Assam green tea. Helps relax the smooth muscles of the digestive tract, instantly relieving post-meal bloating and heaviness while naturally supporting metabolic rates.",
+        bg: "radial-gradient(circle, #f9f7dc 0%, #fff 100%)",
+        amazon: "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+        flipkart: "https://www.flipkart.com/store/nevisan"
+      },
+      tulsi: {
+        name: "Tulsi Green Tea",
+        img: "../teas/tulsi.png",
+        benefit: "Cortisol Reduction & Immunity Boost",
+        desc: "An organic adaptogenic blend combining Holy Basil (Tulsi) and whole leaf green tea. Tulsi has been used in Ayurveda for 3,000 years to help the body adapt to mental and physical stressors, strengthen immunity, and lower daily cortisol levels.",
+        bg: "radial-gradient(circle, #f3f7e9 0%, #fff 100%)",
+        amazon: "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+        flipkart: "https://www.flipkart.com/store/nevisan"
+      },
+      blueflower: {
+        name: "Blue Flower Green Tea",
+        img: "../teas/blue-flower.png",
+        benefit: "Nootropic Focus & Antioxidant Powerhouse",
+        desc: "Beautiful butterfly pea flower petals blended with whole leaf green tea. Rich in brain-boosting anthocyanin antioxidants. The tea brews a gorgeous cobalt blue and turns a vivid violet with a squeeze of fresh lemon juice!",
+        bg: "radial-gradient(circle, #e6effa 0%, #fff 100%)",
+        amazon: "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+        flipkart: "https://www.flipkart.com/store/nevisan"
+      },
+      rum: {
+        name: "Rum Green Tea",
+        img: "../teas/rum.png",
+        benefit: "Exotic Warming evening ritual (Non-Alcoholic)",
+        desc: "Indulge in the rich, sweet, and comforting spices of dark aged rum without any alcohol. Hand-blended with natural warming botanicals, this is the perfect comforting evening cup to unwind with.",
+        bg: "radial-gradient(circle, #fceee3 0%, #fff 100%)",
+        amazon: "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+        flipkart: "https://www.flipkart.com/store/nevisan"
+      },
+      whiskey: {
+        name: "Whiskey Green Tea",
+        img: "../teas/whiskey.png",
+        benefit: "Sophisticated Woody & Smoky Tea (Non-Alcoholic)",
+        desc: "A bold, sophisticated cup that captures the woody and smoky characters of fine peated whiskey with zero alcohol. Built with natural woody botanicals on a strong Assam whole leaf base for a deep, complex flavor.",
+        bg: "radial-gradient(circle, #faf1e6 0%, #fff 100%)",
+        amazon: "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+        flipkart: "https://www.flipkart.com/store/nevisan"
+      },
+      organic: {
+        name: "Organic Green Tea (Classic)",
+        img: "../teas/organic.png",
+        benefit: "Daily Antioxidants & Pure Unblended Assam Craft",
+        desc: "Our pure, pesticide-free, single-garden whole leaf Assam green tea. Full of fresh, clean, and grassy notes. High in EGCG catechins and L-theanine. Perfect for purists who appreciate unflavored tea craft.",
+        bg: "radial-gradient(circle, #f2f7ec 0%, #fff 100%)",
+        amazon: "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+        flipkart: "https://www.flipkart.com/store/nevisan"
       }
-      const q = quizData[current];
+    };
+
+    // Quiz Questions Flow
+    const questions = [
+      {
+        id: 0,
+        title: "1. What is your primary wellness goal?",
+        options: [
+          { text: "Reduce stress, anxiety, and sleep deeper", emoji: "💆", scores: { gaba: 3, chamomile: 3, tulsi: 1 } },
+          { text: "Manage PCOS, hormonal balance, or oily skin", emoji: "🌸", scores: { spearmint: 5 } },
+          { text: "Support digestion, ease bloating, and boost metabolism", emoji: "🍋", scores: { lemongrass: 5 } },
+          { text: "Strengthen immunity, get antioxidants, and feel sharp", emoji: "🛡️", scores: { tulsi: 3, blueflower: 3, organic: 1 } },
+          { text: "Savor a unique, premium, non-alcoholic evening ritual", emoji: "🥃", scores: { rum: 4, whiskey: 4 } }
+        ]
+      },
+      {
+        id: 1,
+        title: "2. What kind of flavor profile do you prefer?",
+        options: [
+          { text: "Mellow, smooth, and slightly earthy/floral", emoji: "🍂", scores: { gaba: 3, blueflower: 3 } },
+          { text: "Sweet, comforting, and soothing chamomile floral", emoji: "🌼", scores: { chamomile: 4 } },
+          { text: "Cool, clean, and refreshing mint", emoji: "🍃", scores: { spearmint: 4 } },
+          { text: "Citrusy, zesty, and refreshing lemon notes", emoji: "🍋", scores: { lemongrass: 4 } },
+          { text: "Warm, spicy, and grounding herbal notes", emoji: "🌿", scores: { tulsi: 4 } },
+          { text: "Sweet, rich spices like dark aged rum", emoji: "🍹", scores: { rum: 4 } },
+          { text: "Woody, bold, and smoky like peated whiskey", emoji: "🪵", scores: { whiskey: 4 } },
+          { text: "Pure, fresh, clean, and classic grassy green tea", emoji: "🍵", scores: { organic: 4 } }
+        ]
+      },
+      {
+        id: 2,
+        title: "3. How are you feeling or when do you plan to drink it?",
+        options: [
+          { text: "Tired, anxious, or winding down in the evening", emoji: "🌙", scores: { chamomile: 3, gaba: 3, rum: 2, whiskey: 2 } },
+          { text: "Bloated, heavy, or looking for an after-meal tea", emoji: "🍽️", scores: { lemongrass: 4 } },
+          { text: "Sluggish, needing clean energy and focus in the morning", emoji: "☀️", scores: { organic: 3, lemongrass: 2, blueflower: 3, spearmint: 2 } },
+          { text: "Stressed at work and wanting calm focus at any time", emoji: "💻", scores: { gaba: 4, tulsi: 3 } }
+        ]
+      }
+    ];
+
+    // Quiz State Variables
+    let currentStep = 0;
+    const userSelections = [];
+    const container = document.getElementById("quiz-question-container");
+
+    // Start rendering the first question
+    function renderQuestion() {
+      // Update step dots
+      for (let i = 0; i < 3; i++) {
+        const dot = document.getElementById(`dot-${i}`);
+        if (i === currentStep) {
+          dot.classList.add("active");
+        } else {
+          dot.classList.remove("active");
+        }
+      }
+
+      const q = questions[currentStep];
       container.innerHTML = `
-        <div class="question"><strong>Q${current+1}.</strong> ${q.question}</div>
-        <div class="options">${q.options.map((opt,i)=>`<button data-index="${i}">${opt}</button>`).join('')}</div>
+        <h2 class="question-title">${q.title}</h2>
+        <div class="options-list">
+          ${q.options.map((opt, index) => `
+            <button class="option-btn" onclick="selectOption(${index})">
+              <span class="option-emoji">${opt.emoji}</span>
+              <span>${opt.text}</span>
+            </button>
+          `).join("")}
+        </div>
       `;
-      document.querySelectorAll('.options button').forEach(btn=>{
-        btn.addEventListener('click',()=>{
-          if(parseInt(btn.dataset.index)===q.answer) score++;
-          current++;
-          renderQuestion();
-        });
-      });
     }
+
+    // Handle user option selection
+    window.selectOption = function(optionIndex) {
+      userSelections.push(questions[currentStep].options[optionIndex]);
+      
+      if (currentStep < 2) {
+        currentStep++;
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    };
+
+    // Calculate scores and show results
+    function showResults() {
+      // Initialize scores for all teas
+      const scores = {};
+      for (const key in teas) {
+        scores[key] = 0;
+      }
+
+      // Add scores based on user choices
+      userSelections.forEach(selection => {
+        for (const key in selection.scores) {
+          if (scores.hasOwnProperty(key)) {
+            scores[key] += selection.scores[key];
+          }
+        }
+      });
+
+      // Find the highest score tea
+      let recommendedKey = "organic"; // Default fallback
+      let highestScore = -1;
+      
+      for (const key in scores) {
+        if (scores[key] > highestScore) {
+          highestScore = scores[key];
+          recommendedKey = key;
+        }
+      }
+
+      const rec = teas[recommendedKey];
+      const card = document.getElementById("quiz-card");
+
+      // Animate background colors of the card based on recommended tea theme
+      card.style.background = rec.bg;
+
+      // Construct Result Panel
+      const whatsappMsg = encodeURIComponent(`Hi Nevisan! I took your Tea Quiz and my recommended match is ${rec.name}. I'd like to place an order or get more information!`);
+      const whatsappUrl = `https://wa.me/919864245687?text=${whatsappMsg}`;
+
+      document.getElementById("quiz-flow").innerHTML = `
+        <div class="result-view">
+          <div class="result-badge">Your Recommended Blend</div>
+          <div class="result-image-container">
+            <img src="${rec.img}" alt="${rec.name}">
+          </div>
+          <h2 class="result-title">${rec.name}</h2>
+          <div class="result-benefit">✨ Benefit: ${rec.benefit}</div>
+          <p class="result-desc">${rec.desc}</p>
+          
+          <div class="buy-options-header">Choose Where To Buy</div>
+          <div class="buy-grid">
+            <a href="${whatsappUrl}" target="_blank" rel="noopener" class="buy-btn buy-whatsapp">
+              💬 Order Direct via WhatsApp
+            </a>
+            <a href="${rec.amazon}" target="_blank" rel="noopener" class="buy-btn buy-amazon">
+              📦 Buy on Amazon India
+            </a>
+            <a href="${rec.flipkart}" target="_blank" rel="noopener" class="buy-btn buy-flipkart">
+              🛒 Buy on Flipkart
+            </a>
+          </div>
+          
+          <button class="restart-btn" onclick="restartQuiz()">
+            ↺ Take Quiz Again
+          </button>
+        </div>
+      `;
+    }
+
+    // Restart Quiz
+    window.restartQuiz = function() {
+      currentStep = 0;
+      userSelections.length = 0;
+      
+      // Reset card styling
+      const card = document.getElementById("quiz-card");
+      card.style.background = "rgba(255, 255, 255, 0.72)";
+
+      // Restore layout
+      document.getElementById("quiz-card").innerHTML = `
+        <div id="quiz-flow">
+          <div class="quiz-header">
+            <h1>Find Your Perfect Blend</h1>
+            <p>Answer 3 quick questions to discover your personalized Nevisan tea match.</p>
+          </div>
+          
+          <div class="steps">
+            <div class="step-dot active" id="dot-0"></div>
+            <div class="step-dot" id="dot-1"></div>
+            <div class="step-dot" id="dot-2"></div>
+          </div>
+
+          <div id="quiz-question-container">
+            <!-- Question content dynamically rendered -->
+          </div>
+        </div>
+      `;
+      // Re-get container reference as DOM was rebuilt
+      container = document.getElementById("quiz-question-container");
+      renderQuestion();
+    };
+
+    // Initialize
     renderQuestion();
   </script>
 </body>

@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tea Match Quiz — Find Your Perfect Blend | Nevisan Tea</title>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1600935891006535');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <meta name="description" content="Take our quick 3-step quiz to find the perfect single-origin Assam tea for your mood, health goals, and taste preferences.">
   <link rel="canonical" href="https://nevisan.in/quiz">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -375,6 +392,27 @@
   </footer>
 
   <script>
+    window.trackQuizClick = function(teaKey, platform) {
+      try {
+        const skuMap = {
+          gaba: "GABA",
+          chamomile: "Chamomile-1",
+          spearmint: "Spearmint",
+          lemongrass: "KT-8GBE-8MZG",
+          tulsi: "MK-H5LY-IRK3",
+          blueflower: "Blue Flower-1",
+          rum: "RUM-1",
+          whiskey: "9E-23FO-LL8Q",
+          organic: "Unflavoured-1"
+        };
+        const sku = skuMap[teaKey];
+        if (sku && typeof fbq !== "undefined") {
+          fbq("track", "AddToCart", { content_ids: [sku], content_type: "product", value: 499, currency: "INR" });
+          fbq("track", "Purchase", { content_ids: [sku], content_type: "product", value: 499, currency: "INR" });
+        }
+      } catch (err) {}
+    };
+
     // Teas Database
     const teas = {
       gaba: {
@@ -580,6 +618,12 @@
       const whatsappMsg = encodeURIComponent(`Hi Nevisan! I took your Tea Quiz and my recommended match is ${rec.name}. I'd like to place an order or get more information!`);
       const whatsappUrl = `https://wa.me/919864245687?text=${whatsappMsg}`;
 
+      try {
+        if (typeof fbq !== "undefined") {
+          fbq("track", "Lead", { content_name: rec.name });
+        }
+      } catch (e) {}
+
       document.getElementById("quiz-flow").innerHTML = `
         <div class="result-view">
           <div class="result-badge">Your Recommended Blend</div>
@@ -592,13 +636,13 @@
           
           <div class="buy-options-header">Choose Where To Buy</div>
           <div class="buy-grid">
-            <a href="${whatsappUrl}" target="_blank" rel="noopener" class="buy-btn buy-whatsapp">
+            <a href="${whatsappUrl}" target="_blank" rel="noopener" class="buy-btn buy-whatsapp" onclick="trackQuizClick('${recommendedKey}', 'WhatsApp')">
               💬 Order Direct via WhatsApp
             </a>
-            <a href="${rec.amazon}" target="_blank" rel="noopener" class="buy-btn buy-amazon">
+            <a href="${rec.amazon}" target="_blank" rel="noopener" class="buy-btn buy-amazon" onclick="trackQuizClick('${recommendedKey}', 'Amazon')">
               📦 Buy on Amazon India
             </a>
-            <a href="${rec.flipkart}" target="_blank" rel="noopener" class="buy-btn buy-flipkart">
+            <a href="${rec.flipkart}" target="_blank" rel="noopener" class="buy-btn buy-flipkart" onclick="trackQuizClick('${recommendedKey}', 'Flipkart')">
               🛒 Buy on Flipkart
             </a>
           </div>

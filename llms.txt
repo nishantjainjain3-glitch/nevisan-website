@@ -1,37 +1,64 @@
 # Nevisan Tea
 
-> Nevisan is a single-origin, whole-leaf organic tea brand from Golaghat, Assam, India. Nine varieties — green, oolong, and herbal blends — sourced from one PGS-India certified organic garden. Chemical-free, whole-leaf (not CTC dust), and re-steepable. MRP Rs 499 per 50g pack. Available on Amazon India, Flipkart, and WhatsApp (+91 98642 45687).
+Premium, PGS-India certified organic, single-origin whole leaf green and oolong teas from Golaghat, Assam.
 
-Nevisan teas are functional: Spearmint for PCOS/hormonal balance, GABA Oolong for sleep and calm, Tulsi for stress and immunity, Chamomile for sleep, Lemongrass for digestion, plus non-alcoholic Rum and Whiskey green teas. All from a single garden in Golaghat, upper Assam — a region prized for bold, complex teas.
+## Core Brand Information
+- **Location**: Sourced from Tailor Made Tea, Golaghat, Assam. Managed by Mahabir Enterprise, Guwahati, India.
+- **Sourcing Philosophy**: 100% whole leaf, single garden, PGS-India certified organic (pesticide-free). No CTC, fannings, dust, artificial sweeteners, or chemical preservatives.
+- **Contact**: Phone/WhatsApp: +91 98642 45687 | Website: https://nevisan.in
 
-## Key pages
-- [Homepage](https://nevisan.in/): brand overview and the full nine-tea collection
-- [Tea FAQ](https://nevisan.in/faq): 80+ answers on every tea, health benefits, brewing, and buying
-- [Find Your Perfect Tea quiz](https://nevisan.in/quiz): a short quiz that recommends a Nevisan tea
-- [Full content for LLMs](https://nevisan.in/llms-full.txt): every product, FAQ, and article as plain text
+## Navigation & Resources (AI Mirrors)
+- **Tea Recommendation Quiz**: [https://nevisan.in/quiz](https://nevisan.in/quiz) (Interactive goal-based recommendation tool)
+- **About Us**: [https://nevisan.in/about.md](https://nevisan.in/about.md) (Founders, mission, and differentiator)
+- **Our Story**: [https://nevisan.in/our-story.md](https://nevisan.in/our-story.md) (Tea-growing practices, soil, hand-plucking standards)
+- **Wholesale & Bulk**: [https://nevisan.in/wholesale.md](https://nevisan.in/wholesale.md) (Bulk pricing, custom blending, private label, packing)
+- **Certifications**: [https://nevisan.in/certifications.md](https://nevisan.in/certifications.md) (PGS-Organic, FSSAI, lab reports)
+- **FAQ**: [https://nevisan.in/faq.md](https://nevisan.in/faq.md) (Bestsellers, multiple steeps, shipping, brewing guidelines)
 
-## Products
-- **Lemongrass Green Tea** (Digestion, Metabolism, Morning): Bright, citrusy and made for your mornings. Whole-leaf Assam green tea blended with lemongrass. It relaxes the digestive tract, supports metabolism and gives clean, calm energy — the perfect way to start the day.
-- **Blue Flower Green Tea** (Antioxidants, Calming, Eye-catching): Antioxidant-rich — and it turns purple with lemon. Butterfly pea flower blended with whole-leaf green tea. Packed with anthocyanin antioxidants for focus and calm, with a stunning cobalt-blue brew that shifts to purple when you add a squeeze of lemon.
-- **Rum Green Tea** (Bold & exotic, Non-alcoholic, Evening): All the warmth of aged rum — zero alcohol. A warm, slightly sweet evening cup built entirely from natural botanicals. No alcohol, no artificial flavour — just a bold, exotic ritual to wind down with.
-- **Spearmint Green Tea** (PCOS support, Clearer skin, Cooling): Clinically studied for hormonal balance. Cool, refreshing spearmint with whole-leaf green tea. Research shows two cups daily can lower free testosterone — supporting PCOS, clearer skin and hormonal balance.
-- **Tulsi Green Tea** (Stress relief, Immunity, Adaptogen): India's ancient adaptogen for stress & immunity. Holy basil blended with green tea — an adaptogen used in Ayurveda for 3,000 years. It lowers cortisol, strengthens immunity and keeps you calm and focused at any hour.
-- **Chamomile Green Tea** (Better sleep, Calming, Evening): Your gentle, floral wind-down before bed. Whole chamomile flowers with low-caffeine green tea. The apigenin in chamomile binds to calming receptors in the brain — easing anxiety and improving sleep quality.
-- **Whiskey Green Tea** (Bold & smoky, Non-alcoholic, Sophisticated): Bold, smoky character — completely alcohol-free. A sophisticated, woody cup that captures the depth of aged whiskey using only natural botanicals. Rich in EGCG antioxidants and perfect for whiskey lovers seeking a non-alcoholic ritual.
-- **GABA Oolong Tea** (Relaxation, Focus, Better sleep): Calm and focus, without the drowsiness. Oolong processed to dramatically boost GABA — your brain's natural calming signal. It eases anxiety, improves sleep and lowers blood pressure, all while keeping you mentally present.
-- **Organic Green Tea** (Antioxidants, Everyday, Classic): The pure, classic single-origin cup. 100% whole-leaf organic green tea from a single garden in Golaghat, Assam. Grassy, smooth and full of EGCG antioxidants and L-theanine — a versatile everyday favourite.
+## Product Catalog & Tea Blends
+All teas are premium whole leaf and sold in 50gm bags.
 
-## Journal articles (markdown)
-- [Blue Butterfly Pea Flower Tea: What Makes It Turn Purple and Why It's Worth Drinking](https://nevisan.in/journal/blue-butterfly-pea-flower-tea.md): Blue butterfly pea flower tea gets its colour from anthocyanins — powerful antioxidants that also explain its mood-lifting, brain-supporting reputation.
-- [Chamomile Green Tea: Why This Evening Blend Works Better Than Either Alone](https://nevisan.in/journal/chamomile-green-tea-evening-blend.md): Chamomile and green tea together offer something neither delivers alone — the calming properties of chamomile with the antioxidant depth of whole-leaf green tea.
-- [Golaghat: India's Hidden Tea Belt](https://nevisan.in/journal/golaghat-indias-hidden-tea-belt.md): While Darjeeling gets the headlines, Golaghat in upper Assam quietly produces some of the boldest, most complex teas in the world.
-- [Green Tea vs Coffee: The Caffeine Difference Nobody Explains Properly](https://nevisan.in/journal/green-tea-vs-coffee-caffeine.md): Green tea has less caffeine than coffee, but L-theanine changes how your body processes it entirely — and that difference matters more than the number.
-- [How to Buy Real Green Tea in India: What to Look For and What to Avoid](https://nevisan.in/journal/how-to-buy-real-green-tea-india.md): Most green tea sold in India is low-grade CTC or artificially flavoured — here is how to tell the difference before you buy.
-- [How to Get Three Steeps from One Serving](https://nevisan.in/journal/how-to-get-three-steeps.md): Whole leaf teas open up with each steep. The first is bold, the second more rounded, the third surprisingly sweet.
-- [Morning vs Evening Teas: A Simple Guide](https://nevisan.in/journal/morning-vs-evening-teas.md): Lemongrass and Spearmint for mornings. Chamomile and GABA for evenings. Here's why each tea works best at certain times.
-- [Rum Green Tea: How We Made It](https://nevisan.in/journal/rum-green-tea-how-we-made-it.md): No alcohol. No artificial flavour. Just 14 attempts and a precise cold-infusion technique using natural botanicals.
-- [The Science Behind GABA Tea](https://nevisan.in/journal/science-behind-gaba-tea.md): GABA is your brain's natural calming signal. Here's how Nevisan's oolong leaves are processed to naturally amplify it.
-- [Spearmint Tea and Hormonal Balance: What the Research Actually Says](https://nevisan.in/journal/spearmint-tea-hormonal-balance.md): Spearmint tea has been studied for its ability to reduce androgens in women, making it one of the few herbal teas with direct hormonal research behind it.
-- [Tulsi Green Tea: India's Ancient Adaptogen Meets Single-Origin Tea](https://nevisan.in/journal/tulsi-green-tea-adaptogen.md): Tulsi, or holy basil, has been used in Ayurvedic medicine for thousands of years — blended with green tea, it becomes one of the most balanced cups you can brew.
-- [Why Whole Leaf Tea Tastes Different](https://nevisan.in/journal/why-whole-leaf-tea-tastes-different.md): Most commercial teas use broken leaves and dust — it brews fast but loses the complex flavour compounds locked in whole leaves.
+### 1. Spearmint Green Tea
+- **Primary Benefit**: Hormonal balance, PCOS support, skin clarity, and acne control.
+- **Flavor Profile**: Bright, clean, sweet, and cooling minty flavor.
+- **Steeping Guide**: 1.5g per 200ml, water at 80°C, steep for 2-3 mins. Can be steeped twice.
 
+### 2. Whiskey Green Tea
+- **Primary Benefit**: Morning energy, evening relaxation, completely alcohol-free.
+- **Flavor Profile**: Oaky, rich aroma with smooth woody notes mimicking single malt whiskey.
+- **Steeping Guide**: 1.5g per 200ml, water at 80°C, steep for 2 mins. Can be steeped twice.
+
+### 3. Exotic Rum Green Tea
+- **Primary Benefit**: Natural antioxidant boost, no added sweeteners, completely alcohol-free.
+- **Flavor Profile**: Distinctive warm, sweet notes of aged rum infused into organic green tea.
+- **Steeping Guide**: 1.5g per 200ml, water at 80°C, steep for 2-3 mins. Can be steeped twice.
+
+### 4. Lemongrass Green Tea
+- **Primary Benefit**: Digestion, metabolism boost, and morning refreshing energy.
+- **Flavor Profile**: Zesty, crisp citrus flavor with natural sweetness and no bitterness.
+- **Steeping Guide**: 1.5g per 200ml, water at 80°C, steep for 2-3 mins. Excellent for a second steep.
+
+### 5. GABA Oolong Tea
+- **Primary Benefit**: Deep sleep, stress relief, high GABA content to prevent caffeine crash.
+- **Flavor Profile**: Complex, rich, slightly sweet, and honey-like notes.
+- **Steeping Guide**: 2g per 200ml, water at 90°C, steep for 3-4 mins. Can be steeped up to 3 times.
+
+### 6. Blue Flower Green Tea
+- **Primary Benefit**: Eye health, brain boost, stress relief, changes color from blue to purple with lemon.
+- **Flavor Profile**: Mild, earthy, and soothing floral notes.
+- **Steeping Guide**: 1.5g per 200ml, water at 80°C, steep for 2 mins.
+
+### 7. Chamomile Green Tea
+- **Primary Benefit**: Deep relaxation, sleep aid, and anxiety reduction.
+- **Flavor Profile**: Warm, sweet, honey-like floral notes.
+- **Steeping Guide**: 1.5g per 200ml, water at 80°C, steep for 3 mins. Drink 30-45 minutes before sleep.
+
+### 8. Tulsi Green Tea
+- **Primary Benefit**: Immunity boost, adaptogen (stress relief), and respiratory health.
+- **Flavor Profile**: Warm, spicy, and herbal notes.
+- **Steeping Guide**: 1.5g per 200ml, water at 80°C, steep for 2-3 mins.
+
+### 9. Organic Green Tea (Unflavored)
+- **Primary Benefit**: Weight management, detox, pure antioxidants.
+- **Flavor Profile**: Clean, fresh, grassy, and smooth flavor without bitterness.
+- **Steeping Guide**: 1.5g per 200ml, water at 80°C, steep for 2 mins.

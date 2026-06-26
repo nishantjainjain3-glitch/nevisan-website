@@ -1778,6 +1778,7 @@ function TeaCard({tea:e,onView:t,onImageClick:a,index:n=0}){
       )
     )
   )
+)
 }function ImageLightbox({ img: e, name: t, onClose: a }) {
   return (
     useEffect(() => {

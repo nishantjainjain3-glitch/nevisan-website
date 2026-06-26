@@ -519,6 +519,66 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
   .shadow-btn-secondary {
     box-shadow: 0 0 0 0.5px rgba(0,0,0,0.05), 0 4px 30px rgba(0,0,0,0.08);
   }
+  /* Shine Button effect */
+  .shine-button {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease !important;
+  }
+  .shine-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 30%;
+    height: 200%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.28), transparent);
+    transform: rotate(30deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .shine-button:hover::after {
+    left: 140%;
+    opacity: 1;
+    transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Premium Tea Card */
+  .premium-tea-card {
+    border: 1.5px solid rgba(27, 122, 130, 0.04) !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  .premium-tea-card:hover {
+    border-color: rgba(201, 168, 76, 0.22) !important;
+    box-shadow: 0 24px 50px rgba(27, 122, 130, 0.14), 0 8px 20px rgba(0, 0, 0, 0.04) !important;
+  }
+
+  /* Brewing Ritual Card */
+  .brewing-ritual-card {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease !important;
+    border: 1px solid rgba(27, 122, 130, 0.05) !important;
+  }
+  .brewing-ritual-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201, 168, 76, 0.3) !important;
+    box-shadow: 0 12px 30px rgba(15, 63, 69, 0.05) !important;
+  }
+
+  /* Quote Container decoration */
+  .quote-container {
+    position: relative;
+  }
+  .quote-container::before {
+    content: '“';
+    position: absolute;
+    top: -16px;
+    left: 16px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 120px;
+    color: rgba(201, 168, 76, 0.11);
+    line-height: 1;
+    pointer-events: none;
+  }
 </style>
 <style>
   .quiz-link {

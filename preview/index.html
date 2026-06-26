@@ -19,7 +19,7 @@
 
 <style>
 /* =========================================================
-   NEVISAN TEA — OFFICIAL BRAND SYSTEM (V3 Light Redesign)
+   NEVISAN TEA — OFFICIAL BRAND SYSTEM (V4 Light Redesign)
    ========================================================= */
 :root {
   --primary-color:   #23412D; /* Deep Forest Green */
@@ -72,7 +72,7 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 2px; }
 
 /* =========================================================
-   ATMOSPHERIC CANVAS (Dawn Mist Simulator)
+   ATMOSPHERIC CANVASES
    ========================================================= */
 #mist-canvas {
   position: absolute;
@@ -83,6 +83,16 @@ body {
   pointer-events: none;
   mix-blend-mode: multiply;
   opacity: 0.15;
+}
+
+#global-leaf-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Behind content (z-index: 2), above body background */
+  pointer-events: none;
+  opacity: 0.55;
 }
 
 /* =========================================================
@@ -330,6 +340,7 @@ nav.scrolled .hamburger span {
   background: var(--primary-color);
   color: var(--text-light);
   box-shadow: 0 4px 20px rgba(35, 65, 45, 0.2);
+  z-index: 5;
 }
 .btn-primary:hover {
   background: var(--accent-color);
@@ -342,6 +353,7 @@ nav.scrolled .hamburger span {
   background: transparent;
   color: var(--text-light);
   border: 1px solid rgba(255, 255, 255, 0.4);
+  z-index: 5;
 }
 .btn-ghost:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -1139,504 +1151,6 @@ section {
 /* =========================================================
    FOOTER (Deep Forest Green)
    ========================================================= */
-footer {
-  background: var(--primary-dark);
-  padding: 5rem 0 2.5rem;
-  color: var(--secondary-color);
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 5rem;
-  margin-bottom: 4rem;
-}
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-.footer-logo {
-  font-family: var(--font-serif);
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--text-light);
-  letter-spacing: 0.08em;
-  text-decoration: none;
-}
-.footer-logo span { color: var(--accent-color); }
-.footer-desc {
-  font-size: 0.875rem;
-  line-height: 1.6;
-  max-width: 38ch;
-}
-.footer-socials {
-  display: flex;
-  gap: 1rem;
-}
-.footer-socials a {
-  width: 38px;
-  height: 38px;
-  border-radius: var(--r-sm);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--secondary-color);
-  text-decoration: none;
-  transition: all 0.3s;
-}
-.footer-socials a:hover {
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-}
-.footer-col h4 {
-  font-family: var(--font-serif);
-  font-size: 0.95rem;
-  color: var(--text-light);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}
-.footer-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.footer-links a {
-  color: var(--secondary-color);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--text-light); }
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-.footer-copy {
-  font-size: 0.8rem;
-}
-.footer-legal {
-  display: flex;
-  gap: 2rem;
-}
-.footer-legal a {
-  font-size: 0.8rem;
-  color: var(--secondary-color);
-  text-decoration: none;
-}
-.footer-legal a:hover { color: var(--text-light); }
-
-/* =========================================================
-   WHATSAPP FLOAT
-   ========================================================= */
-.whatsapp-float {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: #1b8b43;
-  color: #fff;
-  padding: 0.9rem 1.6rem;
-  border-radius: 100px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  box-shadow: 0 8px 30px rgba(27,139,67,0.3);
-  transition: transform 0.25s var(--ease-out-quart), box-shadow 0.25s;
-}
-.whatsapp-float:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(27,139,67,0.55);
-}
-
-/* =========================================================
-   RESPONSIVE DESIGN
-   ========================================================= */
-@media (max-width: 1024px) {
-  nav { padding: 1.25rem 2rem; }
-  .manifesto-grid, .origin-grid, .ritual-grid {
-    grid-template-columns: 1fr;
-    gap: 4rem;
-  }
-  .manifesto-image-container { max-width: 600px; margin: 0 auto; }
-  .origin-media { max-width: 600px; margin: 0 auto; }
-  .guestbook-grid { grid-template-columns: repeat(2, 1fr); }
-  .seals-grid { gap: 2rem; }
-}
-
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .collection-grid { grid-template-columns: 1fr; }
-  .card-featured, .card-horizontal-mid { grid-template-columns: 1fr; }
-  .featured-content { padding: 2rem; }
-  .guestbook-grid { grid-template-columns: 1fr; }
-  .seals-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .hero-credentials { gap: 1.5rem; justify-content: flex-start; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
-  }
-  .reveal { opacity: 1; transform: none; }
-  .scroll-arrow, .hero-scroll-hint { animation: none; }
-}
-</style>
-</head>
-
-<body>
-
-<!-- ====================== NAV ====================== -->
-<nav id="main-nav" role="navigation" aria-label="Main navigation">
-  <a href="/preview/" class="nav-logo" aria-label="Nevisan Tea">NEVI<span>SAN</span></a>
-  <ul class="nav-links">
-    <li><a href="#collection">Collection</a></li>
-    <li><a href="#origin">Our Origin</a></li>
-    <li><a href="#brew-ritual">Brew Ritual</a></li>
-    <li><a href="#reviews">Reviews</a></li>
-    <li><a href="https://wa.me/919864245687" class="nav-cta" id="nav-order-btn">Order Now</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
-    <span></span><span style="margin: 5px 0;"></span><span></span>
-  </button>
-</nav>
-
-<!-- Mobile nav -->
-<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-  <a href="#collection" id="mobile-collection-link">Collection</a>
-  <a href="#origin" id="mobile-origin-link">Our Origin</a>
-  <a href="#brew-ritual" id="mobile-brew-link">Brew Ritual</a>
-  <a href="#reviews" id="mobile-reviews-link">Reviews</a>
-  <a href="https://wa.me/919864245687" id="mobile-order-link" style="color: var(--accent-color);">Order on WhatsApp</a>
-</nav>
-
-<!-- ====================== HERO ====================== -->
-<header class="hero" id="hero-section">
-  <canvas id="mist-canvas" aria-hidden="true"></canvas>
-
-  <div class="hero-video-container" aria-hidden="true">
-    <video class="hero-video-bg" autoplay muted loop playsinline poster="../hero-bg.jpg">
-      <source src="../tea-garden.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="hero-overlay" aria-hidden="true"></div>
-
-  <div class="hero-content">
-    <div class="hero-badge" id="hero-badge">
-      Single Origin · Golaghat, Assam
-    </div>
-
-    <h1 id="hero-heading">
-      BORN IN THE WILDS OF ASSAM,<br>
-      CRAFTED FOR THE <em>DISCERNING CUP</em>.
-    </h1>
-
-    <p class="hero-sub" id="hero-sub">
-      Chemical-free, hand-plucked, and certified organic. Nevisan brings the raw, untamed spirit of the Brahmaputra valley directly to your ritual.
-    </p>
-
-    <div class="hero-actions" id="hero-actions">
-      <a href="#collection" class="btn btn-primary" id="hero-explore-btn">
-        Explore Collection
-      </a>
-      <a href="https://wa.me/919864245687?text=Hi%2C+I%27d+like+to+order+Nevisan+tea." class="btn btn-ghost" id="hero-whatsapp-btn">
-        Order on WhatsApp
-      </a>
-    </div>
-
-    <div class="hero-credentials" id="hero-credentials">
-      <div class="credential-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-        </svg>
-        PGS-India Organic
-      </div>
-      <div class="credential-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-        100% Chemical-Free
-      </div>
-      <div class="credential-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-        </svg>
-        Direct Single Estate
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-scroll-hint" id="hero-scroll" aria-hidden="true">
-    <span>Scroll</span>
-    <div class="scroll-arrow"></div>
-  </div>
-</header>
-
-<!-- ====================== VARIETIES TICKER ====================== -->
-<div class="ticker-band" aria-hidden="true">
-  <div class="ticker-track">
-    <span class="ticker-item">GABA Oolong</span>
-    <span class="ticker-item">Lemongrass Green</span>
-    <span class="ticker-item">Assam Green Tea</span>
-    <span class="ticker-item">Chamomile base</span>
-    <span class="ticker-item">Orthodox Black</span>
-    <span class="ticker-item">Tulsi Moringa</span>
-    <span class="ticker-item">GABA Oolong</span>
-    <span class="ticker-item">Lemongrass Green</span>
-    <span class="ticker-item">Assam Green Tea</span>
-    <span class="ticker-item">Chamomile base</span>
-    <span class="ticker-item">Orthodox Black</span>
-    <span class="ticker-item">Tulsi Moringa</span>
-  </div>
-</div>
-
-<!-- ====================== MANIFESTO ====================== -->
-<section class="manifesto section-pad" id="about-section">
-  <div class="container">
-    <div class="manifesto-grid">
-      <div class="manifesto-text reveal">
-        <div class="card-badge" style="margin-bottom: 0.5rem;">The Philosophy</div>
-        <h2 class="section-title">TEA IN ITS<br><span>UNTAMED STATE.</span></h2>
-        <p>
-          Most commercial tea is harvested by mass machinery, ground into low-grade dust (CTC), and stripped of its volatile oils and L-theanine. By the time it reaches a tea bag, it has lost its complexity and life.
-        </p>
-        <p>
-          <strong>Nevisan is a departure.</strong> We source only whole leaves from family-tended garden plots in Golaghat, Assam. The heavy morning mist of the Brahmaputra valley creates a gentle stress on the tea plants, forcing them to synthesize deep, aromatic compounds. 
-        </p>
-        <p>
-          Hand-plucked as two leaves and a bud, processed in small batches, and packed directly. It is robust, rich, and deeply alive.
-        </p>
-      </div>
-
-      <div class="manifesto-image-container reveal" style="transition-delay: 0.15s">
-        <img
-          class="manifesto-img"
-          src="../pexels-lena-goncharova-78970252-8692691.jpg"
-          alt="Hands carefully holding fresh organic whole tea leaves during harvest in Golaghat, Assam"
-          loading="lazy"
-        >
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== COLLECTION ====================== -->
-<section class="collection section-pad" id="collection">
-  <div class="container">
-    <div class="section-title-wrap reveal">
-      <div class="card-badge" style="margin-bottom: 0.5rem;">The Harvest</div>
-      <h2 class="section-title">THE <span>COLLECTION</span></h2>
-      <p class="section-desc">Whole leaf single estate teas, direct from source. Fully chemical-free, pesticide-free, and FSSAI certified. Shipped in small batches.</p>
-    </div>
-
-    <div class="collection-grid" id="collection-grid">
-      <!-- RENDERED BY JAVASCRIPT ASYMMETRIC LAYOUT -->
-    </div>
-  </div>
-</section>
-
-<!-- ====================== ORIGIN & TERROIR ====================== -->
-<section class="origin section-pad" id="origin">
-  <div class="container">
-    <div class="origin-grid">
-      <div class="origin-media reveal">
-        <img
-          id="parallax-origin-img"
-          src="../story-bg.jpg"
-          alt="Mist-laden tea garden at dawn in Golaghat, Assam"
-          loading="lazy"
-        >
-        <div class="origin-label-card">
-          <div class="origin-loc-title">Golaghat, Upper Assam</div>
-          <div class="origin-loc-sub">Brahmaputra Valley Terroir</div>
-        </div>
-      </div>
-
-      <div class="origin-text reveal" style="transition-delay: 0.15s">
-        <div class="card-badge" style="margin-bottom: 0.5rem;">Terroir</div>
-        <h2 class="section-title">WHERE THE<br><span>WILD FLUSH RISES</span></h2>
-        <p>
-          Our gardens sit in Golaghat, nestled near the edge of Kaziranga. Here, the unique clay-rich alluvial soil and intense 80% humidity create the absolute ideal climate for premium tea plants.
-        </p>
-        <p>
-          Rather than force crop volume with synthetic fertilizers, our family growers use organic manures and natural soil biology. This organic terroir yields an intense, malty profile that is unique to Upper Assam.
-        </p>
-
-        <div class="trust-bullets">
-          <div class="bullet-card">
-            <h4>No Middlemen</h4>
-            <p>Every single leaf is traceable directly back to Tailor Made Tea processing house in Golaghat.</p>
-          </div>
-          <div class="bullet-card">
-            <h4>True Whole Leaf</h4>
-            <p>Absolutely no dust, tea bags, or machine fannings. The full leaf unfurls completely in your cup.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== INTERACTIVE BREWING RITUAL ====================== -->
-<section class="brew-ritual section-pad" id="brew-ritual">
-  <div class="container">
-    <div class="section-title-wrap reveal">
-      <div class="card-badge" style="margin-bottom: 0.5rem; border-color: rgba(255,255,255,0.3); color: var(--accent-color);">The Ritual</div>
-      <h2 class="section-title">THE BREWING<span>RITUAL</span></h2>
-      <p class="section-desc">Whole leaf tea is a conversation. Experiment with temperature, steep time, and multiple infusions to reveal the leaf's evolving narrative.</p>
-    </div>
-
-    <div class="ritual-grid">
-      <div class="ritual-controls reveal">
-        <div class="slider-container">
-          <label class="slider-label-row">
-            <span>Select Variety</span>
-          </label>
-          <div class="tea-select-row">
-            <button class="tea-select-btn active" onclick="selectRitualTea('oolong')">Oolong</button>
-            <button class="tea-select-btn" onclick="selectRitualTea('green')">Green</button>
-            <button class="tea-select-btn" onclick="selectRitualTea('black')">Black</button>
-            <button class="tea-select-btn" onclick="selectRitualTea('herbal')">Herbal</button>
-          </div>
-        </div>
-
-        <div class="slider-container">
-          <div class="slider-label-row">
-            <span>Water Temperature</span>
-            <span id="temp-val">90°C</span>
-          </div>
-          <input type="range" class="brew-range" id="temp-slider" min="70" max="100" value="90" oninput="updateRitualParams()">
-        </div>
-
-        <div class="slider-container">
-          <div class="slider-label-row">
-            <span>Steep Duration</span>
-            <span id="time-val">3 Min</span>
-          </div>
-          <input type="range" class="brew-range" id="time-slider" min="1" max="5" value="3" oninput="updateRitualParams()">
-        </div>
-
-        <div>
-          <button class="btn btn-primary" id="start-brew-btn" onclick="startSteeping()" style="background-color: var(--accent-color); color: var(--primary-dark);">Start Infusion</button>
-        </div>
-      </div>
-
-      <div class="ritual-visual reveal" style="transition-delay: 0.15s">
-        <!-- Steam Canvas -->
-        <canvas id="steam-canvas"></canvas>
-
-        <!-- Glass Mug Silhouette -->
-        <div class="mug-container">
-          <div class="glass-mug-outline"></div>
-          <div class="glass-mug-inner-wall"></div>
-          <div class="glass-mug-handle"></div>
-          <div class="tea-liquid-fill" id="liquid-fill">
-            <!-- Floating leaves -->
-            <div class="liquid-leaf" style="left:20px; bottom:20px; transform: rotate(15deg);"></div>
-            <div class="liquid-leaf" style="right:30px; bottom:15px; transform: rotate(-45deg);"></div>
-            <div class="liquid-leaf" style="left:60px; bottom:40px; transform: rotate(80deg);"></div>
-            <div class="liquid-leaf" style="right:60px; bottom:60px; transform: rotate(-10deg);"></div>
-            <div class="liquid-leaf" style="left:40px; bottom:10px; transform: rotate(5deg);"></div>
-          </div>
-        </div>
-
-        <div class="brew-status-text" id="brew-status">
-          Ready to infuse
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== TRUST & CERTIFICATIONS ====================== -->
-<section class="trust-seals section-pad">
-  <div class="container">
-    <div class="seals-grid reveal">
-      <div class="seal-card">
-        <div class="seal-icon-box">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-        </div>
-        <h3>PGS-India Organic</h3>
-        <p>Government certified organic standard under the Ministry of Agriculture. 100% chemical-free and pesticide-free soil and crop validation.</p>
-      </div>
-
-      <div class="seal-card">
-        <div class="seal-icon-box">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-        </div>
-        <h3>FSSAI Registered</h3>
-        <p>Certified safe food manufacturing standard (FSSAI Registration No. 10325001000313). Complete compliance with hygiene standards.</p>
-      </div>
-
-      <div class="seal-card">
-        <div class="seal-icon-box">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/>
-          </svg>
-        </div>
-        <h3>Direct Sourcing</h3>
-        <p>No auction centers, brokers, or blending warehouses. Every pack is direct single estate leaf from Golaghat, Assam.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== TESTIMONIALS (Guestbook) ====================== -->
-<section class="testimonials section-pad" id="reviews">
-  <div class="container">
-    <div class="section-title-wrap reveal">
-      <div class="card-badge" style="margin-bottom: 0.5rem;">Feedback</div>
-      <h2 class="section-title">THE <span>GUESTBOOK</span></h2>
-      <p class="section-desc">Direct notes from fellow drinkers who made the switch to full leaf origin tea.</p>
-    </div>
-
-    <div class="guestbook-grid" id="guestbook-grid">
-      <!-- RENDERED BY JS -->
-    </div>
-  </div>
-</section>
-
-<!-- ====================== CTA BANNER ====================== -->
-<section class="cta-banner" id="cta-banner">
-  <div class="container">
-    <div class="cta-banner-content reveal">
-      <h2>TASTE THE <em>WILD HARVEST</em></h2>
-      <p>Your first cup of single-origin Nevisan tea is a return to authentic flavor. Packaged direct, free shipping available on Amazon and Flipkart.</p>
-      <div style="display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center;">
-        <a href="https://wa.me/919864245687?text=Hi%2C+I%27d+like+to+order+Nevisan+tea." class="btn btn-primary" style="background-color: var(--accent-color); color: var(--primary-dark);">Order on WhatsApp</a>
-        <a href="https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E" class="btn btn-ghost" target="_blank" rel="noopener">Shop Amazon Store</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== FOOTER ====================== -->
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -1687,6 +1201,9 @@ footer {
     </div>
   </div>
 </footer>
+
+<!-- ====================== GLOBAL FLOATING LEAVES BACKGROUND CANVAS ====================== -->
+<canvas id="global-leaf-canvas" aria-hidden="true"></canvas>
 
 <!-- ====================== WHATSAPP FLOAT ====================== -->
 <a
@@ -1968,6 +1485,156 @@ function initMist() {
       }
       drawMistCloud(c.x, c.y, c.r, c.alpha);
     });
+    requestAnimationFrame(loop);
+  }
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReduced) loop();
+}
+
+/* =========================================================
+   GLOBAL FLOATING BACKGROUND (Tea Leaves & Gold Spores)
+   ========================================================= */
+function initGlobalLeaves() {
+  const canvas = document.getElementById('global-leaf-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  
+  let w = (canvas.width = window.innerWidth);
+  let h = (canvas.height = window.innerHeight);
+
+  window.addEventListener('resize', () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }, { passive: true });
+
+  const particlesCount = 20;
+  const particles = [];
+
+  // Generate leaves and gold blossom particles
+  for (let i = 0; i < particlesCount; i++) {
+    const isLeaf = i < 14;
+    particles.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      size: isLeaf ? Math.random() * 20 + 12 : Math.random() * 4 + 2,
+      isLeaf: isLeaf,
+      // Slow drift physics
+      vx: Math.random() * 0.3 + 0.1,
+      vy: Math.random() * 0.4 + 0.2,
+      // Rotation physics
+      angle: Math.random() * Math.PI * 2,
+      spinSpeed: (Math.random() - 0.5) * 0.015,
+      // Simulated y-axis rotation for 3D flip effect
+      angleY: Math.random() * Math.PI,
+      spinSpeedY: Math.random() * 0.02 + 0.01,
+      // Depth parallax
+      depth: Math.random() * 0.5 + 0.3, // Opacity & speed scaler
+    });
+  }
+
+  // Interactive force buffers
+  let scrollDeltaY = 0;
+  let mouseWindX = 0;
+  let targetMouseWindX = 0;
+
+  window.addEventListener('scroll', () => {
+    scrollDeltaY = Math.min(10, Math.max(-10, window.scrollY - lastScrollY) * 0.15);
+    lastScrollY = window.scrollY;
+  }, { passive: true });
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('mousemove', (e) => {
+    targetMouseWindX = (e.clientX / window.innerWidth - 0.5) * 1.5;
+  }, { passive: true });
+
+  // Render a detailed vector tea leaf
+  function drawVectorLeaf(x, y, size, angle, angleY, depth) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+    ctx.scale(Math.sin(angleY), 1); // Simulate 3D flip on Y axis
+    
+    // Draw leaf shape
+    ctx.beginPath();
+    ctx.moveTo(0, -size);
+    // Left side curve
+    ctx.bezierCurveTo(-size * 0.65, -size * 0.4, -size * 0.4, size * 0.6, 0, size);
+    // Right side curve
+    ctx.bezierCurveTo(size * 0.4, size * 0.6, size * 0.65, -size * 0.4, 0, -size);
+    
+    // Fill with soft brand gradient
+    const grad = ctx.createLinearGradient(0, -size, 0, size);
+    grad.addColorStop(0, `rgba(174, 200, 180, ${depth * 0.3})`); // Sage Green
+    grad.addColorStop(1, `rgba(35, 65, 45, ${depth * 0.25})`);   // Deep Forest Green
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // Leaf fine border
+    ctx.strokeStyle = `rgba(201, 168, 76, ${depth * 0.2})`; // Antique Gold
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Central vein
+    ctx.beginPath();
+    ctx.moveTo(0, -size + 2);
+    ctx.quadraticCurveTo(0, 0, 0, size - 2);
+    ctx.strokeStyle = `rgba(201, 168, 76, ${depth * 0.28})`;
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  function drawBlossom(x, y, r, depth) {
+    ctx.save();
+    const grad = ctx.createRadialGradient(x, y, 0, x, y, r);
+    grad.addColorStop(0, `rgba(201, 168, 76, ${depth * 0.55})`);
+    grad.addColorStop(0.5, `rgba(201, 168, 76, ${depth * 0.2})`);
+    grad.addColorStop(1, 'transparent');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, w, h);
+    
+    // Smooth input wind
+    mouseWindX += (targetMouseWindX - mouseWindX) * 0.05;
+    scrollDeltaY *= 0.92; // Decay scroll impulse
+
+    particles.forEach(p => {
+      // Physics updates
+      p.x += (p.vx + mouseWindX) * p.depth;
+      p.y += (p.vy + scrollDeltaY) * p.depth;
+      p.angle += p.spinSpeed;
+      p.angleY += p.spinSpeedY;
+
+      // Wrap-around screen bounds
+      if (p.y > h + 30) {
+        p.y = -30;
+        p.x = Math.random() * w;
+      }
+      if (p.y < -30) {
+        p.y = h + 30;
+        p.x = Math.random() * w;
+      }
+      if (p.x > w + 30) {
+        p.x = -30;
+      }
+      if (p.x < -30) {
+        p.x = w + 30;
+      }
+
+      if (p.isLeaf) {
+        drawVectorLeaf(p.x, p.y, p.size, p.angle, p.angleY, p.depth);
+      } else {
+        drawBlossom(p.x, p.y, p.size, p.depth);
+      }
+    });
+
     requestAnimationFrame(loop);
   }
 
@@ -2309,6 +1976,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCollection();
   renderTestimonials();
   initMist();
+  initGlobalLeaves();
   initSteam();
   initNav();
   resetCup();

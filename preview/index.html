@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nevisan Tea — Single Origin Assam Tea, Whole Leaf from Golaghat</title>
+<title>Nevisan Tea â€” Single Origin Assam Tea, Whole Leaf from Golaghat</title>
 <meta name="description" content="Bold, wild, alive. Nevisan brings you whole leaf, chemical-free, single-origin teas from Golaghat, Assam. PGS-India certified organic. Order on WhatsApp, Amazon & Flipkart.">
 <link rel="canonical" href="https://nevisan.in/preview/">
 <link rel="icon" type="image/jpeg" href="../nevisan-logo.jpeg">
-<meta property="og:title" content="Nevisan Tea — Bold. Wild. Alive.">
+<meta property="og:title" content="Nevisan Tea â€” Bold. Wild. Alive.">
 <meta property="og:description" content="9 varieties of whole leaf, chemical-free single-origin teas from Golaghat, Assam.">
 <meta property="og:image" content="https://nevisan.in/hero-bg.jpg">
 <meta property="og:url" content="https://nevisan.in/preview/">
@@ -19,7 +19,7 @@
 
 <style>
 /* =========================================================
-   NEVISAN TEA — OFFICIAL BRAND SYSTEM (V4 Light Redesign)
+   NEVISAN TEA â€” OFFICIAL BRAND SYSTEM (V5 Light Redesign)
    ========================================================= */
 :root {
   --primary-color:   #23412D; /* Deep Forest Green */
@@ -92,7 +92,7 @@ body {
   height: 100%;
   z-index: 1; /* Behind content (z-index: 2), above body background */
   pointer-events: none;
-  opacity: 0.55;
+  opacity: 0.75;
 }
 
 /* =========================================================
@@ -491,7 +491,7 @@ section {
   gap: 1.5rem;
 }
 .ticker-item::after {
-  content: '✦';
+  content: 'âœ¦';
   color: var(--secondary-color);
   font-size: 0.75rem;
 }
@@ -1151,295 +1151,126 @@ section {
 /* =========================================================
    FOOTER (Deep Forest Green)
    ========================================================= */
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="/preview/" class="footer-logo">NEVI<span>SAN</span></a>
-        <p class="footer-desc">Bold, wild, alive. Sourcing, processing, and delivering whole leaf, chemical-free teas from the family plots of Golaghat, Upper Assam.</p>
-        <div class="footer-socials">
-          <a href="https://www.instagram.com/nevisan.tea/" aria-label="Nevisan Tea on Instagram" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-            </svg>
-          </a>
-          <a href="https://wa.me/919864245687" aria-label="WhatsApp customer support" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
+footer {
+  background: var(--primary-dark);
+  padding: 5rem 0 2.5rem;
+  color: var(--secondary-color);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 5rem;
+  margin-bottom: 4rem;
+}
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+.footer-logo span { color: var(--accent-color); }
+.footer-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  max-width: 38ch;
+}
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+}
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--r-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.footer-socials a:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+.footer-col h4 {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.footer-links a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--text-light); }
 
-      <div class="footer-col">
-        <h4>The Teas</h4>
-        <ul class="footer-links">
-          <li><a href="https://wa.me/919864245687?text=I%27d+like+to+order+GABA+Oolong">GABA Oolong</a></li>
-          <li><a href="https://wa.me/919864245687?text=I%27d+like+to+order+Lemongrass+Green+Tea">Lemongrass Green</a></li>
-          <li><a href="https://wa.me/919864245687?text=I%27d+like+to+order+Assam+Green+Tea">Assam Green Tea</a></li>
-          <li><a href="https://wa.me/919864245687?text=I%27d+like+to+order+Chamomile+Tea">Chamomile Blend</a></li>
-        </ul>
-      </div>
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.footer-copy {
+  font-size: 0.8rem;
+}
+.footer-legal {
+  display: flex;
+  gap: 2rem;
+}
+.footer-legal a {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+.footer-legal a:hover { color: var(--text-light); }
 
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul class="footer-links">
-          <li><a href="https://nevisan.in">Main Website</a></li>
-          <li><a href="#origin">Sourcing Story</a></li>
-          <li><a href="https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E" target="_blank" rel="noopener">Amazon Store</a></li>
-          <li><a href="https://wa.me/919864245687">Wholesale Inquiry</a></li>
-        </ul>
-      </div>
-    </div>
+/* Overrides to ensure React page wrappers are transparent and let canvases show through */
+#root, .app-container {
+  background: transparent !important;
+}
+</style>
+</head>
+<body>
 
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2025 Nevisan Tea. Sourced by Tailor Made Tea. Distributed by Mahabir Enterprise, Guwahati. FSSAI Reg: 10325001000313. GSTIN: 18AFAPJ8203P1Z7.</span>
-      <div class="footer-legal">
-        <a href="https://nevisan.in">Home</a>
-        <a href="https://wa.me/919864245687">Support</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<div id="root"></div>
 
-<!-- ====================== GLOBAL FLOATING LEAVES BACKGROUND CANVAS ====================== -->
+<!-- Background Atmospheric Canvases -->
+<canvas id="mist-canvas" aria-hidden="true"></canvas>
 <canvas id="global-leaf-canvas" aria-hidden="true"></canvas>
 
-<!-- ====================== WHATSAPP FLOAT ====================== -->
-<a
-  href="https://wa.me/919864245687?text=Hi%2C+I%27d+like+to+order+Nevisan+tea."
-  class="whatsapp-float"
-  id="whatsapp-float-btn"
-  aria-label="Order Nevisan tea on WhatsApp"
-  target="_blank"
-  rel="noopener"
->
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-  </svg>
-  Order Direct
-</a>
-
 <!-- ====================== SCRIPTS ====================== -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<!-- React Production Bundles -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+
+<!-- GSAP Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <script>
-/* =========================================================
-   DATA REGISTER
-   ========================================================= */
-const teas = [
-  {
-    name: 'GABA Oolong',
-    tag: 'Signature Reserve',
-    desc: 'Anaerobically processed under nitrogen stress to naturally amplify GABA levels up to 10x. A highly complex, honey-malty cup that promotes deep calm.',
-    img: '../1.jpg',
-    alt: 'Premium GABA Oolong whole leaf tea in an amber organic steeping cup',
-    wa: 'GABA+Oolong',
-    price: '₹499',
-    details: {
-      origin: 'Golaghat, Assam',
-      notes: 'Malty, Wild Honey, Baked Stone Fruit',
-      standard: '100% Organic, Hand Plucked',
-      brew: '90°C · 3-4 Mins · Up to 4 Infusions'
-    },
-    featured: true
-  },
-  {
-    name: 'Lemongrass Green',
-    tag: 'Popular',
-    desc: 'Brisk organic green tea cold-infused with hand-harvested lemongrass stalks. A bright, citrusy, and refreshing cup to activate the morning.',
-    img: '../2.jpg',
-    alt: 'Lemongrass whole leaf green tea with visual cut stalks',
-    wa: 'Lemongrass+Green',
-    price: '₹499',
-    details: {
-      origin: 'Golaghat, Assam',
-      notes: 'Crisp Citrus, Grassy, Refreshing Sweetness',
-      standard: 'Cold-Infusion Botanical, Chemical-Free',
-      brew: '80°C · 2 Mins · Up to 3 Infusions'
-    }
-  },
-  {
-    name: 'Assam Green Tea',
-    tag: 'Pure Organic',
-    desc: 'Our benchmark green tea. Highly vegetal, brisk, and slightly muscatel. Free of the bitter chemical aftertaste common in mass-market bags.',
-    img: '../3.jpg',
-    alt: 'Organic whole leaf Assam green tea dry leaves showing leaf structure',
-    wa: 'Assam+Green+Tea',
-    price: '₹499',
-    details: {
-      origin: 'Golaghat, Assam',
-      notes: 'Vegetal, Sweet Muscatel, Clear Dew',
-      standard: 'PGS-India Certified Organic',
-      brew: '80°C · 2 Mins · Up to 3 Infusions'
-    }
-  },
-  {
-    name: 'Chamomile Blend',
-    tag: 'Caffeine-Free base',
-    desc: 'Whole Chamomile flowers carefully blended with select organic whole leaves. Designed for late-evening tranquility and complete stress relief.',
-    img: '../4.jpg',
-    alt: 'Yellow Chamomile flowers mixed with whole tea leaves in container',
-    wa: 'Chamomile+Tea',
-    price: '₹499',
-    details: {
-      origin: 'Golaghat, Assam',
-      notes: 'Honeyed Apples, Delicate Floral, Warm Earth',
-      standard: 'Direct farm chamomile blend',
-      brew: '95°C · 4 Mins · Up to 2 Infusions'
-    },
-    featuredMid: true
-  },
-  {
-    name: 'Orthodox Black',
-    tag: 'Assam Classic',
-    desc: 'A robust, full-bodied black tea that showcases the true power of Upper Assam. Distinctly malty, brisk, and rich. A revelation for black tea drinkers.',
-    img: '../5.jpg',
-    alt: 'Assam orthodox black tea whole leaf showing deep amber profile',
-    wa: 'Orthodox+Black+Tea',
-    price: '₹499',
-    details: {
-      origin: 'Golaghat, Assam',
-      notes: 'Rich Malt, Cocoa Shell, Dark Woods',
-      standard: 'Single Garden Estate, No Blends',
-      brew: '95°C · 3-4 Mins · Up to 3 Infusions'
-    }
-  },
-  {
-    name: 'Tulsi Moringa',
-    tag: 'Wellness Botanical',
-    desc: 'A functional, immune-boosting green tea blend infused with wild holy basil (Tulsi) and iron-rich moringa leaves. Peppery, earthy, and cleansing.',
-    img: '../6.jpg',
-    alt: 'Green tea leaves mixed with dried tulsi and moringa botanicals',
-    wa: 'Tulsi+Moringa+Tea',
-    price: '₹499',
-    details: {
-      origin: 'Golaghat, Assam',
-      notes: 'Peppery Holy Basil, Earthy Green, Mineral Finish',
-      standard: '100% Whole Leaf Wellness blend',
-      brew: '85°C · 3 Mins · Up to 2 Infusions'
-    }
-  }
-];
-
-const testimonials = [
-  {
-    text: '"The GABA Oolong is a complete revelation. Having drunk supermarket tea bags my whole life, seeing these full leaves unfold in the cup and tasting the rich, natural honey notes blew me away. Worth every rupee."',
-    name: 'Priya Sharma',
-    meta: 'Mumbai · Verified Buyer',
-    init: 'P'
-  },
-  {
-    text: '"I ordered direct on WhatsApp. Packaging was gorgeous, delivery to Bengaluru took just 3 days. The lemongrass green tea has zero bitterness. It tastes incredibly clean, like real garden leaves."',
-    name: 'Rohan Mehta',
-    meta: 'Bengaluru · WhatsApp Customer',
-    init: 'R'
-  },
-  {
-    text: '"Finally, a premium Indian brand that respects the crop and doesn\'t hide behind generic spa-wellness marketing. Honest direct sourcing, clear FSSAI verification, and tea that is genuinely complex."',
-    name: 'Ananya Bose',
-    meta: 'Kolkata · Tea Enthusiast',
-    init: 'A'
-  }
-];
-
-/* =========================================================
-   ASYNCHRONOUS COMPONENT RENDERING
-   ========================================================= */
-function renderCollection() {
-  const grid = document.getElementById('collection-grid');
-  teas.forEach((tea, i) => {
-    const card = document.createElement('div');
-    
-    if (tea.featured) {
-      card.className = 'card-featured reveal';
-      card.innerHTML = `
-        <div class="featured-img-wrap">
-          <img src="${tea.img}" alt="${tea.alt}" loading="lazy">
-        </div>
-        <div class="featured-content">
-          <span class="card-badge">${tea.tag}</span>
-          <h3 class="card-title">${tea.name}</h3>
-          <p class="card-desc">${tea.desc}</p>
-          <div class="tea-profile">
-            <div class="profile-row"><span class="profile-label">Origin:</span><span class="profile-val">${tea.details.origin}</span></div>
-            <div class="profile-row"><span class="profile-label">Palate:</span><span class="profile-val">${tea.details.notes}</span></div>
-            <div class="profile-row"><span class="profile-label">Brewing:</span><span class="profile-val">${tea.details.brew}</span></div>
-          </div>
-          <div class="card-buy-row">
-            <div class="card-price">${tea.price} <span>/ 250g pack</span></div>
-            <a href="https://wa.me/919864245687?text=Hi%2C+I%27d+like+to+order+the+signature+${tea.wa}" class="btn btn-primary" style="padding: 0.75rem 1.75rem;" aria-label="Order ${tea.name} on WhatsApp">Order Direct</a>
-          </div>
-        </div>
-      `;
-    } else if (tea.featuredMid) {
-      card.className = 'card-horizontal-mid reveal';
-      card.innerHTML = `
-        <div class="featured-content">
-          <span class="card-badge">${tea.tag}</span>
-          <h3 class="card-title">${tea.name}</h3>
-          <p class="card-desc">${tea.desc}</p>
-          <div class="tea-profile">
-            <div class="profile-row"><span class="profile-label">Origin:</span><span class="profile-val">${tea.details.origin}</span></div>
-            <div class="profile-row"><span class="profile-label">Palate:</span><span class="profile-val">${tea.details.notes}</span></div>
-            <div class="profile-row"><span class="profile-label">Brewing:</span><span class="profile-val">${tea.details.brew}</span></div>
-          </div>
-          <div class="card-buy-row">
-            <div class="card-price">${tea.price} <span>/ 250g pack</span></div>
-            <a href="https://wa.me/919864245687?text=Hi%2C+I%27d+like+to+order+the+${tea.wa}" class="btn btn-primary" style="padding: 0.75rem 1.75rem;" aria-label="Order ${tea.name} on WhatsApp">Order Direct</a>
-          </div>
-        </div>
-        <div class="featured-img-wrap">
-          <img src="${tea.img}" alt="${tea.alt}" loading="lazy">
-        </div>
-      `;
-    } else {
-      card.className = 'card-standard reveal';
-      card.innerHTML = `
-        <div class="card-standard-img-wrap">
-          <img src="${tea.img}" alt="${tea.alt}" loading="lazy">
-        </div>
-        <div class="card-standard-content">
-          <span class="card-badge">${tea.tag}</span>
-          <h3 class="card-title">${tea.name}</h3>
-          <p class="card-desc">${tea.desc}</p>
-          <div class="tea-profile" style="margin-top:auto;">
-            <div class="profile-row"><span class="profile-label">Palate:</span><span class="profile-val">${tea.details.notes}</span></div>
-            <div class="profile-row"><span class="profile-label">Brew:</span><span class="profile-val">${tea.details.brew}</span></div>
-          </div>
-          <div class="card-buy-row">
-            <div class="card-price">${tea.price} <span>/ pack</span></div>
-            <a href="https://wa.me/919864245687?text=Hi%2C+I%27d+like+to+order+the+${tea.wa}" class="btn btn-ghost" style="padding: 0.6rem 1.25rem; color: var(--primary-color); border-color: var(--primary-color);" aria-label="Order ${tea.name} on WhatsApp">Order</a>
-          </div>
-        </div>
-      `;
-    }
-    grid.appendChild(card);
-  });
-}
-
-function renderTestimonials() {
-  const grid = document.getElementById('guestbook-grid');
-  testimonials.forEach(t => {
-    const card = document.createElement('div');
-    card.className = 'guestbook-card reveal';
-    const stars = Array(5).fill('★').join('');
-    card.innerHTML = `
-      <div class="stars" role="img" aria-label="5 stars">${stars}</div>
-      <p class="guestbook-text">${t.text}</p>
-      <div class="guestbook-user">
-        <div class="guestbook-avatar" aria-hidden="true">${t.init}</div>
-        <div>
-          <div class="guestbook-name">${t.name}</div>
-          <div class="guestbook-meta">${t.meta}</div>
-        </div>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
-}
-
 /* =========================================================
    DAWN MIST EFFECT (Canvas Particles)
    ========================================================= */
@@ -1493,7 +1324,7 @@ function initMist() {
 }
 
 /* =========================================================
-   GLOBAL FLOATING BACKGROUND (Tea Leaves & Gold Spores)
+   GLOBAL FLOATING BACKGROUND (Tea Garden Ecosystem)
    ========================================================= */
 function initGlobalLeaves() {
   const canvas = document.getElementById('global-leaf-canvas');
@@ -1508,32 +1339,72 @@ function initGlobalLeaves() {
     h = canvas.height = window.innerHeight;
   }, { passive: true });
 
-  const particlesCount = 20;
   const particles = [];
+  const leafCount = 10;
+  const butterflyCount = 3;
+  const fireflyCount = 12;
+  const dewCount = 6;
 
-  // Generate leaves and gold blossom particles
-  for (let i = 0; i < particlesCount; i++) {
-    const isLeaf = i < 14;
+  // Initialize leaves
+  for (let i = 0; i < leafCount; i++) {
     particles.push({
+      type: 'leaf',
       x: Math.random() * w,
       y: Math.random() * h,
-      size: isLeaf ? Math.random() * 20 + 12 : Math.random() * 4 + 2,
-      isLeaf: isLeaf,
-      // Slow drift physics
-      vx: Math.random() * 0.3 + 0.1,
-      vy: Math.random() * 0.4 + 0.2,
-      // Rotation physics
+      size: Math.random() * 20 + 12,
+      vx: Math.random() * 0.2 + 0.1,
+      vy: Math.random() * 0.3 + 0.2,
       angle: Math.random() * Math.PI * 2,
       spinSpeed: (Math.random() - 0.5) * 0.015,
-      // Simulated y-axis rotation for 3D flip effect
       angleY: Math.random() * Math.PI,
       spinSpeedY: Math.random() * 0.02 + 0.01,
-      // Depth parallax
-      depth: Math.random() * 0.5 + 0.3, // Opacity & speed scaler
+      depth: Math.random() * 0.5 + 0.3,
     });
   }
 
-  // Interactive force buffers
+  // Initialize butterflies (Culture / Life)
+  for (let i = 0; i < butterflyCount; i++) {
+    particles.push({
+      type: 'butterfly',
+      x: Math.random() * w,
+      y: Math.random() * h,
+      size: Math.random() * 12 + 10,
+      vx: Math.random() * 0.4 + 0.2,
+      vy: (Math.random() - 0.5) * 0.2 - 0.1,
+      angle: Math.random() * Math.PI * 2,
+      depth: Math.random() * 0.4 + 0.5,
+      flapOffset: Math.random() * 100,
+    });
+  }
+
+  // Initialize fireflies (glowing organic spores)
+  for (let i = 0; i < fireflyCount; i++) {
+    particles.push({
+      type: 'firefly',
+      x: Math.random() * w,
+      y: Math.random() * h,
+      size: Math.random() * 5 + 3,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3 - 0.1,
+      depth: Math.random() * 0.5 + 0.4,
+      pulseOffset: Math.random() * 100,
+    });
+  }
+
+  // Initialize dew droplets (terroir dew)
+  for (let i = 0; i < dewCount; i++) {
+    particles.push({
+      type: 'dew',
+      x: Math.random() * w,
+      y: Math.random() * h,
+      size: Math.random() * 3 + 1.5,
+      vx: 0.05,
+      vy: Math.random() * 0.6 + 0.4,
+      depth: Math.random() * 0.4 + 0.3,
+    });
+  }
+
+  // Interactive Wind & Scroll Forces
   let scrollDeltaY = 0;
   let mouseWindX = 0;
   let targetMouseWindX = 0;
@@ -1548,52 +1419,112 @@ function initGlobalLeaves() {
     targetMouseWindX = (e.clientX / window.innerWidth - 0.5) * 1.5;
   }, { passive: true });
 
-  // Render a detailed vector tea leaf
+  // Draw organic vector tea leaves
   function drawVectorLeaf(x, y, size, angle, angleY, depth) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(angle);
-    ctx.scale(Math.sin(angleY), 1); // Simulate 3D flip on Y axis
+    ctx.scale(Math.sin(angleY), 1); // 3D spin simulation
     
-    // Draw leaf shape
     ctx.beginPath();
     ctx.moveTo(0, -size);
-    // Left side curve
     ctx.bezierCurveTo(-size * 0.65, -size * 0.4, -size * 0.4, size * 0.6, 0, size);
-    // Right side curve
     ctx.bezierCurveTo(size * 0.4, size * 0.6, size * 0.65, -size * 0.4, 0, -size);
     
-    // Fill with soft brand gradient
     const grad = ctx.createLinearGradient(0, -size, 0, size);
-    grad.addColorStop(0, `rgba(174, 200, 180, ${depth * 0.3})`); // Sage Green
-    grad.addColorStop(1, `rgba(35, 65, 45, ${depth * 0.25})`);   // Deep Forest Green
+    grad.addColorStop(0, `rgba(174, 200, 180, ${depth * 0.28})`); // Sage Green
+    grad.addColorStop(1, `rgba(35, 65, 45, ${depth * 0.22})`);   // Deep Forest Green
     ctx.fillStyle = grad;
     ctx.fill();
 
-    // Leaf fine border
-    ctx.strokeStyle = `rgba(201, 168, 76, ${depth * 0.2})`; // Antique Gold
+    ctx.strokeStyle = `rgba(201, 168, 76, ${depth * 0.18})`; // Antique Gold outline
     ctx.lineWidth = 1;
     ctx.stroke();
 
-    // Central vein
     ctx.beginPath();
     ctx.moveTo(0, -size + 2);
     ctx.quadraticCurveTo(0, 0, 0, size - 2);
-    ctx.strokeStyle = `rgba(201, 168, 76, ${depth * 0.28})`;
+    ctx.strokeStyle = `rgba(201, 168, 76, ${depth * 0.25})`;
     ctx.stroke();
 
     ctx.restore();
   }
 
-  function drawBlossom(x, y, r, depth) {
+  // Draw golden fluttering butterflies
+  function drawButterfly(x, y, size, depth, flapOffset) {
     ctx.save();
-    const grad = ctx.createRadialGradient(x, y, 0, x, y, r);
-    grad.addColorStop(0, `rgba(201, 168, 76, ${depth * 0.55})`);
-    grad.addColorStop(0.5, `rgba(201, 168, 76, ${depth * 0.2})`);
+    ctx.translate(x, y);
+    
+    const bob = Math.sin(Date.now() / 200 + flapOffset) * 4;
+    ctx.translate(0, bob);
+
+    const wingFlap = Math.abs(Math.sin(Date.now() / 80 + flapOffset));
+    
+    // Left Wing
+    ctx.save();
+    ctx.scale(wingFlap, 1);
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.bezierCurveTo(-size * 0.8, -size * 0.8, -size * 0.9, -size * 0.2, 0, -size * 0.1);
+    ctx.bezierCurveTo(-size * 0.7, 0, -size * 0.5, size * 0.6, 0, size * 0.3);
+    ctx.fillStyle = `rgba(201, 168, 76, ${depth * 0.35})`; // Gold
+    ctx.fill();
+    ctx.strokeStyle = `rgba(35, 65, 45, ${depth * 0.25})`;
+    ctx.lineWidth = 0.5;
+    ctx.stroke();
+    ctx.restore();
+
+    // Right Wing
+    ctx.save();
+    ctx.scale(-wingFlap, 1);
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.bezierCurveTo(-size * 0.8, -size * 0.8, -size * 0.9, -size * 0.2, 0, -size * 0.1);
+    ctx.bezierCurveTo(-size * 0.7, 0, -size * 0.5, size * 0.6, 0, size * 0.3);
+    ctx.fillStyle = `rgba(201, 168, 76, ${depth * 0.35})`;
+    ctx.fill();
+    ctx.strokeStyle = `rgba(35, 65, 45, ${depth * 0.25})`;
+    ctx.lineWidth = 0.5;
+    ctx.stroke();
+    ctx.restore();
+
+    // Body
+    ctx.beginPath();
+    ctx.moveTo(0, -size * 0.5);
+    ctx.lineTo(0, size * 0.4);
+    ctx.strokeStyle = `rgba(35, 65, 45, ${depth * 0.4})`;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  // Draw glowing fireflies
+  function drawFirefly(x, y, r, depth, pulseOffset) {
+    ctx.save();
+    const pulse = (Math.cos(Date.now() / 600 + pulseOffset) + 1) / 2;
+    const finalAlpha = depth * (0.15 + pulse * 0.5);
+    const sizeFactor = 1 + pulse * 0.4;
+    
+    const grad = ctx.createRadialGradient(x, y, 0, x, y, r * sizeFactor);
+    grad.addColorStop(0, `rgba(201, 168, 76, ${finalAlpha})`); 
+    grad.addColorStop(0.4, `rgba(201, 168, 76, ${finalAlpha * 0.3})`);
     grad.addColorStop(1, 'transparent');
     ctx.fillStyle = grad;
     ctx.beginPath();
-    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.arc(x, y, r * sizeFactor, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // Draw clean dew drops
+  function drawDew(x, y, size, depth) {
+    ctx.save();
+    ctx.fillStyle = `rgba(174, 200, 180, ${depth * 0.22})`; // Translucent Sage Green
+    ctx.beginPath();
+    ctx.moveTo(x, y - size);
+    ctx.bezierCurveTo(x - size * 0.7, y + size * 0.3, x - size * 0.4, y + size, x, y + size);
+    ctx.bezierCurveTo(x + size * 0.4, y + size, x + size * 0.7, y + size * 0.3, x, y - size);
     ctx.fill();
     ctx.restore();
   }
@@ -1601,37 +1532,50 @@ function initGlobalLeaves() {
   function loop() {
     ctx.clearRect(0, 0, w, h);
     
-    // Smooth input wind
     mouseWindX += (targetMouseWindX - mouseWindX) * 0.05;
-    scrollDeltaY *= 0.92; // Decay scroll impulse
+    scrollDeltaY *= 0.92;
 
     particles.forEach(p => {
-      // Physics updates
-      p.x += (p.vx + mouseWindX) * p.depth;
-      p.y += (p.vy + scrollDeltaY) * p.depth;
-      p.angle += p.spinSpeed;
-      p.angleY += p.spinSpeedY;
-
-      // Wrap-around screen bounds
-      if (p.y > h + 30) {
-        p.y = -30;
-        p.x = Math.random() * w;
-      }
-      if (p.y < -30) {
-        p.y = h + 30;
-        p.x = Math.random() * w;
-      }
-      if (p.x > w + 30) {
-        p.x = -30;
-      }
-      if (p.x < -30) {
-        p.x = w + 30;
-      }
-
-      if (p.isLeaf) {
+      if (p.type === 'leaf') {
+        p.x += (p.vx + mouseWindX) * p.depth;
+        p.y += (p.vy + scrollDeltaY) * p.depth;
+        p.angle += p.spinSpeed;
+        p.angleY += p.spinSpeedY;
         drawVectorLeaf(p.x, p.y, p.size, p.angle, p.angleY, p.depth);
-      } else {
-        drawBlossom(p.x, p.y, p.size, p.depth);
+      } 
+      else if (p.type === 'butterfly') {
+        const sway = Math.sin(Date.now() / 400 + p.flapOffset) * 0.5;
+        p.x += (p.vx + mouseWindX + sway) * p.depth;
+        p.y += (p.vy + scrollDeltaY * 0.5) * p.depth;
+        drawButterfly(p.x, p.y, p.size, p.depth, p.flapOffset);
+      } 
+      else if (p.type === 'firefly') {
+        const wanderX = Math.sin(Date.now() / 800 + p.pulseOffset) * 0.2;
+        const wanderY = Math.cos(Date.now() / 700 + p.pulseOffset) * 0.15;
+        p.x += (p.vx + mouseWindX * 0.3 + wanderX) * p.depth;
+        p.y += (p.vy + scrollDeltaY * 0.2 + wanderY) * p.depth;
+        drawFirefly(p.x, p.y, p.size, p.depth, p.pulseOffset);
+      } 
+      else if (p.type === 'dew') {
+        p.x += (p.vx + mouseWindX * 0.15) * p.depth;
+        p.y += (p.vy + scrollDeltaY * 1.5) * p.depth;
+        drawDew(p.x, p.y, p.size, p.depth);
+      }
+
+      // Wrapping bounds
+      if (p.y > h + 40) {
+        p.y = -40;
+        p.x = Math.random() * w;
+      }
+      if (p.y < -40) {
+        p.y = h + 40;
+        p.x = Math.random() * w;
+      }
+      if (p.x > w + 40) {
+        p.x = -40;
+      }
+      if (p.x < -40) {
+        p.x = w + 40;
       }
     });
 
@@ -1643,350 +1587,16 @@ function initGlobalLeaves() {
 }
 
 /* =========================================================
-   BREWING RITUAL SIMULATOR (V3 Perfected Edition)
-   ========================================================= */
-const ritualTeas = {
-  oolong: {
-    color: 'rgba(212, 101, 26, 0.75)', // Golden-Amber
-    temp: 90,
-    time: 3,
-    steps: [
-      { p: 0.15, text: "Pouring 90°C spring water... waking the GABA Oolong leaf." },
-      { p: 0.40, text: "Top floral aromas dispersing... volatile essential oils rising." },
-      { p: 0.70, text: "Malty amino-acids infusing, amino GABA compounds dissolving." },
-      { p: 0.95, text: "Infusion complete. A rich honeyed amber oolong, ready to pour." }
-    ]
-  },
-  green: {
-    color: 'rgba(151, 191, 112, 0.6)', // Bright Jade Green
-    temp: 80,
-    time: 2,
-    steps: [
-      { p: 0.15, text: "Pouring cool 80°C water to protect delicate green leaf layers." },
-      { p: 0.40, text: "L-theanine dissolving... releasing sweet grassy elements." },
-      { p: 0.70, text: "Chlorophyll and minerals balancing, zero bitterness extraction." },
-      { p: 0.95, text: "Infusion complete. Bright, crisp vegetal green cup ready." }
-    ]
-  },
-  black: {
-    color: 'rgba(139, 34, 10, 0.85)', // Deep Ruby Amber
-    temp: 95,
-    time: 4,
-    steps: [
-      { p: 0.15, text: "Pouring near-boiling 95°C water to break down rich Orthodox leaf cells." },
-      { p: 0.40, text: "Deep maltiness extracting... heavy wood and cocoa notes rising." },
-      { p: 0.70, text: "Tannins and bold body combining... rich rubescent color sets in." },
-      { p: 0.95, text: "Infusion complete. Bold, full-bodied orthodox black tea." }
-    ]
-  },
-  herbal: {
-    color: 'rgba(235, 182, 60, 0.7)', // Sunny Golden Yellow
-    temp: 100,
-    time: 5,
-    steps: [
-      { p: 0.15, text: "Pouring boiling 100°C water... activating chamomile blossom oils." },
-      { p: 0.40, text: "Honeyed apple fragrance expanding... soothing visual dispersion." },
-      { p: 0.70, text: "Warm chamomile extracts and organic base blending fully." },
-      { p: 0.95, text: "Infusion complete. A sunny, completely caffeine-free sleep ritual." }
-    ]
-  }
-};
-
-let selectedTeaKey = 'oolong';
-let activeTimer = null;
-let liquidAnimFrame = null;
-
-function selectRitualTea(key) {
-  if (document.getElementById('start-brew-btn').disabled) return; // Prevent change mid-brew
-  selectedTeaKey = key;
-  const config = ritualTeas[key];
-  
-  document.querySelectorAll('.tea-select-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent.toLowerCase() === key);
-  });
-
-  document.getElementById('temp-slider').value = config.temp;
-  document.getElementById('time-slider').value = config.time;
-  
-  updateRitualParams();
-  resetCup();
-}
-
-function updateRitualParams() {
-  const temp = document.getElementById('temp-slider').value;
-  const time = document.getElementById('time-slider').value;
-  
-  document.getElementById('temp-val').textContent = temp + '°C';
-  document.getElementById('time-val').textContent = time + ' Min';
-  
-  if (!document.getElementById('start-brew-btn').disabled) {
-    document.getElementById('brew-status').textContent = `Ready to steep at ${temp}°C for ${time} Min`;
-  }
-}
-
-function resetCup() {
-  const fill = document.getElementById('liquid-fill');
-  fill.style.height = '0%';
-  fill.style.backgroundColor = 'transparent';
-  
-  // Set leaves to resting state
-  document.querySelectorAll('.liquid-leaf').forEach((leaf, idx) => {
-    leaf.style.transition = 'all 1s var(--ease-out-expo)';
-    leaf.style.bottom = '10px';
-    leaf.style.left = (15 + idx * 25) + 'px';
-    leaf.style.transform = `rotate(${(idx * 30 - 45)}deg) scale(0.9)`;
-    leaf.style.opacity = '0.35';
-  });
-}
-
-function startSteeping() {
-  const fill = document.getElementById('liquid-fill');
-  const status = document.getElementById('brew-status');
-  const startBtn = document.getElementById('start-brew-btn');
-  const config = ritualTeas[selectedTeaKey];
-  const timeSecs = document.getElementById('time-slider').value * 4; // Simulated steep speed
-  
-  resetCup();
-  startBtn.disabled = true;
-  document.getElementById('temp-slider').disabled = true;
-  document.getElementById('time-slider').disabled = true;
-
-  // 1. Pour Phase (0 - 2.5s)
-  setTimeout(() => {
-    fill.style.height = '85%';
-    fill.style.backgroundColor = 'rgba(255, 255, 255, 0.15)'; // Starts clear like water
-  }, 100);
-
-  let currentSec = 0;
-  
-  if (activeTimer) clearInterval(activeTimer);
-  if (liquidAnimFrame) cancelAnimationFrame(liquidAnimFrame);
-
-  // Active swirl during pour
-  let swirlSpeed = 1;
-  
-  function leafLoop() {
-    if (!startBtn.disabled) return;
-    
-    document.querySelectorAll('.liquid-leaf').forEach((leaf, idx) => {
-      leaf.style.opacity = '0.85';
-      const angle = (Date.now() / (300 * swirlSpeed)) + idx * (Math.PI / 3);
-      
-      if (swirlSpeed > 0.15) {
-        // Pour swirling: highly active vertical and horizontal movement
-        const x = Math.sin(angle) * 45 + 65;
-        const y = Math.cos(angle * 1.5) * 40 + 70;
-        const rot = angle * 50;
-        leaf.style.transition = 'none';
-        leaf.style.left = x + 'px';
-        leaf.style.bottom = y + 'px';
-        leaf.style.transform = `rotate(${rot}deg) scale(1)`;
-      } else {
-        // Steep settling: leaves slowly settle down
-        const restY = 10 + Math.sin(Date.now() / 1000 + idx) * 4;
-        const restX = (15 + idx * 25) + Math.cos(Date.now() / 1500 + idx) * 3;
-        const rot = idx * 30 - 45 + Math.sin(Date.now() / 2000 + idx) * 8;
-        leaf.style.transition = 'all 1.5s ease-out';
-        leaf.style.left = restX + 'px';
-        leaf.style.bottom = restY + 'px';
-        leaf.style.transform = `rotate(${rot}deg) scale(0.95)`;
-      }
-    });
-    
-    liquidAnimFrame = requestAnimationFrame(leafLoop);
-  }
-  
-  leafLoop();
-
-  activeTimer = setInterval(() => {
-    currentSec++;
-    const progress = currentSec / timeSecs;
-
-    // Slow down swirl speed as steeping completes
-    swirlSpeed = Math.max(0.08, 1 - progress * 1.1);
-
-    // Deepen color
-    if (progress > 0.25) {
-      // Interpolate water clear to final tea color
-      fill.style.backgroundColor = config.color;
-    }
-
-    // Dynamic sensory captions
-    const matchedStep = config.steps.find((s, idx) => {
-      const next = config.steps[idx + 1];
-      return progress >= s.p && (!next || progress < next.p);
-    });
-    if (matchedStep) {
-      status.textContent = matchedStep.text;
-    }
-
-    if (currentSec >= timeSecs) {
-      clearInterval(activeTimer);
-      cancelAnimationFrame(liquidAnimFrame);
-      status.textContent = "Infusion complete. Savor the untamed cup.";
-      startBtn.disabled = false;
-      document.getElementById('temp-slider').disabled = false;
-      document.getElementById('time-slider').disabled = false;
-      activeTimer = null;
-      
-      // Settle leaves flat
-      document.querySelectorAll('.liquid-leaf').forEach((leaf, idx) => {
-        leaf.style.transition = 'all 2s var(--ease-out-expo)';
-        leaf.style.bottom = '12px';
-        leaf.style.left = (15 + idx * 25) + 'px';
-        leaf.style.transform = `rotate(${(idx * 40 - 80)}deg) scale(0.95)`;
-        leaf.style.opacity = '0.45';
-      });
-    }
-  }, 1000);
-}
-
-/* Brewing Steam Canvas particles */
-let steamParticles = [];
-function initSteam() {
-  const canvas = document.getElementById('steam-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  
-  let w = (canvas.width = canvas.offsetWidth);
-  let h = (canvas.height = canvas.offsetHeight);
-
-  window.addEventListener('resize', () => {
-    w = canvas.width = canvas.offsetWidth;
-    h = canvas.height = canvas.offsetHeight;
-  }, { passive: true });
-
-  function loop() {
-    ctx.clearRect(0, 0, w, h);
-    const tempVal = document.getElementById('temp-slider').value;
-    const isSteeping = document.getElementById('start-brew-btn').disabled;
-    
-    // Steam intensity relative to temperature setting
-    const threshold = 1 - (tempVal - 70) / 60; // 0 (hot) to 0.5 (cool)
-    
-    if (isSteeping && Math.random() > Math.min(0.85, 0.4 + threshold)) {
-      steamParticles.push({
-        x: w / 2 + (Math.random() - 0.5) * 100,
-        y: h - 10,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: -(Math.random() * 0.6 + 0.3 + (tempVal - 70) * 0.01),
-        r: Math.random() * 6 + 3,
-        alpha: Math.random() * 0.15 + 0.08
-      });
-    }
-
-    steamParticles.forEach((p, idx) => {
-      p.x += p.vx;
-      p.y += p.vy;
-      p.r += 0.08;
-      p.alpha -= 0.003;
-      
-      if (p.alpha <= 0 || p.y < 0) {
-        steamParticles.splice(idx, 1);
-        return;
-      }
-      
-      ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-      ctx.fill();
-    });
-    
-    requestAnimationFrame(loop);
-  }
-  loop();
-}
-
-/* =========================================================
-   SCROLL INTERACTION & PARALLAX
-   ========================================================= */
-function initNav() {
-  const nav = document.getElementById('main-nav');
-  const hamburger = document.getElementById('hamburger-btn');
-  const mobileNav = document.getElementById('mobile-nav');
-
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
-  }, { passive: true });
-
-  hamburger.addEventListener('click', () => {
-    const open = mobileNav.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', open);
-  });
-
-  mobileNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
-
-function initParallax() {
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) return;
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Parallax Scroll for Origin Sunrise Image
-  gsap.to("#parallax-origin-img", {
-    yPercent: -15,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".origin-media",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true
-    }
-  });
-
-  // Entrance animations for Hero
-  const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
-  tl.to('#hero-badge', { opacity: 1, y: 0, duration: 1 }, 0.2)
-    .to('#hero-heading', { opacity: 1, y: 0, duration: 1.2 }, 0.4)
-    .to('#hero-sub', { opacity: 1, y: 0, duration: 1 }, 0.7)
-    .to('#hero-actions', { opacity: 1, y: 0, duration: 0.8 }, 0.9)
-    .to('#hero-credentials', { opacity: 1, y: 0, duration: 0.8 }, 1.1)
-    .to('#hero-scroll', { opacity: 1, duration: 0.8 }, 1.5);
-}
-
-function initScrollReveal() {
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-    return;
-  }
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-}
-
-/* =========================================================
    DOM CONTENT INITIALIZATION
    ========================================================= */
 document.addEventListener('DOMContentLoaded', () => {
-  renderCollection();
-  renderTestimonials();
   initMist();
   initGlobalLeaves();
-  initSteam();
-  initNav();
-  resetCup();
-  
-  setTimeout(() => {
-    initParallax();
-    initScrollReveal();
-  }, 100);
 });
 </script>
+
+<!-- Main React Application Entry -->
+<script src="app.js"></script>
 
 </body>
 </html>

@@ -528,7 +528,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <!-- Background Leaf Canvas -->
-  <canvas id="global-leaf-canvas" style="position: fixed; inset: 0; width: 100%; height: 100%; z-index: 9999; pointer-events: none; opacity: 0.6;"></canvas>
+  <canvas id="global-leaf-canvas" style="position: fixed; inset: 0; width: 100%; height: 100%; z-index: 9999; pointer-events: none; opacity: 0.35;"></canvas>
 
   <div id="root" style="position: relative; z-index: 2;"></div>
   <a href="quiz.html" class="quiz-link">Tea Quiz</a>
@@ -551,19 +551,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }, { passive: true });
     
     const leaves = [];
-    const leafCount = 20;
-    
+    const leafCount = 14;
+
     for (let i = 0; i < leafCount; i++) {
       leaves.push({
         x: Math.random() * w,
         y: Math.random() * h - h,
-        size: Math.random() * 0.5 + 0.35,
-        vy: Math.random() * 0.8 + 0.6,
-        vx: (Math.random() - 0.5) * 0.4,
-        vr: (Math.random() - 0.5) * 0.015,
+        size: Math.random() * 0.25 + 0.18,
+        vy: Math.random() * 0.6 + 0.4,
+        vx: (Math.random() - 0.5) * 0.3,
+        vr: (Math.random() - 0.5) * 0.012,
         rotation: Math.random() * Math.PI * 2,
         skew: Math.random() * 0.3 + 0.65,
-        swaySpeed: Math.random() * 0.012 + 0.005,
+        swaySpeed: Math.random() * 0.01 + 0.004,
         swayOffset: Math.random() * Math.PI * 2
       });
     }
@@ -622,7 +622,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (leaf.x > w + 20) leaf.x = -20;
         if (leaf.x < -20) leaf.x = w + 20;
         
-        drawLeaf(leaf.x, leaf.y, leaf.size * 7, leaf.rotation, leaf.skew);
+        drawLeaf(leaf.x, leaf.y, leaf.size * 2.2, leaf.rotation, leaf.skew);
       });
       
       requestAnimationFrame(animate);

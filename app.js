@@ -111,7 +111,7 @@ const T = {
     creamDark: "#F3EFE9",
     white: "#ffffff",
     text: "#1F2E24",
-    textMuted: "#5C7064",
+    textMuted: "#3D5245",
     border: "#E2DDD5",
   },
   ViewportCtx = React.createContext({ isMobile: !1, isTablet: !1 }),
@@ -654,7 +654,7 @@ function Nav({ page: e, setPage: t }) {
                 style: {
                   fontFamily: "'Inter'",
                   fontSize: 12,
-                  color: "rgba(255,255,255,0.4)",
+                  color: "rgba(255,255,255,0.8)",
                   marginBottom: 8,
                 },
               },
@@ -666,7 +666,7 @@ function Nav({ page: e, setPage: t }) {
                 style: {
                   fontFamily: "'Inter'",
                   fontSize: 12,
-                  color: "rgba(255,255,255,0.4)",
+                  color: "rgba(255,255,255,0.8)",
                 },
               },
               "+91 98642 45687",
@@ -1090,7 +1090,7 @@ function Hero({ setPage: e }) {
                     style: {
                       fontFamily: "'Inter'",
                       fontSize: 11,
-                      color: "rgba(255,255,255,0.45)",
+                      color: "rgba(255,255,255,0.75)",
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
                       marginTop: 5,
@@ -1132,7 +1132,7 @@ function Hero({ setPage: e }) {
           {
             style: {
               fontSize: 9,
-              color: "rgba(255,255,255,0.35)",
+              color: "rgba(255,255,255,0.65)",
               letterSpacing: "0.14em",
               fontFamily: "'Inter'",
             },
@@ -3425,7 +3425,7 @@ function PhilosophySection() {
               fontFamily: "'Playfair Display', Georgia, serif",
               fontStyle: "italic",
               fontSize: 15,
-              color: "rgba(255,255,255,0.6)",
+              color: "rgba(255,255,255,0.85)",
               lineHeight: 1.65,
               marginBottom: 32,
             },
@@ -4462,7 +4462,7 @@ function Footer({ setPage: e }) {
                 fontFamily: "'Inter'",
                 fontSize: 13,
                 lineHeight: 1.7,
-                color: "rgba(255,255,255,0.55)",
+                color: "rgba(255,255,255,0.78)",
                 marginTop: 20,
                 maxWidth: 280,
               },
@@ -4577,7 +4577,7 @@ function Footer({ setPage: e }) {
                 style: {
                   fontFamily: "'Inter'",
                   fontSize: 13,
-                  color: "rgba(255,255,255,0.55)",
+                  color: "rgba(255,255,255,0.78)",
                   marginBottom: 10,
                   cursor: "pointer",
                   transition: "color 150ms",
@@ -4585,7 +4585,7 @@ function Footer({ setPage: e }) {
                 onMouseEnter: (e) =>
                   (e.currentTarget.style.color = "rgba(255,255,255,0.85)"),
                 onMouseLeave: (e) =>
-                  (e.currentTarget.style.color = "rgba(255,255,255,0.55)"),
+                  (e.currentTarget.style.color = "rgba(255,255,255,0.78)"),
               },
               t,
             ),
@@ -4631,7 +4631,7 @@ function Footer({ setPage: e }) {
                 style: {
                   fontFamily: "'Inter'",
                   fontSize: 13,
-                  color: "rgba(255,255,255,0.55)",
+                  color: "rgba(255,255,255,0.78)",
                   marginBottom: 10,
                   cursor: "pointer",
                   transition: "color 150ms",
@@ -4639,7 +4639,7 @@ function Footer({ setPage: e }) {
                 onMouseEnter: (e) =>
                   (e.currentTarget.style.color = "rgba(255,255,255,0.85)"),
                 onMouseLeave: (e) =>
-                  (e.currentTarget.style.color = "rgba(255,255,255,0.55)"),
+                  (e.currentTarget.style.color = "rgba(255,255,255,0.78)"),
               },
               t,
             ),
@@ -4686,14 +4686,14 @@ function Footer({ setPage: e }) {
                 style: {
                   fontFamily: "'Inter'",
                   fontSize: 13,
-                  color: "rgba(255,255,255,0.55)",
+                  color: "rgba(255,255,255,0.78)",
                   marginBottom: 10,
                   cursor: "pointer",
                   transition: "color 150ms",
                 },
                 onMouseEnter: (e) => (e.currentTarget.style.color = T.gold),
                 onMouseLeave: (e) =>
-                  (e.currentTarget.style.color = "rgba(255,255,255,0.55)"),
+                  (e.currentTarget.style.color = "rgba(255,255,255,0.78)"),
               },
               e,
             ),
@@ -6571,10 +6571,10 @@ function FAQSection() {
     [t, a] = useState(null);
   return React.createElement(
     "section",
-    { style: { background: T.cream, padding: e ? "60px 20px" : "100px 32px" } },
+    { style: { background: "linear-gradient(160deg, #F8F6F2 0%, #EEE9DF 100%)", padding: e ? "64px 20px" : "110px 32px", borderTop: "1px solid #E2DDD5" } },
     React.createElement(
       "div",
-      { style: { maxWidth: 760, margin: "0 auto" } },
+      { style: { maxWidth: 780, margin: "0 auto" } },
       React.createElement(
         "div",
         { style: { textAlign: "center", marginBottom: e ? 36 : 56 } },
@@ -6629,11 +6629,11 @@ function FAQSection() {
         [
           {
             q: "Do you deliver across India?",
-            a: "Yes! We deliver pan-India via Amazon and Flipkart. You can also order directly on WhatsApp for personal assistance.",
+            a: "Yes! We deliver pan-India via Amazon and Flipkart. You can also order directly on WhatsApp at +91 98642 45687 for personal assistance and recommendations.",
           },
           {
             q: "How long does delivery take?",
-            a: "Amazon and Flipkart orders typically arrive in 3–5 business days. WhatsApp orders are dispatched within 24 hours.",
+            a: "Amazon and Flipkart orders typically arrive in 3–5 business days. WhatsApp orders are dispatched within 24 hours of confirmation.",
           },
           {
             q: "What is the shelf life of the tea?",
@@ -6641,19 +6641,71 @@ function FAQSection() {
           },
           {
             q: "Is your tea organic and chemical free?",
-            a: "Yes. Every batch is PGS-India organic certified and grown without pesticides or chemicals. From soil to seal, we guarantee it.",
+            a: "Yes. Every batch is PGS-India organic certified and grown without pesticides or chemicals. From soil to seal, completely chemical-free.",
           },
           {
             q: "Can the tea be steeped more than once?",
-            a: "Absolutely. Because we use 100% whole leaf tea, most of our varieties can be steeped twice — the second cup is just as rewarding.",
+            a: "Absolutely. Because we use 100% whole leaf tea, most varieties can be steeped 2–3 times — each steep releasing a slightly different flavour. The second cup is often softer and sweeter than the first.",
           },
           {
             q: "Do you offer bulk or wholesale orders?",
-            a: "Yes! For bulk orders for hotels, cafes, offices or gifting, reach out to us directly on WhatsApp at +91 98642 45687.",
+            a: "Yes! For bulk orders for hotels, cafes, offices or gifting, reach out on WhatsApp at +91 98642 45687. Minimum order is 20–30 packs. Custom assorted packs for gifting can also be arranged.",
           },
           {
             q: "What is your return policy?",
-            a: "As tea is a consumable product, all sales are final and non-returnable. However, if you receive a product that is near expiry, damaged, or incorrect, contact us on WhatsApp within 48 hours of delivery and we will replace it immediately.",
+            a: "As tea is a consumable, all sales are final. However, if you receive a product that is damaged, near expiry, or incorrect, contact us on WhatsApp within 48 hours and we will replace it immediately — no questions asked.",
+          },
+          {
+            q: "Do Rum Green Tea or Whiskey Green Tea contain alcohol?",
+            a: "No — both are completely alcohol-free. The rum and whiskey character comes from natural botanicals and a cold-infusion technique. Safe for non-drinkers, people in recovery, and children.",
+          },
+          {
+            q: "What is the price and how much tea do I get?",
+            a: "All Nevisan teas are ₹499 for a 50g pack. When re-steeped (which whole-leaf quality supports), each pack makes 50–75 cups — working out to ₹6–10 per cup.",
+          },
+          {
+            q: "What temperature should I brew the tea at?",
+            a: "Green teas: 80–85°C. Chamomile Green: 75–80°C. GABA Oolong: 85–90°C. Never use boiling water — it makes green tea bitter and destroys L-theanine. Boil then wait 3–4 minutes before pouring.",
+          },
+          {
+            q: "Which tea is best for beginners?",
+            a: "Lemongrass Green Tea is the most approachable — light, citrusy and hard to brew wrong. Chamomile Green is another great starting point if you prefer floral flavours. Both are forgiving and naturally enjoyable without sweetener.",
+          },
+          {
+            q: "Which tea is best for sleep or anxiety?",
+            a: "Chamomile Green Tea for sleep — it contains apigenin which binds to GABA receptors and gently promotes sleep. GABA Oolong for daytime anxiety — it calms without sedation. Many customers use both: GABA in the evening, Chamomile at bedtime.",
+          },
+          {
+            q: "Is spearmint tea good for PCOS?",
+            a: "Yes — it is one of the few herbs with direct clinical research. A 2010 trial in Phytotherapy Research found two cups daily for 30 days significantly reduced free testosterone in women with PCOS. Consistent daily drinking over 4–6 weeks is where results show.",
+          },
+          {
+            q: "Can I add milk or sugar to Nevisan teas?",
+            a: "Milk is not recommended — it binds to catechins and reduces antioxidant absorption. Honey is the best sweetener (add after brewing). Lemon is excellent, and adding it to Blue Flower Green Tea causes a dramatic colour change from blue to purple.",
+          },
+          {
+            q: "How should I store the tea?",
+            a: "In a cool, dry place away from sunlight, heat and strong odours. Tea absorbs smells from its environment — keep it away from spices and coffee. An airtight container is ideal. Consume within 6 months of opening for best flavour.",
+          },
+          {
+            q: "Where is Nevisan tea grown?",
+            a: "All Nevisan teas are single origin — sourced exclusively from one PGS-India certified organic garden in Golaghat, upper Assam. No blending with inferior leaves from other regions.",
+          },
+          {
+            q: "Can I drink green tea on an empty stomach?",
+            a: "It is best to avoid it. The tannins in green tea can cause nausea or mild stomach irritation on a completely empty stomach. Drink 30–60 minutes after a light meal for the best experience.",
+          },
+          {
+            q: "Is Nevisan tea available on Amazon India?",
+            a: "Yes. All Nevisan teas are listed on Amazon India and Flipkart. You can also order directly on WhatsApp at +91 98642 45687 for personal recommendations on which tea suits you best.",
+          },
+          {
+            q: "What is the difference between Nevisan and regular supermarket tea?",
+            a: "Most supermarket teas use CTC — Cut, Tear, Curl — which reduces whole leaves to granules for fast, strong brewing. Nevisan uses 100% whole leaf that can be steeped 2–3 times, retaining more L-theanine, EGCG antioxidants and flavour complexity.",
+          },
+          {
+            q: "Is Nevisan tea a good gift?",
+            a: "Yes — it is unusual, premium and practical. Popular gift combinations: Rum + Whiskey Green for spirit lovers, Spearmint + Chamomile for wellness-focused women, GABA + Chamomile for stress or sleep. Contact us on WhatsApp for custom gift packaging.",
           },
         ].map((n, o) =>
           React.createElement(
@@ -6662,13 +6714,14 @@ function FAQSection() {
               key: o,
               style: {
                 background: "#fff",
-                borderRadius: 14,
+                borderRadius: 16,
                 overflow: "hidden",
+                border: t === o ? "1px solid rgba(35,65,45,0.18)" : "1px solid rgba(226,221,213,0.8)",
                 boxShadow:
                   t === o
-                    ? "0 4px 24px rgba(0,0,0,0.08)"
-                    : "0 1px 4px rgba(0,0,0,0.05)",
-                transition: "box-shadow 0.2s ease",
+                    ? "0 8px 32px rgba(35,65,45,0.1)"
+                    : "0 2px 8px rgba(0,0,0,0.04)",
+                transition: "box-shadow 0.25s ease, border-color 0.25s ease",
               },
             },
             React.createElement(

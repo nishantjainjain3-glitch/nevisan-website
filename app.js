@@ -977,7 +977,7 @@ function Hero({ setPage: e }) {
                   "opacity 0.8s ease-out 0.65s, transform 0.8s ease-out 0.65s",
               },
             },
-            "Nine varieties. One garden in Golaghat, Assam. Whole leaf, chemical-free, steeped in nothing but intention.",
+            "Ten varieties. One garden in Golaghat, Assam. Whole leaf, chemical-free, steeped in nothing but intention.",
           ),
           React.createElement(
             "div",
@@ -1540,6 +1540,45 @@ const TEAS = [
       },
     ],
   },
+  {
+    name: "Ginger Green Tea",
+    short:
+      "Warming, zingy and built for your mornings. Whole-leaf Assam green with natural ginger — your daily metabolism and immunity boost.",
+    tags: ["METABOLISM", "IMMUNITY"],
+    bg: "#f5e6c8",
+    color: "#7a4a10",
+    img: "teas/ginger.png",
+    price: 499,
+    badge: "NEW",
+    brew: "85–90°C · 1.5–2 min · Can steep twice",
+    benefits: [
+      {
+        icon: "🔥",
+        title: "Metabolic Activation",
+        desc: "Gingerols stimulate digestion and elevate natural metabolic pathways — a natural fat-burning boost every morning.",
+      },
+      {
+        icon: "🛡️",
+        title: "Immunity Support",
+        desc: "Active gingerols fortify cellular defenses and strengthen daily immunity against pathogens and seasonal illness.",
+      },
+      {
+        icon: "🌊",
+        title: "Anti-Inflammatory",
+        desc: "Soothes internal systemic inflammation and supports muscle recovery — backed by centuries of Ayurvedic use.",
+      },
+      {
+        icon: "🧠",
+        title: "Cognitive Clarity",
+        desc: "Cultivates calm focus and sharp mental clarity without a caffeine crash — ginger and green tea together.",
+      },
+      {
+        icon: "🫃",
+        title: "Digestive Comfort",
+        desc: "Relieves bloating, nausea and indigestion. Best drunk 30 minutes after meals for maximum digestive benefit.",
+      },
+    ],
+  },
 ];
 function TagChip({ label: e, color: t }) {
   return React.createElement(
@@ -1613,6 +1652,11 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
       palate: "Pure Vegetal, Umami, Clean Grassy notes",
       brew: "80°C · 2 Mins · Up to 3 Infusions",
       badge: "Estate Classic"
+    },
+    "Ginger Green Tea": {
+      palate: "Warm Ginger, Spicy Zest, Earthy Green",
+      brew: "85–90°C · 1.5-2 Mins · Up to 3 Infusions",
+      badge: "New Arrival"
     }
   };
   const prof = profiles[e.name] || {
@@ -2266,7 +2310,7 @@ function CollectionPage({}) {
     React.createElement(PageHero, {
       photo: PAGE_PHOTOS.collection,
       label: "The Collection",
-      title: "Nine varieties, one origin",
+      title: "Ten varieties, one origin",
       subtitle: "Every leaf from Golaghat — whole, unblended, handcrafted.",
     }),
     React.createElement(Ticker, null),
@@ -2325,7 +2369,7 @@ function CollectionPage({}) {
               marginBottom: 16,
             },
           },
-          "Nine varieties, one origin",
+          "Ten varieties, one origin",
         ),
         React.createElement(
           "p",
@@ -4920,7 +4964,7 @@ function CollectionSection({ setPage: e }) {
                 color: T.text,
               },
             },
-            "Nine varieties, one origin",
+            "Ten varieties, one origin",
           ),
         ),
         React.createElement(

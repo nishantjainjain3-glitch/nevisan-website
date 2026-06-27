@@ -101,18 +101,18 @@ function AnimatedNumber({
 }
 gsap.registerPlugin(ScrollTrigger);
 const T = {
-    teal: "#1b7a82",
-    tealDark: "#0f3f45",
-    tealMid: "#155f66",
-    tealLight: "#d4eef0",
+    teal: "#23412D",
+    tealDark: "#15271B",
+    tealMid: "#1E3626",
+    tealLight: "#DCE6DF",
     gold: "#c9a84c",
     goldLight: "#f0e4c0",
-    cream: "#f9f6f0",
-    creamDark: "#f2ede4",
+    cream: "#F8F6F2",
+    creamDark: "#F3EFE9",
     white: "#ffffff",
-    text: "#1a1a1a",
-    textMuted: "#5a6a6b",
-    border: "#e0d8cc",
+    text: "#1F2E24",
+    textMuted: "#5C7064",
+    border: "#E2DDD5",
   },
   ViewportCtx = React.createContext({ isMobile: !1, isTablet: !1 }),
   CartCtx = React.createContext({
@@ -4061,6 +4061,53 @@ function Testimonials() {
     ),
   );
 }
+const ritualTeas = {
+  oolong: {
+    color: 'rgba(212, 101, 26, 0.8)',
+    temp: 90,
+    time: 3,
+    steps: [
+      { p: 0.15, text: "Pouring 90\u00b0C spring water... waking the GABA Oolong leaf." },
+      { p: 0.40, text: "Top floral aromas dispersing... volatile essential oils rising." },
+      { p: 0.70, text: "Malty amino-acids infusing, amino GABA compounds dissolving." },
+      { p: 0.95, text: "Infusion complete. A rich honeyed amber oolong, ready to pour." }
+    ]
+  },
+  green: {
+    color: 'rgba(151, 191, 112, 0.65)',
+    temp: 80,
+    time: 2,
+    steps: [
+      { p: 0.15, text: "Pouring cool 80\u00b0C water to protect delicate green leaf layers." },
+      { p: 0.40, text: "L-theanine dissolving... releasing sweet grassy elements." },
+      { p: 0.70, text: "Chlorophyll and minerals balancing, zero bitterness extraction." },
+      { p: 0.95, text: "Infusion complete. Bright, crisp vegetal green cup ready." }
+    ]
+  },
+  black: {
+    color: 'rgba(139, 34, 10, 0.85)',
+    temp: 95,
+    time: 4,
+    steps: [
+      { p: 0.15, text: "Pouring near-boiling 95\u00b0C water to break down rich Orthodox leaf cells." },
+      { p: 0.40, text: "Deep maltiness extracting... heavy wood and cocoa notes rising." },
+      { p: 0.70, text: "Tannins and bold body combining... rich rubescent color sets in." },
+      { p: 0.95, text: "Infusion complete. Bold, full-bodied orthodox black tea." }
+    ]
+  },
+  herbal: {
+    color: 'rgba(235, 182, 60, 0.75)',
+    temp: 100,
+    time: 5,
+    steps: [
+      { p: 0.15, text: "Pouring boiling 100\u00b0C water... activating chamomile blossom oils." },
+      { p: 0.40, text: "Honeyed apple fragrance expanding... soothing visual dispersion." },
+      { p: 0.70, text: "Warm chamomile extracts and organic base blending fully." },
+      { p: 0.95, text: "Infusion complete. A sunny, completely caffeine-free sleep ritual." }
+    ]
+  }
+};
+
 function HowToBrewSection() {
   const { isMobile } = useViewport();
   const steps = [

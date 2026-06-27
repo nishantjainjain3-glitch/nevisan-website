@@ -6125,7 +6125,7 @@ function HowToBrewSection() {
     
     let animFrame;
     const start = Date.now();
-    const duration = time * 4000;
+    const duration = time * 20000;
     
     const spawnBubble = () => {
       const id = Math.random();
@@ -6557,6 +6557,192 @@ function HowToBrewSection() {
               }
             },
             statusText
+          )
+        )
+      ),
+      React.createElement(
+        "div",
+        {
+          style: {
+            marginTop: e ? 56 : 80,
+            paddingTop: e ? 48 : 64,
+            borderTop: "1px solid rgba(255,255,255,0.08)"
+          }
+        },
+        React.createElement(
+          "div",
+          { style: { textAlign: "center", marginBottom: e ? 36 : 52 } },
+          React.createElement(
+            "div",
+            { style: { display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 14 } },
+            React.createElement("div", { style: { height: 1, width: 40, background: T.gold } }),
+            React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", color: T.gold, textTransform: "uppercase" } }, "Step by Step"),
+            React.createElement("div", { style: { height: 1, width: 40, background: T.gold } })
+          ),
+          React.createElement("h3", { style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: "clamp(22px, 3vw, 34px)", color: T.white } }, "How to Brew the Perfect Cup")
+        ),
+        React.createElement(
+          "div",
+          {
+            style: {
+              display: "grid",
+              gridTemplateColumns: e ? "1fr" : "repeat(5, 1fr)",
+              gap: e ? 24 : 16,
+              position: "relative"
+            }
+          },
+          [
+            {
+              step: "01",
+              icon: React.createElement("svg", { width: 36, height: 36, viewBox: "0 0 36 36", fill: "none" },
+                React.createElement("circle", { cx: 18, cy: 18, r: 14, stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
+                React.createElement("path", { d: "M18 8 L18 18 L24 24", stroke: T.gold, strokeWidth: 2, strokeLinecap: "round" }),
+                React.createElement("circle", { cx: 18, cy: 18, r: 2, fill: T.gold })
+              ),
+              title: "Heat the Water",
+              desc: "Green tea: 80–85°C\nChamomile: 75–80°C\nGABA Oolong: 85–90°C\n\nBoil water, then wait 3–4 minutes. Never pour boiling water on green tea — it destroys L-theanine and turns the cup bitter.",
+              tip: "No thermometer? Boil and wait 4 min."
+            },
+            {
+              step: "02",
+              icon: React.createElement("svg", { width: 36, height: 36, viewBox: "0 0 36 36", fill: "none" },
+                React.createElement("ellipse", { cx: 18, cy: 26, rx: 10, ry: 4, stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
+                React.createElement("path", { d: "M8 26 L8 14 Q8 8 18 8 Q28 8 28 14 L28 26", stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
+                React.createElement("path", { d: "M13 18 Q15 15 18 17 Q21 19 23 16", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round", fill: "none" })
+              ),
+              title: "Measure the Leaf",
+              desc: "1 teaspoon (2–2.5g) per 200ml of water. Use a wide-mesh infuser or strainer — whole leaves need room to unfurl and expand up to 3× their dry size.",
+              tip: "More leaf = stronger flavour, not longer steep."
+            },
+            {
+              step: "03",
+              icon: React.createElement("svg", { width: 36, height: 36, viewBox: "0 0 36 36", fill: "none" },
+                React.createElement("path", { d: "M10 8 Q10 4 18 4 Q26 4 26 8", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round", fill: "none" }),
+                React.createElement("path", { d: "M10 8 L8 28 Q8 32 18 32 Q28 32 28 28 L26 8", stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
+                React.createElement("path", { d: "M15 14 Q16 18 15 22", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round", fill: "none", opacity: 0.6 }),
+                React.createElement("path", { d: "M18 12 Q19 16 18 22", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round", fill: "none", opacity: 0.6 }),
+                React.createElement("path", { d: "M21 14 Q22 18 21 22", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round", fill: "none", opacity: 0.6 })
+              ),
+              title: "Pour & Steep",
+              desc: "Green teas: 2–3 minutes\nChamomile: 2 minutes\nGABA Oolong: 3–4 minutes\n\nPour water gently over the leaves. Start timing immediately. Do not squeeze or press the leaves — it releases bitterness.",
+              tip: "Under-steep then adjust. You can always steep again."
+            },
+            {
+              step: "04",
+              icon: React.createElement("svg", { width: 36, height: 36, viewBox: "0 0 36 36", fill: "none" },
+                React.createElement("rect", { x: 8, y: 14, width: 20, height: 16, rx: 3, stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
+                React.createElement("path", { d: "M6 14 L30 14", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round" }),
+                React.createElement("path", { d: "M12 10 L12 14", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round" }),
+                React.createElement("path", { d: "M18 8 L18 14", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round" }),
+                React.createElement("path", { d: "M24 10 L24 14", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round" }),
+                React.createElement("circle", { cx: 18, cy: 23, r: 3, stroke: T.gold, strokeWidth: 1.5, fill: "none" })
+              ),
+              title: "Strain & Pour",
+              desc: "Pour through a fine-mesh strainer into your cup. The liquor should be clear and vibrant — pale gold for green tea, amber for oolong, bright blue for Blue Flower.",
+              tip: "Add honey after pouring, not before — heat degrades honey's enzymes."
+            },
+            {
+              step: "05",
+              icon: React.createElement("svg", { width: 36, height: 36, viewBox: "0 0 36 36", fill: "none" },
+                React.createElement("path", { d: "M8 28 L28 28", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round" }),
+                React.createElement("path", { d: "M10 28 L10 16 Q10 10 18 10 Q26 10 26 16 L26 28", stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
+                React.createElement("path", { d: "M26 18 Q32 18 32 22 Q32 26 26 24", stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
+                React.createElement("path", { d: "M14 6 Q14 3 16 4 Q16 2 18 3 Q20 2 20 4 Q22 3 22 6", stroke: T.gold, strokeWidth: 1.2, strokeLinecap: "round", fill: "none" })
+              ),
+              title: "Re-Steep the Leaf",
+              desc: "Do not discard the leaves. Add fresh water at the same temperature and steep 30–60 seconds longer. The second cup is often softer and sweeter. Most Nevisan teas yield 2–3 full steeps.",
+              tip: "₹6–10 per cup. That's the whole-leaf advantage."
+            }
+          ].map((s, i) =>
+            React.createElement(
+              "div",
+              {
+                key: i,
+                style: {
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: 16,
+                  padding: e ? "28px 24px" : "32px 24px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 16,
+                  position: "relative"
+                }
+              },
+              React.createElement(
+                "div",
+                { style: { display: "flex", alignItems: "flex-start", justifyContent: "space-between" } },
+                s.icon,
+                React.createElement("span", {
+                  style: {
+                    fontFamily: "'Playfair Display', serif",
+                    fontSize: 36,
+                    fontWeight: 400,
+                    color: "rgba(201,168,76,0.15)",
+                    lineHeight: 1
+                  }
+                }, s.step)
+              ),
+              React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 13, fontWeight: 700, color: T.white, letterSpacing: "0.04em", textTransform: "uppercase" } }, s.title),
+              React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 13, color: "rgba(255,255,255,0.62)", lineHeight: 1.75, whiteSpace: "pre-line" } }, s.desc),
+              React.createElement(
+                "div",
+                {
+                  style: {
+                    marginTop: "auto",
+                    paddingTop: 14,
+                    borderTop: "1px solid rgba(201,168,76,0.2)",
+                    fontFamily: "'Inter'",
+                    fontSize: 11,
+                    fontWeight: 600,
+                    color: T.gold,
+                    letterSpacing: "0.03em"
+                  }
+                },
+                "✦ " + s.tip
+              )
+            )
+          )
+        ),
+        React.createElement(
+          "div",
+          {
+            style: {
+              marginTop: e ? 40 : 56,
+              background: "rgba(201,168,76,0.07)",
+              border: "1px solid rgba(201,168,76,0.2)",
+              borderRadius: 14,
+              padding: e ? "24px 20px" : "28px 36px",
+              display: "grid",
+              gridTemplateColumns: e ? "1fr" : "repeat(3, 1fr)",
+              gap: e ? 20 : 0
+            }
+          },
+          [
+            { label: "Never boiling water", sub: "Boiling destroys L-theanine & creates bitterness", icon: "🌡️" },
+            { label: "No milk in green tea", sub: "Milk proteins bind to antioxidants, reducing their benefit", icon: "🥛" },
+            { label: "No squeezing the leaves", sub: "Pressing releases harsh tannins into the cup", icon: "🌿" }
+          ].map((rule, i) =>
+            React.createElement(
+              "div",
+              {
+                key: i,
+                style: {
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: 14,
+                  padding: e ? 0 : "0 28px",
+                  borderLeft: (!e && i > 0) ? "1px solid rgba(201,168,76,0.15)" : "none"
+                }
+              },
+              React.createElement("span", { style: { fontSize: 22, flexShrink: 0, marginTop: 2 } }, rule.icon),
+              React.createElement(
+                "div",
+                null,
+                React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 13, fontWeight: 700, color: T.white, marginBottom: 4 } }, rule.label),
+                React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 12, color: "rgba(255,255,255,0.5)", lineHeight: 1.5 } }, rule.sub)
+              )
+            )
           )
         )
       )

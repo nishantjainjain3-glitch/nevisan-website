@@ -130,20 +130,20 @@
   .cat-btn {
     display: inline-block;
     background: none;
-    border: 1px solid var(--border);
+    border: 1.5px solid var(--border);
     color: var(--muted);
-    padding: 6px 16px;
+    padding: 7px 16px;
     border-radius: 99px;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     white-space: nowrap;
-    text-decoration: none;
     font-family: 'Inter', sans-serif;
     transition: all 0.2s;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
   }
   .cat-btn:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
+  .cat-btn.active { background: var(--teal); color: #fff; border-color: var(--teal); }
 
   /* ── MAIN ── */
   .main { max-width: 860px; margin: 0 auto; padding: 60px 24px 100px; }
@@ -291,29 +291,30 @@
 
 <div class="cat-nav">
   <div class="cat-inner">
-    <a href="#about" class="cat-btn">About Nevisan</a>
-    <a href="#buying" class="cat-btn">Buying Guide</a>
-    <a href="#shipping" class="cat-btn">Shipping & Orders</a>
-    <a href="#lemongrass" class="cat-btn">Lemongrass</a>
-    <a href="#blueflower" class="cat-btn">Blue Flower</a>
-    <a href="#rum" class="cat-btn">Rum Green</a>
-    <a href="#spearmint" class="cat-btn">Spearmint</a>
-    <a href="#tulsi" class="cat-btn">Tulsi</a>
-    <a href="#chamomile" class="cat-btn">Chamomile</a>
-    <a href="#whiskey" class="cat-btn">Whiskey Green</a>
-    <a href="#gaba" class="cat-btn">GABA Oolong</a>
-    <a href="#organic" class="cat-btn">Organic Green</a>
-    <a href="#health" class="cat-btn">Health & Wellness</a>
-    <a href="#brewing" class="cat-btn">Brewing & Storage</a>
-    <a href="#gifting" class="cat-btn">Gifting</a>
-    <a href="#certifications" class="cat-btn">Certifications</a>
+    <button class="cat-btn active" data-cat="all">All Questions</button>
+    <button class="cat-btn" data-cat="about">About Nevisan</button>
+    <button class="cat-btn" data-cat="buying">Buying Guide</button>
+    <button class="cat-btn" data-cat="shipping">Shipping & Orders</button>
+    <button class="cat-btn" data-cat="lemongrass">Lemongrass</button>
+    <button class="cat-btn" data-cat="blueflower">Blue Flower</button>
+    <button class="cat-btn" data-cat="rum">Rum Green</button>
+    <button class="cat-btn" data-cat="spearmint">Spearmint</button>
+    <button class="cat-btn" data-cat="tulsi">Tulsi</button>
+    <button class="cat-btn" data-cat="chamomile">Chamomile</button>
+    <button class="cat-btn" data-cat="whiskey">Whiskey Green</button>
+    <button class="cat-btn" data-cat="gaba">GABA Oolong</button>
+    <button class="cat-btn" data-cat="organic">Organic Green</button>
+    <button class="cat-btn" data-cat="health">Health & Wellness</button>
+    <button class="cat-btn" data-cat="brewing">Brewing & Storage</button>
+    <button class="cat-btn" data-cat="gifting">Gifting</button>
+    <button class="cat-btn" data-cat="certifications">Certifications</button>
   </div>
 </div>
 
 <div class="main">
 
 <!-- ── ABOUT NEVISAN ── -->
-<div class="section" id="about">
+<div class="section" id="about" data-cat="about">
   <div class="section-head">
     <div class="section-icon ic-teal">🏡</div>
     <div><div class="section-title">About Nevisan</div><div class="section-count">10 questions</div></div>
@@ -333,7 +334,7 @@
 </div>
 
 <!-- ── BUYING GUIDE ── -->
-<div class="section" id="buying">
+<div class="section" id="buying" data-cat="buying">
   <div class="section-head">
     <div class="section-icon ic-gold">🛍️</div>
     <div><div class="section-title">Buying Guide</div><div class="section-count">8 questions</div></div>
@@ -351,7 +352,7 @@
 </div>
 
 <!-- ── SHIPPING ── -->
-<div class="section" id="shipping">
+<div class="section" id="shipping" data-cat="shipping">
   <div class="section-head">
     <div class="section-icon ic-teal">🚚</div>
     <div><div class="section-title">Shipping & Orders</div><div class="section-count">6 questions</div></div>
@@ -367,7 +368,7 @@
 </div>
 
 <!-- ── LEMONGRASS ── -->
-<div class="section" id="lemongrass">
+<div class="section" id="lemongrass" data-cat="lemongrass">
   <div class="section-head">
     <div class="section-icon ic-gold">🍋</div>
     <div><div class="section-title">Lemongrass Green Tea</div><div class="section-count">7 questions</div></div>
@@ -384,7 +385,7 @@
 </div>
 
 <!-- ── BLUE FLOWER ── -->
-<div class="section" id="blueflower">
+<div class="section" id="blueflower" data-cat="blueflower">
   <div class="section-head">
     <div class="section-icon ic-teal">💙</div>
     <div><div class="section-title">Blue Flower Green Tea</div><div class="section-count">6 questions</div></div>
@@ -400,7 +401,7 @@
 </div>
 
 <!-- ── RUM ── -->
-<div class="section" id="rum">
+<div class="section" id="rum" data-cat="rum">
   <div class="section-head">
     <div class="section-icon ic-gold">🥃</div>
     <div><div class="section-title">Rum Green Tea</div><div class="section-count">6 questions</div></div>
@@ -416,7 +417,7 @@
 </div>
 
 <!-- ── SPEARMINT ── -->
-<div class="section" id="spearmint">
+<div class="section" id="spearmint" data-cat="spearmint">
   <div class="section-head">
     <div class="section-icon ic-teal">🌿</div>
     <div><div class="section-title">Spearmint Green Tea</div><div class="section-count">8 questions</div></div>
@@ -434,7 +435,7 @@
 </div>
 
 <!-- ── TULSI ── -->
-<div class="section" id="tulsi">
+<div class="section" id="tulsi" data-cat="tulsi">
   <div class="section-head">
     <div class="section-icon ic-gold">🌱</div>
     <div><div class="section-title">Tulsi Green Tea</div><div class="section-count">6 questions</div></div>
@@ -450,7 +451,7 @@
 </div>
 
 <!-- ── CHAMOMILE ── -->
-<div class="section" id="chamomile">
+<div class="section" id="chamomile" data-cat="chamomile">
   <div class="section-head">
     <div class="section-icon ic-teal">🌼</div>
     <div><div class="section-title">Chamomile Green Tea</div><div class="section-count">6 questions</div></div>
@@ -466,7 +467,7 @@
 </div>
 
 <!-- ── WHISKEY ── -->
-<div class="section" id="whiskey">
+<div class="section" id="whiskey" data-cat="whiskey">
   <div class="section-head">
     <div class="section-icon ic-gold">🥃</div>
     <div><div class="section-title">Whiskey Green Tea</div><div class="section-count">5 questions</div></div>
@@ -481,7 +482,7 @@
 </div>
 
 <!-- ── GABA ── -->
-<div class="section" id="gaba">
+<div class="section" id="gaba" data-cat="gaba">
   <div class="section-head">
     <div class="section-icon ic-teal">🧘</div>
     <div><div class="section-title">GABA Oolong Tea</div><div class="section-count">7 questions</div></div>
@@ -498,7 +499,7 @@
 </div>
 
 <!-- ── ORGANIC ── -->
-<div class="section" id="organic">
+<div class="section" id="organic" data-cat="organic">
   <div class="section-head">
     <div class="section-icon ic-gold">🌾</div>
     <div><div class="section-title">Organic Green Tea</div><div class="section-count">5 questions</div></div>
@@ -513,7 +514,7 @@
 </div>
 
 <!-- ── HEALTH ── -->
-<div class="section" id="health">
+<div class="section" id="health" data-cat="health">
   <div class="section-head">
     <div class="section-icon ic-teal">💚</div>
     <div><div class="section-title">Health & Wellness</div><div class="section-count">12 questions</div></div>
@@ -535,7 +536,7 @@
 </div>
 
 <!-- ── BREWING ── -->
-<div class="section" id="brewing">
+<div class="section" id="brewing" data-cat="brewing">
   <div class="section-head">
     <div class="section-icon ic-gold">☕</div>
     <div><div class="section-title">Brewing & Storage Guide</div><div class="section-count">10 questions</div></div>
@@ -555,7 +556,7 @@
 </div>
 
 <!-- ── GIFTING ── -->
-<div class="section" id="gifting">
+<div class="section" id="gifting" data-cat="gifting">
   <div class="section-head">
     <div class="section-icon ic-teal">🎁</div>
     <div><div class="section-title">Gifting</div><div class="section-count">5 questions</div></div>
@@ -570,7 +571,7 @@
 </div>
 
 <!-- ── CERTIFICATIONS ── -->
-<div class="section" id="certifications">
+<div class="section" id="certifications" data-cat="certifications">
   <div class="section-head">
     <div class="section-icon ic-gold">🏅</div>
     <div><div class="section-title">Certifications & Safety</div><div class="section-count">5 questions</div></div>
@@ -608,5 +609,21 @@
   </p>
 </footer>
 
+<script>
+  const sections = document.querySelectorAll('.section[data-cat]');
+  const btns = document.querySelectorAll('.cat-btn');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      sections.forEach(s => {
+        s.style.display = (cat === 'all' || s.dataset.cat === cat) ? '' : 'none';
+      });
+      document.querySelector('.main').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
 </body>
 </html>

@@ -2259,7 +2259,7 @@ function CollectionPage({}) {
     "div",
     {
       style: {
-        background: T.cream,
+        background: "transparent",
         minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
@@ -3698,7 +3698,7 @@ function WhereToBuy() {
     { isMobile: n } = useViewport();
   return React.createElement(
     "div",
-    { style: { background: T.cream, padding: n ? "64px 20px" : "100px 32px" } },
+    { style: { background: "transparent", padding: n ? "64px 20px" : "100px 32px" } },
     React.createElement(
       "div",
       { style: { maxWidth: 960, margin: "0 auto", textAlign: "center" } },
@@ -4233,7 +4233,7 @@ function Testimonials() {
     "div",
     {
       style: {
-        background: T.creamDark,
+        background: "transparent",
         padding: n ? "64px 20px" : "100px 32px",
       },
     },
@@ -4779,7 +4779,7 @@ function CollectionSection({ setPage: e }) {
     [r, l] = useState(null);
   return React.createElement(
     "div",
-    { style: { background: T.cream, padding: n ? "60px 20px" : "100px 32px" } },
+    { style: { background: "transparent", padding: n ? "60px 20px" : "100px 32px" } },
     React.createElement(
       "div",
       { style: { maxWidth: 1200, margin: "0 auto" } },
@@ -7158,7 +7158,7 @@ function OurStoryPage({ setPage: e }) {
     React.createElement(PhilosophySection, null),
     React.createElement(
       "div",
-      { style: { background: T.cream, padding: "80px 32px" } },
+      { style: { background: "transparent", padding: "80px 32px" } },
       React.createElement(
         "div",
         { style: { maxWidth: 700, margin: "0 auto", textAlign: "center" } },
@@ -7409,7 +7409,7 @@ function ArticleModal({ post: e, onClose: t }) {
           {
             onClick: (e) => e.stopPropagation(),
             style: {
-              background: T.cream,
+              background: "transparent",
               borderRadius: 20,
               maxWidth: 680,
               width: "100%",
@@ -7585,7 +7585,7 @@ function JournalPage({ setPage: e }) {
     "div",
     {
       style: {
-        background: T.cream,
+        background: "transparent",
         minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
@@ -7743,7 +7743,7 @@ function AboutPage({ setPage: e }) {
     "div",
     {
       style: {
-        background: T.cream,
+        background: "transparent",
         minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
@@ -8183,7 +8183,7 @@ function CertificationsPage({ setPage: e }) {
     "div",
     {
       style: {
-        background: T.cream,
+        background: "transparent",
         minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
@@ -8352,7 +8352,7 @@ function WholesalePage({ setPage: e }) {
     "div",
     {
       style: {
-        background: T.cream,
+        background: "transparent",
         minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
@@ -8617,7 +8617,7 @@ function WholesalePage({ setPage: e }) {
             "div",
             {
               style: {
-                background: T.cream,
+                background: "transparent",
                 borderRadius: 14,
                 padding: "20px 22px",
               },
@@ -8661,7 +8661,7 @@ function WholesalePage({ setPage: e }) {
           "div",
           {
             style: {
-              background: T.cream,
+              background: "transparent",
               borderRadius: 20,
               padding: t ? "28px 20px" : "36px 32px",
             },
@@ -8864,7 +8864,7 @@ function ContactPage({ setPage: e }) {
     "div",
     {
       style: {
-        background: T.cream,
+        background: "transparent",
         minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },

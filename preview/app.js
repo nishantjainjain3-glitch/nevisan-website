@@ -387,7 +387,7 @@ function Nav({ page: e, setPage: t, openQuiz: q }) {
           left: 0,
           right: 0,
           zIndex: 100,
-          background: o || r || !n ? "rgba(15,63,69,0.82)" : "transparent",
+          background: n ? (o ? "rgba(21, 39, 27, 0.95)" : "transparent") : T.teal,
           backdropFilter: (n && o) || r ? "blur(16px)" : "none",
           transition: "background 400ms ease",
           borderBottom: n && o ? "1px solid rgba(255,255,255,0.08)" : "none",

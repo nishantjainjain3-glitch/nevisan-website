@@ -343,7 +343,6 @@ function Nav({ page: e, setPage: t }) {
       "Wholesale",
       "Contact",
       "FAQ",
-      "Quiz",
     ],
     n = "Home" === e,
     [o, i] = useState(!1),
@@ -4614,7 +4613,6 @@ function Footer({ setPage: e }) {
             "Journal",
             "Wholesale",
             "FAQ",
-            "Quiz",
           ].map((t) =>
             React.createElement(
               "div",

@@ -1199,6 +1199,120 @@ function RippleButton({
 }
 const TEAS = [
   {
+    name: "Spearmint Green Tea",
+    short:
+      "Uditi drinks this one every day. Gentle on hormones, lovely for the skin.",
+    tags: ["HORMONAL", "SKIN"],
+    bg: "#e8d4f0",
+    color: "#6a3a8a",
+    img: "teas/spearmint.png?v=2",
+    price: 499,
+    brew: "85°C · 2 min · Light and refreshing",
+    benefits: [
+      {
+        icon: "⚖️",
+        title: "Hormonal Balance",
+        desc: "Proven anti-androgenic properties — helps regulate hormones, especially beneficial for PCOS.",
+      },
+      {
+        icon: "🧖",
+        title: "Reduces Acne",
+        desc: "By lowering excess androgens, spearmint naturally reduces hormonal breakouts and oily skin.",
+      },
+      {
+        icon: "💨",
+        title: "Fresh Breath & Digestion",
+        desc: "Soothes the gut, freshens breath and relieves nausea and IBS discomfort.",
+      },
+      {
+        icon: "🧠",
+        title: "Improves Memory",
+        desc: "Spearmint extract improves working memory and alertness within weeks of regular use.",
+      },
+      {
+        icon: "🌸",
+        title: "Anti-Inflammatory",
+        desc: "Rich in rosmarinic acid — reduces inflammation throughout the body, easing joint discomfort.",
+      },
+    ],
+  },
+  {
+    name: "GABA Oolong Tea",
+    short: "Calm without the fog. The cup we keep close on the busy days.",
+    tags: ["RELAXATION", "FOCUS"],
+    bg: "#c0e0dc",
+    color: "#1b7a82",
+    img: "teas/gaba.png?v=2",
+    price: 499,
+    brew: "85°C · 3 min · Nitrogen-anaerobic processed",
+    benefits: [
+      {
+        icon: "🧘",
+        title: "Deep Relaxation",
+        desc: "GABA is the brain's calming neurotransmitter — naturally elevated through the fermentation process.",
+      },
+      {
+        icon: "🧠",
+        title: "Mental Clarity",
+        desc: "Reduces anxiety without brain fog — promotes a clear, calm, focused state of mind.",
+      },
+      {
+        icon: "😴",
+        title: "Better Sleep Quality",
+        desc: "Higher GABA levels improve sleep onset and depth — without the grogginess of sleep aids.",
+      },
+      {
+        icon: "💪",
+        title: "Muscle Recovery",
+        desc: "GABA supports HGH (human growth hormone) release, aiding muscle repair after exercise.",
+      },
+      {
+        icon: "❤️",
+        title: "Blood Pressure Support",
+        desc: "Studies show GABA oolong reduces blood pressure in hypertensive patients with regular use.",
+      },
+    ],
+  },
+  {
+    name: "Ginger Green Tea",
+    short:
+      "Warming, zingy and built for your mornings. Whole-leaf Assam green with natural ginger — your daily metabolism and immunity boost.",
+    tags: ["METABOLISM", "IMMUNITY"],
+    bg: "#f5e6c8",
+    color: "#7a4a10",
+    img: "teas/ginger.png",
+    price: 499,
+    badge: "NEW",
+    brew: "85–90°C · 1.5–2 min · Can steep twice",
+    benefits: [
+      {
+        icon: "🔥",
+        title: "Metabolic Activation",
+        desc: "Gingerols stimulate digestion and elevate natural metabolic pathways — a natural fat-burning boost every morning.",
+      },
+      {
+        icon: "🛡️",
+        title: "Immunity Support",
+        desc: "Active gingerols fortify cellular defenses and strengthen daily immunity against pathogens and seasonal illness.",
+      },
+      {
+        icon: "🌊",
+        title: "Anti-Inflammatory",
+        desc: "Soothes internal systemic inflammation and supports muscle recovery — backed by centuries of Ayurvedic use.",
+      },
+      {
+        icon: "🧠",
+        title: "Cognitive Clarity",
+        desc: "Cultivates calm focus and sharp mental clarity without a caffeine crash — ginger and green tea together.",
+      },
+      {
+        icon: "🫃",
+        title: "Digestive Comfort",
+        desc: "Relieves bloating, nausea and indigestion. Best drunk 30 minutes after meals for maximum digestive benefit.",
+      },
+    ],
+  },
+  {
     name: "Lemongrass Green Tea",
     short:
       "The one we reach for first thing. Bright, lemony, and kind to your stomach.",
@@ -1310,44 +1424,6 @@ const TEAS = [
         icon: "🔄",
         title: "Multi-Steep Value",
         desc: "Whole leaf quality means 2–3 full-flavoured steeps from every single serving.",
-      },
-    ],
-  },
-  {
-    name: "Spearmint Green Tea",
-    short:
-      "Uditi drinks this one every day. Gentle on hormones, lovely for the skin.",
-    tags: ["HORMONAL", "SKIN"],
-    bg: "#e8d4f0",
-    color: "#6a3a8a",
-    img: "teas/spearmint.png?v=2",
-    price: 499,
-    brew: "85°C · 2 min · Light and refreshing",
-    benefits: [
-      {
-        icon: "⚖️",
-        title: "Hormonal Balance",
-        desc: "Proven anti-androgenic properties — helps regulate hormones, especially beneficial for PCOS.",
-      },
-      {
-        icon: "🧖",
-        title: "Reduces Acne",
-        desc: "By lowering excess androgens, spearmint naturally reduces hormonal breakouts and oily skin.",
-      },
-      {
-        icon: "💨",
-        title: "Fresh Breath & Digestion",
-        desc: "Soothes the gut, freshens breath and relieves nausea and IBS discomfort.",
-      },
-      {
-        icon: "🧠",
-        title: "Improves Memory",
-        desc: "Spearmint extract improves working memory and alertness within weeks of regular use.",
-      },
-      {
-        icon: "🌸",
-        title: "Anti-Inflammatory",
-        desc: "Rich in rosmarinic acid — reduces inflammation throughout the body, easing joint discomfort.",
       },
     ],
   },
@@ -1465,43 +1541,6 @@ const TEAS = [
     ],
   },
   {
-    name: "GABA Oolong Tea",
-    short: "Calm without the fog. The cup we keep close on the busy days.",
-    tags: ["RELAXATION", "FOCUS"],
-    bg: "#c0e0dc",
-    color: "#1b7a82",
-    img: "teas/gaba.png?v=2",
-    price: 499,
-    brew: "85°C · 3 min · Nitrogen-anaerobic processed",
-    benefits: [
-      {
-        icon: "🧘",
-        title: "Deep Relaxation",
-        desc: "GABA is the brain's calming neurotransmitter — naturally elevated through the fermentation process.",
-      },
-      {
-        icon: "🧠",
-        title: "Mental Clarity",
-        desc: "Reduces anxiety without brain fog — promotes a clear, calm, focused state of mind.",
-      },
-      {
-        icon: "😴",
-        title: "Better Sleep Quality",
-        desc: "Higher GABA levels improve sleep onset and depth — without the grogginess of sleep aids.",
-      },
-      {
-        icon: "💪",
-        title: "Muscle Recovery",
-        desc: "GABA supports HGH (human growth hormone) release, aiding muscle repair after exercise.",
-      },
-      {
-        icon: "❤️",
-        title: "Blood Pressure Support",
-        desc: "Studies show GABA oolong reduces blood pressure in hypertensive patients with regular use.",
-      },
-    ],
-  },
-  {
     name: "Organic Green Tea",
     short:
       "Where it all began. Pure whole-leaf Assam green from our single garden in Golaghat.",
@@ -1537,45 +1576,6 @@ const TEAS = [
         icon: "🧬",
         title: "Anti-Ageing",
         desc: "Polyphenols protect DNA from damage, slow cellular ageing and support long-term brain health.",
-      },
-    ],
-  },
-  {
-    name: "Ginger Green Tea",
-    short:
-      "Warming, zingy and built for your mornings. Whole-leaf Assam green with natural ginger — your daily metabolism and immunity boost.",
-    tags: ["METABOLISM", "IMMUNITY"],
-    bg: "#f5e6c8",
-    color: "#7a4a10",
-    img: "teas/ginger.png",
-    price: 499,
-    badge: "NEW",
-    brew: "85–90°C · 1.5–2 min · Can steep twice",
-    benefits: [
-      {
-        icon: "🔥",
-        title: "Metabolic Activation",
-        desc: "Gingerols stimulate digestion and elevate natural metabolic pathways — a natural fat-burning boost every morning.",
-      },
-      {
-        icon: "🛡️",
-        title: "Immunity Support",
-        desc: "Active gingerols fortify cellular defenses and strengthen daily immunity against pathogens and seasonal illness.",
-      },
-      {
-        icon: "🌊",
-        title: "Anti-Inflammatory",
-        desc: "Soothes internal systemic inflammation and supports muscle recovery — backed by centuries of Ayurvedic use.",
-      },
-      {
-        icon: "🧠",
-        title: "Cognitive Clarity",
-        desc: "Cultivates calm focus and sharp mental clarity without a caffeine crash — ginger and green tea together.",
-      },
-      {
-        icon: "🫃",
-        title: "Digestive Comfort",
-        desc: "Relieves bloating, nausea and indigestion. Best drunk 30 minutes after meals for maximum digestive benefit.",
       },
     ],
   },

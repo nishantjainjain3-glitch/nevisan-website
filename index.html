@@ -351,12 +351,11 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap"></noscript>
 <style>
-  @font-face { font-family: 'Inter'; font-display: swap; }
-  @font-face { font-family: 'Playfair Display'; font-display: swap; }
+  @fo  @font-face { font-family: 'Playfair Display'; font-display: swap; }
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; background: #f9f6f0; color: #1a1a1a; overflow-x: hidden; }
-
+  body { font-family: 'Inter', sans-serif; background: #F8F6F2; color: #1F2E24; overflow-x: hidden; }
+  
   @keyframes ticker {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
@@ -379,7 +378,7 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
   }
 
   ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-thumb { background: #1b7a82; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb { background: #23412D; border-radius: 2px; }
 
   @keyframes menu-open {
     from { opacity: 0; transform: translateY(-6px); }
@@ -398,13 +397,120 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     .card-hover-lift { transition: transform 0.15s ease !important; }
     .card-hover-lift:active { transform: scale(0.97) !important; }
   }
+
+  /* Make React page panels transparent to show background leaf canvas */
+  #root > div, #root section, #root .premium-section, #root .homepage-section {
+    background: transparent !important;
+  }
+
+  /* Glass Mug Styling for Brewing Ritual */
+  .glass-mug-outline {
+    position: absolute;
+    inset: 0;
+    border: 3.5px solid rgba(255, 255, 255, 0.45);
+    border-top: none;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    z-index: 5;
+    pointer-events: none;
+    box-shadow: 
+      inset -5px 0 12px rgba(255, 255, 255, 0.08),
+      inset 5px 0 12px rgba(255, 255, 255, 0.08),
+      0 12px 36px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.03), transparent 22%, transparent 78%, rgba(255, 255, 255, 0.03));
+  }
+  .glass-mug-outline::before {
+    content: '';
+    position: absolute;
+    top: 15px; left: 16px; bottom: 35px;
+    width: 4px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.02));
+    border-radius: 20px;
+    filter: blur(0.5px);
+  }
+  .glass-mug-inner-wall {
+    position: absolute;
+    top: 0; bottom: 8px; left: 8px; right: 8px;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-top: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 4;
+    background: radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.06), transparent 58%);
+  }
+  .glass-mug-handle {
+    position: absolute;
+    right: -32px;
+    top: 45px;
+    width: 32px;
+    height: 110px;
+    border: 3.5px solid rgba(255, 255, 255, 0.4);
+    border-left: none;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    z-index: 3;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+    box-shadow: inset -3px 4px 6px rgba(255, 255, 255, 0.12);
+  }
+  .tea-liquid-fill {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    height: 0%;
+    background: transparent;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    z-index: 2;
+    transition: height 2.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 2.5s ease-in-out;
+    overflow: hidden;
+    box-shadow: 
+      inset 0 12px 25px rgba(255, 255, 255, 0.18),
+      inset 0 -12px 20px rgba(0, 0, 0, 0.22);
+  }
+  .liquid-leaf {
+    position: absolute;
+    width: 14px;
+    height: 22px;
+    background: linear-gradient(135deg, #4e765c 0%, #173020 100%);
+    border-radius: 65% 15% 65% 15%;
+    opacity: 0.85;
+    transform-origin: center;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.5s;
+  }
+  .liquid-leaf::after {
+    content: '';
+    position: absolute;
+    top: 10%; left: 50%; bottom: 10%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.16);
+    transform: translateX(-50%);
+  }
+  .liquid-bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.42);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 3;
+  }
+  #steam-canvas {
+    width: 170px;
+    height: 80px;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
 </style>
 <style>
   .quiz-link {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    background: #1b7a82;
+    background: #23412D;
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 8px;
@@ -413,7 +519,7 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     z-index: 10000;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   }
-  .quiz-link:hover { background: #156974; }
+  .quiz-link:hover { background: #15271B; }
 </style>
 </head>
 <body>
@@ -425,12 +531,111 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <div id="root"></div>
+
+  <!-- Background Leaf Canvas -->
+  <canvas id="global-leaf-canvas" style="position: fixed; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.75;"></canvas>
+
+  <div id="root" style="position: relative; z-index: 2;"></div>
   <a href="quiz.html" class="quiz-link">Tea Quiz</a>
   <nav class="premium-nav" style="text-align:center; margin:1rem 0;">
     <a href="quiz.html" class="premium-nav-link" style="font-family:Inter, sans-serif; color:#1a1a1a; text-decoration:none; font-weight:600;">Tea Quiz</a>
   </nav>
 
+<script>
+  (function() {
+    const canvas = document.getElementById('global-leaf-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    
+    let w = (canvas.width = window.innerWidth);
+    let h = (canvas.height = window.innerHeight);
+    
+    window.addEventListener('resize', () => {
+      w = (canvas.width = window.innerWidth);
+      h = (canvas.height = window.innerHeight);
+    }, { passive: true });
+    
+    const leaves = [];
+    const leafCount = 20;
+    
+    for (let i = 0; i < leafCount; i++) {
+      leaves.push({
+        x: Math.random() * w,
+        y: Math.random() * h - h,
+        size: Math.random() * 0.5 + 0.35,
+        vy: Math.random() * 0.8 + 0.6,
+        vx: (Math.random() - 0.5) * 0.4,
+        vr: (Math.random() - 0.5) * 0.015,
+        rotation: Math.random() * Math.PI * 2,
+        skew: Math.random() * 0.3 + 0.65,
+        swaySpeed: Math.random() * 0.012 + 0.005,
+        swayOffset: Math.random() * Math.PI * 2
+      });
+    }
+    
+    let scrollSpeed = 0;
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      scrollSpeed = (window.scrollY - lastScrollY) * 0.035;
+      lastScrollY = window.scrollY;
+    }, { passive: true });
+    
+    function drawLeaf(x, y, size, rotation, skew) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rotation);
+      ctx.scale(size, size * skew);
+      
+      let grad = ctx.createLinearGradient(-10, -20, 10, 20);
+      grad.addColorStop(0, '#4E765C');
+      grad.addColorStop(1, '#173020');
+      ctx.fillStyle = grad;
+      
+      ctx.beginPath();
+      ctx.moveTo(0, -20);
+      ctx.quadraticCurveTo(-11, -5, 0, 20);
+      ctx.quadraticCurveTo(11, -5, 0, -20);
+      ctx.closePath();
+      ctx.fill();
+      
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.16)';
+      ctx.beginPath();
+      ctx.moveTo(0, -18);
+      ctx.lineTo(0, 18);
+      ctx.stroke();
+      
+      ctx.restore();
+    }
+    
+    function animate() {
+      ctx.clearRect(0, 0, w, h);
+      scrollSpeed *= 0.95;
+      
+      leaves.forEach(leaf => {
+        leaf.y += leaf.vy + scrollSpeed * 0.5;
+        leaf.x += leaf.vx + Math.sin(Date.now() * leaf.swaySpeed + leaf.swayOffset) * 0.18;
+        leaf.rotation += leaf.vr + scrollSpeed * 0.005;
+        
+        if (leaf.y > h + 30) {
+          leaf.y = -40;
+          leaf.x = Math.random() * w;
+        }
+        if (leaf.x > w + 20) leaf.x = -20;
+        if (leaf.x < -20) leaf.x = w + 20;
+        
+        drawLeaf(leaf.x, leaf.y, leaf.size * 18, leaf.rotation, leaf.skew);
+      });
+      
+      requestAnimationFrame(animate);
+    }
+    
+    setTimeout(animate, 200);
+  })();
+</script>
 <script src="/app.js?v=3"></script>
 </body>
 </html>

@@ -293,6 +293,7 @@ function NevLogo({ size: e = 56 }) {
       objectFit: "cover",
       borderRadius: 8,
       display: "block",
+      mixBlendMode: "screen",
     },
   });
 }
@@ -2238,7 +2239,7 @@ function CollectionPage({}) {
   const [e, t] = useState(null),
     [a, n] = useState(null),
     { isMobile: o, isTablet: i } = useViewport(),
-    r = o ? "1fr" : i ? "repeat(2,1fr)" : "repeat(3, 1fr)";
+    r = o ? "1fr" : "repeat(3, 1fr)";
   useEffect(() => {
     try {
       var __tea = new URLSearchParams(window.location.search).get("tea");
@@ -4769,9 +4770,9 @@ function Footer({ setPage: e }) {
   );
 }
 function CollectionSection({ setPage: e }) {
-  const t = TEAS.slice(0, 3),
+  const { isMobile: n, isTablet: o } = useViewport(),
+    t = o && !n ? TEAS.slice(0, 4) : TEAS.slice(0, 3),
     a = useGsapReveal(),
-    { isMobile: n, isTablet: o } = useViewport(),
     i = n ? "1fr" : o ? "repeat(2,1fr)" : "repeat(3,1fr)",
     [r, l] = useState(null);
   return React.createElement(

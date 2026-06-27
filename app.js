@@ -387,7 +387,7 @@ function Nav({ page: e, setPage: t }) {
           left: 0,
           right: 0,
           zIndex: 100,
-          background: n ? (o ? "rgba(15,63,69,0.95)" : "transparent") : T.teal,
+          background: n ? (o ? "rgba(21, 39, 27, 0.95)" : "transparent") : T.teal,
           backdropFilter: (n && o) || r ? "blur(16px)" : "none",
           transition: "background 400ms ease",
           borderBottom: n && o ? "1px solid rgba(255,255,255,0.08)" : "none",
@@ -1567,8 +1567,60 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
     [r, l] = useState(!1),
     [s, c] = useState({ x: 0, y: 0 }),
     [d, m] = useState(!1),
-    [p, g] = useInView(0.1),
-    f = useCallback((e) => {
+    [p, g] = useInView(0.1);
+  const profiles = {
+    "GABA Oolong Tea": {
+      palate: "Malty, Wild Honey, Baked Stone Fruit",
+      brew: "90°C · 3-4 Mins · Up to 4 Infusions",
+      badge: "Signature Reserve"
+    },
+    "Lemongrass Green Tea": {
+      palate: "Crisp Citrus, Grassy, Mild Sweetness",
+      brew: "80°C · 2 Mins · Up to 3 Infusions",
+      badge: "Popular"
+    },
+    "Spearmint Green Tea": {
+      palate: "Refreshing Mint, Brisk Green, Clean Finish",
+      brew: "80°C · 2 Mins · Up to 3 Infusions",
+      badge: "Hormonal Balance"
+    },
+    "Rum Green Tea": {
+      palate: "Warm Spiced Rum, Sugarcane, Oak wood",
+      brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
+      badge: "Exotic Infusion"
+    },
+    "Whiskey Green Tea": {
+      palate: "Oaky Smoke, Malt, Subtle Sweetness",
+      brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
+      badge: "Bold Reserve"
+    },
+    "Blue Flower Green Tea": {
+      palate: "Cobalt Blue, Mild Floral, Earthy sweetness",
+      brew: "85°C · 2 Mins · Up to 3 Infusions",
+      badge: "Color Magic"
+    },
+    "Tulsi Green Tea": {
+      palate: "Spicy Tulsi, Herbaceous, Bready warmth",
+      brew: "85°C · 2 Mins · Up to 3 Infusions",
+      badge: "Immunity"
+    },
+    "Chamomile Green Tea": {
+      palate: "Soothing Chamomile, Honeyed Apples, Floral",
+      brew: "85°C · 3 Mins · Up to 3 Infusions",
+      badge: "Stress Relief"
+    },
+    "Organic Green Tea": {
+      palate: "Pure Vegetal, Umami, Clean Grassy notes",
+      brew: "80°C · 2 Mins · Up to 3 Infusions",
+      badge: "Estate Classic"
+    }
+  };
+  const prof = profiles[e.name] || {
+    palate: "Malty, Sweet, Smooth",
+    brew: e.brew || "85°C · 2 Mins",
+    badge: e.badge || "Organic Reserve"
+  };
+  const f = useCallback((e) => {
       if (!p.current) return;
       const t = p.current.getBoundingClientRect();
       c({
@@ -1751,6 +1803,22 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
         }
       },
       React.createElement(
+        "span",
+        {
+          style: {
+            fontFamily: "'Inter'",
+            fontSize: 10,
+            fontWeight: 700,
+            letterSpacing: "0.12em",
+            color: T.gold,
+            textTransform: "uppercase",
+            marginBottom: 6,
+            display: "block",
+          },
+        },
+        prof.badge,
+      ),
+      React.createElement(
         "h3",
         {
           style: {
@@ -1782,15 +1850,27 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
         "div",
         {
           style: {
+            borderTop: `1px solid ${T.border}`,
+            borderBottom: `1px solid ${T.border}`,
+            padding: "12px 0",
+            margin: "14px 0",
             display: "flex",
-            gap: 6,
-            flexWrap: "wrap",
-            marginBottom: 16,
+            flexDirection: "column",
+            gap: 8,
           },
         },
-        e.tags.map((t) =>
-          React.createElement(TagChip, { key: t, label: t, color: e.color }),
+        React.createElement(
+          "div",
+          { style: { display: "flex", fontSize: 12.5, lineHeight: 1.4 } },
+          React.createElement("span", { style: { fontWeight: 600, width: 80, color: T.teal, flexShrink: 0 } }, "Palate:"),
+          React.createElement("span", { style: { color: T.textMuted } }, prof.palate)
         ),
+        React.createElement(
+          "div",
+          { style: { display: "flex", fontSize: 12.5, lineHeight: 1.4 } },
+          React.createElement("span", { style: { fontWeight: 600, width: 80, color: T.teal, flexShrink: 0 } }, "Brewing:"),
+          React.createElement("span", { style: { color: T.textMuted } }, prof.brew)
+        )
       ),
       React.createElement(
         "div",

@@ -1531,11 +1531,68 @@ function TagChip({ label: e, color: t }) {
   );
 }
 function TeaCard({tea:e,onView:t,onImageClick:a,index:n=0}){
+  const { isMobile } = useViewport();
+  const isFeatured = (n === 0 || n === 6) && !isMobile;
+  const isMidHorizontal = (n === 3) && !isMobile;
   const[o,i]=useState(!1);
   const[r,l]=useState(!1);
   const[s,c]=useState({x:0,y:0});
   const[d,m]=useState(!1);
   const[p,g]=useInView(.1);
+
+  const profiles = {
+    "GABA Oolong Tea": {
+      palate: "Malty, Wild Honey, Baked Stone Fruit",
+      brew: "90\u00c2\u00b0C \u00c2\u00b7 3-4 Mins \u00c2\u00b7 Up to 4 Infusions",
+      badge: "Signature Reserve"
+    },
+    "Lemongrass Green Tea": {
+      palate: "Crisp Citrus, Grassy, Mild Sweetness",
+      brew: "80\u00c2\u00b0C \u00c2\u00b7 2 Mins \u00c2\u00b7 Up to 3 Infusions",
+      badge: "Popular"
+    },
+    "Spearmint Green Tea": {
+      palate: "Refreshing Mint, Brisk Green, Clean Finish",
+      brew: "80\u00c2\u00b0C \u00c2\u00b7 2 Mins \u00c2\u00b7 Up to 3 Infusions",
+      badge: "Hormonal Balance"
+    },
+    "Rum Green Tea": {
+      palate: "Warm Spiced Rum, Sugarcane, Oak wood",
+      brew: "80\u00c2\u00b0C \u00c2\u00b7 1.5-2 Mins \u00c2\u00b7 Up to 3 Infusions",
+      badge: "Exotic Infusion"
+    },
+    "Whiskey Green Tea": {
+      palate: "Oaky Smoke, Malt, Subtle Sweetness",
+      brew: "80\u00c2\u00b0C \u00c2\u00b7 1.5-2 Mins \u00c2\u00b7 Up to 3 Infusions",
+      badge: "Bold Reserve"
+    },
+    "Blue Flower Green Tea": {
+      palate: "Cobalt Blue, Mild Floral, Earthy sweetness",
+      brew: "85\u00c2\u00b0C \u00c2\u00b7 2 Mins \u00c2\u00b7 Up to 3 Infusions",
+      badge: "Color Magic"
+    },
+    "Tulsi Green Tea": {
+      palate: "Spicy Tulsi, Herbaceous, Bready warmth",
+      brew: "85\u00c2\u00b0C \u00c2\u00b7 2 Mins \u00c2\u00b7 Up to 3 Infusions",
+      badge: "Immunity"
+    },
+    "Chamomile Green Tea": {
+      palate: "Soothing Chamomile, Honeyed Apples, Floral",
+      brew: "85\u00c2\u00b0C \u00c2\u00b7 3 Mins \u00c2\u00b7 Up to 3 Infusions",
+      badge: "Stress Relief"
+    },
+    "Organic Green Tea": {
+      palate: "Pure Vegetal, Umami, Clean Grassy notes",
+      brew: "80\u00c2\u00b0C \u00c2\u00b7 2 Mins \u00c2\u00b7 Up to 3 Infusions",
+      badge: "Estate Classic"
+    }
+  };
+  const prof = profiles[e.name] || {
+    palate: "Malty, Sweet, Smooth",
+    brew: e.brew || "85\u00c2\u00b0C \u00c2\u00b7 2 Mins",
+    badge: e.badge || "Organic Reserve"
+  };
+
   const f=useCallback(e=>{
     if(!p.current)return;
     const t=p.current.getBoundingClientRect();
@@ -1570,16 +1627,20 @@ function TeaCard({tea:e,onView:t,onImageClick:a,index:n=0}){
       background:"rgba(255, 255, 255, 0.72)",
       backdropFilter:"blur(16px)",
       WebkitBackdropFilter:"blur(16px)",
-      border:"1px solid rgba(201, 168, 76, 0.2)"
+      border:"1px solid rgba(201, 168, 76, 0.2)",
+      gridColumn: (isFeatured || isMidHorizontal) ? "1 / -1" : "auto",
+      display: (isFeatured || isMidHorizontal) ? "grid" : "block",
+      gridTemplateColumns: isFeatured ? "1.2fr 0.8fr" : isMidHorizontal ? "0.8fr 1.2fr" : "none",
     }
   },
   React.createElement("div",{
     style:{
       background:`radial-gradient(circle at center, ${e.bg} 0%, ${T.white} 100%)`,
-      height:220,
+      height: (isFeatured || isMidHorizontal) ? "100%" : 220,
       overflow:"hidden",
       position:"relative",
-      cursor:"zoom-in"
+      cursor:"zoom-in",
+      order: isFeatured ? 1 : isMidHorizontal ? 2 : 1
     },
     onClick:t=>{t.stopPropagation();a&&a(e.img,e.name)}
   },
@@ -1622,7 +1683,28 @@ function TeaCard({tea:e,onView:t,onImageClick:a,index:n=0}){
       }
     },"\u2713 "+e.badge)
   ),
-  React.createElement("div",{style:{padding:"24px"}},
+  React.createElement("div",{
+    style:{
+      padding: (isFeatured || isMidHorizontal) ? "40px" : "24px",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      height: "100%",
+      order: isFeatured ? 2 : isMidHorizontal ? 1 : 2
+    }
+  },
+    React.createElement("span",{
+      style:{
+        fontFamily:"'Inter'",
+        fontSize:10,
+        fontWeight:700,
+        letterSpacing:"0.12em",
+        color:T.gold,
+        textTransform:"uppercase",
+        marginBottom:6,
+        display:"block"
+      }
+    }, prof.badge),
     React.createElement("h3",{
       style:{
         fontFamily:"'PP Mondwest', 'Playfair Display', serif",
@@ -1643,8 +1725,25 @@ function TeaCard({tea:e,onView:t,onImageClick:a,index:n=0}){
         minHeight:48
       }
     },e.short),
-    React.createElement("div",{style:{display:"flex",gap:6,flexWrap:"wrap",marginBottom:16}},
-      e.tags.map(t=>React.createElement(TagChip,{key:t,label:t,color:e.color}))
+    React.createElement("div",{
+      style:{
+        borderTop:`1px solid ${T.border}`,
+        borderBottom:`1px solid ${T.border}`,
+        padding:"12px 0",
+        margin:"14px 0",
+        display:"flex",
+        flexDirection:"column",
+        gap:8
+      }
+    },
+      React.createElement("div",{style:{display:"flex",fontSize:12.5,lineHeight:1.4}},
+        React.createElement("span",{style:{fontWeight:600,width:80,color:T.teal,flexShrink:0}},"Palate:"),
+        React.createElement("span",{style:{color:T.textMuted}},prof.palate)
+      ),
+      React.createElement("div",{style:{display:"flex",fontSize:12.5,lineHeight:1.4}},
+        React.createElement("span",{style:{fontWeight:600,width:80,color:T.teal,flexShrink:0}},"Brewing:"),
+        React.createElement("span",{style:{color:T.textMuted}},prof.brew)
+      )
     ),
     React.createElement("div",{style:{borderTop:`1px solid ${T.border}`,paddingTop:16}},
       React.createElement("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:14}},
@@ -1749,7 +1848,6 @@ function TeaCard({tea:e,onView:t,onImageClick:a,index:n=0}){
       )
     )
   )
-)
 }function ImageLightbox({ img: e, name: t, onClose: a }) {
   return (
     useEffect(() => {
@@ -1840,7 +1938,7 @@ function CollectionPage({ setPage }) {
   const [activeTea, setActiveTea] = useState(null);
   const [lightboxImg, setLightboxImg] = useState(null);
   const { isMobile, isTablet } = useViewport();
-  const cols = isMobile ? "1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(3, 1fr)";
+  const cols = isMobile ? "1fr" : "repeat(2, 1fr)";
   
   return React.createElement("div", {
     style: {

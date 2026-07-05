@@ -111,7 +111,7 @@ const T = {
     creamDark: "#F3EFE9",
     white: "#ffffff",
     text: "#1F2E24",
-    textMuted: "#3D5245",
+    textMuted: "#5C7064",
     border: "#E2DDD5",
   },
   ViewportCtx = React.createContext({ isMobile: !1, isTablet: !1 }),
@@ -293,7 +293,7 @@ function NevLogo({ size: e = 56 }) {
       objectFit: "cover",
       borderRadius: 8,
       display: "block",
-      mixBlendMode: "screen",
+      mixBlendMode: "multiply",
     },
   });
 }
@@ -344,6 +344,7 @@ function Nav({ page: e, setPage: t }) {
       "Wholesale",
       "Contact",
       "FAQ",
+      "Quiz",
     ],
     n = "Home" === e,
     [o, i] = useState(!1),
@@ -654,7 +655,7 @@ function Nav({ page: e, setPage: t }) {
                 style: {
                   fontFamily: "'Inter'",
                   fontSize: 12,
-                  color: "rgba(255,255,255,0.8)",
+                  color: "rgba(255,255,255,0.4)",
                   marginBottom: 8,
                 },
               },
@@ -666,7 +667,7 @@ function Nav({ page: e, setPage: t }) {
                 style: {
                   fontFamily: "'Inter'",
                   fontSize: 12,
-                  color: "rgba(255,255,255,0.8)",
+                  color: "rgba(255,255,255,0.4)",
                 },
               },
               "+91 98642 45687",
@@ -977,7 +978,7 @@ function Hero({ setPage: e }) {
                   "opacity 0.8s ease-out 0.65s, transform 0.8s ease-out 0.65s",
               },
             },
-            "Ten varieties. One garden in Golaghat, Assam. Whole leaf, chemical-free, steeped in nothing but intention.",
+            "Nine varieties. One garden in Golaghat, Assam. Whole leaf, chemical-free, steeped in nothing but intention.",
           ),
           React.createElement(
             "div",
@@ -1090,7 +1091,7 @@ function Hero({ setPage: e }) {
                     style: {
                       fontFamily: "'Inter'",
                       fontSize: 11,
-                      color: "rgba(255,255,255,0.75)",
+                      color: "rgba(255,255,255,0.45)",
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
                       marginTop: 5,
@@ -1132,7 +1133,7 @@ function Hero({ setPage: e }) {
           {
             style: {
               fontSize: 9,
-              color: "rgba(255,255,255,0.65)",
+              color: "rgba(255,255,255,0.35)",
               letterSpacing: "0.14em",
               fontFamily: "'Inter'",
             },
@@ -1198,120 +1199,6 @@ function RippleButton({
   );
 }
 const TEAS = [
-  {
-    name: "Spearmint Green Tea",
-    short:
-      "Uditi drinks this one every day. Gentle on hormones, lovely for the skin.",
-    tags: ["HORMONAL", "SKIN"],
-    bg: "#e8d4f0",
-    color: "#6a3a8a",
-    img: "teas/spearmint.png?v=2",
-    price: 499,
-    brew: "85°C · 2 min · Light and refreshing",
-    benefits: [
-      {
-        icon: "⚖️",
-        title: "Hormonal Balance",
-        desc: "Proven anti-androgenic properties — helps regulate hormones, especially beneficial for PCOS.",
-      },
-      {
-        icon: "🧖",
-        title: "Reduces Acne",
-        desc: "By lowering excess androgens, spearmint naturally reduces hormonal breakouts and oily skin.",
-      },
-      {
-        icon: "💨",
-        title: "Fresh Breath & Digestion",
-        desc: "Soothes the gut, freshens breath and relieves nausea and IBS discomfort.",
-      },
-      {
-        icon: "🧠",
-        title: "Improves Memory",
-        desc: "Spearmint extract improves working memory and alertness within weeks of regular use.",
-      },
-      {
-        icon: "🌸",
-        title: "Anti-Inflammatory",
-        desc: "Rich in rosmarinic acid — reduces inflammation throughout the body, easing joint discomfort.",
-      },
-    ],
-  },
-  {
-    name: "GABA Oolong Tea",
-    short: "Calm without the fog. The cup we keep close on the busy days.",
-    tags: ["RELAXATION", "FOCUS"],
-    bg: "#c0e0dc",
-    color: "#1b7a82",
-    img: "teas/gaba.png?v=2",
-    price: 499,
-    brew: "85°C · 3 min · Nitrogen-anaerobic processed",
-    benefits: [
-      {
-        icon: "🧘",
-        title: "Deep Relaxation",
-        desc: "GABA is the brain's calming neurotransmitter — naturally elevated through the fermentation process.",
-      },
-      {
-        icon: "🧠",
-        title: "Mental Clarity",
-        desc: "Reduces anxiety without brain fog — promotes a clear, calm, focused state of mind.",
-      },
-      {
-        icon: "😴",
-        title: "Better Sleep Quality",
-        desc: "Higher GABA levels improve sleep onset and depth — without the grogginess of sleep aids.",
-      },
-      {
-        icon: "💪",
-        title: "Muscle Recovery",
-        desc: "GABA supports HGH (human growth hormone) release, aiding muscle repair after exercise.",
-      },
-      {
-        icon: "❤️",
-        title: "Blood Pressure Support",
-        desc: "Studies show GABA oolong reduces blood pressure in hypertensive patients with regular use.",
-      },
-    ],
-  },
-  {
-    name: "Ginger Green Tea",
-    short:
-      "Warming, zingy and built for your mornings. Whole-leaf Assam green with natural ginger — your daily metabolism and immunity boost.",
-    tags: ["METABOLISM", "IMMUNITY"],
-    bg: "#f5e6c8",
-    color: "#7a4a10",
-    img: "teas/ginger.png",
-    price: 499,
-    badge: "NEW",
-    brew: "85–90°C · 1.5–2 min · Can steep twice",
-    benefits: [
-      {
-        icon: "🔥",
-        title: "Metabolic Activation",
-        desc: "Gingerols stimulate digestion and elevate natural metabolic pathways — a natural fat-burning boost every morning.",
-      },
-      {
-        icon: "🛡️",
-        title: "Immunity Support",
-        desc: "Active gingerols fortify cellular defenses and strengthen daily immunity against pathogens and seasonal illness.",
-      },
-      {
-        icon: "🌊",
-        title: "Anti-Inflammatory",
-        desc: "Soothes internal systemic inflammation and supports muscle recovery — backed by centuries of Ayurvedic use.",
-      },
-      {
-        icon: "🧠",
-        title: "Cognitive Clarity",
-        desc: "Cultivates calm focus and sharp mental clarity without a caffeine crash — ginger and green tea together.",
-      },
-      {
-        icon: "🫃",
-        title: "Digestive Comfort",
-        desc: "Relieves bloating, nausea and indigestion. Best drunk 30 minutes after meals for maximum digestive benefit.",
-      },
-    ],
-  },
   {
     name: "Lemongrass Green Tea",
     short:
@@ -1424,6 +1311,44 @@ const TEAS = [
         icon: "🔄",
         title: "Multi-Steep Value",
         desc: "Whole leaf quality means 2–3 full-flavoured steeps from every single serving.",
+      },
+    ],
+  },
+  {
+    name: "Spearmint Green Tea",
+    short:
+      "Uditi drinks this one every day. Gentle on hormones, lovely for the skin.",
+    tags: ["HORMONAL", "SKIN"],
+    bg: "#e8d4f0",
+    color: "#6a3a8a",
+    img: "teas/spearmint.png?v=2",
+    price: 499,
+    brew: "85°C · 2 min · Light and refreshing",
+    benefits: [
+      {
+        icon: "⚖️",
+        title: "Hormonal Balance",
+        desc: "Proven anti-androgenic properties — helps regulate hormones, especially beneficial for PCOS.",
+      },
+      {
+        icon: "🧖",
+        title: "Reduces Acne",
+        desc: "By lowering excess androgens, spearmint naturally reduces hormonal breakouts and oily skin.",
+      },
+      {
+        icon: "💨",
+        title: "Fresh Breath & Digestion",
+        desc: "Soothes the gut, freshens breath and relieves nausea and IBS discomfort.",
+      },
+      {
+        icon: "🧠",
+        title: "Improves Memory",
+        desc: "Spearmint extract improves working memory and alertness within weeks of regular use.",
+      },
+      {
+        icon: "🌸",
+        title: "Anti-Inflammatory",
+        desc: "Rich in rosmarinic acid — reduces inflammation throughout the body, easing joint discomfort.",
       },
     ],
   },
@@ -1541,6 +1466,43 @@ const TEAS = [
     ],
   },
   {
+    name: "GABA Oolong Tea",
+    short: "Calm without the fog. The cup we keep close on the busy days.",
+    tags: ["RELAXATION", "FOCUS"],
+    bg: "#c0e0dc",
+    color: "#1b7a82",
+    img: "teas/gaba.png?v=2",
+    price: 499,
+    brew: "85°C · 3 min · Nitrogen-anaerobic processed",
+    benefits: [
+      {
+        icon: "🧘",
+        title: "Deep Relaxation",
+        desc: "GABA is the brain's calming neurotransmitter — naturally elevated through the fermentation process.",
+      },
+      {
+        icon: "🧠",
+        title: "Mental Clarity",
+        desc: "Reduces anxiety without brain fog — promotes a clear, calm, focused state of mind.",
+      },
+      {
+        icon: "😴",
+        title: "Better Sleep Quality",
+        desc: "Higher GABA levels improve sleep onset and depth — without the grogginess of sleep aids.",
+      },
+      {
+        icon: "💪",
+        title: "Muscle Recovery",
+        desc: "GABA supports HGH (human growth hormone) release, aiding muscle repair after exercise.",
+      },
+      {
+        icon: "❤️",
+        title: "Blood Pressure Support",
+        desc: "Studies show GABA oolong reduces blood pressure in hypertensive patients with regular use.",
+      },
+    ],
+  },
+  {
     name: "Organic Green Tea",
     short:
       "Where it all began. Pure whole-leaf Assam green from our single garden in Golaghat.",
@@ -1600,8 +1562,8 @@ function TagChip({ label: e, color: t }) {
 }
 function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
   const { isMobile: mobile } = useViewport();
-  const isFeatured = false;
-  const isMidHorizontal = false;
+  const isFeatured = (n === 0 || n === 6) && !mobile;
+  const isMidHorizontal = (n === 3) && !mobile;
   const [o, i] = useState(!1),
     [r, l] = useState(!1),
     [s, c] = useState({ x: 0, y: 0 }),
@@ -1652,11 +1614,6 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
       palate: "Pure Vegetal, Umami, Clean Grassy notes",
       brew: "80°C · 2 Mins · Up to 3 Infusions",
       badge: "Estate Classic"
-    },
-    "Ginger Green Tea": {
-      palate: "Warm Ginger, Spicy Zest, Earthy Green",
-      brew: "85–90°C · 1.5-2 Mins · Up to 3 Infusions",
-      badge: "New Arrival"
     }
   };
   const prof = profiles[e.name] || {
@@ -1730,9 +1687,9 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
         opacity: g ? 1 : 0,
         translate: g ? "0 0" : "0 32px",
         transitionDelay: 0.07 * n + "s",
-        gridColumn: "auto",
-        display: "block",
-        gridTemplateColumns: "none",
+        gridColumn: (isFeatured || isMidHorizontal) ? "1 / -1" : "auto",
+        display: (isFeatured || isMidHorizontal) ? "grid" : "block",
+        gridTemplateColumns: isFeatured ? "1.2fr 0.8fr" : isMidHorizontal ? "0.8fr 1.2fr" : "none",
       },
     },
     React.createElement(
@@ -1740,12 +1697,12 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
       {
         style: {
           background: e.bg,
-          height: 240,
-          minHeight: 240,
+          height: (isFeatured || isMidHorizontal) ? "100%" : 200,
+          minHeight: (isFeatured || isMidHorizontal) ? 340 : 200,
           overflow: "hidden",
           position: "relative",
           cursor: "zoom-in",
-          order: 1,
+          order: isMidHorizontal ? 2 : 1,
         },
         onClick: (t) => {
           (t.stopPropagation(), a && a(e.img, e.name));
@@ -1838,11 +1795,12 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
       "div",
       {
         style: {
-          padding: "20px 20px 24px",
+          padding: (isFeatured || isMidHorizontal) ? (mobile ? "20px" : "36px 40px") : "20px 20px 20px",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "flex-start",
-          order: 2,
+          justifyContent: "center",
+          height: "100%",
+          order: isMidHorizontal ? 1 : 2,
         }
       },
       React.createElement(
@@ -1867,7 +1825,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
           style: {
             fontFamily: "'Playfair Display', Georgia, serif",
             fontWeight: 400,
-            fontSize: 18,
+            fontSize: (isFeatured || isMidHorizontal) ? 28 : 18,
             color: T.text,
             marginBottom: 8,
             lineHeight: 1.3,
@@ -1884,7 +1842,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
             color: T.textMuted,
             lineHeight: 1.55,
             marginBottom: 14,
-            minHeight: 54,
+            minHeight: (isFeatured || isMidHorizontal) ? "auto" : 54,
           },
         },
         e.short,
@@ -2283,7 +2241,7 @@ function CollectionPage({}) {
   const [e, t] = useState(null),
     [a, n] = useState(null),
     { isMobile: o, isTablet: i } = useViewport(),
-    r = o ? "1fr" : "repeat(3, 1fr)";
+    r = o ? "1fr" : "repeat(2, 1fr)";
   useEffect(() => {
     try {
       var __tea = new URLSearchParams(window.location.search).get("tea");
@@ -2302,7 +2260,7 @@ function CollectionPage({}) {
     "div",
     {
       style: {
-        background: "transparent",
+        background: T.cream,
         minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
@@ -2310,7 +2268,7 @@ function CollectionPage({}) {
     React.createElement(PageHero, {
       photo: PAGE_PHOTOS.collection,
       label: "The Collection",
-      title: "Ten varieties, one origin",
+      title: "Nine varieties, one origin",
       subtitle: "Every leaf from Golaghat — whole, unblended, handcrafted.",
     }),
     React.createElement(Ticker, null),
@@ -2369,7 +2327,7 @@ function CollectionPage({}) {
               marginBottom: 16,
             },
           },
-          "Ten varieties, one origin",
+          "Nine varieties, one origin",
         ),
         React.createElement(
           "p",
@@ -2388,7 +2346,7 @@ function CollectionPage({}) {
       React.createElement(
         "div",
         {
-          style: { display: "grid", gridTemplateColumns: r, gap: o ? 16 : 28 },
+          style: { display: "grid", gridTemplateColumns: r, gap: o ? 16 : 56 },
         },
         TEAS.map((e, a) =>
           React.createElement(TeaCard, {
@@ -3468,7 +3426,7 @@ function PhilosophySection() {
               fontFamily: "'Playfair Display', Georgia, serif",
               fontStyle: "italic",
               fontSize: 15,
-              color: "rgba(255,255,255,0.85)",
+              color: "rgba(255,255,255,0.6)",
               lineHeight: 1.65,
               marginBottom: 32,
             },
@@ -3608,7 +3566,7 @@ function BuyCard({ c: e, inView: t, index: a }) {
             : "0 8px 32px rgba(0,0,0,0.12)"
           : "0 2px 12px rgba(0,0,0,0.06)",
         transform: n ? "translateY(-6px)" : "translateY(0)",
-        transition: "all 300ms ease",
+        transition: "transform 250ms var(--ease-out), box-shadow 250ms ease, opacity 250ms ease",
         position: "relative",
         overflow: "hidden",
         opacity: t ? 1 : 0,
@@ -3741,7 +3699,7 @@ function WhereToBuy() {
     { isMobile: n } = useViewport();
   return React.createElement(
     "div",
-    { style: { background: "transparent", padding: n ? "64px 20px" : "100px 32px" } },
+    { style: { background: T.cream, padding: n ? "64px 20px" : "100px 32px" } },
     React.createElement(
       "div",
       { style: { maxWidth: 960, margin: "0 auto", textAlign: "center" } },
@@ -3839,7 +3797,7 @@ function ReviewCard({ r: e, inView: t, index: a }) {
           ? "0 8px 32px rgba(27,122,130,0.12)"
           : "0 2px 8px rgba(0,0,0,0.05)",
         transform: n ? "translateY(-4px)" : "translateY(0)",
-        transition: "all 300ms ease",
+        transition: "transform 250ms var(--ease-out), box-shadow 250ms ease, opacity 250ms ease",
         opacity: t ? 1 : 0,
         transitionDelay: 0.15 * a + "s",
       },
@@ -4276,7 +4234,7 @@ function Testimonials() {
     "div",
     {
       style: {
-        background: "transparent",
+        background: T.creamDark,
         padding: n ? "64px 20px" : "100px 32px",
       },
     },
@@ -4505,7 +4463,7 @@ function Footer({ setPage: e }) {
                 fontFamily: "'Inter'",
                 fontSize: 13,
                 lineHeight: 1.7,
-                color: "rgba(255,255,255,0.78)",
+                color: "rgba(255,255,255,0.55)",
                 marginTop: 20,
                 maxWidth: 280,
               },
@@ -4620,7 +4578,7 @@ function Footer({ setPage: e }) {
                 style: {
                   fontFamily: "'Inter'",
                   fontSize: 13,
-                  color: "rgba(255,255,255,0.78)",
+                  color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
                   cursor: "pointer",
                   transition: "color 150ms",
@@ -4628,7 +4586,7 @@ function Footer({ setPage: e }) {
                 onMouseEnter: (e) =>
                   (e.currentTarget.style.color = "rgba(255,255,255,0.85)"),
                 onMouseLeave: (e) =>
-                  (e.currentTarget.style.color = "rgba(255,255,255,0.78)"),
+                  (e.currentTarget.style.color = "rgba(255,255,255,0.55)"),
               },
               t,
             ),
@@ -4658,6 +4616,7 @@ function Footer({ setPage: e }) {
             "Journal",
             "Wholesale",
             "FAQ",
+            "Quiz",
           ].map((t) =>
             React.createElement(
               "div",
@@ -4673,7 +4632,7 @@ function Footer({ setPage: e }) {
                 style: {
                   fontFamily: "'Inter'",
                   fontSize: 13,
-                  color: "rgba(255,255,255,0.78)",
+                  color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
                   cursor: "pointer",
                   transition: "color 150ms",
@@ -4681,7 +4640,7 @@ function Footer({ setPage: e }) {
                 onMouseEnter: (e) =>
                   (e.currentTarget.style.color = "rgba(255,255,255,0.85)"),
                 onMouseLeave: (e) =>
-                  (e.currentTarget.style.color = "rgba(255,255,255,0.78)"),
+                  (e.currentTarget.style.color = "rgba(255,255,255,0.55)"),
               },
               t,
             ),
@@ -4728,14 +4687,14 @@ function Footer({ setPage: e }) {
                 style: {
                   fontFamily: "'Inter'",
                   fontSize: 13,
-                  color: "rgba(255,255,255,0.78)",
+                  color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
                   cursor: "pointer",
                   transition: "color 150ms",
                 },
                 onMouseEnter: (e) => (e.currentTarget.style.color = T.gold),
                 onMouseLeave: (e) =>
-                  (e.currentTarget.style.color = "rgba(255,255,255,0.78)"),
+                  (e.currentTarget.style.color = "rgba(255,255,255,0.55)"),
               },
               e,
             ),
@@ -4814,14 +4773,14 @@ function Footer({ setPage: e }) {
   );
 }
 function CollectionSection({ setPage: e }) {
-  const { isMobile: n, isTablet: o } = useViewport(),
-    t = o && !n ? TEAS.slice(0, 4) : TEAS.slice(0, 3),
+  const t = TEAS.slice(0, 3),
     a = useGsapReveal(),
+    { isMobile: n, isTablet: o } = useViewport(),
     i = n ? "1fr" : o ? "repeat(2,1fr)" : "repeat(3,1fr)",
     [r, l] = useState(null);
   return React.createElement(
     "div",
-    { style: { background: "transparent", padding: n ? "60px 20px" : "100px 32px" } },
+    { style: { background: T.cream, padding: n ? "60px 20px" : "100px 32px" } },
     React.createElement(
       "div",
       { style: { maxWidth: 1200, margin: "0 auto" } },
@@ -4964,7 +4923,7 @@ function CollectionSection({ setPage: e }) {
                 color: T.text,
               },
             },
-            "Ten varieties, one origin",
+            "Nine varieties, one origin",
           ),
         ),
         React.createElement(
@@ -6170,7 +6129,7 @@ function HowToBrewSection() {
     
     let animFrame;
     const start = Date.now();
-    const duration = time * 20000;
+    const duration = time * 4000;
     
     const spawnBubble = () => {
       const id = Math.random();
@@ -6447,7 +6406,7 @@ function HowToBrewSection() {
                     fontSize: 13,
                     fontWeight: 600,
                     textTransform: "capitalize",
-                    transition: "all 0.3s",
+                    transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease",
                     fontFamily: "'Inter'"
                   }
                 },
@@ -6532,7 +6491,7 @@ function HowToBrewSection() {
                   cursor: isBrewing ? "not-allowed" : "pointer",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
-                  transition: "all 0.3s",
+                  transition: "background-color 200ms ease, color 200ms ease, transform 160ms var(--ease-out)",
                   fontFamily: "'Inter'"
                 }
               },
@@ -6604,192 +6563,6 @@ function HowToBrewSection() {
             statusText
           )
         )
-      ),
-      React.createElement(
-        "div",
-        {
-          style: {
-            marginTop: e ? 56 : 80,
-            paddingTop: e ? 48 : 64,
-            borderTop: "1px solid rgba(255,255,255,0.08)"
-          }
-        },
-        React.createElement(
-          "div",
-          { style: { textAlign: "center", marginBottom: e ? 36 : 52 } },
-          React.createElement(
-            "div",
-            { style: { display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 14 } },
-            React.createElement("div", { style: { height: 1, width: 40, background: T.gold } }),
-            React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", color: T.gold, textTransform: "uppercase" } }, "Step by Step"),
-            React.createElement("div", { style: { height: 1, width: 40, background: T.gold } })
-          ),
-          React.createElement("h3", { style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: "clamp(22px, 3vw, 34px)", color: T.white } }, "How to Brew the Perfect Cup")
-        ),
-        React.createElement(
-          "div",
-          {
-            style: {
-              display: "grid",
-              gridTemplateColumns: e ? "1fr" : "repeat(5, 1fr)",
-              gap: e ? 24 : 16,
-              position: "relative"
-            }
-          },
-          [
-            {
-              step: "01",
-              icon: React.createElement("svg", { width: 36, height: 36, viewBox: "0 0 36 36", fill: "none" },
-                React.createElement("circle", { cx: 18, cy: 18, r: 14, stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
-                React.createElement("path", { d: "M18 8 L18 18 L24 24", stroke: T.gold, strokeWidth: 2, strokeLinecap: "round" }),
-                React.createElement("circle", { cx: 18, cy: 18, r: 2, fill: T.gold })
-              ),
-              title: "Heat the Water",
-              desc: "Green tea: 80–85°C\nChamomile: 75–80°C\nGABA Oolong: 85–90°C\n\nBoil water, then wait 3–4 minutes. Never pour boiling water on green tea — it destroys L-theanine and turns the cup bitter.",
-              tip: "No thermometer? Boil and wait 4 min."
-            },
-            {
-              step: "02",
-              icon: React.createElement("svg", { width: 36, height: 36, viewBox: "0 0 36 36", fill: "none" },
-                React.createElement("ellipse", { cx: 18, cy: 26, rx: 10, ry: 4, stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
-                React.createElement("path", { d: "M8 26 L8 14 Q8 8 18 8 Q28 8 28 14 L28 26", stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
-                React.createElement("path", { d: "M13 18 Q15 15 18 17 Q21 19 23 16", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round", fill: "none" })
-              ),
-              title: "Measure the Leaf",
-              desc: "1 teaspoon (2–2.5g) per 200ml of water. Use a wide-mesh infuser or strainer — whole leaves need room to unfurl and expand up to 3× their dry size.",
-              tip: "More leaf = stronger flavour, not longer steep."
-            },
-            {
-              step: "03",
-              icon: React.createElement("svg", { width: 36, height: 36, viewBox: "0 0 36 36", fill: "none" },
-                React.createElement("path", { d: "M10 8 Q10 4 18 4 Q26 4 26 8", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round", fill: "none" }),
-                React.createElement("path", { d: "M10 8 L8 28 Q8 32 18 32 Q28 32 28 28 L26 8", stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
-                React.createElement("path", { d: "M15 14 Q16 18 15 22", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round", fill: "none", opacity: 0.6 }),
-                React.createElement("path", { d: "M18 12 Q19 16 18 22", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round", fill: "none", opacity: 0.6 }),
-                React.createElement("path", { d: "M21 14 Q22 18 21 22", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round", fill: "none", opacity: 0.6 })
-              ),
-              title: "Pour & Steep",
-              desc: "Green teas: 2–3 minutes\nChamomile: 2 minutes\nGABA Oolong: 3–4 minutes\n\nPour water gently over the leaves. Start timing immediately. Do not squeeze or press the leaves — it releases bitterness.",
-              tip: "Under-steep then adjust. You can always steep again."
-            },
-            {
-              step: "04",
-              icon: React.createElement("svg", { width: 36, height: 36, viewBox: "0 0 36 36", fill: "none" },
-                React.createElement("rect", { x: 8, y: 14, width: 20, height: 16, rx: 3, stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
-                React.createElement("path", { d: "M6 14 L30 14", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round" }),
-                React.createElement("path", { d: "M12 10 L12 14", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round" }),
-                React.createElement("path", { d: "M18 8 L18 14", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round" }),
-                React.createElement("path", { d: "M24 10 L24 14", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round" }),
-                React.createElement("circle", { cx: 18, cy: 23, r: 3, stroke: T.gold, strokeWidth: 1.5, fill: "none" })
-              ),
-              title: "Strain & Pour",
-              desc: "Pour through a fine-mesh strainer into your cup. The liquor should be clear and vibrant — pale gold for green tea, amber for oolong, bright blue for Blue Flower.",
-              tip: "Add honey after pouring, not before — heat degrades honey's enzymes."
-            },
-            {
-              step: "05",
-              icon: React.createElement("svg", { width: 36, height: 36, viewBox: "0 0 36 36", fill: "none" },
-                React.createElement("path", { d: "M8 28 L28 28", stroke: T.gold, strokeWidth: 1.5, strokeLinecap: "round" }),
-                React.createElement("path", { d: "M10 28 L10 16 Q10 10 18 10 Q26 10 26 16 L26 28", stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
-                React.createElement("path", { d: "M26 18 Q32 18 32 22 Q32 26 26 24", stroke: T.gold, strokeWidth: 1.5, fill: "none" }),
-                React.createElement("path", { d: "M14 6 Q14 3 16 4 Q16 2 18 3 Q20 2 20 4 Q22 3 22 6", stroke: T.gold, strokeWidth: 1.2, strokeLinecap: "round", fill: "none" })
-              ),
-              title: "Re-Steep the Leaf",
-              desc: "Do not discard the leaves. Add fresh water at the same temperature and steep 30–60 seconds longer. The second cup is often softer and sweeter. Most Nevisan teas yield 2–3 full steeps.",
-              tip: "₹6–10 per cup. That's the whole-leaf advantage."
-            }
-          ].map((s, i) =>
-            React.createElement(
-              "div",
-              {
-                key: i,
-                style: {
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: 16,
-                  padding: e ? "28px 24px" : "32px 24px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 16,
-                  position: "relative"
-                }
-              },
-              React.createElement(
-                "div",
-                { style: { display: "flex", alignItems: "flex-start", justifyContent: "space-between" } },
-                s.icon,
-                React.createElement("span", {
-                  style: {
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: 36,
-                    fontWeight: 400,
-                    color: "rgba(201,168,76,0.15)",
-                    lineHeight: 1
-                  }
-                }, s.step)
-              ),
-              React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 13, fontWeight: 700, color: T.white, letterSpacing: "0.04em", textTransform: "uppercase" } }, s.title),
-              React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 13, color: "rgba(255,255,255,0.62)", lineHeight: 1.75, whiteSpace: "pre-line" } }, s.desc),
-              React.createElement(
-                "div",
-                {
-                  style: {
-                    marginTop: "auto",
-                    paddingTop: 14,
-                    borderTop: "1px solid rgba(201,168,76,0.2)",
-                    fontFamily: "'Inter'",
-                    fontSize: 11,
-                    fontWeight: 600,
-                    color: T.gold,
-                    letterSpacing: "0.03em"
-                  }
-                },
-                "✦ " + s.tip
-              )
-            )
-          )
-        ),
-        React.createElement(
-          "div",
-          {
-            style: {
-              marginTop: e ? 40 : 56,
-              background: "rgba(201,168,76,0.07)",
-              border: "1px solid rgba(201,168,76,0.2)",
-              borderRadius: 14,
-              padding: e ? "24px 20px" : "28px 36px",
-              display: "grid",
-              gridTemplateColumns: e ? "1fr" : "repeat(3, 1fr)",
-              gap: e ? 20 : 0
-            }
-          },
-          [
-            { label: "Never boiling water", sub: "Boiling destroys L-theanine & creates bitterness", icon: "🌡️" },
-            { label: "No milk in green tea", sub: "Milk proteins bind to antioxidants, reducing their benefit", icon: "🥛" },
-            { label: "No squeezing the leaves", sub: "Pressing releases harsh tannins into the cup", icon: "🌿" }
-          ].map((rule, i) =>
-            React.createElement(
-              "div",
-              {
-                key: i,
-                style: {
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: 14,
-                  padding: e ? 0 : "0 28px",
-                  borderLeft: (!e && i > 0) ? "1px solid rgba(201,168,76,0.15)" : "none"
-                }
-              },
-              React.createElement("span", { style: { fontSize: 22, flexShrink: 0, marginTop: 2 } }, rule.icon),
-              React.createElement(
-                "div",
-                null,
-                React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 13, fontWeight: 700, color: T.white, marginBottom: 4 } }, rule.label),
-                React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 12, color: "rgba(255,255,255,0.5)", lineHeight: 1.5 } }, rule.sub)
-              )
-            )
-          )
-        )
       )
     )
   );
@@ -6797,37 +6570,93 @@ function HowToBrewSection() {
 function FAQSection() {
   const { isMobile: e } = useViewport(),
     [t, a] = useState(null);
-  const faqs = [
-    { q: "Is your tea organic and chemical-free?", a: "Yes. Every batch is PGS-India organic certified and grown without pesticides or chemicals. From soil to seal, completely chemical-free." },
-    { q: "Do Rum Green Tea or Whiskey Green Tea contain alcohol?", a: "No — both are completely alcohol-free. The rum and whiskey character comes from natural botanicals. Safe for non-drinkers, people in recovery, and children." },
-    { q: "Which tea is best for PCOS or hormonal balance?", a: "Spearmint Green Tea — a 2010 clinical trial found two cups daily for 30 days significantly reduced free testosterone in women with PCOS. Results show with consistent use over 4–6 weeks." },
-    { q: "Can the tea be steeped more than once?", a: "Absolutely. Because we use 100% whole leaf, most varieties can be steeped 2–3 times — each steep releasing a slightly different flavour. The second cup is often softer and sweeter." },
-    { q: "Do you deliver across India?", a: "Yes! We deliver pan-India via Amazon and Flipkart. You can also order directly on WhatsApp at +91 98642 45687 for personal assistance." },
-    { q: "What temperature should I brew green tea at?", a: "80–85°C for most green teas. Chamomile Green: 75–80°C. GABA Oolong: 85–90°C. Never use boiling water — it makes green tea bitter. Boil then wait 3–4 minutes before pouring." },
-  ];
-
   return React.createElement(
     "section",
-    { style: { background: "linear-gradient(160deg, #F8F6F2 0%, #EEE9DF 100%)", padding: e ? "64px 20px" : "110px 32px", borderTop: "1px solid #E2DDD5" } },
+    { style: { background: T.cream, padding: e ? "60px 20px" : "100px 32px" } },
     React.createElement(
       "div",
-      { style: { maxWidth: 780, margin: "0 auto" } },
+      { style: { maxWidth: 760, margin: "0 auto" } },
       React.createElement(
         "div",
-        { style: { textAlign: "center", marginBottom: e ? 36 : 52 } },
+        { style: { textAlign: "center", marginBottom: e ? 36 : 56 } },
         React.createElement(
           "div",
-          { style: { display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 14 } },
-          React.createElement("div", { style: { height: 1, width: 48, background: T.gold } }),
-          React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 12, fontWeight: 600, letterSpacing: "0.14em", color: T.teal, textTransform: "uppercase" } }, "Got Questions?"),
-          React.createElement("div", { style: { height: 1, width: 48, background: T.gold } }),
+          {
+            style: {
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 16,
+              marginBottom: 14,
+            },
+          },
+          React.createElement("div", {
+            style: { height: 1, width: 48, background: T.gold },
+          }),
+          React.createElement(
+            "span",
+            {
+              style: {
+                fontFamily: "'Inter'",
+                fontSize: 12,
+                fontWeight: 600,
+                letterSpacing: "0.14em",
+                color: T.teal,
+                textTransform: "uppercase",
+              },
+            },
+            "Got Questions?",
+          ),
+          React.createElement("div", {
+            style: { height: 1, width: 48, background: T.gold },
+          }),
         ),
-        React.createElement("h2", { style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: "clamp(24px, 3.5vw, 42px)", color: T.text, marginBottom: 0 } }, "Frequently Asked Questions"),
+        React.createElement(
+          "h2",
+          {
+            style: {
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontWeight: 400,
+              fontSize: "clamp(24px, 3.5vw, 42px)",
+              color: T.text,
+            },
+          },
+          "Frequently Asked Questions",
+        ),
       ),
       React.createElement(
         "div",
-        { style: { display: "flex", flexDirection: "column", gap: 10 } },
-        faqs.map((n, o) =>
+        { style: { display: "flex", flexDirection: "column", gap: 12 } },
+        [
+          {
+            q: "Do you deliver across India?",
+            a: "Yes! We deliver pan-India via Amazon and Flipkart. You can also order directly on WhatsApp for personal assistance.",
+          },
+          {
+            q: "How long does delivery take?",
+            a: "Amazon and Flipkart orders typically arrive in 3–5 business days. WhatsApp orders are dispatched within 24 hours.",
+          },
+          {
+            q: "What is the shelf life of the tea?",
+            a: "All Nevisan teas have a shelf life of 24 months from the date of manufacture when stored in a cool, dry place away from direct sunlight.",
+          },
+          {
+            q: "Is your tea organic and chemical free?",
+            a: "Yes. Every batch is PGS-India organic certified and grown without pesticides or chemicals. From soil to seal, we guarantee it.",
+          },
+          {
+            q: "Can the tea be steeped more than once?",
+            a: "Absolutely. Because we use 100% whole leaf tea, most of our varieties can be steeped twice — the second cup is just as rewarding.",
+          },
+          {
+            q: "Do you offer bulk or wholesale orders?",
+            a: "Yes! For bulk orders for hotels, cafes, offices or gifting, reach out to us directly on WhatsApp at +91 98642 45687.",
+          },
+          {
+            q: "What is your return policy?",
+            a: "As tea is a consumable product, all sales are final and non-returnable. However, if you receive a product that is near expiry, damaged, or incorrect, contact us on WhatsApp within 48 hours of delivery and we will replace it immediately.",
+          },
+        ].map((n, o) =>
           React.createElement(
             "div",
             {
@@ -6836,26 +6665,82 @@ function FAQSection() {
                 background: "#fff",
                 borderRadius: 14,
                 overflow: "hidden",
-                border: t === o ? "1px solid rgba(35,65,45,0.18)" : "1px solid rgba(226,221,213,0.8)",
-                boxShadow: t === o ? "0 8px 32px rgba(35,65,45,0.1)" : "0 2px 8px rgba(0,0,0,0.04)",
-                transition: "box-shadow 0.25s ease, border-color 0.25s ease",
+                boxShadow:
+                  t === o
+                    ? "0 4px 24px rgba(0,0,0,0.08)"
+                    : "0 1px 4px rgba(0,0,0,0.05)",
+                transition: "box-shadow 0.2s ease",
               },
             },
             React.createElement(
               "button",
               {
                 onClick: () => a(t === o ? null : o),
-                style: { width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", padding: e ? "16px 18px" : "20px 28px", background: "none", border: "none", cursor: "pointer", textAlign: "left", gap: 16 },
+                style: {
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  padding: e ? "16px 18px" : "20px 28px",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  textAlign: "left",
+                  gap: 16,
+                },
               },
-              React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: e ? 14 : 15, fontWeight: 600, color: T.text, lineHeight: 1.4, flex: 1 } }, n.q),
-              React.createElement("span", { style: { fontSize: 18, color: T.teal, flexShrink: 0, transition: "transform 0.25s ease", transform: t === o ? "rotate(45deg)" : "rotate(0deg)", display: "inline-block" } }, "+"),
+              React.createElement(
+                "span",
+                {
+                  style: {
+                    fontFamily: "'Inter'",
+                    fontSize: e ? 14 : 15,
+                    fontWeight: 600,
+                    color: T.text,
+                    lineHeight: 1.4,
+                  },
+                },
+                n.q,
+              ),
+              React.createElement(
+                "span",
+                {
+                  style: {
+                    fontSize: 18,
+                    color: T.teal,
+                    flexShrink: 0,
+                    transition: "transform 0.25s ease",
+                    transform: t === o ? "rotate(45deg)" : "rotate(0deg)",
+                    display: "inline-block",
+                  },
+                },
+                "+",
+              ),
             ),
             t === o &&
               React.createElement(
                 "div",
                 { style: { padding: e ? "0 18px 18px" : "0 28px 24px" } },
-                React.createElement("div", { style: { height: 1, background: "#f0ede8", marginBottom: e ? 14 : 18 } }),
-                React.createElement("p", { style: { fontFamily: "'Inter'", fontSize: e ? 13 : 14, color: T.textMuted, lineHeight: 1.7, margin: 0 } }, n.a),
+                React.createElement("div", {
+                  style: {
+                    height: 1,
+                    background: "#f0ede8",
+                    marginBottom: e ? 14 : 18,
+                  },
+                }),
+                React.createElement(
+                  "p",
+                  {
+                    style: {
+                      fontFamily: "'Inter'",
+                      fontSize: e ? 13 : 14,
+                      color: T.textMuted,
+                      lineHeight: 1.7,
+                      margin: 0,
+                    },
+                  },
+                  n.a,
+                ),
               ),
           ),
         ),
@@ -6864,29 +6749,49 @@ function FAQSection() {
         "div",
         { style: { textAlign: "center", marginTop: 40 } },
         React.createElement(
-          "a",
+          "p",
           {
-            href: "/faq",
             style: {
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 10,
-              background: T.teal,
-              color: "#fff",
-              borderRadius: 9999,
-              padding: e ? "13px 28px" : "15px 36px",
               fontFamily: "'Inter'",
               fontSize: 14,
-              fontWeight: 700,
-              textDecoration: "none",
-              letterSpacing: "0.04em",
+              color: T.textMuted,
               marginBottom: 16,
             },
           },
-          "See All 112 Questions",
-          React.createElement("span", { style: { fontSize: 16 } }, "→"),
+          "Still have a question?",
         ),
-        React.createElement("p", { style: { fontFamily: "'Inter'", fontSize: 12, color: T.textMuted, margin: 0 } }, "Organised by tea variety, health goal, brewing, shipping & more"),
+        React.createElement(
+          "a",
+          {
+            href: "https://wa.me/919864245687?text=Hi%20Nevisan!%20I%20have%20a%20question.",
+            target: "_blank",
+            rel: "noopener noreferrer",
+            style: {
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              background: "#25D366",
+              color: "#fff",
+              borderRadius: 9999,
+              padding: "12px 28px",
+              fontFamily: "'Inter'",
+              fontSize: 14,
+              fontWeight: 600,
+              textDecoration: "none",
+            },
+          },
+          React.createElement(
+            "svg",
+            { width: "16", height: "16", viewBox: "0 0 24 24", fill: "#fff" },
+            React.createElement("path", {
+              d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z",
+            }),
+            React.createElement("path", {
+              d: "M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.523 5.836L.057 23.643a.5.5 0 00.625.601l5.963-1.583A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.045-1.395l-.361-.214-3.741.993.984-3.648-.235-.374A9.808 9.808 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z",
+            }),
+          ),
+          "Ask us on WhatsApp",
+        ),
       ),
     ),
   );
@@ -7201,7 +7106,7 @@ function OurStoryPage({ setPage: e }) {
     React.createElement(PhilosophySection, null),
     React.createElement(
       "div",
-      { style: { background: "transparent", padding: "80px 32px" } },
+      { style: { background: T.cream, padding: "80px 32px" } },
       React.createElement(
         "div",
         { style: { maxWidth: 700, margin: "0 auto", textAlign: "center" } },
@@ -7452,7 +7357,7 @@ function ArticleModal({ post: e, onClose: t }) {
           {
             onClick: (e) => e.stopPropagation(),
             style: {
-              background: "transparent",
+              background: T.cream,
               borderRadius: 20,
               maxWidth: 680,
               width: "100%",
@@ -7628,7 +7533,7 @@ function JournalPage({ setPage: e }) {
     "div",
     {
       style: {
-        background: "transparent",
+        background: T.cream,
         minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
@@ -7786,7 +7691,7 @@ function AboutPage({ setPage: e }) {
     "div",
     {
       style: {
-        background: "transparent",
+        background: T.cream,
         minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
@@ -8226,7 +8131,7 @@ function CertificationsPage({ setPage: e }) {
     "div",
     {
       style: {
-        background: "transparent",
+        background: T.cream,
         minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
@@ -8395,7 +8300,7 @@ function WholesalePage({ setPage: e }) {
     "div",
     {
       style: {
-        background: "transparent",
+        background: T.cream,
         minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
@@ -8660,7 +8565,7 @@ function WholesalePage({ setPage: e }) {
             "div",
             {
               style: {
-                background: "transparent",
+                background: T.cream,
                 borderRadius: 14,
                 padding: "20px 22px",
               },
@@ -8704,7 +8609,7 @@ function WholesalePage({ setPage: e }) {
           "div",
           {
             style: {
-              background: "transparent",
+              background: T.cream,
               borderRadius: 20,
               padding: t ? "28px 20px" : "36px 32px",
             },
@@ -8907,7 +8812,7 @@ function ContactPage({ setPage: e }) {
     "div",
     {
       style: {
-        background: "transparent",
+        background: T.cream,
         minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },

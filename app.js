@@ -10,6 +10,7 @@ const trackExternalClick = (e, t) => {
       "Whiskey Green Tea": "9E-23FO-LL8Q",
       "GABA Oolong Tea": "GABA",
       "Organic Green Tea": "Unflavoured-1",
+      "Ginger Green Tea": "GINGER",
     };
     const s = m[e];
     if (s && typeof fbq !== "undefined") {
@@ -140,6 +141,7 @@ function CartProvider({ children: e }) {
               "Whiskey Green Tea": "9E-23FO-LL8Q",
               "GABA Oolong Tea": "GABA",
               "Organic Green Tea": "Unflavoured-1",
+              "Ginger Green Tea": "GINGER",
             };
             const s = m[e.name];
             if (s && typeof fbq !== "undefined") {
@@ -261,6 +263,7 @@ function openWhatsApp(e = "") {
       "Whiskey Green Tea": "9E-23FO-LL8Q",
       "GABA Oolong Tea": "GABA",
       "Organic Green Tea": "Unflavoured-1",
+      "Ginger Green Tea": "GINGER",
     };
     const s = m[e];
     if (s && typeof fbq !== "undefined") {
@@ -1061,7 +1064,7 @@ function Hero({ setPage: e }) {
               },
             },
             [
-              { label: "Varieties", target: 9, suffix: "" },
+              { label: "Varieties", target: 10, suffix: "" },
               { label: "Origin", target: 1, suffix: "" },
               { label: "Organic", target: 100, suffix: "%" },
             ].map(({ label: e, target: a, suffix: n }) =>
@@ -1541,6 +1544,45 @@ const TEAS = [
       },
     ],
   },
+  {
+    name: "Ginger Green Tea",
+    short:
+      "Warming ginger blended with single-origin whole leaf green tea. Soothing, spicy, and perfect for immune support.",
+    tags: ["IMMUNITY", "WARMING"],
+    bg: "#fdf2e9",
+    color: "#935116",
+    img: "teas/ginger.png?v=2",
+    price: 499,
+    badge: "IMMUNE BOOST",
+    brew: "85°C · 2–3 min · Best warm",
+    benefits: [
+      {
+        icon: "🫚",
+        title: "Immune Booster",
+        desc: "Ginger's active compounds naturally enhance white blood cell count and support immune response.",
+      },
+      {
+        icon: "🔥",
+        title: "Soothing Warmth",
+        desc: "Increases peripheral circulation and comforts dry, ticklish throats instantly.",
+      },
+      {
+        icon: "😌",
+        title: "Stomach Settler",
+        desc: "Highly effective at reducing symptoms of nausea, motion sickness, and digestive upset.",
+      },
+      {
+        icon: "💪",
+        title: "Anti-Inflammatory",
+        desc: "Reduces inflammatory markers throughout the body, easing muscle soreness.",
+      },
+      {
+        icon: "🩺",
+        title: "Cardio Health",
+        desc: "Helps maintain healthy blood sugar levels and supports vascular function.",
+      },
+    ],
+  },
 ];
 function TagChip({ label: e, color: t }) {
   return React.createElement(
@@ -1562,7 +1604,7 @@ function TagChip({ label: e, color: t }) {
 }
 function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
   const { isMobile: mobile } = useViewport();
-  const isFeatured = (n === 0 || n === 6) && !mobile;
+  const isFeatured = (n === 0 || n === 6 || n === 9) && !mobile;
   const isMidHorizontal = (n === 3) && !mobile;
   const [o, i] = useState(!1),
     [r, l] = useState(!1),
@@ -1614,6 +1656,11 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
       palate: "Pure Vegetal, Umami, Clean Grassy notes",
       brew: "80°C · 2 Mins · Up to 3 Infusions",
       badge: "Estate Classic"
+    },
+    "Ginger Green Tea": {
+      palate: "Spicy Ginger, Honeyed Warmth, Brisk Green",
+      brew: "85°C · 2-3 Mins · Up to 3 Infusions",
+      badge: "Warming Wellness"
     }
   };
   const prof = profiles[e.name] || {
@@ -1655,6 +1702,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
             "Whiskey Green Tea": "9E-23FO-LL8Q",
             "GABA Oolong Tea": "GABA",
             "Organic Green Tea": "Unflavoured-1",
+            "Ginger Green Tea": "GINGER",
           };
           const s = m[e.name];
           if (s && typeof fbq !== "undefined") {
@@ -9548,6 +9596,7 @@ function CartSheet({ onClose: e }) {
                     "Whiskey Green Tea": "9E-23FO-LL8Q",
                     "GABA Oolong Tea": "GABA",
                     "Organic Green Tea": "Unflavoured-1",
+                    "Ginger Green Tea": "GINGER",
                   };
                   const skus = t
                     .map((item) => m[item.tea.name])

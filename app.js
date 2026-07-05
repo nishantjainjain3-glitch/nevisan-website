@@ -2288,6 +2288,7 @@ function ImageLightbox({ img: e, name: t, onClose: a }) {
 function CollectionPage({}) {
   const [e, t] = useState(null),
     [a, n] = useState(null),
+    [activeFilter, setActiveFilter] = useState("ALL"),
     { isMobile: o, isTablet: i } = useViewport(),
     r = o ? "1fr" : "repeat(2, 1fr)";
   useEffect(() => {
@@ -2316,7 +2317,7 @@ function CollectionPage({}) {
     React.createElement(PageHero, {
       photo: PAGE_PHOTOS.collection,
       label: "The Collection",
-      title: "Nine varieties, one origin",
+      title: "Ten varieties, one origin",
       subtitle: "Every leaf from Golaghat — whole, unblended, handcrafted.",
     }),
     React.createElement(Ticker, null),
@@ -2375,7 +2376,7 @@ function CollectionPage({}) {
               marginBottom: 16,
             },
           },
-          "Nine varieties, one origin",
+          "Ten varieties, one origin",
         ),
         React.createElement(
           "p",
@@ -2394,11 +2395,62 @@ function CollectionPage({}) {
       React.createElement(
         "div",
         {
+          style: {
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: o ? 8 : 12,
+            marginBottom: o ? 32 : 48,
+          },
+        },
+        [
+          { label: "All Blends", value: "ALL" },
+          { label: "Estate Greens", value: "GREEN" },
+          { label: "Wellness / Adaptogens", value: "WELLNESS" },
+          { label: "Specialty Cures", value: "SPECIALTY" }
+        ].map(filter => {
+          const isSelected = activeFilter === filter.value;
+          return React.createElement(
+            "button",
+            {
+              key: filter.value,
+              onClick: () => setActiveFilter(filter.value),
+              style: {
+                background: isSelected ? "#1F2E24" : "rgba(31, 46, 36, 0.04)",
+                color: isSelected ? "#F8F6F2" : "#1F2E24",
+                border: isSelected ? "1px solid #1F2E24" : "1px solid rgba(31, 46, 36, 0.1)",
+                borderRadius: 9999,
+                padding: o ? "6px 14px" : "8px 20px",
+                fontSize: 13,
+                fontWeight: 600,
+                cursor: "pointer",
+                fontFamily: "'Inter'",
+                transform: isSelected ? "scale(1.02)" : "scale(1)",
+                transition: "all 200ms ease",
+              }
+            },
+            filter.label
+          );
+        })
+      ),
+      React.createElement(
+        "div",
+        {
           style: { display: "grid", gridTemplateColumns: r, gap: o ? 16 : 56 },
         },
-        TEAS.map((e, a) =>
+        TEAS.filter(tea => {
+          if (activeFilter === "ALL") return true;
+          if (activeFilter === "GREEN") return tea.name !== "GABA Oolong Tea";
+          if (activeFilter === "WELLNESS") {
+            return ["Lemongrass Green Tea", "Blue Flower Green Tea", "Spearmint Green Tea", "Tulsi Green Tea", "Chamomile Green Tea", "Ginger Green Tea"].includes(tea.name);
+          }
+          if (activeFilter === "SPECIALTY") {
+            return ["GABA Oolong Tea", "Whiskey Green Tea", "Rum Green Tea"].includes(tea.name);
+          }
+          return true;
+        }).map((e, a) =>
           React.createElement(TeaCard, {
-            key: e.name,
+            key: activeFilter + "-" + e.name,
             tea: e,
             onView: t,
             onImageClick: (e, t) => n({ img: e, name: t }),

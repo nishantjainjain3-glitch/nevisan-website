@@ -293,6 +293,7 @@ function NevLogo({ size: e = 56 }) {
       objectFit: "cover",
       borderRadius: 8,
       display: "block",
+      mixBlendMode: "multiply",
     },
   });
 }

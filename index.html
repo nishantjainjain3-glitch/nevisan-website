@@ -525,6 +525,96 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     z-index: 3;
   }
 </style>
+
+<!-- ══ NEVISAN PREMIUM DESIGN TOKENS + ANIMATIONS ══ -->
+<style>
+  /* Emil Kowalski easing tokens */
+  :root {
+    --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+    --gold:  #C9A84C;
+    --forest: #1F2E24;
+  }
+
+  /* MWG: text-wrap balance for headings */
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* MWG: native scrollbar-color */
+  @supports (scrollbar-color: auto) {
+    * { scrollbar-color: #C9A84C #1F2E24; scrollbar-width: thin; }
+  }
+  ::-webkit-scrollbar { width: 3px !important; }
+  ::-webkit-scrollbar-track { background: #1F2E24 !important; }
+  ::-webkit-scrollbar-thumb { background: #C9A84C !important; border-radius: 2px; }
+
+  /* MWG: CSS-only scroll progress bar (animation-timeline: scroll()) */
+  #nev-scroll-progress {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 2px; z-index: 10001;
+    background: linear-gradient(to right, #C9A84C, #23412D);
+    transform-origin: left;
+    animation: nev-progress linear both;
+    animation-timeline: scroll(root);
+    pointer-events: none;
+  }
+  @keyframes nev-progress {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  @supports not (animation-timeline: scroll()) {
+    /* Fallback: show nothing — JS ScrollProgress in app.js handles it */
+    #nev-scroll-progress { display: none; }
+  }
+
+  /* Custom gold cursor — desktop only */
+  @media (hover: hover) and (pointer: fine) {
+    body { cursor: none !important; }
+    #nev-cur {
+      position: fixed; width: 10px; height: 10px;
+      border-radius: 50%; background: #C9A84C;
+      pointer-events: none; z-index: 10000;
+      mix-blend-mode: difference;
+      translate: -5px -5px;
+      will-change: transform;
+    }
+    #nev-cur-ring {
+      position: fixed; width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.55);
+      pointer-events: none; z-index: 9999;
+      translate: -16px -16px;
+      transition: width 250ms var(--ease-out), height 250ms var(--ease-out),
+                  border-color 200ms ease;
+      will-change: transform;
+    }
+    #nev-cur-ring.hovered {
+      width: 48px; height: 48px;
+      border-color: rgba(201,168,76,0.9);
+      translate: -24px -24px;
+    }
+    a, button, .card-hover-lift { cursor: none !important; }
+  }
+
+  /* Emil: active scale on ALL buttons */
+  button:active { transform: scale(0.97) !important; }
+
+  /* Reduce Three.js opacity on mobile to save battery */
+  @media (max-width: 768px) {
+    #nev-three-canvas { opacity: 0.25 !important; }
+    #nev-cur, #nev-cur-ring { display: none !important; }
+  }
+
+  /* MWG: prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    #nev-scroll-progress,
+    #nev-three-canvas,
+    #nev-cur, #nev-cur-ring { display: none !important; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+
 <style>
   .quiz-link {
     position: fixed;
@@ -550,9 +640,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-  <!-- Background Leaf Canvas -->
-  <canvas id="global-leaf-canvas" style="position: fixed; inset: 0; width: 100%; height: 100%; z-index: 9999; pointer-events: none; opacity: 0.6;"></canvas>
+  <!-- CSS-only scroll progress bar (MWG animation-timeline) -->
+  <div id="nev-scroll-progress" aria-hidden="true"></div>
+
+  <!-- Custom cursor elements -->
+  <div id="nev-cur" aria-hidden="true"></div>
+  <div id="nev-cur-ring" aria-hidden="true"></div>
+
+  <!-- Three.js premium particle canvas (replaces leaf canvas) -->
+  <canvas id="nev-three-canvas" style="position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.42;"></canvas>
+
+  <!-- Legacy leaf canvas hidden (JS still runs but canvas is invisible) -->
+  <canvas id="global-leaf-canvas" style="display:none;"></canvas>
 
   <div id="root" style="position: relative; z-index: 2;"></div>
   <a href="quiz.html" class="quiz-link">Tea Quiz</a>
@@ -561,19 +662,132 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </nav>
 
 <script>
-  (function() {
-    const canvas = document.getElementById('global-leaf-canvas');
+  /* ══ THREE.JS PARTICLE FIELD + TORUS RINGS ══
+     Emil Kowalski: animate only transform+opacity, pause when hidden
+     MWG: IntersectionObserver + visibilitychange to save battery
+  */
+  (function initThree() {
+    if (typeof THREE === 'undefined') return;
+    const canvas = document.getElementById('nev-three-canvas');
     if (!canvas) return;
+
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const scene = new THREE.Scene();
+    const cam = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    cam.position.z = 80;
+
+    /* Gold particles — 700 on desktop, 300 on mobile */
+    const isMob = window.innerWidth < 768;
+    const count = isMob ? 300 : 700;
+    const geo = new THREE.BufferGeometry();
+    const pos = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      pos[i*3]   = (Math.random() - 0.5) * 240;
+      pos[i*3+1] = (Math.random() - 0.5) * 240;
+      pos[i*3+2] = (Math.random() - 0.5) * 120;
+    }
+    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    const pts = new THREE.Points(geo, new THREE.PointsMaterial({
+      size: isMob ? 0.4 : 0.55,
+      color: 0xC9A84C, transparent: true, opacity: 0.5
+    }));
+    scene.add(pts);
+
+    /* Torus rings */
+    const mkRing = (r, c, rx, rz, op) => {
+      const m = new THREE.Mesh(
+        new THREE.TorusGeometry(r, 0.1, 8, 80),
+        new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: op })
+      );
+      m.rotation.x = rx; m.rotation.z = rz;
+      scene.add(m); return m;
+    };
+    const r1 = mkRing(32, 0x1B7A82, 0, 0, 0.16);
+    const r2 = mkRing(20, 0xC9A84C, Math.PI/3, 0, 0.09);
+    const r3 = mkRing(46, 0x23412D, Math.PI/5, Math.PI/4, 0.06);
+
+    let mx = 0, my = 0;
+    document.addEventListener('mousemove', e => {
+      mx = (e.clientX / window.innerWidth - 0.5) * 2;
+      my = -(e.clientY / window.innerHeight - 0.5) * 2;
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      cam.aspect = window.innerWidth / window.innerHeight;
+      cam.updateProjectionMatrix();
+    }, { passive: true });
+
+    /* MWG: pause when tab is hidden */
+    let tabVisible = true;
+    document.addEventListener('visibilitychange', () => {
+      tabVisible = !document.hidden;
+    });
+
+    let t = 0;
+    (function tick() {
+      requestAnimationFrame(tick);
+      if (!tabVisible) return;
+      t += 0.003;
+      pts.rotation.y = t * 0.07 + mx * 0.12;
+      pts.rotation.x = t * 0.032 + my * 0.08;
+      r1.rotation.z = t * 0.13; r1.rotation.x = t * 0.05 + my * 0.15;
+      r2.rotation.z = -t * 0.09; r2.rotation.y = t * 0.1 + mx * 0.16;
+      r3.rotation.y = t * 0.055; r3.rotation.z = t * 0.038 + mx * 0.07;
+      renderer.render(scene, cam);
+    })();
+  })();
+
+  /* ══ SPRING-LAG GOLD CURSOR ══
+     Emil: spring easing for decorative mouse tracking
+  */
+  (function initCursor() {
+    const cur  = document.getElementById('nev-cur');
+    const ring = document.getElementById('nev-cur-ring');
+    if (!cur || !ring) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+
+    let cx = -200, cy = -200, rx = -200, ry = -200;
+    document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; }, { passive: true });
+
+    (function loop() {
+      requestAnimationFrame(loop);
+      rx += (cx - rx) * 0.13;
+      ry += (cy - ry) * 0.13;
+      cur.style.left  = cx + 'px';
+      cur.style.top   = cy + 'px';
+      ring.style.left = rx + 'px';
+      ring.style.top  = ry + 'px';
+    })();
+
+    /* Expand ring on interactive elements */
+    document.addEventListener('mouseover', e => {
+      const el = e.target.closest('a, button, [role="button"]');
+      if (el) ring.classList.add('hovered');
+    }, { passive: true });
+    document.addEventListener('mouseout', e => {
+      const el = e.target.closest('a, button, [role="button"]');
+      if (el) ring.classList.remove('hovered');
+    }, { passive: true });
+  })();
+</script>
+
+<!-- Legacy leaf canvas script (kept but canvas hidden above) -->
+<script>
+  (function() {
+    /* Canvas is hidden; skip drawing to save CPU */
+    const canvas = document.getElementById('global-leaf-canvas');
+    if (!canvas || canvas.style.display === 'none') return;
     const ctx = canvas.getContext('2d');
-    
     let w = (canvas.width = window.innerWidth);
     let h = (canvas.height = window.innerHeight);
-    
     window.addEventListener('resize', () => {
       w = (canvas.width = window.innerWidth);
       h = (canvas.height = window.innerHeight);
     }, { passive: true });
-    
     const leaves = [];
     const leafCount = 20;
     

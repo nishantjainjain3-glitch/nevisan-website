@@ -180,75 +180,51 @@ function useCart() {
 }
 const useViewport = () => React.useContext(ViewportCtx);
 function ScrollProgress() {
-  const [e, t] = useState(0);
+  /* MWG: CSS animation-timeline:scroll() handles this natively in index.html.
+     Only render the JS fallback if the CSS version is not supported. */
+  const [e, t] = useState(0),
+    [show, setShow] = useState(false);
   return (
     useEffect(() => {
-      const e = () => {
-        const e = document.documentElement.scrollHeight - window.innerHeight;
-        t(e > 0 ? (window.scrollY / e) * 100 : 0);
+      /* Check if CSS scroll-driven animations are supported */
+      const cssSupported = CSS.supports("animation-timeline", "scroll()");
+      if (cssSupported) return; /* CSS version active — skip JS version */
+      setShow(true);
+      const handler = () => {
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        t(total > 0 ? (window.scrollY / total) * 100 : 0);
       };
-      return (
-        window.addEventListener("scroll", e, { passive: !0 }),
-        () => window.removeEventListener("scroll", e)
-      );
+      window.addEventListener("scroll", handler, { passive: !0 });
+      return () => window.removeEventListener("scroll", handler);
     }, []),
-    React.createElement(
-      "div",
-      {
-        style: {
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 3,
-          zIndex: 999,
-          background: "rgba(0,0,0,0.08)",
-        },
-      },
-      React.createElement("div", {
-        style: {
-          height: "100%",
-          background: `linear-gradient(to right, ${T.gold}, ${T.teal})`,
-          width: `${e}%`,
-          transition: "width 80ms linear",
-          borderRadius: "0 2px 2px 0",
-        },
-      }),
-    )
+    show
+      ? React.createElement(
+          "div",
+          {
+            style: {
+              position: "fixed",
+              top: 0, left: 0, right: 0,
+              height: 2, zIndex: 999,
+              background: "rgba(0,0,0,0.08)",
+            },
+          },
+          React.createElement("div", {
+            style: {
+              height: "100%",
+              background: `linear-gradient(to right, ${T.gold}, ${T.teal})`,
+              width: `${e}%`,
+              transition: "width 80ms linear",
+              borderRadius: "0 2px 2px 0",
+            },
+          }),
+        )
+      : null
   );
 }
 function CursorGlow() {
-  const [e, t] = useState({ x: -400, y: -400 }),
-    [a, n] = useState(!1);
-  return (
-    useEffect(() => {
-      if (window.matchMedia("(hover: none)").matches) return;
-      const e = (e) => {
-        (t({ x: e.clientX, y: e.clientY }), n(!0));
-      };
-      return (
-        window.addEventListener("mousemove", e, { passive: !0 }),
-        () => window.removeEventListener("mousemove", e)
-      );
-    }, []),
-    a
-      ? React.createElement("div", {
-          style: {
-            position: "fixed",
-            left: e.x - 220,
-            top: e.y - 220,
-            width: 440,
-            height: 440,
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(27,122,130,0.05) 0%, transparent 70%)",
-            pointerEvents: "none",
-            zIndex: 9998,
-            transition: "left 200ms ease-out, top 200ms ease-out",
-          },
-        })
-      : null
-  );
+  /* Premium spring-lag gold cursor is handled natively in index.html.
+     This component is intentionally disabled to avoid conflicts. */
+  return null;
 }
 const WA_NUMBER = "919864245687";
 function openWhatsApp(e = "") {
@@ -3311,339 +3287,117 @@ function CollectionPage({}) {
       }),
   );
 }
-function PhilosophySection() {
-  const e = useGsapReveal(),
-    [t, a] = useInView(0.15),
-    n = [
-      {
-        icon: React.createElement(
-          "svg",
-          {
-            width: "20",
-            height: "20",
-            viewBox: "0 0 24 24",
-            fill: "none",
-            stroke: "currentColor",
-            strokeWidth: "1.8",
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-          },
-          React.createElement("path", {
-            d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8",
-          }),
-          React.createElement("path", { d: "M3 3v5h5" }),
-          React.createElement("path", { d: "M12 7v5l4 2" }),
-        ),
-        title: "Can be steeped twice",
-        desc: "Whole leaf quality means the second steep is as rewarding as the first. Better value, richer taste.",
-      },
-      {
-        icon: React.createElement(
-          "svg",
-          {
-            width: "20",
-            height: "20",
-            viewBox: "0 0 24 24",
-            fill: "none",
-            stroke: "currentColor",
-            strokeWidth: "1.8",
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-          },
-          React.createElement("path", {
-            d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
-          }),
-          React.createElement("path", { d: "m9 12 2 2 4-4" }),
-        ),
-        title: "Chemical-free, always",
-        desc: "Pesticide-free from soil to seal. PGS-India organic certified. No exceptions.",
-      },
-      {
-        icon: React.createElement(
-          "svg",
-          {
-            width: "20",
-            height: "20",
-            viewBox: "0 0 24 24",
-            fill: "none",
-            stroke: "currentColor",
-            strokeWidth: "1.8",
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-          },
-          React.createElement("path", {
-            d: "M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z",
-          }),
-          React.createElement("circle", { cx: "12", cy: "10", r: "3" }),
-        ),
-        title: "Single origin, Golaghat",
-        desc: "Every variety from one region. Consistent quality. Traceable from garden to pack.",
-      },
-      {
-        icon: React.createElement(
-          "svg",
-          {
-            width: "20",
-            height: "20",
-            viewBox: "0 0 24 24",
-            fill: "none",
-            stroke: "currentColor",
-            strokeWidth: "1.8",
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-          },
-          React.createElement("path", {
-            d: "M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0",
-          }),
-          React.createElement("path", {
-            d: "M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2",
-          }),
-          React.createElement("path", {
-            d: "M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8",
-          }),
-          React.createElement("path", {
-            d: "M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15",
-          }),
-        ),
-        title: "Handcrafted, not manufactured",
-        desc: "Each batch made by Tailor Made Tea of Golaghat. Small batch, intentional process.",
-      },
-    ],
-    { isMobile: o } = useViewport();
+function OriginSection() {
+  const { isMobile: e } = useViewport(),
+    [ref, inView] = useInView(0.12),
+    [cardRef, cardVisible] = useInView(0.1);
   return React.createElement(
-    "div",
+    "section",
     {
+      ref,
       style: {
-        background: T.teal,
-        padding: o ? "64px 20px" : "100px 32px",
+        background: T.tealDark,
+        padding: e ? "72px 20px" : "110px 32px",
         position: "relative",
         overflow: "hidden",
       },
     },
-    React.createElement("div", {
-      style: {
-        position: "absolute",
-        top: "10%",
-        left: "-5%",
-        width: 400,
-        height: 400,
-        borderRadius: "50%",
-        border: "1px solid rgba(255,255,255,0.08)",
-        pointerEvents: "none",
-      },
-    }),
-    React.createElement("div", {
-      style: {
-        position: "absolute",
-        bottom: "-10%",
-        right: "20%",
-        width: 280,
-        height: 280,
-        borderRadius: "50%",
-        border: "1px solid rgba(255,255,255,0.06)",
-        pointerEvents: "none",
-      },
-    }),
-    React.createElement("div", {
-      style: {
-        position: "absolute",
-        top: "50%",
-        right: "-5%",
-        width: 320,
-        height: 320,
-        borderRadius: "50%",
-        border: "1px solid rgba(201,168,76,0.08)",
-        pointerEvents: "none",
-      },
-    }),
+    /* Decorative rings */
+    React.createElement("div", { style: { position: "absolute", top: "-10%", right: "-8%", width: 420, height: 420, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.05)", pointerEvents: "none" } }),
+    React.createElement("div", { style: { position: "absolute", bottom: "-15%", left: "-6%", width: 320, height: 320, borderRadius: "50%", border: "1px solid rgba(201,168,76,0.07)", pointerEvents: "none" } }),
     React.createElement(
       "div",
-      {
-        style: {
-          maxWidth: 1200,
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: o ? "1fr" : "1fr 1fr",
-          gap: o ? 48 : 80,
-          alignItems: "start",
-        },
-      },
+      { style: { maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: e ? "1fr" : "1fr 1fr", gap: e ? 48 : 80, alignItems: "center" } },
+      /* LEFT — fact card */
       React.createElement(
         "div",
-        { ref: e },
+        {
+          ref: cardRef,
+          style: {
+            background: "rgba(255,255,255,0.06)",
+            border: "1px solid rgba(255,255,255,0.12)",
+            borderRadius: 20,
+            padding: e ? 28 : 36,
+            opacity: cardVisible ? 1 : 0,
+            transform: cardVisible ? "translateY(0)" : "translateY(32px)",
+            transition: "opacity 0.7s ease-out, transform 0.7s ease-out",
+          },
+        },
+        /* Badge */
         React.createElement(
           "div",
-          {
-            "data-gsap-reveal": !0,
-            style: {
-              fontFamily: "'Inter'",
-              fontSize: 11,
-              fontWeight: 600,
-              letterSpacing: "0.16em",
-              color: T.gold,
-              textTransform: "uppercase",
-              marginBottom: 20,
-            },
-          },
-          "Our Philosophy",
+          { style: { display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(201,168,76,0.15)", border: "1px solid rgba(201,168,76,0.35)", borderRadius: 9999, padding: "6px 16px", marginBottom: 24 } },
+          React.createElement("span", { style: { width: 6, height: 6, borderRadius: "50%", background: T.gold, display: "inline-block" } }),
+          React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", color: T.gold, textTransform: "uppercase" } }, "Est. Golaghat · Assam"),
         ),
-        React.createElement(
-          "h2",
-          {
-            "data-gsap-reveal": !0,
-            style: {
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontWeight: 400,
-              fontSize: "clamp(36px, 4vw, 56px)",
-              color: T.white,
-              lineHeight: 1.15,
-              marginBottom: 28,
-            },
-          },
-          "You deserve to taste",
-          React.createElement("br", null),
-          "what Assam really grows",
-        ),
-        React.createElement(
-          "p",
-          {
-            "data-gsap-reveal": !0,
-            style: {
-              fontFamily: "'Inter'",
-              fontSize: 16,
-              color: "rgba(255,255,255,0.72)",
-              lineHeight: 1.75,
-              marginBottom: 20,
-            },
-          },
-          "Most people in India have drunk Assam tea their whole lives — and most of it has been broken leaves, dust, and blends made for volume, not flavour. We grew up here. We knew what the actual leaf tasted like. And we couldn't unsee the gap.",
-        ),
-        React.createElement(
-          "p",
-          {
-            "data-gsap-reveal": !0,
-            style: {
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontStyle: "italic",
-              fontSize: 15,
-              color: "rgba(255,255,255,0.6)",
-              lineHeight: 1.65,
-              marginBottom: 32,
-            },
-          },
-          '"Every pack of Nevisan holds the same leaf that wealthy buyers in Japan and Europe have been paying a premium for. We just think you deserved to have it too."',
-        ),
+        /* Big number */
         React.createElement(
           "div",
-          { style: { display: "flex", gap: 10, flexWrap: "wrap" } },
+          { style: { marginBottom: 8 } },
+          React.createElement("span", { style: { fontFamily: "'Playfair Display', Georgia, serif", fontSize: e ? 64 : 80, fontWeight: 400, color: T.gold, lineHeight: 1 } }, "1"),
+          React.createElement("span", { style: { fontFamily: "'Playfair Display', Georgia, serif", fontSize: e ? 32 : 40, fontWeight: 400, color: T.gold, verticalAlign: "super" } }, "st"),
+        ),
+        React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", marginBottom: 28 } }, "Harvest · Single Garden"),
+        /* Fact grid */
+        React.createElement(
+          "div",
+          { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 } },
           [
-            "PGS-INDIA ORGANIC",
-            "FSSAI LICENSED",
-            "FOOD SAFETY, ASSAM",
-            "MADE IN INDIA",
-          ].map((e) =>
+            { label: "Certified", value: "PGS-India Organic", icon: "🌿" },
+            { label: "Zero", value: "Pesticides Used", icon: "🚫" },
+            { label: "Process", value: "Whole Leaf Only", icon: "🍃" },
+            { label: "Pack Size", value: "50g · ₹499 MRP", icon: "📦" },
+          ].map(({ label, value, icon }) =>
             React.createElement(
-              "span",
+              "div",
               {
-                key: e,
-                style: {
-                  fontFamily: "'Inter'",
-                  fontSize: 10,
-                  fontWeight: 500,
-                  letterSpacing: "0.08em",
-                  color: "rgba(255,255,255,0.7)",
-                  border: "1px solid rgba(255,255,255,0.25)",
-                  borderRadius: 9999,
-                  padding: "5px 12px",
-                },
+                key: label,
+                style: { background: "rgba(255,255,255,0.06)", borderRadius: 12, padding: "16px 18px", border: "1px solid rgba(255,255,255,0.08)" },
               },
-              e,
+              React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 10, letterSpacing: "0.12em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 4 } }, label),
+              React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 14, fontWeight: 600, color: T.white } }, icon + " " + value),
             ),
           ),
         ),
       ),
+      /* RIGHT — copy */
       React.createElement(
         "div",
         {
-          ref: t,
-          style: { display: "flex", flexDirection: "column", gap: 16 },
+          style: {
+            opacity: inView ? 1 : 0,
+            transform: inView ? "translateX(0)" : "translateX(28px)",
+            transition: "opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s",
+          },
         },
-        n.map((e, t) =>
-          React.createElement(
-            "div",
-            {
-              key: e.title,
-              style: {
-                background: "rgba(255,255,255,0.07)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                borderRadius: 14,
-                padding: "24px 28px",
-                display: "flex",
-                gap: 20,
-                alignItems: "flex-start",
-                opacity: a ? 1 : 0,
-                transform: a ? "translateX(0)" : "translateX(32px)",
-                transition: `opacity 0.6s ease-out ${0.12 * t}s, transform 0.6s ease-out ${0.12 * t}s`,
-                cursor: "default",
-              },
-              onMouseEnter: (e) => {
-                ((e.currentTarget.style.background = "rgba(255,255,255,0.11)"),
-                  (e.currentTarget.style.borderColor = "rgba(201,168,76,0.3)"));
-              },
-              onMouseLeave: (e) => {
-                ((e.currentTarget.style.background = "rgba(255,255,255,0.07)"),
-                  (e.currentTarget.style.borderColor =
-                    "rgba(255,255,255,0.12)"));
-              },
-            },
+        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 16, marginBottom: 20 } },
+          React.createElement("div", { style: { width: 40, height: 1, background: T.gold } }),
+          React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", color: T.gold, textTransform: "uppercase" } }, "The Origin"),
+        ),
+        React.createElement("h2", {
+          style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: "clamp(32px, 4vw, 52px)", color: T.white, lineHeight: 1.15, marginBottom: 12 },
+        }, "Tea grown the way"),
+        React.createElement("h2", {
+          style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontStyle: "italic", fontSize: "clamp(32px, 4vw, 52px)", color: T.gold, lineHeight: 1.15, marginBottom: 28 },
+        }, "nature intended"),
+        React.createElement("p", {
+          style: { fontFamily: "'Inter'", fontSize: 15, color: "rgba(255,255,255,0.72)", lineHeight: 1.75, marginBottom: 16 },
+        }, "Nevisan is rooted in Golaghat — a single garden in Assam where the rain falls heavy, the soil stays rich, and nothing is rushed. We grow whole leaf, harvest by hand, and blend only what belongs together."),
+        React.createElement("p", {
+          style: { fontFamily: "'Inter'", fontSize: 15, color: "rgba(255,255,255,0.55)", lineHeight: 1.75, marginBottom: 32 },
+        }, "No pesticides. No shortcuts. Every batch PGS-India certified. You taste the garden, not a factory."),
+        /* Pill badges */
+        React.createElement(
+          "div",
+          { style: { display: "flex", flexWrap: "wrap", gap: 10 } },
+          ["🌱 Single Garden", "🍃 Whole Leaf", "🚫 No Pesticides", "📍 Golaghat, Assam", "✅ PGS Certified"].map((label) =>
             React.createElement(
-              "div",
+              "span",
               {
-                style: {
-                  width: 44,
-                  height: 44,
-                  borderRadius: "50%",
-                  background: "rgba(201,168,76,0.2)",
-                  border: "1px solid rgba(201,168,76,0.4)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                  color: T.gold,
-                  fontSize: 16,
-                  transition: "background 200ms",
-                },
+                key: label,
+                style: { fontFamily: "'Inter'", fontSize: 12, fontWeight: 500, color: "rgba(255,255,255,0.75)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 9999, padding: "6px 14px" },
               },
-              e.icon,
-            ),
-            React.createElement(
-              "div",
-              null,
-              React.createElement(
-                "div",
-                {
-                  style: {
-                    fontFamily: "'Playfair Display', Georgia, serif",
-                    fontSize: 17,
-                    fontWeight: 400,
-                    color: T.gold,
-                    marginBottom: 6,
-                  },
-                },
-                e.title,
-              ),
-              React.createElement(
-                "div",
-                {
-                  style: {
-                    fontFamily: "'Inter'",
-                    fontSize: 13,
-                    color: "rgba(255,255,255,0.65)",
-                    lineHeight: 1.6,
-                  },
-                },
-                e.desc,
-              ),
+              label,
             ),
           ),
         ),
@@ -3651,6 +3405,87 @@ function PhilosophySection() {
     ),
   );
 }
+function BenefitsSection() {
+  const { isMobile: e, isTablet: tab } = useViewport(),
+    [ref, inView] = useInView(0.1);
+  const benefits = [
+    { icon: "🌿", title: "Pure from Soil to Seal", desc: "PGS-India certified. No pesticides, no artificial flavouring, no multi-origin blending. What the garden gives, we preserve." },
+    { icon: "🍃", title: "Whole Leaf Integrity", desc: "No dust, no fannings. Full leaves release oils slowly — a smoother, more complex cup you can steep twice." },
+    { icon: "⚡", title: "Caffeine + L-Theanine", desc: "Clean, sustained energy without the cortisol spike of coffee or the afternoon crash. Alert, not wired." },
+    { icon: "📍", title: "Single Origin Traceability", desc: "One garden. One address. You know exactly where your tea comes from — no blending, no mystery." },
+    { icon: "🚀", title: "Direct to You", desc: "WhatsApp, Amazon, Flipkart. No middlemen inflating margins. Fresh stock, honest prices." },
+    { icon: "🎯", title: "Ten Targeted Blends", desc: "Digestion, immunity, calm, energy, sleep. Each variety chosen for a specific effect — not just flavour." },
+  ];
+  return React.createElement(
+    "section",
+    {
+      ref,
+      style: { background: T.cream, padding: e ? "72px 20px" : "110px 32px" },
+    },
+    React.createElement(
+      "div",
+      { style: { maxWidth: 1100, margin: "0 auto" } },
+      /* Header */
+      React.createElement(
+        "div",
+        { style: { textAlign: "center", marginBottom: e ? 40 : 64 } },
+        React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 16 } },
+          React.createElement("div", { style: { width: 40, height: 1, background: T.teal } }),
+          React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", color: T.teal, textTransform: "uppercase" } }, "Why Nevisan"),
+          React.createElement("div", { style: { width: 40, height: 1, background: T.teal } }),
+        ),
+        React.createElement("h2", {
+          style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: "clamp(30px, 4vw, 52px)", color: T.text, lineHeight: 1.15, marginBottom: 0 },
+        }, "Tea that actually"),
+        React.createElement("h2", {
+          style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontStyle: "italic", fontSize: "clamp(30px, 4vw, 52px)", color: T.teal, lineHeight: 1.15 },
+        }, "does something"),
+      ),
+      /* 6-card grid */
+      React.createElement(
+        "div",
+        {
+          style: {
+            display: "grid",
+            gridTemplateColumns: e ? "1fr" : tab ? "repeat(2,1fr)" : "repeat(3,1fr)",
+            gap: e ? 16 : 24,
+          },
+        },
+        benefits.map(({ icon, title, desc }, idx) =>
+          React.createElement(BenefitCard, { key: title, icon, title, desc, inView, idx }),
+        ),
+      ),
+    ),
+  );
+}
+function BenefitCard({ icon, title, desc, inView, idx }) {
+  const [hov, setHov] = useState(false);
+  return React.createElement(
+    "div",
+    {
+      onMouseEnter: () => setHov(true),
+      onMouseLeave: () => setHov(false),
+      style: {
+        background: T.white,
+        borderRadius: 16,
+        padding: "32px 28px",
+        border: `1px solid ${hov ? "rgba(35,65,45,0.18)" : T.border}`,
+        boxShadow: hov ? "0 12px 40px rgba(35,65,45,0.1)" : "0 2px 8px rgba(0,0,0,0.04)",
+        transform: hov ? "translateY(-6px)" : inView ? "translateY(0)" : "translateY(20px)",
+        opacity: inView ? 1 : 0,
+        transition: `transform 0.4s var(--ease-out) ${idx * 60}ms, opacity 0.5s ease ${idx * 60}ms, box-shadow 250ms ease, border-color 200ms ease`,
+      },
+    },
+    React.createElement("div", { style: { fontSize: 32, marginBottom: 16, lineHeight: 1 } }, icon),
+    React.createElement("h3", {
+      style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 18, color: T.text, marginBottom: 10, lineHeight: 1.3 },
+    }, title),
+    React.createElement("p", {
+      style: { fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.65 },
+    }, desc),
+  );
+}
+
 function BuyCard({ c: e, inView: t, index: a }) {
   const [n, o] = useState(!1);
   return React.createElement(
@@ -7070,6 +6905,102 @@ function TrustBadges() {
     ),
   );
 }
+function StatsSection() {
+  const { isMobile: e } = useViewport(),
+    [ref, inView] = useInView(0.15);
+  const stats = [
+    { value: 10, suffix: "", label: "Tea Varieties" },
+    { value: 1, suffix: "", label: "Origin Garden" },
+    { value: 100, suffix: "%", label: "Pesticide Free" },
+    { value: 499, suffix: "₹", label: "MRP Per Pack", prefix: true },
+  ];
+  return React.createElement(
+    "section",
+    {
+      ref,
+      style: {
+        background: T.tealDark,
+        padding: e ? "80px 20px" : "120px 32px",
+        textAlign: "center",
+        position: "relative",
+        overflow: "hidden",
+      },
+    },
+    /* Gold particle dots */
+    ...[...Array(14)].map((_, i) =>
+      React.createElement("div", {
+        key: i,
+        style: {
+          position: "absolute",
+          width: i % 3 === 0 ? 4 : 2,
+          height: i % 3 === 0 ? 4 : 2,
+          borderRadius: "50%",
+          background: T.gold,
+          opacity: 0.25 + (i % 4) * 0.1,
+          top: `${10 + (i * 6.2) % 80}%`,
+          left: `${5 + (i * 7.3) % 90}%`,
+          pointerEvents: "none",
+          animation: `float ${2.5 + (i % 3)}s ease-in-out infinite alternate`,
+          animationDelay: `${i * 0.3}s`,
+        },
+      }),
+    ),
+    React.createElement(
+      "div",
+      { style: { maxWidth: 900, margin: "0 auto", position: "relative" } },
+      /* Label */
+      React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 32 } },
+        React.createElement("div", { style: { width: 40, height: 1, background: "rgba(201,168,76,0.5)" } }),
+        React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", color: T.gold, textTransform: "uppercase" } }, "By the Numbers"),
+        React.createElement("div", { style: { width: 40, height: 1, background: "rgba(201,168,76,0.5)" } }),
+      ),
+      /* Heading */
+      React.createElement("h2", {
+        style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: "clamp(28px, 4.5vw, 58px)", color: T.white, lineHeight: 1.2, marginBottom: 8 },
+      }, "Grown with ", React.createElement("em", { style: { color: T.gold, fontStyle: "italic" } }, "purpose.")),
+      React.createElement("h2", {
+        style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: "clamp(28px, 4.5vw, 58px)", color: T.white, lineHeight: 1.2, marginBottom: 20 },
+      }, "Delivered with care."),
+      React.createElement("p", {
+        style: { fontFamily: "'Inter'", fontSize: 15, color: "rgba(255,255,255,0.55)", maxWidth: 480, margin: "0 auto", lineHeight: 1.7, marginBottom: e ? 48 : 64 },
+      }, "Everything at Nevisan traces back to one garden — one climate, one soil, one story in every cup."),
+      /* Stats */
+      React.createElement(
+        "div",
+        {
+          style: {
+            display: "grid",
+            gridTemplateColumns: e ? "repeat(2,1fr)" : "repeat(4,1fr)",
+            gap: e ? 24 : 40,
+          },
+        },
+        stats.map(({ value, suffix, label, prefix }, idx) =>
+          React.createElement(
+            "div",
+            {
+              key: label,
+              style: {
+                opacity: inView ? 1 : 0,
+                transform: inView ? "translateY(0)" : "translateY(20px)",
+                transition: `opacity 0.6s ease ${idx * 120}ms, transform 0.6s ease ${idx * 120}ms`,
+              },
+            },
+            React.createElement(
+              "div",
+              { style: { fontFamily: "'Playfair Display', Georgia, serif", fontSize: e ? 40 : 52, fontWeight: 400, color: T.gold, lineHeight: 1 } },
+              prefix ? "₹" + value : value + suffix,
+            ),
+            React.createElement(
+              "div",
+              { style: { fontFamily: "'Inter'", fontSize: 12, fontWeight: 500, letterSpacing: "0.1em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", marginTop: 8 } },
+              label,
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+}
 function HomePage({ setPage: e }) {
   return React.createElement(
     "div",
@@ -7078,7 +7009,9 @@ function HomePage({ setPage: e }) {
     React.createElement(Ticker, null),
     React.createElement(TrustBadges, null),
     React.createElement(CollectionSection, { setPage: e }),
-    React.createElement(PhilosophySection, null),
+    React.createElement(StatsSection, null),
+    React.createElement(OriginSection, null),
+    React.createElement(BenefitsSection, null),
     React.createElement(HowToBrewSection, null),
     React.createElement(WhereToBuy, null),
     React.createElement(Testimonials, null),

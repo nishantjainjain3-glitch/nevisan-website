@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nevisan - Luxury Tea Ceremony Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #07120e;
+      --bg-card: #0d1e18;
+      --gold: #c9a84c;
+      --gold-glow: rgba(201, 168, 76, 0.25);
+      --white: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.65);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background: var(--bg-dark);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) var(--bg-dark);
+    }
+    
+    body::-webkit-scrollbar {
+      width: 6px;
+    }
+    body::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+    body::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 3px;
+    }
+
+    /* Ambient Light leaks */
+    .glow-bg {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, rgba(7, 18, 14, 0) 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .glow-1 { top: -10%; right: -10%; }
+    .glow-2 { bottom: -10%; left: -10%; }
+
+    /* Main Navigation Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      z-index: 100;
+      background: linear-gradient(to bottom, rgba(7, 18, 14, 0.8), transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+    .logo-container span {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      letter-spacing: 0.2em;
+      color: var(--white);
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold);
+    }
+    .cta-btn {
+      background: var(--gold);
+      color: var(--bg-dark);
+      border: none;
+      border-radius: 9999px;
+      padding: 10px 24px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 4px 15px var(--gold-glow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 168, 76, 0.45);
+    }
+
+    /* Pinned Scroll Animation Area */
+    .ceremony-container {
+      position: relative;
+      height: 480vh; /* Scroll length for 4 key scenes */
+    }
+    
+    .sticky-viewport {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    /* Cinematic Text overlay container */
+    .text-overlay-container {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .slide-text {
+      position: absolute;
+      width: 90%;
+      max-width: 700px;
+      opacity: 0;
+      transform: translateY(30px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .slide-text span.badge {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .slide-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 64px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    
+    .slide-text h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    
+    .slide-text p {
+      font-size: clamp(14px, 2vw, 17px);
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 540px;
+    }
+
+    /* Interactive Canvas / SVG Space */
+    .animation-canvas {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    /* Visual Objects */
+    .object-container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 1. Tea Bag Graphic */
+    .tea-bag-wrapper {
+      position: absolute;
+      width: 120px;
+      height: 240px;
+      transform-origin: center top;
+      z-index: 8;
+    }
+    
+    .tea-bag-string {
+      width: 2px;
+      height: 100px;
+      background: rgba(255,255,255,0.25);
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .tea-bag-tag {
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 24px;
+      background: var(--gold);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      font-weight: 700;
+      color: var(--bg-dark);
+      letter-spacing: 0.05em;
+    }
+    
+    .tea-bag-body-split {
+      width: 100px;
+      height: 120px;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+    }
+    
+    .tea-bag-half-left, .tea-bag-half-right {
+      width: 50px;
+      height: 120px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
+      transform-origin: center top;
+      transition: transform 0.1s linear;
+    }
+    
+    .tea-bag-half-left {
+      border-radius: 12px 0 0 12px;
+      border-right: none;
+    }
+    
+    .tea-bag-half-right {
+      border-radius: 0 12px 12px 0;
+      border-left: none;
+    }
+
+    /* 2. Floating Ingredients */
+    .particles-container {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 7;
+    }
+    
+    .ingredient-particle {
+      position: absolute;
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: center center;
+    }
+
+    /* 3. Glass Mug Graphic */
+    .mug-container {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      bottom: -60px;
+      opacity: 0;
+      transform: translateY(100px);
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .mug-svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .tea-liquid {
+      transform-origin: center bottom;
+      transform: scaleY(0);
+    }
+    
+    .steam-container {
+      position: absolute;
+      top: -40px;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      pointer-events: none;
+      z-index: 9;
+    }
+    
+    .steam-line {
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to top, rgba(255, 255, 255, 0.25), transparent);
+      border-radius: 50%;
+      opacity: 0;
+      filter: blur(1px);
+    }
+
+    /* 4. Hands Overlay */
+    .hands-wrapper {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      bottom: -110px;
+      opacity: 0;
+      transform: scale(0.9);
+      pointer-events: none;
+      z-index: 11;
+    }
+    
+    .hands-svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: rgba(201, 168, 76, 0.35);
+      stroke-width: 1.5;
+      filter: drop-shadow(0 0 10px rgba(201, 168, 76, 0.15));
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 12;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+    .scroll-indicator span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+    }
+    .mouse-wheel {
+      width: 20px;
+      height: 32px;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 99px;
+      position: relative;
+    }
+    .mouse-wheel::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 99px;
+      animation: wheel-scroll 1.6s infinite;
+    }
+    @keyframes wheel-scroll {
+      0% { top: 6px; opacity: 1; }
+      50% { top: 14px; opacity: 0; }
+      100% { top: 6px; opacity: 0; }
+    }
+
+    /* 5. Products Section: "Choose your ritual" */
+    .ritual-section {
+      background: #050c0a;
+      padding: 100px 32px 140px;
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid rgba(255,255,255,0.03);
+    }
+    .section-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 64px;
+    }
+    .section-header span.badge {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .section-header p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    
+    .ritual-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .ritual-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s, box-shadow 0.4s;
+    }
+    
+    .ritual-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .ritual-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(201, 168, 76, 0.25);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(201, 168, 76, 0.05);
+    }
+    
+    .card-badge {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      background: rgba(201, 168, 76, 0.12);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    
+    .ritual-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    
+    .ritual-card p.subtitle {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      opacity: 0.85;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    
+    .ritual-card p.desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 28px;
+      min-height: 66px;
+    }
+    
+    .card-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    
+    .add-to-ritual-btn {
+      width: 100%;
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 9999px;
+      padding: 12px 0;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
+    }
+    
+    .ritual-card:hover .add-to-ritual-btn {
+      background: var(--gold);
+      color: var(--bg-dark);
+      border-color: var(--gold);
+      box-shadow: 0 4px 12px var(--gold-glow);
+    }
+
+    /* Mobile Responsive adjustment */
+    @media (max-width: 768px) {
+      header {
+        padding: 0 20px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .ritual-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .slide-text h2 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Ambient Glow -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <!-- Luxury Nav Header -->
+  <header>
+    <div class="logo-container">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="#c9a84c"/>
+      </svg>
+      <span>NEVISAN</span>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#">Our Story</a>
+      <a href="#">The Garden</a>
+      <a href="#">Collection</a>
+      <a href="#">Journal</a>
+    </div>
+    <button class="cta-btn">Order Blend</button>
+  </header>
+
+  <!-- Pinned Animation Ceremony Space -->
+  <div class="ceremony-container">
+    <div class="sticky-viewport">
+      
+      <!-- Interactive SVG/Element Canvas -->
+      <div class="animation-canvas">
+        <div class="object-container">
+          
+          <!-- 1. The Hanging Tea Bag -->
+          <div class="tea-bag-wrapper" id="tea-bag">
+            <div class="tea-bag-string">
+              <div class="tea-bag-tag">N</div>
+            </div>
+            <div class="tea-bag-body-split">
+              <div class="tea-bag-half-left" id="bag-left"></div>
+              <div class="tea-bag-half-right" id="bag-right"></div>
+            </div>
+          </div>
+          
+          <!-- 2. Interactive Glass Mug -->
+          <div class="mug-container" id="glass-mug">
+            <svg class="mug-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Mug Outline -->
+              <path d="M60 40H140C140 40 145 130 135 150C125 170 75 170 65 150C55 130 60 40 60 40Z" stroke="rgba(255,255,255,0.25)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M140 70H165C175 70 175 110 165 110H140" stroke="rgba(255,255,255,0.25)" stroke-width="3" stroke-linecap="round"/>
+              <!-- Steeping Liquid (Rising Path) -->
+              <clipPath id="mug-clip">
+                <path d="M62 44H138C138 44 143 130 133 148C123 166 77 166 67 148C57 130 62 44 62 44Z"/>
+              </clipPath>
+              <g clip-path="url(#mug-clip)">
+                <rect class="tea-liquid" id="liquid" x="30" y="40" width="140" height="130" fill="url(#tea-grad)" />
+              </g>
+              <!-- Gradient -->
+              <defs>
+                <linearGradient id="tea-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#e28c2b" stop-opacity="0.85"/>
+                  <stop offset="100%" stop-color="#b66512" stop-opacity="0.95"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="steam-container">
+              <div class="steam-line" id="steam-1"></div>
+              <div class="steam-line" id="steam-2"></div>
+              <div class="steam-line" id="steam-3"></div>
+            </div>
+          </div>
+
+          <!-- 3. Hands Holding Glowing Mug -->
+          <div class="hands-wrapper" id="hands-holder">
+            <!-- Glowing light background behind hands -->
+            <div style="position: absolute; width: 140px; height: 140px; background: radial-gradient(circle, rgba(201,168,76,0.3) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: -1;"></div>
+            <svg class="hands-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Outline representation of holding hands -->
+              <path d="M40 150C50 130 70 120 85 130C92 135 96 142 98 150M160 150C150 130 130 120 115 130C108 135 104 142 102 150" stroke-linecap="round"/>
+              <path d="M30 130C35 110 50 100 65 105C72 108 77 115 80 122M170 130C165 110 150 100 135 105C128 108 123 115 120 122" stroke-linecap="round"/>
+              <!-- Steaming Cup silhouette held -->
+              <path d="M80 115H120C120 115 122 145 117 153C112 160 88 160 83 153C78 145 80 115 80 115Z" stroke="#c9a84c" stroke-width="2"/>
+            </svg>
+          </div>
+          
+          <!-- 4. Floating Particles (Released from Bag) -->
+          <div class="particles-container" id="particles-field">
+            <!-- Custom SVG Tea leaves, rose petals, and cardamom pods will be inserted here programmatically -->
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slide Text Content Overlay -->
+      <div class="text-overlay-container">
+        
+        <!-- Slide 1: The Origin -->
+        <div class="slide-text" id="text-scene-1">
+          <span class="badge">The Ceremony</span>
+          <h2>Ancient <em>Assam</em> leaves<br>Suspended in time.</h2>
+          <p>Nevisan whole leaf tea is harvested by hand in Golaghat. Each bag is a silent commitment to single-garden organic purity.</p>
+        </div>
+        
+        <!-- Slide 2: The Infusion -->
+        <div class="slide-text" id="text-scene-2">
+          <span class="badge">The Chemistry</span>
+          <h2>Six ingredients.<br>Centuries of <em>craft</em>.</h2>
+          <p>As hot water unfurls the leaf, rose petals, spearmint, Tulsi, and cardamom release their therapeutic botanical oils.</p>
+        </div>
+        
+        <!-- Slide 3: The Steeping -->
+        <div class="slide-text" id="text-scene-3">
+          <span class="badge">The Steeping</span>
+          <h2>Pour. Wait. <em>Breathe</em>.</h2>
+          <p>Watch the amber hue blossom. A slow infusion releases the full flavor notes of the garden, without the bitterness of factory dust.</p>
+        </div>
+        
+        <!-- Slide 4: The Savor -->
+        <div class="slide-text" id="text-scene-4">
+          <span class="badge">The Savor</span>
+          <h2>Three minutes.<br>That is <em>all it takes</em>.</h2>
+          <p>Hold the warmth. Breathe the aroma. Step away from the noise and join the daily ceremony of organic leaf tea.</p>
+        </div>
+
+      </div>
+
+      <!-- Scroll Mouse Wheel Indicator -->
+      <div class="scroll-indicator" id="scroll-hint">
+        <span>Scroll down</span>
+        <div class="mouse-wheel"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Choose Your Ritual Cards Section -->
+  <section class="ritual-section" id="choose-ritual">
+    <div class="section-header">
+      <span class="badge">The Collection</span>
+      <h2>Choose your ritual</h2>
+      <p>Organically certified whole-leaf teas grouped by target botanical benefit. Packaged with care in Assam.</p>
+    </div>
+    
+    <div class="ritual-grid">
+      
+      <!-- DAWN -->
+      <div class="ritual-card">
+        <span class="card-badge">Morning clarity</span>
+        <h3>DAWN</h3>
+        <p class="subtitle">Tulsi · Cardamom · Green Tea</p>
+        <p class="desc">A bright, revitalizing green tea blend harvested at sunrise. Sourced from Golaghat to clear the mind and support daily immunity.</p>
+        <div class="card-price">₹499 <span style="font-size: 12px; color: var(--text-muted);">/ 50gm</span></div>
+        <button class="add-to-ritual-btn">Add to Ritual</button>
+      </div>
+      
+      <!-- DUSK -->
+      <div class="ritual-card">
+        <span class="card-badge">Bestseller · Reset</span>
+        <h3>DUSK</h3>
+        <p class="subtitle">Chamomile · Rum · Oolong</p>
+        <p class="desc">Nevisan's signature blend. Naturally rich in GABA, cold-infused with botanical extracts for deep relaxation and mental wind-down.</p>
+        <div class="card-price">₹499 <span style="font-size: 12px; color: var(--text-muted);">/ 50gm</span></div>
+        <button class="add-to-ritual-btn">Add to Ritual</button>
+      </div>
+      
+      <!-- NIGHT -->
+      <div class="ritual-card">
+        <span class="card-badge">Deep rest</span>
+        <h3>NIGHT</h3>
+        <p class="subtitle">Whiskey · Herbal · Adaptogens</p>
+        <p class="desc">A sleep-enhancing blend infused with warming woody botanicals and soothing adaptogenic roots to support deep sleep cycles.</p>
+        <div class="card-price">₹499 <span style="font-size: 12px; color: var(--text-muted);">/ 50gm</span></div>
+        <button class="add-to-ritual-btn">Add to Ritual</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GSAP Libraries for Scroll Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+  <script>
+    // Register ScrollTrigger Plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1. Programmatically Generate Floating Particles (Tea leaves, rose petals, etc.)
+    const particlesField = document.getElementById('particles-field');
+    const ingredientTypes = [
+      // Green Tea Leaf path
+      { color: '#5A8043', scale: 1.2, path: 'M10 20 C 15 5, 25 5, 30 20 C 25 35, 15 35, 10 20 Z M20 7 L20 33' },
+      // Red Rose Petal path
+      { color: '#8b1e2c', scale: 0.9, path: 'M15 5 C 25 -5, 35 15, 20 30 C 5 15, 5 -5, 15 5 Z' },
+      // Gold Cardamom Pod path
+      { color: '#d8b965', scale: 1.0, path: 'M12 25 C 8 15, 10 5, 20 12 C 30 18, 24 28, 12 25 Z' }
+    ];
+
+    const particleCount = 22;
+    const particles = [];
+
+    for (let i = 0; i < particleCount; i++) {
+      const type = ingredientTypes[Math.floor(Math.random() * ingredientTypes.length)];
+      
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('class', 'ingredient-particle');
+      svg.setAttribute('width', '40');
+      svg.setAttribute('height', '40');
+      svg.setAttribute('viewBox', '0 0 40 40');
+      svg.style.left = '50%';
+      svg.style.top = '100px'; // Centered near the bag
+      svg.style.transform = 'translate(-50%, -50%)';
+      
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', type.path);
+      path.setAttribute('fill', type.color);
+      path.setAttribute('opacity', '0.85');
+      
+      svg.appendChild(path);
+      particlesField.appendChild(svg);
+      
+      particles.push({
+        element: svg,
+        scale: type.scale * (0.6 + Math.random() * 0.8),
+        angle: Math.random() * 360,
+        // Target offset for initial explosion
+        xDist: (Math.random() - 0.5) * 220,
+        yDist: (Math.random() - 0.4) * 140,
+        // Rotation during flight
+        rotateSpeed: (Math.random() - 0.5) * 540
+      });
+    }
+
+    // 2. Setup GSAP Scroll Timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".ceremony-container",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1.1, // Smooth scrolling animation link
+        invalidateOnRefresh: true
+      }
+    });
+
+    // --- SCENE 1: Intro (0% to 15%) ---
+    // Text Scene 1 is visible by default
+    tl.to("#text-scene-1", { opacity: 1, y: 0, duration: 2 })
+      .to("#tea-bag", { y: 20, rotation: 2, duration: 2 }, "<")
+      .to("#scroll-hint", { opacity: 0.6, duration: 1 }, "<")
+      
+    // Transition 1 -> 2 (15% to 30%)
+    tl.to("#text-scene-1", { opacity: 0, y: -30, duration: 2.5 })
+      .to("#tea-bag", { y: -20, duration: 2.5 }, "<")
+      .to("#text-scene-2", { opacity: 1, y: 0, duration: 3.5 });
+
+    // --- SCENE 2: The Splitting Bag & Explosion (30% to 55%) ---
+    // Splitting the tea bag half meshes
+    tl.to("#bag-left", { transform: "rotate(-32deg)", duration: 4.5 }, "<")
+      .to("#bag-right", { transform: "rotate(32deg)", duration: 4.5 }, "<")
+      .to("#tea-bag", { opacity: 0.35, duration: 4 }, "<");
+
+    // Particles explosion animation
+    particles.forEach((p, idx) => {
+      tl.to(p.element, {
+        opacity: 0.9,
+        scale: p.scale,
+        x: p.xDist,
+        y: p.yDist,
+        rotation: p.angle,
+        duration: 4.5,
+        ease: "power2.out"
+      }, "<+0.1");
+    });
+
+    // Fade in Glass Mug
+    tl.to("#glass-mug", { opacity: 1, y: 0, duration: 4 }, "<+1");
+
+    // Transition 2 -> 3 (55% to 70%)
+    tl.to("#text-scene-2", { opacity: 0, y: -30, duration: 3.5 })
+      .to("#text-scene-3", { opacity: 1, y: 0, duration: 3.5 });
+
+    // --- SCENE 3: Steeping & Mug Filling (70% to 85%) ---
+    // Ingredients fall into the mug
+    particles.forEach((p, idx) => {
+      tl.to(p.element, {
+        x: p.xDist * 0.15, // Funnel into cup center
+        y: 160 + (Math.random() - 0.5) * 30, // Cup height offset
+        scale: p.scale * 0.65,
+        opacity: 0.45,
+        rotation: p.angle + p.rotateSpeed,
+        duration: 5.5,
+        ease: "sine.inOut"
+      }, "<");
+    });
+    
+    // Liquid levels rise inside the clip path
+    tl.to("#liquid", { scaleY: 0.9, duration: 6, ease: "power1.inOut" }, "<+0.5")
+      // Animate steam lines rising
+      .to(".steam-line", { opacity: 0.55, height: "100%", stagger: 0.5, duration: 4 }, "<+2.5")
+      .to("#bag-left", { opacity: 0, duration: 2 }, "<")
+      .to("#bag-right", { opacity: 0, duration: 2 }, "<")
+      .to("#tea-bag", { opacity: 0, duration: 2 }, "<");
+
+    // Transition 3 -> 4 (85% to 100%)
+    tl.to("#text-scene-3", { opacity: 0, y: -30, duration: 3.5 })
+      .to("#text-scene-4", { opacity: 1, y: 0, duration: 4.5 })
+      // Fade in Hands holding cup
+      .to("#hands-holder", { opacity: 1, scale: 1, duration: 5, ease: "power2.out" }, "<")
+      // Slightly dim the mug to blend into hands representation
+      .to("#glass-mug", { opacity: 0.25, duration: 4 }, "<+1");
+      
+    // Fade out everything at the very bottom of scroll before products section
+    tl.to("#hands-holder", { opacity: 0, y: -30, duration: 3 })
+      .to("#glass-mug", { opacity: 0, y: -30, duration: 3 }, "<")
+      .to("#text-scene-4", { opacity: 0, y: -30, duration: 3 }, "<")
+      .to(".ingredient-particle", { opacity: 0, duration: 3 }, "<");
+
+  </script>
+</body>
+</html>

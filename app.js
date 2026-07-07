@@ -515,6 +515,69 @@ function Nav({ page: e, setPage: t }) {
       ),
     ),
     s &&
+      React.createElement(
+        "div",
+        {
+          style: {
+            position: "fixed",
+            top: 68,
+            left: 0,
+            right: 0,
+            height: 40,
+            background: o ? "rgba(21, 39, 27, 0.96)" : "rgba(35, 65, 45, 0.98)",
+            borderBottom: "1px solid rgba(255,255,255,0.06)",
+            backdropFilter: "blur(12px)",
+            zIndex: 98,
+            display: "flex",
+            alignItems: "center",
+            overflowX: "auto",
+            WebkitOverflowScrolling: "touch",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            padding: "0 16px",
+            gap: 20,
+          },
+        },
+        a.filter(item => item !== "FAQ" && item !== "Quiz").map((t) => {
+          const isActive = e === t;
+          return React.createElement(
+            "button",
+            {
+              key: t,
+              onClick: () => c(t),
+              style: {
+                background: "none",
+                border: "none",
+                color: isActive ? T.gold : "rgba(255,255,255,0.65)",
+                fontFamily: "'Inter'",
+                fontSize: 11,
+                fontWeight: 600,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                whiteSpace: "nowrap",
+                cursor: "pointer",
+                padding: "8px 0",
+                position: "relative",
+                transition: "color 200ms ease",
+              },
+            },
+            t,
+            isActive &&
+              React.createElement("div", {
+                style: {
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: 2,
+                  background: T.gold,
+                  borderRadius: 1,
+                },
+              }),
+          );
+        }),
+      ),
+    s &&
       r &&
       React.createElement(
         "div",
@@ -838,7 +901,7 @@ function Hero({ setPage: e }) {
             zIndex: 10,
             maxWidth: 1200,
             margin: "0 auto",
-            padding: i ? "0 22px" : "0 40px",
+            padding: i ? "108px 22px 0" : "0 40px",
             height: "100%",
             display: "flex",
             flexDirection: "column",
@@ -7038,7 +7101,7 @@ function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
         position: "relative",
         height: o ? 300 : 420,
         overflow: "hidden",
-        marginTop: 68,
+        marginTop: o ? 108 : 68,
         backgroundColor: T.tealDark,
         backgroundImage: `url(${e})`,
         backgroundSize: "cover",

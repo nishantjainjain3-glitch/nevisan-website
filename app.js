@@ -2443,14 +2443,14 @@ function CollectionPage({}) {
             style: {
               position: "fixed",
               inset: 0,
-              background: o ? "transparent" : "rgba(15,63,69,0.75)",
+              background: "rgba(15,63,69,0.65)",
               zIndex: 200,
               display: "flex",
               alignItems: o ? "flex-end" : "center",
               justifyContent: "center",
               padding: o ? 0 : 24,
-              backdropFilter: o ? "none" : "blur(4px)",
-              pointerEvents: "none",
+              backdropFilter: "blur(4px)",
+              pointerEvents: "auto",
             },
             onClick: () => t(null),
           },
@@ -3341,7 +3341,7 @@ function OriginSection() {
         /* Fact grid */
         React.createElement(
           "div",
-          { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 } },
+          { style: { display: "grid", gridTemplateColumns: e ? "1fr" : "1fr 1fr", gap: 12 } },
           [
             { label: "Certified", value: "PGS-India Organic", icon: "🌿" },
             { label: "Zero", value: "Pesticides Used", icon: "🚫" },
@@ -4915,14 +4915,14 @@ function CollectionSection({ setPage: e }) {
             style: {
               position: "fixed",
               inset: 0,
-              background: n ? "transparent" : "rgba(15,63,69,0.75)",
+              background: "rgba(15,63,69,0.65)",
               zIndex: 200,
               display: "flex",
               alignItems: n ? "flex-end" : "center",
               justifyContent: "center",
               padding: n ? 0 : 24,
-              backdropFilter: n ? "none" : "blur(4px)",
-              pointerEvents: "none",
+              backdropFilter: "blur(4px)",
+              pointerEvents: "auto",
             },
             onClick: () => l(null),
           },
@@ -6320,7 +6320,7 @@ function HowToBrewSection() {
             {
               style: {
                 display: "grid",
-                gridTemplateColumns: "repeat(4, 1fr)",
+                gridTemplateColumns: e ? "repeat(2, 1fr)" : "repeat(4, 1fr)",
                 gap: 12
               }
             },
@@ -7136,7 +7136,7 @@ function OurStoryPage({ setPage: e }) {
       subtitle:
         "We grew up next to the world's best tea gardens — and decided the rest of India should taste them too.",
     }),
-    React.createElement(PhilosophySection, null),
+    React.createElement(OriginSection, null),
     React.createElement(
       "div",
       { style: { background: T.cream, padding: "80px 32px" } },

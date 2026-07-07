@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nevisan - Luxury Tea Ceremony Preview</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <title>Nevisan - Immersive 3D Tea Ceremony</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-dark: #07120e;
-      --bg-card: #0d1e18;
+      --bg-dark: #050b08;
+      --bg-card: #08120e;
       --gold: #c9a84c;
       --gold-glow: rgba(201, 168, 76, 0.25);
       --white: #ffffff;
-      --text-muted: rgba(255, 255, 255, 0.65);
+      --text-muted: rgba(255, 255, 255, 0.55);
+      --bezier-premium: cubic-bezier(0.16, 1, 0.3, 1);
     }
     
     * {
@@ -24,7 +25,7 @@
     body {
       background: var(--bg-dark);
       color: var(--white);
-      font-family: 'Inter', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
       scrollbar-width: thin;
       scrollbar-color: var(--gold) var(--bg-dark);
@@ -41,97 +42,115 @@
       border-radius: 3px;
     }
 
-    /* Ambient Light leaks */
-    .glow-bg {
+    /* Ambient film grain overlay for physical texture */
+    .film-grain {
       position: fixed;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, rgba(7, 18, 14, 0) 70%);
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
       pointer-events: none;
-      z-index: 1;
+      z-index: 99;
     }
-    .glow-1 { top: -10%; right: -10%; }
-    .glow-2 { bottom: -10%; left: -10%; }
 
-    /* Main Navigation Header */
+    /* Floating Island Nav Header */
     header {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 72px;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 960px;
+      height: 60px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 40px;
+      padding: 0 28px;
       z-index: 100;
-      background: linear-gradient(to bottom, rgba(7, 18, 14, 0.8), transparent);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      background: rgba(8, 18, 14, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 9999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       cursor: pointer;
     }
     .logo-container span {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      letter-spacing: 0.2em;
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
       color: var(--white);
     }
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 28px;
     }
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 13px;
-      font-weight: 500;
+      font-size: 11.5px;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      transition: color 0.3s;
+      letter-spacing: 0.15em;
+      transition: color 300ms var(--bezier-premium);
     }
     .nav-links a:hover, .nav-links a.active {
       color: var(--gold);
+    }
+    .cta-btn-wrapper {
+      padding: 2px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 9999px;
     }
     .cta-btn {
       background: var(--gold);
       color: var(--bg-dark);
       border: none;
       border-radius: 9999px;
-      padding: 10px 24px;
-      font-size: 13px;
-      font-weight: 600;
+      padding: 8px 20px;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      box-shadow: 0 4px 15px var(--gold-glow);
-      transition: transform 0.3s, box-shadow 0.3s;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: transform 300ms var(--bezier-premium), box-shadow 300ms var(--bezier-premium);
     }
     .cta-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(201, 168, 76, 0.45);
+      transform: scale(1.03);
+      box-shadow: 0 4px 15px var(--gold-glow);
     }
 
-    /* Pinned Scroll Animation Area */
+    /* Pinned 3D Scroll Canvas Window */
     .ceremony-container {
       position: relative;
-      height: 480vh; /* Scroll length for 4 key scenes */
+      height: 480vh; /* scroll range */
     }
     
     .sticky-viewport {
       position: sticky;
       top: 0;
       width: 100%;
-      height: 100vh;
+      height: 100dvh;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       z-index: 2;
+    }
+
+    /* WebGL Canvas Background Layer */
+    #webgl-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
     }
 
     /* Cinematic Text overlay container */
@@ -149,211 +168,52 @@
     .slide-text {
       position: absolute;
       width: 90%;
-      max-width: 700px;
+      max-width: 800px;
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(40px);
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     
     .slide-text span.badge {
-      font-size: 11px;
-      letter-spacing: 0.25em;
+      font-size: 10px;
+      letter-spacing: 0.3em;
       color: var(--gold);
       text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 16px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 6px 16px;
+      border-radius: 9999px;
     }
     
     .slide-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(32px, 5vw, 64px);
+      font-family: 'Cinzel', serif;
+      font-size: clamp(32px, 5.5vw, 68px);
       font-weight: 400;
       line-height: 1.15;
       color: var(--white);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      letter-spacing: 0.02em;
     }
     
     .slide-text h2 em {
       font-style: italic;
       color: var(--gold);
+      font-family: 'Cinzel', serif;
     }
     
     .slide-text p {
-      font-size: clamp(14px, 2vw, 17px);
+      font-size: clamp(14px, 1.8vw, 17px);
       color: var(--text-muted);
-      line-height: 1.7;
-      max-width: 540px;
+      line-height: 1.8;
+      max-width: 580px;
+      font-weight: 300;
     }
 
-    /* Interactive Canvas / SVG Space */
-    .animation-canvas {
-      position: absolute;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 5;
-    }
-
-    /* Visual Objects */
-    .object-container {
-      position: relative;
-      width: 400px;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* 1. Tea Bag Graphic */
-    .tea-bag-wrapper {
-      position: absolute;
-      width: 120px;
-      height: 240px;
-      transform-origin: center top;
-      z-index: 8;
-    }
-    
-    .tea-bag-string {
-      width: 2px;
-      height: 100px;
-      background: rgba(255,255,255,0.25);
-      margin: 0 auto;
-      position: relative;
-    }
-    
-    .tea-bag-tag {
-      position: absolute;
-      top: -24px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 28px;
-      height: 24px;
-      background: var(--gold);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 8px;
-      font-weight: 700;
-      color: var(--bg-dark);
-      letter-spacing: 0.05em;
-    }
-    
-    .tea-bag-body-split {
-      width: 100px;
-      height: 120px;
-      margin: 0 auto;
-      position: relative;
-      display: flex;
-    }
-    
-    .tea-bag-half-left, .tea-bag-half-right {
-      width: 50px;
-      height: 120px;
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(2px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
-      transform-origin: center top;
-      transition: transform 0.1s linear;
-    }
-    
-    .tea-bag-half-left {
-      border-radius: 12px 0 0 12px;
-      border-right: none;
-    }
-    
-    .tea-bag-half-right {
-      border-radius: 0 12px 12px 0;
-      border-left: none;
-    }
-
-    /* 2. Floating Ingredients */
-    .particles-container {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 7;
-    }
-    
-    .ingredient-particle {
-      position: absolute;
-      opacity: 0;
-      transform: scale(0);
-      transform-origin: center center;
-    }
-
-    /* 3. Glass Mug Graphic */
-    .mug-container {
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      bottom: -60px;
-      opacity: 0;
-      transform: translateY(100px);
-      z-index: 6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .mug-svg {
-      width: 100%;
-      height: 100%;
-    }
-    
-    .tea-liquid {
-      transform-origin: center bottom;
-      transform: scaleY(0);
-    }
-    
-    .steam-container {
-      position: absolute;
-      top: -40px;
-      width: 100%;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      pointer-events: none;
-      z-index: 9;
-    }
-    
-    .steam-line {
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(to top, rgba(255, 255, 255, 0.25), transparent);
-      border-radius: 50%;
-      opacity: 0;
-      filter: blur(1px);
-    }
-
-    /* 4. Hands Overlay */
-    .hands-wrapper {
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      bottom: -110px;
-      opacity: 0;
-      transform: scale(0.9);
-      pointer-events: none;
-      z-index: 11;
-    }
-    
-    .hands-svg {
-      width: 100%;
-      height: 100%;
-      fill: none;
-      stroke: rgba(201, 168, 76, 0.35);
-      stroke-width: 1.5;
-      filter: drop-shadow(0 0 10px rgba(201, 168, 76, 0.15));
-    }
-
-    /* Scroll Indicator */
+    /* Scroll mouse hint */
     .scroll-indicator {
       position: absolute;
       bottom: 40px;
@@ -363,20 +223,20 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       opacity: 0.8;
-      transition: opacity 0.3s;
     }
     .scroll-indicator span {
       font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
       color: var(--text-muted);
+      font-weight: 600;
     }
     .mouse-wheel {
-      width: 20px;
-      height: 32px;
-      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      width: 22px;
+      height: 36px;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
       border-radius: 99px;
       position: relative;
     }
@@ -387,489 +247,853 @@
       left: 50%;
       transform: translateX(-50%);
       width: 2px;
-      height: 6px;
+      height: 8px;
       background: var(--gold);
       border-radius: 99px;
-      animation: wheel-scroll 1.6s infinite;
+      animation: wheel-scroll 1.6s infinite var(--bezier-premium);
     }
     @keyframes wheel-scroll {
       0% { top: 6px; opacity: 1; }
-      50% { top: 14px; opacity: 0; }
+      50% { top: 18px; opacity: 0; }
       100% { top: 6px; opacity: 0; }
     }
 
-    /* 5. Products Section: "Choose your ritual" */
+    /* 3D Static Background texture scene 4 */
+    .ceremony-bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      z-index: 1;
+      pointer-events: none;
+      filter: brightness(0.2) contrast(1.1);
+      transition: opacity 1s var(--bezier-premium);
+    }
+
+    /* Choose Your Ritual Section (Bento grid double bezel) */
     .ritual-section {
-      background: #050c0a;
-      padding: 100px 32px 140px;
+      background: #030806;
+      padding: 140px 24px;
       position: relative;
       z-index: 10;
-      border-top: 1px solid rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(255,255,255,0.04);
     }
     .section-header {
       text-align: center;
-      max-width: 600px;
-      margin: 0 auto 64px;
+      max-width: 650px;
+      margin: 0 auto 80px;
     }
     .section-header span.badge {
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 0.25em;
       color: var(--gold);
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 700;
+      background: rgba(201, 168, 76, 0.08);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 6px 16px;
+      border-radius: 9999px;
       display: inline-block;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .section-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 40px;
+      font-family: 'Cinzel', serif;
+      font-size: 48px;
       font-weight: 400;
       color: var(--white);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .section-header p {
       font-size: 15px;
       color: var(--text-muted);
-      line-height: 1.65;
+      line-height: 1.75;
+      font-weight: 300;
     }
     
     .ritual-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 32px;
-      max-width: 1100px;
+      max-width: 1140px;
       margin: 0 auto;
     }
     
-    .ritual-card {
+    /* Double-Bezel Nested Architecture (Outer Shell) */
+    .card-outer-shell {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 28px;
+      padding: 6px;
+      transition: transform 600ms var(--bezier-premium), border-color 600ms var(--bezier-premium), box-shadow 600ms var(--bezier-premium);
+    }
+    
+    /* Inner Core */
+    .card-inner-core {
       background: var(--bg-card);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 20px;
-      padding: 36px;
-      position: relative;
-      overflow: hidden;
+      border-radius: 22px;
+      padding: 40px 32px;
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s, box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
     }
     
-    .ritual-card::before {
+    .card-inner-core::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+      background: radial-gradient(circle at top, rgba(201, 168, 76, 0.05) 0%, transparent 60%);
       pointer-events: none;
     }
     
-    .ritual-card:hover {
-      transform: translateY(-8px);
+    .card-outer-shell:hover {
+      transform: translateY(-10px);
       border-color: rgba(201, 168, 76, 0.25);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(201, 168, 76, 0.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(201, 168, 76, 0.06);
     }
     
     .card-badge {
       font-size: 9px;
       font-weight: 700;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.18em;
       color: var(--gold);
-      background: rgba(201, 168, 76, 0.12);
+      background: rgba(201, 168, 76, 0.1);
       border: 1px solid rgba(201, 168, 76, 0.25);
-      padding: 4px 12px;
+      padding: 4px 14px;
       border-radius: 999px;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
     
-    .ritual-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      margin-bottom: 8px;
+    .card-inner-core h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
     }
     
-    .ritual-card p.subtitle {
+    .card-inner-core p.subtitle {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       color: var(--gold);
-      opacity: 0.85;
       font-weight: 600;
-      margin-bottom: 20px;
-    }
-    
-    .ritual-card p.desc {
-      font-size: 13.5px;
-      color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 28px;
-      min-height: 66px;
-    }
-    
-    .card-price {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      color: var(--white);
       margin-bottom: 24px;
     }
     
+    .card-inner-core p.desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      min-height: 72px;
+      font-weight: 300;
+    }
+    
+    .card-price {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      color: var(--white);
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+    
+    /* Island Button Layout (Button-in-Button Arrow) */
     .add-to-ritual-btn {
       width: 100%;
+      height: 48px;
       background: transparent;
       color: var(--white);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 9999px;
-      padding: 12px 0;
-      font-size: 12px;
+      padding: 0 6px 0 24px;
+      font-size: 11.5px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.15em;
       cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: background 0.3s, color 0.3s, border-color 0.3s;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 300ms var(--bezier-premium), border-color 300ms var(--bezier-premium), color 300ms var(--bezier-premium);
     }
     
-    .ritual-card:hover .add-to-ritual-btn {
+    .arrow-icon-circle {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      transition: transform 300ms var(--bezier-premium), background 300ms var(--bezier-premium);
+    }
+    
+    .card-outer-shell:hover .add-to-ritual-btn {
       background: var(--gold);
       color: var(--bg-dark);
       border-color: var(--gold);
-      box-shadow: 0 4px 12px var(--gold-glow);
+    }
+    
+    .card-outer-shell:hover .arrow-icon-circle {
+      background: rgba(0, 0, 0, 0.15);
+      color: var(--bg-dark);
+      transform: translateX(2px) rotate(45deg);
     }
 
-    /* Mobile Responsive adjustment */
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
+      .ritual-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
       header {
-        padding: 0 20px;
+        width: calc(100% - 32px);
       }
       .nav-links {
         display: none;
       }
-      .ritual-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
       .slide-text h2 {
-        font-size: 36px;
+        font-size: 34px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Ambient Glow -->
-  <div class="glow-bg glow-1"></div>
-  <div class="glow-bg glow-2"></div>
+  <div class="film-grain"></div>
 
-  <!-- Luxury Nav Header -->
+  <!-- Background mood graphic Scene 4 -->
+  <img id="ceremony-bg" class="ceremony-bg-image" src="hands_tea_ceremony.jpg" alt="Tea Ceremony">
+
+  <!-- Premium Header -->
   <header>
     <div class="logo-container">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="#c9a84c"/>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 22h20L12 2z" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="12" cy="14" r="3" fill="#c9a84c"/>
       </svg>
       <span>NEVISAN</span>
     </div>
     <div class="nav-links">
-      <a href="#" class="active">Home</a>
-      <a href="#">Our Story</a>
+      <a href="#" class="active">Ceremony</a>
       <a href="#">The Garden</a>
-      <a href="#">Collection</a>
-      <a href="#">Journal</a>
+      <a href="#">Teas</a>
+      <a href="#">Wholesale</a>
+      <a href="#">Contact</a>
     </div>
-    <button class="cta-btn">Order Blend</button>
+    <div class="cta-btn-wrapper">
+      <button class="cta-btn">Shop</button>
+    </div>
   </header>
 
-  <!-- Pinned Animation Ceremony Space -->
+  <!-- Pinned scroll container -->
   <div class="ceremony-container">
     <div class="sticky-viewport">
       
-      <!-- Interactive SVG/Element Canvas -->
-      <div class="animation-canvas">
-        <div class="object-container">
-          
-          <!-- 1. The Hanging Tea Bag -->
-          <div class="tea-bag-wrapper" id="tea-bag">
-            <div class="tea-bag-string">
-              <div class="tea-bag-tag">N</div>
-            </div>
-            <div class="tea-bag-body-split">
-              <div class="tea-bag-half-left" id="bag-left"></div>
-              <div class="tea-bag-half-right" id="bag-right"></div>
-            </div>
-          </div>
-          
-          <!-- 2. Interactive Glass Mug -->
-          <div class="mug-container" id="glass-mug">
-            <svg class="mug-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Mug Outline -->
-              <path d="M60 40H140C140 40 145 130 135 150C125 170 75 170 65 150C55 130 60 40 60 40Z" stroke="rgba(255,255,255,0.25)" stroke-width="3" stroke-linecap="round"/>
-              <path d="M140 70H165C175 70 175 110 165 110H140" stroke="rgba(255,255,255,0.25)" stroke-width="3" stroke-linecap="round"/>
-              <!-- Steeping Liquid (Rising Path) -->
-              <clipPath id="mug-clip">
-                <path d="M62 44H138C138 44 143 130 133 148C123 166 77 166 67 148C57 130 62 44 62 44Z"/>
-              </clipPath>
-              <g clip-path="url(#mug-clip)">
-                <rect class="tea-liquid" id="liquid" x="30" y="40" width="140" height="130" fill="url(#tea-grad)" />
-              </g>
-              <!-- Gradient -->
-              <defs>
-                <linearGradient id="tea-grad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#e28c2b" stop-opacity="0.85"/>
-                  <stop offset="100%" stop-color="#b66512" stop-opacity="0.95"/>
-                </linearGradient>
-              </defs>
-            </svg>
-            <div class="steam-container">
-              <div class="steam-line" id="steam-1"></div>
-              <div class="steam-line" id="steam-2"></div>
-              <div class="steam-line" id="steam-3"></div>
-            </div>
-          </div>
+      <!-- 3D Canvas -->
+      <canvas id="webgl-canvas"></canvas>
 
-          <!-- 3. Hands Holding Glowing Mug -->
-          <div class="hands-wrapper" id="hands-holder">
-            <!-- Glowing light background behind hands -->
-            <div style="position: absolute; width: 140px; height: 140px; background: radial-gradient(circle, rgba(201,168,76,0.3) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: -1;"></div>
-            <svg class="hands-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <!-- Outline representation of holding hands -->
-              <path d="M40 150C50 130 70 120 85 130C92 135 96 142 98 150M160 150C150 130 130 120 115 130C108 135 104 142 102 150" stroke-linecap="round"/>
-              <path d="M30 130C35 110 50 100 65 105C72 108 77 115 80 122M170 130C165 110 150 100 135 105C128 108 123 115 120 122" stroke-linecap="round"/>
-              <!-- Steaming Cup silhouette held -->
-              <path d="M80 115H120C120 115 122 145 117 153C112 160 88 160 83 153C78 145 80 115 80 115Z" stroke="#c9a84c" stroke-width="2"/>
-            </svg>
-          </div>
-          
-          <!-- 4. Floating Particles (Released from Bag) -->
-          <div class="particles-container" id="particles-field">
-            <!-- Custom SVG Tea leaves, rose petals, and cardamom pods will be inserted here programmatically -->
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Slide Text Content Overlay -->
+      <!-- Dynamic text cards -->
       <div class="text-overlay-container">
         
-        <!-- Slide 1: The Origin -->
+        <!-- Scene 1: The Leaf -->
         <div class="slide-text" id="text-scene-1">
-          <span class="badge">The Ceremony</span>
-          <h2>Ancient <em>Assam</em> leaves<br>Suspended in time.</h2>
-          <p>Nevisan whole leaf tea is harvested by hand in Golaghat. Each bag is a silent commitment to single-garden organic purity.</p>
+          <span class="badge">The Harvesting</span>
+          <h2>Organic <em>Whole Leaf</em><br>Grown in Golaghat.</h2>
+          <p>We do not crush our leaves into tea dust. Nevisan is direct single-origin whole leaf Assam tea, retaining its natural essential oils and antioxidants.</p>
         </div>
         
-        <!-- Slide 2: The Infusion -->
+        <!-- Scene 2: The Splitting -->
         <div class="slide-text" id="text-scene-2">
-          <span class="badge">The Chemistry</span>
-          <h2>Six ingredients.<br>Centuries of <em>craft</em>.</h2>
-          <p>As hot water unfurls the leaf, rose petals, spearmint, Tulsi, and cardamom release their therapeutic botanical oils.</p>
+          <span class="badge">The Release</span>
+          <h2>Unfurling the <em>ritual</em>.</h2>
+          <p>As water infuses the leaf, organic botanicals and flowers release a clean, complex body of flavors. No chemical residue, no factory shortcuts.</p>
         </div>
         
-        <!-- Slide 3: The Steeping -->
+        <!-- Scene 3: The Steeping -->
         <div class="slide-text" id="text-scene-3">
-          <span class="badge">The Steeping</span>
-          <h2>Pour. Wait. <em>Breathe</em>.</h2>
-          <p>Watch the amber hue blossom. A slow infusion releases the full flavor notes of the garden, without the bitterness of factory dust.</p>
+          <span class="badge">The Transformation</span>
+          <h2>Pour. Wait. <em>Steep</em>.</h2>
+          <p>Watch the warm amber brew ascend inside the glass. A perfect steep releases structural, calming compounds without releasing bitter tannins.</p>
         </div>
         
-        <!-- Slide 4: The Savor -->
+        <!-- Scene 4: The Savor -->
         <div class="slide-text" id="text-scene-4">
-          <span class="badge">The Savor</span>
-          <h2>Three minutes.<br>That is <em>all it takes</em>.</h2>
-          <p>Hold the warmth. Breathe the aroma. Step away from the noise and join the daily ceremony of organic leaf tea.</p>
+          <span class="badge">The Ceremony</span>
+          <h2>Savor the <em>silence</em>.</h2>
+          <p>Wrap your hands around the warmth. Inhale the clean botanical mist. A cup of Nevisan tea is not just hydration — it is a moment of absolute pause.</p>
         </div>
 
       </div>
 
-      <!-- Scroll Mouse Wheel Indicator -->
+      <!-- Mouse indicator -->
       <div class="scroll-indicator" id="scroll-hint">
-        <span>Scroll down</span>
+        <span>Scroll to Brew</span>
         <div class="mouse-wheel"></div>
       </div>
 
     </div>
   </div>
 
-  <!-- Choose Your Ritual Cards Section -->
+  <!-- Bento Product Section -->
   <section class="ritual-section" id="choose-ritual">
     <div class="section-header">
-      <span class="badge">The Collection</span>
+      <span class="badge">Nevisan Collection</span>
       <h2>Choose your ritual</h2>
-      <p>Organically certified whole-leaf teas grouped by target botanical benefit. Packaged with care in Assam.</p>
+      <p>Single-origin, 100% pesticide-free whole leaf blends packaged with care at the garden. Pure leaves, zero dust.</p>
     </div>
     
     <div class="ritual-grid">
       
-      <!-- DAWN -->
-      <div class="ritual-card">
-        <span class="card-badge">Morning clarity</span>
-        <h3>DAWN</h3>
-        <p class="subtitle">Tulsi · Cardamom · Green Tea</p>
-        <p class="desc">A bright, revitalizing green tea blend harvested at sunrise. Sourced from Golaghat to clear the mind and support daily immunity.</p>
-        <div class="card-price">₹499 <span style="font-size: 12px; color: var(--text-muted);">/ 50gm</span></div>
-        <button class="add-to-ritual-btn">Add to Ritual</button>
+      <!-- Blue Flower Green Tea -->
+      <div class="card-outer-shell">
+        <div class="card-inner-core">
+          <span class="card-badge">Calming · Nootropic</span>
+          <h3>Blue Flower</h3>
+          <p class="subtitle">Green Tea · Butterfly Pea</p>
+          <p class="desc">Naturally packed with anthocyanins. A magical indigo infusion that turns violet with a squeeze of fresh lemon. Supports skin collagen and focus.</p>
+          <div class="card-price">₹499 <span style="font-size: 11px; color: var(--text-muted); font-family: 'Plus Jakarta Sans';">/ 50gm</span></div>
+          <button class="add-to-ritual-btn">
+            Add to Ritual
+            <div class="arrow-icon-circle">↗</div>
+          </button>
+        </div>
       </div>
       
-      <!-- DUSK -->
-      <div class="ritual-card">
-        <span class="card-badge">Bestseller · Reset</span>
-        <h3>DUSK</h3>
-        <p class="subtitle">Chamomile · Rum · Oolong</p>
-        <p class="desc">Nevisan's signature blend. Naturally rich in GABA, cold-infused with botanical extracts for deep relaxation and mental wind-down.</p>
-        <div class="card-price">₹499 <span style="font-size: 12px; color: var(--text-muted);">/ 50gm</span></div>
-        <button class="add-to-ritual-btn">Add to Ritual</button>
+      <!-- Rum Green Tea -->
+      <div class="card-outer-shell">
+        <div class="card-inner-core">
+          <span class="card-badge">Bestseller · Warmth</span>
+          <h3>Rum Green</h3>
+          <p class="subtitle">Exotic · Spicy · Botanical</p>
+          <p class="desc">Nevisan's signature recipe. Took 14 attempts to perfect. All the deep molasses and spice warmth of aged rum, completely non-alcoholic.</p>
+          <div class="card-price">₹499 <span style="font-size: 11px; color: var(--text-muted); font-family: 'Plus Jakarta Sans';">/ 50gm</span></div>
+          <button class="add-to-ritual-btn">
+            Add to Ritual
+            <div class="arrow-icon-circle">↗</div>
+          </button>
+        </div>
       </div>
       
-      <!-- NIGHT -->
-      <div class="ritual-card">
-        <span class="card-badge">Deep rest</span>
-        <h3>NIGHT</h3>
-        <p class="subtitle">Whiskey · Herbal · Adaptogens</p>
-        <p class="desc">A sleep-enhancing blend infused with warming woody botanicals and soothing adaptogenic roots to support deep sleep cycles.</p>
-        <div class="card-price">₹499 <span style="font-size: 12px; color: var(--text-muted);">/ 50gm</span></div>
-        <button class="add-to-ritual-btn">Add to Ritual</button>
+      <!-- Spearmint Green Tea -->
+      <div class="card-outer-shell">
+        <div class="card-inner-core">
+          <span class="card-badge">Balance · Radiance</span>
+          <h3>Spearmint</h3>
+          <p class="subtitle">Hormonal · Cleansing</p>
+          <p class="desc">Infused with refreshing spearmint leaves. Sourced to regulate hormonal levels, reduce skin breakouts, and aid digestive health.</p>
+          <div class="card-price">₹499 <span style="font-size: 11px; color: var(--text-muted); font-family: 'Plus Jakarta Sans';">/ 50gm</span></div>
+          <button class="add-to-ritual-btn">
+            Add to Ritual
+            <div class="arrow-icon-circle">↗</div>
+          </button>
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- GSAP Libraries for Scroll Animation -->
+  <!-- Three.js + GSAP Scroll Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   
   <script>
-    // Register ScrollTrigger Plugin
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. Programmatically Generate Floating Particles (Tea leaves, rose petals, etc.)
-    const particlesField = document.getElementById('particles-field');
-    const ingredientTypes = [
-      // Green Tea Leaf path
-      { color: '#5A8043', scale: 1.2, path: 'M10 20 C 15 5, 25 5, 30 20 C 25 35, 15 35, 10 20 Z M20 7 L20 33' },
-      // Red Rose Petal path
-      { color: '#8b1e2c', scale: 0.9, path: 'M15 5 C 25 -5, 35 15, 20 30 C 5 15, 5 -5, 15 5 Z' },
-      // Gold Cardamom Pod path
-      { color: '#d8b965', scale: 1.0, path: 'M12 25 C 8 15, 10 5, 20 12 C 30 18, 24 28, 12 25 Z' }
-    ];
+    // --- 1. Procedural High-Fidelity Textures via Canvas ---
+    
+    // A. Leaf Texture (Assam green leaf pattern)
+    function createLeafTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 256;
+      canvas.height = 256;
+      const ctx = canvas.getContext('2d');
+      
+      // Gradient background green
+      const grad = ctx.createLinearGradient(0, 0, 0, 256);
+      grad.addColorStop(0, '#5a8246');
+      grad.addColorStop(1, '#2f4f22');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 256, 256);
+      
+      // Vein lines
+      ctx.strokeStyle = '#85b56b';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(128, 0);
+      ctx.lineTo(128, 256);
+      ctx.stroke();
+      
+      ctx.lineWidth = 2;
+      for (let y = 30; y < 230; y += 30) {
+        ctx.beginPath();
+        ctx.moveTo(128, y);
+        ctx.lineTo(128 - 70, y - 25);
+        ctx.moveTo(128, y);
+        ctx.lineTo(128 + 70, y - 25);
+        ctx.stroke();
+      }
+      return new THREE.CanvasTexture(canvas);
+    }
 
-    const particleCount = 22;
-    const particles = [];
+    // B. Rose Petal Texture (Soft velvet crimson)
+    function createPetalTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 256;
+      canvas.height = 256;
+      const ctx = canvas.getContext('2d');
+      
+      const grad = ctx.createRadialGradient(128, 128, 10, 128, 128, 130);
+      grad.addColorStop(0, '#b81c30');
+      grad.addColorStop(0.7, '#8f0e20');
+      grad.addColorStop(1, '#570410');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 256, 256);
+      
+      // Soft petal lines
+      ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+      ctx.lineWidth = 1;
+      for (let i = 20; i < 240; i += 20) {
+        ctx.beginPath();
+        ctx.moveTo(i, 256);
+        ctx.quadraticCurveTo(128, 128, i, 0);
+        ctx.stroke();
+      }
+      return new THREE.CanvasTexture(canvas);
+    }
+
+    // C. Fibrous Paper Texture for Tea Bag
+    function createPaperTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 256;
+      canvas.height = 256;
+      const ctx = canvas.getContext('2d');
+      
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, 256, 256);
+      
+      // Fiber lines
+      ctx.strokeStyle = '#efefef';
+      ctx.lineWidth = 1;
+      for (let i = 0; i < 400; i++) {
+        ctx.beginPath();
+        const x = Math.random() * 256;
+        const y = Math.random() * 256;
+        const l = 5 + Math.random() * 15;
+        const a = Math.random() * Math.PI * 2;
+        ctx.moveTo(x, y);
+        ctx.lineTo(x + Math.cos(a) * l, y + Math.sin(a) * l);
+        ctx.stroke();
+      }
+      return new THREE.CanvasTexture(canvas);
+    }
+
+    // D. Blue Flower Texture
+    function createBlueFlowerTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 256;
+      canvas.height = 256;
+      const ctx = canvas.getContext('2d');
+      
+      const grad = ctx.createRadialGradient(128, 128, 10, 128, 128, 130);
+      grad.addColorStop(0, '#648dbd');
+      grad.addColorStop(0.6, '#315480');
+      grad.addColorStop(1, '#152b47');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 256, 256);
+      
+      return new THREE.CanvasTexture(canvas);
+    }
+
+    // --- 2. Initialize Three.js WebGL Scene ---
+    const canvasEl = document.getElementById('webgl-canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas: canvasEl, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.shadowMap.enabled = true;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+
+    const scene = new THREE.Scene();
+    
+    // Cinematic camera
+    const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 1, 8); // Floating position
+    
+    // Lights Setup
+    const ambientLight = new THREE.AmbientLight(0x0e1c15, 1.8);
+    scene.add(ambientLight);
+    
+    const keyLight = new THREE.PointLight(0xfff0d4, 1.5, 30);
+    keyLight.position.set(2, 4, 4);
+    scene.add(keyLight);
+    
+    const cupLight = new THREE.PointLight(0xc9a84c, 0, 10);
+    cupLight.position.set(0, -1.5, 0);
+    scene.add(cupLight);
+    
+    const fillLight = new THREE.DirectionalLight(0x3a7a50, 0.8);
+    fillLight.position.set(-4, 2, -2);
+    scene.add(fillLight);
+
+    // --- 3. Build 3D Objects ---
+    const leafTex = createLeafTexture();
+    const petalTex = createPetalTexture();
+    const paperTex = createPaperTexture();
+    const blueFlowerTex = createBlueFlowerTexture();
+
+    // Group to pivot camera orbit
+    const stageGroup = new THREE.Group();
+    scene.add(stageGroup);
+
+    // A. 3D Pyramid Tea Bag (Cone with 4 radial segments)
+    const bagGroup = new THREE.Group();
+    bagGroup.position.set(0, 1.2, 0);
+    stageGroup.add(bagGroup);
+
+    const leftBagGroup = new THREE.Group();
+    const rightBagGroup = new THREE.Group();
+    bagGroup.add(leftBagGroup);
+    bagGroup.add(rightBagGroup);
+
+    // Create fibrous tea bag geometry (cone cut in half)
+    const coneGeom = new THREE.ConeGeometry(1.2, 1.8, 4, 1, true);
+    // Move geometry up to pivot from top tip
+    coneGeom.translate(0, -0.9, 0);
+
+    const paperMat = new THREE.MeshPhysicalMaterial({
+      map: paperTex,
+      transparent: true,
+      opacity: 0.85,
+      roughness: 0.9,
+      transmission: 0.45,
+      thickness: 0.1,
+      side: THREE.DoubleSide
+    });
+
+    const leftHalfMesh = new THREE.Mesh(coneGeom, paperMat);
+    const rightHalfMesh = new THREE.Mesh(coneGeom, paperMat);
+    
+    // Crop geometries to simulate split
+    leftHalfMesh.scale.set(0.98, 1, 1);
+    rightHalfMesh.scale.set(0.98, 1, 1);
+    
+    // Add meshes to pivot groups
+    leftBagGroup.add(leftHalfMesh);
+    rightBagGroup.add(rightHalfMesh);
+
+    // Tea bag string line
+    const stringGeom = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(0, 2.5, 0)
+    ]);
+    const stringMat = new THREE.LineBasicMaterial({ color: 0xcccccc });
+    const stringLine = new THREE.Line(stringGeom, stringMat);
+    bagGroup.add(stringLine);
+
+    // B. 3D Glass Teacup
+    const cupGroup = new THREE.Group();
+    cupGroup.position.set(0, -1.8, 0); // Positioned at bottom
+    stageGroup.add(cupGroup);
+
+    const cupGeom = new THREE.CylinderGeometry(1.4, 1.1, 2.2, 32, 1, true);
+    const glassMat = new THREE.MeshPhysicalMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.25,
+      roughness: 0.05,
+      metalness: 0.1,
+      transmission: 0.95,
+      ior: 1.5,
+      thickness: 1.0,
+      side: THREE.DoubleSide,
+      depthWrite: false
+    });
+    const cupMesh = new THREE.Mesh(cupGeom, glassMat);
+    cupGroup.add(cupMesh);
+
+    // Cup handle
+    const handleGeom = new THREE.TorusGeometry(0.7, 0.12, 16, 32, Math.PI);
+    const handleMesh = new THREE.Mesh(handleGeom, glassMat);
+    handleMesh.position.set(1.3, 0, 0);
+    handleMesh.rotation.z = -Math.PI / 2;
+    cupGroup.add(handleMesh);
+
+    // Rising Tea Liquid
+    const liquidGeom = new THREE.CylinderGeometry(1.35, 1.05, 2.1, 32);
+    // Pivot from bottom
+    liquidGeom.translate(0, 1.05, 0);
+    
+    const liquidMat = new THREE.MeshPhysicalMaterial({
+      color: 0xc9a84c,
+      emissive: 0x3d2703,
+      transparent: true,
+      opacity: 0.0, // starts transparent
+      roughness: 0.2,
+      metalness: 0.1,
+      transmission: 0.6,
+      thickness: 0.5
+    });
+    const liquidMesh = new THREE.Mesh(liquidGeom, liquidMat);
+    liquidMesh.position.set(0, -1.05, 0);
+    liquidMesh.scale.set(1, 0.01, 1); // Start empty
+    cupGroup.add(liquidMesh);
+
+    // C. Volumetric 3D Tea Ingredients Particles
+    const leafGeom = new THREE.PlaneGeometry(0.28, 0.56, 2, 2);
+    
+    // Bend plane geometry to look curved and organic
+    const pos = leafGeom.attributes.position;
+    for (let i = 0; i < pos.count; i++) {
+      const x = pos.getX(i);
+      const y = pos.getY(i);
+      pos.setZ(i, -Math.sin(y * Math.PI) * 0.12 - Math.abs(x) * 0.08);
+    }
+    leafGeom.computeVertexNormals();
+
+    const leafMat = new THREE.MeshStandardMaterial({
+      map: leafTex,
+      roughness: 0.7,
+      metalness: 0.1,
+      side: THREE.DoubleSide
+    });
+    
+    const petalMat = new THREE.MeshStandardMaterial({
+      map: petalTex,
+      roughness: 0.8,
+      metalness: 0.0,
+      side: THREE.DoubleSide
+    });
+
+    const blueFlowerMat = new THREE.MeshStandardMaterial({
+      map: blueFlowerTex,
+      roughness: 0.7,
+      metalness: 0.1,
+      side: THREE.DoubleSide
+    });
+
+    const particlesList = [];
+    const particleCount = 45;
 
     for (let i = 0; i < particleCount; i++) {
-      const type = ingredientTypes[Math.floor(Math.random() * ingredientTypes.length)];
+      // Pick random ingredient material
+      const mat = (i % 3 === 0) ? leafMat : (i % 3 === 1 ? petalMat : blueFlowerMat);
+      const mesh = new THREE.Mesh(leafGeom, mat);
       
-      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      svg.setAttribute('class', 'ingredient-particle');
-      svg.setAttribute('width', '40');
-      svg.setAttribute('height', '40');
-      svg.setAttribute('viewBox', '0 0 40 40');
-      svg.style.left = '50%';
-      svg.style.top = '100px'; // Centered near the bag
-      svg.style.transform = 'translate(-50%, -50%)';
+      // Hide initially inside bag
+      mesh.position.set(
+        (Math.random() - 0.5) * 0.4,
+        1.1 + (Math.random() - 0.5) * 0.4,
+        (Math.random() - 0.5) * 0.4
+      );
+      mesh.scale.set(0.01, 0.01, 0.01);
+      mesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+      stageGroup.add(mesh);
       
-      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      path.setAttribute('d', type.path);
-      path.setAttribute('fill', type.color);
-      path.setAttribute('opacity', '0.85');
-      
-      svg.appendChild(path);
-      particlesField.appendChild(svg);
-      
-      particles.push({
-        element: svg,
-        scale: type.scale * (0.6 + Math.random() * 0.8),
-        angle: Math.random() * 360,
-        // Target offset for initial explosion
-        xDist: (Math.random() - 0.5) * 220,
-        yDist: (Math.random() - 0.4) * 140,
-        // Rotation during flight
-        rotateSpeed: (Math.random() - 0.5) * 540
+      particlesList.push({
+        mesh,
+        // Explosion offsets
+        xOff: (Math.random() - 0.5) * 2.8,
+        yOff: -0.4 + (Math.random() - 0.3) * 1.5,
+        zOff: (Math.random() - 0.5) * 2.0,
+        // Rotation speeds
+        rotSpeed: new THREE.Vector3(
+          (Math.random() - 0.5) * 8,
+          (Math.random() - 0.5) * 8,
+          (Math.random() - 0.5) * 8
+        ),
+        // Fall landing coordinate
+        landY: -1.8 + Math.random() * 0.7,
+        landX: (Math.random() - 0.5) * 0.8,
+        landZ: (Math.random() - 0.5) * 0.8,
+        scaleMax: 0.8 + Math.random() * 0.7
       });
     }
 
-    // 2. Setup GSAP Scroll Timeline
+    // D. 3D Steam Particles (Floating glowing sprites)
+    const steamGroup = new THREE.Group();
+    steamGroup.position.set(0, -0.6, 0);
+    cupGroup.add(steamGroup);
+
+    const steamCount = 12;
+    const steamParticles = [];
+    const steamMat = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+    const steamGeom = new THREE.SphereGeometry(0.12, 8, 8);
+
+    for (let i = 0; i < steamCount; i++) {
+      const mesh = new THREE.Mesh(steamGeom, steamMat);
+      mesh.position.set(
+        (Math.random() - 0.5) * 0.6,
+        Math.random() * 1.5,
+        (Math.random() - 0.5) * 0.6
+      );
+      steamGroup.add(mesh);
+      steamParticles.push(mesh);
+    }
+
+    // --- 4. Setup GSAP Scroll Timeline Trigger ---
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".ceremony-container",
         start: "top top",
         end: "bottom bottom",
-        scrub: 1.1, // Smooth scrolling animation link
+        scrub: 1.2,
         invalidateOnRefresh: true
       }
     });
 
-    // --- SCENE 1: Intro (0% to 15%) ---
-    // Text Scene 1 is visible by default
-    tl.to("#text-scene-1", { opacity: 1, y: 0, duration: 2 })
-      .to("#tea-bag", { y: 20, rotation: 2, duration: 2 }, "<")
-      .to("#scroll-hint", { opacity: 0.6, duration: 1 }, "<")
-      
-    // Transition 1 -> 2 (15% to 30%)
-    tl.to("#text-scene-1", { opacity: 0, y: -30, duration: 2.5 })
-      .to("#tea-bag", { y: -20, duration: 2.5 }, "<")
-      .to("#text-scene-2", { opacity: 1, y: 0, duration: 3.5 });
+    // Scene 1: Initial State & Text 1 Focus (0% to 15%)
+    tl.to("#text-scene-1", { opacity: 1, y: 0, duration: 2.5 })
+      .to(bagGroup.position, { y: 1.0, duration: 2.5 }, "<")
+      .to(camera.position, { z: 7.2, duration: 2.5 }, "<");
 
-    // --- SCENE 2: The Splitting Bag & Explosion (30% to 55%) ---
-    // Splitting the tea bag half meshes
-    tl.to("#bag-left", { transform: "rotate(-32deg)", duration: 4.5 }, "<")
-      .to("#bag-right", { transform: "rotate(32deg)", duration: 4.5 }, "<")
-      .to("#tea-bag", { opacity: 0.35, duration: 4 }, "<");
+    // Transition 1 -> 2 (15% to 35%)
+    tl.to("#text-scene-1", { opacity: 0, y: -40, duration: 2 })
+      .to("#text-scene-2", { opacity: 1, y: 0, duration: 3 });
 
-    // Particles explosion animation
-    particles.forEach((p, idx) => {
-      tl.to(p.element, {
-        opacity: 0.9,
-        scale: p.scale,
-        x: p.xDist,
-        y: p.yDist,
-        rotation: p.angle,
-        duration: 4.5,
-        ease: "power2.out"
-      }, "<+0.1");
+    // Scene 2: Tea Bag splits & Particles Explode (35% to 60%)
+    tl.to(leftBagGroup.position, { x: -0.6, y: 0.3, z: 0.1, duration: 4.5 }, "<")
+      .to(leftBagGroup.rotation, { z: -Math.PI / 4, y: -Math.PI / 6, duration: 4.5 }, "<")
+      .to(rightBagGroup.position, { x: 0.6, y: 0.3, z: -0.1, duration: 4.5 }, "<")
+      .to(rightBagGroup.rotation, { z: Math.PI / 4, y: Math.PI / 6, duration: 4.5 }, "<")
+      .to(bagGroup.position, { y: 0.8, opacity: 0.4, duration: 4 }, "<")
+      .to(stringLine.scale, { y: 0.01, duration: 3 }, "<");
+
+    // Animate 3D particles explode outwards
+    particlesList.forEach((p, idx) => {
+      tl.to(p.mesh.scale, { x: p.scaleMax, y: p.scaleMax, z: p.scaleMax, duration: 3.5, ease: "back.out(1.5)" }, "<+0.1")
+        .to(p.mesh.position, {
+          x: p.xOff,
+          y: p.yOff,
+          z: p.zOff,
+          duration: 4.5,
+          ease: "power2.out"
+        }, "<")
+        .to(p.mesh.rotation, {
+          x: p.mesh.rotation.x + p.rotSpeed.x,
+          y: p.mesh.rotation.y + p.rotSpeed.y,
+          z: p.mesh.rotation.z + p.rotSpeed.z,
+          duration: 4.5
+        }, "<");
     });
 
-    // Fade in Glass Mug
-    tl.to("#glass-mug", { opacity: 1, y: 0, duration: 4 }, "<+1");
+    // Orbit Camera during explosion for spatial parallax depth
+    tl.to(camera.position, { x: 1.5, z: 6.8, y: 1.4, duration: 4.5 }, "<")
+      .to(camera.rotation, { y: 0.12, duration: 4.5 }, "<");
 
-    // Transition 2 -> 3 (55% to 70%)
-    tl.to("#text-scene-2", { opacity: 0, y: -30, duration: 3.5 })
+    // Transition 2 -> 3 (60% to 75%)
+    tl.to("#text-scene-2", { opacity: 0, y: -40, duration: 2.5 })
       .to("#text-scene-3", { opacity: 1, y: 0, duration: 3.5 });
 
-    // --- SCENE 3: Steeping & Mug Filling (70% to 85%) ---
-    // Ingredients fall into the mug
-    particles.forEach((p, idx) => {
-      tl.to(p.element, {
-        x: p.xDist * 0.15, // Funnel into cup center
-        y: 160 + (Math.random() - 0.5) * 30, // Cup height offset
-        scale: p.scale * 0.65,
-        opacity: 0.45,
-        rotation: p.angle + p.rotateSpeed,
-        duration: 5.5,
-        ease: "sine.inOut"
+    // Scene 3: Ingredients land in cup, water fills cup (75% to 90%)
+    particlesList.forEach((p, idx) => {
+      tl.to(p.mesh.position, {
+        x: p.landX,
+        y: p.landY,
+        z: p.landZ,
+        scaleX: p.scaleMax * 0.45,
+        scaleY: p.scaleMax * 0.45,
+        scaleZ: p.scaleMax * 0.45,
+        duration: 5,
+        ease: "power1.inOut"
+      }, "<")
+      .to(p.mesh.rotation, {
+        x: p.mesh.rotation.x + p.rotSpeed.x * 0.5,
+        y: p.mesh.rotation.y + p.rotSpeed.y * 0.5,
+        duration: 5
       }, "<");
     });
-    
-    // Liquid levels rise inside the clip path
-    tl.to("#liquid", { scaleY: 0.9, duration: 6, ease: "power1.inOut" }, "<+0.5")
-      // Animate steam lines rising
-      .to(".steam-line", { opacity: 0.55, height: "100%", stagger: 0.5, duration: 4 }, "<+2.5")
-      .to("#bag-left", { opacity: 0, duration: 2 }, "<")
-      .to("#bag-right", { opacity: 0, duration: 2 }, "<")
-      .to("#tea-bag", { opacity: 0, duration: 2 }, "<");
 
-    // Transition 3 -> 4 (85% to 100%)
-    tl.to("#text-scene-3", { opacity: 0, y: -30, duration: 3.5 })
-      .to("#text-scene-4", { opacity: 1, y: 0, duration: 4.5 })
-      // Fade in Hands holding cup
-      .to("#hands-holder", { opacity: 1, scale: 1, duration: 5, ease: "power2.out" }, "<")
-      // Slightly dim the mug to blend into hands representation
-      .to("#glass-mug", { opacity: 0.25, duration: 4 }, "<+1");
+    tl.to(liquidMat, { opacity: 0.85, duration: 2.5 }, "<+1.5")
+      .to(liquidMesh.scale, { y: 1.0, duration: 5, ease: "power1.inOut" }, "<")
+      .to(cupLight, { intensity: 1.8, duration: 4 }, "<+1")
+      .to(bagGroup.position, { y: 2.0, opacity: 0, duration: 3 }, "<")
+      .to(leftBagGroup.scale, { x: 0, y: 0, z: 0, duration: 3 }, "<")
+      .to(rightBagGroup.scale, { x: 0, y: 0, z: 0, duration: 3 }, "<");
+
+    // Camera repositions closer to the hot teacup
+    tl.to(camera.position, { x: 0, y: -0.4, z: 4.4, duration: 5 }, "<")
+      .to(camera.rotation, { y: 0, duration: 5 }, "<");
+
+    // Transition 3 -> 4 (90% to 105%)
+    tl.to("#text-scene-3", { opacity: 0, y: -40, duration: 2.5 })
+      .to("#text-scene-4", { opacity: 1, y: 0, duration: 3.5 })
+      .to("#ceremony-bg", { opacity: 0.12, duration: 4 }, "<");
+
+    // Scene 4: Steam rises and glow intensifies
+    steamParticles.forEach((mesh, idx) => {
+      tl.to(mesh.position, {
+        y: mesh.position.y + 1.2,
+        x: mesh.position.x + (Math.random() - 0.5) * 0.3,
+        duration: 4
+      }, "<")
+      .to(steamMat, { opacity: 0.35, duration: 2 }, "<")
+      .to(liquidMat, { emissiveIntensity: 2.2, duration: 4 }, "<");
+    });
+
+    // Fade out elements completely at the bottom of the scroll
+    tl.to("#text-scene-4", { opacity: 0, y: -40, duration: 2.5 })
+      .to("#ceremony-bg", { opacity: 0, duration: 2.5 }, "<")
+      .to(cupGroup.position, { y: -5.0, opacity: 0, duration: 3.5 }, "<")
+      .to(stageGroup.position, { y: -5.0, opacity: 0, duration: 3.5 }, "<")
+      .to(ambientLight, { intensity: 0, duration: 2.5 }, "<");
+
+    // --- 5. Animation loop (for continuous rotations and steam) ---
+    const clock = new THREE.Clock();
+    
+    function animate() {
+      requestAnimationFrame(animate);
       
-    // Fade out everything at the very bottom of scroll before products section
-    tl.to("#hands-holder", { opacity: 0, y: -30, duration: 3 })
-      .to("#glass-mug", { opacity: 0, y: -30, duration: 3 }, "<")
-      .to("#text-scene-4", { opacity: 0, y: -30, duration: 3 }, "<")
-      .to(".ingredient-particle", { opacity: 0, duration: 3 }, "<");
+      const elapsedTime = clock.getElapsedTime();
+      
+      // Floating ambient motion for bag and camera when idle
+      if(bagGroup) {
+        bagGroup.rotation.y = Math.sin(elapsedTime * 0.4) * 0.08;
+      }
+      
+      // Keep steam rising
+      steamParticles.forEach((particle, idx) => {
+        particle.position.y += 0.003;
+        particle.position.x += Math.sin(elapsedTime + idx) * 0.001;
+        if (particle.position.y > 1.2) {
+          particle.position.y = 0;
+          particle.position.x = (Math.random() - 0.5) * 0.6;
+        }
+      });
+      
+      // Float landing particles slowly inside teacup liquid to feel natural
+      particlesList.forEach((p, idx) => {
+        if(p.mesh.position.y < -0.5) {
+          p.mesh.position.y += Math.sin(elapsedTime * 1.5 + idx) * 0.0006;
+          p.mesh.rotation.y += 0.001;
+        }
+      });
+      
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Window Resize Handler
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
 
   </script>
 </body>

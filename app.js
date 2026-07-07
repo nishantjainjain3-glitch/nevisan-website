@@ -1623,6 +1623,41 @@ const TEAS = [
     ],
   },
 ];
+function TeaSpecsList({ tea: e }) {
+  if (!e.specs) return null;
+  const specItems = [];
+  [
+    { label: "Ingredients", value: e.specs.ingredients },
+    { label: "Origin", value: "Golaghat, Assam (95m)" },
+    { label: "Harvest", value: e.specs.harvest },
+    { label: "Caffeine", value: e.specs.caffeine },
+    { label: "Water Temp", value: e.specs.temp },
+    { label: "Steep Time", value: e.specs.time },
+    { label: "Infusions", value: e.specs.infusions },
+    { label: "Palate", value: e.specs.profile },
+  ].forEach(({ label, value }) => {
+    specItems.push(React.createElement("dt", { key: `dt-${label}`, style: { fontWeight: 600, color: T.teal, margin: 0 } }, label));
+    specItems.push(React.createElement("dd", { key: `dd-${label}`, style: { color: T.textMuted, margin: 0, paddingLeft: 4 } }, value));
+  });
+  return React.createElement(
+    "dl",
+    {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "110px 1fr",
+        gap: "8px 12px",
+        fontSize: 12.5,
+        lineHeight: 1.45,
+        borderTop: `1px solid ${T.border}`,
+        borderBottom: `1px solid ${T.border}`,
+        padding: "16px 0",
+        margin: "18px 0",
+      },
+    },
+    specItems
+  );
+}
+
 function TagChip({ label: e, color: t }) {
   return React.createElement(
     "span",
@@ -7334,6 +7369,7 @@ const POSTS = [
     slug: "why-whole-leaf-tea-tastes-different",
     date: "August 2025",
     tag: "CRAFT",
+    relatedTeas: ["Organic Green Tea", "Lemongrass Green Tea"],
     excerpt:
       "Most commercial teas use broken leaves and dust — it brews fast but loses the complex flavour compounds locked in whole leaves.",
     body: [
@@ -7348,6 +7384,7 @@ const POSTS = [
     slug: "science-behind-gaba-tea",
     date: "September 2025",
     tag: "WELLNESS",
+    relatedTeas: ["GABA Oolong Tea", "Chamomile Green Tea"],
     excerpt:
       "GABA is your brain's natural calming signal. Here's how Nevisan's oolong leaves are processed to naturally amplify it.",
     body: [
@@ -7362,10 +7399,11 @@ const POSTS = [
     slug: "golaghat-indias-hidden-tea-belt",
     date: "October 2025",
     tag: "ORIGIN",
+    relatedTeas: ["Organic Green Tea", "Tulsi Green Tea"],
     excerpt:
       "While Darjeeling gets the headlines, Golaghat in upper Assam quietly produces some of the boldest, most complex teas in the world.",
     body: [
-      'Ask most people to name an Indian tea region and they\'ll say Darjeeling. The "Champagne of teas" has built an unmatched reputation over 150 years of marketing. But among tea professionals and serious drinkers, a different region commands deep respect: Golaghat, in upper Assam.',
+      "Ask most people to name an Indian tea region and they'll say Darjeeling. The \"Champagne of teas\" has built an unmatched reputation over 150 years of marketing. But among tea professionals and serious drinkers, a different region commands deep respect: Golaghat, in upper Assam.",
       "Golaghat sits in the Brahmaputra valley, where the soil is a unique combination of red clay, alluvial deposits from the river, and centuries of decomposed organic matter. The humidity is extreme — averaging 80% year round — and the temperature swings between seasons create a plant under constant gentle stress, which forces it to develop complex defensive compounds that translate directly into flavour.",
       "Every Nevisan tea comes from a single garden in Golaghat. This matters because single-origin means traceability — you know exactly where your tea came from, who grew it, and how it was processed. There are no blends covering up lesser-quality leaves. What's in the pack is exactly what grew in that garden.",
       "This is the foundational commitment behind Nevisan: one origin, one standard, complete transparency.",
@@ -7376,6 +7414,7 @@ const POSTS = [
     slug: "how-to-get-three-steeps",
     date: "November 2025",
     tag: "BREWING",
+    relatedTeas: ["Organic Green Tea", "GABA Oolong Tea"],
     excerpt:
       "Whole leaf teas open up with each steep. The first is bold, the second more rounded, the third surprisingly sweet.",
     body: [
@@ -7392,6 +7431,7 @@ const POSTS = [
     slug: "rum-green-tea-how-we-made-it",
     date: "December 2025",
     tag: "CRAFT",
+    relatedTeas: ["Rum Green Tea", "Whiskey Green Tea"],
     excerpt:
       "No alcohol. No artificial flavour. Just 14 attempts and a precise cold-infusion technique using natural botanicals.",
     body: [
@@ -7406,6 +7446,7 @@ const POSTS = [
     slug: "morning-vs-evening-teas",
     date: "January 2026",
     tag: "WELLNESS",
+    relatedTeas: ["Lemongrass Green Tea", "Chamomile Green Tea"],
     excerpt:
       "Lemongrass and Spearmint for mornings. Chamomile and GABA for evenings. Here's why each tea works best at certain times.",
     body: [
@@ -7422,6 +7463,7 @@ const POSTS = [
     slug: "blue-butterfly-pea-flower-tea",
     date: "February 2026",
     tag: "WELLNESS",
+    relatedTeas: ["Blue Flower Green Tea", "Organic Green Tea"],
     excerpt:
       "Blue butterfly pea flower tea gets its colour from anthocyanins — powerful antioxidants that also explain its mood-lifting, brain-supporting reputation.",
     body: [
@@ -7437,6 +7479,7 @@ const POSTS = [
     slug: "spearmint-tea-hormonal-balance",
     date: "March 2026",
     tag: "WELLNESS",
+    relatedTeas: ["Spearmint Green Tea", "Organic Green Tea"],
     excerpt:
       "Spearmint tea has been studied for its ability to reduce androgens in women, making it one of the few herbal teas with direct hormonal research behind it.",
     body: [
@@ -7451,13 +7494,14 @@ const POSTS = [
     slug: "tulsi-green-tea-adaptogen",
     date: "April 2026",
     tag: "WELLNESS",
+    relatedTeas: ["Tulsi Green Tea", "Organic Green Tea"],
     excerpt:
       "Tulsi, or holy basil, has been used in Ayurvedic medicine for thousands of years — blended with green tea, it becomes one of the most balanced cups you can brew.",
     body: [
       "Tulsi, known botanically as Ocimum tenuiflorum and commonly called holy basil, is one of the most revered plants in Indian tradition. It has been used in Ayurvedic medicine for at least 3,000 years for respiratory support, stress relief, and immune function. As an adaptogen — a class of plants thought to help the body regulate its stress response — tulsi has been studied for its effects on cortisol, immune function, and blood sugar stability.",
       "When tulsi is blended with green tea, the pairing is unusually well-suited. Green tea brings antioxidants, mild caffeine, and L-theanine. Tulsi adds eugenol, ursolic acid, and rosmarinic acid, along with a distinct clove-like, slightly peppery aroma. The flavour combination is warming without being heavy, and the adaptogenic properties of tulsi complement the calm focus that L-theanine supports.",
       "Studies have shown reductions in cortisol levels, improvements in cognitive function under stress, and anti-inflammatory effects from regular tulsi consumption. It is not a sedative — it does not make you drowsy — but many people report a noticeable sense of mental ease when they drink it regularly. Nevisan's Tulsi Green uses whole holy basil leaves alongside Assam green tea, keeping the ratio balanced so neither ingredient overwhelms the other.",
-      "For anyone looking to reduce daily stimulant load while still supporting focus, tulsi green tea is a useful starting point. It has enough caffeine to be functional in the morning without the cortisol spike of coffee. It's also one of the few blends where the Indian heritage of the herb is fully intact — tulsi grown in India, paired with tea grown in India, brewed simply at around 80°C for two to three minutes.",
+      "For anyone looking to reduce daily stimulant load while still supporting focus, tulsi green tea is a supportive starting point. It has enough caffeine to be functional in the morning without the cortisol spike of coffee. It's also one of the few blends where the Indian heritage of the herb is fully intact — tulsi grown in India, paired with tea grown in India, brewed simply at around 80°C for two to three minutes.",
     ],
   },
   {
@@ -7466,6 +7510,7 @@ const POSTS = [
     slug: "chamomile-green-tea-evening-blend",
     date: "May 2026",
     tag: "WELLNESS",
+    relatedTeas: ["Chamomile Green Tea", "Organic Green Tea"],
     excerpt:
       "Chamomile and green tea together offer something neither delivers alone — the calming properties of chamomile with the antioxidant depth of whole-leaf green tea.",
     body: [
@@ -7481,6 +7526,7 @@ const POSTS = [
     slug: "green-tea-vs-coffee-caffeine",
     date: "May 2026",
     tag: "WELLNESS",
+    relatedTeas: ["Organic Green Tea", "Lemongrass Green Tea"],
     excerpt:
       "Green tea has less caffeine than coffee, but L-theanine changes how your body processes it entirely — and that difference matters more than the number.",
     body: [
@@ -7496,6 +7542,7 @@ const POSTS = [
     slug: "how-to-buy-real-green-tea-india",
     date: "May 2026",
     tag: "CRAFT",
+    relatedTeas: ["Organic Green Tea", "Spearmint Green Tea"],
     excerpt:
       "Most green tea sold in India is low-grade CTC or artificially flavoured — here is how to tell the difference before you buy.",
     body: [
@@ -7507,7 +7554,8 @@ const POSTS = [
     ],
   },
 ];
-function ArticleModal({ post: e, onClose: t }) {
+
+function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
   return (
     useEffect(() => {
       const e = (e) => {
@@ -7658,6 +7706,93 @@ function ArticleModal({ post: e, onClose: t }) {
                 e,
               ),
             ),
+            e.relatedTeas &&
+              React.createElement(
+                "div",
+                {
+                  style: {
+                    marginTop: 24,
+                    padding: 16,
+                    background: "rgba(27,122,130,0.05)",
+                    borderRadius: 12,
+                    border: `1px dashed ${T.teal}`,
+                  },
+                },
+                React.createElement(
+                  "h4",
+                  {
+                    style: {
+                      fontFamily: "'Inter'",
+                      fontSize: 12,
+                      fontWeight: 700,
+                      letterSpacing: "0.08em",
+                      color: T.teal,
+                      textTransform: "uppercase",
+                      marginBottom: 10,
+                    },
+                  },
+                  "Related & Recommended",
+                ),
+                React.createElement(
+                  "div",
+                  {
+                    style: {
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 8,
+                      fontSize: 13.5,
+                    },
+                  },
+                  [
+                    ...e.relatedTeas.map((name) => {
+                      return React.createElement(
+                        "div",
+                        { key: name, style: { display: "flex", alignItems: "center", gap: 6 } },
+                        React.createElement("span", null, "🍃"),
+                        React.createElement(
+                          "a",
+                          {
+                            href: "#",
+                            onClick: (evt) => {
+                              evt.preventDefault();
+                              const url = new URL(window.location.href);
+                              url.searchParams.set("tea", name);
+                              window.history.pushState({}, "", url.toString());
+                              if (a) a("Collection");
+                              t();
+                            },
+                            style: {
+                              color: T.teal,
+                              fontWeight: 600,
+                              textDecoration: "underline",
+                              cursor: "pointer",
+                            },
+                          },
+                          `Shop ${name}`,
+                        ),
+                      );
+                    }),
+                    React.createElement(
+                      "div",
+                      { style: { display: "flex", alignItems: "center", gap: 6 } },
+                      React.createElement("span", null, "📖"),
+                      React.createElement(
+                        "a",
+                        {
+                          href: window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/faq/",
+                          target: "_blank",
+                          style: {
+                            color: T.teal,
+                            fontWeight: 600,
+                            textDecoration: "underline",
+                          },
+                        },
+                        "Read our Brewing & FAQ Guide",
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             React.createElement(
               "div",
               {
@@ -7870,7 +8005,7 @@ function JournalPage({ setPage: e }) {
       ),
     ),
     React.createElement(Footer, { setPage: e }),
-    a && React.createElement(ArticleModal, { post: a, onClose: () => n(null) }),
+    a && React.createElement(ArticleModal, { post: a, onClose: () => n(null), onViewTea: e }),
   );
 }
 function AboutPage({ setPage: e }) {

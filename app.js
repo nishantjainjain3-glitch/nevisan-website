@@ -350,9 +350,9 @@ function Nav({ page: e, setPage: t }) {
     ));
   const c = (e) => {
     "FAQ" === e
-      ? (window.location.href = "/faq")
+      ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/faq/")
       : "Quiz" === e
-        ? (window.location.href = "/quiz")
+        ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/quiz/")
         : (t(e), l(!1));
   };
   return React.createElement(
@@ -4622,9 +4622,9 @@ function Footer({ setPage: e }) {
                 key: t,
                 onClick: () => {
                   "FAQ" === t
-                    ? (window.location.href = "/faq")
+                    ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/faq/")
                     : "Quiz" === t
-                      ? (window.location.href = "/quiz")
+                      ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/quiz/")
                       : e(t);
                 },
                 style: {
@@ -4785,7 +4785,7 @@ function CollectionSection({ setPage: e }) {
       React.createElement(
         "a",
         {
-          href: "/quiz",
+          href: window.location.pathname.replace(/\/[^\/]*$/, "") + "/quiz/",
           style: {
             display: "flex",
             alignItems: "center",
@@ -7189,6 +7189,7 @@ function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
   );
 }
 function OurStoryPage({ setPage: e }) {
+  const { isMobile: o } = useViewport();
   return React.createElement(
     "div",
     { style: { animation: "page-enter 0.45s ease both" } },
@@ -7202,36 +7203,127 @@ function OurStoryPage({ setPage: e }) {
     React.createElement(OriginSection, null),
     React.createElement(
       "div",
-      { style: { background: T.cream, padding: "80px 32px" } },
+      { style: { background: T.cream, padding: o ? "60px 20px" : "100px 32px" } },
       React.createElement(
         "div",
-        { style: { maxWidth: 700, margin: "0 auto", textAlign: "center" } },
+        { style: { maxWidth: 900, margin: "0 auto" } },
         React.createElement(
-          "h2",
-          {
-            style: {
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontWeight: 400,
-              fontSize: 36,
-              color: T.text,
-              marginBottom: 24,
+          "div",
+          { style: { textAlign: "center", marginBottom: o ? 48 : 64 } },
+          React.createElement(
+            "span",
+            {
+              style: {
+                fontFamily: "'Inter'",
+                fontSize: 11,
+                fontWeight: 600,
+                letterSpacing: "0.16em",
+                color: T.gold,
+                textTransform: "uppercase",
+                display: "block",
+                marginBottom: 12,
+              },
             },
-          },
-          "The leaf that started it all",
+            "Our Sourcing & Craft"
+          ),
+          React.createElement(
+            "h2",
+            {
+              style: {
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontWeight: 400,
+                fontSize: o ? 32 : 44,
+                color: T.text,
+                lineHeight: 1.25,
+              },
+            },
+            "The Journey of the Perfect Leaf"
+          )
         ),
         React.createElement(
-          "p",
+          "div",
           {
             style: {
-              fontFamily: "'Inter'",
-              fontSize: 16,
-              color: T.textMuted,
-              lineHeight: 1.8,
+              display: "flex",
+              flexDirection: "column",
+              gap: o ? 48 : 64,
             },
           },
-          "The question was simple: if Golaghat grows some of the world's finest tea, why does the tea in most Indian homes taste so ordinary? We didn't have a good answer. So we stopped waiting for one and went back to the garden — to bring the whole leaf, exactly as it grows, directly to you.",
-        ),
-      ),
+          [
+            {
+              num: "01",
+              title: "The Assam Sourcing (Golaghat)",
+              desc: "Deep in the rolling hills of Golaghat, Assam, near the paths of the Brahmaputra River, grow our whole orthodox tea leaves. Sourced directly from our estate, every batch is handcrafted in small quantities to preserve the raw, whole-leaf character of single-origin Assam tea. We respect the soil, and in return, it gives us some of the boldest, most complex teas in the world.",
+            },
+            {
+              num: "02",
+              title: "The Antidote to 'Bitter Dust'",
+              desc: "Most commercial green teas are made from leftover 'tea dust' swept from factory floors and packed into paper tea bags, resulting in a bitter, astringent cup. Nevisan is the antidote. We pack only whole, unbroken leaves that gently unfurl in hot water, releasing a naturally sweet, smooth flavor that can be steeped twice. No bitterness, just pure leaf.",
+            },
+            {
+              num: "03",
+              title: "The Alchemy of Flavor & Function",
+              desc: "We believe wellness shouldn't taste boring. We take our clean orthodox tea and blend it with organic botanicals—like Spearmint to balance hormones, GABA Oolong to calm an overactive mind, and pure Chamomile to restore sleep. Then, we add a touch of gourmet sophistication—infusing our leaves with rich, warm, non-alcoholic notes of charred oak Whiskey and sugarcane Rum.",
+            },
+          ].map((item, idx) =>
+            React.createElement(
+              "div",
+              {
+                key: idx,
+                style: {
+                  display: "grid",
+                  gridTemplateColumns: o ? "1fr" : "80px 1fr",
+                  gap: o ? 16 : 32,
+                  alignItems: "start",
+                  paddingBottom: o ? 24 : 32,
+                  borderBottom: idx < 2 ? `1px solid ${T.border}` : "none",
+                },
+              },
+              React.createElement(
+                "span",
+                {
+                  style: {
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: 32,
+                    color: T.gold,
+                    fontWeight: 300,
+                  },
+                },
+                item.num
+              ),
+              React.createElement(
+                "div",
+                null,
+                React.createElement(
+                  "h3",
+                  {
+                    style: {
+                      fontFamily: "'Playfair Display', Georgia, serif",
+                      fontSize: 22,
+                      color: T.text,
+                      marginBottom: 12,
+                      fontWeight: 400,
+                    },
+                  },
+                  item.title
+                ),
+                React.createElement(
+                  "p",
+                  {
+                    style: {
+                      fontFamily: "'Inter'",
+                      fontSize: 15,
+                      color: T.textMuted,
+                      lineHeight: 1.75,
+                    },
+                  },
+                  item.desc
+                )
+              )
+            )
+          )
+        )
+      )
     ),
     React.createElement(Footer, { setPage: e }),
   );

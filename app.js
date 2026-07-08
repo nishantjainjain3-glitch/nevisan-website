@@ -1623,7 +1623,7 @@ const TEAS = [
     ],
   },
 ];
-function TeaSpecsList({ tea: e }) {
+function TeaSpecsAndShippingPanel({ tea: e }) {
   if (!e.specs) return null;
   const specItems = [];
   [
@@ -1640,21 +1640,91 @@ function TeaSpecsList({ tea: e }) {
     specItems.push(React.createElement("dd", { key: `dd-${label}`, style: { color: T.textMuted, margin: 0, paddingLeft: 4 } }, value));
   });
   return React.createElement(
-    "dl",
+    "div",
     {
       style: {
-        display: "grid",
-        gridTemplateColumns: "110px 1fr",
-        gap: "8px 12px",
-        fontSize: 12.5,
-        lineHeight: 1.45,
-        borderTop: `1px solid ${T.border}`,
-        borderBottom: `1px solid ${T.border}`,
-        padding: "16px 0",
-        margin: "18px 0",
-      },
+        background: "rgba(0,0,0,0.02)",
+        border: "1px solid rgba(0,0,0,0.04)",
+        padding: 8,
+        borderRadius: 24,
+        marginTop: 18,
+        marginBottom: 20,
+      }
     },
-    specItems
+    React.createElement(
+      "div",
+      {
+        style: {
+          background: "#fff",
+          border: "1px solid rgba(0,0,0,0.05)",
+          borderRadius: 18,
+          padding: 16,
+          boxShadow: "inset 0 1px 1px rgba(255,255,255,0.9)",
+        }
+      },
+      React.createElement(
+        "dl",
+        {
+          style: {
+            display: "grid",
+            gridTemplateColumns: "110px 1fr",
+            gap: "8px 12px",
+            fontSize: 12.5,
+            lineHeight: 1.45,
+            margin: 0,
+            paddingBottom: 16,
+            borderBottom: `1px solid ${T.border}`,
+          },
+        },
+        specItems
+      ),
+      React.createElement(
+        "div",
+        {
+          style: {
+            marginTop: 16,
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+            fontSize: 12,
+            lineHeight: 1.45,
+          },
+        },
+        [
+          React.createElement(
+            "div",
+            { key: "ship", style: { display: "flex", alignItems: "center", gap: 8 } },
+            React.createElement(
+              "svg",
+              { width: "15", height: "15", viewBox: "0 0 24 24", fill: "none", stroke: "#C9A84C", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
+              React.createElement("rect", { x: "1", y: "3", width: "15", height: "13" }),
+              React.createElement("polygon", { points: "16 8 20 8 23 11 23 16 16 16 16 8" }),
+              React.createElement("circle", { cx: "5.5", cy: "18.5", r: "2.5" }),
+              React.createElement("circle", { cx: "18.5", cy: "18.5", r: "2.5" })
+            ),
+            React.createElement(
+              "span",
+              { style: { color: T.text, fontWeight: 600 } },
+              "Free Shipping Across India (3-5 Business Days)"
+            )
+          ),
+          React.createElement(
+            "div",
+            { key: "ret", style: { display: "flex", alignItems: "center", gap: 8 } },
+            React.createElement(
+              "svg",
+              { width: "15", height: "15", viewBox: "0 0 24 24", fill: "none", stroke: "#C9A84C", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
+              React.createElement("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" })
+            ),
+            React.createElement(
+              "span",
+              { style: { color: T.text, fontWeight: 600 } },
+              "Easy Replacement Policy if seal is broken/damaged"
+            )
+          )
+        ]
+      )
+    )
   );
 }
 
@@ -2841,6 +2911,7 @@ function CollectionPage({}) {
                       },
                       e.short,
                     ),
+                      React.createElement(TeaSpecsAndShippingPanel, { tea: e }),
                     e.benefits &&
                       React.createElement(
                         "div",
@@ -3122,6 +3193,7 @@ function CollectionPage({}) {
                       },
                       e.short,
                     ),
+                      React.createElement(TeaSpecsAndShippingPanel, { tea: e }),
                     React.createElement(
                       "div",
                       {
@@ -7722,8 +7794,8 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
                   "h4",
                   {
                     style: {
-                      fontFamily: "'Inter'",
-                      fontSize: 12,
+                      fontFamily: "'Playfair Display', Georgia, serif",
+                      fontSize: 13,
                       fontWeight: 700,
                       letterSpacing: "0.08em",
                       color: T.teal,
@@ -7747,8 +7819,13 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
                     ...e.relatedTeas.map((name) => {
                       return React.createElement(
                         "div",
-                        { key: name, style: { display: "flex", alignItems: "center", gap: 6 } },
-                        React.createElement("span", null, "🍃"),
+                        { key: name, style: { display: "flex", alignItems: "center", gap: 8 } },
+                        React.createElement(
+                          "svg",
+                          { width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: T.teal, strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
+                          React.createElement("path", { d: "M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2z" }),
+                          React.createElement("path", { d: "M9 22v-4" })
+                        ),
                         React.createElement(
                           "a",
                           {
@@ -7774,8 +7851,13 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
                     }),
                     React.createElement(
                       "div",
-                      { style: { display: "flex", alignItems: "center", gap: 6 } },
-                      React.createElement("span", null, "📖"),
+                      { style: { display: "flex", alignItems: "center", gap: 8 } },
+                      React.createElement(
+                        "svg",
+                        { width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: T.teal, strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
+                        React.createElement("path", { d: "M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" }),
+                        React.createElement("path", { d: "M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" })
+                      ),
                       React.createElement(
                         "a",
                         {

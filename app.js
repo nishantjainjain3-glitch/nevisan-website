@@ -1248,7 +1248,7 @@ const TEAS = [
     tags: ["DIGESTION", "METABOLISM"],
     bg: "#d4edd8",
     color: "#3a7a50",
-    img: "teas/lemongrass.png?v=2",
+    img: "/teas/lemongrass.png?v=2",
     price: 499,
     brew: "90°C · 2–3 min · Can steep twice",
     benefits: [
@@ -1286,7 +1286,7 @@ const TEAS = [
     tags: ["CALMING", "ANTIOXIDANT"],
     bg: "#c8dff0",
     color: "#2a5a8a",
-    img: "teas/blue-flower.png?v=2",
+    img: "/teas/blue-flower.png?v=2",
     price: 499,
     brew: "85°C · 2–3 min · No milk needed",
     benefits: [
@@ -1324,7 +1324,7 @@ const TEAS = [
     tags: ["NON-ALC", "EXOTIC"],
     bg: "#f5e9a0",
     color: "#8a6a10",
-    img: "teas/rum.png?v=2",
+    img: "/teas/rum.png?v=2",
     price: 499,
     bestseller: !0,
     brew: "90°C · 3 min · Excellent hot or iced",
@@ -1363,7 +1363,7 @@ const TEAS = [
     tags: ["HORMONAL", "SKIN"],
     bg: "#e8d4f0",
     color: "#6a3a8a",
-    img: "teas/spearmint.png?v=2",
+    img: "/teas/spearmint.png?v=2",
     price: 499,
     brew: "85°C · 2 min · Light and refreshing",
     benefits: [
@@ -1401,7 +1401,7 @@ const TEAS = [
     tags: ["IMMUNITY", "STRESS"],
     bg: "#d4edd8",
     color: "#3a7a50",
-    img: "teas/tulsi.png?v=2",
+    img: "/teas/tulsi.png?v=2",
     price: 499,
     brew: "90°C · 3–4 min · Best plain or with honey",
     benefits: [
@@ -1439,7 +1439,7 @@ const TEAS = [
     tags: ["SLEEP", "CALMING"],
     bg: "#f5e9a0",
     color: "#8a6a10",
-    img: "teas/chamomile.png?v=2",
+    img: "/teas/chamomile.png?v=2",
     price: 499,
     brew: "85°C · 4 min · Best before bed",
     benefits: [
@@ -1476,7 +1476,7 @@ const TEAS = [
     tags: ["NON-ALC", "BOLD"],
     bg: "#e0d4c8",
     color: "#5a4030",
-    img: "teas/whiskey.png?v=2",
+    img: "/teas/whiskey.png?v=2",
     price: 499,
     brew: "90°C · 3 min · Bold, best enjoyed slowly",
     benefits: [
@@ -1513,7 +1513,7 @@ const TEAS = [
     tags: ["RELAXATION", "FOCUS"],
     bg: "#c0e0dc",
     color: "#1b7a82",
-    img: "teas/gaba.png?v=2",
+    img: "/teas/gaba.png?v=2",
     price: 499,
     brew: "85°C · 3 min · Nitrogen-anaerobic processed",
     benefits: [
@@ -1551,7 +1551,7 @@ const TEAS = [
     tags: ["ORGANIC", "PURE"],
     bg: "#c8e8c0",
     color: "#2a6a2a",
-    img: "teas/organic.png?v=2",
+    img: "/teas/organic.png?v=2",
     price: 499,
     badge: "ORGANIC",
     brew: "80°C · 2 min · Never boiling water",
@@ -1590,7 +1590,7 @@ const TEAS = [
     tags: ["IMMUNITY", "WARMING"],
     bg: "#fdf2e9",
     color: "#935116",
-    img: "teas/ginger.png?v=2",
+    img: "/teas/ginger.png?v=2",
     price: 499,
     badge: "IMMUNE BOOST",
     brew: "85°C · 2–3 min · Best warm",
@@ -1863,7 +1863,8 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
       style: {
         background: T.white,
         borderRadius: 16,
-        overflow: "hidden",
+        position: "relative",
+        overflow: "visible",
         boxShadow: o
           ? "0 20px 60px rgba(27,122,130,0.2), 0 4px 16px rgba(0,0,0,0.08)"
           : "0 2px 12px rgba(0,0,0,0.06)",
@@ -3204,6 +3205,7 @@ function CollectionPage({}) {
                           marginBottom: 20,
                         },
                       },
+                      React.createElement(AddToCartBtn, { tea: e, onAdded: () => t(null) }),
                       React.createElement(
                         RippleButton,
                         {

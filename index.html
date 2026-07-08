@@ -570,34 +570,7 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     #nev-scroll-progress { display: none; }
   }
 
-  /* Custom gold cursor — desktop only */
-  @media (hover: hover) and (pointer: fine) {
-    body { cursor: none !important; }
-    #nev-cur {
-      position: fixed; width: 10px; height: 10px;
-      border-radius: 50%; background: #C9A84C;
-      pointer-events: none; z-index: 10000;
-      mix-blend-mode: difference;
-      translate: -5px -5px;
-      will-change: transform;
-    }
-    #nev-cur-ring {
-      position: fixed; width: 32px; height: 32px;
-      border-radius: 50%;
-      border: 1px solid rgba(201,168,76,0.55);
-      pointer-events: none; z-index: 9999;
-      translate: -16px -16px;
-      transition: width 250ms var(--ease-out), height 250ms var(--ease-out),
-                  border-color 200ms ease;
-      will-change: transform;
-    }
-    #nev-cur-ring.hovered {
-      width: 48px; height: 48px;
-      border-color: rgba(201,168,76,0.9);
-      translate: -24px -24px;
-    }
-    a, button, .card-hover-lift { cursor: none !important; }
-  }
+  
 
   /* Emil: active scale on ALL buttons */
   button:active { transform: scale(0.97) !important; }
@@ -632,9 +605,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CSS-only scroll progress bar (MWG animation-timeline) -->
   <div id="nev-scroll-progress" aria-hidden="true"></div>
 
-  <!-- Custom cursor elements -->
-  <div id="nev-cur" aria-hidden="true"></div>
-  <div id="nev-cur-ring" aria-hidden="true"></div>
+  
+  
+  
 
   <!-- Three.js premium particle canvas (replaces leaf canvas) -->
   <canvas id="nev-three-canvas" style="position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.42;"></canvas>
@@ -724,38 +697,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     })();
   })();
 
-  /* ══ SPRING-LAG GOLD CURSOR ══
-     Emil: spring easing for decorative mouse tracking
-  */
-  (function initCursor() {
-    const cur  = document.getElementById('nev-cur');
-    const ring = document.getElementById('nev-cur-ring');
-    if (!cur || !ring) return;
-    if (window.matchMedia('(hover: none)').matches) return;
-
-    let cx = -200, cy = -200, rx = -200, ry = -200;
-    document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; }, { passive: true });
-
-    (function loop() {
-      requestAnimationFrame(loop);
-      rx += (cx - rx) * 0.13;
-      ry += (cy - ry) * 0.13;
-      cur.style.left  = cx + 'px';
-      cur.style.top   = cy + 'px';
-      ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
-    })();
-
-    /* Expand ring on interactive elements */
-    document.addEventListener('mouseover', e => {
-      const el = e.target.closest('a, button, [role="button"]');
-      if (el) ring.classList.add('hovered');
-    }, { passive: true });
-    document.addEventListener('mouseout', e => {
-      const el = e.target.closest('a, button, [role="button"]');
-      if (el) ring.classList.remove('hovered');
-    }, { passive: true });
-  })();
+  
 </script>
 
 <script>

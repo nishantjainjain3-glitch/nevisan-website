@@ -1,0 +1,16 @@
+{
+  "short_name": "Nevisan",
+  "name": "Nevisan Tea",
+  "icons": [
+    {
+      "src": "nevisan-logo.jpeg",
+      "type": "image/jpeg",
+      "sizes": "256x256"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#FAF6F0",
+  "theme_color": "#0F2E2A",
+  "display": "standalone",
+  "orientation": "portrait"
+}

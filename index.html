@@ -526,6 +526,22 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     transform: translateX(-50%);
     z-index: 3;
   }
+
+  /* Ambient background light leaks */
+  .nev-ambient-glow {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.85;
+    will-change: transform;
+    animation: nev-glow-float 15s ease-in-out infinite alternate;
+  }
+  @keyframes nev-glow-float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(8%, 6%) scale(1.15); }
+  }
 </style>
 
 <!-- ══ NEVISAN PREMIUM DESIGN TOKENS + ANIMATIONS ══ -->
@@ -592,6 +608,10 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
 
 </head>
 <body>
+  <!-- Ambient background glow spots -->
+  <div class="nev-ambient-glow" style="top: -15%; left: -15%; width: 55vw; height: 55vw; background: radial-gradient(circle, rgba(35,65,45,0.16) 0%, transparent 70%);"></div>
+  <div class="nev-ambient-glow" style="bottom: -15%; right: -15%; width: 55vw; height: 55vw; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); animation-delay: -5s;"></div>
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WN76CRVR"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -655,8 +675,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     /* Torus rings */
     const mkRing = (r, c, rx, rz, op) => {
       const m = new THREE.Mesh(
-        new THREE.TorusGeometry(r, 0.1, 8, 80),
-        new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: op })
+        new THREE.TorusGeometry(r, 0.5, 8, 64),
+        new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: op, wireframe: true })
       );
       m.rotation.x = rx; m.rotation.z = rz;
       scene.add(m); return m;
@@ -688,11 +708,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       requestAnimationFrame(tick);
       if (!tabVisible) return;
       t += 0.003;
-      pts.rotation.y = t * 0.07 + mx * 0.12;
-      pts.rotation.x = t * 0.032 + my * 0.08;
-      r1.rotation.z = t * 0.13; r1.rotation.x = t * 0.05 + my * 0.15;
-      r2.rotation.z = -t * 0.09; r2.rotation.y = t * 0.1 + mx * 0.16;
-      r3.rotation.y = t * 0.055; r3.rotation.z = t * 0.038 + mx * 0.07;
+
+      // Smooth camera parallax
+      cam.position.x += (mx * 18 - cam.position.x) * 0.04;
+      cam.position.y += (my * 12 - cam.position.y) * 0.04;
+      cam.lookAt(scene.position);
+
+      // Twinkling breathing opacity
+      pts.material.opacity = 0.35 + Math.sin(t * 6) * 0.12;
+
+      pts.rotation.y = t * 0.04;
+      pts.rotation.x = t * 0.015;
+      r1.rotation.z = t * 0.13; r1.rotation.x = t * 0.05;
+      r2.rotation.z = -t * 0.09; r2.rotation.y = t * 0.1;
+      r3.rotation.y = t * 0.055; r3.rotation.z = t * 0.038;
       renderer.render(scene, cam);
     })();
   })();

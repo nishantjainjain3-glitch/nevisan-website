@@ -829,7 +829,7 @@ function Hero({ setPage: e }) {
         i
           ? React.createElement("img", {
               src: "hero-mobile.jpg?v=2",
-              alt: "Nevisan tea garden in Golaghat Assam - single origin whole leaf tea",
+              alt: "Nevisan tea garden in Golaghat Assam - single-origin whole-leaf tea",
               fetchpriority: "high",
               width: "800",
               height: "1200",
@@ -1418,7 +1418,7 @@ const TEAS = [
       {
         icon: "🫁",
         title: "Respiratory Health",
-        desc: "Opens airways, soothes sore throats and relieves congestion — especially helpful in season changes.",
+        desc: "Opens airways, soothes sore throats and relieves congestion — especially helpful during seasonal changes.",
       },
       {
         icon: "🩸",
@@ -1446,12 +1446,12 @@ const TEAS = [
       {
         icon: "😴",
         title: "Deep Sleep Aid",
-        desc: "Chamomile contains apigenin — binds to sleep receptors in the brain, promoting restful sleep.",
+        desc: "Chamomile contains apigenin, which binds to sleep receptors in the brain, promoting restful sleep.",
       },
       {
         icon: "😌",
         title: "Anxiety & Stress Relief",
-        desc: "Clinically shown to reduce anxiety disorder symptoms. Calm without drowsiness during the day.",
+        desc: "Clinically shown to reduce symptoms of anxiety. Promotes calm without daytime drowsiness.",
       },
       {
         icon: "🫀",
@@ -1466,7 +1466,7 @@ const TEAS = [
       {
         icon: "🧴",
         title: "Skin Healing",
-        desc: "Anti-inflammatory properties reduce redness, eczema and speed up natural skin healing.",
+        desc: "Anti-inflammatory properties reduce redness and eczema, while speeding up natural skin healing.",
       },
     ],
   },
@@ -1586,7 +1586,7 @@ const TEAS = [
   {
     name: "Ginger Green Tea",
     short:
-      "Warming ginger blended with single-origin whole leaf green tea. Soothing, spicy, and perfect for immune support.",
+      "Warming ginger blended with single-origin whole-leaf green tea. Soothing, spicy, and perfect for immune support.",
     tags: ["IMMUNITY", "WARMING"],
     bg: "#fdf2e9",
     color: "#935116",
@@ -1784,7 +1784,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
     "Blue Flower Green Tea": {
       palate: "Cobalt Blue, Mild Floral, Earthy sweetness",
       brew: "85°C · 2 Mins · Up to 3 Infusions",
-      badge: "Color Magic"
+      badge: "Colour Magic"
     },
     "Tulsi Green Tea": {
       palate: "Spicy Tulsi, Herbaceous, Bready warmth",
@@ -1904,7 +1904,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
       e.img
         ? React.createElement("img", {
             src: e.img,
-            alt: `${e.name} - Nevisan whole leaf tea from Golaghat Assam`,
+            alt: `${e.name} - Nevisan whole-leaf tea from Golaghat Assam`,
             loading: "lazy",
             width: "400",
             height: "400",
@@ -4424,39 +4424,39 @@ function Testimonials() {
         },
         [
           {
-            text: "I\u2019ve tried many green teas, but this one really stands out. The aroma is fresh, and the taste is smooth without any bitterness. You can actually feel the natural flavor of the tea leaves, and it\u2019s perfect for both morning energy and evening relaxation. The best part \u2014 it can be steeped twice and still tastes great! Definitely worth the price.",
+            text: "I\u2019ve tried many green teas, but this one really stands out. The aroma is fresh, and the taste is smooth without any bitterness. You can actually feel the natural flavour of the tea leaves, and it\u2019s perfect for both morning energy and evening relaxation. The best part \u2014 it can be steeped twice and still tastes great! Definitely worth the price.",
             name: "Uditijain",
-            loc: "Verified Amazon Purchase \u2022 Flavor: Whiskey",
+            loc: "Verified Amazon Purchase \u2022 Flavour: Whiskey",
             rating: 5,
           },
           {
             text: "Awesome flavour.. it really do taste like rum.. all natural flavour.. no added sweeteners.. best product.. will surely will purchase more..",
             name: "Ridhi",
-            loc: "Verified Amazon Purchase \u2022 Flavor: Exotic Rum",
+            loc: "Verified Amazon Purchase \u2022 Flavour: Exotic Rum",
             rating: 5,
           },
           {
             text: "Great taste, absolutely loved it! Can\u2019t wait to try all the delicious flavours and enjoy every single one of them soon!",
             name: "Chandraprakash Shyamsukha",
-            loc: "Verified Amazon Purchase \u2022 Flavor: Lemongrass",
+            loc: "Verified Amazon Purchase \u2022 Flavour: Lemongrass",
             rating: 5,
           },
           {
-            text: "I'm very impressed with NEVISAN's Lemongrass Tea. It has a wonderfully fresh and zesty aroma right out of the package. The tea brews into a beautiful pale yellow and has a crisp, clean, and smooth citrus flavor. It's not bitter at all, just incredibly refreshing with a hint of natural sweetness. It's a fantastic, high-quality, caffeine-free tea. Highly recommended!",
+            text: "I'm very impressed with NEVISAN's Lemongrass Tea. It has a wonderfully fresh and zesty aroma right out of the package. The tea brews into a beautiful pale yellow and has a crisp, clean, and smooth citrus flavour. It's not bitter at all, just incredibly refreshing with a hint of natural sweetness. It's a fantastic, high-quality, caffeine-free tea. Highly recommended!",
             name: "Dinesh tiwari",
-            loc: "Verified Amazon Purchase \u2022 Flavor: Lemongrass",
+            loc: "Verified Amazon Purchase \u2022 Flavour: Lemongrass",
             rating: 5,
           },
           {
             text: "Tried different flavours...really enjoyed it\nHighly recommend buying the blue flower and lemongrass flavour.\nAssam tea at its best..great work team",
             name: "Amazon Customer",
-            loc: "Verified Amazon Purchase \u2022 Flavor: Blue Flower",
+            loc: "Verified Amazon Purchase \u2022 Flavour: Blue Flower",
             rating: 5,
           },
           {
             text: "Best green tea so far ...in spearmint flavour...From Nevisan",
             name: "Richa Jain",
-            loc: "Verified Buyer \u2022 Flavor: Spearmint",
+            loc: "Verified Buyer \u2022 Flavour: Spearmint",
             rating: 5,
           },
         ].map((e, a) =>
@@ -6748,16 +6748,16 @@ function FAQSection() {
             a: "All Nevisan teas have a shelf life of 24 months from the date of manufacture when stored in a cool, dry place away from direct sunlight.",
           },
           {
-            q: "Is your tea organic and chemical free?",
-            a: "Yes. Every batch is PGS-India organic certified and grown without pesticides or chemicals. From soil to seal, we guarantee it.",
+            q: "Is your tea organic and chemical-free?",
+            a: "Yes. Every batch is PGS-India Organic Certified and grown without pesticides or chemicals. From soil to seal, we guarantee it.",
           },
           {
             q: "Can the tea be steeped more than once?",
-            a: "Absolutely. Because we use 100% whole leaf tea, most of our varieties can be steeped twice — the second cup is just as rewarding.",
+            a: "Absolutely. Because we use 100% whole-leaf tea, most of our varieties can be steeped twice — the second cup is just as rewarding.",
           },
           {
             q: "Do you offer bulk or wholesale orders?",
-            a: "Yes! For bulk orders for hotels, cafes, offices or gifting, reach out to us directly on WhatsApp at +91 98642 45687.",
+            a: "Yes! For bulk orders for hotels, cafés, offices or gifting, reach out to us directly on WhatsApp at +91 98642 45687.",
           },
           {
             q: "What is your return policy?",
@@ -7367,11 +7367,11 @@ function OurStoryPage({ setPage: e }) {
             {
               num: "02",
               title: "The Antidote to 'Bitter Dust'",
-              desc: "Most commercial green teas are made from leftover 'tea dust' swept from factory floors and packed into paper tea bags, resulting in a bitter, astringent cup. Nevisan is the antidote. We pack only whole, unbroken leaves that gently unfurl in hot water, releasing a naturally sweet, smooth flavor that can be steeped twice. No bitterness, just pure leaf.",
+              desc: "Most commercial green teas are made from leftover 'tea dust' swept from factory floors and packed into paper tea bags, resulting in a bitter, astringent cup. Nevisan is the antidote. We pack only whole, unbroken leaves that gently unfurl in hot water, releasing a naturally sweet, smooth flavour that can be steeped twice. No bitterness, just pure leaf.",
             },
             {
               num: "03",
-              title: "The Alchemy of Flavor & Function",
+              title: "The Alchemy of Flavour & Function",
               desc: "We believe wellness shouldn't taste boring. We take our clean orthodox tea and blend it with organic botanicals—like Spearmint to balance hormones, GABA Oolong to calm an overactive mind, and pure Chamomile to restore sleep. Then, we add a touch of gourmet sophistication—infusing our leaves with rich, warm, non-alcoholic notes of charred oak Whiskey and sugarcane Rum.",
             },
           ].map((item, idx) =>
@@ -7492,7 +7492,7 @@ const POSTS = [
     excerpt:
       "Whole leaf teas open up with each steep. The first is bold, the second more rounded, the third surprisingly sweet.",
     body: [
-      "One of the most common mistakes people make with whole leaf tea is throwing it away after the first steep. This is like eating only the crust of a sourdough loaf.",
+      "One of the most common mistakes people make with whole-leaf tea is throwing it away after the first steep. This is like eating only the crust of a sourdough loaf.",
       "Here's how to get the most from every serving of Nevisan tea:",
       'First Steep: Use water at the temperature specified on your tea (typically 80–90°C). Steep for 2–3 minutes. This releases the brightest, most aromatic compounds — the "top notes" of the tea. This is the boldest, most characteristic cup.',
       "Second Steep: Let the leaves rest for 60 seconds after draining. Add fresh water at the same temperature. Steep for 2–3 minutes. The body opens up further. You'll notice the cup is softer, more rounded — often more complex than the first.",

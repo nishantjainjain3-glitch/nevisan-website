@@ -3890,7 +3890,9 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
 
         gridColumn: (isFeatured || isMidHorizontal) ? "1 / -1" : "auto",
 
-        display: (isFeatured || isMidHorizontal) ? "grid" : "block",
+        display: (isFeatured || isMidHorizontal) ? "grid" : "flex",
+
+        flexDirection: (isFeatured || isMidHorizontal) ? "row" : "column",
 
         gridTemplateColumns: isFeatured ? "1.2fr 0.8fr" : isMidHorizontal ? "0.8fr 1.2fr" : "none",
 
@@ -4114,9 +4116,11 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
 
           flexDirection: "column",
 
-          justifyContent: "center",
+          justifyContent: (isFeatured || isMidHorizontal) ? "center" : "space-between",
 
-          height: "100%",
+          flex: (isFeatured || isMidHorizontal) ? "none" : 1,
+
+          height: (isFeatured || isMidHorizontal) ? "100%" : "auto",
 
           order: isMidHorizontal ? 1 : 2,
 

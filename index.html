@@ -37,35 +37,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<script>
-  (function() {
-    function showError(msg, file, line, col, error) {
-      var div = document.createElement('div');
-      div.style.position = 'fixed';
-      div.style.top = '0';
-      div.style.left = '0';
-      div.style.right = '0';
-      div.style.background = 'rgba(255,0,0,0.95)';
-      div.style.color = 'white';
-      div.style.padding = '24px';
-      div.style.zIndex = '999999';
-      div.style.fontFamily = 'monospace';
-      div.style.fontSize = '14px';
-      div.style.lineHeight = '1.5';
-      div.style.boxShadow = '0 4px 20px rgba(0,0,0,0.5)';
-      div.style.whiteSpace = 'pre-wrap';
-      div.innerText = '⚠️ RUNTIME ERROR:\n' + msg + '\n\nFile: ' + file + '\nLine: ' + line + ':' + col + '\n\nStack:\n' + (error ? error.stack : 'N/A');
-      document.documentElement.appendChild(div);
-    }
-    window.addEventListener('error', function(e) {
-      showError(e.message, e.filename, e.lineno, e.colno, e.error);
-    });
-    window.addEventListener('unhandledrejection', function(e) {
-      var reason = e.reason || {};
-      showError('Unhandled Promise Rejection: ' + (reason.message || reason), reason.fileName || 'N/A', reason.lineNumber || 'N/A', 0, reason);
-    });
-  })();
-</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Primary SEO -->

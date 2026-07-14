@@ -1868,612 +1868,2410 @@ const TEA_PROFILES = {
     badge: "Warming Wellness"
   }
 };
-function TeaCard({ tea, onView, onImageClick, index = 0 }) {
-  const e = tea;
-  const t = onView;
-  const a = onImageClick;
-  const n = index;
+function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
+
+
 
   const { isMobile: mobile } = useViewport();
+
+
+
   const isFeatured = false;
+
+
+
   const isMidHorizontal = false;
+
+
+
   const [o, i] = useState(!1),
+
+
+
     [r, l] = useState(!1),
+
+
+
     [s, c] = useState({ x: 0, y: 0 }),
+
+
+
     [d, m] = useState(!1),
+
+
+
     [p, g] = useInView(0.1);
 
-  const prof = TEA_PROFILES[e.name] || {
-    palate: "Malty, Sweet, Smooth",
-    brew: e.brew || "85°C · 2 Mins",
-    badge: e.badge || "Organic Reserve"
-  };
-  const f = useCallback((e) => {
-      if (!p.current) return;
-      const t = p.current.getBoundingClientRect();
-      c({
-        x: 12 * ((e.clientX - t.left) / t.width - 0.5),
-        y: -12 * ((e.clientY - t.top) / t.height - 0.5),
-      });
-    }, []);
-  return React.createElement(
-    "div",
-    {
-      ref: p,
-      className: "card-hover-lift",
-      onMouseEnter: () => i(!0),
-      onMouseLeave: () => {
-        (i(!1), c({ x: 0, y: 0 }));
-      },
-      onMouseMove: f,
-      onTouchStart: () => l(!0),
-      onTouchEnd: (e) => {
-        l(!1);
-      },
-      onClick: () => {
-        try {
-          const m = {
-            "Lemongrass Green Tea": "KT-8GBE-8MZG",
-            "Blue Flower Green Tea": "BlueFlower-1",
-            "Rum Green Tea": "RUM-1",
-            "Spearmint Green Tea": "Spearmint",
-            "Tulsi Green Tea": "MK-H5LY-IRK3",
-            "Chamomile Green Tea": "Chamomile-1",
-            "Whiskey Green Tea": "9E-23FO-LL8Q",
-            "GABA Oolong Tea": "GABA",
-            "Organic Green Tea": "Unflavoured-1",
-            "Ginger Green Tea": "GINGER",
-          };
-          const s = m[e.name];
-          if (s && typeof fbq !== "undefined") {
-            fbq("track", "ViewContent", {
-              content_ids: [s],
-              content_type: "product",
-              value: e.price || 499,
-              currency: "INR",
-            });
-          }
-        } catch (err) {}
-        t(e);
-      },
-      style: {
-        background: "#FAF9F6", // Warm cream outer bezel
-        border: "1px solid rgba(27,122,130,0.06)",
-        borderRadius: 24, // Outer Squircle radius
-        padding: 6, // 6px Concentric Nesting Padding
-        position: "relative",
-        overflow: "hidden", // Prevent image overflow bleed
-        boxShadow: o
-          ? "0 20px 48px rgba(27,122,130,0.18), 0 4px 16px rgba(0,0,0,0.06)"
-          : "0 2px 10px rgba(0,0,0,0.04)",
-        transform: o
-          ? `perspective(900px) rotateX(${s.y}deg) rotateY(${s.x}deg) translateY(-6px) scale(1.01)`
-          : r
-            ? "perspective(900px) scale(0.98)"
-            : "perspective(900px) rotateX(0) rotateY(0) translateY(0) scale(1)",
-        transition: o
-          ? "box-shadow 250ms ease, transform 120ms ease"
-          : "box-shadow 350ms ease, transform 350ms ease, opacity 0.6s ease-out, translate 0.6s ease-out",
-        cursor: "pointer",
-        opacity: g ? 1 : 0,
-        translate: g ? "0 0" : "0 32px",
-        transitionDelay: 0.07 * n + "s",
-        gridColumn: (isFeatured || isMidHorizontal) ? "1 / -1" : "auto",
-        display: "flex",
-        flexDirection: "column", // Explicit column stacking
-      },
+
+
+  const profiles = {
+
+
+
+    "GABA Oolong Tea": {
+
+
+
+      palate: "Malty, Wild Honey, Baked Stone Fruit",
+
+
+
+      brew: "90°C · 3-4 Mins · Up to 4 Infusions",
+
+
+
+      badge: "Signature Reserve"
+
+
+
     },
-    React.createElement(
-      "div",
-      {
-        style: {
-          width: "100%",
-          background: T.white, // Inner pure white container
-          borderRadius: 18, // Inner concentric radius (24 - 6)
-          overflow: "hidden",
-          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.6)",
-          border: "1px solid rgba(0,0,0,0.03)",
-          display: "flex",
-          flexDirection: "column", // Stacks children vertically naturally
-          position: "relative",
-          flex: 1, // Stretch to outer bezel height
-        }
+
+
+
+    "Lemongrass Green Tea": {
+
+
+
+      palate: "Crisp Citrus, Grassy, Mild Sweetness",
+
+
+
+      brew: "80°C · 2 Mins · Up to 3 Infusions",
+
+
+
+      badge: "Popular"
+
+
+
+    },
+
+
+
+    "Spearmint Green Tea": {
+
+
+
+      palate: "Refreshing Mint, Brisk Green, Clean Finish",
+
+
+
+      brew: "80°C · 2 Mins · Up to 3 Infusions",
+
+
+
+      badge: "Hormonal Balance"
+
+
+
+    },
+
+
+
+    "Rum Green Tea": {
+
+
+
+      palate: "Warm Spiced Rum, Sugarcane, Oak wood",
+
+
+
+      brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
+
+
+
+      badge: "Exotic Infusion"
+
+
+
+    },
+
+
+
+    "Whiskey Green Tea": {
+
+
+
+      palate: "Oaky Smoke, Malt, Subtle Sweetness",
+
+
+
+      brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
+
+
+
+      badge: "Bold Reserve"
+
+
+
+    },
+
+
+
+    "Blue Flower Green Tea": {
+
+
+
+      palate: "Cobalt Blue, Mild Floral, Earthy sweetness",
+
+
+
+      brew: "85°C · 2 Mins · Up to 3 Infusions",
+
+
+
+      badge: "Colour Magic"
+
+
+
+    },
+
+
+
+    "Tulsi Green Tea": {
+
+
+
+      palate: "Spicy Tulsi, Herbaceous, Bready warmth",
+
+
+
+      brew: "85°C · 2 Mins · Up to 3 Infusions",
+
+
+
+      badge: "Immunity"
+
+
+
+    },
+
+
+
+    "Chamomile Green Tea": {
+
+
+
+      palate: "Soothing Chamomile, Honeyed Apples, Floral",
+
+
+
+      brew: "85°C · 3 Mins · Up to 3 Infusions",
+
+
+
+      badge: "Stress Relief"
+
+
+
+    },
+
+
+
+    "Organic Green Tea": {
+
+
+
+      palate: "Pure Vegetal, Umami, Clean Grassy notes",
+
+
+
+      brew: "80°C · 2 Mins · Up to 3 Infusions",
+
+
+
+      badge: "Estate Classic"
+
+
+
+    },
+
+
+
+    "Ginger Green Tea": {
+
+
+
+      palate: "Spicy Ginger, Honeyed Warmth, Brisk Green",
+
+
+
+      brew: "85°C · 2-3 Mins · Up to 3 Infusions",
+
+
+
+      badge: "Warming Wellness"
+
+
+
+    }
+
+
+
+  };
+
+
+
+  const prof = profiles[e.name] || {
+
+
+
+    palate: "Malty, Sweet, Smooth",
+
+
+
+    brew: e.brew || "85°C · 2 Mins",
+
+
+
+    badge: e.badge || "Organic Reserve"
+
+
+
+  };
+
+
+
+  const f = useCallback((e) => {
+
+
+
+      if (!p.current) return;
+
+
+
+      const t = p.current.getBoundingClientRect();
+
+
+
+      c({
+
+
+
+        x: 12 * ((e.clientX - t.left) / t.width - 0.5),
+
+
+
+        y: -12 * ((e.clientY - t.top) / t.height - 0.5),
+
+
+
+      });
+
+
+
+    }, []);
+
+
+
+  return React.createElement(
+
+
+
+    "div",
+
+
+
+    {
+
+
+
+      ref: p,
+
+
+
+      className: "card-hover-lift",
+
+
+
+      onMouseEnter: () => i(!0),
+
+
+
+      onMouseLeave: () => {
+
+
+
+        (i(!1), c({ x: 0, y: 0 }));
+
+
+
       },
+
+
+
+      onMouseMove: f,
+
+
+
+      onTouchStart: () => l(!0),
+
+
+
+      onTouchEnd: (e) => {
+
+
+
+        l(!1);
+
+
+
+      },
+
+
+
+      onClick: () => {
+
+
+
+        try {
+
+
+
+          const m = {
+
+
+
+            "Lemongrass Green Tea": "KT-8GBE-8MZG",
+
+
+
+            "Blue Flower Green Tea": "BlueFlower-1",
+
+
+
+            "Rum Green Tea": "RUM-1",
+
+
+
+            "Spearmint Green Tea": "Spearmint",
+
+
+
+            "Tulsi Green Tea": "MK-H5LY-IRK3",
+
+
+
+            "Chamomile Green Tea": "Chamomile-1",
+
+
+
+            "Whiskey Green Tea": "9E-23FO-LL8Q",
+
+
+
+            "GABA Oolong Tea": "GABA",
+
+
+
+            "Organic Green Tea": "Unflavoured-1",
+
+
+
+            "Ginger Green Tea": "GINGER",
+
+
+
+          };
+
+
+
+          const s = m[e.name];
+
+
+
+          if (s && typeof fbq !== "undefined") {
+
+
+
+            fbq("track", "ViewContent", {
+
+
+
+              content_ids: [s],
+
+
+
+              content_type: "product",
+
+
+
+              value: e.price || 499,
+
+
+
+              currency: "INR",
+
+
+
+            });
+
+
+
+          }
+
+
+
+        } catch (err) {}
+
+
+
+        t(e);
+
+
+
+      },
+
+
+
+      style: {
+
+
+
+        background: T.white,
+
+
+
+        borderRadius: 16,
+
+
+
+        position: "relative",
+
+
+
+        overflow: "visible",
+
+
+
+        boxShadow: o
+
+
+
+          ? "0 20px 60px rgba(27,122,130,0.2), 0 4px 16px rgba(0,0,0,0.08)"
+
+
+
+          : "0 2px 12px rgba(0,0,0,0.06)",
+
+
+
+        transform: o
+
+
+
+          ? `perspective(900px) rotateX(${s.y}deg) rotateY(${s.x}deg) translateY(-6px) scale(1.01)`
+
+
+
+          : r
+
+
+
+            ? "perspective(900px) scale(0.97)"
+
+
+
+            : "perspective(900px) rotateX(0) rotateY(0) translateY(0) scale(1)",
+
+
+
+        transition: o
+
+
+
+          ? "box-shadow 250ms ease, transform 120ms ease"
+
+
+
+          : "box-shadow 350ms ease, transform 350ms ease, opacity 0.6s ease-out, translate 0.6s ease-out",
+
+
+
+        cursor: "pointer",
+
+
+
+        opacity: g ? 1 : 0,
+
+
+
+        translate: g ? "0 0" : "0 32px",
+
+
+
+        transitionDelay: 0.07 * n + "s",
+
+
+
+        gridColumn: (isFeatured || isMidHorizontal) ? "1 / -1" : "auto",
+
+
+
+        display: (isFeatured || isMidHorizontal) ? "grid" : "flex",
+
+
+
+        flexDirection: (isFeatured || isMidHorizontal) ? "row" : "column",
+
+
+
+        gridTemplateColumns: isFeatured ? "1.2fr 0.8fr" : isMidHorizontal ? "0.8fr 1.2fr" : "none",
+
+
+
+      },
+
+
+
+    },
+
+
+
     React.createElement(
+
+
+
       "div",
+
+
+
       {
+
+
+
         style: {
-          background: e.bg || T.white, // Premium matching brand pastel background
-          height: 220, // Clean, compact height
-          minHeight: 220,
+
+
+
+          background: T.white,
+
+
+
+          height: 260,
+
+
+
+          minHeight: 260,
+
+
+
           overflow: "hidden",
+
+
+
           position: "relative",
+
+
+
           cursor: "zoom-in",
+
+
+
+          order: isMidHorizontal ? 2 : 1,
+
+
+
         },
+
+
+
         onClick: (t) => {
+
+
+
           (t.stopPropagation(), a && a(e.img, e.name));
+
+
+
         },
+
+
+
       },
+
+
+
       e.img
+
+
+
         ? React.createElement("img", {
+
+
+
             src: e.img,
+
+
+
             alt: `${e.name} - Nevisan whole-leaf tea from Golaghat Assam`,
+
+
+
             loading: "lazy",
+
+
+
             width: "400",
+
+
+
             height: "400",
+
+
+
             style: {
+
+
+
               width: "100%",
+
+
+
               height: "100%",
+
+
+
               objectFit: "contain",
+
+
+
               padding: "16px",
+
+
+
               boxSizing: "border-box",
+
+
+
               transform: o ? "scale(1.04)" : "scale(1)",
+
+
+
               transition: "transform 500ms ease",
+
+
+
             },
+
+
+
           })
+
+
+
         : React.createElement(
+
+
+
             "div",
+
+
+
             {
+
+
+
               style: {
+
+
+
                 display: "flex",
+
+
+
                 alignItems: "center",
+
+
+
                 justifyContent: "center",
+
+
+
                 height: "100%",
+
+
+
               },
+
+
+
             },
-            React.createElement(Icon, { name: "🍃", size: 48, color: T.teal, style: { opacity: 0.7 } }),
+
+
+
+            React.createElement(
+
+
+
+              "span",
+
+
+
+              { style: { fontSize: 48, opacity: 0.7 } },
+
+
+
+              "🍃",
+
+
+
+            ),
+
+
+
           ),
+
+
+
       React.createElement("div", {
+
+
+
         style: {
+
+
+
           position: "absolute",
+
+
+
           inset: 0,
+
+
+
           background:
+
+
+
             "linear-gradient(to top, rgba(15,63,69,0.35) 0%, transparent 60%)",
+
+
+
           opacity: o ? 1 : 0,
+
+
+
           transition: "opacity 300ms ease",
+
+
+
         },
+
+
+
       }),
+
+
+
       e.bestseller &&
+
+
+
         React.createElement(
+
+
+
           "div",
+
+
+
           {
+
+
+
             style: {
+
+
+
               position: "absolute",
+
+
+
               top: 12,
+
+
+
               right: 12,
+
+
+
               background: T.gold,
+
+
+
               color: T.tealDark,
+
+
+
               fontSize: 9,
+
+
+
               fontWeight: 700,
+
+
+
               letterSpacing: "0.08em",
+
+
+
               padding: "4px 10px",
+
+
+
               borderRadius: 9999,
+
+
+
               boxShadow: "0 2px 8px rgba(201,168,76,0.4)",
+
+
+
             },
+
+
+
           },
-          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
+
+
+
+          "★ BESTSELLER",
+
+
+
         ),
+
+
+
       e.badge &&
+
+
+
         !e.bestseller &&
+
+
+
         React.createElement(
+
+
+
           "div",
+
+
+
           {
+
+
+
             style: {
+
+
+
               position: "absolute",
+
+
+
               top: 12,
+
+
+
               right: 12,
+
+
+
               background: "#2a6a2a",
+
+
+
               color: "#fff",
+
+
+
               fontSize: 9,
+
+
+
               fontWeight: 700,
+
+
+
               letterSpacing: "0.08em",
+
+
+
               padding: "4px 10px",
+
+
+
               borderRadius: 9999,
+
+
+
             },
+
+
+
           },
-          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "✓", size: 10, color: "#fff" }), e.badge),
+
+
+
+          "✓ ",
+
+
+
+          e.badge,
+
+
+
         ),
+
+
+
     ),
+
+
+
     React.createElement(
+
+
+
       "div",
+
+
+
       {
+
+
+
         style: {
-          padding: "20px 20px 20px",
+
+
+
+          padding: (isFeatured || isMidHorizontal) ? (mobile ? "20px" : "36px 40px") : "20px 20px 20px",
+
+
+
           display: "flex",
+
+
+
           flexDirection: "column",
-          justifyContent: "space-between",
-          flex: 1, // Grow to fill remaining space
-          height: "auto",
+
+
+
+          justifyContent: (isFeatured || isMidHorizontal) ? "center" : "space-between",
+
+
+
+          flex: (isFeatured || isMidHorizontal) ? "none" : 1,
+
+
+
+          height: (isFeatured || isMidHorizontal) ? "100%" : "auto",
+
+
+
+          order: isMidHorizontal ? 1 : 2,
+
+
+
         }
+
+
+
       },
+
+
+
       React.createElement(
+
+
+
         "span",
+
+
+
         {
+
+
+
           style: {
+
+
+
             fontFamily: "'Plus Jakarta Sans'",
+
+
+
             fontSize: 10,
+
+
+
             fontWeight: 700,
+
+
+
             letterSpacing: "0.12em",
+
+
+
             color: T.gold,
+
+
+
             textTransform: "uppercase",
+
+
+
             marginBottom: 6,
+
+
+
             display: "block",
+
+
+
           },
+
+
+
         },
+
+
+
         prof.badge,
+
+
+
       ),
+
+
+
       React.createElement(
+
+
+
         "h3",
+
+
+
         {
+
+
+
           style: {
+
+
+
             fontFamily: "'Playfair Display', Georgia, serif",
+
+
+
             fontWeight: 400,
+
+
+
             fontSize: (isFeatured || isMidHorizontal) ? 28 : 18,
+
+
+
             color: T.text,
+
+
+
             marginBottom: 8,
+
+
+
             lineHeight: 1.3,
+
+
+
           },
+
+
+
         },
+
+
+
         e.name,
+
+
+
       ),
+
+
+
       React.createElement(
+
+
+
         "p",
+
+
+
         {
+
+
+
           style: {
+
+
+
             fontFamily: "'Plus Jakarta Sans'",
+
+
+
             fontSize: 13,
+
+
+
             color: T.textMuted,
+
+
+
             lineHeight: 1.55,
+
+
+
             marginBottom: 14,
+
+
+
             minHeight: (isFeatured || isMidHorizontal) ? "auto" : 54,
+
+
+
           },
+
+
+
         },
+
+
+
         e.short,
+
+
+
       ),
+
+
+
       React.createElement(
+
+
+
         "div",
+
+
+
         {
+
+
+
           style: {
+
+
+
             borderTop: `1px solid ${T.border}`,
+
+
+
             borderBottom: `1px solid ${T.border}`,
+
+
+
             padding: "12px 0",
+
+
+
             margin: "14px 0",
+
+
+
             display: "flex",
+
+
+
             flexDirection: "column",
+
+
+
             gap: 8,
+
+
+
           },
+
+
+
         },
+
+
+
         React.createElement(
+
+
+
           "div",
+
+
+
           { style: { display: "flex", fontSize: 12.5, lineHeight: 1.4 } },
+
+
+
           React.createElement("span", { style: { fontWeight: 600, width: 80, color: T.teal, flexShrink: 0 } }, "Palate:"),
+
+
+
           React.createElement("span", { style: { color: T.textMuted } }, prof.palate)
+
+
+
         ),
+
+
+
         React.createElement(
+
+
+
           "div",
+
+
+
           { style: { display: "flex", fontSize: 12.5, lineHeight: 1.4 } },
+
+
+
           React.createElement("span", { style: { fontWeight: 600, width: 80, color: T.teal, flexShrink: 0 } }, "Brewing:"),
+
+
+
           React.createElement("span", { style: { color: T.textMuted } }, prof.brew)
+
+
+
         )
+
+
+
       ),
+
+
+
       React.createElement(
+
+
+
         "div",
+
+
+
         { style: { borderTop: `1px solid ${T.border}`, paddingTop: 14 } },
+
+
+
         React.createElement(
+
+
+
           "div",
+
+
+
           {
+
+
+
             style: {
+
+
+
               display: "flex",
+
+
+
               justifyContent: "space-between",
+
+
+
               alignItems: "center",
+
+
+
               marginBottom: 12,
+
+
+
             },
+
+
+
           },
+
+
+
           React.createElement(
+
+
+
             "div",
+
+
+
             null,
+
+
+
             React.createElement(
+
+
+
               "div",
+
+
+
               {
+
+
+
                 style: {
+
+
+
                   display: "flex",
+
+
+
                   alignItems: "center",
+
+
+
                   gap: 6,
+
+
+
                   marginBottom: 2,
+
+
+
                 },
+
+
+
               },
+
+
+
               React.createElement(
+
+
+
                 "span",
+
+
+
                 {
+
+
+
                   style: {
+
+
+
                     fontFamily: "'Plus Jakarta Sans'",
+
+
+
                     fontSize: 18,
+
+
+
                     fontWeight: 700,
+
+
+
                     color: T.teal,
+
+
+
                   },
+
+
+
                 },
+
+
+
                 "MRP ₹499",
+
+
+
               ),
+
+
+
               React.createElement(
+
+
+
                 "span",
+
+
+
                 {
+
+
+
                   style: {
+
+
+
                     fontFamily: "'Plus Jakarta Sans'",
+
+
+
                     fontSize: 11,
+
+
+
                     color: T.textMuted,
+
+
+
                   },
+
+
+
                 },
+
+
+
                 "· 50 gm",
+
+
+
               ),
+
+
+
             ),
+
+
+
           ),
+
+
+
           React.createElement(
+
+
+
             "button",
+
+
+
             {
+
+
+
               onClick: (a) => {
+
+
+
                 (a.stopPropagation(), t(e));
+
+
+
               },
+
+
+
               style: {
+
+
+
                 background: "transparent",
+
+
+
                 color: T.teal,
+
+
+
                 border: `1px solid ${T.teal}`,
+
+
+
                 borderRadius: 8,
+
+
+
                 padding: "7px 14px",
+
+
+
                 fontSize: 11,
+
+
+
                 fontWeight: 500,
+
+
+
                 cursor: "pointer",
+
+
+
                 fontFamily: "'Plus Jakarta Sans'",
+
+
+
                 letterSpacing: "0.04em",
+
+
+
                 transition: "background 200ms",
+
+
+
               },
+
+
+
               onMouseEnter: (e) => {
+
+
+
                 e.currentTarget.style.background = "rgba(27,122,130,0.07)";
+
+
+
               },
+
+
+
               onMouseLeave: (e) => {
+
+
+
                 e.currentTarget.style.background = "transparent";
+
+
+
               },
+
+
+
             },
+
+
+
             "Details",
+
+
+
           ),
+
+
+
         ),
+
+
+
         React.createElement(
+
+
+
           "div",
+
+
+
           { style: { position: "relative" } },
+
+
+
           React.createElement(
+
+
+
             "button",
+
+
+
             {
+
+
+
               onClick: (e) => {
+
+
+
                 (e.stopPropagation(), m((e) => !e));
+
+
+
               },
-              className: "group",
+
+
+
               style: {
+
+
+
                 width: "100%",
+
+
+
                 background: T.teal,
+
+
+
                 color: "#fff",
+
+
+
                 border: "none",
-                borderRadius: 9999,
-                padding: "6px 6px 6px 18px",
-                fontSize: 13,
+
+
+
+                borderRadius: 8,
+
+
+
+                padding: "11px",
+
+
+
+                fontSize: 14,
+
+
+
                 fontWeight: 600,
+
+
+
                 cursor: "pointer",
+
+
+
                 fontFamily: "'Plus Jakarta Sans'",
+
+
+
                 display: "flex",
+
+
+
                 alignItems: "center",
-                justifyContent: "space-between",
-                gap: 8,
-                transition: "all 300ms cubic-bezier(0.32,0.72,0,1)",
+
+
+
+                justifyContent: "center",
+
+
+
+                gap: 6,
+
+
+
+                transition: "filter 200ms",
+
+
+
               },
-              onMouseEnter: (e) => {
-                e.currentTarget.style.filter = "brightness(1.08)";
-                e.currentTarget.style.transform = "translateY(-1px)";
-              },
-              onMouseLeave: (e) => {
-                e.currentTarget.style.filter = "none";
-                e.currentTarget.style.transform = "none";
-              },
+
+
+
+              onMouseEnter: (e) =>
+
+
+
+                (e.currentTarget.style.filter = "brightness(1.1)"),
+
+
+
+              onMouseLeave: (e) => (e.currentTarget.style.filter = "none"),
+
+
+
             },
-            React.createElement("span", { style: { letterSpacing: "0.03em" } }, "Buy Now"),
-            React.createElement(
-              "div",
-              {
-                style: {
-                  width: 28,
-                  height: 28,
-                  borderRadius: "50%",
-                  background: "rgba(255,255,255,0.15)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  transition: "all 300ms cubic-bezier(0.32,0.72,0,1)",
-                }
-              },
-              React.createElement(
-                "svg",
-                {
-                  width: 14,
-                  height: 14,
-                  viewBox: "0 0 24 24",
-                  fill: "none",
-                  stroke: "currentColor",
-                  strokeWidth: 2,
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  style: {
-                    transform: d ? "rotate(90deg)" : "rotate(0deg)",
-                    transition: "transform 300ms cubic-bezier(0.32,0.72,0,1)",
-                  }
-                },
-                React.createElement("line", { x1: 7, y1: 17, x2: 17, y2: 7 }),
-                React.createElement("polyline", { points: "7 7 17 7 17 17" })
-              )
-            ),
+
+
+
+            "Buy Now ↑",
+
+
+
           ),
+
+
+
           d &&
+
+
+
             React.createElement("div", {
+
+
+
               onClick: (e) => {
+
+
+
                 (e.stopPropagation(), m(!1));
+
+
+
               },
+
+
+
               style: { position: "fixed", inset: 0, zIndex: 49 },
+
+
+
             }),
+
+
+
           d &&
+
+
+
             React.createElement(
+
+
+
               "div",
+
+
+
               {
+
+
+
                 onClick: (e) => e.stopPropagation(),
+
+
+
                 style: {
+
+
+
                   position: "absolute",
+
+
+
                   bottom: "110%",
+
+
+
                   left: 0,
+
+
+
                   right: 0,
+
+
+
                   background: "#fff",
+
+
+
                   borderRadius: 14,
+
+
+
                   boxShadow: "0 12px 40px rgba(0,0,0,0.18)",
+
+
+
                   border: `1px solid ${T.border}`,
+
+
+
                   overflow: "hidden",
+
+
+
                   zIndex: 50,
+
+
+
                   animation: "page-enter 0.18s ease both",
+
+
+
                 },
+
+
+
               },
+
+
+
               React.createElement(
+
+
+
                 "div",
+
+
+
                 {
+
+
+
                   style: {
+
+
+
                     padding: "12px 16px 8px",
+
+
+
                     fontFamily: "'Plus Jakarta Sans'",
+
+
+
                     fontSize: 10,
+
+
+
                     fontWeight: 700,
+
+
+
                     letterSpacing: "0.12em",
+
+
+
                     color: T.textMuted,
+
+
+
                     textTransform: "uppercase",
+
+
+
                   },
+
+
+
                 },
+
+
+
                 "Choose where to buy",
+
+
+
               ),
+
+
+
               [
+
+
+
                 {
+
+
+
                   label: "WhatsApp",
+
+
+
                   sub: "Direct from Nevisan · Fastest",
+
+
+
                   bg: "#25D366",
+
+
+
                   emoji: "💬",
+
+
+
                   action: () => {
+
+
+
                     (openWhatsApp(e.name), m(!1));
+
+
+
                   },
+
+
+
                 },
+
+
+
                 {
+
+
+
                   label: "Amazon",
+
+
+
                   sub: "amazon.in",
+
+
+
                   bg: "#FF9900",
+
+
+
                   emoji: "🛒",
+
+
+
                   action: () => {
+
+
+
                     trackExternalClick(e.name, "Amazon");
+
+
+
                     window.open(
+
+
+
                       "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+
+
+
                       "_blank",
+
+
+
                     );
+
+
+
                     m(!1);
+
+
+
                   },
+
+
+
                 },
+
+
+
                 {
+
+
+
                   label: "Flipkart",
+
+
+
                   sub: "flipkart.com",
+
+
+
                   bg: "#2874F0",
+
+
+
                   emoji: "🛍️",
+
+
+
                   action: () => {
+
+
+
                     trackExternalClick(e.name, "Flipkart");
+
+
+
                     window.open(
+
+
+
                       "https://www.flipkart.com/store/nevisan",
+
+
+
                       "_blank",
+
+
+
                     );
+
+
+
                     m(!1);
+
+
+
                   },
+
+
+
                 },
+
+
+
               ].map((e) =>
+
+
+
                 React.createElement(
+
+
+
                   "button",
+
+
+
                   {
+
+
+
                     key: e.label,
+
+
+
                     onClick: e.action,
+
+
+
                     style: {
+
+
+
                       width: "100%",
+
+
+
                       background: "none",
+
+
+
                       border: "none",
+
+
+
                       cursor: "pointer",
+
+
+
                       padding: "12px 16px",
+
+
+
                       display: "flex",
+
+
+
                       alignItems: "center",
+
+
+
                       gap: 14,
+
+
+
                       borderTop: `1px solid ${T.border}`,
+
+
+
                       transition: "background 150ms",
+
+
+
                       WebkitTapHighlightColor: "transparent",
+
+
+
                     },
+
+
+
                     onMouseEnter: (e) =>
+
+
+
                       (e.currentTarget.style.background = "#f5f5f5"),
+
+
+
                     onMouseLeave: (e) =>
+
+
+
                       (e.currentTarget.style.background = "none"),
+
+
+
                   },
+
+
+
                   React.createElement(
+
+
+
                     "div",
+
+
+
                     {
+
+
+
                       style: {
+
+
+
                         width: 36,
+
+
+
                         height: 36,
+
+
+
                         borderRadius: 9,
+
+
+
                         background: e.bg,
+
+
+
                         display: "flex",
+
+
+
                         alignItems: "center",
+
+
+
                         justifyContent: "center",
+
+
+
                         fontSize: 18,
+
+
+
                         flexShrink: 0,
+
+
+
                       },
+
+
+
                     },
+
+
+
                     e.emoji,
+
+
+
                   ),
+
+
+
                   React.createElement(
+
+
+
                     "div",
+
+
+
                     { style: { textAlign: "left" } },
+
+
+
                     React.createElement(
+
+
+
                       "div",
+
+
+
                       {
+
+
+
                         style: {
+
+
+
                           fontFamily: "'Plus Jakarta Sans'",
+
+
+
                           fontSize: 14,
+
+
+
                           fontWeight: 600,
+
+
+
                           color: T.text,
+
+
+
                         },
+
+
+
                       },
+
+
+
                       e.label,
+
+
+
                     ),
+
+
+
                     React.createElement(
+
+
+
                       "div",
+
+
+
                       {
+
+
+
                         style: {
+
+
+
                           fontFamily: "'Plus Jakarta Sans'",
+
+
+
                           fontSize: 11,
+
+
+
                           color: T.textMuted,
+
+
+
                         },
+
+
+
                       },
+
+
+
                       e.sub,
+
+
+
                     ),
+
+
+
                   ),
+
+
+
                   React.createElement(
+
+
+
                     "div",
+
+
+
                     {
+
+
+
                       style: {
+
+
+
                         marginLeft: "auto",
+
+
+
                         color: T.textMuted,
+
+
+
                         fontSize: 16,
+
+
+
                       },
+
+
+
                     },
+
+
+
                     "›",
+
+
+
                   ),
+
+
+
                 ),
+
+
+
               ),
+
+
+
             ),
+
+
+
         ),
-      ) // Close Inner Core
+
+
+
       ),
+
+
+
     ),
+
+
+
   );
+
+
+
 }
 function ImageLightbox({ img: e, name: t, onClose: a }) {
   return (

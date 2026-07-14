@@ -297,6 +297,7 @@ function NevIcon({ name, size = 24, color = "currentColor", style = {} }) {
     React.createElement("path", { d: path })
   );
 }
+const Icon = NevIcon;
 function openWhatsApp(e = "") {
   try {
     const m = {

@@ -844,37 +844,39 @@ function Ticker() {
   );
 }
 function Hero({ setPage: e }) {
-  const [t, a] = useState(!1),
-    [n, o] = useInView(0.1),
-    { isMobile: i } = useViewport(),
-    r = useRef(null),
-    l = useRef(null);
-  return (
-    useEffect(() => {
-      const e = setTimeout(() => a(!0), 200);
-      return () => clearTimeout(e);
-    }, []),
-    useEffect(() => {
-      const e = r.current,
-        t = l.current;
-      if (!e || !t) return;
-      const a = gsap.context(() => {
-        gsap.to(t, {
-          scrollTrigger: {
-            trigger: e,
-            start: "top top",
-            end: "bottom top",
-            scrub: !0,
-          },
-          scale: 1.5,
-          opacity: 0,
-          transformOrigin: "center center",
-          ease: "none",
-        });
+  const [t, a] = useState(!1);
+  const [n, o] = useInView(0.1);
+  const { isMobile: i } = useViewport();
+  const r = useRef(null);
+  const l = useRef(null);
+
+  useEffect(() => {
+    const e = setTimeout(() => a(!0), 200);
+    return () => clearTimeout(e);
+  }, []);
+
+  useEffect(() => {
+    const e = r.current,
+      t = l.current;
+    if (!e || !t) return;
+    const a = gsap.context(() => {
+      gsap.to(t, {
+        scrollTrigger: {
+          trigger: e,
+          start: "top top",
+          end: "bottom top",
+          scrub: !0,
+        },
+        scale: 1.5,
+        opacity: 0,
+        transformOrigin: "center center",
+        ease: "none",
       });
-      return () => a.revert();
-    }, []),
-    React.createElement(
+    });
+    return () => a.revert();
+  }, []);
+
+  return React.createElement(
       "div",
       {
         ref: r,
@@ -1254,8 +1256,7 @@ function Hero({ setPage: e }) {
           "SCROLL",
         ),
       ),
-    )
-  );
+    );
 }
 function RippleButton({
   children: e,

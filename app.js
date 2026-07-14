@@ -3620,7 +3620,66 @@ function TagChip({ label: e, color: t }) {
 
 }
 
-function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
+const TEA_PROFILES = {
+  "GABA Oolong Tea": {
+    palate: "Malty, Wild Honey, Baked Stone Fruit",
+    brew: "90°C · 3-4 Mins · Up to 4 Infusions",
+    badge: "Signature Reserve"
+  },
+  "Lemongrass Green Tea": {
+    palate: "Crisp Citrus, Grassy, Mild Sweetness",
+    brew: "80°C · 2 Mins · Up to 3 Infusions",
+    badge: "Popular"
+  },
+  "Spearmint Green Tea": {
+    palate: "Refreshing Mint, Brisk Green, Clean Finish",
+    brew: "80°C · 2 Mins · Up to 3 Infusions",
+    badge: "Hormonal Balance"
+  },
+  "Rum Green Tea": {
+    palate: "Warm Spiced Rum, Sugarcane, Oak wood",
+    brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
+    badge: "Exotic Infusion"
+  },
+  "Whiskey Green Tea": {
+    palate: "Oaky Smoke, Malt, Subtle Sweetness",
+    brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
+    badge: "Bold Reserve"
+  },
+  "Blue Flower Green Tea": {
+    palate: "Cobalt Blue, Mild Floral, Earthy sweetness",
+    brew: "85°C · 2 Mins · Up to 3 Infusions",
+    badge: "Colour Magic"
+  },
+  "Tulsi Green Tea": {
+    palate: "Spicy Tulsi, Herbaceous, Bready warmth",
+    brew: "85°C · 2 Mins · Up to 3 Infusions",
+    badge: "Immunity"
+  },
+  "Chamomile Green Tea": {
+    palate: "Soothing Chamomile, Honeyed Apples, Floral",
+    brew: "85°C · 3 Mins · Up to 3 Infusions",
+    badge: "Stress Relief"
+  },
+  "Organic Green Tea": {
+    palate: "Pure Vegetal, Umami, Clean Grassy notes",
+    brew: "80°C · 2 Mins · Up to 3 Infusions",
+    badge: "Estate Classic"
+  },
+  "Ginger Green Tea": {
+    palate: "Spicy Ginger, Honeyed Warmth, Brisk Green",
+    brew: "85°C · 2-3 Mins · Up to 3 Infusions",
+    badge: "Warming Wellness"
+  }
+};
+
+function TeaCard({ tea, onView, onImageClick, index = 0 }) {
+
+  const e = tea;
+  const t = onView;
+  const a = onImageClick;
+  const n = index;
+
 
   const { isMobile: mobile } = useViewport();
 
@@ -3638,111 +3697,8 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
 
     [p, g] = useInView(0.1);
 
-  const profiles = {
 
-    "GABA Oolong Tea": {
-
-      palate: "Malty, Wild Honey, Baked Stone Fruit",
-
-      brew: "90°C · 3-4 Mins · Up to 4 Infusions",
-
-      badge: "Signature Reserve"
-
-    },
-
-    "Lemongrass Green Tea": {
-
-      palate: "Crisp Citrus, Grassy, Mild Sweetness",
-
-      brew: "80°C · 2 Mins · Up to 3 Infusions",
-
-      badge: "Popular"
-
-    },
-
-    "Spearmint Green Tea": {
-
-      palate: "Refreshing Mint, Brisk Green, Clean Finish",
-
-      brew: "80°C · 2 Mins · Up to 3 Infusions",
-
-      badge: "Hormonal Balance"
-
-    },
-
-    "Rum Green Tea": {
-
-      palate: "Warm Spiced Rum, Sugarcane, Oak wood",
-
-      brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
-
-      badge: "Exotic Infusion"
-
-    },
-
-    "Whiskey Green Tea": {
-
-      palate: "Oaky Smoke, Malt, Subtle Sweetness",
-
-      brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
-
-      badge: "Bold Reserve"
-
-    },
-
-    "Blue Flower Green Tea": {
-
-      palate: "Cobalt Blue, Mild Floral, Earthy sweetness",
-
-      brew: "85°C · 2 Mins · Up to 3 Infusions",
-
-      badge: "Colour Magic"
-
-    },
-
-    "Tulsi Green Tea": {
-
-      palate: "Spicy Tulsi, Herbaceous, Bready warmth",
-
-      brew: "85°C · 2 Mins · Up to 3 Infusions",
-
-      badge: "Immunity"
-
-    },
-
-    "Chamomile Green Tea": {
-
-      palate: "Soothing Chamomile, Honeyed Apples, Floral",
-
-      brew: "85°C · 3 Mins · Up to 3 Infusions",
-
-      badge: "Stress Relief"
-
-    },
-
-    "Organic Green Tea": {
-
-      palate: "Pure Vegetal, Umami, Clean Grassy notes",
-
-      brew: "80°C · 2 Mins · Up to 3 Infusions",
-
-      badge: "Estate Classic"
-
-    },
-
-    "Ginger Green Tea": {
-
-      palate: "Spicy Ginger, Honeyed Warmth, Brisk Green",
-
-      brew: "85°C · 2-3 Mins · Up to 3 Infusions",
-
-      badge: "Warming Wellness"
-
-    }
-
-  };
-
-  const prof = profiles[e.name] || {
+  const prof = TEA_PROFILES[e.name] || {
 
     palate: "Malty, Sweet, Smooth",
 

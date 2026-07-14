@@ -459,6 +459,12 @@ const WA_NUMBER = "919864245687";
 function NevIcon({ name, size = 24, color = "currentColor", style = {} }) {
 
   const iconPaths = {
+    "★": "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",
+    "☆": "M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.7 4.03 4.38.38-3.32 2.88 1 4.28L12 15.4z",
+    "✓": "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",
+    "💬": "M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm0 4h8v-2H6v2zm0-8h12v2H6V5z",
+    "🛍️": "M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z",
+    "🛍": "M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z",
 
     "🌿": "M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 21 3c-1 4-1.5 5.5-3.1 11.2A7 7 0 0 1 11 20z M9 13c1 0 2.5 1.5 2.5 2.5",
 
@@ -982,7 +988,7 @@ function Nav({ page: e, setPage: t }) {
 
                     cursor: "pointer",
 
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
 
                     fontSize: 14,
 
@@ -1044,7 +1050,7 @@ function Nav({ page: e, setPage: t }) {
 
                   cursor: "pointer",
 
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
 
                   transition: "transform 200ms, box-shadow 200ms",
 
@@ -1114,7 +1120,7 @@ function Nav({ page: e, setPage: t }) {
 
                   cursor: "pointer",
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                 },
 
@@ -1228,7 +1234,7 @@ function Nav({ page: e, setPage: t }) {
 
                 color: isActive ? T.gold : "rgba(255,255,255,0.65)",
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 11,
 
@@ -1436,7 +1442,7 @@ function Nav({ page: e, setPage: t }) {
 
                   cursor: "pointer",
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   display: "flex",
 
@@ -1484,7 +1490,7 @@ function Nav({ page: e, setPage: t }) {
 
                   cursor: "pointer",
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                 },
 
@@ -1520,7 +1526,7 @@ function Nav({ page: e, setPage: t }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 12,
 
@@ -1544,7 +1550,7 @@ function Nav({ page: e, setPage: t }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 12,
 
@@ -1630,7 +1636,7 @@ function Ticker() {
 
             style: {
 
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
 
               fontSize: 12,
 
@@ -1748,7 +1754,7 @@ function Hero({ setPage: e }) {
 
           position: "relative",
 
-          height: "100vh",
+          height: "100dvh",
 
           minHeight: 620,
 
@@ -1960,7 +1966,7 @@ function Hero({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 11,
 
@@ -2146,7 +2152,7 @@ function Hero({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 17,
 
@@ -2226,7 +2232,7 @@ function Hero({ setPage: e }) {
 
                   cursor: "pointer",
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   boxShadow: "0 4px 20px rgba(201,168,76,0.35)",
 
@@ -2272,7 +2278,7 @@ function Hero({ setPage: e }) {
 
                   cursor: "pointer",
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   transition: "border-color 200ms, background 200ms",
 
@@ -2392,7 +2398,7 @@ function Hero({ setPage: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 11,
 
@@ -2484,7 +2490,7 @@ function Hero({ setPage: e }) {
 
               letterSpacing: "0.14em",
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
             },
 
@@ -3594,7 +3600,7 @@ function TagChip({ label: e, color: t }) {
 
       style: {
 
-        fontFamily: "'Inter'",
+        fontFamily: "'Plus Jakarta Sans'",
 
         fontSize: 10,
 
@@ -3806,9 +3812,13 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
       style: {
 
-        background: T.white,
+        background: "#FAF9F6", // Warm cream outer bezel
 
-        borderRadius: 16,
+        border: "1px solid rgba(27,122,130,0.06)",
+
+        borderRadius: 24, // Outer Squircle radius
+
+        padding: 6, // 6px Concentric Nesting Padding
 
         position: "relative",
 
@@ -3816,9 +3826,9 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
         boxShadow: o
 
-          ? "0 20px 60px rgba(27,122,130,0.2), 0 4px 16px rgba(0,0,0,0.08)"
+          ? "0 20px 48px rgba(27,122,130,0.18), 0 4px 16px rgba(0,0,0,0.06)"
 
-          : "0 2px 12px rgba(0,0,0,0.06)",
+          : "0 2px 10px rgba(0,0,0,0.04)",
 
         transform: o
 
@@ -3826,7 +3836,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
           : r
 
-            ? "perspective(900px) scale(0.97)"
+            ? "perspective(900px) scale(0.98)"
 
             : "perspective(900px) rotateX(0) rotateY(0) translateY(0) scale(1)",
 
@@ -3846,15 +3856,45 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
         gridColumn: (isFeatured || isMidHorizontal) ? "1 / -1" : "auto",
 
-        display: (isFeatured || isMidHorizontal) ? "grid" : "flex",
-
-        flexDirection: (isFeatured || isMidHorizontal) ? "row" : "column",
-
-        gridTemplateColumns: isFeatured ? "1.2fr 0.8fr" : isMidHorizontal ? "0.8fr 1.2fr" : "none",
+        display: "flex",
 
       },
 
     },
+
+    React.createElement(
+
+      "div",
+
+      {
+
+        style: {
+
+          width: "100%",
+
+          height: "100%",
+
+          background: T.white, // Inner pure white container
+
+          borderRadius: 18, // Inner concentric radius (24 - 6)
+
+          overflow: "hidden",
+
+          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.6)",
+
+          border: "1px solid rgba(0,0,0,0.03)",
+
+          display: (isFeatured || isMidHorizontal) ? "grid" : "flex",
+
+          flexDirection: (isFeatured || isMidHorizontal) ? "row" : "column",
+
+          gridTemplateColumns: isFeatured ? "1.2fr 0.8fr" : isMidHorizontal ? "0.8fr 1.2fr" : "none",
+
+          position: "relative",
+
+        }
+
+      },
 
     React.createElement(
 
@@ -3942,15 +3982,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
             },
 
-            React.createElement(
-
-              "span",
-
-              { style: { fontSize: 48, opacity: 0.7 } },
-
-              "🍃",
-
-            ),
+            React.createElement(Icon, { name: "🍃", size: 48, color: T.teal, style: { opacity: 0.7 } }),
 
           ),
 
@@ -4010,7 +4042,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
           },
 
-          "★ BESTSELLER",
+          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
 
         ),
 
@@ -4050,9 +4082,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
           },
 
-          "✓ ",
-
-          e.badge,
+          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "✓", size: 10, color: "#fff" }), e.badge),
 
         ),
 
@@ -4092,7 +4122,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
           style: {
 
-            fontFamily: "'Inter'",
+            fontFamily: "'Plus Jakarta Sans'",
 
             fontSize: 10,
 
@@ -4152,7 +4182,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
           style: {
 
-            fontFamily: "'Inter'",
+            fontFamily: "'Plus Jakarta Sans'",
 
             fontSize: 13,
 
@@ -4284,7 +4314,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
                   style: {
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 18,
 
@@ -4308,7 +4338,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
                   style: {
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 11,
 
@@ -4356,7 +4386,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
                 cursor: "pointer",
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 letterSpacing: "0.04em",
 
@@ -4402,6 +4432,8 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
               },
 
+              className: "group",
+
               style: {
 
                 width: "100%",
@@ -4412,39 +4444,117 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
                 border: "none",
 
-                borderRadius: 8,
+                borderRadius: 9999,
 
-                padding: "11px",
+                padding: "6px 6px 6px 18px",
 
-                fontSize: 14,
+                fontSize: 13,
 
                 fontWeight: 600,
 
                 cursor: "pointer",
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 display: "flex",
 
                 alignItems: "center",
 
-                justifyContent: "center",
+                justifyContent: "space-between",
 
-                gap: 6,
+                gap: 8,
 
-                transition: "filter 200ms",
+                transition: "all 300ms cubic-bezier(0.32,0.72,0,1)",
 
               },
 
-              onMouseEnter: (e) =>
+              onMouseEnter: (e) => {
 
-                (e.currentTarget.style.filter = "brightness(1.1)"),
+                e.currentTarget.style.filter = "brightness(1.08)";
 
-              onMouseLeave: (e) => (e.currentTarget.style.filter = "none"),
+                e.currentTarget.style.transform = "translateY(-1px)";
+
+              },
+
+              onMouseLeave: (e) => {
+
+                e.currentTarget.style.filter = "none";
+
+                e.currentTarget.style.transform = "none";
+
+              },
 
             },
 
-            "Buy Now ↑",
+            React.createElement("span", { style: { letterSpacing: "0.03em" } }, "Buy Now"),
+
+            React.createElement(
+
+              "div",
+
+              {
+
+                style: {
+
+                  width: 28,
+
+                  height: 28,
+
+                  borderRadius: "50%",
+
+                  background: "rgba(255,255,255,0.15)",
+
+                  display: "flex",
+
+                  alignItems: "center",
+
+                  justifyContent: "center",
+
+                  transition: "all 300ms cubic-bezier(0.32,0.72,0,1)",
+
+                }
+
+              },
+
+              React.createElement(
+
+                "svg",
+
+                {
+
+                  width: 14,
+
+                  height: 14,
+
+                  viewBox: "0 0 24 24",
+
+                  fill: "none",
+
+                  stroke: "currentColor",
+
+                  strokeWidth: 2,
+
+                  strokeLinecap: "round",
+
+                  strokeLinejoin: "round",
+
+                  style: {
+
+                    transform: d ? "rotate(90deg)" : "rotate(0deg)",
+
+                    transition: "transform 300ms cubic-bezier(0.32,0.72,0,1)",
+
+                  }
+
+                },
+
+                React.createElement("line", { x1: 7, y1: 17, x2: 17, y2: 7 }),
+
+                React.createElement("polyline", { points: "7 7 17 7 17 17" })
+
+              )
+
+            ),
 
           ),
 
@@ -4510,7 +4620,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
                     padding: "12px 16px 8px",
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 10,
 
@@ -4702,7 +4812,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
                         style: {
 
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
 
                           fontSize: 14,
 
@@ -4726,7 +4836,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
 
                         style: {
 
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
 
                           fontSize: 11,
 
@@ -4771,6 +4881,8 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
             ),
 
         ),
+
+      ) // Close Inner Core
 
       ),
 
@@ -5002,7 +5114,7 @@ function CollectionPage({}) {
 
         background: T.cream,
 
-        minHeight: "100vh",
+        minHeight: "100dvh",
 
         animation: "page-enter 0.45s ease both",
 
@@ -5084,7 +5196,7 @@ function CollectionPage({}) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 12,
 
@@ -5146,7 +5258,7 @@ function CollectionPage({}) {
 
             style: {
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 15,
 
@@ -5230,7 +5342,7 @@ function CollectionPage({}) {
 
                 cursor: "pointer",
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 transform: isSelected ? "scale(1.02)" : "scale(1)",
 
@@ -5556,7 +5668,7 @@ function CollectionPage({}) {
 
                             style: {
 
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
 
                               fontSize: 20,
 
@@ -5580,7 +5692,7 @@ function CollectionPage({}) {
 
                             style: {
 
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
 
                               fontSize: 11,
 
@@ -5624,7 +5736,7 @@ function CollectionPage({}) {
 
                           },
 
-                          "★ BESTSELLER",
+                          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
 
                         ),
 
@@ -5738,7 +5850,7 @@ function CollectionPage({}) {
 
                           cursor: "pointer",
 
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
 
                           display: "flex",
 
@@ -5822,7 +5934,7 @@ function CollectionPage({}) {
 
                             cursor: "pointer",
 
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
 
                           },
 
@@ -5870,7 +5982,7 @@ function CollectionPage({}) {
 
                             cursor: "pointer",
 
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
 
                           },
 
@@ -5902,7 +6014,7 @@ function CollectionPage({}) {
 
                         style: {
 
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
 
                           fontSize: 13,
 
@@ -5938,7 +6050,7 @@ function CollectionPage({}) {
 
                             style: {
 
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
 
                               fontSize: 11,
 
@@ -6024,7 +6136,7 @@ function CollectionPage({}) {
 
                                   style: {
 
-                                    fontFamily: "'Inter'",
+                                    fontFamily: "'Plus Jakarta Sans'",
 
                                     fontSize: 12,
 
@@ -6048,7 +6160,7 @@ function CollectionPage({}) {
 
                                   style: {
 
-                                    fontFamily: "'Inter'",
+                                    fontFamily: "'Plus Jakarta Sans'",
 
                                     fontSize: 11,
 
@@ -6122,7 +6234,7 @@ function CollectionPage({}) {
 
                               style: {
 
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
 
                                 fontSize: 10,
 
@@ -6152,7 +6264,7 @@ function CollectionPage({}) {
 
                               style: {
 
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
 
                                 fontSize: 12,
 
@@ -6358,7 +6470,7 @@ function CollectionPage({}) {
 
                         },
 
-                        "★ BESTSELLER",
+                        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
 
                       ),
 
@@ -6424,7 +6536,7 @@ function CollectionPage({}) {
 
                           style: {
 
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
 
                             fontSize: 24,
 
@@ -6448,7 +6560,7 @@ function CollectionPage({}) {
 
                           style: {
 
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
 
                             fontSize: 11,
 
@@ -6472,7 +6584,7 @@ function CollectionPage({}) {
 
                         style: {
 
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
 
                           fontSize: 13,
 
@@ -6542,7 +6654,7 @@ function CollectionPage({}) {
 
                             cursor: "pointer",
 
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
 
                             display: "flex",
 
@@ -6626,7 +6738,7 @@ function CollectionPage({}) {
 
                               cursor: "pointer",
 
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
 
                             },
 
@@ -6674,7 +6786,7 @@ function CollectionPage({}) {
 
                               cursor: "pointer",
 
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
 
                             },
 
@@ -6740,7 +6852,7 @@ function CollectionPage({}) {
 
                             style: {
 
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
 
                               fontSize: 11,
 
@@ -6842,7 +6954,7 @@ function CollectionPage({}) {
 
                                     style: {
 
-                                      fontFamily: "'Inter'",
+                                      fontFamily: "'Plus Jakarta Sans'",
 
                                       fontSize: 13,
 
@@ -6868,7 +6980,7 @@ function CollectionPage({}) {
 
                                     style: {
 
-                                      fontFamily: "'Inter'",
+                                      fontFamily: "'Plus Jakarta Sans'",
 
                                       fontSize: 12,
 
@@ -6946,7 +7058,7 @@ function CollectionPage({}) {
 
                               style: {
 
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
 
                                 fontSize: 10,
 
@@ -6976,7 +7088,7 @@ function CollectionPage({}) {
 
                               style: {
 
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
 
                                 fontSize: 12,
 
@@ -7104,7 +7216,7 @@ function OriginSection() {
 
           React.createElement("span", { style: { width: 6, height: 6, borderRadius: "50%", background: T.gold, display: "inline-block" } }),
 
-          React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", color: T.gold, textTransform: "uppercase" } }, "Est. Golaghat · Assam"),
+          React.createElement("span", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", color: T.gold, textTransform: "uppercase" } }, "Est. Golaghat · Assam"),
 
         ),
 
@@ -7122,7 +7234,7 @@ function OriginSection() {
 
         ),
 
-        React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", marginBottom: 28 } }, "Harvest · Single Garden"),
+        React.createElement("div", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", marginBottom: 28 } }, "Harvest · Single Garden"),
 
         /* Fact grid */
 
@@ -7156,9 +7268,9 @@ function OriginSection() {
 
               },
 
-              React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 10, letterSpacing: "0.12em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 4 } }, label),
+              React.createElement("div", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 10, letterSpacing: "0.12em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 4 } }, label),
 
-              React.createElement("div", { style: { fontFamily: "'Inter'", fontSize: 14, fontWeight: 600, color: T.white } }, icon + " " + value),
+              React.createElement("div", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 14, fontWeight: 600, color: T.white } }, icon + " " + value),
 
             ),
 
@@ -7192,7 +7304,7 @@ function OriginSection() {
 
           React.createElement("div", { style: { width: 40, height: 1, background: T.gold } }),
 
-          React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", color: T.gold, textTransform: "uppercase" } }, "The Origin"),
+          React.createElement("span", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", color: T.gold, textTransform: "uppercase" } }, "The Origin"),
 
         ),
 
@@ -7210,13 +7322,13 @@ function OriginSection() {
 
         React.createElement("p", {
 
-          style: { fontFamily: "'Inter'", fontSize: 15, color: "rgba(255,255,255,0.72)", lineHeight: 1.75, marginBottom: 16 },
+          style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 15, color: "rgba(255,255,255,0.72)", lineHeight: 1.75, marginBottom: 16 },
 
         }, "Nevisan is rooted in Golaghat — a single garden in Assam where the rain falls heavy, the soil stays rich, and nothing is rushed. We grow whole leaf, harvest by hand, and blend only what belongs together."),
 
         React.createElement("p", {
 
-          style: { fontFamily: "'Inter'", fontSize: 15, color: "rgba(255,255,255,0.55)", lineHeight: 1.75, marginBottom: 32 },
+          style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 15, color: "rgba(255,255,255,0.55)", lineHeight: 1.75, marginBottom: 32 },
 
         }, "No pesticides. No shortcuts. Every batch PGS-India certified. You taste the garden, not a factory."),
 
@@ -7238,7 +7350,7 @@ function OriginSection() {
 
                 key: label,
 
-                style: { fontFamily: "'Inter'", fontSize: 12, fontWeight: 500, color: "rgba(255,255,255,0.75)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 9999, padding: "6px 14px" },
+                style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 12, fontWeight: 500, color: "rgba(255,255,255,0.75)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 9999, padding: "6px 14px" },
 
               },
 
@@ -7310,7 +7422,7 @@ function BenefitsSection() {
 
           React.createElement("div", { style: { width: 40, height: 1, background: T.teal } }),
 
-          React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", color: T.teal, textTransform: "uppercase" } }, "Why Nevisan"),
+          React.createElement("span", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", color: T.teal, textTransform: "uppercase" } }, "Why Nevisan"),
 
           React.createElement("div", { style: { width: 40, height: 1, background: T.teal } }),
 
@@ -7410,7 +7522,7 @@ function BenefitCard({ icon, title, desc, inView, idx }) {
 
     React.createElement("p", {
 
-      style: { fontFamily: "'Inter'", fontSize: 13, color: T.textMuted, lineHeight: 1.65 },
+      style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 13, color: T.textMuted, lineHeight: 1.65 },
 
     }, desc),
 
@@ -7572,7 +7684,7 @@ function BuyCard({ c: e, inView: t, index: a }) {
 
         style: {
 
-          fontFamily: "'Inter'",
+          fontFamily: "'Plus Jakarta Sans'",
 
           fontSize: 13,
 
@@ -7618,7 +7730,7 @@ function BuyCard({ c: e, inView: t, index: a }) {
 
           cursor: "pointer",
 
-          fontFamily: "'Inter'",
+          fontFamily: "'Plus Jakarta Sans'",
 
           display: "flex",
 
@@ -7758,7 +7870,7 @@ function WhereToBuy() {
 
             style: {
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 12,
 
@@ -7820,7 +7932,7 @@ function WhereToBuy() {
 
           style: {
 
-            fontFamily: "'Inter'",
+            fontFamily: "'Plus Jakarta Sans'",
 
             fontSize: 15,
 
@@ -7934,11 +8046,9 @@ function ReviewCard({ r: e, inView: t, index: a }) {
 
           React.createElement(
 
-            "span",
+            Icon,
 
-            { key: t, style: { color: T.gold, fontSize: 14 } },
-
-            "★",
+            { key: t, name: "★", size: 14, color: T.gold },
 
           ),
 
@@ -7986,7 +8096,7 @@ function ReviewCard({ r: e, inView: t, index: a }) {
 
         style: {
 
-          fontFamily: "'Inter'",
+          fontFamily: "'Plus Jakarta Sans'",
 
           fontSize: 13,
 
@@ -8006,7 +8116,7 @@ function ReviewCard({ r: e, inView: t, index: a }) {
 
       "div",
 
-      { style: { fontFamily: "'Inter'", fontSize: 12, color: T.textMuted } },
+      { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 12, color: T.textMuted } },
 
       e.loc,
 
@@ -8102,7 +8212,7 @@ function ReviewForm() {
 
       borderRadius: 10,
 
-      fontFamily: "'Inter'",
+      fontFamily: "'Plus Jakarta Sans'",
 
       fontSize: 14,
 
@@ -8170,7 +8280,7 @@ function ReviewForm() {
 
             style: {
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 14,
 
@@ -8216,7 +8326,7 @@ function ReviewForm() {
 
               cursor: "pointer",
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 13,
 
@@ -8304,7 +8414,7 @@ function ReviewForm() {
 
             style: {
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 13,
 
@@ -8334,7 +8444,7 @@ function ReviewForm() {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 11,
 
@@ -8400,7 +8510,7 @@ function ReviewForm() {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 11,
 
@@ -8460,7 +8570,7 @@ function ReviewForm() {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 11,
 
@@ -8520,7 +8630,7 @@ function ReviewForm() {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 11,
 
@@ -8616,7 +8726,7 @@ function ReviewForm() {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 11,
 
@@ -8674,7 +8784,7 @@ function ReviewForm() {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 13,
 
@@ -8716,7 +8826,7 @@ function ReviewForm() {
 
               cursor: "pointer",
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 14,
 
@@ -8746,7 +8856,7 @@ function ReviewForm() {
 
             style: {
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 11,
 
@@ -8842,7 +8952,7 @@ function Testimonials() {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 12,
 
@@ -8906,7 +9016,7 @@ function Testimonials() {
 
             "data-gsap-reveal": !0,
 
-            style: { fontFamily: "'Inter'", fontSize: 15, color: T.textMuted },
+            style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 15, color: T.textMuted },
 
           },
 
@@ -9086,7 +9196,7 @@ function Testimonials() {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 11,
 
@@ -9236,7 +9346,7 @@ function Footer({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 13,
 
@@ -9288,7 +9398,7 @@ function Footer({ setPage: e }) {
 
                 cursor: "pointer",
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 display: "flex",
 
@@ -9348,7 +9458,7 @@ function Footer({ setPage: e }) {
 
                   padding: "5px 12px",
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 10,
 
@@ -9378,7 +9488,7 @@ function Footer({ setPage: e }) {
 
                   padding: "5px 12px",
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 10,
 
@@ -9412,7 +9522,7 @@ function Footer({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 11,
 
@@ -9468,7 +9578,7 @@ function Footer({ setPage: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 13,
 
@@ -9514,7 +9624,7 @@ function Footer({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 11,
 
@@ -9576,7 +9686,7 @@ function Footer({ setPage: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 13,
 
@@ -9622,7 +9732,7 @@ function Footer({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 11,
 
@@ -9686,7 +9796,7 @@ function Footer({ setPage: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 13,
 
@@ -9752,7 +9862,7 @@ function Footer({ setPage: e }) {
 
             style: {
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 12,
 
@@ -9824,7 +9934,7 @@ function Footer({ setPage: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 10,
 
@@ -9998,7 +10108,7 @@ function CollectionSection({ setPage: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 13,
 
@@ -10032,7 +10142,7 @@ function CollectionSection({ setPage: e }) {
 
               borderRadius: 9999,
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 14,
 
@@ -10118,7 +10228,7 @@ function CollectionSection({ setPage: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 12,
 
@@ -10196,7 +10306,7 @@ function CollectionSection({ setPage: e }) {
 
               cursor: "pointer",
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               whiteSpace: "nowrap",
 
@@ -10530,7 +10640,7 @@ function CollectionSection({ setPage: e }) {
 
                             style: {
 
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
 
                               fontSize: 20,
 
@@ -10554,7 +10664,7 @@ function CollectionSection({ setPage: e }) {
 
                             style: {
 
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
 
                               fontSize: 11,
 
@@ -10598,7 +10708,7 @@ function CollectionSection({ setPage: e }) {
 
                           },
 
-                          "★ BESTSELLER",
+                          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
 
                         ),
 
@@ -10712,7 +10822,7 @@ function CollectionSection({ setPage: e }) {
 
                           cursor: "pointer",
 
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
 
                           display: "flex",
 
@@ -10796,7 +10906,7 @@ function CollectionSection({ setPage: e }) {
 
                             cursor: "pointer",
 
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
 
                           },
 
@@ -10844,7 +10954,7 @@ function CollectionSection({ setPage: e }) {
 
                             cursor: "pointer",
 
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
 
                           },
 
@@ -10876,7 +10986,7 @@ function CollectionSection({ setPage: e }) {
 
                         style: {
 
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
 
                           fontSize: 13,
 
@@ -10910,7 +11020,7 @@ function CollectionSection({ setPage: e }) {
 
                             style: {
 
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
 
                               fontSize: 11,
 
@@ -10996,7 +11106,7 @@ function CollectionSection({ setPage: e }) {
 
                                   style: {
 
-                                    fontFamily: "'Inter'",
+                                    fontFamily: "'Plus Jakarta Sans'",
 
                                     fontSize: 12,
 
@@ -11020,7 +11130,7 @@ function CollectionSection({ setPage: e }) {
 
                                   style: {
 
-                                    fontFamily: "'Inter'",
+                                    fontFamily: "'Plus Jakarta Sans'",
 
                                     fontSize: 11,
 
@@ -11094,7 +11204,7 @@ function CollectionSection({ setPage: e }) {
 
                               style: {
 
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
 
                                 fontSize: 10,
 
@@ -11124,7 +11234,7 @@ function CollectionSection({ setPage: e }) {
 
                               style: {
 
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
 
                                 fontSize: 12,
 
@@ -11318,7 +11428,7 @@ function CollectionSection({ setPage: e }) {
 
                         },
 
-                        "★ BESTSELLER",
+                        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
 
                       ),
 
@@ -11384,7 +11494,7 @@ function CollectionSection({ setPage: e }) {
 
                           style: {
 
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
 
                             fontSize: 24,
 
@@ -11408,7 +11518,7 @@ function CollectionSection({ setPage: e }) {
 
                           style: {
 
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
 
                             fontSize: 11,
 
@@ -11432,7 +11542,7 @@ function CollectionSection({ setPage: e }) {
 
                         style: {
 
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
 
                           fontSize: 13,
 
@@ -11498,7 +11608,7 @@ function CollectionSection({ setPage: e }) {
 
                             cursor: "pointer",
 
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
 
                             display: "flex",
 
@@ -11582,7 +11692,7 @@ function CollectionSection({ setPage: e }) {
 
                               cursor: "pointer",
 
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
 
                             },
 
@@ -11630,7 +11740,7 @@ function CollectionSection({ setPage: e }) {
 
                               cursor: "pointer",
 
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
 
                             },
 
@@ -11660,7 +11770,7 @@ function CollectionSection({ setPage: e }) {
 
                             style: {
 
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
 
                               fontSize: 11,
 
@@ -11746,7 +11856,7 @@ function CollectionSection({ setPage: e }) {
 
                                   style: {
 
-                                    fontFamily: "'Inter'",
+                                    fontFamily: "'Plus Jakarta Sans'",
 
                                     fontSize: 13,
 
@@ -11772,7 +11882,7 @@ function CollectionSection({ setPage: e }) {
 
                                   style: {
 
-                                    fontFamily: "'Inter'",
+                                    fontFamily: "'Plus Jakarta Sans'",
 
                                     fontSize: 12,
 
@@ -11848,7 +11958,7 @@ function CollectionSection({ setPage: e }) {
 
                               style: {
 
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
 
                                 fontSize: 10,
 
@@ -11878,7 +11988,7 @@ function CollectionSection({ setPage: e }) {
 
                               style: {
 
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
 
                                 fontSize: 12,
 
@@ -11990,7 +12100,7 @@ function InstagramReels() {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 11,
 
@@ -12072,7 +12182,7 @@ function InstagramReels() {
 
               padding: "10px 20px",
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 13,
 
@@ -12396,7 +12506,7 @@ function InstagramReels() {
 
                   style: {
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 10,
 
@@ -12424,7 +12534,7 @@ function InstagramReels() {
 
                   style: {
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 11,
 
@@ -12988,7 +13098,7 @@ function HowToBrewSection() {
 
                   style: {
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 12,
 
@@ -13046,7 +13156,7 @@ function HowToBrewSection() {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 15,
 
@@ -13118,7 +13228,7 @@ function HowToBrewSection() {
 
                     transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease",
 
-                    fontFamily: "'Inter'"
+                    fontFamily: "'Plus Jakarta Sans'"
 
                   }
 
@@ -13288,7 +13398,7 @@ function HowToBrewSection() {
 
                   transition: "background-color 200ms ease, color 200ms ease, transform 160ms var(--ease-out)",
 
-                  fontFamily: "'Inter'"
+                  fontFamily: "'Plus Jakarta Sans'"
 
                 }
 
@@ -13498,7 +13608,7 @@ function FAQSection() {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 12,
 
@@ -13690,7 +13800,7 @@ function FAQSection() {
 
                   style: {
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: e ? 14 : 15,
 
@@ -13768,7 +13878,7 @@ function FAQSection() {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: e ? 13 : 14,
 
@@ -13808,7 +13918,7 @@ function FAQSection() {
 
             style: {
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 14,
 
@@ -13852,7 +13962,7 @@ function FAQSection() {
 
               padding: "12px 28px",
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 14,
 
@@ -14214,7 +14324,7 @@ function TrustBadges() {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: e ? 12 : 13,
 
@@ -14336,7 +14446,7 @@ function StatsSection() {
 
         React.createElement("div", { style: { width: 40, height: 1, background: "rgba(201,168,76,0.5)" } }),
 
-        React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", color: T.gold, textTransform: "uppercase" } }, "By the Numbers"),
+        React.createElement("span", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", color: T.gold, textTransform: "uppercase" } }, "By the Numbers"),
 
         React.createElement("div", { style: { width: 40, height: 1, background: "rgba(201,168,76,0.5)" } }),
 
@@ -14358,7 +14468,7 @@ function StatsSection() {
 
       React.createElement("p", {
 
-        style: { fontFamily: "'Inter'", fontSize: 15, color: "rgba(255,255,255,0.55)", maxWidth: 480, margin: "0 auto", lineHeight: 1.7, marginBottom: e ? 48 : 64 },
+        style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 15, color: "rgba(255,255,255,0.55)", maxWidth: 480, margin: "0 auto", lineHeight: 1.7, marginBottom: e ? 48 : 64 },
 
       }, "Everything at Nevisan traces back to one garden — one climate, one soil, one story in every cup."),
 
@@ -14418,7 +14528,7 @@ function StatsSection() {
 
               "div",
 
-              { style: { fontFamily: "'Inter'", fontSize: 12, fontWeight: 500, letterSpacing: "0.1em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", marginTop: 8 } },
+              { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 12, fontWeight: 500, letterSpacing: "0.1em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", marginTop: 8 } },
 
               label,
 
@@ -14580,7 +14690,7 @@ function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
 
           style: {
 
-            fontFamily: "'Inter'",
+            fontFamily: "'Plus Jakarta Sans'",
 
             fontSize: 11,
 
@@ -14660,7 +14770,7 @@ function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
 
             style: {
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: o ? 14 : 16,
 
@@ -14736,7 +14846,7 @@ function OurStoryPage({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 11,
 
@@ -14930,7 +15040,7 @@ function OurStoryPage({ setPage: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 15,
 
@@ -15490,7 +15600,7 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
 
                   style: {
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 10,
 
@@ -15580,7 +15690,7 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 12,
 
@@ -15628,7 +15738,7 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
 
                   style: {
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 15,
 
@@ -15890,7 +16000,7 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
 
                     cursor: "pointer",
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 13,
 
@@ -15926,7 +16036,7 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
 
                     cursor: "pointer",
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 13,
 
@@ -15970,7 +16080,7 @@ function JournalPage({ setPage: e }) {
 
         background: T.cream,
 
-        minHeight: "100vh",
+        minHeight: "100dvh",
 
         animation: "page-enter 0.45s ease both",
 
@@ -16110,7 +16220,7 @@ function JournalPage({ setPage: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 10,
 
@@ -16140,7 +16250,7 @@ function JournalPage({ setPage: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 12,
 
@@ -16192,7 +16302,7 @@ function JournalPage({ setPage: e }) {
 
                   style: {
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 13,
 
@@ -16218,7 +16328,7 @@ function JournalPage({ setPage: e }) {
 
                     marginTop: 18,
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 12,
 
@@ -16286,7 +16396,7 @@ function AboutPage({ setPage: e }) {
 
         background: T.cream,
 
-        minHeight: "100vh",
+        minHeight: "100dvh",
 
         animation: "page-enter 0.45s ease both",
 
@@ -16388,7 +16498,7 @@ function AboutPage({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 15,
 
@@ -16414,7 +16524,7 @@ function AboutPage({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 15,
 
@@ -16534,7 +16644,7 @@ function AboutPage({ setPage: e }) {
 
                 {
 
-                  style: { fontFamily: "'Inter'", fontSize: 14, color: T.text },
+                  style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 14, color: T.text },
 
                 },
 
@@ -16570,7 +16680,7 @@ function AboutPage({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 11,
 
@@ -16628,7 +16738,7 @@ function AboutPage({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 15,
 
@@ -16686,7 +16796,7 @@ function AboutPage({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 11,
 
@@ -16770,7 +16880,7 @@ function AboutPage({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 15,
 
@@ -16794,7 +16904,7 @@ function AboutPage({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 12,
 
@@ -16952,7 +17062,7 @@ function AboutPage({ setPage: e }) {
 
                   style: {
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 10,
 
@@ -17008,7 +17118,7 @@ function AboutPage({ setPage: e }) {
 
                   style: {
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 14,
 
@@ -17086,7 +17196,7 @@ function AboutPage({ setPage: e }) {
 
             style: {
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 15,
 
@@ -17128,7 +17238,7 @@ function AboutPage({ setPage: e }) {
 
               cursor: "pointer",
 
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
 
               fontSize: 14,
 
@@ -17166,7 +17276,7 @@ function CertificationsPage({ setPage: e }) {
 
         background: T.cream,
 
-        minHeight: "100vh",
+        minHeight: "100dvh",
 
         animation: "page-enter 0.45s ease both",
 
@@ -17416,7 +17526,7 @@ function CertificationsPage({ setPage: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 11,
 
@@ -17446,7 +17556,7 @@ function CertificationsPage({ setPage: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 13,
 
@@ -17504,7 +17614,7 @@ function WholesalePage({ setPage: e }) {
 
         background: T.cream,
 
-        minHeight: "100vh",
+        minHeight: "100dvh",
 
         animation: "page-enter 0.45s ease both",
 
@@ -17586,7 +17696,7 @@ function WholesalePage({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 12,
 
@@ -17790,7 +17900,7 @@ function WholesalePage({ setPage: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 13,
 
@@ -17858,7 +17968,7 @@ function WholesalePage({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 12,
 
@@ -18004,7 +18114,7 @@ function WholesalePage({ setPage: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 14,
 
@@ -18050,7 +18160,7 @@ function WholesalePage({ setPage: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 12,
 
@@ -18080,7 +18190,7 @@ function WholesalePage({ setPage: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 14,
 
@@ -18164,7 +18274,7 @@ function WholesalePage({ setPage: e }) {
 
               style: {
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 fontSize: 13,
 
@@ -18238,7 +18348,7 @@ function WholesalePage({ setPage: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 11,
 
@@ -18282,7 +18392,7 @@ function WholesalePage({ setPage: e }) {
 
                     border: "1.5px solid #e8e4de",
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 14,
 
@@ -18316,7 +18426,7 @@ function WholesalePage({ setPage: e }) {
 
                   style: {
 
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
 
                     fontSize: 11,
 
@@ -18362,7 +18472,7 @@ function WholesalePage({ setPage: e }) {
 
                   border: "1.5px solid #e8e4de",
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 14,
 
@@ -18420,7 +18530,7 @@ function WholesalePage({ setPage: e }) {
 
                   cursor: "pointer",
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   display: "flex",
 
@@ -18502,7 +18612,7 @@ function ContactPage({ setPage: e }) {
 
       borderRadius: 10,
 
-      fontFamily: "'Inter'",
+      fontFamily: "'Plus Jakarta Sans'",
 
       fontSize: 14,
 
@@ -18528,7 +18638,7 @@ function ContactPage({ setPage: e }) {
 
         background: T.cream,
 
-        minHeight: "100vh",
+        minHeight: "100dvh",
 
         animation: "page-enter 0.45s ease both",
 
@@ -18710,7 +18820,7 @@ function ContactPage({ setPage: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 11,
 
@@ -18738,7 +18848,7 @@ function ContactPage({ setPage: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 15,
 
@@ -18788,7 +18898,7 @@ function ContactPage({ setPage: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 13,
 
@@ -18828,7 +18938,7 @@ function ContactPage({ setPage: e }) {
 
                   cursor: "pointer",
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 13,
 
@@ -18916,7 +19026,7 @@ function ContactPage({ setPage: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 14,
 
@@ -18954,7 +19064,7 @@ function ContactPage({ setPage: e }) {
 
                       cursor: "pointer",
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 13,
 
@@ -19032,7 +19142,7 @@ function ContactPage({ setPage: e }) {
 
                       style: {
 
-                        fontFamily: "'Inter'",
+                        fontFamily: "'Plus Jakarta Sans'",
 
                         fontSize: 12,
 
@@ -19086,7 +19196,7 @@ function ContactPage({ setPage: e }) {
 
                       style: {
 
-                        fontFamily: "'Inter'",
+                        fontFamily: "'Plus Jakarta Sans'",
 
                         fontSize: 12,
 
@@ -19144,7 +19254,7 @@ function ContactPage({ setPage: e }) {
 
                       style: {
 
-                        fontFamily: "'Inter'",
+                        fontFamily: "'Plus Jakarta Sans'",
 
                         fontSize: 12,
 
@@ -19214,7 +19324,7 @@ function ContactPage({ setPage: e }) {
 
                       cursor: "pointer",
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 14,
 
@@ -19506,7 +19616,7 @@ function CartSheet({ onClose: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 12,
 
@@ -19696,7 +19806,7 @@ function CartSheet({ onClose: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 13,
 
@@ -19724,7 +19834,7 @@ function CartSheet({ onClose: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 13,
 
@@ -19814,7 +19924,7 @@ function CartSheet({ onClose: e }) {
 
                     style: {
 
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
 
                       fontSize: 16,
 
@@ -19930,7 +20040,7 @@ function CartSheet({ onClose: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 14,
 
@@ -19952,7 +20062,7 @@ function CartSheet({ onClose: e }) {
 
                 style: {
 
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
 
                   fontSize: 22,
 
@@ -20072,7 +20182,7 @@ function CartSheet({ onClose: e }) {
 
                 cursor: "pointer",
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
                 display: "flex",
 
@@ -20222,7 +20332,7 @@ function CartFAB() {
 
                 fontWeight: 700,
 
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
 
               },
 
@@ -20278,7 +20388,7 @@ function AddToCartBtn({ tea: e, onAdded: t }) {
 
         cursor: "pointer",
 
-        fontFamily: "'Inter'",
+        fontFamily: "'Plus Jakarta Sans'",
 
         display: "flex",
 

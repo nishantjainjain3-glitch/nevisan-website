@@ -619,16 +619,14 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
   /* Emil: active scale on ALL buttons */
   button:active { transform: scale(0.97) !important; }
 
-  /* Reduce Three.js opacity on mobile to save battery */
+  /* Hide custom cursor on mobile */
   @media (max-width: 768px) {
-    #nev-three-canvas { opacity: 0.25 !important; }
     #nev-cur, #nev-cur-ring { display: none !important; }
   }
 
   /* MWG: prefers-reduced-motion */
   @media (prefers-reduced-motion: reduce) {
     #nev-scroll-progress,
-    #nev-three-canvas,
     #nev-cur, #nev-cur-ring { display: none !important; }
     * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
@@ -648,7 +646,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 
   <!-- CSS-only scroll progress bar (MWG animation-timeline) -->
   <div id="nev-scroll-progress" aria-hidden="true"></div>
@@ -657,105 +655,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
   
 
-  <!-- Three.js premium particle canvas (replaces leaf canvas) -->
-  <canvas id="nev-three-canvas" style="position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.42;"></canvas>
+
 
   <!-- Background Leaf Canvas (Falling Leaves) -->
   <canvas id="global-leaf-canvas" style="position: fixed; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; opacity: 0.18;"></canvas>
 
   <div id="root" style="position: relative; z-index: 2;"></div>
 
-<script>
-  /* ══ THREE.JS PARTICLE FIELD + TORUS RINGS ══
-     Emil Kowalski: animate only transform+opacity, pause when hidden
-     MWG: IntersectionObserver + visibilitychange to save battery
-  */
-  (function initThree() {
-    if (typeof THREE === 'undefined') return;
-    const canvas = document.getElementById('nev-three-canvas');
-    if (!canvas) return;
 
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
-    const scene = new THREE.Scene();
-    const cam = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-    cam.position.z = 80;
-
-    /* Gold particles — 700 on desktop, 300 on mobile */
-    const isMob = window.innerWidth < 768;
-    const count = isMob ? 300 : 700;
-    const geo = new THREE.BufferGeometry();
-    const pos = new Float32Array(count * 3);
-    for (let i = 0; i < count; i++) {
-      pos[i*3]   = (Math.random() - 0.5) * 240;
-      pos[i*3+1] = (Math.random() - 0.5) * 240;
-      pos[i*3+2] = (Math.random() - 0.5) * 120;
-    }
-    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    const pts = new THREE.Points(geo, new THREE.PointsMaterial({
-      size: isMob ? 0.4 : 0.55,
-      color: 0xC9A84C, transparent: true, opacity: 0.5
-    }));
-    scene.add(pts);
-
-    /* Torus rings */
-    const mkRing = (r, c, rx, rz, op) => {
-      const m = new THREE.Mesh(
-        new THREE.TorusGeometry(r, 0.5, 8, 64),
-        new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: op, wireframe: true })
-      );
-      m.rotation.x = rx; m.rotation.z = rz;
-      scene.add(m); return m;
-    };
-    const r1 = mkRing(32, 0x1B7A82, 0, 0, 0.16);
-    const r2 = mkRing(20, 0xC9A84C, Math.PI/3, 0, 0.09);
-    const r3 = mkRing(46, 0x23412D, Math.PI/5, Math.PI/4, 0.06);
-
-    let mx = 0, my = 0;
-    document.addEventListener('mousemove', e => {
-      mx = (e.clientX / window.innerWidth - 0.5) * 2;
-      my = -(e.clientY / window.innerHeight - 0.5) * 2;
-    }, { passive: true });
-
-    window.addEventListener('resize', () => {
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      cam.aspect = window.innerWidth / window.innerHeight;
-      cam.updateProjectionMatrix();
-    }, { passive: true });
-
-    /* MWG: pause when tab is hidden */
-    let tabVisible = true;
-    document.addEventListener('visibilitychange', () => {
-      tabVisible = !document.hidden;
-    });
-
-    let t = 0;
-    (function tick() {
-      requestAnimationFrame(tick);
-      if (!tabVisible) return;
-      t += 0.003;
-
-      // Smooth camera parallax
-      cam.position.x += (mx * 18 - cam.position.x) * 0.04;
-      cam.position.y += (my * 12 - cam.position.y) * 0.04;
-      cam.lookAt(scene.position);
-
-      // Twinkling breathing opacity
-      pts.material.opacity = 0.35 + Math.sin(t * 6) * 0.12;
-
-      pts.rotation.y = t * 0.04;
-      pts.rotation.x = t * 0.015;
-      r1.rotation.z = t * 0.13; r1.rotation.x = t * 0.05;
-      r2.rotation.z = -t * 0.09; r2.rotation.y = t * 0.1;
-      r3.rotation.y = t * 0.055; r3.rotation.z = t * 0.038;
-      renderer.render(scene, cam);
-    })();
-  })();
-
-  
-</script>
 
 <script>
   /* ══ FALLING LEAVES BACKGROUND ANIMATION ══ */

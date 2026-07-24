@@ -740,6 +740,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 
   <!-- CSS-only scroll progress bar (MWG animation-timeline) -->
@@ -758,108 +759,104 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
+
 <script>
-  /* ══ FALLING LEAVES BACKGROUND ANIMATION ══ */
-  (function initLeaves() {
+  /* ══ THREE.JS 3D PARTICLE FLOW FIELD (NEVISAN ASSAM TEA PARTICLES) ══ */
+  (function initThreeParticles() {
     const canvas = document.getElementById('global-leaf-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    
-    let w = (canvas.width = window.innerWidth);
-    let h = (canvas.height = window.innerHeight);
-    
-    window.addEventListener('resize', () => {
-      w = (canvas.width = window.innerWidth);
-      h = (canvas.height = window.innerHeight);
-    }, { passive: true });
-    
-    const leaves = [];
-    const leafCount = 8;
-    
-    for (let i = 0; i < leafCount; i++) {
-      leaves.push({
-        x: Math.random() * w,
-        y: Math.random() * h - h,
-        size: Math.random() * 0.5 + 0.35,
-        vy: Math.random() * 0.8 + 0.6,
-        vx: (Math.random() - 0.5) * 0.4,
-        vr: (Math.random() - 0.5) * 0.015,
-        rotation: Math.random() * Math.PI * 2,
-        skew: Math.random() * 0.3 + 0.65,
-        swaySpeed: Math.random() * 0.012 + 0.005,
-        swayOffset: Math.random() * Math.PI * 2
-      });
+    if (!canvas || typeof THREE === 'undefined') return;
+
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 100;
+
+    const count = 1800;
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(count * 3);
+    const colors = new Float32Array(count * 3);
+    const originalPos = new Float32Array(count * 3);
+
+    const goldColor = new THREE.Color('#C9A84C');
+    const tealColor = new THREE.Color('#23412D');
+    const forestColor = new THREE.Color('#4E765C');
+
+    for (let i = 0; i < count; i++) {
+      const x = (Math.random() - 0.5) * 220;
+      const y = (Math.random() - 0.5) * 220;
+      const z = (Math.random() - 0.5) * 120;
+
+      positions[i * 3] = x;
+      positions[i * 3 + 1] = y;
+      positions[i * 3 + 2] = z;
+
+      originalPos[i * 3] = x;
+      originalPos[i * 3 + 1] = y;
+      originalPos[i * 3 + 2] = z;
+
+      const mixVal = Math.random();
+      const color = mixVal > 0.6 ? goldColor : (mixVal > 0.3 ? tealColor : forestColor);
+      colors[i * 3] = color.r;
+      colors[i * 3 + 1] = color.g;
+      colors[i * 3 + 2] = color.b;
     }
-    
-    let scrollSpeed = 0;
-    let lastScrollY = window.scrollY;
-    window.addEventListener('scroll', () => {
-      scrollSpeed = (window.scrollY - lastScrollY) * 0.035;
-      lastScrollY = window.scrollY;
-    }, { passive: true });
-    
-    function drawLeaf(x, y, size, rotation, skew) {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(rotation);
-      ctx.scale(size, size * skew);
-      
-      let grad = ctx.createLinearGradient(-10, -20, 10, 20);
-      grad.addColorStop(0, '#4E765C');
-      grad.addColorStop(1, '#173020');
-      ctx.fillStyle = grad;
-      
-      ctx.beginPath();
-      ctx.moveTo(0, -20);
-      ctx.quadraticCurveTo(-11, -5, 0, 20);
-      ctx.quadraticCurveTo(11, -5, 0, -20);
-      ctx.closePath();
-      ctx.fill();
-      
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
-      ctx.lineWidth = 1;
-      ctx.stroke();
-      
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.16)';
-      ctx.beginPath();
-      ctx.moveTo(0, -18);
-      ctx.lineTo(0, 18);
-      ctx.stroke();
-      
-      ctx.restore();
-    }
-    
-    let tabVisible = true;
-    document.addEventListener('visibilitychange', () => {
-      tabVisible = !document.hidden;
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+    const material = new THREE.PointsMaterial({
+      size: 1.4,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.65,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
     });
-    
+
+    const particles = new THREE.Points(geometry, material);
+    scene.add(particles);
+
+    let mouseX = 0, mouseY = 0;
+    window.addEventListener('mousemove', (e) => {
+      mouseX = (e.clientX / window.innerWidth - 0.5) * 15;
+      mouseY = (e.clientY / window.innerHeight - 0.5) * 15;
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }, { passive: true });
+
+    let clock = new THREE.Clock();
+
     function animate() {
-      if (tabVisible) {
-        ctx.clearRect(0, 0, w, h);
-        scrollSpeed *= 0.95;
-        
-        leaves.forEach(leaf => {
-          leaf.y += leaf.vy + scrollSpeed * 0.5;
-          leaf.x += leaf.vx + Math.sin(Date.now() * leaf.swaySpeed + leaf.swayOffset) * 0.18;
-          leaf.rotation += leaf.vr + scrollSpeed * 0.005;
-          
-          if (leaf.y > h + 30) {
-            leaf.y = -40;
-            leaf.x = Math.random() * w;
-          }
-          if (leaf.x > w + 20) leaf.x = -20;
-          if (leaf.x < -20) leaf.x = w + 20;
-          
-          drawLeaf(leaf.x, leaf.y, leaf.size * 0.9, leaf.rotation, leaf.skew);
-        });
-      }
       requestAnimationFrame(animate);
+      const elapsedTime = clock.getElapsedTime();
+      const pos = geometry.attributes.position.array;
+
+      for (let i = 0; i < count; i++) {
+        const idx = i * 3;
+        const ox = originalPos[idx];
+        const oy = originalPos[idx + 1];
+
+        pos[idx] = ox + Math.sin(elapsedTime * 0.4 + oy * 0.05) * 4;
+        pos[idx + 1] = oy + Math.cos(elapsedTime * 0.3 + ox * 0.05) * 4;
+      }
+
+      geometry.attributes.position.needsUpdate = true;
+      particles.rotation.y = elapsedTime * 0.03 + mouseX * 0.005;
+      particles.rotation.x = mouseY * 0.005;
+
+      renderer.render(scene, camera);
     }
-    
-    setTimeout(animate, 200);
+    animate();
   })();
 </script>
+
 
 <script>
   // Remove all service workers permanently — prevents stale cache issues
@@ -872,6 +869,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
   }
 </script>
-<script src="/app.js?v=13"></script>
+<script src="/app.js?v=14"></script>
 </body>
 </html>

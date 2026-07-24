@@ -807,14 +807,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
+
+    // Create high-detail tea leaf alpha texture dynamically
+    function createLeafTexture() {
+      const c = document.createElement('canvas');
+      c.width = 128;
+      c.height = 128;
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.moveTo(64, 8);
+      ctx.quadraticCurveTo(12, 48, 64, 120);
+      ctx.quadraticCurveTo(116, 48, 64, 8);
+      ctx.closePath();
+      ctx.fill();
+
+      // Leaf vein highlight
+      ctx.strokeStyle = 'rgba(0,0,0,0.25)';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(64, 12);
+      ctx.lineTo(64, 114);
+      ctx.stroke();
+
+      return new THREE.CanvasTexture(c);
+    }
+
+    const leafMap = createLeafTexture();
+
     const material = new THREE.PointsMaterial({
-      size: 1.4,
+      size: 5.5,
+      map: leafMap,
       vertexColors: true,
       transparent: true,
-      opacity: 0.65,
-      blending: THREE.AdditiveBlending,
+      opacity: 0.72,
+      alphaTest: 0.05,
       depthWrite: false
     });
+
 
     const particles = new THREE.Points(geometry, material);
     scene.add(particles);
@@ -869,6 +899,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
   }
 </script>
-<script src="/app.js?v=14"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

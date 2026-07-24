@@ -602,6 +602,27 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
   /* Emil: active scale on ALL buttons */
   button:active { transform: scale(0.97) !important; }
 
+  /* ══ MAGIC ANIMATOR MOTION TOKENS ══ */
+  .magic-hero-title {
+    background: linear-gradient(110deg, #FFFFFF 0%, #FFFFFF 40%, #F2D06B 50%, #FFFFFF 60%, #FFFFFF 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: magicShimmer 4s var(--ease-out) infinite;
+  }
+  @keyframes magicShimmer {
+    0% { background-position: 200% 0; }
+    60%, 100% { background-position: -200% 0; }
+  }
+  .magic-cart-btn {
+    position: relative;
+    transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-out);
+  }
+  .magic-cart-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 28px -6px rgba(201, 168, 76, 0.45), 0 0 0 1px rgba(201, 168, 76, 0.6);
+  }
+
   /* ══ MOBILE TOUCH & VIEWPORT SAFEGUARDS ══ */
   html, body {
     overflow-x: hidden !important;
@@ -899,6 +920,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
   }
 </script>
-<script src="/app.js?v=16"></script>
+<script src="/app.js?v=17"></script>
 </body>
 </html>

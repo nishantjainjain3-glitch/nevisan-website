@@ -625,7 +625,8 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     .nev-bento-tall { grid-row: span 1 !important; }
   }
   @media (max-width: 580px) {
-    .nev-bento { grid-template-columns: 1fr; }
+    .nev-bento { grid-template-columns: 1fr; gap: 1rem; }
+    .nev-bento-card { padding: 1.25rem !important; }
     .nev-bento-wide, .nev-bento-large { grid-column: span 1 !important; }
     .nev-bento-tall { grid-row: span 1 !important; }
   }
@@ -638,10 +639,12 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     border-radius: 20px;
     padding: 2rem;
     border: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: transform 0.28s cubic-bezier(0.23, 1, 0.32, 1),
-                box-shadow 0.28s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(0,0,0,0.25);
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+                border-color 0.3s ease;
     overflow: hidden;
     cursor: default;
   }
@@ -650,12 +653,13 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 60%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
     pointer-events: none;
   }
   .nev-bento-card:hover {
-    transform: translateY(-4px) scale(1.015);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+    transform: translateY(-5px) scale(1.015);
+    border-color: rgba(201, 168, 76, 0.35) !important;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.2);
   }
   .nev-bento-card--forest {
     background: linear-gradient(135deg, #1F2E24 0%, #0f1a12 100%);
@@ -861,6 +865,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
   }
 </script>
-<script src="/app.js?v=10"></script>
+<script src="/app.js?v=11"></script>
 </body>
 </html>

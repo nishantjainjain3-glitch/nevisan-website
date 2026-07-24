@@ -1972,7 +1972,8 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
           borderRadius: 18, // Inner concentric radius (24 - 6)
           overflow: "hidden",
           boxShadow: "inset 0 1px 0 rgba(255,255,255,0.6)",
-          border: "1px solid rgba(0,0,0,0.03)",
+          border: o ? "1px solid rgba(201, 168, 76, 0.45)" : "1px solid rgba(0,0,0,0.04)",
+          boxShadow: o ? "0 20px 48px -10px rgba(35,65,45,0.16), 0 0 20px rgba(201,168,76,0.12)" : "inset 0 1px 0 rgba(255,255,255,0.6)",
           display: "flex",
           flexDirection: "column", // Stacks children vertically naturally
           position: "relative",
@@ -2224,7 +2225,8 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
                 cursor: "pointer",
                 fontFamily: "'Plus Jakarta Sans'",
                 letterSpacing: "0.04em",
-                transition: "background 200ms",
+                transition: "transform 160ms var(--ease-out), background 200ms, border-color 200ms",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
               },
               onMouseEnter: (e) => {
                 e.currentTarget.style.background = "rgba(27,122,130,0.07)";

@@ -1,9 +1,7 @@
-const CACHE_NAME = 'nevisan-cache-v1';
+const CACHE_NAME = 'nevisan-cache-v5';
 const ASSETS = [
   './',
   './index.html',
-  './theme.css',
-  './app.js',
   './nevisan-logo.jpeg',
   './favicon.ico',
   './apple-touch-icon.png'

@@ -362,8 +362,19 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
     --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
     --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
-    --gold:  #C9A84C;
-    --forest: #1F2E24;
+
+    /* HSL Color Theory Tokens */
+    --hue-forest: 142;
+    --hue-gold:   44;
+    --hue-teal:   136;
+
+    --forest:      hsl(var(--hue-forest), 20%, 15%);  /* #1F2E24 */
+    --forest-dark: hsl(var(--hue-forest), 28%, 12%);  /* #15271B */
+    --forest-mid:  hsl(var(--hue-forest), 26%, 16%);  /* #1E3626 */
+    --forest-teal: hsl(var(--hue-teal), 30%, 20%);    /* #23412D */
+    --gold:        hsl(var(--hue-gold), 54%, 54%);    /* #C9A84C */
+    --gold-light:  hsl(var(--hue-gold), 60%, 85%);    /* #F0E4C0 */
+    --cream:       hsl(40, 24%, 96%);                /* #F8F6F2 */
   }
 
   /* Tactile feedback scale transitions on press */
@@ -850,6 +861,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
   }
 </script>
-<script src="/app.js?v=8"></script>
+<script src="/app.js?v=9"></script>
 </body>
 </html>

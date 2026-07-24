@@ -10424,6 +10424,33 @@ function WhatsAppFAB() {
     )
   );
 }
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+  componentDidCatch(error, errorInfo) {
+    console.error("Nevisan Error Boundary caught error:", error, errorInfo);
+  }
+  render() {
+    if (this.state.hasError) {
+      return React.createElement("div", { style: { padding: "80px 20px", textAlign: "center", fontFamily: "'Plus Jakarta Sans', sans-serif" } },
+        React.createElement("h2", { style: { color: "#1F2E24", fontFamily: "'Playfair Display', serif", fontSize: 28, marginBottom: 12 } }, "Nevisan Tea"),
+        React.createElement("p", { style: { color: "#5C7064", margin: "16px 0", fontSize: 15 } }, "An unexpected display issue occurred while rendering."),
+        React.createElement("button", {
+          onClick: () => window.location.reload(),
+          style: { background: "#C9A84C", color: "#15271B", border: "none", padding: "12px 24px", borderRadius: 8, cursor: "pointer", fontWeight: 600 }
+        }, "Reload Page")
+      );
+    }
+    return this.props.children;
+  }
+}
+
 ReactDOM.createRoot(document.getElementById("root")).render(
-  React.createElement(App, null),
+  React.createElement(ErrorBoundary, null, React.createElement(App, null)),
 );

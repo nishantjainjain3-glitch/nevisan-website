@@ -227,6 +227,7 @@ function CursorGlow() {
   return null;
 }
 const WA_NUMBER = "919864245687";
+const Icon = (props) => NevIcon(props);
 function NevIcon({ name, size = 24, color = "currentColor", style = {} }) {
   const iconPaths = {
     "★": "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",
@@ -2020,7 +2021,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
                 height: "100%",
               },
             },
-            React.createElement(Icon, { name: "🍃", size: 48, color: T.teal, style: { opacity: 0.7 } }),
+            React.createElement(NevIcon, { name: "🍃", size: 48, color: T.teal, style: { opacity: 0.7 } }),
           ),
       React.createElement("div", {
         style: {
@@ -2050,7 +2051,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
               boxShadow: "0 2px 8px rgba(201,168,76,0.4)",
             },
           },
-          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
+          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(NevIcon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
         ),
       e.badge &&
         !e.bestseller &&
@@ -2070,7 +2071,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
               borderRadius: 9999,
             },
           },
-          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "✓", size: 10, color: "#fff" }), e.badge),
+          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(NevIcon, { name: "✓", size: 10, color: "#fff" }), e.badge),
         ),
     ),
     React.createElement(
@@ -2897,7 +2898,7 @@ function CollectionPage({}) {
                               borderRadius: 9999,
                             },
                           },
-                          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
+                          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(NevIcon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
                         ),
                     ),
                     React.createElement(
@@ -3265,7 +3266,7 @@ function CollectionPage({}) {
                             borderRadius: 9999,
                           },
                         },
-                        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
+                        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(NevIcon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
                       ),
                   ),
                   React.createElement(
@@ -5385,7 +5386,7 @@ function CollectionSection({ setPage: e }) {
                               borderRadius: 9999,
                             },
                           },
-                          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
+                          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(NevIcon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
                         ),
                     ),
                     React.createElement(
@@ -5746,7 +5747,7 @@ function CollectionSection({ setPage: e }) {
                             borderRadius: 9999,
                           },
                         },
-                        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(Icon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
+                        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(NevIcon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
                       ),
                   ),
                   React.createElement(

@@ -879,7 +879,7 @@ function Hero({ setPage: e }) {
         ref: r,
         style: {
           position: "relative",
-          height: "100dvh",
+          height: "100vh",
           minHeight: 620,
           overflow: "hidden",
           background: T.tealDark,
@@ -2585,7 +2585,7 @@ function CollectionPage({}) {
     {
       style: {
         background: T.cream,
-        minHeight: "100dvh",
+        minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
     },
@@ -8072,7 +8072,7 @@ function JournalPage({ setPage: e }) {
     {
       style: {
         background: T.cream,
-        minHeight: "100dvh",
+        minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
     },
@@ -8230,7 +8230,7 @@ function AboutPage({ setPage: e }) {
     {
       style: {
         background: T.cream,
-        minHeight: "100dvh",
+        minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
     },
@@ -8765,7 +8765,7 @@ function CertificationsPage({ setPage: e }) {
     {
       style: {
         background: T.cream,
-        minHeight: "100dvh",
+        minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
     },
@@ -8934,7 +8934,7 @@ function WholesalePage({ setPage: e }) {
     {
       style: {
         background: T.cream,
-        minHeight: "100dvh",
+        minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
     },
@@ -9446,7 +9446,7 @@ function ContactPage({ setPage: e }) {
     {
       style: {
         background: T.cream,
-        minHeight: "100dvh",
+        minHeight: "100vh",
         animation: "page-enter 0.45s ease both",
       },
     },

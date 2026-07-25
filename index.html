@@ -782,6 +782,92 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <script>
+  /* ══ SMOOOTHY CREATIVE SLIDER ENGINE (BY FEDERICO VALLA SPEC) ══ */
+  class SmooothyEngine {
+    constructor({ wrapper, config = {} }) {
+      this.wrapper = typeof wrapper === 'string' ? document.querySelector(wrapper) : wrapper;
+      if (!this.wrapper) return;
+      
+      this.config = {
+        lerpFactor: 0.08,
+        dragSpeed: 1.2,
+        wheelSpeed: 0.8,
+        infinite: false,
+        snap: true,
+        ...config
+      };
+
+      this.current = 0;
+      this.target = 0;
+      this.speed = 0;
+      this.isDragging = false;
+      this.startX = 0;
+      this.dragStartTarget = 0;
+
+      this.items = Array.from(this.wrapper.querySelectorAll('.smooothy-slide, .nev-bento-card, .tea-card'));
+      this.initEvents();
+      this.raf();
+    }
+
+    initEvents() {
+      if (!this.wrapper) return;
+
+      const onStart = (x) => {
+        this.isDragging = true;
+        this.startX = x;
+        this.dragStartTarget = this.target;
+      };
+
+      const onMove = (x) => {
+        if (!this.isDragging) return;
+        const delta = (this.startX - x) * this.config.dragSpeed;
+        this.target = this.dragStartTarget + delta;
+      };
+
+      const onEnd = () => {
+        this.isDragging = false;
+      };
+
+      this.wrapper.addEventListener('mousedown', (e) => onStart(e.clientX));
+      window.addEventListener('mousemove', (e) => onMove(e.clientX));
+      window.addEventListener('mouseup', onEnd);
+
+      this.wrapper.addEventListener('touchstart', (e) => onStart(e.touches[0].clientX), { passive: true });
+      window.addEventListener('touchmove', (e) => onMove(e.touches[0].clientX), { passive: true });
+      window.addEventListener('touchend', onEnd);
+    }
+
+    raf() {
+      requestAnimationFrame(() => this.raf());
+      
+      const prevCurrent = this.current;
+      this.current += (this.target - this.current) * this.config.lerpFactor;
+      this.speed = this.current - prevCurrent;
+
+      const maxScroll = Math.max(0, this.wrapper.scrollWidth - this.wrapper.clientWidth);
+      const progress = maxScroll > 0 ? this.current / maxScroll : 0;
+
+      const parallaxValues = this.items.map((_, i) => {
+        const itemOffset = i * 280;
+        return (this.current - itemOffset) * 0.05;
+      });
+
+      if (typeof this.onUpdate === 'function') {
+        this.onUpdate({
+          current: this.current,
+          target: this.target,
+          progress: progress,
+          speed: this.speed,
+          parallaxValues: parallaxValues
+        });
+      }
+    }
+  }
+
+  window.SmooothyEngine = SmooothyEngine;
+</script>
+
+<script>
   /* ══ THREE.JS 3D PARTICLE FLOW FIELD (NEVISAN ASSAM TEA PARTICLES) ══ */
   (function initThreeParticles() {
     const canvas = document.getElementById('global-leaf-canvas');
@@ -920,6 +1006,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
   }
 </script>
-<script src="/app.js?v=18"></script>
+<script src="/app.js?v=19"></script>
 </body>
 </html>

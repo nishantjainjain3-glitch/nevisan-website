@@ -782,6 +782,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <script>
+  /* ══ STRING-TUNE PARALLAX ANIMATION ENGINE (FIDDLE.DIGITAL SPEC) ══ */
+  (function initStringTune() {
+    function updateParallax() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const elements = document.querySelectorAll('[string="parallax"]');
+
+      elements.forEach(el => {
+        const speed = parseFloat(el.getAttribute('string-parallax')) || 0.2;
+        const rect = el.getBoundingClientRect();
+        
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          const yOffset = (window.innerHeight - rect.top) * speed * 0.15;
+          el.style.transform = `translate3d(0, ${yOffset}px, 0)`;
+          el.style.setProperty('--parallax-y', `${yOffset}px`);
+        }
+      });
+      requestAnimationFrame(updateParallax);
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      requestAnimationFrame(updateParallax);
+    });
+    // Run immediately if DOM ready
+    if (document.readyState !== 'loading') requestAnimationFrame(updateParallax);
+  })();
+</script>
+
+<script>
   /* ══ SMOOOTHY CREATIVE SLIDER ENGINE (BY FEDERICO VALLA SPEC) ══ */
   class SmooothyEngine {
     constructor({ wrapper, config = {} }) {
@@ -1006,6 +1033,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
   }
 </script>
-<script src="/app.js?v=19"></script>
+<script src="/app.js?v=20"></script>
 </body>
 </html>

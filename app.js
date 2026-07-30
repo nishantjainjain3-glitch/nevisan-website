@@ -391,6 +391,7 @@ function Nav({ page: e, setPage: t }) {
       "Collection",
       "Our Story",
       "About",
+      "Journal",
       "Wholesale",
       "Contact",
       "FAQ",

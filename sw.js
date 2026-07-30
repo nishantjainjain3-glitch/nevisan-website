@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nevisan-cache-v5';
+const CACHE_NAME = 'nevisan-cache-v6';
 const ASSETS = [
   './',
   './index.html',

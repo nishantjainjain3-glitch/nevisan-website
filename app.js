@@ -7567,7 +7567,7 @@ function OurStoryPage({ setPage: e }) {
 }
 const POSTS = [
   {
-    title: "Why Whole Leaf Tea Tastes Different",
+    title: "Why Your Tea Bag Is Lying to You",
     slug: "why-whole-leaf-tea-tastes-different",
     date: "August 2025",
     author: "Master Blender Uditi",
@@ -7575,16 +7575,16 @@ const POSTS = [
     tag: "CRAFT",
     relatedTeas: ["Organic Green Tea", "Lemongrass Green Tea"],
     excerpt:
-      "Most commercial teas use broken leaves and dust — it brews fast but loses the complex flavour compounds locked in whole leaves.",
+      "Tear open a standard tea bag and you'll find dust, not tea. Here's what whole leaf actually means — and why it changes everything in your cup.",
     body: [
-      "Walk into any supermarket and pick up a tea bag. Tear it open. What you'll find is CTC — Cut, Tear, Curl — a method that reduces whole tea leaves into tiny granules optimised for speed and colour, not taste.",
-      "Whole leaf tea is different in every way. The entire leaf is kept intact through processing, which means the essential oils, amino acids (especially L-theanine), and flavour compounds remain locked inside — releasing slowly and fully as the leaf unfurls in hot water.",
-      "This is why Nevisan teas can be steeped two or three times. The first steep releases the brighter, more aromatic top notes. The second steep — after a minute of rest — brings out the deeper, more rounded body of the tea. By the third, you're getting the subtle, surprisingly sweet finish that tea drinkers in Japan and Taiwan have known about for centuries.",
-      "When you buy whole leaf, you're not just buying tea. You're buying the full story of the leaf — from how it grew, to how it was processed, to what it becomes in your cup."
+      "Go ahead, tear open a supermarket tea bag. That brown powder inside? That's CTC — Cut, Tear, Curl. It's an industrial method that shreds whole leaves into uniform granules sized for speed and colour, not flavour. You get a fast, dark brew. You do not get tea.",
+      "A whole leaf is exactly what it sounds like: the leaf stayed intact through every step of processing. That matters because the parts that make tea interesting — the essential oils, the amino acids, the flavour compounds — are still locked inside the leaf structure. When you add hot water, they release slowly, fully, in layers.",
+      "This is why you can steep a Nevisan tea two or even three times and get a different cup each time. The first steep is bright and aromatic. The second is softer, more rounded. The third has a subtle sweetness that catches you off guard. Tea drinkers in Japan and Taiwan have known about this for centuries. We're just catching up.",
+      "When you buy whole leaf, you're paying for the full story of the plant — from the soil it grew in, to the hands that processed it, to the moment it opens in your cup. That's not a premium. That's just what tea is supposed to be."
     ]
   },
   {
-    title: "The Science Behind GABA Tea",
+    title: "What Actually Happens in Your Brain When You Drink GABA Tea",
     slug: "science-behind-gaba-tea",
     date: "September 2025",
     author: "Nevisan Botanical Team",
@@ -7592,16 +7592,16 @@ const POSTS = [
     tag: "WELLNESS",
     relatedTeas: ["GABA Oolong Tea", "Chamomile Green Tea"],
     excerpt:
-      "GABA is your brain's natural calming signal. Here's how Nevisan's oolong leaves are processed to naturally amplify it.",
+      "GABA is your nervous system's off switch. Here's the unusual processing technique that coaxes oolong leaves into producing far more of it.",
     body: [
-      "GABA — gamma-aminobutyric acid — is the primary inhibitory neurotransmitter in your brain. In simple terms, it's the signal your nervous system sends to slow down, stop over-firing, and relax. Low GABA is associated with anxiety, poor sleep, and mental restlessness.",
-      "Most teas contain very little GABA naturally. But when oolong tea leaves are exposed to nitrogen-rich, oxygen-free environments during processing (a technique developed in Japan in the 1980s), the leaves undergo a specific biochemical reaction that dramatically increases GABA content — often by 4 to 10 times.",
-      "Nevisan's GABA Oolong is processed using this exact anaerobic method. The result is a tea that supports deep relaxation and mental clarity without sedation. Unlike chamomile (which promotes sleep), GABA tea allows you to be calm and focused simultaneously.",
-      "Regular consumption has been studied for blood pressure reduction, improved sleep quality, and anxiety management — making it one of the most functionally potent teas in our collection."
+      "Most people feel something when they drink GABA Oolong — a quietness, a settling. It's not placebo. There's a real mechanism behind it, and it starts with a neurotransmitter your brain already makes called GABA, or gamma-aminobutyric acid.",
+      "GABA is the primary signal your nervous system uses to slow things down. When your brain fires too fast — the anxious spiral, the 2am loop of thoughts — GABA is what eventually says: stop. Low GABA is linked to anxiety, poor sleep, and that particular kind of mental restlessness that makes it hard to sit still.",
+      "Here's the interesting part: most teas contain almost no GABA. But in the 1980s, Japanese researchers discovered that when oolong leaves are sealed in a nitrogen-rich, oxygen-free environment during processing, the leaves undergo a specific chemical shift that multiplies their GABA content by 4 to 10 times. That's the anaerobic processing technique Nevisan uses.",
+      "The result is a tea that calms without sedating. Chamomile will send you toward sleep. GABA Oolong lets you be still and present at the same time — good for reading, for a long conversation, for the hour before bed when you want to wind down without switching off entirely. Clinical studies have looked at it for blood pressure and sleep quality too, but honestly the simplest way to understand it is to brew a cup at 9pm and pay attention to what happens next."
     ]
   },
   {
-    title: "Golaghat: India's Hidden Tea Belt",
+    title: "The Tea Region Nobody Talks About (But Should)",
     slug: "golaghat-indias-hidden-tea-belt",
     date: "October 2025",
     author: "Single-Estate Origin Team",
@@ -7609,16 +7609,16 @@ const POSTS = [
     tag: "ORIGIN",
     relatedTeas: ["Organic Green Tea", "Tulsi Green Tea"],
     excerpt:
-      "While Darjeeling gets the headlines, Golaghat in upper Assam quietly produces some of the boldest, most complex teas in the world.",
+      "Everyone knows Darjeeling. Serious tea people know Golaghat — a small district in upper Assam that quietly produces some of the most complex tea in the world.",
     body: [
-      "Ask most people to name an Indian tea region and they'll say Darjeeling. The \"Champagne of teas\" has built an unmatched reputation over 150 years of marketing. But among tea professionals and serious drinkers, a different region commands deep respect: Golaghat, in upper Assam.",
-      "Golaghat sits in the Brahmaputra valley, where the soil is a unique combination of red clay, alluvial deposits from the river, and centuries of decomposed organic matter. The humidity is extreme — averaging 80% year round — and the temperature swings between seasons create a plant under constant gentle stress, which forces it to develop complex defensive compounds that translate directly into flavour.",
-      "Every Nevisan tea comes from a single garden in Golaghat. This matters because single-origin means traceability — you know exactly where your tea came from, who grew it, and how it was processed. There are no blends covering up lesser-quality leaves. What's in the pack is exactly what grew in that garden.",
-      "This is the foundational commitment behind Nevisan: one origin, one standard, complete transparency."
+      "Ask someone to name an Indian tea region and they'll say Darjeeling. It's the obvious answer, the one on every premium label, backed by 150 years of marketing. But if you ask the people who actually spend their lives tasting tea — the buyers, the blenders, the obsessives — a different name comes up: Golaghat.",
+      "Golaghat sits in the upper Brahmaputra valley in Assam, where the soil is a layered combination of red clay, river alluvium, and centuries of organic decomposition. The humidity rarely drops below 75%. The seasonal temperature swings are dramatic. For the tea plant, this is a form of constant gentle stress — and stressed plants respond by producing more of the complex compounds that create flavour. It's the same reason good wine grapes come from difficult terrain.",
+      "Every Nevisan tea is sourced from a single estate in Golaghat. We say that a lot, but the implications are worth spelling out. Single-origin means you can trace exactly where the leaf came from — which garden, which season, which processing run. There are no blends quietly averaging out lesser-quality batches. What's in the pack is what grew in that specific place.",
+      "Darjeeling is excellent. Golaghat is honest. That difference is why it's where Nevisan begins."
     ]
   },
   {
-    title: "How to Get Three Steeps from One Serving",
+    title: "The Three Steeps: Getting More from Every Cup",
     slug: "how-to-get-three-steeps",
     date: "November 2025",
     author: "Nevisan Brewing Lab",
@@ -7626,18 +7626,18 @@ const POSTS = [
     tag: "BREWING",
     relatedTeas: ["Organic Green Tea", "GABA Oolong Tea"],
     excerpt:
-      "Whole leaf teas open up with each steep. The first is bold, the second more rounded, the third surprisingly sweet.",
+      "If you're throwing away the leaves after one steep, you're throwing away the best part of the cup.",
     body: [
-      "One of the most common mistakes people make with whole-leaf tea is throwing it away after the first steep. This is like eating only the crust of a sourdough loaf.",
-      "Here's how to get the most from every serving of Nevisan tea:",
-      "First Steep: Use water at the temperature specified on your tea (typically 80–90°C). Steep for 2–3 minutes. This releases the brightest, most aromatic compounds — the \"top notes\" of the tea. This is the boldest, most characteristic cup.",
-      "Second Steep: Let the leaves rest for 60 seconds after draining. Add fresh water at the same temperature. Steep for 2–3 minutes. The body opens up further. You'll notice the cup is softer, more rounded — often more complex than the first.",
-      "Third Steep: Rest again, then steep for 3–4 minutes. This is where the subtle sweetness lives. Many experienced drinkers consider this their favourite cup of the three.",
-      "Pro tip: Don't squeeze or press the leaves — this releases bitterness. Let the water do the work."
+      "Most people steep their tea once and dump the leaves. With broken-leaf tea bags, that's fine — there's nothing left to give. With whole-leaf tea, you've barely started.",
+      "Think of it this way: the first steep is the introduction. The second is the conversation. The third is when things get interesting.",
+      "First steep — use the temperature on the pack (usually 80–90°C) and go for 2 to 3 minutes. This pull is the most aromatic, the brightest, the most characteristic of that particular tea. It's bold and clean.",
+      "Second steep — drain the leaves completely, let them rest for about 60 seconds, then add fresh water at the same temperature. Steep for another 2 to 3 minutes. The cup will be softer. The edges round out. A lot of people find this one their favourite.",
+      "Third steep — rest again, then extend the steep to 3 or 4 minutes. This is where the sweetness hides. It's subtle, almost surprising. Experienced tea drinkers often save this one for the evening.",
+      "One thing not to do: don't squeeze or press the leaves when you're done. That releases bitterness that was never meant to be in the cup. Let the water do everything. The leaf will give you what it has."
     ]
   },
   {
-    title: "Rum Green Tea: How We Made It",
+    title: "14 Attempts. One Cup. The Story of Rum Green Tea.",
     slug: "rum-green-tea-how-we-made-it",
     date: "December 2025",
     author: "Master Blender Uditi",
@@ -7645,16 +7645,16 @@ const POSTS = [
     tag: "CRAFT",
     relatedTeas: ["Rum Green Tea", "Whiskey Green Tea"],
     excerpt:
-      "No alcohol. No artificial flavour. Just 14 attempts and a precise cold-infusion technique using natural botanicals.",
+      "No alcohol, no artificial flavouring. Just a question worth obsessing over: can a tea genuinely feel like a warm evening?",
     body: [
-      "The idea came from a simple question: what if you could drink something that felt like a warm evening without the alcohol? Not a mocktail — those still require mixing and equipment. A tea. Something you could brew in a cup and that would genuinely evoke the character of aged rum.",
-      "The challenge was that rum's complexity comes from barrel ageing — a process that creates hundreds of interacting chemical compounds over years. No single botanical can replicate that. So we built it from multiple elements: a warm Assam green base, naturally sweet botanicals for the caramel undertone, a specific herb for the warm etheric note, and a precise cold-infusion technique that allows the botanicals to integrate without the bitterness that heat extraction creates.",
-      "Attempts 1 through 8 were too sweet. 9 and 10 were too sharp. 11 was close but lacked warmth. 12 tasted like dessert. 13 was almost right — but the finish wasn't there.",
-      "Attempt 14 hit the balance. The first sip is warming and slightly sweet. The mid-palate opens up with the herbal depth. The finish is clean with a slight spice. We've made no changes since."
+      "The question that started it was simple: can a tea feel like a warm evening without the alcohol? Not a mocktail — you still need a shaker and a setup for those. A tea. Something you brew in a cup, that genuinely evokes the character of aged rum.",
+      "The challenge is that rum's complexity comes from barrel ageing. Years of contact with charred wood create hundreds of interacting compounds — vanillins, esters, caramel phenols — that no single botanical can replicate. So we didn't try to use a single botanical. We built a structure: a warm Assam green tea base, specific naturally sweet ingredients for the caramel mid-note, a herb for the warm etheric quality rum has, and a cold-infusion technique that lets everything integrate slowly without the bitterness that heat extraction produces.",
+      "Attempts one through eight were too sweet. Nine and ten were sharp in the wrong way. Eleven had warmth but no depth. Twelve tasted like a dessert. Thirteen was genuinely close — the profile was almost right — but the finish dropped off.",
+      "Attempt fourteen was the one. First sip: warming, slightly sweet. Mid-palate: herbal, with body. Finish: clean, with a mild spice that lingers. We've made no changes to the recipe since. Sometimes getting something right means being willing to try it fourteen times."
     ]
   },
   {
-    title: "Morning vs Evening Teas: A Simple Guide",
+    title: "When to Drink Which Tea: A Practical Guide to Your Day",
     slug: "morning-vs-evening-teas",
     date: "January 2026",
     author: "Nevisan Wellness Team",
@@ -7662,17 +7662,17 @@ const POSTS = [
     tag: "WELLNESS",
     relatedTeas: ["Lemongrass Green Tea", "Chamomile Green Tea"],
     excerpt:
-      "Lemongrass and Spearmint for mornings. Chamomile and GABA for evenings. Here's why each tea works best at certain times.",
+      "The compounds in each tea interact with your body differently depending on the time of day. Here's how to match what you drink to when you drink it.",
     body: [
-      "Not all teas are equal at all hours. The compounds in each variety interact differently with your body depending on where you are in your daily rhythm. Here's how to match your Nevisan tea to your time of day:",
-      "Morning (6am – 12pm): Organic Green Tea or Lemongrass Green Tea. Both deliver clean caffeine combined with L-theanine — a calm, sustained alertness without the cortisol spike of coffee. Lemongrass adds a digestive benefit that's useful after overnight fasting. Spearmint works well mid-morning if you're prone to hormonal breakouts.",
-      "Afternoon (12pm – 5pm): Rum or Whiskey Green Tea. The bold character suits the afternoon energy dip, while the green tea base maintains mental alertness. Blue Flower is also excellent here — it's visually striking and mildly calming without making you sleepy.",
-      "Evening (5pm – bedtime): Chamomile or GABA Oolong. Chamomile for those who want to fully unwind and improve sleep quality. GABA Oolong for those who want to relax while staying mentally present — ideal for creative work or quiet reading.",
-      "Tulsi works at any hour — it's an adaptogen, meaning it reads your body's stress state and responds accordingly."
+      "Tea isn't one-size-fits-all, and not just because of taste. The active compounds in each variety — caffeine levels, specific polyphenols, adaptogens, amino acids — interact with your body differently depending on where you are in your daily rhythm.",
+      "In the morning, from roughly 6am to noon, green tea is doing its best work. Organic Green Tea or Lemongrass Green delivers caffeine paired with L-theanine, which smooths out the alertness into something sustained and calm — no cortisol spike, no mid-morning crash. Lemongrass also helps with digestion after overnight fasting. If hormonal breakouts are something you're dealing with, Spearmint mid-morning is worth building into the routine.",
+      "Afternoons are when Rum and Whiskey Green teas earn their place. The bold character suits the natural energy dip around 2pm, and the green tea base keeps your mind clear. Blue Flower is quieter but visually striking — a good choice for an afternoon pause that doesn't make you drowsy.",
+      "Evenings call for either Chamomile or GABA Oolong, and the choice comes down to what you actually want. Chamomile is for winding down properly — it will move you toward sleep. GABA Oolong is for being calm and still present — good for reading, for creative work, for conversations you want to actually be in.",
+      "Tulsi sits outside these categories. It's an adaptogen, meaning it responds to your body's state rather than imposing one. Morning, afternoon, evening — it works."
     ]
   },
   {
-    title: "The Anti-Androgenic Science: Spearmint Tea for Hormonal Balance",
+    title: "Spearmint Tea and Hormonal Skin: What the Research Shows",
     slug: "spearmint-tea-hormonal-balance-pcos",
     date: "February 2026",
     author: "Nevisan Research Team",
@@ -7680,16 +7680,16 @@ const POSTS = [
     tag: "HORMONAL HEALTH",
     relatedTeas: ["Spearmint Green Tea", "Tulsi Green Tea"],
     excerpt:
-      "Clinical research shows spearmint tea lowers free testosterone levels in women, providing a natural remedy for PCOS and hormonal breakouts.",
+      "Two cups of spearmint tea a day reduced free testosterone levels in PCOS patients by a measurable margin. Here's the science behind why it works.",
     body: [
-      "Hormonal acne and androgenic imbalance affect millions of women. While topical treatments soothe inflammation on the skin's surface, they rarely address the internal endocrine cause: excess free testosterone.",
-      "Recent clinical trials published in Phytotherapy Research demonstrated that drinking spearmint tea twice daily for 30 days significantly reduced plasma free testosterone levels in women with PCOS. The high concentration of polyphenols and rosmarinic acid inhibits 5-alpha reductase — the enzyme responsible for converting testosterone into DHT.",
-      "Nevisan's Spearmint Green Tea pairs organic Mentha spicata leaves with whole-leaf Assam green tea. This combination delivers anti-androgenic benefits alongside L-theanine and EGCG catechins, regulating sebum production without drying out your skin.",
-      "Brew 2 grams in 85°C water for 2 minutes every morning for optimal hormonal regulation and natural complexion clarity."
+      "Hormonal acne is frustrating in a specific way — topical treatments address what's on the surface, but the cause is internal. Excess free testosterone signals sebaceous glands to overproduce oil. The breakout is just where that process becomes visible.",
+      "A clinical trial published in Phytotherapy Research gave women with PCOS two cups of spearmint tea daily for 30 days. At the end, plasma free testosterone levels had fallen significantly. The mechanism is rosmarinic acid and polyphenols in spearmint inhibiting 5-alpha reductase — the enzyme that converts testosterone into DHT, the form that drives androgenic effects.",
+      "Nevisan's Spearmint Green Tea combines organic Mentha spicata with whole-leaf Assam green. The spearmint delivers the anti-androgenic effect. The green tea adds EGCG catechins and L-theanine — compounds that support skin health from a different angle, reducing inflammation and cortisol-driven breakouts.",
+      "The practical suggestion: two grams in 85°C water for two minutes every morning. Consistency matters more than quantity here. It's not a fast fix — hormonal cycles don't change overnight — but users who stick with it for four to six weeks typically notice a real difference in both skin clarity and cycle regularity."
     ]
   },
   {
-    title: "0.0% ABV Crafting: Re-inventing the Evening Dram with Botanical Teas",
+    title: "Drinking Without Drinking: How We Recreated an Evening Spirit in a Cup of Tea",
     slug: "non-alcoholic-botanical-whiskey-rum-tea",
     date: "March 2026",
     author: "Master Blender Uditi",
@@ -7697,12 +7697,64 @@ const POSTS = [
     tag: "NON-ALCOHOLIC",
     relatedTeas: ["Whiskey Green Tea", "Rum Green Tea"],
     excerpt:
-      "How cold-extracted wood oak botanicals and whole-leaf Assam tea reproduce the deep palate of aged spirits without alcohol or hangovers.",
+      "Toasted oak, peat aromatics, cold-extracted botanicals — here's how Nevisan built the texture and finish of aged spirits into a tea with zero alcohol.",
     body: [
-      "The global rise of the mindful drinking movement has created a demand for sophisticated non-alcoholic evening rituals. Traditional mocktails relying on fruit juices or sugar syrups fail to provide the dry, oaky complexity of fine aged spirits.",
-      "Nevisan's non-alcoholic series — Whiskey Green Tea and Rum Green Tea — was developed to solve this gap. By utilizing toasted oak wood, sugarcane botanicals, and peat-smoke aromatics cold-infused into high-altitude Assam green tea, we replicate the mouthfeel and finish of barrel-aged spirits.",
-      "With 0.0% ABV, zero sugar, and zero artificial additives, these teas deliver a relaxing evening dram that honors your health goals while satisfying your palate.",
-      "Enjoy hot in a heavy tumbler or served over large ice spheres with a lemon twist for an elevated alcohol-free evening."
+      "The market for non-alcoholic drinks has changed in the last few years. People aren't giving up alcohol because they have to — they're choosing not to drink, and they want something worth drinking in its place. Fruit juice doesn't cut it at 9pm. Neither does sparkling water.",
+      "The problem with recreating spirits in a non-alcoholic format is depth. Aged whiskey and rum get their character from years inside charred barrels. The wood breaks down slowly, donating vanillin, tannins, and specific smoky phenols that create the dry, complex finish you recognise. No amount of grape juice gets there.",
+      "We approached it differently. Toasted oak wood and peat-smoke aromatics were cold-extracted into our whole-leaf Assam green tea base. Cold extraction preserves the aromatic compounds without releasing the bitter tannins that heat would pull out. Sugarcane botanicals added the caramel mid-note that rum carries. Whiskey got a different botanical profile — drier, with more wood-forward character.",
+      "The result is 0.0% ABV, no sugar, no artificial additives. Brew it hot and drink it from a heavy glass. Or brew it strong, let it cool, and pour it over a large ice sphere with a twist of lemon. It's the most honest evening ritual we know of — all the texture and ritual of a dram, none of the morning aftermath."
+    ]
+  },
+  {
+    title: "The Blue Cup: What Butterfly Pea Flower Actually Does",
+    slug: "butterfly-pea-flower-blue-tea-benefits",
+    date: "April 2026",
+    author: "Nevisan Botanical Team",
+    readTime: "4 min read",
+    tag: "WELLNESS",
+    relatedTeas: ["Blue Flower Green Tea", "Chamomile Green Tea"],
+    excerpt:
+      "That vivid blue colour is real — no dye, no trickery. And behind the colour is a compound with genuine antioxidant and cognitive benefits.",
+    body: [
+      "The first time most people see Blue Flower tea, they assume there's a trick. No food colouring produces that particular shade of deep indigo naturally. But Clitoria ternatea — butterfly pea flower — does, through a class of pigments called anthocyanins that also happen to be among the most studied antioxidants in plant science.",
+      "What makes the colour even more interesting is that it's pH-sensitive. Add a few drops of lemon juice and the blue shifts to purple, then to a warm pink depending on how acidic you go. It's genuinely one of the most visually alive drinks you can make at home, entirely through natural chemistry.",
+      "Beyond the colour, the research is promising. Anthocyanins from butterfly pea have been studied for memory and cognitive function — there's early evidence they support acetylcholine signalling, which is the neurotransmitter involved in learning and recall. Some traditional Ayurvedic preparations used the plant specifically for mental clarity.",
+      "Nevisan's Blue Flower Green Tea pairs the butterfly pea with whole-leaf Assam green, which adds L-theanine and EGCG to the antioxidant profile. The result tastes delicate — mildly floral, with the clean, grassy character of the green base underneath. Brew it without lemon first so you see the blue before it shifts. Then add a squeeze. That colour change alone is worth the cup."
+    ]
+  },
+  {
+    title: "Tulsi: The Adaptogen That Pays Attention",
+    slug: "tulsi-holy-basil-adaptogen-benefits",
+    date: "May 2026",
+    author: "Nevisan Wellness Team",
+    readTime: "5 min read",
+    tag: "WELLNESS",
+    relatedTeas: ["Tulsi Green Tea", "GABA Oolong Tea"],
+    excerpt:
+      "Tulsi doesn't pick a direction — it reads your body's state and responds to it. That's what makes an adaptogen different from every other functional ingredient.",
+    body: [
+      "Most functional teas work in one direction. Chamomile calms. Green tea energises. GABA Oolong quiets mental noise. Tulsi does something harder to categorise: it responds to what your body actually needs rather than pushing in a fixed direction.",
+      "This is what the word adaptogen means in a technical sense. An adaptogenic herb modulates the stress-response system — primarily the HPA axis, which controls cortisol production — in a way that pulls towards balance rather than towards a specific state. High cortisol, tulsi helps bring it down. Low energy and mental fog, tulsi helps restore clarity. The same plant, different effects, depending on where your body starts.",
+      "Tulsi — holy basil, Ocimum tenuiflorum — has been used in Ayurvedic medicine for thousands of years, but Western clinical research has started catching up. Studies have looked at it for reducing anxiety scores, improving memory and cognitive function, and supporting thyroid regulation. The active compounds include eugenol, rosmarinic acid, and ursolic acid, which work through multiple pathways rather than a single mechanism.",
+      "In practice, this means Tulsi Green Tea is the most versatile cup in the Nevisan range. Morning, afternoon, evening — it works at all three. If you're in a season of high stress and your body is doing a lot, this is probably the tea to reach for most consistently."
+    ]
+  },
+  {
+    title: "Cold Brew: The Summer Method Nobody Tells You About",
+    slug: "cold-brew-green-tea-guide",
+    date: "June 2026",
+    author: "Nevisan Brewing Lab",
+    readTime: "4 min read",
+    tag: "BREWING",
+    relatedTeas: ["Organic Green Tea", "Blue Flower Green Tea"],
+    excerpt:
+      "Cold brewing whole-leaf tea overnight extracts all the flavour with almost none of the bitterness. It's also the laziest good cup of tea you'll ever make.",
+    body: [
+      "Here's the problem with hot-brewed green tea in summer: temperature control matters a lot, and most people overbrew it. Too hot, too long, and green tea turns bitter fast. Cold brew sidesteps the whole issue.",
+      "The method is almost embarrassingly simple. Add 3 grams of whole-leaf tea per 250ml of cold filtered water. Drop it in a glass jar or pitcher. Put it in the fridge. Come back in 6 to 8 hours — or just leave it overnight. Pour it out and drink it.",
+      "Cold water extracts differently from hot. It picks up the sweet and aromatic compounds first, while leaving behind a lot of the catechins and tannins that create bitterness and astringency in an overbrewed hot cup. The result is cleaner, lighter, and noticeably sweeter than the same tea brewed hot. First-timers usually don't believe it's the same tea.",
+      "A few things worth knowing: cold brew is lower in caffeine than hot brew — roughly 30 to 40% less — so it's a gentler option if you're caffeine-sensitive or brewing an afternoon cup. It also keeps well. Refrigerated in a sealed jar, it stays good for two to three days, which means you can make a batch on Sunday night and have cold cups ready through Wednesday.",
+      "Our Blue Flower green tea is particularly good cold-brewed — the anthocyanin colour stays vivid and the flavour becomes almost dessert-like. Organic Green is clean and almost savoury cold. Try both before settling on a favourite."
     ]
   }
 ];

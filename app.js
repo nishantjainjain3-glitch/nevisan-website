@@ -7569,6 +7569,8 @@ const POSTS = [
     title: "Why Whole Leaf Tea Tastes Different",
     slug: "why-whole-leaf-tea-tastes-different",
     date: "August 2025",
+    author: "Master Blender Uditi",
+    readTime: "4 min read",
     tag: "CRAFT",
     relatedTeas: ["Organic Green Tea", "Lemongrass Green Tea"],
     excerpt:
@@ -7577,13 +7579,15 @@ const POSTS = [
       "Walk into any supermarket and pick up a tea bag. Tear it open. What you'll find is CTC — Cut, Tear, Curl — a method that reduces whole tea leaves into tiny granules optimised for speed and colour, not taste.",
       "Whole leaf tea is different in every way. The entire leaf is kept intact through processing, which means the essential oils, amino acids (especially L-theanine), and flavour compounds remain locked inside — releasing slowly and fully as the leaf unfurls in hot water.",
       "This is why Nevisan teas can be steeped two or three times. The first steep releases the brighter, more aromatic top notes. The second steep — after a minute of rest — brings out the deeper, more rounded body of the tea. By the third, you're getting the subtle, surprisingly sweet finish that tea drinkers in Japan and Taiwan have known about for centuries.",
-      "When you buy whole leaf, you're not just buying tea. You're buying the full story of the leaf — from how it grew, to how it was processed, to what it becomes in your cup.",
-    ],
+      "When you buy whole leaf, you're not just buying tea. You're buying the full story of the leaf — from how it grew, to how it was processed, to what it becomes in your cup."
+    ]
   },
   {
     title: "The Science Behind GABA Tea",
     slug: "science-behind-gaba-tea",
     date: "September 2025",
+    author: "Nevisan Botanical Team",
+    readTime: "5 min read",
     tag: "WELLNESS",
     relatedTeas: ["GABA Oolong Tea", "Chamomile Green Tea"],
     excerpt:
@@ -7592,13 +7596,15 @@ const POSTS = [
       "GABA — gamma-aminobutyric acid — is the primary inhibitory neurotransmitter in your brain. In simple terms, it's the signal your nervous system sends to slow down, stop over-firing, and relax. Low GABA is associated with anxiety, poor sleep, and mental restlessness.",
       "Most teas contain very little GABA naturally. But when oolong tea leaves are exposed to nitrogen-rich, oxygen-free environments during processing (a technique developed in Japan in the 1980s), the leaves undergo a specific biochemical reaction that dramatically increases GABA content — often by 4 to 10 times.",
       "Nevisan's GABA Oolong is processed using this exact anaerobic method. The result is a tea that supports deep relaxation and mental clarity without sedation. Unlike chamomile (which promotes sleep), GABA tea allows you to be calm and focused simultaneously.",
-      "Regular consumption has been studied for blood pressure reduction, improved sleep quality, and anxiety management — making it one of the most functionally potent teas in our collection.",
-    ],
+      "Regular consumption has been studied for blood pressure reduction, improved sleep quality, and anxiety management — making it one of the most functionally potent teas in our collection."
+    ]
   },
   {
     title: "Golaghat: India's Hidden Tea Belt",
     slug: "golaghat-indias-hidden-tea-belt",
     date: "October 2025",
+    author: "Single-Estate Origin Team",
+    readTime: "4 min read",
     tag: "ORIGIN",
     relatedTeas: ["Organic Green Tea", "Tulsi Green Tea"],
     excerpt:
@@ -7607,13 +7613,15 @@ const POSTS = [
       "Ask most people to name an Indian tea region and they'll say Darjeeling. The \"Champagne of teas\" has built an unmatched reputation over 150 years of marketing. But among tea professionals and serious drinkers, a different region commands deep respect: Golaghat, in upper Assam.",
       "Golaghat sits in the Brahmaputra valley, where the soil is a unique combination of red clay, alluvial deposits from the river, and centuries of decomposed organic matter. The humidity is extreme — averaging 80% year round — and the temperature swings between seasons create a plant under constant gentle stress, which forces it to develop complex defensive compounds that translate directly into flavour.",
       "Every Nevisan tea comes from a single garden in Golaghat. This matters because single-origin means traceability — you know exactly where your tea came from, who grew it, and how it was processed. There are no blends covering up lesser-quality leaves. What's in the pack is exactly what grew in that garden.",
-      "This is the foundational commitment behind Nevisan: one origin, one standard, complete transparency.",
-    ],
+      "This is the foundational commitment behind Nevisan: one origin, one standard, complete transparency."
+    ]
   },
   {
     title: "How to Get Three Steeps from One Serving",
     slug: "how-to-get-three-steeps",
     date: "November 2025",
+    author: "Nevisan Brewing Lab",
+    readTime: "3 min read",
     tag: "BREWING",
     relatedTeas: ["Organic Green Tea", "GABA Oolong Tea"],
     excerpt:
@@ -7621,16 +7629,18 @@ const POSTS = [
     body: [
       "One of the most common mistakes people make with whole-leaf tea is throwing it away after the first steep. This is like eating only the crust of a sourdough loaf.",
       "Here's how to get the most from every serving of Nevisan tea:",
-      'First Steep: Use water at the temperature specified on your tea (typically 80–90°C). Steep for 2–3 minutes. This releases the brightest, most aromatic compounds — the "top notes" of the tea. This is the boldest, most characteristic cup.',
+      "First Steep: Use water at the temperature specified on your tea (typically 80–90°C). Steep for 2–3 minutes. This releases the brightest, most aromatic compounds — the \"top notes\" of the tea. This is the boldest, most characteristic cup.",
       "Second Steep: Let the leaves rest for 60 seconds after draining. Add fresh water at the same temperature. Steep for 2–3 minutes. The body opens up further. You'll notice the cup is softer, more rounded — often more complex than the first.",
       "Third Steep: Rest again, then steep for 3–4 minutes. This is where the subtle sweetness lives. Many experienced drinkers consider this their favourite cup of the three.",
-      "Pro tip: Don't squeeze or press the leaves — this releases bitterness. Let the water do the work.",
-    ],
+      "Pro tip: Don't squeeze or press the leaves — this releases bitterness. Let the water do the work."
+    ]
   },
   {
     title: "Rum Green Tea: How We Made It",
     slug: "rum-green-tea-how-we-made-it",
     date: "December 2025",
+    author: "Master Blender Uditi",
+    readTime: "5 min read",
     tag: "CRAFT",
     relatedTeas: ["Rum Green Tea", "Whiskey Green Tea"],
     excerpt:
@@ -7639,13 +7649,15 @@ const POSTS = [
       "The idea came from a simple question: what if you could drink something that felt like a warm evening without the alcohol? Not a mocktail — those still require mixing and equipment. A tea. Something you could brew in a cup and that would genuinely evoke the character of aged rum.",
       "The challenge was that rum's complexity comes from barrel ageing — a process that creates hundreds of interacting chemical compounds over years. No single botanical can replicate that. So we built it from multiple elements: a warm Assam green base, naturally sweet botanicals for the caramel undertone, a specific herb for the warm etheric note, and a precise cold-infusion technique that allows the botanicals to integrate without the bitterness that heat extraction creates.",
       "Attempts 1 through 8 were too sweet. 9 and 10 were too sharp. 11 was close but lacked warmth. 12 tasted like dessert. 13 was almost right — but the finish wasn't there.",
-      "Attempt 14 hit the balance. The first sip is warming and slightly sweet. The mid-palate opens up with the herbal depth. The finish is clean with a slight spice. We've made no changes since.",
-    ],
+      "Attempt 14 hit the balance. The first sip is warming and slightly sweet. The mid-palate opens up with the herbal depth. The finish is clean with a slight spice. We've made no changes since."
+    ]
   },
   {
     title: "Morning vs Evening Teas: A Simple Guide",
     slug: "morning-vs-evening-teas",
     date: "January 2026",
+    author: "Nevisan Wellness Team",
+    readTime: "4 min read",
     tag: "WELLNESS",
     relatedTeas: ["Lemongrass Green Tea", "Chamomile Green Tea"],
     excerpt:
@@ -7655,105 +7667,43 @@ const POSTS = [
       "Morning (6am – 12pm): Organic Green Tea or Lemongrass Green Tea. Both deliver clean caffeine combined with L-theanine — a calm, sustained alertness without the cortisol spike of coffee. Lemongrass adds a digestive benefit that's useful after overnight fasting. Spearmint works well mid-morning if you're prone to hormonal breakouts.",
       "Afternoon (12pm – 5pm): Rum or Whiskey Green Tea. The bold character suits the afternoon energy dip, while the green tea base maintains mental alertness. Blue Flower is also excellent here — it's visually striking and mildly calming without making you sleepy.",
       "Evening (5pm – bedtime): Chamomile or GABA Oolong. Chamomile for those who want to fully unwind and improve sleep quality. GABA Oolong for those who want to relax while staying mentally present — ideal for creative work or quiet reading.",
-      "Tulsi works at any hour — it's an adaptogen, meaning it reads what your body needs (energy or calm) and responds accordingly.",
-    ],
+      "Tulsi works at any hour — it's an adaptogen, meaning it reads your body's stress state and responds accordingly."
+    ]
   },
   {
-    title:
-      "Blue Butterfly Pea Flower Tea: What Makes It Turn Purple and Why It's Worth Drinking",
-    slug: "blue-butterfly-pea-flower-tea",
+    title: "The Anti-Androgenic Science: Spearmint Tea for Hormonal Balance",
+    slug: "spearmint-tea-hormonal-balance-pcos",
     date: "February 2026",
-    tag: "WELLNESS",
-    relatedTeas: ["Blue Flower Green Tea", "Organic Green Tea"],
+    author: "Nevisan Research Team",
+    readTime: "5 min read",
+    tag: "HORMONAL HEALTH",
+    relatedTeas: ["Spearmint Green Tea", "Tulsi Green Tea"],
     excerpt:
-      "Blue butterfly pea flower tea gets its colour from anthocyanins — powerful antioxidants that also explain its mood-lifting, brain-supporting reputation.",
+      "Clinical research shows spearmint tea lowers free testosterone levels in women, providing a natural remedy for PCOS and hormonal breakouts.",
     body: [
-      "Blue butterfly pea flower tea is made from the dried petals of Clitoria ternatea, a plant native to Southeast Asia and parts of India. The flowers produce a vivid cobalt-blue infusion unlike anything else in the plant world. When blended with green tea, as in Nevisan's Blue Flower Green, the result is a cup that's visually striking and nutritionally interesting — not just a novelty drink for social media.",
-      "The blue colour comes from anthocyanins, a class of flavonoid antioxidants also found in blueberries and red cabbage. These pigments are pH-sensitive, which is why adding lemon juice to blue butterfly pea tea shifts it from blue to violet to pink. The science behind the colour change is simple acid-base chemistry — the anthocyanins acting as natural indicators responding to the acidity of the liquid.",
-      "Research into butterfly pea flower is still developing, but early studies suggest its anthocyanins may support cognitive function, reduce oxidative stress, and have mild anti-anxiety effects. Some research points to proanthocyanidins in the flower helping with skin elasticity and eye health. These are not proven cure-all claims, but the antioxidant profile is genuinely high compared to many common herbal teas.",
-      "When blue butterfly pea is paired with a light green tea base, you get the grassy, umami notes of green tea alongside the subtly earthy, almost woody flavour of the flower. The caffeine level stays moderate, making it suitable in the afternoon. Look for blends where the green tea is whole-leaf and the flower petals are actually visible — not ground into the blend and hiding in a bag.",
-    ],
+      "Hormonal acne and androgenic imbalance affect millions of women. While topical treatments soothe inflammation on the skin's surface, they rarely address the internal endocrine cause: excess free testosterone.",
+      "Recent clinical trials published in Phytotherapy Research demonstrated that drinking spearmint tea twice daily for 30 days significantly reduced plasma free testosterone levels in women with PCOS. The high concentration of polyphenols and rosmarinic acid inhibits 5-alpha reductase — the enzyme responsible for converting testosterone into DHT.",
+      "Nevisan's Spearmint Green Tea pairs organic Mentha spicata leaves with whole-leaf Assam green tea. This combination delivers anti-androgenic benefits alongside L-theanine and EGCG catechins, regulating sebum production without drying out your skin.",
+      "Brew 2 grams in 85°C water for 2 minutes every morning for optimal hormonal regulation and natural complexion clarity."
+    ]
   },
   {
-    title:
-      "Spearmint Tea and Hormonal Balance: What the Research Actually Says",
-    slug: "spearmint-tea-hormonal-balance",
+    title: "0.0% ABV Crafting: Re-inventing the Evening Dram with Botanical Teas",
+    slug: "non-alcoholic-botanical-whiskey-rum-tea",
     date: "March 2026",
-    tag: "WELLNESS",
-    relatedTeas: ["Spearmint Green Tea", "Organic Green Tea"],
+    author: "Master Blender Uditi",
+    readTime: "6 min read",
+    tag: "NON-ALCOHOLIC",
+    relatedTeas: ["Whiskey Green Tea", "Rum Green Tea"],
     excerpt:
-      "Spearmint tea has been studied for its ability to reduce androgens in women, making it one of the few herbal teas with direct hormonal research behind it.",
+      "How cold-extracted wood oak botanicals and whole-leaf Assam tea reproduce the deep palate of aged spirits without alcohol or hangovers.",
     body: [
-      "Spearmint tea is one of the more researched herbal teas when it comes to hormonal health. A clinical trial published in Phytotherapy Research found that women with PCOS who drank two cups of spearmint tea daily for 30 days showed a significant reduction in free testosterone levels and an improvement in LH to FSH ratios. These are meaningful hormonal markers. The mechanism is thought to involve spearmint's ability to inhibit 5-alpha reductase, the enzyme that converts testosterone to its more potent form.",
-      "For women dealing with PCOS, hirsutism, or androgen-related acne, spearmint tea is sometimes recommended as a supportive, low-risk addition to a broader approach — not as a standalone treatment. The research is specific enough that some functional medicine practitioners include it in hormonal health protocols.",
-      "Spearmint is different from peppermint — it's milder, sweeter, and lower in menthol. When blended with green tea, as in Nevisan's Spearmint Green, the result is a bright, cooling cup with a clean finish. The green tea adds antioxidants and L-theanine, making the combination genuinely useful rather than just pleasant.",
-      "If you're exploring spearmint tea for hormonal reasons, consistency matters more than quantity. Two cups a day for several weeks is what the research used — not a single strong brew once in a while. Whole-leaf spearmint blended with real green tea is worth seeking out over fannings-based bags, where the volatile oils that carry most of spearmint's active compounds have largely dissipated.",
-    ],
-  },
-  {
-    title: "Tulsi Green Tea: India's Ancient Adaptogen Meets Single-Origin Tea",
-    slug: "tulsi-green-tea-adaptogen",
-    date: "April 2026",
-    tag: "WELLNESS",
-    relatedTeas: ["Tulsi Green Tea", "Organic Green Tea"],
-    excerpt:
-      "Tulsi, or holy basil, has been used in Ayurvedic medicine for thousands of years — blended with green tea, it becomes one of the most balanced cups you can brew.",
-    body: [
-      "Tulsi, known botanically as Ocimum tenuiflorum and commonly called holy basil, is one of the most revered plants in Indian tradition. It has been used in Ayurvedic medicine for at least 3,000 years for respiratory support, stress relief, and immune function. As an adaptogen — a class of plants thought to help the body regulate its stress response — tulsi has been studied for its effects on cortisol, immune function, and blood sugar stability.",
-      "When tulsi is blended with green tea, the pairing is unusually well-suited. Green tea brings antioxidants, mild caffeine, and L-theanine. Tulsi adds eugenol, ursolic acid, and rosmarinic acid, along with a distinct clove-like, slightly peppery aroma. The flavour combination is warming without being heavy, and the adaptogenic properties of tulsi complement the calm focus that L-theanine supports.",
-      "Studies have shown reductions in cortisol levels, improvements in cognitive function under stress, and anti-inflammatory effects from regular tulsi consumption. It is not a sedative — it does not make you drowsy — but many people report a noticeable sense of mental ease when they drink it regularly. Nevisan's Tulsi Green uses whole holy basil leaves alongside Assam green tea, keeping the ratio balanced so neither ingredient overwhelms the other.",
-      "For anyone looking to reduce daily stimulant load while still supporting focus, tulsi green tea is a supportive starting point. It has enough caffeine to be functional in the morning without the cortisol spike of coffee. It's also one of the few blends where the Indian heritage of the herb is fully intact — tulsi grown in India, paired with tea grown in India, brewed simply at around 80°C for two to three minutes.",
-    ],
-  },
-  {
-    title:
-      "Chamomile Green Tea: Why This Evening Blend Works Better Than Either Alone",
-    slug: "chamomile-green-tea-evening-blend",
-    date: "May 2026",
-    tag: "WELLNESS",
-    relatedTeas: ["Chamomile Green Tea", "Organic Green Tea"],
-    excerpt:
-      "Chamomile and green tea together offer something neither delivers alone — the calming properties of chamomile with the antioxidant depth of whole-leaf green tea.",
-    body: [
-      "Chamomile is one of the most widely consumed herbal teas in the world, usually drunk on its own before bed. Green tea is usually positioned as a morning drink. Pairing them sounds counterintuitive, but the combination works because green tea brewed at lower temperatures and shorter times keeps caffeine low while retaining its antioxidant content. Blended with chamomile, it creates an evening cup that does not sacrifice nutritional value just to be caffeine-light.",
-      "The active compound in chamomile most associated with its calming effects is apigenin, a flavonoid that binds to GABA receptors in the brain — the same receptors that benzodiazepines act on, though far more gently. Research suggests chamomile can meaningfully reduce anxiety symptoms and improve sleep quality in people with mild insomnia. It is a well-studied herb with a consistent body of evidence behind it.",
-      "Green tea brings EGCG, the primary catechin in green tea and one of the most researched antioxidants in the food supply. L-theanine promotes alpha-wave activity in the brain — relaxed alertness rather than sedation. In the evening, both chamomile and L-theanine point in the same direction: calm without grogginess.",
-      "Nevisan's Chamomile Green uses whole chamomile flowers alongside Assam green tea leaves. The brew is best kept around 75 to 80°C and steeped for no more than two minutes — chamomile can turn bitter if over-steeped, and green tea gets astringent above 90°C. Done right, the cup is floral, slightly sweet, and genuinely useful as part of a wind-down routine.",
-    ],
-  },
-  {
-    title:
-      "Green Tea vs Coffee: The Caffeine Difference Nobody Explains Properly",
-    slug: "green-tea-vs-coffee-caffeine",
-    date: "May 2026",
-    tag: "WELLNESS",
-    relatedTeas: ["Organic Green Tea", "Lemongrass Green Tea"],
-    excerpt:
-      "Green tea has less caffeine than coffee, but L-theanine changes how your body processes it entirely — and that difference matters more than the number.",
-    body: [
-      "A standard cup of coffee contains roughly 80 to 120mg of caffeine. A cup of green tea contains between 20 and 50mg depending on variety, steeping time, and water temperature. On paper, coffee wins if you need a strong stimulant hit. But the comparison stops being straightforward once you factor in what else is in each cup. Coffee delivers caffeine in relative isolation. Green tea delivers caffeine alongside L-theanine, an amino acid that changes the experience significantly.",
-      "L-theanine promotes relaxed alertness by increasing alpha-wave activity in the brain and moderating the excitatory effects of caffeine. Many people describe green tea as producing focus without the edge — concentration that does not tip into anxiety or jitteriness. Studies pairing caffeine and L-theanine have found improved attention and accuracy on cognitive tasks compared to caffeine alone. This is consistent across multiple controlled trials.",
-      "For people who experience cortisol spikes with coffee — the mid-morning crash, afternoon slump, difficulty sleeping — green tea often behaves differently. The slower caffeine curve means less of a spike and less of a subsequent dip. Brewing single-origin whole-leaf tea, like Nevisan's Organic Green, gives you more control over caffeine content than a standardised tea bag does — lower temperature and shorter steeping time both reduce it further.",
-      "The other variable people overlook is added sugar and milk. Most coffee consumption in India involves significant sugar and milk, which independently contributes to energy spikes and crashes. Green tea is most often drunk plain, which removes that variable. If the goal is sustained, clean energy without a 3pm crash, switching from coffee to a high-quality whole-leaf green tea is one of the most practical single changes you can make to a daily routine.",
-    ],
-  },
-  {
-    title:
-      "How to Buy Real Green Tea in India: What to Look For and What to Avoid",
-    slug: "how-to-buy-real-green-tea-india",
-    date: "May 2026",
-    tag: "CRAFT",
-    relatedTeas: ["Organic Green Tea", "Spearmint Green Tea"],
-    excerpt:
-      "Most green tea sold in India is low-grade CTC or artificially flavoured — here is how to tell the difference before you buy.",
-    body: [
-      'The Indian packaged tea market is dominated by CTC — Cut, Tear, Curl — a processing method designed for strong, fast-brewing chai. Some companies sell what they label as "green tea" using CTC-processed leaves that have been lightly dried rather than fully oxidised. The result looks like green tea on packaging, but the flavour, antioxidant content, and brewing behaviour are all different. If your green tea brews dark and bitter in under a minute, it is almost certainly CTC.',
-      "Whole-leaf green tea should look like leaves, not uniform pellets or dust. When you open a packet of genuine whole-leaf tea, you should be able to identify the leaf structure — rolled, twisted, or flat depending on variety, but visibly leaf-like. Fresh green tea has a grassy, vegetal, sometimes floral aroma. If it smells of artificial flavouring or very little at all, the tea is either old or misrepresented.",
-      'Single-origin matters for green tea more than most categories. A brand that specifies the garden, district, and harvest gives you information you can verify. A brand that says only "Himalayan green tea" or "premium Indian blend" is telling you nothing traceable. Nevisan sources exclusively from a single garden in Golaghat, Assam — one origin, one standard, no blending to cover inconsistency.',
-      "Chemical-free cultivation is rarely disclosed but increasingly important. Most commercial Indian tea, including tea sold as green, is grown with synthetic pesticides. Whole-leaf, single-origin teas from smaller gardens are more likely to use minimal inputs — not because smaller gardens are automatically virtuous, but because the economics work differently when selling whole leaf at a premium. Ask brands directly: do they test for pesticide residues? Reluctance to answer is itself information.",
-      "Finally, price is a rough signal. Genuinely good whole-leaf green tea is not cheap to produce. If you are buying green tea in India for under ₹200 for 100g, you are almost certainly not getting whole-leaf, single-origin, chemical-free tea regardless of what the packaging says. Hand-picking, careful processing, and proper storage all cost money. Brands that price accordingly are reflecting real cost of production, not overcharging.",
-    ],
-  },
+      "The global rise of the mindful drinking movement has created a demand for sophisticated non-alcoholic evening rituals. Traditional mocktails relying on fruit juices or sugar syrups fail to provide the dry, oaky complexity of fine aged spirits.",
+      "Nevisan's non-alcoholic series — Whiskey Green Tea and Rum Green Tea — was developed to solve this gap. By utilizing toasted oak wood, sugarcane botanicals, and peat-smoke aromatics cold-infused into high-altitude Assam green tea, we replicate the mouthfeel and finish of barrel-aged spirits.",
+      "With 0.0% ABV, zero sugar, and zero artificial additives, these teas deliver a relaxing evening dram that honors your health goals while satisfying your palate.",
+      "Enjoy hot in a heavy tumbler or served over large ice spheres with a lemon twist for an elevated alcohol-free evening."
+    ]
+  }
 ];
 function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
   return (

@@ -1314,8 +1314,7 @@ function RippleButton({
 const TEAS = [
   {
     name: "Lemongrass Green Tea",
-    short:
-      "The one we reach for first thing. Bright, lemony, and kind to your stomach.",
+    short: "Bright Assam sunrise in a cup. Zesty organic lemongrass that soothes digestion and elevates morning clarity.",
     tags: ["DIGESTION", "METABOLISM"],
     bg: "#d4edd8",
     color: "#3a7a50",
@@ -1352,8 +1351,7 @@ const TEAS = [
   },
   {
     name: "Blue Flower Green Tea",
-    short:
-      "Add a drop of lemon and watch it turn purple. Calming, antioxidant-rich, a little magic.",
+    short: "Nature's cobalt elixir. Nootropic butterfly pea petals rich in anthocyanin antioxidants that bloom purple with lemon.",
     tags: ["CALMING", "ANTIOXIDANT"],
     bg: "#c8dff0",
     color: "#2a5a8a",
@@ -1390,8 +1388,7 @@ const TEAS = [
   },
   {
     name: "Rum Green Tea",
-    short:
-      "Took us 14 tries to get right. All the warmth of aged rum, zero alcohol.",
+    short: "The 14-iteration masterpiece. Rich warm sugarcane and oak notes with 0.0% alcohol — crafted for refined evening rituals.",
     tags: ["NON-ALC", "EXOTIC"],
     bg: "#f5e9a0",
     color: "#8a6a10",
@@ -1429,8 +1426,7 @@ const TEAS = [
   },
   {
     name: "Spearmint Green Tea",
-    short:
-      "Uditi drinks this one every day. Gentle on hormones, lovely for the skin.",
+    short: "Botanical balance for skin & hormones. Pure Assam green tea with sweet spearmint to regulate androgens and clarify complexion.",
     tags: ["HORMONAL", "SKIN"],
     bg: "#e8d4f0",
     color: "#6a3a8a",
@@ -1467,8 +1463,7 @@ const TEAS = [
   },
   {
     name: "Tulsi Green Tea",
-    short:
-      "Holy basil and Assam green. What we brew when life gets a little much.",
+    short: "Ayurveda's holy adaptogen. Sacred Krishna Tulsi blended with whole-leaf green tea to quiet cortisol and fortify immunity.",
     tags: ["IMMUNITY", "STRESS"],
     bg: "#d4edd8",
     color: "#3a7a50",
@@ -1505,8 +1500,7 @@ const TEAS = [
   },
   {
     name: "Chamomile Green Tea",
-    short:
-      "Our wind-down cup. Soft, floral, and made for slow evenings and deeper sleep.",
+    short: "Sovereign sleep ritual. Honey-sweet chamomile and L-theanine that gently quiet evening restlessness for restorative sleep.",
     tags: ["SLEEP", "CALMING"],
     bg: "#f5e9a0",
     color: "#8a6a10",
@@ -1543,7 +1537,7 @@ const TEAS = [
   },
   {
     name: "Whiskey Green Tea",
-    short: "Smoky, bold and grown-up. For whiskey nights, without the whiskey.",
+    short: "Bold oak & malt reserve. Deep peat smoke and toasted barley notes with 0.0% ABV for a sophisticated evening dram.",
     tags: ["NON-ALC", "BOLD"],
     bg: "#e0d4c8",
     color: "#5a4030",
@@ -1580,7 +1574,7 @@ const TEAS = [
   },
   {
     name: "GABA Oolong Tea",
-    short: "Calm without the fog. The cup we keep close on the busy days.",
+    short: "The Master's Anxiolytic Reserve. Deep neurological calm and flow-state focus without sedation.",
     tags: ["RELAXATION", "FOCUS"],
     bg: "#c0e0dc",
     color: "#1b7a82",
@@ -1617,8 +1611,7 @@ const TEAS = [
   },
   {
     name: "Organic Green Tea",
-    short:
-      "Where it all began. Pure whole-leaf Assam green from our single garden in Golaghat.",
+    short: "Unadulterated single-origin reserve. Hand-harvested whole-leaf Assam green tea from Golaghat with zero pesticides or CTC dust.",
     tags: ["ORGANIC", "PURE"],
     bg: "#c8e8c0",
     color: "#2a6a2a",
@@ -1656,8 +1649,7 @@ const TEAS = [
   },
   {
     name: "Ginger Green Tea",
-    short:
-      "Warming ginger blended with single-origin whole-leaf green tea. Soothing, spicy, and perfect for immune support.",
+    short: "Immune activation ritual. Spicy gingerols and whole-leaf Assam catechins for metabolic warmth and throat-soothing comfort.",
     tags: ["IMMUNITY", "WARMING"],
     bg: "#fdf2e9",
     color: "#935116",

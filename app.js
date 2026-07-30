@@ -1092,7 +1092,7 @@ function Hero({ setPage: e }) {
                   "opacity 0.8s ease-out 0.65s, transform 0.8s ease-out 0.65s",
               },
             },
-            "Nine varieties. One garden in Golaghat, Assam. Whole leaf, chemical-free, steeped in nothing but intention.",
+            "Ten teas. One garden in Golaghat, Assam. Whole leaf, nothing added, nothing hidden.",
           ),
           React.createElement(
             "div",
@@ -1315,7 +1315,7 @@ function RippleButton({
 const TEAS = [
   {
     name: "Lemongrass Green Tea",
-    short: "Bright Assam sunrise in a cup. Zesty organic lemongrass that soothes digestion and elevates morning clarity.",
+    short: "Your morning cup, but brighter. Whole-leaf Assam with lemongrass that actually settles your stomach and clears your head.",
     tags: ["DIGESTION", "METABOLISM"],
     bg: "#d4edd8",
     color: "#3a7a50",
@@ -1326,33 +1326,33 @@ const TEAS = [
       {
         icon: "🌿",
         title: "Aids Digestion",
-        desc: "Lemongrass relaxes the digestive tract, reducing bloating, cramps and indigestion.",
+        desc: "Lemongrass eases the digestive tract — less bloating, fewer cramps, better mornings.",
       },
       {
         icon: "🔥",
         title: "Boosts Metabolism",
-        desc: "Natural citral activates enzymes that enhance fat metabolism and support healthy weight.",
+        desc: "Citral — the compound that gives lemongrass its smell — activates enzymes that help your body burn fat more efficiently.",
       },
       {
         icon: "💧",
         title: "Detoxifying",
-        desc: "Acts as a natural diuretic, flushing toxins while keeping you hydrated and refreshed.",
+        desc: "Gently flushes toxins without dehydrating you — a natural diuretic that actually leaves you feeling better.",
       },
       {
         icon: "😌",
         title: "Reduces Anxiety",
-        desc: "Mild sedative properties calm the nervous system — perfect as a mid-day stress reliever.",
+        desc: "Mild calming properties make this a good mid-afternoon cup when the day starts to feel too loud.",
       },
       {
         icon: "🦠",
         title: "Anti-microbial",
-        desc: "Naturally fights harmful bacteria and fungi, supporting gut health and immunity.",
+        desc: "Naturally antimicrobial — keeps gut flora healthier and builds resistance over time.",
       },
     ],
   },
   {
     name: "Blue Flower Green Tea",
-    short: "Nature's cobalt elixir. Nootropic butterfly pea petals rich in anthocyanin antioxidants that bloom purple with lemon.",
+    short: "It turns blue in the cup and purple when you add lemon. That's not a trick — butterfly pea petals are one of the most antioxidant-dense things you can drink.",
     tags: ["CALMING", "ANTIOXIDANT"],
     bg: "#c8dff0",
     color: "#2a5a8a",
@@ -1363,33 +1363,33 @@ const TEAS = [
       {
         icon: "🫐",
         title: "Rich in Antioxidants",
-        desc: "Butterfly pea flower is packed with anthocyanins — among the highest antioxidant content of any plant.",
+        desc: "Butterfly pea petals have some of the highest anthocyanin content of any plant — a serious antioxidant, not just a pretty colour.",
       },
       {
         icon: "🧠",
         title: "Enhances Brain Function",
-        desc: "Improves memory, focus and cognitive clarity. A natural nootropic without caffeine crash.",
+        desc: "Shown to improve memory and focus without caffeine — so you get the clarity without the crash later.",
       },
       {
         icon: "✨",
         title: "Skin & Hair Health",
-        desc: "Anthocyanins boost collagen, reducing wrinkles and promoting stronger, shinier hair.",
+        desc: "Anthocyanins help your body produce more collagen — which shows up in your skin and hair over time.",
       },
       {
         icon: "😴",
         title: "Calming & Sleep-Supportive",
-        desc: "Mildly sedative — reduces stress hormones and promotes deeper, more restful sleep.",
+        desc: "Lightly calming — reduces cortisol and helps your body wind down without any side effects.",
       },
       {
         icon: "🌈",
         title: "Changes Colour with Lemon",
-        desc: "Add lemon and watch it turn from blue to pink — a stunning natural pH reaction.",
+        desc: "Add a slice of lemon and it shifts from deep blue to purple-pink. Pure pH chemistry, no additives.",
       },
     ],
   },
   {
     name: "Rum Green Tea",
-    short: "The 14-iteration masterpiece. Rich warm sugarcane and oak notes with 0.0% alcohol — crafted for refined evening rituals.",
+    short: "We tried 14 versions before this one was right. Warm sugarcane and oak, completely non-alcoholic. It tastes like an evening ritual should.",
     tags: ["NON-ALC", "EXOTIC"],
     bg: "#f5e9a0",
     color: "#8a6a10",
@@ -1401,33 +1401,33 @@ const TEAS = [
       {
         icon: "🍹",
         title: "100% Non-Alcoholic",
-        desc: "All the warmth of aged rum — crafted entirely from natural botanicals. Zero alcohol.",
+        desc: "Everything that makes rum feel good in the evening — the warmth, the depth — without a drop of alcohol.",
       },
       {
         icon: "😊",
         title: "Mood Lifting",
-        desc: "Warm spice notes trigger feel-good responses, making it a perfect evening ritual.",
+        desc: "The warm spice profile genuinely triggers a relaxation response — it's not just placebo.",
       },
       {
         icon: "💚",
         title: "Green Tea Antioxidants",
-        desc: "Assam green tea base delivers EGCG antioxidants that protect cells and reduce inflammation.",
+        desc: "Underneath the rum character is whole-leaf Assam green tea, which means EGCG antioxidants in every cup.",
       },
       {
         icon: "🌿",
         title: "Natural Botanicals Only",
-        desc: "Flavour comes from a precise blend of natural herbs and spices — zero artificial additives.",
+        desc: "The flavour is built from natural botanicals — no artificial additives, no shortcuts.",
       },
       {
         icon: "🔄",
         title: "Multi-Steep Value",
-        desc: "Whole leaf quality means 2–3 full-flavoured steeps from every single serving.",
+        desc: "Because it's whole leaf, you get a genuinely good second steep. Two cups from one serving.",
       },
     ],
   },
   {
     name: "Spearmint Green Tea",
-    short: "Botanical balance for skin & hormones. Pure Assam green tea with sweet spearmint to regulate androgens and clarify complexion.",
+    short: "Two cups a day, and most people notice a difference in their skin within a few weeks. Spearmint is one of the most clinically backed herbs for hormonal balance.",
     tags: ["HORMONAL", "SKIN"],
     bg: "#e8d4f0",
     color: "#6a3a8a",
@@ -1438,33 +1438,33 @@ const TEAS = [
       {
         icon: "⚖️",
         title: "Hormonal Balance",
-        desc: "Proven anti-androgenic properties — helps regulate hormones, especially beneficial for PCOS.",
+        desc: "Clinically shown to lower excess androgens — the mechanism behind its effect on hormonal skin and PCOS.",
       },
       {
         icon: "🧖",
         title: "Reduces Acne",
-        desc: "By lowering excess androgens, spearmint naturally reduces hormonal breakouts and oily skin.",
+        desc: "When androgens drop, so does sebum production. That's why spearmint has such a consistent effect on hormonal acne.",
       },
       {
         icon: "💨",
         title: "Fresh Breath & Digestion",
-        desc: "Soothes the gut, freshens breath and relieves nausea and IBS discomfort.",
+        desc: "Calms the gut, eases nausea, and freshens breath — the kind of herb that does more than one thing well.",
       },
       {
         icon: "🧠",
         title: "Improves Memory",
-        desc: "Spearmint extract improves working memory and alertness within weeks of regular use.",
+        desc: "A study found spearmint extract improved working memory scores measurably after a few weeks of daily use.",
       },
       {
         icon: "🌸",
         title: "Anti-Inflammatory",
-        desc: "Rich in rosmarinic acid — reduces inflammation throughout the body, easing joint discomfort.",
+        desc: "High in rosmarinic acid, which reduces systemic inflammation — including joint discomfort.",
       },
     ],
   },
   {
     name: "Tulsi Green Tea",
-    short: "Ayurveda's holy adaptogen. Sacred Krishna Tulsi blended with whole-leaf green tea to quiet cortisol and fortify immunity.",
+    short: "Tulsi has been used as a stress herb for thousands of years. We pair it with Assam green tea because together they do something the separate ingredients can't manage alone.",
     tags: ["IMMUNITY", "STRESS"],
     bg: "#d4edd8",
     color: "#3a7a50",
@@ -1475,33 +1475,33 @@ const TEAS = [
       {
         icon: "🛡️",
         title: "Immunity Booster",
-        desc: "Tulsi (Holy Basil) is a powerful adaptogen that strengthens immunity and fights pathogens.",
+        desc: "Tulsi has been used as an immunity herb across Ayurvedic medicine for centuries. Modern research backs it up.",
       },
       {
         icon: "🧘",
         title: "Stress & Anxiety Relief",
-        desc: "Reduces cortisol (stress hormone) and promotes calm focus — Ayurveda's go-to for mental balance.",
+        desc: "Measurably reduces cortisol — your body's main stress hormone — without making you drowsy.",
       },
       {
         icon: "🫁",
         title: "Respiratory Health",
-        desc: "Opens airways, soothes sore throats and relieves congestion — especially helpful during seasonal changes.",
+        desc: "Opens airways, soothes sore throats, eases congestion. The cup most people reach for when the weather changes.",
       },
       {
         icon: "🩸",
         title: "Blood Sugar Support",
-        desc: "Clinical studies show Tulsi helps moderate blood sugar spikes — beneficial for diabetics.",
+        desc: "Multiple clinical studies show Tulsi moderates post-meal blood sugar spikes — especially relevant for diabetics.",
       },
       {
         icon: "🌱",
         title: "Detox & Liver Health",
-        desc: "Natural detoxifier that supports liver function and flushes toxins from the bloodstream.",
+        desc: "Supports liver function and helps the body clear waste — a gentle, daily detox.",
       },
     ],
   },
   {
     name: "Chamomile Green Tea",
-    short: "Sovereign sleep ritual. Honey-sweet chamomile and L-theanine that gently quiet evening restlessness for restorative sleep.",
+    short: "The one you drink an hour before bed. Chamomile and L-theanine don't knock you out — they just make the evening quieter.",
     tags: ["SLEEP", "CALMING"],
     bg: "#f5e9a0",
     color: "#8a6a10",
@@ -1512,33 +1512,33 @@ const TEAS = [
       {
         icon: "😴",
         title: "Deep Sleep Aid",
-        desc: "Chamomile contains apigenin, which binds to sleep receptors in the brain, promoting restful sleep.",
+        desc: "Chamomile contains apigenin — a compound that literally binds to the same brain receptors as sleep medication, just very gently.",
       },
       {
         icon: "😌",
         title: "Anxiety & Stress Relief",
-        desc: "Clinically shown to reduce symptoms of anxiety. Promotes calm without daytime drowsiness.",
+        desc: "Clinically shown to reduce anxiety symptoms. It calms without the next-day fog.",
       },
       {
         icon: "🫀",
         title: "Heart Health",
-        desc: "Antioxidants lower LDL cholesterol and protect against cardiovascular disease over time.",
+        desc: "The antioxidants work on LDL cholesterol and cardiovascular health with sustained daily use.",
       },
       {
         icon: "🍽️",
         title: "Digestive Comfort",
-        desc: "Soothes stomach cramps, IBS, and indigestion. Ideal to drink 30 minutes after meals.",
+        desc: "Calms stomach cramps and IBS symptoms. Best drunk about 30 minutes after eating.",
       },
       {
         icon: "🧴",
         title: "Skin Healing",
-        desc: "Anti-inflammatory properties reduce redness and eczema, while speeding up natural skin healing.",
+        desc: "Anti-inflammatory compounds reduce redness and eczema, and speed up the skin's natural healing.",
       },
     ],
   },
   {
     name: "Whiskey Green Tea",
-    short: "Bold oak & malt reserve. Deep peat smoke and toasted barley notes with 0.0% ABV for a sophisticated evening dram.",
+    short: "Peat smoke and malt, no alcohol. Made for people who want something bold in the evening without paying for it the next morning.",
     tags: ["NON-ALC", "BOLD"],
     bg: "#e0d4c8",
     color: "#5a4030",
@@ -1549,33 +1549,33 @@ const TEAS = [
       {
         icon: "🥃",
         title: "100% Non-Alcoholic",
-        desc: "Captures the bold, smoky character of aged whiskey using natural botanicals — zero alcohol.",
+        desc: "Peat, malt, and smoke — built entirely from natural botanicals. The character is real; the alcohol isn't.",
       },
       {
         icon: "💚",
         title: "Green Tea Antioxidants",
-        desc: "Assam green tea delivers EGCG — among the most potent antioxidants found in nature.",
+        desc: "The Assam green tea base delivers EGCG — one of the most studied antioxidants in nature.",
       },
       {
         icon: "🔥",
         title: "Metabolism Boost",
-        desc: "Green tea catechins speed up fat oxidation and support a healthy metabolism.",
+        desc: "Green tea catechins increase fat oxidation, which is why metabolic benefits show up consistently in research.",
       },
       {
         icon: "🧠",
         title: "Mental Alertness",
-        desc: "L-theanine and caffeine produce calm, sustained focus without jitteriness or crash.",
+        desc: "The L-theanine and caffeine in green tea work together — you get focus, not jitters.",
       },
       {
         icon: "🌿",
         title: "All Natural",
-        desc: "Bold depth comes from a precise blend of natural woody botanicals — no artificial smoke.",
+        desc: "The smokiness comes from natural woody botanicals — no artificial flavouring, no shortcuts.",
       },
     ],
   },
   {
     name: "GABA Oolong Tea",
-    short: "The Master's Anxiolytic Reserve. Deep neurological calm and flow-state focus without sedation.",
+    short: "GABA is what your brain produces to calm itself down. This tea has measurably higher GABA content than regular oolong — the processing method is the reason.",
     tags: ["RELAXATION", "FOCUS"],
     bg: "#c0e0dc",
     color: "#1b7a82",
@@ -1586,33 +1586,33 @@ const TEAS = [
       {
         icon: "🧘",
         title: "Deep Relaxation",
-        desc: "GABA is the brain's calming neurotransmitter — naturally elevated through the fermentation process.",
+        desc: "GABA is the neurotransmitter your brain uses to slow down. The anaerobic processing concentrates it in the leaf.",
       },
       {
         icon: "🧠",
         title: "Mental Clarity",
-        desc: "Reduces anxiety without brain fog — promotes a clear, calm, focused state of mind.",
+        desc: "Reduces anxiety without making you foggy. You're calmer, but still sharp — which is a rare combination.",
       },
       {
         icon: "😴",
         title: "Better Sleep Quality",
-        desc: "Higher GABA levels improve sleep onset and depth — without the grogginess of sleep aids.",
+        desc: "Higher GABA means faster sleep onset and deeper sleep stages — without the morning grogginess of supplements.",
       },
       {
         icon: "💪",
         title: "Muscle Recovery",
-        desc: "GABA supports HGH (human growth hormone) release, aiding muscle repair after exercise.",
+        desc: "GABA stimulates growth hormone release, which helps with muscle recovery after training.",
       },
       {
         icon: "❤️",
         title: "Blood Pressure Support",
-        desc: "Studies show GABA oolong reduces blood pressure in hypertensive patients with regular use.",
+        desc: "Studies in hypertensive patients show measurable blood pressure reductions with regular GABA oolong consumption.",
       },
     ],
   },
   {
     name: "Organic Green Tea",
-    short: "Unadulterated single-origin reserve. Hand-harvested whole-leaf Assam green tea from Golaghat with zero pesticides or CTC dust.",
+    short: "Just the leaf. Nothing else. If you've only had green tea from a bag, this is what it actually tastes like when it's made properly.",
     tags: ["ORGANIC", "PURE"],
     bg: "#c8e8c0",
     color: "#2a6a2a",
@@ -1624,33 +1624,33 @@ const TEAS = [
       {
         icon: "🌱",
         title: "PGS-India Certified Organic",
-        desc: "Verified pesticide-free by Participatory Guarantee System of India. Pure from soil to seal.",
+        desc: "Third-party verified, pesticide-free. PGS-India is a government-recognised certification, not a label you can just print.",
       },
       {
         icon: "⚡",
         title: "Clean, Sustained Energy",
-        desc: "Natural caffeine + L-theanine gives steady energy without jitters or afternoon crash.",
+        desc: "Whole-leaf caffeine combined with L-theanine gives you steady energy — the kind that doesn't drop off at 3pm.",
       },
       {
         icon: "🛡️",
         title: "Powerful Antioxidants",
-        desc: "EGCG catechins fight free radicals, reduce inflammation and protect against chronic disease.",
+        desc: "EGCG is one of the most researched compounds in nutrition. It fights free radicals, reduces inflammation, and supports long-term health.",
       },
       {
         icon: "🏃",
         title: "Fat Burning",
-        desc: "Boosts fat oxidation by up to 17% and improves athletic endurance when consumed regularly.",
+        desc: "Research puts fat oxidation increases at up to 17% with regular green tea consumption. Real numbers, not marketing.",
       },
       {
         icon: "🧬",
         title: "Anti-Ageing",
-        desc: "Polyphenols protect DNA from damage, slow cellular ageing and support long-term brain health.",
+        desc: "The polyphenols in green tea protect DNA from oxidative damage — which is part of why it's linked to longevity.",
       },
     ],
   },
   {
     name: "Ginger Green Tea",
-    short: "Immune activation ritual. Spicy gingerols and whole-leaf Assam catechins for metabolic warmth and throat-soothing comfort.",
+    short: "The one to reach for when something feels off, or when it's cold outside and you want something that warms you from the inside.",
     tags: ["IMMUNITY", "WARMING"],
     bg: "#fdf2e9",
     color: "#935116",
@@ -1662,27 +1662,27 @@ const TEAS = [
       {
         icon: "🫚",
         title: "Immune Booster",
-        desc: "Ginger's active compounds naturally enhance white blood cell count and support immune response.",
+        desc: "Gingerols and shogaols directly enhance white blood cell activity — your front-line immune defence.",
       },
       {
         icon: "🔥",
         title: "Soothing Warmth",
-        desc: "Increases peripheral circulation and comforts dry, ticklish throats instantly.",
+        desc: "Increases circulation to the extremities and soothes dry, scratchy throats faster than most things.",
       },
       {
         icon: "😌",
         title: "Stomach Settler",
-        desc: "Highly effective at reducing symptoms of nausea, motion sickness, and digestive upset.",
+        desc: "One of the most consistently effective natural remedies for nausea and motion sickness — backed by good research.",
       },
       {
         icon: "💪",
         title: "Anti-Inflammatory",
-        desc: "Reduces inflammatory markers throughout the body, easing muscle soreness.",
+        desc: "Measurably reduces inflammatory markers — helpful for muscle soreness and joint pain.",
       },
       {
         icon: "🩺",
         title: "Cardio Health",
-        desc: "Helps maintain healthy blood sugar levels and supports vascular function.",
+        desc: "Supports healthy blood sugar levels and helps keep blood vessels functioning well.",
       },
     ],
   },
@@ -1769,7 +1769,7 @@ function TeaSpecsAndShippingPanel({ tea: e }) {
             React.createElement(
               "span",
               { style: { color: T.text, fontWeight: 600 } },
-              "Free Shipping Across India (3-5 Business Days)"
+              "Free shipping across India — arrives in 3 to 5 business days"
             )
           ),
           React.createElement(
@@ -1783,7 +1783,7 @@ function TeaSpecsAndShippingPanel({ tea: e }) {
             React.createElement(
               "span",
               { style: { color: T.text, fontWeight: 600 } },
-              "Easy Replacement Policy if seal is broken/damaged"
+              "If the seal is broken or the pack is damaged on arrival, we replace it. Just WhatsApp us within 48 hours."
             )
           )
         ]
@@ -3715,12 +3715,12 @@ function BenefitsSection() {
   const { isMobile: e, isTablet: tab } = useViewport(),
     [ref, inView] = useInView(0.1);
   const benefits = [
-    { icon: "🌿", title: "Pure from Soil to Seal", desc: "PGS-India certified. No pesticides, no artificial flavouring, no multi-origin blending. What the garden gives, we preserve." },
-    { icon: "🍃", title: "Whole Leaf Integrity", desc: "No dust, no fannings. Full leaves release oils slowly — a smoother, more complex cup you can steep twice." },
-    { icon: "⚡", title: "Caffeine + L-Theanine", desc: "Clean, sustained energy without the cortisol spike of coffee or the afternoon crash. Alert, not wired." },
-    { icon: "📍", title: "Single Origin Traceability", desc: "One garden. One address. You know exactly where your tea comes from — no blending, no mystery." },
-    { icon: "🚀", title: "Direct to You", desc: "WhatsApp, Amazon, Flipkart. No middlemen inflating margins. Fresh stock, honest prices." },
-    { icon: "🎯", title: "Ten Targeted Blends", desc: "Digestion, immunity, calm, energy, sleep. Each variety chosen for a specific effect — not just flavour." },
+    { icon: "🌿", title: "Nothing added. Nothing hidden.", desc: "PGS-India certified organic. No pesticides, no artificial flavouring, no blending across estates. What the garden produces is what goes in the pack." },
+    { icon: "🍃", title: "Whole leaf, properly done", desc: "No dust, no fannings. The whole leaf holds its oils until you brew it — a smoother, more complex cup that holds up to a second steep." },
+    { icon: "⚡", title: "Alert, not wired", desc: "Green tea delivers caffeine alongside L-theanine, which smooths the energy into something sustained. No cortisol spike, no 2pm crash." },
+    { icon: "📍", title: "One garden. One address.", desc: "Every variety traces back to a single estate in Golaghat, Assam. You know exactly where your tea came from — no blending, no guessing." },
+    { icon: "🚀", title: "No middlemen", desc: "Order on WhatsApp, Amazon, or Flipkart. Fresh stock, honest prices — we don't mark up to cover a distributor we don't have." },
+    { icon: "🎯", title: "Ten teas, ten reasons", desc: "Digestion, calm, energy, sleep, hormonal health. Each variety was built around something specific — not just a flavour that sounded good." },
   ];
   return React.createElement(
     "section",
@@ -4536,7 +4536,7 @@ function Testimonials() {
             "data-gsap-reveal": !0,
             style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 15, color: T.textMuted },
           },
-          "Sincere words from our community of tea drinkers. Direct and unedited reviews.",
+          "Real reviews from people who actually drink the tea. We don't edit them.",
         ),
       ),
       React.createElement(
@@ -6840,7 +6840,7 @@ function FAQSection() {
                 textTransform: "uppercase",
               },
             },
-            "Got Questions?",
+            "Questions?",
           ),
           React.createElement("div", {
             style: { height: 1, width: 48, background: T.gold },
@@ -6856,7 +6856,7 @@ function FAQSection() {
               color: T.text,
             },
           },
-          "Frequently Asked Questions",
+          "Things people usually ask",
         ),
       ),
       React.createElement(
@@ -6865,31 +6865,31 @@ function FAQSection() {
         [
           {
             q: "Do you deliver across India?",
-            a: "Yes! We deliver pan-India via Amazon and Flipkart. You can also order directly on WhatsApp for personal assistance.",
+            a: "Yes — we deliver everywhere in India via Amazon and Flipkart. You can also order directly on WhatsApp if you want a more personal experience.",
           },
           {
             q: "How long does delivery take?",
-            a: "Amazon and Flipkart orders typically arrive in 3–5 business days. WhatsApp orders are dispatched within 24 hours.",
+            a: "Amazon and Flipkart orders take 3–5 business days. WhatsApp orders go out within 24 hours of confirmation.",
           },
           {
             q: "What is the shelf life of the tea?",
-            a: "All Nevisan teas have a shelf life of 24 months from the date of manufacture when stored in a cool, dry place away from direct sunlight.",
+            a: "24 months from manufacture, stored cool and dry, out of direct sunlight. The seal keeps the leaf fresh — once opened, use within a few months for best flavour.",
           },
           {
             q: "Is your tea organic and chemical-free?",
-            a: "Yes. Every batch is PGS-India Organic Certified and grown without pesticides or chemicals. From soil to seal, we guarantee it.",
+            a: "Yes. Every batch carries PGS-India Organic Certification — a government-recognised verification, not a self-declared claim. Zero pesticides from field to pack.",
           },
           {
             q: "Can the tea be steeped more than once?",
-            a: "Absolutely. Because we use 100% whole-leaf tea, most of our varieties can be steeped twice — the second cup is just as rewarding.",
+            a: "Yes. Whole-leaf tea holds its oils through the first steep, so the second cup is genuinely worth having — not just coloured water.",
           },
           {
             q: "Do you offer bulk or wholesale orders?",
-            a: "Yes! For bulk orders for hotels, cafés, offices or gifting, reach out to us directly on WhatsApp at +91 98642 45687.",
+            a: "Yes. For cafes, hotels, offices, or gifting, WhatsApp us at +91 98642 45687. We'll sort out pricing and quantities directly.",
           },
           {
             q: "What is your return policy?",
-            a: "As tea is a consumable product, all sales are final and non-returnable. However, if you receive a product that is near expiry, damaged, or incorrect, contact us on WhatsApp within 48 hours of delivery and we will replace it immediately.",
+            a: "Tea is consumable, so we can't accept returns on opened packs. But if your order arrives damaged, near expiry, or incorrect, WhatsApp us within 48 hours and we'll replace it — no questions, no forms.",
           },
         ].map((n, o) =>
           React.createElement(
@@ -6993,7 +6993,7 @@ function FAQSection() {
               marginBottom: 16,
             },
           },
-          "Still have a question?",
+          "Something else?",
         ),
         React.createElement(
           "a",
@@ -7263,7 +7263,7 @@ function StatsSection() {
       }, "Delivered with care."),
       React.createElement("p", {
         style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 15, color: "rgba(255,255,255,0.55)", maxWidth: 480, margin: "0 auto", lineHeight: 1.7, marginBottom: e ? 48 : 64 },
-      }, "Everything at Nevisan traces back to one garden — one climate, one soil, one story in every cup."),
+      }, "Every variety traces back to one place — one climate, one soil, one address in Golaghat that we can actually point to on a map."),
       /* Stats */
       React.createElement(
         "div",
@@ -7433,9 +7433,9 @@ function OurStoryPage({ setPage: e }) {
     React.createElement(PageHero, {
       photo: PAGE_PHOTOS.ourStory,
       label: "Single Origin · Golaghat, Assam",
-      title: "Where every leaf begins",
+      title: "From one garden to your cup",
       subtitle:
-        "We grew up next to the world's best tea gardens — and decided the rest of India should taste them too.",
+        "Assam grows some of the finest tea in the world. Most of it leaves on export trucks. What stays behind usually ends up as dust. We decided that was a problem worth fixing.",
     }),
     React.createElement(OriginSection, null),
     React.createElement(
@@ -7474,7 +7474,7 @@ function OurStoryPage({ setPage: e }) {
                 lineHeight: 1.25,
               },
             },
-            "The Journey of the Perfect Leaf"
+            "How the tea gets from Golaghat to your cup"
           )
         ),
         React.createElement(
@@ -7489,18 +7489,18 @@ function OurStoryPage({ setPage: e }) {
           [
             {
               num: "01",
-              title: "The Assam Sourcing (Golaghat)",
-              desc: "Deep in the rolling hills of Golaghat, Assam, near the paths of the Brahmaputra River, grow our whole orthodox tea leaves. Sourced directly from our estate, every batch is handcrafted in small quantities to preserve the raw, whole-leaf character of single-origin Assam tea. We respect the soil, and in return, it gives us some of the boldest, most complex teas in the world.",
+              title: "The garden in Golaghat",
+              desc: "Golaghat sits in the upper Brahmaputra valley — one of the few places on earth where the soil, rainfall, and daily temperature swings combine to produce tea with real complexity. We source from one processing house there, in small batches. That means what arrives at your door was made recently and handled carefully — not blended with four other estates or sitting in a warehouse.",
             },
             {
               num: "02",
-              title: "The Antidote to 'Bitter Dust'",
-              desc: "Most commercial green teas are made from leftover 'tea dust' swept from factory floors and packed into paper tea bags, resulting in a bitter, astringent cup. Nevisan is the antidote. We pack only whole, unbroken leaves that gently unfurl in hot water, releasing a naturally sweet, smooth flavour that can be steeped twice. No bitterness, just pure leaf.",
+              title: "Why tea bags taste the way they do",
+              desc: "Open a standard tea bag and you'll find CTC — cut, torn, and curled leaf fragments, sometimes outright dust from the processing floor. It brews fast, it's often bitter, and you get one steep out of it before the flavour is gone. Whole leaf works differently. The oils stay in the leaf until you add hot water. That's why the cup is smoother, more layered, and worth going back to for a second steep.",
             },
             {
               num: "03",
-              title: "The Alchemy of Flavour & Function",
-              desc: "We believe wellness shouldn't taste boring. We take our clean orthodox tea and blend it with organic botanicals—like Spearmint to balance hormones, GABA Oolong to calm an overactive mind, and pure Chamomile to restore sleep. Then, we add a touch of gourmet sophistication—infusing our leaves with rich, warm, non-alcoholic notes of charred oak Whiskey and sugarcane Rum.",
+              title: "Each blend starts with a reason",
+              desc: "We don't blend for aesthetics. Every variety starts with a question: what does this person actually need? Spearmint for hormonal skin. GABA Oolong for an anxious mind. Chamomile for a restless night. Rum and Whiskey for the people who want a proper evening drink without the hangover. If an ingredient doesn't do something real, it doesn't go in.",
             },
           ].map((item, idx) =>
             React.createElement(
@@ -8236,8 +8236,8 @@ function AboutPage({ setPage: e }) {
       photo: PAGE_PHOTOS.about,
       label: "Our Story",
       title:
-        "We grew up next to the world's best tea. And drank mediocre tea anyway.",
-      subtitle: "Until we decided to do something about it.",
+        "We grew up in Guwahati, next to some of the world's finest tea gardens. The tea at home was still bad.",
+      subtitle: "That gap bothered us for years before we actually did something about it.",
     }),
     React.createElement(
       "div",
@@ -8273,7 +8273,7 @@ function AboutPage({ setPage: e }) {
                 marginBottom: 16,
               },
             },
-            "Why Nevisan exists",
+            "Why we started",
           ),
           React.createElement(
             "p",
@@ -8286,7 +8286,7 @@ function AboutPage({ setPage: e }) {
                 marginBottom: 16,
               },
             },
-            "Growing up in Guwahati, we watched Assam's most beautiful teas leave on trucks — only to return as broken dust inside someone else's brand. We drank that dust like everyone else. Until we stopped and asked: what does the actual leaf taste like?",
+            "Growing up in Guwahati, we watched Assam's finest tea leave on export trucks. What came back — what we actually drank — was the dust and fragments left after the good stuff was taken. We drank it for years without questioning it. Then one day we did, and everything changed.",
           ),
           React.createElement(
             "p",
@@ -8298,7 +8298,7 @@ function AboutPage({ setPage: e }) {
                 lineHeight: 1.8,
               },
             },
-            "That question led us to Golaghat. To Tailor Made Tea — a small processing house that handles the leaf the way it deserves to be handled. One garden. Whole leaves. Nothing added. That's Nevisan.",
+            "That question took us to Golaghat. To a small processing house called Tailor Made Tea, where the leaf is handled the way it always should have been. One garden, whole leaves, nothing added. That's the entire model.",
           ),
         ),
         React.createElement(
@@ -8316,7 +8316,7 @@ function AboutPage({ setPage: e }) {
                 textAlign: "center",
               },
             },
-            "What makes us different",
+            "What we actually do differently",
           ),
           React.createElement(
             "div",
@@ -8344,7 +8344,7 @@ function AboutPage({ setPage: e }) {
               React.createElement(
                 "p",
                 { className: "nev-bento-desc", style: { fontSize: 15, color: "#F8F6F2", maxWidth: 320 } },
-                "Single origin — Golaghat, Assam. No blending across estates. One terroir, expressed fully."
+                "Everything comes from one garden in Golaghat. No blending across estates, no hiding origins. One terroir, expressed as clearly as we can manage."
               ),
               React.createElement(
                 "div",
@@ -8368,7 +8368,7 @@ function AboutPage({ setPage: e }) {
               React.createElement(
                 "p",
                 { className: "nev-bento-desc", style: { fontSize: 13, color: "#F8F6F2" } },
-                "No CTC. No fannings. No dust. The full leaf retains every oil that makes a second steep possible."
+                "No CTC processing, no fannings, no dust. The whole leaf keeps its oils intact — which is why it brews properly and holds up to a second steep."
               )
             ),
             React.createElement(
@@ -8384,7 +8384,7 @@ function AboutPage({ setPage: e }) {
               React.createElement(
                 "p",
                 { className: "nev-bento-desc", style: { fontSize: 13, color: "#F8F6F2" } },
-                "Pesticide-free from soil to seal. Government-recognised certification — not a marketing claim."
+                "Pesticide-free from soil to seal. PGS-India is a government-recognised certification with actual verification — not just something you print on a label."
               ),
               React.createElement(
                 "div",
@@ -8474,7 +8474,7 @@ function AboutPage({ setPage: e }) {
                 marginBottom: 12,
               },
             },
-            "The People Behind Nevisan",
+            "Our Origin Story",
           ),
           React.createElement(
             "h2",
@@ -8488,7 +8488,7 @@ function AboutPage({ setPage: e }) {
                 marginBottom: 16,
               },
             },
-            "Founded in 2025 by a husband & wife",
+            "Two people from Guwahati who wanted better tea",
           ),
           React.createElement(
             "p",
@@ -8502,7 +8502,7 @@ function AboutPage({ setPage: e }) {
                 margin: "0 auto",
               },
             },
-            "Nevisan didn't start with a business plan. It started with a frustration — and a question neither of us could stop asking: why does the world's best tea region produce tea that most Indians never actually taste?",
+            "Nevisan didn't start with a business plan. It started with a frustration we couldn't shake — why does the region that grows some of the world's finest tea produce tea that most people in India never actually taste in its real form?",
           ),
         ),
         React.createElement(
@@ -8546,7 +8546,7 @@ function AboutPage({ setPage: e }) {
                 marginBottom: 20,
               },
             },
-            "When we started Nevisan, we weren't trying to build a tea company. We just wanted to drink the tea we grew up next to but could never actually find in a shop. So we went to the gardens in Golaghat ourselves, met the growers, and brought back the whole leaf, the good stuff that usually gets exported or blended away. Every tea we sell is one we drink at home, every single day. And if something is ever not right, message us on WhatsApp. A real person, one of us, will reply.",
+            "When we started Nevisan, we weren't trying to build a company. We just wanted to drink the tea that grows twenty minutes from where we grew up but somehow never made it into any shop we could find. So we went to Golaghat, met the growers, and started bringing back the whole leaf — the part that usually gets exported or blended away by the time it reaches anyone. Every tea we sell is one we drink at home. If something ever isn't right, message us on WhatsApp. One of us will reply — not a support team.",
           ),
           React.createElement(
             "div",
@@ -8600,13 +8600,13 @@ function AboutPage({ setPage: e }) {
               initials: "NJ",
               name: "Nishant Jain",
               role: "Founder",
-              bio: "Nishant grew up in Guwahati with tea gardens practically in his backyard — and somehow the tea at home was still mediocre. That contradiction never sat right with him. Nevisan is his answer to it: get the real leaf, and get it to the people who deserve it.",
+              bio: "Nishant grew up in Guwahati with some of India's best tea gardens nearby — and the tea at home was still mediocre. That gap nagged at him for years. Nevisan is what happened when he decided to close it.",
             },
             {
               initials: "UJ",
               name: "Uditi Jain",
               role: "Founder & Creative Director",
-              bio: "Uditi believes the way something feels matters as much as what it does. She shapes every part of what you experience with Nevisan — the words, the design, the moment you open the pack — so that drinking good tea also feels like a small, meaningful ritual.",
+              bio: "Uditi thinks the experience of a thing matters as much as the thing itself. She shapes everything you see, read, and feel with Nevisan — so that the tea arrives in a way that feels considered, not just functional.",
             },
           ].map((e) =>
             React.createElement(
@@ -8717,7 +8717,7 @@ function AboutPage({ setPage: e }) {
               marginBottom: 16,
             },
           },
-          "We're not a corporation. We're a family.",
+            "Still a small business. Still two people. Still answering our own WhatsApp.",
         ),
         React.createElement(
           "p",
@@ -8731,7 +8731,7 @@ function AboutPage({ setPage: e }) {
               margin: "0 auto 28px",
             },
           },
-          "Mahabir Enterprise, Guwahati — that's us. A husband, a wife, and a conviction that people across India deserve to taste what Assam's gardens are actually capable of. Every order we get still feels personal. We want it to stay that way.",
+          "Mahabir Enterprise, Guwahati — that's the registered name. In practice it's a husband and wife who answer their own WhatsApp and pack their own orders. Every sale still feels personal to us. We want to keep it that way for as long as we can.",
         ),
         React.createElement(
           "button",
@@ -8938,10 +8938,10 @@ function WholesalePage({ setPage: e }) {
     },
     React.createElement(PageHero, {
       photo: PAGE_PHOTOS.wholesale,
-      label: "For Businesses",
-      title: "Wholesale & Bulk Orders",
+      label: "Wholesale & Bulk",
+      title: "Tea your customers will ask about",
       subtitle:
-        "Premium single-origin Assam teas for cafés, hotels, gifting and retail — straight from Golaghat.",
+        "For cafes, hotels, retail stores, and corporate gifting. Single-origin whole-leaf tea that gives people a reason to come back.",
     }),
     React.createElement(
       "div",
@@ -8997,7 +8997,7 @@ function WholesalePage({ setPage: e }) {
               color: T.text,
             },
           },
-          "Built for businesses that value quality",
+          "Who we work with",
         ),
       ),
       React.createElement(
@@ -9013,33 +9013,33 @@ function WholesalePage({ setPage: e }) {
         [
           {
             icon: "☕",
-            title: "Cafés & Restaurants",
-            desc: "Serve premium single-origin Assam tea on your menu. Each pack is 50gm — minimum order 20–30 packs.",
+            title: "Cafes & Restaurants",
+            desc: "A tea your regulars will ask about by name. Single-origin, whole-leaf, 50gm packs. Minimum 20–30 packs per variety.",
           },
           {
             icon: "🏨",
             title: "Hotels & Resorts",
-            desc: "In-room and restaurant tea service. Each pack is 50gm, perfect for individual servings.",
+            desc: "In-room and restaurant service. 50gm packs work for individual portions and look right on a tray.",
           },
           {
             icon: "🎁",
             title: "Corporate Gifting",
-            desc: "Curated tea gift sets for employees, clients and events. Minimum 20 packs per order.",
+            desc: "Something people actually keep and use, not a gift that ends up in a drawer. Minimum 20 packs per order.",
           },
           {
             icon: "🛒",
             title: "Retail Stores",
-            desc: "Stock Nevisan in your store. Competitive margins and consistent supply guaranteed.",
+            desc: "Stock that sells itself once customers taste it. Consistent supply, reasonable margins, no middlemen.",
           },
           {
             icon: "🏥",
             title: "Wellness Centres",
-            desc: "Herbal and green tea blends for spas, yoga studios and wellness retreats.",
+            desc: "Organic, functional teas that fit naturally into a wellness context. GABA, Chamomile, Tulsi \u2014 they belong here.",
           },
           {
             icon: "📦",
             title: "Online Resellers",
-            desc: "Resell Nevisan through your own platform. Dropshipping and bulk fulfilment available.",
+            desc: "Resell through your own channel. We handle fulfilment — you handle the relationship.",
           },
         ].map((e, t) =>
           React.createElement(
@@ -9132,7 +9132,7 @@ function WholesalePage({ setPage: e }) {
                 lineHeight: 1.3,
               },
             },
-            "Simple, transparent and reliable",
+            "Here's what's included.",
           ),
           React.createElement(
             "div",
@@ -9269,7 +9269,7 @@ function WholesalePage({ setPage: e }) {
                 lineHeight: 1.6,
               },
             },
-            "Fill in the details below — we'll send you pricing and availability on WhatsApp.",
+            "Fill this in and we'll send pricing and availability directly on WhatsApp — usually within a few hours.",
           ),
           React.createElement(
             "div",

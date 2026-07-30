@@ -75,7 +75,9 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
   "@graph": [
     {
       "@type": "Organization",
+      "@id": "https://nevisan.in/#organization",
       "name": "Nevisan Tea",
+      "legalName": "Nevisan",
       "url": "https://nevisan.in",
       "logo": "https://nevisan.in/nevisan-logo.jpeg",
       "description": "Buy organic whole-leaf tea online in India. Single origin teas from Golaghat, Assam — green, oolong, herbal and specialty varieties. PGS-India certified organic.",
@@ -99,14 +101,25 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     },
     {
       "@type": "WebSite",
+      "@id": "https://nevisan.in/#website",
       "url": "https://nevisan.in",
       "name": "Nevisan Tea",
       "description": "Buy organic green tea online India — whole-leaf teas from Golaghat, Assam",
+      "publisher": { "@id": "https://nevisan.in/#organization" },
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://nevisan.in/?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://nevisan.in/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nevisan.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Collection", "item": "https://nevisan.in/#collection" },
+        { "@type": "ListItem", "position": 3, "name": "GABA Oolong Tea", "item": "https://nevisan.in/#gaba-oolong" }
+      ]
     },
     {
       "@type": "ItemList",
@@ -148,7 +161,15 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
             "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" },
             "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" }
           }
-        },
+        ,
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "128",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
         "hasMerchantReturnPolicy": {
           "@type": "MerchantReturnPolicy",
           "applicableCountry": "IN",
@@ -808,7 +829,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           el.style.transform = `translate3d(0, ${yOffset}px, 0)`;
           el.style.setProperty('--parallax-y', `${yOffset}px`);
         }
-      });
+      ,
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "128",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    });
       requestAnimationFrame(updateParallax);
     }
     window.addEventListener('DOMContentLoaded', () => {

@@ -21,31 +21,84 @@
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Spearmint Tea and Hormonal Balance: What the Research Actually Says",
-    "description": "Spearmint tea has been studied for its ability to reduce androgens in women, making it one of the few herbal teas with direct hormonal research behind it.",
-    "datePublished": "March 2026",
-    "author": {
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Spearmint Tea and Hormonal Balance: What the Research Actually Says",
+      "description": "Spearmint tea has been studied for its ability to reduce androgens in women, making it one of the few herbal teas with direct hormonal research behind it.",
+      "image": "https://nevisan.in/journal/spearmint-tea-hormonal-balance/hero-image.jpg",
+      "datePublished": "2026-03-01",
+      "dateModified": "2026-08-01",
+      "author": {
         "@type": "Organization",
         "name": "Nevisan Tea",
         "url": "https://nevisan.in"
-    },
-    "publisher": {
+      },
+      "publisher": {
         "@type": "Organization",
         "name": "Nevisan Tea",
         "logo": {
-            "@type": "ImageObject",
-            "url": "https://nevisan.in/assets/logo.png"
+          "@type": "ImageObject",
+          "url": "https://nevisan.in/assets/logo.png"
         }
-    },
-    "mainEntityOfPage": {
+      },
+      "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://nevisan.in/journal/spearmint-tea-hormonal-balance"
-    },
-    "keywords": "WELLNESS"
-}
+      },
+      "keywords": "SPEARMINT, HORMONAL BALANCE, PCOS, ANTI-ANDRROGENIC, WOMEN'S HEALTH, HERBAL TEA, GREEN TEA",
+      "articleSection": "WELLNESS"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does it take to see results from spearmint tea for hormonal balance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most clinical studies showing significant hormonal changes used a 30-day duration with twice-daily consumption. Some women report noticing improvements in symptoms like acne or oily skin within 2-3 weeks, while more substantial hormonal changes typically require the full 30 days of consistent use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can spearmint tea help with fertility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While spearmint reduces androgen levels which can be beneficial for certain types of infertility related to PCOS, it's not a fertility treatment. Women trying to conceive should consult with a reproductive specialist or healthcare provider before using spearmint therapeutically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is spearmint tea safe for men to drink?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, spearmint tea is generally safe for men. However, men concerned about testosterone levels for athletic performance or other reasons should be aware that regular consumption may modestly reduce testosterone levels. Most men won't notice significant effects from casual consumption."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does spearmint tea compare to other herbal teas for hormonal health?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Spearmint is unique among herbal teas for its direct clinical evidence supporting androgen reduction. Other teas like chasteberry (Vitex) work through different mechanisms (prolactin reduction) and green tea offers antioxidant support but lacks spearmint's specific anti-androgenic properties."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I drink spearmint tea if I'm taking birth control pills?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Generally yes, but consult your healthcare provider. Spearmint's mild estrogenic activity could theoretically interact with hormonal contraceptives, though clinical evidence of significant interactions is lacking. Monitor for any changes in effectiveness or side effects."
+          }
+        }
+      ]
+    }
     </script>
 
     <!-- Google Fonts -->
@@ -129,35 +182,21 @@
             transform: translateY(-1px);
         }
 
-        /* ── Article Container ── */
-        .article-wrapper {
+        /* ── Content Container ── */
+        .content-wrapper {
             max-width: 720px;
             margin: 0 auto;
             padding: 3rem 1.5rem 4rem;
         }
 
-        /* ── Tag Chip ── */
-        .tag-chip {
-            display: inline-block;
-            background: #c9a84c;
-            color: #ffffff;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 0.3rem 0.75rem;
-            border-radius: 3px;
-            margin-bottom: 1rem;
-        }
-
-        /* ── Article Header ── */
-        .article-header {
+        /* ── Page Header ── */
+        .page-header {
             margin-bottom: 2.5rem;
             padding-bottom: 2rem;
             border-bottom: 1px solid var(--border);
         }
 
-        .article-title {
+        .page-title {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: clamp(1.75rem, 5vw, 2.6rem);
             font-weight: 700;
@@ -166,13 +205,13 @@
             margin-bottom: 1rem;
         }
 
-        .article-meta {
+        .page-meta {
             color: var(--muted);
             font-size: 0.85rem;
             letter-spacing: 0.03em;
         }
 
-        .article-excerpt {
+        .page-excerpt {
             margin-top: 1rem;
             font-size: 1.05rem;
             color: var(--muted);
@@ -182,16 +221,73 @@
             padding-left: 1rem;
         }
 
-        /* ── Article Body ── */
-        .article-body p {
-            font-size: 1.05rem;
+        /* ── Content ── */
+        .content h1, .content h2, .content h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--ink);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content h1 {
+            font-size: 1.75rem;
+        }
+
+        .content h2 {
+            font-size: 1.5rem;
+        }
+
+        .content h3 {
+            font-size: 1.25rem;
+        }
+
+        .content p {
+            margin-bottom: 1.5rem;
             line-height: 1.8;
-            margin-bottom: 1.6rem;
             color: var(--ink);
         }
 
-        .article-body p:last-child {
-            margin-bottom: 0;
+        .content ul, .content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content a {
+            color: var(--teal);
+            text-decoration: underline;
+        }
+
+        .content a:hover {
+            color: var(--gold);
+        }
+
+        /* ── Highlight Boxes ── */
+        .highlight-box {
+            background-color: rgba(201, 168, 76, 0.08);
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .warning-box {
+            background-color: rgba(220, 53, 69, 0.08);
+            border-left: 4px solid #dc3545;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .tip-box {
+            background-color: rgba(25, 135, 84, 0.08);
+            border-left: 4px solid #198754;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
         }
 
         /* ── CTA Section ── */
@@ -256,7 +352,7 @@
 
         /* ── Responsive ── */
         @media (max-width: 600px) {
-            .article-wrapper {
+            .content-wrapper {
                 padding: 2rem 1rem 3rem;
             }
 
@@ -267,36 +363,294 @@
     </style>
 </head>
 <body>
-
     <!-- Navigation -->
     <nav class="nav" aria-label="Main navigation">
         <a class="nav-logo" href="https://nevisan.in">Nevisan</a>
         <a class="nav-cta" href="https://nevisan.in/#collection">Shop Now</a>
     </nav>
 
-    <!-- Article -->
-    <main class="article-wrapper">
-        <article>
-            <header class="article-header">
-                <span class="tag-chip">WELLNESS</span>
-                <h1 class="article-title">Spearmint Tea and Hormonal Balance: What the Research Actually Says</h1>
-                <p class="article-meta">March 2026 &nbsp;·&nbsp; Nevisan Tea Journal</p>
-                <p class="article-excerpt">Spearmint tea has been studied for its ability to reduce androgens in women, making it one of the few herbal teas with direct hormonal research behind it.</p>
-            </header>
+    <!-- Page Content -->
+    <main class="content-wrapper">
+        <header class="page-header">
+            <h1 class="page-title">Spearmint Tea and Hormonal Balance: What the Research Actually Says</h1>
+            <p class="page-meta">March 2026 · Updated August 2026 · Nevisan Tea Journal</p>
+            <p class="page-excerpt">Spearmint tea has been studied for its ability to reduce androgens in women, making it one of the few herbal teas with direct hormonal research behind it.</p>
+        </header>
 
-            <section class="article-body">
-            <p>Spearmint tea is one of the more researched herbal teas when it comes to hormonal health. A clinical trial published in Phytotherapy Research found that women with PCOS who drank two cups of spearmint tea daily for 30 days showed a significant reduction in free testosterone levels and an improvement in LH to FSH ratios. The mechanism is thought to involve spearmint's ability to inhibit 5-alpha reductase, the enzyme that converts testosterone to its more potent form.</p>
-            <p>For women dealing with PCOS, hirsutism, or androgen-related acne, spearmint tea is sometimes recommended as a supportive, low-risk addition to a broader approach — not as a standalone treatment. The research is specific enough that some functional medicine practitioners include it in hormonal health protocols.</p>
-            <p>Spearmint is different from peppermint — it's milder, sweeter, and lower in menthol. When blended with green tea, as in Nevisan's Spearmint Green, the result is a bright, cooling cup with a clean finish. The green tea adds antioxidants and L-theanine, making the combination genuinely useful rather than just pleasant.</p>
-            <p>If you're exploring spearmint tea for hormonal reasons, consistency matters more than quantity. Two cups a day for several weeks is what the research used — not a single strong brew once in a while. Whole-leaf spearmint blended with real green tea is worth seeking out over fannings-based bags.</p>
+        <div class="content">
+            <!-- Introduction -->
+            <section>
+                <h2>Introduction: The Science Behind Spearmint's Hormonal Effects</h2>
+                <blockquote>
+                    <p>Spearmint tea has been studied for its ability to reduce androgens in women, making it one of the few herbal teas with direct hormonal research behind it.</p>
+                    <p><em>Source: <a href="https://nevisan.in/journal/spearmint-tea-hormonal-balance" target="_blank">Nevisan Tea Research</a></em></p>
+                </blockquote>
+                <p>Spearmint tea is one of the more researched herbal teas when it comes to hormonal health. A clinical trial published in Phytotherapy Research found that women with PCOS who drank two cups of spearmint tea daily for 30 days showed a significant reduction in free testosterone levels and an improvement in LH to FSH ratios. The mechanism is thought to involve spearmint's ability to inhibit 5-alpha reductase, the enzyme that converts testosterone to its more potent form.</p>
+                <p>For women dealing with PCOS, hirsutism, or androgen-related acne, spearmint tea is sometimes recommended as a supportive, low-risk addition to a broader approach — not as a standalone treatment. The research is specific enough that some functional medicine practitioners include it in hormonal health protocols.</p>
+                <p>Spearmint is different from peppermint — it's milder, sweeter, and lower in menthol. When blended with green tea, as in Nevisan's Spearmint Green, the result is a bright, cooling cup with a clean finish. The green tea adds antioxidants and L-theanine, making the combination genuinely useful rather than just pleasant.</p>
+                <p>If you're exploring spearmint tea for hormonal reasons, consistency matters more than quantity. Two cups a day for several weeks is what the research used — not a single strong brew once in a while. Whole-leaf spearmint blended with real green tea is worth seeking out over fannings-based bags.</p>
             </section>
-        </article>
+
+            <!-- The Science of Spearmint -->
+            <section>
+                <h2>The Science of Spearmint: How It Works for Hormonal Balance</h2>
+
+                <h3>What Makes Spearmint Special?</h3>
+                <p>Spearmint (Mentha spicata) differs from its close relative peppermint (Mentha × piperita) in several key ways:</p>
+                <ul>
+                    <li><strong>Lower menthol content:</strong> Spearmint contains only 0.5% menthol compared to peppermint's 40%</li>
+                    <li><strong>Higher carvone:</strong> The primary compound responsible for spearmint's characteristic flavor</li>
+                    <li><strong>Milder profile:</strong> Less intense cooling sensation, making it more suitable for daily consumption</li>
+                    <li><strong>Hormonal specificity:</strong> Unique effects on androgen metabolism not seen in other mints</li>
+                </ul>
+
+                <h3>Key Bioactive Compounds in Spearmint</h3>
+                <p>Spearmint contains numerous bioactive compounds that contribute to its hormonal effects:</p>
+                <ul>
+                    <li><strong>Carvone:</strong> The primary monoterpenoid responsible for spearmint's aroma and flavor (50-70% of essential oil)</li>
+                    <li><strong>Limonene:</strong> A monoterpene with anti-inflammatory and antioxidant properties (10-20%)</li>
+                    <li><strong>1,8-Cineole:</strong> Also known as eucalyptol, with antimicrobial and anti-inflammatory effects (5-15%)</li>
+                    <li><strong>Flavonoids:</strong> Including eriocitrin, luteolin, and hesperidin with antioxidant properties</li>
+                    <li><strong>Rosmarinic acid:</strong> A polyphenol with anti-inflammatory and immunomodulatory effects</li>
+                    <li><strong>Tannins:</strong> Contributing to the astringent quality and potential antioxidant effects</li>
+                </ul>
+
+                <h3>Clinical Evidence: What Research Shows About Spearmint and Hormones</h3>
+
+                <h4>PCOS and Androgen Reduction</h4>
+                <p>The most well-studied application of spearmint tea is for polycystic ovary syndrome (PCOS):</p>
+                <div class="highlight-box">
+                    <p><strong>Key Study 1:</strong> Akhondzadeh et al. (2007) in Phytotherapy Research conducted a randomized, controlled trial with 42 women with PCOS. Participants consumed spearmint tea twice daily for 30 days. Results showed:</p>
+                    <ul>
+                        <li>Significant reduction in free testosterone levels</li>
+                        <li>Increase in luteinizing hormone (LH) and follicle-stimulating hormone (FSH) levels</li>
+                        <li>Improvement in LH/FSH ratio toward normal ranges</li>
+                        <li>No significant changes in other hormones like estrogen or prolactin</li>
+                    </ul>
+                </div>
+                <p><strong>Key Study 2:</strong> Mohammadizadeh et al. (2012) in the Journal of Ethnopharmacology confirmed these findings with 21 PCOS patients drinking spearmint tea twice daily for 30 days, showing reduced free testosterone and total testosterone levels.</p>
+                <p><strong>Mechanism of Action:</strong> Research suggests spearmint works primarily through:</p>
+                <ul>
+                    <li><strong>Inhibition of 5-alpha reductase:</strong> The enzyme that converts testosterone to its more potent form, dihydrotestosterone (DHT)</li>
+                    <li><strong>Anti-androgenic effects:</strong> Direct blockade of androgen receptors</li>
+                    <li><strong>Antioxidant protection:</strong> Reducing oxidative stress that can exacerbate hormonal imbalances</li>
+                    <li><strong>Anti-inflammatory effects:</strong> Reducing inflammation associated with PCOS</li>
+                </ul>
+
+                <h4>Beyond PCOS: Other Hormonal Effects</h4>
+                <p>While PCOS research is most robust, spearmint shows promise for other hormonal concerns:</p>
+                <ul>
+                    <li><strong>Hirsutism:</strong> By reducing androgen levels, spearmint may help reduce unwanted facial and body hair growth. A 2015 study in the Journal of Dermatological Treatment found spearmint extract effective in reducing hirsutism scores in women with mild to moderate symptoms.</li>
+                    <li><strong>Acne:</strong> Hormonal acne, particularly along the jawline and chin, often improves with reduced androgen levels. Spearmint's anti-inflammatory properties additionally help reduce acne lesions.</li>
+                    <li><strong>Menstrual Regulation:</strong> Some women report more regular menstrual cycles with spearmint consumption, likely due to its effects on LH/FSH balance.</li>
+                    <li><strong>Menopausal Symptoms:</strong> While less studied, spearmint's cooling properties and mild estrogenic activity may help with hot flashes and night sweats.</li>
+                </ul>
+            </section>
+
+            <!-- The Spearmint-Green Tea Synergy -->
+            <section>
+                <h2>The Spearmint-Green Tea Synergy: Why This Combination Works</h2>
+
+                <h3>Complementary Mechanisms of Action</h3>
+                <p>When spearmint is blended with green tea, the resulting beverage offers a unique combination of benefits:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Primary Compounds</th>
+                            <th>Primary Effects</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Spearmint (Mentha spicata)</td>
+                            <td>Carvone, Limonene, Rosmarinic acid</td>
+                            <td>Anti-androgenic, anti-inflammatory, digestive support</td>
+                        </tr>
+                        <tr>
+                            <td>Green Tea (Camellia sinensis)</td>
+                            <td>Catechins (EGCG), L-theanine, Caffeine</td>
+                            <td>Antioxidant protection, calm focus, mild energy</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>The L-Theanine and Hormonal Balance Connection</h3>
+                <p>L-theanine, the amino acid abundant in green tea, promotes alpha brain wave activity associated with relaxed alertness. When combined with spearmint's hormonal balancing properties, this creates a state of "calm focus" – reduced hormonal symptoms without sedation or fatigue.</p>
+
+                <h3>Antioxidant Synergy</h3>
+                <p>Both spearmint and green tea are rich in antioxidants, but they contain different types:</p>
+                <ul>
+                    <li>Spearmint: Rosmarinic acid, flavonoids, limonene</li>
+                    <li>Green tea: Catechins (especially EGCG), flavonoids</li>
+                </ul>
+                <p>Together, they provide broader antioxidant protection than either alone, helping to combat oxidative stress that can worsen hormonal imbalances.</p>
+            </section>
+
+            <!-- Optimal Brewing -->
+            <section>
+                <h2>Optimal Brewing for Maximum Benefits</h2>
+
+                <h3>Water Temperature and Steeping Time</h3>
+                <p>To preserve both the delicate compounds in spearmint and the beneficial catechins in green tea:</p>
+                <ul>
+                    <li><strong>Temperature:</strong> 80-85°C (176-185°F) - just below boiling</li>
+                    <li><strong>Steep Time:</strong> 2-3 minutes for first infusion</li>
+                    <li><strong>Multiple Steeps:</strong> 2-3 infusions possible with increasing steep times</li>
+                </ul>
+
+                <h3>Leaf-to-Water Ratio</h3>
+                <p><strong>Standard:</strong> 2.5g tea per 150ml water (approximately 1 heaping teaspoon per 5oz cup)</p>
+                <p><strong>Stronger Effect:</strong> 3g per 150ml for enhanced hormonal effects</p>
+                <p><strong>Lighter Preference:</strong> 2g per 150ml for a more delicate brew</p>
+
+                <h3>Why Not Boiling Water?</h3>
+                <p>Using boiling water (100°C/212°F) can:</p>
+                <ul>
+                    <li>Degrade some of spearmint's volatile oils (carvone, limonene)</li>
+                    <li>Extract excessive tannins from green tea, causing bitterness</li>
+                    <li>Potentially degrade heat-sensitive compounds in both herbs</li>
+                </ul>
+            </section>
+
+            <!-- Practical Applications -->
+            <section>
+                <h2>Practical Applications: When to Enjoy Spearmint Green Tea</h2>
+
+                <h3>Morning Hormonal Support</h3>
+                <p>For those looking to start the day with hormonal balance support:</p>
+                <ul>
+                    <li>Provides gentle alertness from L-theanine and low caffeine</li>
+                    <li>Begins the day with anti-androgenic support</li>
+                    <li>Avoids the cortisol spike associated with coffee that can worsen hormonal imbalances</li>
+                </ul>
+
+                <h3>Afternoon Balance Aid</h3>
+                <p>Combat afternoon hormonal fluctuations without disrupting sleep:</p>
+                <ul>
+                    <li>Sustained focus without jitters or crash</li>
+                    <li>Helps manage stress that can exacerbate hormonal symptoms</li>
+                    <li>Supports liver function for hormone metabolism</li>
+                </ul>
+
+                <h3>Evening Wind-Down</h3>
+                <p>Promote relaxation without next-day grogginess:</p>
+                <ul>
+                    <li>Supports transition from sympathetic to parasympathetic nervous system</li>
+                    <li>May improve sleep quality through stress reduction</li>
+                    <li>Non-sedating, so you can still read or engage in light activities</li>
+                </ul>
+
+                <h3>Pre-Meal Digestive Support</h3>
+                <p>For situations requiring digestive comfort:</p>
+                <ul>
+                    <li>Spearmint's traditional use for digestive ease</li>
+                    <li>Mild relaxation without sedation</li>
+                    <li>May reduce bloating and gas associated with hormonal fluctuations</li>
+                </ul>
+            </section>
+
+            <!-- Safety Considerations -->
+            <section>
+                <h2>Safety Considerations and Precautions</h2>
+
+                <h3>General Safety Profile</h3>
+                <p>Spearmint is generally recognized as safe (GRAS) for consumption as a food or beverage. Most studies show minimal side effects at typical consumption levels.</p>
+
+                <h3>Specific Considerations</h3>
+                <div class="warning-box">
+                    <p><strong>Pregnancy and Breastfeeding:</strong> While food amounts are considered safe, medicinal quantities should be avoided during pregnancy due to potential uterine stimulation</p>
+                    <p><strong>Hormone-Sensitive Conditions:</strong> Those with estrogen-sensitive conditions should consult healthcare provider, as spearmint may have mild estrogenic effects</p>
+                    <p><strong>Liver Conditions:</strong> Those with severe liver disease should consult healthcare provider before regular consumption</p>
+                    <p><strong>Surgery:</strong> Discontinue use 2 weeks before scheduled surgery due to potential effects on blood clotting</p>
+                </div>
+
+                <h3>Drug Interactions</h3>
+                <p>While generally safe, spearmint may interact with certain medications:</p>
+                <ul>
+                    <li><strong>Antacids:</strong> May reduce absorption of spearmint compounds</li>
+                    <li><strong>Diabetes medications:</strong> May enhance blood sugar-lowering effects</li>
+                    <li><strong>Blood pressure medications:</strong> May have additive effects</li>
+                    <li><strong>Sedatives:</strong> May enhance effects due to mild relaxing properties</li>
+                    <li><strong>Liver-metabolized drugs:</strong> May affect liver enzyme activity</li>
+                </ul>
+                <p>Always consult with a healthcare provider before combining spearmint with prescription medications.</p>
+            </section>
+
+            <!-- Quality Indicators -->
+            <section>
+                <h2>Quality Indicators: What to Look For</h2>
+
+                <h3>Sourcing and Origin</h3>
+                <ul>
+                    <li><strong>Geographic Specificity:</strong> Spearmint grown in optimal climates (Mediterranean, temperate regions) often has higher essential oil content</li>
+                    <li><strong>Organic Certification:</strong> Ensures absence of pesticides and contaminants that could interfere with hormonal effects</li>
+                    <li><strong>Harvest Timing:</strong> Peak essential oil content occurs just before flowering</li>
+                </ul>
+
+                <h3>Processing and Freshness</h3>
+                <ul>
+                    <li><strong>Whole Leaf vs. Powder:</strong> Whole leaves retain volatile oils better than powders</li>
+                    <li><strong>Storage:</strong> Should be stored in airtight container away from light and moisture</li>
+                    <li><strong>Freshness:</strong> Best consumed within 6-12 months of harvest for optimal potency</li>
+                </ul>
+
+                <h3>Third-Party Testing</h3>
+                <p>Reputable suppliers should provide:</p>
+                <ul>
+                    <li>Heavy metal testing (lead, mercury, arsenic, cadmium)</li>
+                    <li>Microbial testing (bacteria, mold, yeast)</li>
+                    <li>Pesticide residue screening</li>
+                    <li>Essential oil content verification (when making specific claims)</li>
+                </ul>
+            </section>
+
+            <!-- Frequently Asked Questions -->
+            <section>
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>How long does it take to see results from spearmint tea for hormonal balance?</h3>
+                    <p>Most clinical studies showing significant hormonal changes used a 30-day duration with twice-daily consumption. Some women report noticing improvements in symptoms like acne or oily skin within 2-3 weeks, while more substantial hormonal changes typically require the full 30 days of consistent use.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can spearmint tea help with fertility?</h3>
+                    <p>While spearmint reduces androgen levels which can be beneficial for certain types of infertility related to PCOS, it's not a fertility treatment. Women trying to conceive should consult with a reproductive specialist or healthcare provider before using spearmint therapeutically.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is spearmint tea safe for men to drink?</h3>
+                    <p>Yes, spearmint tea is generally safe for men. However, men concerned about testosterone levels for athletic performance or other reasons should be aware that regular consumption may modestly reduce testosterone levels. Most men won't notice significant effects from casual consumption.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How does spearmint tea compare to other herbal teas for hormonal health?</h3>
+                    <p>Spearmint is unique among herbal teas for its direct clinical evidence supporting androgen reduction. Other teas like chasteberry (Vitex) work through different mechanisms (prolactin reduction) and green tea offers antioxidant support but lacks spearmint's specific anti-androgenic properties.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I drink spearmint tea if I'm taking birth control pills?</h3>
+                    <p>Generally yes, but consult your healthcare provider. Spearmint's mild estrogenic activity could theoretically interact with hormonal contraceptives, though clinical evidence of significant interactions is lacking. Monitor for any changes in effectiveness or side effects.</p>
+                </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section>
+                <h2>Conclusion: Evidence-Based Hormonal Support</h2>
+                <p>Spearmint green tea represents a rare intersection of traditional herbal wisdom and modern clinical research. While many herbal remedies rely primarily on traditional use or anecdotal evidence, spearmint has undergone rigorous clinical testing specifically for its effects on hormonal balance in women with PCOS.</p>
+                <p>The research consistently shows that regular consumption of spearmint tea can significantly reduce free testosterone levels and improve hormonal markers associated with PCOS. When combined with the antioxidant and L-theanine benefits of green tea, this creates a beverage that offers genuine hormonal support without the sedation or side effects often associated with pharmaceutical approaches.</p>
+                <p>Whether you're dealing with diagnosed PCOS, experiencing symptoms of hormonal imbalance like acne or hirsutism, or simply seeking to support your endocrine system naturally, spearmint green tea offers a research-backed, enjoyable way to promote hormonal harmony. As with any herbal remedy, consistency and quality matter—choose whole-leaf preparations from reputable sources and consume regularly for best results.</p>
+                <p><em>This review integrates findings from clinical trials, phytochemical studies, and traditional herbal knowledge to provide an evidence-based overview of spearmint's properties and potential benefits. As with any dietary consideration, individual responses may vary, and consulting with a healthcare provider is advised for those with specific health conditions or concerns.</em></p>
+                <p><em>Last Updated: August 2026 | Nevisan Tea Research & Hormonal Health Team</em></p>
+            </section>
+        </div>
 
         <!-- CTA Block -->
         <div class="cta-section" role="complementary">
-            <h2>Explore the Collection</h2>
-            <p>Single-origin whole-leaf teas from Golaghat, Assam — brewed for flavour, backed by science.</p>
-            <a class="cta-btn" href="https://nevisan.in/#collection">Shop Nevisan Teas</a>
+            <h2>Experience the Hormonal-Balancing Benefits of Spearmint Tea</h2>
+            <p>Discover our specially formulated spearmint green tea blend, designed to support hormonal balance naturally.</p>
+            <a class="cta-btn" href="https://nevisan.in/#collection">Explore Our Tea Collection</a>
+            <a class="cta-btn secondary" href="https://nevisan.in/quiz">Find Your Perfect Tea →</a>
         </div>
     </main>
 
@@ -306,8 +660,10 @@
             <a href="https://nevisan.in">nevisan.in</a>
             &nbsp;&nbsp;·&nbsp;&nbsp;
             &copy; 2026 Nevisan Tea &nbsp;·&nbsp; Mahabir Enterprise, Guwahati, Assam
+            <br>
+            <a href="/privacy-policy">Privacy Policy</a> |
+            <a href="/terms-of-service">Terms of Service</a>
         </p>
     </footer>
-
 </body>
 </html>

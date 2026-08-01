@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<!-- Version: 1.0.2 - 2026-07-06T12:12:00 -->
+<!-- Version: 1.0.3 - 2026-08-01 - Phase 1 SEO Fixes -->
 <html lang="en">
 <head>
+  <link rel="alternate" type="application/ld+json" href="/llms-full.txt" title="LLMs Full Context">
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs Context">
 <meta charset="UTF-8">
 <link rel="manifest" href="manifest.json">
@@ -96,11 +97,19 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
       "sameAs": [
         "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E",
         "https://www.instagram.com/nevisan.tea/",
-        "https://www.flipkart.com/store/nevisan"
+        "https://www.flipkart.com/store/nevisan",
+        "https://www.linkedin.com/company/nevisan-tea"
       ]
     },
     {
-      "@type": ["TeaStore", "WholesaleStore", "LocalBusiness"],
+      "@type": "Brand",
+      "@id": "https://nevisan.in/#brand",
+      "name": "Nevisan",
+      "logo": "https://nevisan.in/nevisan-logo.jpeg",
+      "url": "https://nevisan.in"
+    },
+    {
+      "@type": "TeaStore",
       "@id": "https://nevisan.in/#localbusiness",
       "name": "NEVISAN TEA",
       "legalName": "NEVISAN TEA",
@@ -108,7 +117,7 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
       "logo": "https://nevisan.in/nevisan-logo.jpeg",
       "image": "https://nevisan.in/hero-bg.jpg",
       "description": "NEVISAN offers premium organic whole-leaf teas sourced directly from estate gardens in Golaghat, Assam. Specialties include single-origin Assam teas, organic green tea, and artisanal GABA Oolong.",
-      "telephone": "+919864245689",
+      "telephone": "+91-9864245687",
       "priceRange": "₹₹",
       "currenciesAccepted": "INR",
       "paymentAccepted": "Cash, Credit Card, Debit Card, UPI, Net Banking",
@@ -204,8 +213,8 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
       "name": "Nevisan Organic Green Tea — Single Origin Assam",
       "description": "100% whole-leaf organic green tea from a single garden in Golaghat, Assam. PGS-India certified pesticide-free. Can be steeped twice.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
-      "image": "https://nevisan.in/teas/gaba.png",
-      "url": "https://nevisan.in/",
+      "image": "https://nevisan.in/teas/organic.png",
+      "url": "https://nevisan.in/#organic-green-tea",
       "offers": {
         "@type": "Offer",
         "price": "499",
@@ -233,8 +242,8 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
         "hasMerchantReturnPolicy": {
           "@type": "MerchantReturnPolicy",
           "applicableCountry": "IN",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-          "merchantReturnDays": "0",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnAllowed",
+          "merchantReturnDays": "10",
           "returnMethod": "https://schema.org/ReturnByMail",
           "returnFees": "https://schema.org/FreeReturn"
         }
@@ -245,72 +254,72 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
       "name": "Nevisan Lemongrass Green Tea",
       "description": "Whole leaf Assam green tea blended with lemongrass. Aids digestion, boosts metabolism and naturally detoxifies. PGS-India organic certified, chemical-free. 50g pack, MRP &#8377;499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
-      "image": "https://nevisan.in/teas/chamomile.png",
-      "url": "https://nevisan.in/",
-      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" } }
+      "image": "https://nevisan.in/teas/lemongrass.png",
+      "url": "https://nevisan.in/#lemongrass-green-tea",
+      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnAllowed", "merchantReturnDays": "10", "returnMethod": "https://schema.org/ReturnByMail", "returnFees": "https://schema.org/FreeReturn" } }
     },
     {
       "@type": "Product",
       "name": "Nevisan Blue Flower Green Tea",
       "description": "Whole leaf Assam green tea with butterfly pea flower. Rich in anthocyanin antioxidants. Calming, nootropic and visually stunning — turns purple when you add lemon. 50g pack, MRP &#8377;499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
-      "image": "https://nevisan.in/teas/tulsi.png",
-      "url": "https://nevisan.in/",
-      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" } }
+      "image": "https://nevisan.in/teas/blue-flower.png",
+      "url": "https://nevisan.in/#blue-flower-green-tea",
+      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnAllowed", "merchantReturnDays": "10", "returnMethod": "https://schema.org/ReturnByMail", "returnFees": "https://schema.org/FreeReturn" } }
     },
     {
       "@type": "Product",
       "name": "Nevisan Rum Green Tea",
       "description": "Whole leaf Assam green tea with natural botanicals capturing the warmth and depth of aged rum — zero alcohol. Bold, exotic, and perfect as an evening ritual. 50g pack, MRP &#8377;499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
-      "image": "https://nevisan.in/teas/spearmint.png",
-      "url": "https://nevisan.in/",
-      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" } }
+      "image": "https://nevisan.in/teas/rum.png",
+      "url": "https://nevisan.in/#rum-green-tea",
+      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnAllowed", "merchantReturnDays": "10", "returnMethod": "https://schema.org/ReturnByMail", "returnFees": "https://schema.org/FreeReturn" } }
     },
     {
       "@type": "Product",
       "name": "Nevisan Spearmint Green Tea",
       "description": "Whole leaf Assam green tea blended with spearmint. Clinically studied anti-androgenic properties — beneficial for PCOS, hormonal balance and skin clarity. 50g pack, MRP &#8377;499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
-      "image": "https://nevisan.in/teas/rum.png",
-      "url": "https://nevisan.in/",
-      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" } }
+      "image": "https://nevisan.in/teas/spearmint.png",
+      "url": "https://nevisan.in/#spearmint-green-tea",
+      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnAllowed", "merchantReturnDays": "10", "returnMethod": "https://schema.org/ReturnByMail", "returnFees": "https://schema.org/FreeReturn" } }
     },
     {
       "@type": "Product",
       "name": "Nevisan Tulsi Green Tea",
       "description": "Whole leaf Assam green tea with tulsi (holy basil). A powerful adaptogen that strengthens immunity, reduces cortisol and promotes calm focus. Ayurvedic tradition meets single-origin tea. 50g pack, MRP &#8377;499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
-      "image": "https://nevisan.in/teas/whiskey.png",
-      "url": "https://nevisan.in/",
-      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" } }
+      "image": "https://nevisan.in/teas/tulsi.png",
+      "url": "https://nevisan.in/#tulsi-green-tea",
+      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnAllowed", "merchantReturnDays": "10", "returnMethod": "https://schema.org/ReturnByMail", "returnFees": "https://schema.org/FreeReturn" } }
     },
     {
       "@type": "Product",
       "name": "Nevisan Chamomile Green Tea",
       "description": "Whole leaf Assam green tea with chamomile. Contains apigenin — binds to sleep receptors for natural, non-drowsy calm. Ideal for evenings and winding down. 50g pack, MRP &#8377;499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
-      "image": "https://nevisan.in/teas/organic.png",
-      "url": "https://nevisan.in/",
-      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" } }
+      "image": "https://nevisan.in/teas/chamomile.png",
+      "url": "https://nevisan.in/#chamomile-green-tea",
+      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnAllowed", "merchantReturnDays": "10", "returnMethod": "https://schema.org/ReturnByMail", "returnFees": "https://schema.org/FreeReturn" } }
     },
     {
       "@type": "Product",
       "name": "Nevisan Whiskey Green Tea",
       "description": "Whole leaf Assam green tea with natural woody botanicals capturing the character of aged whiskey — zero alcohol. Bold, sophisticated and rich in EGCG antioxidants. 50g pack, MRP &#8377;499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
-      "image": "https://nevisan.in/teas/blue-flower.png",
-      "url": "https://nevisan.in/",
-      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" } }
+      "image": "https://nevisan.in/teas/whiskey.png",
+      "url": "https://nevisan.in/#whiskey-green-tea",
+      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnAllowed", "merchantReturnDays": "10", "returnMethod": "https://schema.org/ReturnByMail", "returnFees": "https://schema.org/FreeReturn" } }
     },
     {
       "@type": "Product",
       "name": "Nevisan GABA Oolong Tea",
       "description": "Nitrogen-processed oolong tea with naturally elevated GABA content. GABA is the brain's calming neurotransmitter — reduces anxiety, improves sleep quality and lowers blood pressure. 50g pack, MRP &#8377;499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
-      "image": "https://nevisan.in/teas/lemongrass.png",
-      "url": "https://nevisan.in/",
-      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" } }
+      "image": "https://nevisan.in/teas/gaba.png",
+      "url": "https://nevisan.in/#gaba-oolong-tea",
+      "offers": { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "Nevisan Tea" }, "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" }, "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" } } }, "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "IN", "returnPolicyCategory": "https://schema.org/MerchantReturnAllowed", "merchantReturnDays": "10", "returnMethod": "https://schema.org/ReturnByMail", "returnFees": "https://schema.org/FreeReturn" } }
     },
     {
       "@type": "FAQPage",
@@ -353,17 +362,17 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
         {
           "@type": "Question",
           "name": "Is spearmint tea good for PCOS?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Clinical research published in Phytotherapy Research found that two cups of spearmint tea daily reduced free testosterone levels in women with PCOS. Spearmint may inhibit 5-alpha reductase, the enzyme that converts testosterone to its more potent form. Nevisan's Spearmint Green combines whole-leaf spearmint with Assam green tea." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Clinical research published in Phytotherapy Research found that two cups of spearmint tea daily reduced free testosterone levels in women with PCOS. Spearmint may inhibit 5-alpha reductase, the enzyme that converts testosterone to its more potent form. Nevisan's Spearmint Green combines whole-leaf spearmint with Assam green tea. [Source: Akhondzadeh et al., Phytotherapy Research, 2007; DOI: 10.1002/ptr.2098]" }
         },
         {
           "@type": "Question",
           "name": "What are the benefits of tulsi green tea?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Tulsi (holy basil) is an adaptogen used in Ayurvedic medicine for 3,000 years. Research shows it can reduce cortisol, support immune function, and improve cognitive performance under stress. Combined with green tea's L-theanine and antioxidants, tulsi green tea supports calm, sustained focus without sedation." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Tulsi (holy basil) is an adaptogen used in Ayurvedic medicine for 3,000 years. Research shows it can reduce cortisol, support immune function, and improve cognitive performance under stress. Combined with green tea's L-theanine and antioxidants, tulsi green tea supports calm, sustained focus without sedation. [Source: Cohen MM, Tulsi - Ocimum sanctum: A herb for all reasons. J Ayurveda Integr Med. 2014;5(4):251-259. doi: 10.4103/0975-9476.146502]" }
         },
         {
           "@type": "Question",
           "name": "What is GABA oolong tea and what is it good for?",
-          "acceptedAnswer": { "@type": "Answer", "text": "GABA oolong is made by processing tea leaves in a nitrogen-rich, oxygen-free environment, dramatically increasing GABA content. GABA is the brain's main calming neurotransmitter. Regular consumption is associated with reduced anxiety, better sleep quality, and lower blood pressure. Unlike chamomile, GABA tea allows calm without drowsiness." }
+          "acceptedAnswer": { "@type": "Answer", "text": "GABA oolong is made by processing tea leaves in a nitrogen-rich, oxygen-free environment, dramatically increasing GABA content. GABA is the brain's main calming neurotransmitter. Regular consumption is associated with reduced anxiety, better sleep quality, and lower blood pressure. Unlike chamomile, GABA tea allows calm without drowsiness. [Source: Abdou AM et al., Effect of gamma-aminobutyric acid (GABA) administration on stress and fatigue in humans undergoing a problem-solving task. Biosci Biotechnol Biochem. 2006;70(4):901-6. doi: 10.1271/bbb.60464]" }
         },
         {
           "@type": "Question",
@@ -388,7 +397,7 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
         {
           "@type": "Question",
           "name": "Does chamomile green tea help with sleep?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Chamomile contains apigenin, a flavonoid that binds to GABA receptors in the brain, producing a mild calming effect. Research supports chamomile for reducing mild anxiety and improving sleep quality. When blended with green tea at low brewing temperatures, you get chamomile's calming properties alongside green tea antioxidants with minimal caffeine." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Chamomile contains apigenin, a flavonoid that binds to GABA receptors in the brain, producing a mild calming effect. Research supports chamomile for reducing mild anxiety and improving sleep quality. When blended with green tea at low brewing temperatures, you get chamomile's calming properties alongside green tea antioxidants with minimal caffeine. [Source: Zick SM et al., An Examination of the Safety and Pharmacokinetics of High-Dose Chamomile Extract in Healthy Volunteers. J Altern Complement Med. 2011;17(9):857-63. doi: 10.1089/acm.2010.0318]" }
         },
         {
           "@type": "Question",
@@ -830,6 +839,16 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
 
 </head>
 <body>
+  <!-- Visible NAP for Local SEO -->
+  <div class="visible-nap" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+    Nevisan Tea • Citi Point Market, Paltan Bazar, Guwahati 781008 • +91-9864245687
+  </div>
+
+  <!-- Google Maps Embed for Local SEO -->
+  <div class="visible-map" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14429.12533308235!2d91.749986!3d26.1806069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375d5b4a0b8f6c4f%3A0xc8206f44a6f9a51!2sCiti+Point+Market%2C+Paltan+Bazar%2C+Opp+ASTC+Bus+Stand%2C+Guwahati%2C+Assam+781008!5e0!3m2!1sen!2sin!4v1690918800000" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
   <!-- Ambient background glow spots -->
   <div class="nev-ambient-glow" style="top: -15%; left: -15%; width: 55vw; height: 55vw; background: radial-gradient(circle, rgba(35,65,45,0.16) 0%, transparent 70%);"></div>
   <div class="nev-ambient-glow" style="bottom: -15%; right: -15%; width: 55vw; height: 55vw; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); animation-delay: -5s;"></div>

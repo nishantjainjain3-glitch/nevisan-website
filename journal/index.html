@@ -34,6 +34,13 @@
         .post-excerpt { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
         footer { background: #12555b; color: rgba(255,255,255,0.65); text-align: center; padding: 1.5rem 1rem; font-size: 0.82rem; }
         footer a { color: var(--gold); text-decoration: none; }
+                .signup-section { margin-top: 3rem; padding: 2rem; background: #fff; border-radius: 8px; border: 1px solid var(--border); text-align: center; }
+        .signup-section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; color: var(--teal); margin-bottom: 0.5rem; }
+        .signup-section p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.25rem; }
+        .signup-form { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .signup-form input { padding: 0.65rem 1rem; border: 1px solid var(--border); border-radius: 5px; font-family: 'Inter', system-ui, sans-serif; font-size: 0.95rem; min-width: 240px; background: var(--cream); }
+        .signup-form button { padding: 0.65rem 1.5rem; background: var(--gold); color: #fff; border: none; border-radius: 5px; font-weight: 600; font-size: 0.9rem; cursor: pointer; letter-spacing: 0.05em; text-transform: uppercase; }
+        .signup-form button:hover { background: #b8923e; }
         @media (max-width: 600px) { .journal-wrapper { padding: 2rem 1rem 3rem; } }
     </style>
 </head>
@@ -153,6 +160,15 @@
             </li>
         </ul>
     </main>
+            <div class="signup-section">
+            <h2>Stay in the Cup</h2>
+            <p>Get one email per week — tea tips, new journal posts, and garden updates. No spam, no fluff.</p>
+            <form class="signup-form" action="mailto:nishant@nevisan.in?subject=Email Signup" method="post" enctype="text/plain">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
     <footer><p><a href="https://nevisan.in">nevisan.in</a> &nbsp;&nbsp;·&nbsp;&nbsp; &copy; 2026 Nevisan Tea &nbsp;·&nbsp; Mahabir Enterprise, Guwahati, Assam</p></footer>
 </body>
 </html>
+

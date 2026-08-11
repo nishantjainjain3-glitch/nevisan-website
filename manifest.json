@@ -1,16 +1,22 @@
 {
   "short_name": "Nevisan",
   "name": "Nevisan Tea",
+  "description": "Premium single-origin whole leaf teas from Golaghat, Assam",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2d4a3e",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "nevisan-logo.jpeg",
-      "type": "image/jpeg",
-      "sizes": "256x256"
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "nevisan-logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
     }
-  ],
-  "start_url": "./index.html",
-  "background_color": "#FAF6F0",
-  "theme_color": "#0F2E2A",
-  "display": "standalone",
-  "orientation": "portrait"
+  ]
 }

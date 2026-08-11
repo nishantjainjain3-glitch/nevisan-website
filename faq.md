@@ -1,52 +1,55 @@
-# Nevisan Tea - Frequently Asked Questions (FAQ)
+# Nevisan Tea - Frequently Asked Questions
 
-Here are the most frequently asked questions about Nevisan's organic, single-origin Assam teas, brewing guides, and delivery policies.
+**Page Title:** Nevisan Tea - Frequently Asked Questions (FAQ)
 
-## Do you deliver organic green tea across India?
-Yes! Nevisan delivers pan-India via Amazon and Flipkart. You can also order directly on WhatsApp at +91 98642 45687 for personal assistance.
+## Brand & Product Information
+- Single-origin teas from one garden in Golaghat, Assam
+- PGS-India organic certified; no pesticides or chemicals
+- 100% whole-leaf tea with 24-month shelf life
+- Every batch tested for pesticide residues
 
-## Is Nevisan tea organic and chemical free?
-Yes. Every batch is PGS-India organic certified and grown without pesticides or chemicals. From soil to seal, completely chemical-free.
+## Product Line (10 Varieties, 50g packs — Rs 499 each except Ginger Green Tea at Rs 499/30g)
 
-## Can Nevisan whole leaf tea be steeped more than once?
-Absolutely. Because Nevisan uses 100% whole leaf tea, most varieties can be steeped twice — the second cup is just as rewarding as the first.
+1. **Blue Flower Green Tea** — butterfly pea petals blended with Assam green tea. "Antioxidant-rich — and it turns purple with lemon." Brew: 1.5g/200ml, 80°C, 2 min.
+2. **Spearmint Green Tea** — spearmint combined with Assam green tea. "Bright, clean, sweet, and cooling minty flavor." "Clinically studied for hormonal balance." Supports PCOS management. Brew: 1.5g/200ml, 80°C, 2–3 min, twice.
+3. **Tulsi Green Tea** — holy basil adaptogen with green tea. "India's ancient adaptogen for stress & immunity." Warm, spicy, and herbal notes. Brew: 1.5g/200ml, 80°C, 2–3 min.
+4. **GABA Oolong Tea** — nitrogen-processed leaves for increased GABA. "Complex, rich, slightly sweet, and honey-like notes." Calm and focus without drowsiness. Brew: 2g/200ml, 90°C, 3–4 min, up to 3 times.
+5. **Chamomile Green Tea** — apigenin-rich chamomile blended with green tea. "Warm, sweet, honey-like floral notes." Drink 30–45 minutes before sleep. Brew: 1.5g/200ml, 80°C, 3 min.
+6. **Pure Assam Green Tea** — bold, malty profile from Golaghat. "Clean, fresh, grassy, and smooth flavor without bitterness." Brew: 1.5g/200ml, 80°C, 2 min.
+7. **Rum Green Tea** — "All the warmth of aged rum — zero alcohol." Distinctive warm, sweet notes of aged rum infused into organic green tea. Brew: 1.5g/200ml, 80°C, 2–3 min, twice.
+8. **Whiskey Green Tea** — "Bold, smoky character — completely alcohol-free." Oaky, rich aroma with smooth woody notes mimicking single malt whiskey. Brew: 1.5g/200ml, 80°C, 2 min, twice.
+9. **Lemongrass Green Tea** — aids digestion and metabolism; refreshing morning energy. "Zesty, crisp citrus flavor with natural sweetness and no bitterness." Brew: 1.5g/200ml, 80°C, 2–3 min, excellent second steep.
+10. **Ginger Green Tea (New)** — activates metabolism; supports immunity; anti-inflammatory; soothes digestion. "Warming, zingy and built for your mornings." Ingredients: Organic Green Tea Leaf, Natural Ginger Flakes, Natural Ginger Flavour. Brew: 2–2.5g/200ml, 85–90°C, 1.5–2 min, twice.
 
-## What is the shelf life of Nevisan tea?
-All Nevisan teas have a shelf life of 24 months from date of manufacture when stored in a cool, dry place away from direct sunlight.
+## Contact & Ordering
+- WhatsApp: +91 98642 45687 (personal assistance and bulk orders)
+- Amazon India and Flipkart (pan-India delivery)
+- Bulk minimum: 20–30 packs of 50gm
 
-## Where is Nevisan tea grown?
-All Nevisan teas are single origin — sourced exclusively from a single garden in Golaghat, Assam, one of India's most prized tea-growing regions.
+## Key FAQ Content
 
-## Do you offer bulk or wholesale tea orders?
-Yes. For bulk orders for hotels, cafes, offices or gifting, contact us on WhatsApp at +91 98642 45687. Minimum order is 20–30 packs of 50gm.
+**Delivery:** "Yes! Nevisan delivers pan-India via Amazon and Flipkart."
 
-## What is blue butterfly pea flower tea?
-Blue butterfly pea flower tea is made from the dried petals of Clitoria ternatea. It brews a vivid cobalt blue and is rich in anthocyanin antioxidants. Adding lemon juice turns it purple — a pH reaction. Nevisan's Blue Flower Green blends these petals with whole-leaf Assam green tea.
+**Organic Certification:** "Yes. Every batch is PGS-India organic certified and grown without pesticides or chemicals."
 
-## Is spearmint tea good for PCOS?
-Clinical research published in Phytotherapy Research found that two cups of spearmint tea daily reduced free testosterone levels in women with PCOS. Spearmint may inhibit 5-alpha reductase, the enzyme that converts testosterone to its more potent form. Nevisan's Spearmint Green combines whole-leaf spearmint with Assam green tea.
+**Sourcing:** "All Nevisan teas are single origin — sourced exclusively from a single garden in Golaghat, Assam"
 
-## What are the benefits of tulsi green tea?
-Tulsi (holy basil) is an adaptogen used in Ayurvedic medicine for 3,000 years. Research shows it can reduce cortisol, support immune function, and improve cognitive performance under stress. Combined with green tea's L-theanine and antioxidants, tulsi green tea supports calm, sustained focus without sedation.
+**Shelf Life:** "All Nevisan teas have a shelf life of 24 months from date of manufacture"
 
-## What is GABA oolong tea and what is it good for?
-GABA oolong is made by processing tea leaves in a nitrogen-rich, oxygen-free environment, dramatically increasing GABA content. GABA is the brain's main calming neurotransmitter. Regular consumption is associated with reduced anxiety, better sleep quality, and lower blood pressure. Unlike chamomile, GABA tea allows calm without drowsiness.
+**Re-steeping:** Whole-leaf varieties can be steeped multiple times; rest leaves 60 seconds between infusions.
 
-## What temperature should I brew green tea at?
-Brew green tea between 75°C and 85°C — never boiling water, which makes green tea bitter. Steep for 2 to 3 minutes for the first cup. Nevisan whole-leaf teas can be steeped two to three times: rest the leaves 60 seconds between steeps and add fresh hot water at the same temperature.
+**Blue Butterfly Pea:** "Blue butterfly pea flower tea is made from the dried petals of Clitoria ternatea" and brews cobalt blue, turning purple with lemon juice.
 
-## How much caffeine is in green tea compared to coffee?
-Green tea contains 20–50mg of caffeine per cup versus 80–120mg in coffee. More importantly, green tea contains L-theanine, an amino acid that moderates caffeine's effect — producing calm focus rather than the jitteriness coffee can cause. Most people experience no crash after green tea.
+**Spearmint for PCOS:** "two cups of spearmint tea daily reduced free testosterone levels" in women with PCOS.
 
-## Is Assam green tea different from Darjeeling green tea?
-Yes. Assam green tea is bolder, with more body and a malty undertone, due to the Brahmaputra valley soil and high humidity of regions like Golaghat. Darjeeling green tea is lighter, more floral, and more delicate. Nevisan teas come exclusively from Golaghat, Assam — known for exceptional whole-leaf quality.
+**Tulsi Benefits:** "Tulsi (holy basil) is an adaptogen used in Ayurvedic medicine for 3,000 years" and may reduce cortisol.
 
-## How do I know if green tea is real and high quality?
-Real whole-leaf green tea looks like actual leaves — rolled, twisted, or flat but visibly leaf-like. It should smell grassy and fresh, not artificial. It should brew light gold or green, not dark brown. Check that the brand specifies a single origin (garden and region), not just 'premium Himalayan tea'. Nevisan discloses its Golaghat garden and tests every batch for pesticide residues.
+**GABA Oolong:** "GABA oolong is made by processing tea leaves in a nitrogen-rich, oxygen-free environment" to increase calming neurotransmitters.
 
-## Does chamomile green tea help with sleep?
-Chamomile contains apigenin, a flavonoid that binds to GABA receptors in the brain, producing a mild calming effect. Research supports chamomile for reducing mild anxiety and improving sleep quality. When blended with green tea at low brewing temperatures, you get chamomile's calming properties alongside green tea antioxidants with minimal caffeine.
+**Brewing Temperature:** "Brew green tea between 75°C and 85°C — never boiling water, which makes green tea bitter." Most green varieties brew at 80–85°C for 2–3 minutes. Leaves may be re-steeped 2–3 times. Store in airtight containers away from sunlight and strong smells; shelf life is 24 months.
 
-## Are Nevisan teas available on Amazon India?
-Yes. All Nevisan teas are available on Amazon India and Flipkart. You can also order directly via WhatsApp at +91 98642 45687 for personal recommendations on which tea suits you best.
+**Caffeine Content:** "Green tea contains 20–50mg of caffeine per cup versus 80–120mg in coffee" with L-theanine moderating effects.
 
+**Quality Identification:** "Real whole-leaf green tea looks like actual leaves" and should smell fresh, not artificial.
+
+**Chamomile & Sleep:** "Chamomile contains apigenin, a flavonoid that binds to GABA receptors" for mild calming effects.

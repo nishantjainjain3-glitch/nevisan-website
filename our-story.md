@@ -1,30 +1,38 @@
-# Our Story - Nevisan Tea
+# Our Story
 
-Every leaf has a beginning. We grew up next to the world's best tea gardens — and decided the rest of India should taste them too.
+We grew up next to the world's best tea region, yet we drank mediocre tea anyway. So, we decided to do something about it.
 
-## The Leaf That Started It All
-The question was simple: if Golaghat grows some of the world's finest tea, why does the tea in most Indian homes taste so ordinary? We didn't have a good answer. So we stopped waiting for one and went back to the garden — to bring the whole leaf, exactly as it grows, directly to you.
+## The Contradiction
 
----
+Growing up in Guwahati, we watched Assam's most beautiful teas leave on trucks — only to return as broken dust inside someone else's brand. We drank that dust like everyone else. Until we stopped and asked: **what does the actual leaf taste like?**
 
-## Our Core Philosophy
+## The Answer
 
-### 1. Soil and Terroir (Golaghat, Assam)
-Nevisan teas are grown in the Brahmaputra valley of Upper Assam. The region's unique clay-rich alluvial soil, extreme humidity (averaging 80% year-round), and seasonal temperature variation place the tea plants under a gentle natural stress. This forces them to develop complex, aromatic defensive compounds that translate directly into deep, rich flavors in the cup.
+That question led us to Golaghat. To Tailor Made Tea — a small processing house that handles the leaf the way it deserves to be handled. One garden. Whole leaves. Nothing added. That's Nevisan.
 
-### 2. Hand-Plucking & Standard
-We practice selective plucking. Only the "two leaves and a bud" are hand-harvested by experienced pluckers. This represents the absolute peak of the plant's nutritional and flavor density.
+## The Founders
 
-### 3. Anaerobic & Cold-Infusion Processing
-For specialized blends (like our GABA Oolong and Rum/Whiskey Green Teas), we utilize precise processing methods:
-* **Anaerobic Processing**: Oolong leaves are oxidized in a nitrogen-rich, oxygen-free environment. This biochemical reaction naturally amplifies the GABA (gamma-aminobutyric acid) content by 4 to 10 times, supporting sleep and stress relief.
-* **Cold-Infusion Infusions**: To infuse botanicals (like Spearmint, Lemongrass, and Chamomile) without heat-induced bitterness, we use cold-infusion techniques that let the natural oils and aroma bind naturally to the whole green tea leaf.
+Nevisan was founded in 2025 by a husband-and-wife duo in Guwahati who wanted to make real Assam whole leaf tea accessible to people across India.
 
----
+### Nishant Jain (Founder)
 
-## Traceability & Sustainability
-By choosing single-origin tea from one garden, we eliminate blending. Packaging displays complete traceability:
-* **Origin**: Golaghat, Assam, India.
-* **Standard**: PGS-India Certified Organic (chemical-free).
-* **Processor**: Tailor Made Tea.
-* **Distributor**: Mahabir Enterprise, Guwahati.
+Nishant grew up in Guwahati with tea gardens practically in his backyard, yet the tea served at home was still mediocre dust. That contradiction never sat right with him. Nevisan is his answer: getting the real whole leaf directly to the people who appreciate it.
+
+### Uditi Jain (Founder & Creative Director)
+
+Uditi believes the way something feels matters as much as what it does. She shapes the creative experience of Nevisan — the branding, packaging, and the quiet ritual of opening a pack and brewing.
+
+## What We Believe
+
+* **🌱 Single Origin**: Sourced directly from Golaghat, Assam for every single variety.
+* **🍃 Whole Leaf Only**: Zero CTC, zero fannings, and zero dust. You can see the actual tea leaves unfurl.
+* **✅ PGS-India Certified Organic**: Completely pesticide-free and chemical-free from soil to seal.
+* **🔬 FSSAI Certified**: Fully compliant with food safety regulations.
+* **📦 Small Batch**: Packed in small batches to guarantee optimal freshness.
+* **💬 Direct to Consumer**: No middlemen or distributors, meaning fresher stock reaches you.
+
+## Company Details
+
+* **Parent Company**: Mahabir Enterprise, Guwahati, Assam, India.
+* **Mission**: A family-run business with a conviction that people across India deserve to taste what Assam's gardens are actually capable of.
+* **WhatsApp Chat / Customer Support**: +91 98642 45687

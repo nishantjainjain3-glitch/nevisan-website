@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk & Wholesale Tea Orders | Nevisan Tea</title>
+    <meta name="description" content="Wholesale green tea for cafes, hotels, retail stores, and corporate gifting. Bulk orders from our Golaghat garden — PGS-India certified, whole-leaf, unblended. Pan-India delivery.">
+    <link rel="canonical" href="https://nevisan.in/bulk">
+    <meta property="og:title" content="Bulk & Wholesale Tea Orders | Nevisan Tea">
+    <meta property="og:description" content="Wholesale green tea for cafes, hotels, retail stores, and corporate gifting. Bulk orders from our Golaghat garden.">
+    <meta property="og:url" content="https://nevisan.in/bulk">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root { --teal: #1b7a82; --gold: #c9a84c; --cream: #f9f6f0; --ink: #1a1a1a; --muted: #6b6b6b; --border: #e0dad0; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { background-color: var(--cream); color: var(--ink); font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; min-height: 100vh; }
+        .nav { position: sticky; top: 0; z-index: 100; background: var(--teal); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
+        .nav-logo { color: #fff; text-decoration: none; font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+        .nav-cta { background: var(--gold); color: #fff; text-decoration: none; padding: 0.45rem 1.1rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+        .bulk-wrapper { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+        .bulk-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.75rem, 5vw, 2.6rem); font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 1rem; }
+        .bulk-subtitle { color: var(--muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2.5rem; }
+        .bulk-section { margin-bottom: 2.5rem; }
+        .bulk-section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; color: var(--teal); margin-bottom: 0.75rem; }
+        .bulk-section p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+        .pricing-card { background: #fff; border-radius: 8px; padding: 1.5rem; border: 2px solid var(--border); text-align: center; transition: border-color 0.2s; }
+        .pricing-card:hover { border-color: var(--teal); }
+        .pricing-card.featured { border-color: var(--gold); background: #fffdf5; }
+        .pricing-tier { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; font-weight: 700; color: var(--teal); margin-bottom: 0.5rem; }
+        .pricing-qty { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.75rem; }
+        .pricing-price { font-size: 1.5rem; font-weight: 700; color: var(--ink); }
+        .pricing-price span { font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+        .inquiry-form { background: #fff; border-radius: 8px; padding: 2rem; border: 1px solid var(--border); margin-top: 2rem; }
+        .inquiry-form h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; color: var(--teal); margin-bottom: 1rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.65rem 0.85rem; border: 1px solid var(--border); border-radius: 5px; font-family: 'Inter', system-ui, sans-serif; font-size: 0.95rem; background: var(--cream); }
+        .form-group textarea { resize: vertical; min-height: 80px; }
+        .form-submit { display: inline-block; background: var(--gold); color: #fff; text-decoration: none; padding: 0.75rem 2rem; border-radius: 5px; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; border: none; cursor: pointer; margin-top: 0.5rem; }
+        .form-submit:hover { background: #b8923e; }
+        .faq-item { margin-bottom: 1.25rem; padding: 1rem 1.25rem; background: #fff; border-radius: 8px; border: 1px solid var(--border); }
+        .faq-item h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; color: var(--teal); margin-bottom: 0.4rem; }
+        .faq-item p { font-size: 0.95rem; color: var(--muted); margin: 0; }
+        footer { background: #12555b; color: rgba(255,255,255,0.65); text-align: center; padding: 1.5rem 1rem; font-size: 0.82rem; }
+        footer a { color: var(--gold); text-decoration: none; }
+        @media (max-width: 600px) { .bulk-wrapper { padding: 2rem 1rem 3rem; } .pricing-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Main navigation">
+        <a class="nav-logo" href="https://nevisan.in">Nevisan</a>
+        <a class="nav-cta" href="https://nevisan.in/#collection">Shop Now</a>
+    </nav>
+    <main class="bulk-wrapper">
+        <h1 class="bulk-title">Bulk & Wholesale Tea Orders</h1>
+        <p class="bulk-subtitle">For cafes, hotels, retail stores, and corporate gifting. Direct from our Golaghat garden — fresh stock, honest prices, no middleman markup.</p>
+
+        <div class="bulk-section">
+            <h2>Why Buy Bulk from Nevisan?</h2>
+            <p>Most wholesale tea comes from brokers who blend across gardens and warehouses. We don't. When you order bulk from Nevisan, you get the same whole-leaf, single-origin, PGS-India certified tea that we sell individually — just at a lower per-unit price. No quality compromise. No blending. No middlemen.</p>
+            <ul>
+                <li>Same whole-leaf, single-origin tea — no downgrade for bulk orders</li>
+                <li>PGS-India certified organic — verified, not self-declared</li>
+                <li>Pan-India delivery via Amazon and Flipkart, or direct WhatsApp</li>
+                <li>Fresh stock — we don't hoard inventory for months</li>
+                <li>Custom blends available for corporate gifting (minimum 50kg)</li>
+            </ul>
+        </div>
+
+        <div class="bulk-section">
+            <h2>Pricing Tiers</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-tier">Starter</div>
+                    <div class="pricing-qty">5–9kg</div>
+                    <div class="pricing-price">₹420 <span>/ 50g</span></div>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-tier">Business</div>
+                    <div class="pricing-qty">10–24kg</div>
+                    <div class="pricing-price">₹380 <span>/ 50g</span></div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-tier">Partner</div>
+                    <div class="pricing-qty">25–49kg</div>
+                    <div class="pricing-price">₹350 <span>/ 50g</span></div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-tier">Enterprise</div>
+                    <div class="pricing-qty">50kg+</div>
+                    <div class="pricing-price">Custom <span>pricing</span></div>
+                </div>
+            </div>
+            <p>All prices are per 50g pouch. MRP is ₹499. Bulk discounts apply to any combination of teas. Custom blends for corporate gifting start at 50kg minimum.</p>
+        </div>
+
+        <div class="bulk-section">
+            <h2>How to Order</h2>
+            <p>Fill in the inquiry form below and we'll get back to you within 24 hours with a custom quote. For faster service, message us directly on WhatsApp at +91 98642 45687.</p>
+        </div>
+
+        <div class="inquiry-form">
+            <h2>Bulk Order Inquiry</h2>
+            <form action="https://wa.me/919864245687" method="get" target="_blank">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Rahul Sharma" required>
+                </div>
+                <div class="form-group">
+                    <label for="business">Business / Organization</label>
+                    <input type="text" id="business" name="business" placeholder="Cafe name, hotel, retail store, etc." required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Order Type</label>
+                    <select id="type" name="type" required>
+                        <option value="">Select type</option>
+                        <option value="bulk">Bulk tea pouches (5kg+)</option>
+                        <option value="corporate">Corporate gifting</option>
+                        <option value="retail">Retail partnership</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="qty">Estimated Quantity</label>
+                    <input type="text" id="qty" name="qty" placeholder="e.g., 10kg mixed, 20kg Organic Green Tea" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Notes</label>
+                    <textarea id="message" name="message" placeholder="Any specific requirements, timeline, or questions?"></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Inquiry via WhatsApp</button>
+            </form>
+        </div>
+
+        <div class="bulk-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What's the minimum order quantity?</h3>
+                <p>5kg (100 pouches of 50g each). For corporate gifting, the minimum is 50kg with custom packaging options.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How long does delivery take?</h3>
+                <p>Pan-India delivery via Amazon and Flipkart takes 3–5 business days. For bulk orders above 25kg, we use dedicated courier partners with 2–3 day delivery.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I mix different teas in one bulk order?</h3>
+                <p>Yes. You can combine any number of varieties in a single bulk order. Each tea is priced according to the tier you fall into based on total quantity.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you offer custom branding for corporate gifts?</h3>
+                <p>Yes. For orders above 50kg, we can customize the pouch design with your brand logo and messaging. Lead time is 7–10 days for custom packaging.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is the bulk tea the same quality as individual pouches?</h3>
+                <p>Exactly the same. We don't downgrade quality for bulk orders. Same whole-leaf, same PGS-India certification, same garden origin. Just a better price.</p>
+            </div>
+        </div>
+    </main>
+    <footer><p><a href="https://nevisan.in">nevisan.in</a> &nbsp;&nbsp;·&nbsp;&nbsp; &copy; 2026 Nevisan Tea &nbsp;·&nbsp; Mahabir Enterprise, Guwahati, Assam</p></footer>
+</body>
+</html>

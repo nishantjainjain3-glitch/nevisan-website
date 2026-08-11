@@ -1,4 +1,4 @@
-const trackExternalClick = (e, t) => {
+﻿const trackExternalClick = (e, t) => {
   try {
     const m = {
       "Lemongrass Green Tea": "KT-8GBE-8MZG",
@@ -1624,7 +1624,7 @@ const TEAS = [
       {
         icon: "🌱",
         title: "PGS-India Certified Organic",
-        desc: "Third-party verified, pesticide-free. PGS-India is a government-recognised certification, not a label you can just print.",
+        desc: "Third-party verified, pesticide-free. PGS-India is a government-recognised certification \u2014 not a label you can just print on a bag.",
       },
       {
         icon: "⚡",
@@ -4571,7 +4571,7 @@ function Testimonials() {
         },
         [
           {
-            text: "I\u2019ve tried many green teas, but this one really stands out. The aroma is fresh, and the taste is smooth without any bitterness. You can actually feel the natural flavour of the tea leaves, and it\u2019s perfect for both morning energy and evening relaxation. The best part \u2014 it can be steeped twice and still tastes great! Definitely worth the price.",
+            text: "I\u2019ve tried many green teas, but this one really stands out. The aroma is fresh, and the taste is smooth without any bitterness. You can actually feel the natural flavour of the tea leaves, and it\u2019s perfect for both morning energy and evening relaxation. The best part \u2014 it can be steeped twice and still tastes great. Worth every rupee.",
             name: "Uditijain",
             loc: "Verified Amazon Purchase \u2022 Flavour: Whiskey",
             rating: 5,
@@ -6891,7 +6891,7 @@ function FAQSection() {
             a: "24 months from manufacture, stored cool and dry, out of direct sunlight. The seal keeps the leaf fresh — once opened, use within a few months for best flavour.",
           },
           {
-            q: "Is your tea organic and chemical-free?",
+            q: "Is Nevisan tea really organic and chemical-free?",
             a: "Yes. Every batch carries PGS-India Organic Certification — a government-recognised verification, not a self-declared claim. Zero pesticides from field to pack.",
           },
           {
@@ -10466,3 +10466,4 @@ class ErrorBoundary extends React.Component {
 ReactDOM.createRoot(document.getElementById("root")).render(
   React.createElement(ErrorBoundary, null, React.createElement(App, null)),
 );
+

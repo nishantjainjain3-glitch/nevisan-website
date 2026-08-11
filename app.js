@@ -1927,7 +1927,22 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
             });
           }
         } catch (err) {}
-        t(e);
+        const slugMap = {
+          "Lemongrass Green Tea": "lemongrass-green-tea",
+          "Blue Flower Green Tea": "blue-flower-green-tea",
+          "Rum Green Tea": "rum-green-tea",
+          "Spearmint Green Tea": "spearmint-green-tea",
+          "Tulsi Green Tea": "tulsi-green-tea",
+          "Chamomile Green Tea": "chamomile-green-tea",
+          "Whiskey Green Tea": "whiskey-green-tea",
+          "GABA Oolong Tea": "gaba-oolong-tea",
+          "Organic Green Tea": "organic-green-tea",
+          "Ginger Green Tea": "ginger-green-tea"
+        };
+        const slug = slugMap[e.name];
+        if (slug) {
+          window.location.href = "/products/" + slug;
+        }
       },
       style: {
         background: "#FAF9F6", // Warm cream outer bezel

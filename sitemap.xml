@@ -1,147 +1,189 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-  <loc>https://nevisan.in/</loc>
-  <lastmod>2026-08-01</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>1.0</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/privacy-policy.html</loc>
-  <lastmod>2026-08-01</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/terms-of-service.html</loc>
-  <lastmod>2026-08-01</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/contact.html</loc>
-  <lastmod>2026-08-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/faq</loc>
-  <lastmod>2026-06-27</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/how-to-buy-real-green-tea-india</loc>
-  <lastmod>2026-05-20</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/green-tea-vs-coffee-caffeine</loc>
-  <lastmod>2026-05-10</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/chamomile-green-tea-evening-blend</loc>
-  <lastmod>2026-05-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/tulsi-green-tea-adaptogen</loc>
-  <lastmod>2026-08-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/spearmint-tea-hormonal-balance</loc>
-  <lastmod>2026-08-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/blue-butterfly-pea-flower-tea</loc>
-  <lastmod>2026-02-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/morning-vs-evening-teas</loc>
-  <lastmod>2026-01-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/rum-green-tea-how-we-made-it</loc>
-  <lastmod>2025-12-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/how-to-get-three-steeps</loc>
-  <lastmod>2025-11-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/golaghat-indias-hidden-tea-belt</loc>
-  <lastmod>2025-10-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/science-behind-gaba-tea</loc>
-  <lastmod>2026-08-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/assam-whole-leaf-tea-guide</loc>
-  <lastmod>2026-08-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/journal/why-whole-leaf-tea-tastes-different</loc>
-  <lastmod>2025-08-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/quiz</loc>
-  <lastmod>2026-06-03</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.9</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/llms.txt</loc>
-  <lastmod>2026-06-04</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/about.md</loc>
-  <lastmod>2026-06-04</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/our-story.md</loc>
-  <lastmod>2026-06-04</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/wholesale.md</loc>
-  <lastmod>2026-06-04</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://nevisan.in/certifications.md</loc>
-  <lastmod>2026-06-04</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
+    <url>
+        <loc>https://nevisan.in/</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/bulk</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/products/organic-green-tea</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/products/gaba-oolong-tea</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/products/ginger-green-tea</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/products/lemongrass-green-tea</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/products/tulsi-green-tea</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/products/chamomile-green-tea</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/products/spearmint-green-tea</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/products/whiskey-green-tea</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/products/rum-green-tea</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/products/blue-flower-green-tea</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/why-whole-leaf-tea-tastes-different</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/science-behind-gaba-tea</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/golaghat-indias-hidden-tea-belt</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/how-to-get-three-steeps</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/rum-green-tea-how-we-made-it</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/morning-vs-evening-teas</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/blue-butterfly-pea-flower-tea</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/spearmint-tea-hormonal-balance</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/tulsi-green-tea-adaptogen</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/chamomile-green-tea-evening-blend</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/green-tea-vs-coffee-caffeine</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/how-to-buy-real-green-tea-india</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/how-to-store-green-tea-at-home</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/what-pgs-india-certification-means</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/why-we-dont-blend-across-gardens</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/5-ways-to-tell-if-your-green-tea-is-adulterated</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/why-your-green-tea-tastes-bitter</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nevisan.in/journal/the-real-cost-of-cheap-tea-bags</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

@@ -1,4 +1,4 @@
-﻿const trackExternalClick = (e, t) => {
+const trackExternalClick = (e, t) => {
   try {
     const m = {
       "Lemongrass Green Tea": "KT-8GBE-8MZG",
@@ -180,124 +180,77 @@ function useCart() {
 }
 const useViewport = () => React.useContext(ViewportCtx);
 function ScrollProgress() {
-  /* MWG: CSS animation-timeline:scroll() handles this natively in index.html.
-     Only render the JS fallback if the CSS version is not supported. */
-  const [e, t] = useState(0),
-    [show, setShow] = useState(false);
+  const [e, t] = useState(0);
   return (
     useEffect(() => {
-      /* Check if CSS scroll-driven animations are supported */
-      const cssSupported = CSS.supports("animation-timeline", "scroll()");
-      if (cssSupported) return; /* CSS version active — skip JS version */
-      setShow(true);
-      const handler = () => {
-        const total = document.documentElement.scrollHeight - window.innerHeight;
-        t(total > 0 ? (window.scrollY / total) * 100 : 0);
+      const e = () => {
+        const e = document.documentElement.scrollHeight - window.innerHeight;
+        t(e > 0 ? (window.scrollY / e) * 100 : 0);
       };
-      window.addEventListener("scroll", handler, { passive: !0 });
-      return () => window.removeEventListener("scroll", handler);
+      return (
+        window.addEventListener("scroll", e, { passive: !0 }),
+        () => window.removeEventListener("scroll", e)
+      );
     }, []),
-    show
-      ? React.createElement(
-          "div",
-          {
-            style: {
-              position: "fixed",
-              top: 0, left: 0, right: 0,
-              height: 2, zIndex: 999,
-              background: "rgba(0,0,0,0.08)",
-            },
-          },
-          React.createElement("div", {
-            style: {
-              height: "100%",
-              background: `linear-gradient(to right, ${T.gold}, ${T.teal})`,
-              width: `${e}%`,
-              transition: "width 80ms linear",
-              borderRadius: "0 2px 2px 0",
-            },
-          }),
-        )
-      : null
+    React.createElement(
+      "div",
+      {
+        style: {
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 3,
+          zIndex: 999,
+          background: "rgba(0,0,0,0.08)",
+        },
+      },
+      React.createElement("div", {
+        style: {
+          height: "100%",
+          background: `linear-gradient(to right, ${T.gold}, ${T.teal})`,
+          width: `${e}%`,
+          transition: "width 80ms linear",
+          borderRadius: "0 2px 2px 0",
+        },
+      }),
+    )
   );
 }
 function CursorGlow() {
-  /* Premium spring-lag gold cursor is handled natively in index.html.
-     This component is intentionally disabled to avoid conflicts. */
-  return null;
-}
-const WA_NUMBER = "919864245687";
-const Icon = (props) => NevIcon(props);
-function NevIcon({ name, size = 24, color = "currentColor", style = {} }) {
-  const iconPaths = {
-    "★": "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",
-    "☆": "M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.7 4.03 4.38.38-3.32 2.88 1 4.28L12 15.4z",
-    "✓": "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",
-    "💬": "M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm0 4h8v-2H6v2zm0-8h12v2H6V5z",
-    "🛍️": "M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z",
-    "🛍": "M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z",
-    "🌿": "M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 21 3c-1 4-1.5 5.5-3.1 11.2A7 7 0 0 1 11 20z M9 13c1 0 2.5 1.5 2.5 2.5",
-    "🍃": "M12 22c0-8 6-12 8-16-4 1-7 4-8 8 M12 22c0-6-4-9-6-12 3 1 5 3 6 6 M12 14v8",
-    "🌱": "M12 22c0-8 6-12 8-16-4 1-7 4-8 8 M12 22c0-6-4-9-6-12 3 1 5 3 6 6 M12 14v8",
-    "🌸": "M12 22c0-8 6-12 8-16-4 1-7 4-8 8 M12 22c0-6-4-9-6-12 3 1 5 3 6 6 M12 14v8",
-    "⚡": "M13 2L3 14h9l-1 8 10-12h-9L13 2z",
-    "📍": "M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z M12 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
-    "🚀": "M1 3h15v13H1V3z M16 8h4l3 3v5h-7V8z M5.5 18.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z M18.5 18.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z",
-    "🎯": "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 18c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6z M12 14c1.105 0 2-0.895 2-2s-0.895-2-2-2-2 0.895-2 2 0.895 2 2 2z",
-    "🔥": "M8.5 14.5c0-1.38 2.5-3.88 2.5-3.88s-2.5-2.5-2.5-3.88c0-1.38.5-2 1-3 1.072 2.143.224 4.054-2 6 .5-2.5 2-4.9 4-6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 1 2.5 2.5z",
-    "💧": "M12 22a7 7 0 0 0 7-7c0-4.3-7-13-7-13S5 10.7 5 15a7 7 0 0 0 7 7z",
-    "😌": "M12 3c-1.2 3.1-3 5.9-5.3 8.3C4.4 13.7 3 16.5 3 19.5c0 1.4 1.1 2.5 2.5 2.5 2.5 0 5-1.5 6.5-4 1.5 2.5 4 4 6.5 4 1.4 0 2.5-1.1 2.5-2.5 0-3-1.4-5.8-3.7-8.2C15 8.9 13.2 6.1 12 3z",
-    "🧘": "M12 3c-1.2 3.1-3 5.9-5.3 8.3C4.4 13.7 3 16.5 3 19.5c0 1.4 1.1 2.5 2.5 2.5 2.5 0 5-1.5 6.5-4 1.5 2.5 4 4 6.5 4 1.4 0 2.5-1.1 2.5-2.5 0-3-1.4-5.8-3.7-8.2C15 8.9 13.2 6.1 12 3z",
-    "🦠": "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z M9 12l2 2 4-4",
-    "🛡️": "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z M9 12l2 2 4-4",
-    "✨": "M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 15.6l2.8-2.8M15.6 5.6l2.8-2.8",
-    "🫐": "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z M8 10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z M16 10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z",
-    "🧠": "M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2z M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2z",
-    "😴": "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z",
-    "🌈": "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M7.5 12a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z M11.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z M16.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z M15.5 16a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z",
-    "🍹": "M19 3H5v4l3 11v2h8v-2l3-11V3z M8 11h8",
-    "🥃": "M19 3H5v4l3 11v2h8v-2l3-11V3z M8 11h8",
-    "⚖️": "M12 3v18 M12 21h10 M12 21H2 M5 7h14",
-    "🧖": "M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5z M12 18v4 M4.93 19a10 10 0 0 1 14.14 0",
-    "🧴": "M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5z M12 18v4 M4.93 19a10 10 0 0 1 14.14 0",
-    "💨": "M9.59 4.59A2 2 0 1 1 11 8H2 M12.59 19.41A2 2 0 1 0 14 16H2 M17.73 11.73a2.5 2.5 0 1 1 1.77 4.27H2",
-    "🔄": "M21.5 2v6h-6 M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67",
-    "🫁": "M12 5v14 M12 5c-1.5-2.5-4-3-6.5-2A6.5 6.5 0 0 0 4 16c1 2 3.5 3 6.5 2.5V5z M12 5c1.5-2.5 4-3 6.5-2a6.5 6.5 0 0 1 2 11c-1 2-3.5 3-6.5 2.5V5z",
-    "🫀": "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
-    "❤️": "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
-    "🩸": "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
-    "🍽️": "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z M9 12l2 2 4-4",
-    "💪": "M6.5 6.5l11 11 M21 21l-1-1 M3 3l1 1 M18 22l4-4 M2 6l4-4",
-    "🧬": "M4.5 10.5c.5-3 3-5.5 6-6 M13.5 19.5c3-.5 5.5-3 6-6 M22 2l-8 8 M10 14l-8 8 M2 2l20 20",
-    "🫚": "M12 3a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z M19 14h-2a3 3 0 0 0-3 3v2a3 3 0 0 0 6 0v-2c0-.55-.45-1-1-1z M7 14H5a3 3 0 0 0-3 3v2a3 3 0 0 0 6 0v-2c0-.55-.45-1-1-1z",
-    "🩺": "M4.5 2v5a7.5 7.5 0 0 0 15 0V2 M12 14.5V22 M12 22a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
-    "☕": "M17 8h1a4 4 0 1 1 0 8h-1 M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z M6 2v2 M10 2v2 M14 2v2",
-    "🏨": "M3 21V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18 M9 21v-4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4 M7 6h2v2H7z M15 6h2v2h-2z M7 11h2v2H7z M15 11h2v2h-2z",
-    "🎁": "M20 12v10H4V12 M2 7h20v5H2z M12 22V7 M12 7H7.5a2.5 2.5 0 0 1 0-5c3.5 0 4.5 5 4.5 5z M12 7h4.5a2.5 2.5 0 0 0 0-5c-3.5 0-4.5 5-4.5 5z",
-    "🛒": "M9 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2z M20 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2z M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6",
-    "🏥": "M18 21h4V8h-4z M2 21h4V8H2z M6 21h12V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v18z M10 9h4 M12 7v4",
-    "📦": "M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8z M12 22V12 M12 12L3.8 7.3 M12 12l8.2-4.7"
-  };
-  const path = iconPaths[name];
-  if (!path) {
-    return React.createElement("span", { style: { fontSize: size, ...style } }, name);
-  }
-  return React.createElement(
-    "svg",
-    {
-      width: size,
-      height: size,
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: color,
-      strokeWidth: "1.75",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      style,
-    },
-    React.createElement("path", { d: path })
+  const [e, t] = useState({ x: -400, y: -400 }),
+    [a, n] = useState(!1);
+  return (
+    useEffect(() => {
+      if (window.matchMedia("(hover: none)").matches) return;
+      const e = (e) => {
+        (t({ x: e.clientX, y: e.clientY }), n(!0));
+      };
+      return (
+        window.addEventListener("mousemove", e, { passive: !0 }),
+        () => window.removeEventListener("mousemove", e)
+      );
+    }, []),
+    a
+      ? React.createElement("div", {
+          style: {
+            position: "fixed",
+            left: e.x - 220,
+            top: e.y - 220,
+            width: 440,
+            height: 440,
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, rgba(27,122,130,0.05) 0%, transparent 70%)",
+            pointerEvents: "none",
+            zIndex: 9998,
+            transition: "left 200ms ease-out, top 200ms ease-out",
+          },
+        })
+      : null
   );
 }
+const WA_NUMBER = "919864245687";
 function openWhatsApp(e = "") {
   try {
     const m = {
@@ -335,7 +288,7 @@ function openWhatsApp(e = "") {
 }
 function NevLogo({ size: e = 56 }) {
   return React.createElement("img", {
-    src: "nevisan-logo.jpeg",
+    src: "nevisan-logo.webp",
     alt: "Nevisan",
     style: {
       width: e,
@@ -391,7 +344,6 @@ function Nav({ page: e, setPage: t }) {
       "Collection",
       "Our Story",
       "About",
-      "Journal",
       "Wholesale",
       "Contact",
       "FAQ",
@@ -422,9 +374,9 @@ function Nav({ page: e, setPage: t }) {
     ));
   const c = (e) => {
     "FAQ" === e
-      ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/faq/")
+      ? (window.location.href = "/faq")
       : "Quiz" === e
-        ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/quiz/")
+        ? (window.location.href = "/quiz")
         : (t(e), l(!1));
   };
   return React.createElement(
@@ -498,7 +450,7 @@ function Nav({ page: e, setPage: t }) {
                     background: "none",
                     border: "none",
                     cursor: "pointer",
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: 14,
                     fontWeight: 400,
                     color: e === t ? T.gold : "rgba(255,255,255,0.82)",
@@ -529,7 +481,7 @@ function Nav({ page: e, setPage: t }) {
                   fontSize: 13,
                   fontWeight: 600,
                   cursor: "pointer",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   transition: "transform 200ms, box-shadow 200ms",
                   boxShadow: "0 2px 12px rgba(201,168,76,0.3)",
                 },
@@ -564,7 +516,7 @@ function Nav({ page: e, setPage: t }) {
                   fontSize: 12,
                   fontWeight: 600,
                   cursor: "pointer",
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                 },
               },
               "💬 Order",
@@ -586,69 +538,6 @@ function Nav({ page: e, setPage: t }) {
           ),
       ),
     ),
-    s &&
-      React.createElement(
-        "div",
-        {
-          style: {
-            position: "fixed",
-            top: 68,
-            left: 0,
-            right: 0,
-            height: 40,
-            background: o ? "rgba(21, 39, 27, 0.96)" : "rgba(35, 65, 45, 0.98)",
-            borderBottom: "1px solid rgba(255,255,255,0.06)",
-            backdropFilter: "blur(12px)",
-            zIndex: 98,
-            display: "flex",
-            alignItems: "center",
-            overflowX: "auto",
-            WebkitOverflowScrolling: "touch",
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-            padding: "0 16px",
-            gap: 20,
-          },
-        },
-        a.filter(item => item !== "FAQ" && item !== "Quiz").map((t) => {
-          const isActive = e === t;
-          return React.createElement(
-            "button",
-            {
-              key: t,
-              onClick: () => c(t),
-              style: {
-                background: "none",
-                border: "none",
-                color: isActive ? T.gold : "rgba(255,255,255,0.65)",
-                fontFamily: "'Plus Jakarta Sans'",
-                fontSize: 11,
-                fontWeight: 600,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                whiteSpace: "nowrap",
-                cursor: "pointer",
-                padding: "8px 0",
-                position: "relative",
-                transition: "color 200ms ease",
-              },
-            },
-            t,
-            isActive &&
-              React.createElement("div", {
-                style: {
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  height: 2,
-                  background: T.gold,
-                  borderRadius: 1,
-                },
-              }),
-          );
-        }),
-      ),
     s &&
       r &&
       React.createElement(
@@ -725,7 +614,7 @@ function Nav({ page: e, setPage: t }) {
                   fontSize: 15,
                   fontWeight: 700,
                   cursor: "pointer",
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -749,7 +638,7 @@ function Nav({ page: e, setPage: t }) {
                   fontSize: 15,
                   fontWeight: 700,
                   cursor: "pointer",
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                 },
               },
               "💬 Order on WhatsApp",
@@ -767,7 +656,7 @@ function Nav({ page: e, setPage: t }) {
               "div",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 12,
                   color: "rgba(255,255,255,0.4)",
                   marginBottom: 8,
@@ -779,7 +668,7 @@ function Nav({ page: e, setPage: t }) {
               "div",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 12,
                   color: "rgba(255,255,255,0.4)",
                 },
@@ -822,7 +711,7 @@ function Ticker() {
           {
             key: t,
             style: {
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: 12,
               fontWeight: 600,
               letterSpacing: "0.12em",
@@ -900,8 +789,8 @@ function Hero({ setPage: e }) {
         },
         i
           ? React.createElement("img", {
-              src: "hero-mobile.jpg?v=2",
-              alt: "Nevisan tea garden in Golaghat Assam - single-origin whole-leaf tea",
+              src: "hero-mobile.webp?v=2",
+              alt: "Nevisan tea garden in Golaghat Assam - single origin whole leaf tea",
               fetchpriority: "high",
               width: "800",
               height: "1200",
@@ -922,7 +811,7 @@ function Hero({ setPage: e }) {
                 muted: !0,
                 loop: !0,
                 playsInline: !0,
-                poster: "hero-bg.jpg",
+                poster: "hero-bg.webp",
                 style: {
                   position: "absolute",
                   inset: 0,
@@ -973,7 +862,7 @@ function Hero({ setPage: e }) {
             zIndex: 10,
             maxWidth: 1200,
             margin: "0 auto",
-            padding: i ? "108px 22px 0" : "0 40px",
+            padding: i ? "0 22px" : "0 40px",
             height: "100%",
             display: "flex",
             flexDirection: "column",
@@ -987,7 +876,7 @@ function Hero({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 11,
                 fontWeight: 600,
                 letterSpacing: "0.18em",
@@ -1080,7 +969,7 @@ function Hero({ setPage: e }) {
             "p",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 17,
                 lineHeight: 1.75,
                 color: "rgba(255,255,255,0.72)",
@@ -1092,7 +981,7 @@ function Hero({ setPage: e }) {
                   "opacity 0.8s ease-out 0.65s, transform 0.8s ease-out 0.65s",
               },
             },
-            "Ten teas. One garden in Golaghat, Assam. Whole leaf, nothing added, nothing hidden.",
+            "Nine varieties. One garden in Golaghat, Assam. Whole leaf, chemical-free, steeped in nothing but intention.",
           ),
           React.createElement(
             "div",
@@ -1120,7 +1009,7 @@ function Hero({ setPage: e }) {
                   fontSize: 15,
                   fontWeight: 600,
                   cursor: "pointer",
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   boxShadow: "0 4px 20px rgba(201,168,76,0.35)",
                 },
                 hoverStyle: {
@@ -1143,7 +1032,7 @@ function Hero({ setPage: e }) {
                   fontSize: 15,
                   fontWeight: 400,
                   cursor: "pointer",
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   transition: "border-color 200ms, background 200ms",
                   backdropFilter: "blur(8px)",
                 },
@@ -1203,7 +1092,7 @@ function Hero({ setPage: e }) {
                   "div",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 11,
                       color: "rgba(255,255,255,0.45)",
                       letterSpacing: "0.1em",
@@ -1249,7 +1138,7 @@ function Hero({ setPage: e }) {
               fontSize: 9,
               color: "rgba(255,255,255,0.35)",
               letterSpacing: "0.14em",
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
             },
           },
           "SCROLL",
@@ -1315,7 +1204,8 @@ function RippleButton({
 const TEAS = [
   {
     name: "Lemongrass Green Tea",
-    short: "Your morning cup, but brighter. Whole-leaf Assam with lemongrass that actually settles your stomach and clears your head.",
+    short:
+      "The one we reach for first thing. Bright, lemony, and kind to your stomach.",
     tags: ["DIGESTION", "METABOLISM"],
     bg: "#d4edd8",
     color: "#3a7a50",
@@ -1326,33 +1216,34 @@ const TEAS = [
       {
         icon: "🌿",
         title: "Aids Digestion",
-        desc: "Lemongrass eases the digestive tract — less bloating, fewer cramps, better mornings.",
+        desc: "Lemongrass relaxes the digestive tract, reducing bloating, cramps and indigestion.",
       },
       {
         icon: "🔥",
         title: "Boosts Metabolism",
-        desc: "Citral — the compound that gives lemongrass its smell — activates enzymes that help your body burn fat more efficiently.",
+        desc: "Natural citral activates enzymes that enhance fat metabolism and support healthy weight.",
       },
       {
         icon: "💧",
         title: "Detoxifying",
-        desc: "Gently flushes toxins without dehydrating you — a natural diuretic that actually leaves you feeling better.",
+        desc: "Acts as a natural diuretic, flushing toxins while keeping you hydrated and refreshed.",
       },
       {
         icon: "😌",
         title: "Reduces Anxiety",
-        desc: "Mild calming properties make this a good mid-afternoon cup when the day starts to feel too loud.",
+        desc: "Mild sedative properties calm the nervous system — perfect as a mid-day stress reliever.",
       },
       {
         icon: "🦠",
         title: "Anti-microbial",
-        desc: "Naturally antimicrobial — keeps gut flora healthier and builds resistance over time.",
+        desc: "Naturally fights harmful bacteria and fungi, supporting gut health and immunity.",
       },
     ],
   },
   {
     name: "Blue Flower Green Tea",
-    short: "It turns blue in the cup and purple when you add lemon. That's not a trick — butterfly pea petals are one of the most antioxidant-dense things you can drink.",
+    short:
+      "Add a drop of lemon and watch it turn purple. Calming, antioxidant-rich, a little magic.",
     tags: ["CALMING", "ANTIOXIDANT"],
     bg: "#c8dff0",
     color: "#2a5a8a",
@@ -1363,33 +1254,34 @@ const TEAS = [
       {
         icon: "🫐",
         title: "Rich in Antioxidants",
-        desc: "Butterfly pea petals have some of the highest anthocyanin content of any plant — a serious antioxidant, not just a pretty colour.",
+        desc: "Butterfly pea flower is packed with anthocyanins — among the highest antioxidant content of any plant.",
       },
       {
         icon: "🧠",
         title: "Enhances Brain Function",
-        desc: "Shown to improve memory and focus without caffeine — so you get the clarity without the crash later.",
+        desc: "Improves memory, focus and cognitive clarity. A natural nootropic without caffeine crash.",
       },
       {
         icon: "✨",
         title: "Skin & Hair Health",
-        desc: "Anthocyanins help your body produce more collagen — which shows up in your skin and hair over time.",
+        desc: "Anthocyanins boost collagen, reducing wrinkles and promoting stronger, shinier hair.",
       },
       {
         icon: "😴",
         title: "Calming & Sleep-Supportive",
-        desc: "Lightly calming — reduces cortisol and helps your body wind down without any side effects.",
+        desc: "Mildly sedative — reduces stress hormones and promotes deeper, more restful sleep.",
       },
       {
         icon: "🌈",
         title: "Changes Colour with Lemon",
-        desc: "Add a slice of lemon and it shifts from deep blue to purple-pink. Pure pH chemistry, no additives.",
+        desc: "Add lemon and watch it turn from blue to pink — a stunning natural pH reaction.",
       },
     ],
   },
   {
     name: "Rum Green Tea",
-    short: "We tried 14 versions before this one was right. Warm sugarcane and oak, completely non-alcoholic. It tastes like an evening ritual should.",
+    short:
+      "Took us 14 tries to get right. All the warmth of aged rum, zero alcohol.",
     tags: ["NON-ALC", "EXOTIC"],
     bg: "#f5e9a0",
     color: "#8a6a10",
@@ -1401,33 +1293,34 @@ const TEAS = [
       {
         icon: "🍹",
         title: "100% Non-Alcoholic",
-        desc: "Everything that makes rum feel good in the evening — the warmth, the depth — without a drop of alcohol.",
+        desc: "All the warmth of aged rum — crafted entirely from natural botanicals. Zero alcohol.",
       },
       {
         icon: "😊",
         title: "Mood Lifting",
-        desc: "The warm spice profile genuinely triggers a relaxation response — it's not just placebo.",
+        desc: "Warm spice notes trigger feel-good responses, making it a perfect evening ritual.",
       },
       {
         icon: "💚",
         title: "Green Tea Antioxidants",
-        desc: "Underneath the rum character is whole-leaf Assam green tea, which means EGCG antioxidants in every cup.",
+        desc: "Assam green tea base delivers EGCG antioxidants that protect cells and reduce inflammation.",
       },
       {
         icon: "🌿",
         title: "Natural Botanicals Only",
-        desc: "The flavour is built from natural botanicals — no artificial additives, no shortcuts.",
+        desc: "Flavour comes from a precise blend of natural herbs and spices — zero artificial additives.",
       },
       {
         icon: "🔄",
         title: "Multi-Steep Value",
-        desc: "Because it's whole leaf, you get a genuinely good second steep. Two cups from one serving.",
+        desc: "Whole leaf quality means 2–3 full-flavoured steeps from every single serving.",
       },
     ],
   },
   {
     name: "Spearmint Green Tea",
-    short: "Two cups a day, and most people notice a difference in their skin within a few weeks. Spearmint is one of the most clinically backed herbs for hormonal balance.",
+    short:
+      "Uditi drinks this one every day. Gentle on hormones, lovely for the skin.",
     tags: ["HORMONAL", "SKIN"],
     bg: "#e8d4f0",
     color: "#6a3a8a",
@@ -1438,33 +1331,34 @@ const TEAS = [
       {
         icon: "⚖️",
         title: "Hormonal Balance",
-        desc: "Clinically shown to lower excess androgens — the mechanism behind its effect on hormonal skin and PCOS.",
+        desc: "Proven anti-androgenic properties — helps regulate hormones, especially beneficial for PCOS.",
       },
       {
         icon: "🧖",
         title: "Reduces Acne",
-        desc: "When androgens drop, so does sebum production. That's why spearmint has such a consistent effect on hormonal acne.",
+        desc: "By lowering excess androgens, spearmint naturally reduces hormonal breakouts and oily skin.",
       },
       {
         icon: "💨",
         title: "Fresh Breath & Digestion",
-        desc: "Calms the gut, eases nausea, and freshens breath — the kind of herb that does more than one thing well.",
+        desc: "Soothes the gut, freshens breath and relieves nausea and IBS discomfort.",
       },
       {
         icon: "🧠",
         title: "Improves Memory",
-        desc: "A study found spearmint extract improved working memory scores measurably after a few weeks of daily use.",
+        desc: "Spearmint extract improves working memory and alertness within weeks of regular use.",
       },
       {
         icon: "🌸",
         title: "Anti-Inflammatory",
-        desc: "High in rosmarinic acid, which reduces systemic inflammation — including joint discomfort.",
+        desc: "Rich in rosmarinic acid — reduces inflammation throughout the body, easing joint discomfort.",
       },
     ],
   },
   {
     name: "Tulsi Green Tea",
-    short: "Tulsi has been used as a stress herb for thousands of years. We pair it with Assam green tea because together they do something the separate ingredients can't manage alone.",
+    short:
+      "Holy basil and Assam green. What we brew when life gets a little much.",
     tags: ["IMMUNITY", "STRESS"],
     bg: "#d4edd8",
     color: "#3a7a50",
@@ -1475,33 +1369,34 @@ const TEAS = [
       {
         icon: "🛡️",
         title: "Immunity Booster",
-        desc: "Tulsi has been used as an immunity herb across Ayurvedic medicine for centuries. Modern research backs it up.",
+        desc: "Tulsi (Holy Basil) is a powerful adaptogen that strengthens immunity and fights pathogens.",
       },
       {
         icon: "🧘",
         title: "Stress & Anxiety Relief",
-        desc: "Measurably reduces cortisol — your body's main stress hormone — without making you drowsy.",
+        desc: "Reduces cortisol (stress hormone) and promotes calm focus — Ayurveda's go-to for mental balance.",
       },
       {
         icon: "🫁",
         title: "Respiratory Health",
-        desc: "Opens airways, soothes sore throats, eases congestion. The cup most people reach for when the weather changes.",
+        desc: "Opens airways, soothes sore throats and relieves congestion — especially helpful in season changes.",
       },
       {
         icon: "🩸",
         title: "Blood Sugar Support",
-        desc: "Multiple clinical studies show Tulsi moderates post-meal blood sugar spikes — especially relevant for diabetics.",
+        desc: "Clinical studies show Tulsi helps moderate blood sugar spikes — beneficial for diabetics.",
       },
       {
         icon: "🌱",
         title: "Detox & Liver Health",
-        desc: "Supports liver function and helps the body clear waste — a gentle, daily detox.",
+        desc: "Natural detoxifier that supports liver function and flushes toxins from the bloodstream.",
       },
     ],
   },
   {
     name: "Chamomile Green Tea",
-    short: "The one you drink an hour before bed. Chamomile and L-theanine don't knock you out — they just make the evening quieter.",
+    short:
+      "Our wind-down cup. Soft, floral, and made for slow evenings and deeper sleep.",
     tags: ["SLEEP", "CALMING"],
     bg: "#f5e9a0",
     color: "#8a6a10",
@@ -1512,33 +1407,33 @@ const TEAS = [
       {
         icon: "😴",
         title: "Deep Sleep Aid",
-        desc: "Chamomile contains apigenin — a compound that literally binds to the same brain receptors as sleep medication, just very gently.",
+        desc: "Chamomile contains apigenin — binds to sleep receptors in the brain, promoting restful sleep.",
       },
       {
         icon: "😌",
         title: "Anxiety & Stress Relief",
-        desc: "Clinically shown to reduce anxiety symptoms. It calms without the next-day fog.",
+        desc: "Clinically shown to reduce anxiety disorder symptoms. Calm without drowsiness during the day.",
       },
       {
         icon: "🫀",
         title: "Heart Health",
-        desc: "The antioxidants work on LDL cholesterol and cardiovascular health with sustained daily use.",
+        desc: "Antioxidants lower LDL cholesterol and protect against cardiovascular disease over time.",
       },
       {
         icon: "🍽️",
         title: "Digestive Comfort",
-        desc: "Calms stomach cramps and IBS symptoms. Best drunk about 30 minutes after eating.",
+        desc: "Soothes stomach cramps, IBS, and indigestion. Ideal to drink 30 minutes after meals.",
       },
       {
         icon: "🧴",
         title: "Skin Healing",
-        desc: "Anti-inflammatory compounds reduce redness and eczema, and speed up the skin's natural healing.",
+        desc: "Anti-inflammatory properties reduce redness, eczema and speed up natural skin healing.",
       },
     ],
   },
   {
     name: "Whiskey Green Tea",
-    short: "Peat smoke and malt, no alcohol. Made for people who want something bold in the evening without paying for it the next morning.",
+    short: "Smoky, bold and grown-up. For whiskey nights, without the whiskey.",
     tags: ["NON-ALC", "BOLD"],
     bg: "#e0d4c8",
     color: "#5a4030",
@@ -1549,33 +1444,33 @@ const TEAS = [
       {
         icon: "🥃",
         title: "100% Non-Alcoholic",
-        desc: "Peat, malt, and smoke — built entirely from natural botanicals. The character is real; the alcohol isn't.",
+        desc: "Captures the bold, smoky character of aged whiskey using natural botanicals — zero alcohol.",
       },
       {
         icon: "💚",
         title: "Green Tea Antioxidants",
-        desc: "The Assam green tea base delivers EGCG — one of the most studied antioxidants in nature.",
+        desc: "Assam green tea delivers EGCG — among the most potent antioxidants found in nature.",
       },
       {
         icon: "🔥",
         title: "Metabolism Boost",
-        desc: "Green tea catechins increase fat oxidation, which is why metabolic benefits show up consistently in research.",
+        desc: "Green tea catechins speed up fat oxidation and support a healthy metabolism.",
       },
       {
         icon: "🧠",
         title: "Mental Alertness",
-        desc: "The L-theanine and caffeine in green tea work together — you get focus, not jitters.",
+        desc: "L-theanine and caffeine produce calm, sustained focus without jitteriness or crash.",
       },
       {
         icon: "🌿",
         title: "All Natural",
-        desc: "The smokiness comes from natural woody botanicals — no artificial flavouring, no shortcuts.",
+        desc: "Bold depth comes from a precise blend of natural woody botanicals — no artificial smoke.",
       },
     ],
   },
   {
     name: "GABA Oolong Tea",
-    short: "GABA is what your brain produces to calm itself down. This tea has measurably higher GABA content than regular oolong — the processing method is the reason.",
+    short: "Calm without the fog. The cup we keep close on the busy days.",
     tags: ["RELAXATION", "FOCUS"],
     bg: "#c0e0dc",
     color: "#1b7a82",
@@ -1586,33 +1481,34 @@ const TEAS = [
       {
         icon: "🧘",
         title: "Deep Relaxation",
-        desc: "GABA is the neurotransmitter your brain uses to slow down. The anaerobic processing concentrates it in the leaf.",
+        desc: "GABA is the brain's calming neurotransmitter — naturally elevated through the fermentation process.",
       },
       {
         icon: "🧠",
         title: "Mental Clarity",
-        desc: "Reduces anxiety without making you foggy. You're calmer, but still sharp — which is a rare combination.",
+        desc: "Reduces anxiety without brain fog — promotes a clear, calm, focused state of mind.",
       },
       {
         icon: "😴",
         title: "Better Sleep Quality",
-        desc: "Higher GABA means faster sleep onset and deeper sleep stages — without the morning grogginess of supplements.",
+        desc: "Higher GABA levels improve sleep onset and depth — without the grogginess of sleep aids.",
       },
       {
         icon: "💪",
         title: "Muscle Recovery",
-        desc: "GABA stimulates growth hormone release, which helps with muscle recovery after training.",
+        desc: "GABA supports HGH (human growth hormone) release, aiding muscle repair after exercise.",
       },
       {
         icon: "❤️",
         title: "Blood Pressure Support",
-        desc: "Studies in hypertensive patients show measurable blood pressure reductions with regular GABA oolong consumption.",
+        desc: "Studies show GABA oolong reduces blood pressure in hypertensive patients with regular use.",
       },
     ],
   },
   {
     name: "Organic Green Tea",
-    short: "Just the leaf. Nothing else. If you've only had green tea from a bag, this is what it actually tastes like when it's made properly.",
+    short:
+      "Where it all began. Pure whole-leaf Assam green from our single garden in Golaghat.",
     tags: ["ORGANIC", "PURE"],
     bg: "#c8e8c0",
     color: "#2a6a2a",
@@ -1624,33 +1520,34 @@ const TEAS = [
       {
         icon: "🌱",
         title: "PGS-India Certified Organic",
-        desc: "Third-party verified, pesticide-free. PGS-India is a government-recognised certification \u2014 not a label you can just print on a bag.",
+        desc: "Verified pesticide-free by Participatory Guarantee System of India. Pure from soil to seal.",
       },
       {
         icon: "⚡",
         title: "Clean, Sustained Energy",
-        desc: "Whole-leaf caffeine combined with L-theanine gives you steady energy — the kind that doesn't drop off at 3pm.",
+        desc: "Natural caffeine + L-theanine gives steady energy without jitters or afternoon crash.",
       },
       {
         icon: "🛡️",
         title: "Powerful Antioxidants",
-        desc: "EGCG is one of the most researched compounds in nutrition. It fights free radicals, reduces inflammation, and supports long-term health.",
+        desc: "EGCG catechins fight free radicals, reduce inflammation and protect against chronic disease.",
       },
       {
         icon: "🏃",
         title: "Fat Burning",
-        desc: "Research puts fat oxidation increases at up to 17% with regular green tea consumption. Real numbers, not marketing.",
+        desc: "Boosts fat oxidation by up to 17% and improves athletic endurance when consumed regularly.",
       },
       {
         icon: "🧬",
         title: "Anti-Ageing",
-        desc: "The polyphenols in green tea protect DNA from oxidative damage — which is part of why it's linked to longevity.",
+        desc: "Polyphenols protect DNA from damage, slow cellular ageing and support long-term brain health.",
       },
     ],
   },
   {
     name: "Ginger Green Tea",
-    short: "The one to reach for when something feels off, or when it's cold outside and you want something that warms you from the inside.",
+    short:
+      "Warming ginger blended with single-origin whole leaf green tea. Soothing, spicy, and perfect for immune support.",
     tags: ["IMMUNITY", "WARMING"],
     bg: "#fdf2e9",
     color: "#935116",
@@ -1662,141 +1559,37 @@ const TEAS = [
       {
         icon: "🫚",
         title: "Immune Booster",
-        desc: "Gingerols and shogaols directly enhance white blood cell activity — your front-line immune defence.",
+        desc: "Ginger's active compounds naturally enhance white blood cell count and support immune response.",
       },
       {
         icon: "🔥",
         title: "Soothing Warmth",
-        desc: "Increases circulation to the extremities and soothes dry, scratchy throats faster than most things.",
+        desc: "Increases peripheral circulation and comforts dry, ticklish throats instantly.",
       },
       {
         icon: "😌",
         title: "Stomach Settler",
-        desc: "One of the most consistently effective natural remedies for nausea and motion sickness — backed by good research.",
+        desc: "Highly effective at reducing symptoms of nausea, motion sickness, and digestive upset.",
       },
       {
         icon: "💪",
         title: "Anti-Inflammatory",
-        desc: "Measurably reduces inflammatory markers — helpful for muscle soreness and joint pain.",
+        desc: "Reduces inflammatory markers throughout the body, easing muscle soreness.",
       },
       {
         icon: "🩺",
         title: "Cardio Health",
-        desc: "Supports healthy blood sugar levels and helps keep blood vessels functioning well.",
+        desc: "Helps maintain healthy blood sugar levels and supports vascular function.",
       },
     ],
   },
 ];
-function TeaSpecsAndShippingPanel({ tea: e }) {
-  if (!e.specs) return null;
-  const specItems = [];
-  [
-    { label: "Ingredients", value: e.specs.ingredients },
-    { label: "Origin", value: "Golaghat, Assam (95m)" },
-    { label: "Harvest", value: e.specs.harvest },
-    { label: "Caffeine", value: e.specs.caffeine },
-    { label: "Water Temp", value: e.specs.temp },
-    { label: "Steep Time", value: e.specs.time },
-    { label: "Infusions", value: e.specs.infusions },
-    { label: "Palate", value: e.specs.profile },
-  ].forEach(({ label, value }) => {
-    specItems.push(React.createElement("dt", { key: `dt-${label}`, style: { fontWeight: 600, color: T.teal, margin: 0 } }, label));
-    specItems.push(React.createElement("dd", { key: `dd-${label}`, style: { color: T.textMuted, margin: 0, paddingLeft: 4 } }, value));
-  });
-  return React.createElement(
-    "div",
-    {
-      style: {
-        background: "rgba(0,0,0,0.02)",
-        border: "1px solid rgba(0,0,0,0.04)",
-        padding: 8,
-        borderRadius: 24,
-        marginTop: 18,
-        marginBottom: 20,
-      }
-    },
-    React.createElement(
-      "div",
-      {
-        style: {
-          background: "#fff",
-          border: "1px solid rgba(0,0,0,0.05)",
-          borderRadius: 18,
-          padding: 16,
-          boxShadow: "inset 0 1px 1px rgba(255,255,255,0.9)",
-        }
-      },
-      React.createElement(
-        "dl",
-        {
-          style: {
-            display: "grid",
-            gridTemplateColumns: "110px 1fr",
-            gap: "8px 12px",
-            fontSize: 12.5,
-            lineHeight: 1.45,
-            margin: 0,
-            paddingBottom: 16,
-            borderBottom: `1px solid ${T.border}`,
-          },
-        },
-        specItems
-      ),
-      React.createElement(
-        "div",
-        {
-          style: {
-            marginTop: 16,
-            display: "flex",
-            flexDirection: "column",
-            gap: 8,
-            fontSize: 12,
-            lineHeight: 1.45,
-          },
-        },
-        [
-          React.createElement(
-            "div",
-            { key: "ship", style: { display: "flex", alignItems: "center", gap: 8 } },
-            React.createElement(
-              "svg",
-              { width: "15", height: "15", viewBox: "0 0 24 24", fill: "none", stroke: "#C9A84C", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
-              React.createElement("rect", { x: "1", y: "3", width: "15", height: "13" }),
-              React.createElement("polygon", { points: "16 8 20 8 23 11 23 16 16 16 16 8" }),
-              React.createElement("circle", { cx: "5.5", cy: "18.5", r: "2.5" }),
-              React.createElement("circle", { cx: "18.5", cy: "18.5", r: "2.5" })
-            ),
-            React.createElement(
-              "span",
-              { style: { color: T.text, fontWeight: 600 } },
-              "Free shipping across India — arrives in 3 to 5 business days"
-            )
-          ),
-          React.createElement(
-            "div",
-            { key: "ret", style: { display: "flex", alignItems: "center", gap: 8 } },
-            React.createElement(
-              "svg",
-              { width: "15", height: "15", viewBox: "0 0 24 24", fill: "none", stroke: "#C9A84C", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
-              React.createElement("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" })
-            ),
-            React.createElement(
-              "span",
-              { style: { color: T.text, fontWeight: 600 } },
-              "If the seal is broken or the pack is damaged on arrival, we replace it. Just WhatsApp us within 48 hours."
-            )
-          )
-        ]
-      )
-    )
-  );
-}
 function TagChip({ label: e, color: t }) {
   return React.createElement(
     "span",
     {
       style: {
-        fontFamily: "'Plus Jakarta Sans'",
+        fontFamily: "'Inter'",
         fontSize: 10,
         fontWeight: 600,
         letterSpacing: "0.08em",
@@ -1809,74 +1602,68 @@ function TagChip({ label: e, color: t }) {
     e,
   );
 }
-const TEA_PROFILES = {
-  "GABA Oolong Tea": {
-    palate: "Malty, Wild Honey, Baked Stone Fruit",
-    brew: "90°C · 3-4 Mins · Up to 4 Infusions",
-    badge: "Signature Reserve"
-  },
-  "Lemongrass Green Tea": {
-    palate: "Crisp Citrus, Grassy, Mild Sweetness",
-    brew: "80°C · 2 Mins · Up to 3 Infusions",
-    badge: "Popular"
-  },
-  "Spearmint Green Tea": {
-    palate: "Refreshing Mint, Brisk Green, Clean Finish",
-    brew: "80°C · 2 Mins · Up to 3 Infusions",
-    badge: "Hormonal Balance"
-  },
-  "Rum Green Tea": {
-    palate: "Warm Spiced Rum, Sugarcane, Oak wood",
-    brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
-    badge: "Exotic Infusion"
-  },
-  "Whiskey Green Tea": {
-    palate: "Oaky Smoke, Malt, Subtle Sweetness",
-    brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
-    badge: "Bold Reserve"
-  },
-  "Blue Flower Green Tea": {
-    palate: "Cobalt Blue, Mild Floral, Earthy sweetness",
-    brew: "85°C · 2 Mins · Up to 3 Infusions",
-    badge: "Colour Magic"
-  },
-  "Tulsi Green Tea": {
-    palate: "Spicy Tulsi, Herbaceous, Bready warmth",
-    brew: "85°C · 2 Mins · Up to 3 Infusions",
-    badge: "Immunity"
-  },
-  "Chamomile Green Tea": {
-    palate: "Soothing Chamomile, Honeyed Apples, Floral",
-    brew: "85°C · 3 Mins · Up to 3 Infusions",
-    badge: "Stress Relief"
-  },
-  "Organic Green Tea": {
-    palate: "Pure Vegetal, Umami, Clean Grassy notes",
-    brew: "80°C · 2 Mins · Up to 3 Infusions",
-    badge: "Estate Classic"
-  },
-  "Ginger Green Tea": {
-    palate: "Spicy Ginger, Honeyed Warmth, Brisk Green",
-    brew: "85°C · 2-3 Mins · Up to 3 Infusions",
-    badge: "Warming Wellness"
-  }
-};
-function TeaCard({ tea, onView, onImageClick, index = 0 }) {
-  const e = tea;
-  const t = onView;
-  const a = onImageClick;
-  const n = index;
-
+function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
   const { isMobile: mobile } = useViewport();
-  const isFeatured = false;
-  const isMidHorizontal = false;
+  const isFeatured = (n === 0 || n === 6 || n === 9) && !mobile;
+  const isMidHorizontal = (n === 3) && !mobile;
   const [o, i] = useState(!1),
     [r, l] = useState(!1),
     [s, c] = useState({ x: 0, y: 0 }),
     [d, m] = useState(!1),
     [p, g] = useInView(0.1);
-
-  const prof = TEA_PROFILES[e.name] || {
+  const profiles = {
+    "GABA Oolong Tea": {
+      palate: "Malty, Wild Honey, Baked Stone Fruit",
+      brew: "90°C · 3-4 Mins · Up to 4 Infusions",
+      badge: "Signature Reserve"
+    },
+    "Lemongrass Green Tea": {
+      palate: "Crisp Citrus, Grassy, Mild Sweetness",
+      brew: "80°C · 2 Mins · Up to 3 Infusions",
+      badge: "Popular"
+    },
+    "Spearmint Green Tea": {
+      palate: "Refreshing Mint, Brisk Green, Clean Finish",
+      brew: "80°C · 2 Mins · Up to 3 Infusions",
+      badge: "Hormonal Balance"
+    },
+    "Rum Green Tea": {
+      palate: "Warm Spiced Rum, Sugarcane, Oak wood",
+      brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
+      badge: "Exotic Infusion"
+    },
+    "Whiskey Green Tea": {
+      palate: "Oaky Smoke, Malt, Subtle Sweetness",
+      brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
+      badge: "Bold Reserve"
+    },
+    "Blue Flower Green Tea": {
+      palate: "Cobalt Blue, Mild Floral, Earthy sweetness",
+      brew: "85°C · 2 Mins · Up to 3 Infusions",
+      badge: "Color Magic"
+    },
+    "Tulsi Green Tea": {
+      palate: "Spicy Tulsi, Herbaceous, Bready warmth",
+      brew: "85°C · 2 Mins · Up to 3 Infusions",
+      badge: "Immunity"
+    },
+    "Chamomile Green Tea": {
+      palate: "Soothing Chamomile, Honeyed Apples, Floral",
+      brew: "85°C · 3 Mins · Up to 3 Infusions",
+      badge: "Stress Relief"
+    },
+    "Organic Green Tea": {
+      palate: "Pure Vegetal, Umami, Clean Grassy notes",
+      brew: "80°C · 2 Mins · Up to 3 Infusions",
+      badge: "Estate Classic"
+    },
+    "Ginger Green Tea": {
+      palate: "Spicy Ginger, Honeyed Warmth, Brisk Green",
+      brew: "85°C · 2-3 Mins · Up to 3 Infusions",
+      badge: "Warming Wellness"
+    }
+  };
+  const prof = profiles[e.name] || {
     palate: "Malty, Sweet, Smooth",
     brew: e.brew || "85°C · 2 Mins",
     badge: e.badge || "Organic Reserve"
@@ -1896,7 +1683,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
       className: "card-hover-lift",
       onMouseEnter: () => i(!0),
       onMouseLeave: () => {
-        (i(!1), c({ x: 0, y: 0 }));
+        (i(!1), c({ x: 0, y: 0 }), m(!1));
       },
       onMouseMove: f,
       onTouchStart: () => l(!0),
@@ -1927,37 +1714,19 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
             });
           }
         } catch (err) {}
-        const slugMap = {
-          "Lemongrass Green Tea": "lemongrass-green-tea",
-          "Blue Flower Green Tea": "blue-flower-green-tea",
-          "Rum Green Tea": "rum-green-tea",
-          "Spearmint Green Tea": "spearmint-green-tea",
-          "Tulsi Green Tea": "tulsi-green-tea",
-          "Chamomile Green Tea": "chamomile-green-tea",
-          "Whiskey Green Tea": "whiskey-green-tea",
-          "GABA Oolong Tea": "gaba-oolong-tea",
-          "Organic Green Tea": "organic-green-tea",
-          "Ginger Green Tea": "ginger-green-tea"
-        };
-        const slug = slugMap[e.name];
-        if (slug) {
-          window.location.href = "/products/" + slug;
-        }
+        t(e);
       },
       style: {
-        background: "#FAF9F6", // Warm cream outer bezel
-        border: "1px solid rgba(27,122,130,0.06)",
-        borderRadius: 24, // Outer Squircle radius
-        padding: 6, // 6px Concentric Nesting Padding
-        position: "relative",
-        overflow: "hidden", // Prevent image overflow bleed
+        background: T.white,
+        borderRadius: 16,
+        overflow: "hidden",
         boxShadow: o
-          ? "0 20px 48px rgba(27,122,130,0.18), 0 4px 16px rgba(0,0,0,0.06)"
-          : "0 2px 10px rgba(0,0,0,0.04)",
+          ? "0 20px 60px rgba(27,122,130,0.2), 0 4px 16px rgba(0,0,0,0.08)"
+          : "0 2px 12px rgba(0,0,0,0.06)",
         transform: o
           ? `perspective(900px) rotateX(${s.y}deg) rotateY(${s.x}deg) translateY(-6px) scale(1.01)`
           : r
-            ? "perspective(900px) scale(0.98)"
+            ? "perspective(900px) scale(0.97)"
             : "perspective(900px) rotateX(0) rotateY(0) translateY(0) scale(1)",
         transition: o
           ? "box-shadow 250ms ease, transform 120ms ease"
@@ -1967,37 +1736,21 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
         translate: g ? "0 0" : "0 32px",
         transitionDelay: 0.07 * n + "s",
         gridColumn: (isFeatured || isMidHorizontal) ? "1 / -1" : "auto",
-        display: "flex",
-        flexDirection: "column", // Explicit column stacking
+        display: (isFeatured || isMidHorizontal) ? "grid" : "block",
+        gridTemplateColumns: isFeatured ? "1.2fr 0.8fr" : isMidHorizontal ? "0.8fr 1.2fr" : "none",
       },
     },
     React.createElement(
       "div",
       {
         style: {
-          width: "100%",
-          background: T.white, // Inner pure white container
-          borderRadius: 18, // Inner concentric radius (24 - 6)
-          overflow: "hidden",
-          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.6)",
-          border: o ? "1px solid rgba(201, 168, 76, 0.45)" : "1px solid rgba(0,0,0,0.04)",
-          boxShadow: o ? "0 20px 48px -10px rgba(35,65,45,0.16), 0 0 20px rgba(201,168,76,0.12)" : "inset 0 1px 0 rgba(255,255,255,0.6)",
-          display: "flex",
-          flexDirection: "column", // Stacks children vertically naturally
-          position: "relative",
-          flex: 1, // Stretch to outer bezel height
-        }
-      },
-    React.createElement(
-      "div",
-      {
-        style: {
-          background: e.bg || T.white, // Premium matching brand pastel background
-          height: 220, // Clean, compact height
-          minHeight: 220,
+          background: e.bg,
+          height: (isFeatured || isMidHorizontal) ? "100%" : 200,
+          minHeight: (isFeatured || isMidHorizontal) ? 340 : 200,
           overflow: "hidden",
           position: "relative",
           cursor: "zoom-in",
+          order: isMidHorizontal ? 2 : 1,
         },
         onClick: (t) => {
           (t.stopPropagation(), a && a(e.img, e.name));
@@ -2006,17 +1759,15 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
       e.img
         ? React.createElement("img", {
             src: e.img,
-            alt: `${e.name} - Nevisan whole-leaf tea from Golaghat Assam`,
+            alt: `${e.name} - Nevisan whole leaf tea from Golaghat Assam`,
             loading: "lazy",
             width: "400",
             height: "400",
             style: {
               width: "100%",
               height: "100%",
-              objectFit: "contain",
-              padding: "16px",
-              boxSizing: "border-box",
-              transform: o ? "scale(1.04)" : "scale(1)",
+              objectFit: "cover",
+              transform: o ? "scale(1.07)" : "scale(1)",
               transition: "transform 500ms ease",
             },
           })
@@ -2030,7 +1781,11 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
                 height: "100%",
               },
             },
-            React.createElement(NevIcon, { name: "🍃", size: 48, color: T.teal, style: { opacity: 0.7 } }),
+            React.createElement(
+              "span",
+              { style: { fontSize: 48, opacity: 0.7 } },
+              "🍃",
+            ),
           ),
       React.createElement("div", {
         style: {
@@ -2060,7 +1815,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
               boxShadow: "0 2px 8px rgba(201,168,76,0.4)",
             },
           },
-          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(NevIcon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
+          "★ BESTSELLER",
         ),
       e.badge &&
         !e.bestseller &&
@@ -2080,26 +1835,27 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
               borderRadius: 9999,
             },
           },
-          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(NevIcon, { name: "✓", size: 10, color: "#fff" }), e.badge),
+          "✓ ",
+          e.badge,
         ),
     ),
     React.createElement(
       "div",
       {
         style: {
-          padding: "20px 20px 20px",
+          padding: (isFeatured || isMidHorizontal) ? (mobile ? "20px" : "36px 40px") : "20px 20px 20px",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
-          flex: 1, // Grow to fill remaining space
-          height: "auto",
+          justifyContent: "center",
+          height: "100%",
+          order: isMidHorizontal ? 1 : 2,
         }
       },
       React.createElement(
         "span",
         {
           style: {
-            fontFamily: "'Plus Jakarta Sans'",
+            fontFamily: "'Inter'",
             fontSize: 10,
             fontWeight: 700,
             letterSpacing: "0.12em",
@@ -2129,7 +1885,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
         "p",
         {
           style: {
-            fontFamily: "'Plus Jakarta Sans'",
+            fontFamily: "'Inter'",
             fontSize: 13,
             color: T.textMuted,
             lineHeight: 1.55,
@@ -2195,7 +1951,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
                 "span",
                 {
                   style: {
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 18,
                     fontWeight: 700,
                     color: T.teal,
@@ -2207,7 +1963,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
                 "span",
                 {
                   style: {
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 11,
                     color: T.textMuted,
                   },
@@ -2231,10 +1987,9 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
                 fontSize: 11,
                 fontWeight: 500,
                 cursor: "pointer",
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 letterSpacing: "0.04em",
-                transition: "transform 160ms var(--ease-out), background 200ms, border-color 200ms",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+                transition: "background 200ms",
               },
               onMouseEnter: (e) => {
                 e.currentTarget.style.background = "rgba(27,122,130,0.07)";
@@ -2255,68 +2010,28 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
               onClick: (e) => {
                 (e.stopPropagation(), m((e) => !e));
               },
-              className: "group",
               style: {
                 width: "100%",
                 background: T.teal,
                 color: "#fff",
                 border: "none",
-                borderRadius: 9999,
-                padding: "6px 6px 6px 18px",
-                fontSize: 13,
+                borderRadius: 8,
+                padding: "11px",
+                fontSize: 14,
                 fontWeight: 600,
                 cursor: "pointer",
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "space-between",
-                gap: 8,
-                transition: "all 300ms cubic-bezier(0.32,0.72,0,1)",
+                justifyContent: "center",
+                gap: 6,
+                transition: "filter 200ms",
               },
-              onMouseEnter: (e) => {
-                e.currentTarget.style.filter = "brightness(1.08)";
-                e.currentTarget.style.transform = "translateY(-1px)";
-              },
-              onMouseLeave: (e) => {
-                e.currentTarget.style.filter = "none";
-                e.currentTarget.style.transform = "none";
-              },
+              onMouseEnter: (e) =>
+                (e.currentTarget.style.filter = "brightness(1.1)"),
+              onMouseLeave: (e) => (e.currentTarget.style.filter = "none"),
             },
-            React.createElement("span", { style: { letterSpacing: "0.03em" } }, "Buy Now"),
-            React.createElement(
-              "div",
-              {
-                style: {
-                  width: 28,
-                  height: 28,
-                  borderRadius: "50%",
-                  background: "rgba(255,255,255,0.15)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  transition: "all 300ms cubic-bezier(0.32,0.72,0,1)",
-                }
-              },
-              React.createElement(
-                "svg",
-                {
-                  width: 14,
-                  height: 14,
-                  viewBox: "0 0 24 24",
-                  fill: "none",
-                  stroke: "currentColor",
-                  strokeWidth: 2,
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  style: {
-                    transform: d ? "rotate(90deg)" : "rotate(0deg)",
-                    transition: "transform 300ms cubic-bezier(0.32,0.72,0,1)",
-                  }
-                },
-                React.createElement("line", { x1: 7, y1: 17, x2: 17, y2: 7 }),
-                React.createElement("polyline", { points: "7 7 17 7 17 17" })
-              )
-            ),
+            "Buy Now ↑",
           ),
           d &&
             React.createElement("div", {
@@ -2349,7 +2064,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
                 {
                   style: {
                     padding: "12px 16px 8px",
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 10,
                     fontWeight: 700,
                     letterSpacing: "0.12em",
@@ -2445,7 +2160,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
                       "div",
                       {
                         style: {
-                          fontFamily: "'Plus Jakarta Sans'",
+                          fontFamily: "'Inter'",
                           fontSize: 14,
                           fontWeight: 600,
                           color: T.text,
@@ -2457,7 +2172,7 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
                       "div",
                       {
                         style: {
-                          fontFamily: "'Plus Jakarta Sans'",
+                          fontFamily: "'Inter'",
                           fontSize: 11,
                           color: T.textMuted,
                         },
@@ -2480,7 +2195,6 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
               ),
             ),
         ),
-      ) // Close Inner Core
       ),
     ),
   );
@@ -2576,7 +2290,7 @@ function CollectionPage({}) {
     [a, n] = useState(null),
     [activeFilter, setActiveFilter] = useState("ALL"),
     { isMobile: o, isTablet: i } = useViewport(),
-    r = o ? "1fr" : i ? "repeat(2, 1fr)" : "repeat(3, 1fr)";
+    r = o ? "1fr" : "repeat(2, 1fr)";
   useEffect(() => {
     try {
       var __tea = new URLSearchParams(window.location.search).get("tea");
@@ -2637,7 +2351,7 @@ function CollectionPage({}) {
             "span",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 12,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
@@ -2668,7 +2382,7 @@ function CollectionPage({}) {
           "p",
           {
             style: {
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 15,
               color: T.textMuted,
               maxWidth: 480,
@@ -2710,7 +2424,7 @@ function CollectionPage({}) {
                 fontSize: 13,
                 fontWeight: 600,
                 cursor: "pointer",
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 transform: isSelected ? "scale(1.02)" : "scale(1)",
                 transition: "all 200ms ease",
               }
@@ -2722,7 +2436,7 @@ function CollectionPage({}) {
       React.createElement(
         "div",
         {
-          style: { display: "grid", gridTemplateColumns: r, gap: o ? 16 : 36 },
+          style: { display: "grid", gridTemplateColumns: r, gap: o ? 16 : 56 },
         },
         TEAS.filter(tea => {
           if (activeFilter === "ALL") return true;
@@ -2753,14 +2467,14 @@ function CollectionPage({}) {
             style: {
               position: "fixed",
               inset: 0,
-              background: "rgba(15,63,69,0.65)",
+              background: o ? "transparent" : "rgba(15,63,69,0.75)",
               zIndex: 200,
               display: "flex",
               alignItems: o ? "flex-end" : "center",
               justifyContent: "center",
               padding: o ? 0 : 24,
-              backdropFilter: "blur(4px)",
-              pointerEvents: "auto",
+              backdropFilter: o ? "none" : "blur(4px)",
+              pointerEvents: "none",
             },
             onClick: () => t(null),
           },
@@ -2808,8 +2522,7 @@ function CollectionPage({}) {
                           borderRadius: 14,
                           overflow: "hidden",
                           flexShrink: 0,
-                          background: T.white,
-                          border: "1px solid #eee",
+                          background: e.bg,
                           position: "relative",
                         },
                       },
@@ -2821,9 +2534,7 @@ function CollectionPage({}) {
                             style: {
                               width: "100%",
                               height: "100%",
-                              objectFit: "contain",
-                              padding: "8px",
-                              boxSizing: "border-box",
+                              objectFit: "cover",
                             },
                           })
                         : React.createElement(
@@ -2874,7 +2585,7 @@ function CollectionPage({}) {
                           "span",
                           {
                             style: {
-                              fontFamily: "'Plus Jakarta Sans'",
+                              fontFamily: "'Inter'",
                               fontSize: 20,
                               fontWeight: 700,
                               color: T.teal,
@@ -2886,7 +2597,7 @@ function CollectionPage({}) {
                           "span",
                           {
                             style: {
-                              fontFamily: "'Plus Jakarta Sans'",
+                              fontFamily: "'Inter'",
                               fontSize: 11,
                               color: T.textMuted,
                             },
@@ -2908,7 +2619,7 @@ function CollectionPage({}) {
                               borderRadius: 9999,
                             },
                           },
-                          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(NevIcon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
+                          "★ BESTSELLER",
                         ),
                     ),
                     React.createElement(
@@ -2965,7 +2676,7 @@ function CollectionPage({}) {
                           fontSize: 13,
                           fontWeight: 600,
                           cursor: "pointer",
-                          fontFamily: "'Plus Jakarta Sans'",
+                          fontFamily: "'Inter'",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -3007,7 +2718,7 @@ function CollectionPage({}) {
                             fontSize: 13,
                             fontWeight: 600,
                             cursor: "pointer",
-                            fontFamily: "'Plus Jakarta Sans'",
+                            fontFamily: "'Inter'",
                           },
                         },
                         "Amazon",
@@ -3031,7 +2742,7 @@ function CollectionPage({}) {
                             fontSize: 13,
                             fontWeight: 600,
                             cursor: "pointer",
-                            fontFamily: "'Plus Jakarta Sans'",
+                            fontFamily: "'Inter'",
                           },
                         },
                         "Flipkart",
@@ -3047,7 +2758,7 @@ function CollectionPage({}) {
                       "p",
                       {
                         style: {
-                          fontFamily: "'Plus Jakarta Sans'",
+                          fontFamily: "'Inter'",
                           fontSize: 13,
                           color: T.textMuted,
                           lineHeight: 1.6,
@@ -3056,7 +2767,6 @@ function CollectionPage({}) {
                       },
                       e.short,
                     ),
-                      React.createElement(TeaSpecsAndShippingPanel, { tea: e }),
                     e.benefits &&
                       React.createElement(
                         "div",
@@ -3065,7 +2775,7 @@ function CollectionPage({}) {
                           "div",
                           {
                             style: {
-                              fontFamily: "'Plus Jakarta Sans'",
+                              fontFamily: "'Inter'",
                               fontSize: 11,
                               letterSpacing: "0.13em",
                               color: T.teal,
@@ -3089,18 +2799,17 @@ function CollectionPage({}) {
                               },
                             },
                             React.createElement(
-                                "span",
-                                {
-                                  style: {
-                                    lineHeight: 1,
-                                    flexShrink: 0,
-                                    marginTop: 1,
-                                    display: "inline-flex",
-                                    color: T.gold,
-                                  },
+                              "span",
+                              {
+                                style: {
+                                  fontSize: 16,
+                                  lineHeight: 1,
+                                  flexShrink: 0,
+                                  marginTop: 1,
                                 },
-                                React.createElement(NevIcon, { name: e.icon, size: 18, color: T.gold }),
-                              ),
+                              },
+                              e.icon,
+                            ),
                             React.createElement(
                               "div",
                               null,
@@ -3108,7 +2817,7 @@ function CollectionPage({}) {
                                 "div",
                                 {
                                   style: {
-                                    fontFamily: "'Plus Jakarta Sans'",
+                                    fontFamily: "'Inter'",
                                     fontSize: 12,
                                     fontWeight: 600,
                                     color: T.text,
@@ -3120,7 +2829,7 @@ function CollectionPage({}) {
                                 "div",
                                 {
                                   style: {
-                                    fontFamily: "'Plus Jakarta Sans'",
+                                    fontFamily: "'Inter'",
                                     fontSize: 11,
                                     color: T.textMuted,
                                     lineHeight: 1.5,
@@ -3157,7 +2866,7 @@ function CollectionPage({}) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Plus Jakarta Sans'",
+                                fontFamily: "'Inter'",
                                 fontSize: 10,
                                 letterSpacing: "0.12em",
                                 color: T.teal,
@@ -3172,7 +2881,7 @@ function CollectionPage({}) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Plus Jakarta Sans'",
+                                fontFamily: "'Inter'",
                                 fontSize: 12,
                                 color: T.textMuted,
                               },
@@ -3193,8 +2902,7 @@ function CollectionPage({}) {
                         height: 260,
                         overflow: "hidden",
                         position: "relative",
-                        background: T.white,
-                        borderBottom: "1px solid #eee",
+                        background: e.bg,
                         cursor: "zoom-in",
                       },
                       onClick: (a) => {
@@ -3211,9 +2919,7 @@ function CollectionPage({}) {
                           style: {
                             width: "100%",
                             height: "100%",
-                            objectFit: "contain",
-                            padding: "16px",
-                            boxSizing: "border-box",
+                            objectFit: "cover",
                           },
                         })
                       : React.createElement(
@@ -3276,7 +2982,7 @@ function CollectionPage({}) {
                             borderRadius: 9999,
                           },
                         },
-                        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(NevIcon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
+                        "★ BESTSELLER",
                       ),
                   ),
                   React.createElement(
@@ -3309,7 +3015,7 @@ function CollectionPage({}) {
                         "span",
                         {
                           style: {
-                            fontFamily: "'Plus Jakarta Sans'",
+                            fontFamily: "'Inter'",
                             fontSize: 24,
                             fontWeight: 700,
                             color: T.teal,
@@ -3321,7 +3027,7 @@ function CollectionPage({}) {
                         "span",
                         {
                           style: {
-                            fontFamily: "'Plus Jakarta Sans'",
+                            fontFamily: "'Inter'",
                             fontSize: 11,
                             color: T.textMuted,
                           },
@@ -3333,7 +3039,7 @@ function CollectionPage({}) {
                       "p",
                       {
                         style: {
-                          fontFamily: "'Plus Jakarta Sans'",
+                          fontFamily: "'Inter'",
                           fontSize: 13,
                           color: T.textMuted,
                           lineHeight: 1.6,
@@ -3342,7 +3048,6 @@ function CollectionPage({}) {
                       },
                       e.short,
                     ),
-                      React.createElement(TeaSpecsAndShippingPanel, { tea: e }),
                     React.createElement(
                       "div",
                       {
@@ -3353,7 +3058,6 @@ function CollectionPage({}) {
                           marginBottom: 20,
                         },
                       },
-                      React.createElement(AddToCartBtn, { tea: e, onAdded: () => t(null) }),
                       React.createElement(
                         RippleButton,
                         {
@@ -3368,7 +3072,7 @@ function CollectionPage({}) {
                             fontSize: 14,
                             fontWeight: 600,
                             cursor: "pointer",
-                            fontFamily: "'Plus Jakarta Sans'",
+                            fontFamily: "'Inter'",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -3410,7 +3114,7 @@ function CollectionPage({}) {
                               fontSize: 13,
                               fontWeight: 600,
                               cursor: "pointer",
-                              fontFamily: "'Plus Jakarta Sans'",
+                              fontFamily: "'Inter'",
                             },
                           },
                           "Amazon",
@@ -3434,7 +3138,7 @@ function CollectionPage({}) {
                               fontSize: 13,
                               fontWeight: 600,
                               cursor: "pointer",
-                              fontFamily: "'Plus Jakarta Sans'",
+                              fontFamily: "'Inter'",
                             },
                           },
                           "Flipkart",
@@ -3467,7 +3171,7 @@ function CollectionPage({}) {
                           "div",
                           {
                             style: {
-                              fontFamily: "'Plus Jakarta Sans'",
+                              fontFamily: "'Inter'",
                               fontSize: 11,
                               letterSpacing: "0.13em",
                               color: T.teal,
@@ -3502,14 +3206,13 @@ function CollectionPage({}) {
                                 "span",
                                 {
                                   style: {
+                                    fontSize: 18,
                                     lineHeight: 1,
                                     flexShrink: 0,
                                     marginTop: 1,
-                                    display: "inline-flex",
-                                    color: T.gold,
                                   },
                                 },
-                                React.createElement(NevIcon, { name: e.icon, size: 18, color: T.gold }),
+                                e.icon,
                               ),
                               React.createElement(
                                 "div",
@@ -3518,7 +3221,7 @@ function CollectionPage({}) {
                                   "div",
                                   {
                                     style: {
-                                      fontFamily: "'Plus Jakarta Sans'",
+                                      fontFamily: "'Inter'",
                                       fontSize: 13,
                                       fontWeight: 600,
                                       color: T.text,
@@ -3531,7 +3234,7 @@ function CollectionPage({}) {
                                   "div",
                                   {
                                     style: {
-                                      fontFamily: "'Plus Jakarta Sans'",
+                                      fontFamily: "'Inter'",
                                       fontSize: 12,
                                       color: T.textMuted,
                                       lineHeight: 1.55,
@@ -3570,7 +3273,7 @@ function CollectionPage({}) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Plus Jakarta Sans'",
+                                fontFamily: "'Inter'",
                                 fontSize: 10,
                                 letterSpacing: "0.12em",
                                 color: T.teal,
@@ -3585,7 +3288,7 @@ function CollectionPage({}) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Plus Jakarta Sans'",
+                                fontFamily: "'Inter'",
                                 fontSize: 12,
                                 color: T.textMuted,
                               },
@@ -3608,202 +3311,344 @@ function CollectionPage({}) {
       }),
   );
 }
-function OriginSection() {
-  const { isMobile: e } = useViewport(),
-    [ref, inView] = useInView(0.12),
-    [cardRef, cardVisible] = useInView(0.1);
+function PhilosophySection() {
+  const e = useGsapReveal(),
+    [t, a] = useInView(0.15),
+    n = [
+      {
+        icon: React.createElement(
+          "svg",
+          {
+            width: "20",
+            height: "20",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "1.8",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+          },
+          React.createElement("path", {
+            d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8",
+          }),
+          React.createElement("path", { d: "M3 3v5h5" }),
+          React.createElement("path", { d: "M12 7v5l4 2" }),
+        ),
+        title: "Can be steeped twice",
+        desc: "Whole leaf quality means the second steep is as rewarding as the first. Better value, richer taste.",
+      },
+      {
+        icon: React.createElement(
+          "svg",
+          {
+            width: "20",
+            height: "20",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "1.8",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+          },
+          React.createElement("path", {
+            d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
+          }),
+          React.createElement("path", { d: "m9 12 2 2 4-4" }),
+        ),
+        title: "Chemical-free, always",
+        desc: "Pesticide-free from soil to seal. PGS-India organic certified. No exceptions.",
+      },
+      {
+        icon: React.createElement(
+          "svg",
+          {
+            width: "20",
+            height: "20",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "1.8",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+          },
+          React.createElement("path", {
+            d: "M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z",
+          }),
+          React.createElement("circle", { cx: "12", cy: "10", r: "3" }),
+        ),
+        title: "Single origin, Golaghat",
+        desc: "Every variety from one region. Consistent quality. Traceable from garden to pack.",
+      },
+      {
+        icon: React.createElement(
+          "svg",
+          {
+            width: "20",
+            height: "20",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "1.8",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+          },
+          React.createElement("path", {
+            d: "M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0",
+          }),
+          React.createElement("path", {
+            d: "M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2",
+          }),
+          React.createElement("path", {
+            d: "M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8",
+          }),
+          React.createElement("path", {
+            d: "M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15",
+          }),
+        ),
+        title: "Handcrafted, not manufactured",
+        desc: "Each batch made by Tailor Made Tea of Golaghat. Small batch, intentional process.",
+      },
+    ],
+    { isMobile: o } = useViewport();
   return React.createElement(
-    "section",
+    "div",
     {
-      ref,
       style: {
-        background: T.tealDark,
-        padding: e ? "72px 20px" : "110px 32px",
+        background: T.teal,
+        padding: o ? "64px 20px" : "100px 32px",
         position: "relative",
         overflow: "hidden",
       },
     },
-    /* Decorative rings */
-    React.createElement("div", { style: { position: "absolute", top: "-10%", right: "-8%", width: 420, height: 420, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.05)", pointerEvents: "none" } }),
-    React.createElement("div", { style: { position: "absolute", bottom: "-15%", left: "-6%", width: 320, height: 320, borderRadius: "50%", border: "1px solid rgba(201,168,76,0.07)", pointerEvents: "none" } }),
+    React.createElement("div", {
+      style: {
+        position: "absolute",
+        top: "10%",
+        left: "-5%",
+        width: 400,
+        height: 400,
+        borderRadius: "50%",
+        border: "1px solid rgba(255,255,255,0.08)",
+        pointerEvents: "none",
+      },
+    }),
+    React.createElement("div", {
+      style: {
+        position: "absolute",
+        bottom: "-10%",
+        right: "20%",
+        width: 280,
+        height: 280,
+        borderRadius: "50%",
+        border: "1px solid rgba(255,255,255,0.06)",
+        pointerEvents: "none",
+      },
+    }),
+    React.createElement("div", {
+      style: {
+        position: "absolute",
+        top: "50%",
+        right: "-5%",
+        width: 320,
+        height: 320,
+        borderRadius: "50%",
+        border: "1px solid rgba(201,168,76,0.08)",
+        pointerEvents: "none",
+      },
+    }),
     React.createElement(
       "div",
-      { style: { maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: e ? "1fr" : "1fr 1fr", gap: e ? 48 : 80, alignItems: "center" } },
-      /* LEFT — fact card */
+      {
+        style: {
+          maxWidth: 1200,
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: o ? "1fr" : "1fr 1fr",
+          gap: o ? 48 : 80,
+          alignItems: "start",
+        },
+      },
       React.createElement(
         "div",
-        {
-          ref: cardRef,
-          style: {
-            background: "rgba(255,255,255,0.06)",
-            border: "1px solid rgba(255,255,255,0.12)",
-            borderRadius: 20,
-            padding: e ? 28 : 36,
-            opacity: cardVisible ? 1 : 0,
-            transform: cardVisible ? "translateY(0)" : "translateY(32px)",
-            transition: "opacity 0.7s ease-out, transform 0.7s ease-out",
+        { ref: e },
+        React.createElement(
+          "div",
+          {
+            "data-gsap-reveal": !0,
+            style: {
+              fontFamily: "'Inter'",
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: "0.16em",
+              color: T.gold,
+              textTransform: "uppercase",
+              marginBottom: 20,
+            },
           },
-        },
-        /* Badge */
-        React.createElement(
-          "div",
-          { style: { display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(201,168,76,0.15)", border: "1px solid rgba(201,168,76,0.35)", borderRadius: 9999, padding: "6px 16px", marginBottom: 24 } },
-          React.createElement("span", { style: { width: 6, height: 6, borderRadius: "50%", background: T.gold, display: "inline-block" } }),
-          React.createElement("span", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", color: T.gold, textTransform: "uppercase" } }, "Est. Golaghat · Assam"),
+          "Our Philosophy",
         ),
-        /* Big number */
         React.createElement(
-          "div",
-          { style: { marginBottom: 8 } },
-          React.createElement("span", { style: { fontFamily: "'Playfair Display', Georgia, serif", fontSize: e ? 64 : 80, fontWeight: 400, color: T.gold, lineHeight: 1 } }, "1"),
-          React.createElement("span", { style: { fontFamily: "'Playfair Display', Georgia, serif", fontSize: e ? 32 : 40, fontWeight: 400, color: T.gold, verticalAlign: "super" } }, "st"),
+          "h2",
+          {
+            "data-gsap-reveal": !0,
+            style: {
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 4vw, 56px)",
+              color: T.white,
+              lineHeight: 1.15,
+              marginBottom: 28,
+            },
+          },
+          "You deserve to taste",
+          React.createElement("br", null),
+          "what Assam really grows",
         ),
-        React.createElement("div", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", marginBottom: 28 } }, "Harvest · Single Garden"),
-        /* Fact grid */
+        React.createElement(
+          "p",
+          {
+            "data-gsap-reveal": !0,
+            style: {
+              fontFamily: "'Inter'",
+              fontSize: 16,
+              color: "rgba(255,255,255,0.72)",
+              lineHeight: 1.75,
+              marginBottom: 20,
+            },
+          },
+          "Most people in India have drunk Assam tea their whole lives — and most of it has been broken leaves, dust, and blends made for volume, not flavour. We grew up here. We knew what the actual leaf tasted like. And we couldn't unsee the gap.",
+        ),
+        React.createElement(
+          "p",
+          {
+            "data-gsap-reveal": !0,
+            style: {
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontStyle: "italic",
+              fontSize: 15,
+              color: "rgba(255,255,255,0.6)",
+              lineHeight: 1.65,
+              marginBottom: 32,
+            },
+          },
+          '"Every pack of Nevisan holds the same leaf that wealthy buyers in Japan and Europe have been paying a premium for. We just think you deserved to have it too."',
+        ),
         React.createElement(
           "div",
-          { style: { display: "grid", gridTemplateColumns: e ? "1fr" : "1fr 1fr", gap: 12 } },
+          { style: { display: "flex", gap: 10, flexWrap: "wrap" } },
           [
-            { label: "Certified", value: "PGS-India Organic", icon: "🌿" },
-            { label: "Zero", value: "Pesticides Used", icon: "🚫" },
-            { label: "Process", value: "Whole Leaf Only", icon: "🍃" },
-            { label: "Pack Size", value: "50g · ₹499 MRP", icon: "📦" },
-          ].map(({ label, value, icon }) =>
-            React.createElement(
-              "div",
-              {
-                key: label,
-                style: { background: "rgba(255,255,255,0.06)", borderRadius: 12, padding: "16px 18px", border: "1px solid rgba(255,255,255,0.08)" },
-              },
-              React.createElement("div", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 10, letterSpacing: "0.12em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 4 } }, label),
-              React.createElement("div", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 14, fontWeight: 600, color: T.white } }, icon + " " + value),
-            ),
-          ),
-        ),
-      ),
-      /* RIGHT — copy */
-      React.createElement(
-        "div",
-        {
-          style: {
-            opacity: inView ? 1 : 0,
-            transform: inView ? "translateX(0)" : "translateX(28px)",
-            transition: "opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s",
-          },
-        },
-        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 16, marginBottom: 20 } },
-          React.createElement("div", { style: { width: 40, height: 1, background: T.gold } }),
-          React.createElement("span", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", color: T.gold, textTransform: "uppercase" } }, "The Origin"),
-        ),
-        React.createElement("h2", {
-          style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: "clamp(32px, 4vw, 52px)", color: T.white, lineHeight: 1.15, marginBottom: 12 },
-        }, "Tea grown the way"),
-        React.createElement("h2", {
-          style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontStyle: "italic", fontSize: "clamp(32px, 4vw, 52px)", color: T.gold, lineHeight: 1.15, marginBottom: 28 },
-        }, "nature intended"),
-        React.createElement("p", {
-          style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 15, color: "rgba(255,255,255,0.72)", lineHeight: 1.75, marginBottom: 16 },
-        }, "Nevisan is rooted in Golaghat — a single garden in Assam where the rain falls heavy, the soil stays rich, and nothing is rushed. We grow whole leaf, harvest by hand, and blend only what belongs together."),
-        React.createElement("p", {
-          style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 15, color: "rgba(255,255,255,0.55)", lineHeight: 1.75, marginBottom: 32 },
-        }, "No pesticides. No shortcuts. Every batch PGS-India certified. You taste the garden, not a factory."),
-        /* Pill badges */
-        React.createElement(
-          "div",
-          { style: { display: "flex", flexWrap: "wrap", gap: 10 } },
-          ["🌱 Single Garden", "🍃 Whole Leaf", "🚫 No Pesticides", "📍 Golaghat, Assam", "✅ PGS Certified"].map((label) =>
+            "PGS-INDIA ORGANIC",
+            "FSSAI LICENSED",
+            "FOOD SAFETY, ASSAM",
+            "MADE IN INDIA",
+          ].map((e) =>
             React.createElement(
               "span",
               {
-                key: label,
-                style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 12, fontWeight: 500, color: "rgba(255,255,255,0.75)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 9999, padding: "6px 14px" },
+                key: e,
+                style: {
+                  fontFamily: "'Inter'",
+                  fontSize: 10,
+                  fontWeight: 500,
+                  letterSpacing: "0.08em",
+                  color: "rgba(255,255,255,0.7)",
+                  border: "1px solid rgba(255,255,255,0.25)",
+                  borderRadius: 9999,
+                  padding: "5px 12px",
+                },
               },
-              label,
+              e,
+            ),
+          ),
+        ),
+      ),
+      React.createElement(
+        "div",
+        {
+          ref: t,
+          style: { display: "flex", flexDirection: "column", gap: 16 },
+        },
+        n.map((e, t) =>
+          React.createElement(
+            "div",
+            {
+              key: e.title,
+              style: {
+                background: "rgba(255,255,255,0.07)",
+                border: "1px solid rgba(255,255,255,0.12)",
+                borderRadius: 14,
+                padding: "24px 28px",
+                display: "flex",
+                gap: 20,
+                alignItems: "flex-start",
+                opacity: a ? 1 : 0,
+                transform: a ? "translateX(0)" : "translateX(32px)",
+                transition: `opacity 0.6s ease-out ${0.12 * t}s, transform 0.6s ease-out ${0.12 * t}s`,
+                cursor: "default",
+              },
+              onMouseEnter: (e) => {
+                ((e.currentTarget.style.background = "rgba(255,255,255,0.11)"),
+                  (e.currentTarget.style.borderColor = "rgba(201,168,76,0.3)"));
+              },
+              onMouseLeave: (e) => {
+                ((e.currentTarget.style.background = "rgba(255,255,255,0.07)"),
+                  (e.currentTarget.style.borderColor =
+                    "rgba(255,255,255,0.12)"));
+              },
+            },
+            React.createElement(
+              "div",
+              {
+                style: {
+                  width: 44,
+                  height: 44,
+                  borderRadius: "50%",
+                  background: "rgba(201,168,76,0.2)",
+                  border: "1px solid rgba(201,168,76,0.4)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                  color: T.gold,
+                  fontSize: 16,
+                  transition: "background 200ms",
+                },
+              },
+              e.icon,
+            ),
+            React.createElement(
+              "div",
+              null,
+              React.createElement(
+                "div",
+                {
+                  style: {
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: 17,
+                    fontWeight: 400,
+                    color: T.gold,
+                    marginBottom: 6,
+                  },
+                },
+                e.title,
+              ),
+              React.createElement(
+                "div",
+                {
+                  style: {
+                    fontFamily: "'Inter'",
+                    fontSize: 13,
+                    color: "rgba(255,255,255,0.65)",
+                    lineHeight: 1.6,
+                  },
+                },
+                e.desc,
+              ),
             ),
           ),
         ),
       ),
     ),
-  );
-}
-function BenefitsSection() {
-  const { isMobile: e, isTablet: tab } = useViewport(),
-    [ref, inView] = useInView(0.1);
-  const benefits = [
-    { icon: "🌿", title: "Nothing added. Nothing hidden.", desc: "PGS-India certified organic. No pesticides, no artificial flavouring, no blending across estates. What the garden produces is what goes in the pack." },
-    { icon: "🍃", title: "Whole leaf, properly done", desc: "No dust, no fannings. The whole leaf holds its oils until you brew it — a smoother, more complex cup that holds up to a second steep." },
-    { icon: "⚡", title: "Alert, not wired", desc: "Green tea delivers caffeine alongside L-theanine, which smooths the energy into something sustained. No cortisol spike, no 2pm crash." },
-    { icon: "📍", title: "One garden. One address.", desc: "Every variety traces back to a single estate in Golaghat, Assam. You know exactly where your tea came from — no blending, no guessing." },
-    { icon: "🚀", title: "No middlemen", desc: "Order on WhatsApp, Amazon, or Flipkart. Fresh stock, honest prices — we don't mark up to cover a distributor we don't have." },
-    { icon: "🎯", title: "Ten teas, ten reasons", desc: "Digestion, calm, energy, sleep, hormonal health. Each variety was built around something specific — not just a flavour that sounded good." },
-  ];
-  return React.createElement(
-    "section",
-    {
-      ref,
-      style: { background: T.cream, padding: e ? "72px 20px" : "110px 32px" },
-    },
-    React.createElement(
-      "div",
-      { style: { maxWidth: 1100, margin: "0 auto" } },
-      /* Header */
-      React.createElement(
-        "div",
-        { style: { textAlign: "center", marginBottom: e ? 40 : 64 } },
-        React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 16 } },
-          React.createElement("div", { style: { width: 40, height: 1, background: T.teal } }),
-          React.createElement("span", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", color: T.teal, textTransform: "uppercase" } }, "Why Nevisan"),
-          React.createElement("div", { style: { width: 40, height: 1, background: T.teal } }),
-        ),
-        React.createElement("h2", {
-          style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: "clamp(30px, 4vw, 52px)", color: T.text, lineHeight: 1.15, marginBottom: 0 },
-        }, "Tea that actually"),
-        React.createElement("h2", {
-          style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontStyle: "italic", fontSize: "clamp(30px, 4vw, 52px)", color: T.teal, lineHeight: 1.15 },
-        }, "does something"),
-      ),
-      /* 6-card grid */
-      React.createElement(
-        "div",
-        {
-          style: {
-            display: "grid",
-            gridTemplateColumns: e ? "1fr" : tab ? "repeat(2,1fr)" : "repeat(3,1fr)",
-            gap: e ? 16 : 24,
-          },
-        },
-        benefits.map(({ icon, title, desc }, idx) =>
-          React.createElement(BenefitCard, { key: title, icon, title, desc, inView, idx }),
-        ),
-      ),
-    ),
-  );
-}
-function BenefitCard({ icon, title, desc, inView, idx }) {
-  const [hov, setHov] = useState(false);
-  return React.createElement(
-    "div",
-    {
-      onMouseEnter: () => setHov(true),
-      onMouseLeave: () => setHov(false),
-      style: {
-        background: T.white,
-        borderRadius: 16,
-        padding: "32px 28px",
-        border: `1px solid ${hov ? "rgba(35,65,45,0.18)" : T.border}`,
-        boxShadow: hov ? "0 12px 40px rgba(35,65,45,0.1)" : "0 2px 8px rgba(0,0,0,0.04)",
-        transform: hov ? "translateY(-6px)" : inView ? "translateY(0)" : "translateY(20px)",
-        opacity: inView ? 1 : 0,
-        transition: `transform 0.4s var(--ease-out) ${idx * 60}ms, opacity 0.5s ease ${idx * 60}ms, box-shadow 250ms ease, border-color 200ms ease`,
-      },
-    },
-    React.createElement("div", { style: { marginBottom: 16, display: "flex", color: T.gold } }, React.createElement(NevIcon, { name: icon, size: 36, color: T.gold })),
-    React.createElement("h3", {
-      style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 18, color: T.text, marginBottom: 10, lineHeight: 1.3 },
-    }, title),
-    React.createElement("p", {
-      style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 13, color: T.textMuted, lineHeight: 1.65 },
-    }, desc),
   );
 }
 function BuyCard({ c: e, inView: t, index: a }) {
@@ -3883,7 +3728,7 @@ function BuyCard({ c: e, inView: t, index: a }) {
       "p",
       {
         style: {
-          fontFamily: "'Plus Jakarta Sans'",
+          fontFamily: "'Inter'",
           fontSize: 13,
           color: e.primary ? "rgba(255,255,255,0.75)" : T.textMuted,
           marginBottom: 28,
@@ -3906,7 +3751,7 @@ function BuyCard({ c: e, inView: t, index: a }) {
           fontSize: 13,
           fontWeight: 600,
           cursor: "pointer",
-          fontFamily: "'Plus Jakarta Sans'",
+          fontFamily: "'Inter'",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -3976,7 +3821,7 @@ function WhereToBuy() {
           "span",
           {
             style: {
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 12,
               fontWeight: 600,
               letterSpacing: "0.14em",
@@ -4007,7 +3852,7 @@ function WhereToBuy() {
         "p",
         {
           style: {
-            fontFamily: "'Plus Jakarta Sans'",
+            fontFamily: "'Inter'",
             fontSize: 15,
             color: T.textMuted,
             marginBottom: n ? 36 : 56,
@@ -4064,8 +3909,9 @@ function ReviewCard({ r: e, inView: t, index: a }) {
         .fill(0)
         .map((e, t) =>
           React.createElement(
-            Icon,
-            { key: t, name: "★", size: 14, color: T.gold },
+            "span",
+            { key: t, style: { color: T.gold, fontSize: 14 } },
+            "★",
           ),
         ),
     ),
@@ -4089,7 +3935,7 @@ function ReviewCard({ r: e, inView: t, index: a }) {
       "div",
       {
         style: {
-          fontFamily: "'Plus Jakarta Sans'",
+          fontFamily: "'Inter'",
           fontSize: 13,
           fontWeight: 600,
           color: T.teal,
@@ -4099,7 +3945,7 @@ function ReviewCard({ r: e, inView: t, index: a }) {
     ),
     React.createElement(
       "div",
-      { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 12, color: T.textMuted } },
+      { style: { fontFamily: "'Inter'", fontSize: 12, color: T.textMuted } },
       e.loc,
     ),
   );
@@ -4147,7 +3993,7 @@ function ReviewForm() {
       padding: "11px 14px",
       border: "1.5px solid #e0dcd4",
       borderRadius: 10,
-      fontFamily: "'Plus Jakarta Sans'",
+      fontFamily: "'Inter'",
       fontSize: 14,
       color: "#1a1a1a",
       background: "#fff",
@@ -4181,7 +4027,7 @@ function ReviewForm() {
           "p",
           {
             style: {
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 14,
               color: "#666",
               lineHeight: 1.7,
@@ -4204,7 +4050,7 @@ function ReviewForm() {
               borderRadius: 9999,
               padding: "10px 28px",
               cursor: "pointer",
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 13,
             },
           },
@@ -4248,7 +4094,7 @@ function ReviewForm() {
           "p",
           {
             style: {
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 13,
               color: "#5f6f70",
               marginBottom: 24,
@@ -4263,7 +4109,7 @@ function ReviewForm() {
             "div",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 11,
                 letterSpacing: "0.1em",
                 color: "#5f6f70",
@@ -4296,7 +4142,7 @@ function ReviewForm() {
               {
                 htmlFor: "wholesale-name",
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 11,
                   letterSpacing: "0.1em",
                   color: "#5f6f70",
@@ -4326,7 +4172,7 @@ function ReviewForm() {
               {
                 htmlFor: "wholesale-city",
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 11,
                   letterSpacing: "0.1em",
                   color: "#5f6f70",
@@ -4356,7 +4202,7 @@ function ReviewForm() {
             {
               htmlFor: "wholesale-tea",
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 11,
                 letterSpacing: "0.1em",
                 color: "#5f6f70",
@@ -4404,7 +4250,7 @@ function ReviewForm() {
             {
               htmlFor: "wholesale-review",
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 11,
                 letterSpacing: "0.1em",
                 color: "#5f6f70",
@@ -4433,7 +4279,7 @@ function ReviewForm() {
             "div",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 13,
                 color: "#e8312a",
                 marginBottom: 14,
@@ -4454,7 +4300,7 @@ function ReviewForm() {
               borderRadius: 12,
               padding: "14px",
               cursor: "pointer",
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 14,
               fontWeight: 600,
               transition: "filter 200ms",
@@ -4469,7 +4315,7 @@ function ReviewForm() {
           "p",
           {
             style: {
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 11,
               color: "#767676",
               textAlign: "center",
@@ -4517,7 +4363,7 @@ function Testimonials() {
             "span",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 12,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
@@ -4549,9 +4395,9 @@ function Testimonials() {
           "p",
           {
             "data-gsap-reveal": !0,
-            style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 15, color: T.textMuted },
+            style: { fontFamily: "'Inter'", fontSize: 15, color: T.textMuted },
           },
-          "Real reviews from people who actually drink the tea. We don't edit them.",
+          "Sincere words from our community of tea drinkers. Direct and unedited reviews.",
         ),
       ),
       React.createElement(
@@ -4571,39 +4417,39 @@ function Testimonials() {
         },
         [
           {
-            text: "I\u2019ve tried many green teas, but this one really stands out. The aroma is fresh, and the taste is smooth without any bitterness. You can actually feel the natural flavour of the tea leaves, and it\u2019s perfect for both morning energy and evening relaxation. The best part \u2014 it can be steeped twice and still tastes great. Worth every rupee.",
+            text: "I\u2019ve tried many green teas, but this one really stands out. The aroma is fresh, and the taste is smooth without any bitterness. You can actually feel the natural flavor of the tea leaves, and it\u2019s perfect for both morning energy and evening relaxation. The best part \u2014 it can be steeped twice and still tastes great! Definitely worth the price.",
             name: "Uditijain",
-            loc: "Verified Amazon Purchase \u2022 Flavour: Whiskey",
+            loc: "Verified Amazon Purchase \u2022 Flavor: Whiskey",
             rating: 5,
           },
           {
             text: "Awesome flavour.. it really do taste like rum.. all natural flavour.. no added sweeteners.. best product.. will surely will purchase more..",
             name: "Ridhi",
-            loc: "Verified Amazon Purchase \u2022 Flavour: Exotic Rum",
+            loc: "Verified Amazon Purchase \u2022 Flavor: Exotic Rum",
             rating: 5,
           },
           {
             text: "Great taste, absolutely loved it! Can\u2019t wait to try all the delicious flavours and enjoy every single one of them soon!",
             name: "Chandraprakash Shyamsukha",
-            loc: "Verified Amazon Purchase \u2022 Flavour: Lemongrass",
+            loc: "Verified Amazon Purchase \u2022 Flavor: Lemongrass",
             rating: 5,
           },
           {
-            text: "I'm very impressed with NEVISAN's Lemongrass Tea. It has a wonderfully fresh and zesty aroma right out of the package. The tea brews into a beautiful pale yellow and has a crisp, clean, and smooth citrus flavour. It's not bitter at all, just incredibly refreshing with a hint of natural sweetness. It's a fantastic, high-quality, caffeine-free tea. Highly recommended!",
+            text: "I'm very impressed with NEVISAN's Lemongrass Tea. It has a wonderfully fresh and zesty aroma right out of the package. The tea brews into a beautiful pale yellow and has a crisp, clean, and smooth citrus flavor. It's not bitter at all, just incredibly refreshing with a hint of natural sweetness. It's a fantastic, high-quality, caffeine-free tea. Highly recommended!",
             name: "Dinesh tiwari",
-            loc: "Verified Amazon Purchase \u2022 Flavour: Lemongrass",
+            loc: "Verified Amazon Purchase \u2022 Flavor: Lemongrass",
             rating: 5,
           },
           {
             text: "Tried different flavours...really enjoyed it\nHighly recommend buying the blue flower and lemongrass flavour.\nAssam tea at its best..great work team",
             name: "Amazon Customer",
-            loc: "Verified Amazon Purchase \u2022 Flavour: Blue Flower",
+            loc: "Verified Amazon Purchase \u2022 Flavor: Blue Flower",
             rating: 5,
           },
           {
             text: "Best green tea so far ...in spearmint flavour...From Nevisan",
             name: "Richa Jain",
-            loc: "Verified Buyer \u2022 Flavour: Spearmint",
+            loc: "Verified Buyer \u2022 Flavor: Spearmint",
             rating: 5,
           },
         ].map((e, a) =>
@@ -4639,7 +4485,7 @@ function Testimonials() {
               "span",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 11,
                   fontWeight: 600,
                   letterSpacing: "0.14em",
@@ -4714,7 +4560,7 @@ function Footer({ setPage: e }) {
             "p",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 13,
                 lineHeight: 1.7,
                 color: "rgba(255,255,255,0.55)",
@@ -4740,7 +4586,7 @@ function Footer({ setPage: e }) {
                 fontSize: 12,
                 fontWeight: 600,
                 cursor: "pointer",
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 display: "flex",
                 alignItems: "center",
                 gap: 6,
@@ -4770,7 +4616,7 @@ function Footer({ setPage: e }) {
                   border: "1px solid rgba(255,255,255,0.2)",
                   borderRadius: 6,
                   padding: "5px 12px",
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 10,
                   color: "rgba(255,255,255,0.4)",
                   letterSpacing: "0.06em",
@@ -4785,7 +4631,7 @@ function Footer({ setPage: e }) {
                   border: "1px solid rgba(255,255,255,0.2)",
                   borderRadius: 6,
                   padding: "5px 12px",
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 10,
                   color: "rgba(255,255,255,0.4)",
                   letterSpacing: "0.06em",
@@ -4802,7 +4648,7 @@ function Footer({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 11,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
@@ -4830,7 +4676,7 @@ function Footer({ setPage: e }) {
                 key: t,
                 onClick: () => e("Collection"),
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 13,
                   color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
@@ -4853,7 +4699,7 @@ function Footer({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 11,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
@@ -4878,13 +4724,13 @@ function Footer({ setPage: e }) {
                 key: t,
                 onClick: () => {
                   "FAQ" === t
-                    ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/faq/")
+                    ? (window.location.href = "/faq")
                     : "Quiz" === t
-                      ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/quiz/")
+                      ? (window.location.href = "/quiz")
                       : e(t);
                 },
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 13,
                   color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
@@ -4907,7 +4753,7 @@ function Footer({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 11,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
@@ -4939,7 +4785,7 @@ function Footer({ setPage: e }) {
                 key: e,
                 onClick: () => window.open(t, "_blank"),
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 13,
                   color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
@@ -4972,7 +4818,7 @@ function Footer({ setPage: e }) {
           "span",
           {
             style: {
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 12,
               color: "rgba(255,255,255,0.35)",
               display: "flex",
@@ -5008,7 +4854,7 @@ function Footer({ setPage: e }) {
               {
                 key: e,
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 10,
                   fontWeight: 600,
                   letterSpacing: "0.06em",
@@ -5041,7 +4887,7 @@ function CollectionSection({ setPage: e }) {
       React.createElement(
         "a",
         {
-          href: window.location.pathname.replace(/\/[^\/]*$/, "") + "/quiz/",
+          href: "/quiz",
           style: {
             display: "flex",
             alignItems: "center",
@@ -5095,7 +4941,7 @@ function CollectionSection({ setPage: e }) {
               "div",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 13,
                   color: "rgba(255,255,255,0.75)",
                 },
@@ -5112,7 +4958,7 @@ function CollectionSection({ setPage: e }) {
               color: T.tealDark,
               padding: "11px 24px",
               borderRadius: 9999,
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 14,
               fontWeight: 600,
               whiteSpace: "nowrap",
@@ -5155,7 +5001,7 @@ function CollectionSection({ setPage: e }) {
               "span",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 12,
                   fontWeight: 600,
                   letterSpacing: "0.14em",
@@ -5194,7 +5040,7 @@ function CollectionSection({ setPage: e }) {
               fontSize: 13,
               fontWeight: 500,
               cursor: "pointer",
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               whiteSpace: "nowrap",
               transition: "background 200ms, color 200ms",
               alignSelf: n ? "flex-start" : "auto",
@@ -5234,14 +5080,14 @@ function CollectionSection({ setPage: e }) {
             style: {
               position: "fixed",
               inset: 0,
-              background: "rgba(15,63,69,0.65)",
+              background: n ? "transparent" : "rgba(15,63,69,0.75)",
               zIndex: 200,
               display: "flex",
               alignItems: n ? "flex-end" : "center",
               justifyContent: "center",
               padding: n ? 0 : 24,
-              backdropFilter: "blur(4px)",
-              pointerEvents: "auto",
+              backdropFilter: n ? "none" : "blur(4px)",
+              pointerEvents: "none",
             },
             onClick: () => l(null),
           },
@@ -5296,8 +5142,7 @@ function CollectionSection({ setPage: e }) {
                           borderRadius: 14,
                           overflow: "hidden",
                           flexShrink: 0,
-                          background: T.white,
-                          border: "1px solid #eee",
+                          background: r.bg,
                           position: "relative",
                         },
                       },
@@ -5309,9 +5154,7 @@ function CollectionSection({ setPage: e }) {
                             style: {
                               width: "100%",
                               height: "100%",
-                              objectFit: "contain",
-                              padding: "8px",
-                              boxSizing: "border-box",
+                              objectFit: "cover",
                             },
                           })
                         : React.createElement(
@@ -5362,7 +5205,7 @@ function CollectionSection({ setPage: e }) {
                           "span",
                           {
                             style: {
-                              fontFamily: "'Plus Jakarta Sans'",
+                              fontFamily: "'Inter'",
                               fontSize: 20,
                               fontWeight: 700,
                               color: T.teal,
@@ -5374,7 +5217,7 @@ function CollectionSection({ setPage: e }) {
                           "span",
                           {
                             style: {
-                              fontFamily: "'Plus Jakarta Sans'",
+                              fontFamily: "'Inter'",
                               fontSize: 11,
                               color: T.textMuted,
                             },
@@ -5396,7 +5239,7 @@ function CollectionSection({ setPage: e }) {
                               borderRadius: 9999,
                             },
                           },
-                          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(NevIcon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
+                          "★ BESTSELLER",
                         ),
                     ),
                     React.createElement(
@@ -5453,7 +5296,7 @@ function CollectionSection({ setPage: e }) {
                           fontSize: 13,
                           fontWeight: 600,
                           cursor: "pointer",
-                          fontFamily: "'Plus Jakarta Sans'",
+                          fontFamily: "'Inter'",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -5495,7 +5338,7 @@ function CollectionSection({ setPage: e }) {
                             fontSize: 13,
                             fontWeight: 600,
                             cursor: "pointer",
-                            fontFamily: "'Plus Jakarta Sans'",
+                            fontFamily: "'Inter'",
                           },
                         },
                         "Amazon",
@@ -5519,7 +5362,7 @@ function CollectionSection({ setPage: e }) {
                             fontSize: 13,
                             fontWeight: 600,
                             cursor: "pointer",
-                            fontFamily: "'Plus Jakarta Sans'",
+                            fontFamily: "'Inter'",
                           },
                         },
                         "Flipkart",
@@ -5535,7 +5378,7 @@ function CollectionSection({ setPage: e }) {
                       "p",
                       {
                         style: {
-                          fontFamily: "'Plus Jakarta Sans'",
+                          fontFamily: "'Inter'",
                           fontSize: 13,
                           color: T.textMuted,
                           lineHeight: 1.6,
@@ -5552,7 +5395,7 @@ function CollectionSection({ setPage: e }) {
                           "div",
                           {
                             style: {
-                              fontFamily: "'Plus Jakarta Sans'",
+                              fontFamily: "'Inter'",
                               fontSize: 11,
                               letterSpacing: "0.13em",
                               color: T.teal,
@@ -5576,18 +5419,17 @@ function CollectionSection({ setPage: e }) {
                               },
                             },
                             React.createElement(
-                                "span",
-                                {
-                                  style: {
-                                    lineHeight: 1,
-                                    flexShrink: 0,
-                                    marginTop: 1,
-                                    display: "inline-flex",
-                                    color: T.gold,
-                                  },
+                              "span",
+                              {
+                                style: {
+                                  fontSize: 16,
+                                  lineHeight: 1,
+                                  flexShrink: 0,
+                                  marginTop: 1,
                                 },
-                                React.createElement(NevIcon, { name: e.icon, size: 18, color: T.gold }),
-                              ),
+                              },
+                              e.icon,
+                            ),
                             React.createElement(
                               "div",
                               null,
@@ -5595,7 +5437,7 @@ function CollectionSection({ setPage: e }) {
                                 "div",
                                 {
                                   style: {
-                                    fontFamily: "'Plus Jakarta Sans'",
+                                    fontFamily: "'Inter'",
                                     fontSize: 12,
                                     fontWeight: 600,
                                     color: T.text,
@@ -5607,7 +5449,7 @@ function CollectionSection({ setPage: e }) {
                                 "div",
                                 {
                                   style: {
-                                    fontFamily: "'Plus Jakarta Sans'",
+                                    fontFamily: "'Inter'",
                                     fontSize: 11,
                                     color: T.textMuted,
                                     lineHeight: 1.5,
@@ -5644,7 +5486,7 @@ function CollectionSection({ setPage: e }) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Plus Jakarta Sans'",
+                                fontFamily: "'Inter'",
                                 fontSize: 10,
                                 letterSpacing: "0.12em",
                                 color: T.teal,
@@ -5659,7 +5501,7 @@ function CollectionSection({ setPage: e }) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Plus Jakarta Sans'",
+                                fontFamily: "'Inter'",
                                 fontSize: 12,
                                 color: T.textMuted,
                               },
@@ -5680,8 +5522,7 @@ function CollectionSection({ setPage: e }) {
                         height: 260,
                         overflow: "hidden",
                         position: "relative",
-                        background: T.white,
-                        borderBottom: "1px solid #eee",
+                        background: r.bg,
                       },
                     },
                     r.img
@@ -5692,9 +5533,7 @@ function CollectionSection({ setPage: e }) {
                           style: {
                             width: "100%",
                             height: "100%",
-                            objectFit: "contain",
-                            padding: "16px",
-                            boxSizing: "border-box",
+                            objectFit: "cover",
                           },
                         })
                       : React.createElement(
@@ -5757,7 +5596,7 @@ function CollectionSection({ setPage: e }) {
                             borderRadius: 9999,
                           },
                         },
-                        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 4 } }, React.createElement(NevIcon, { name: "★", size: 10, color: T.tealDark }), "BESTSELLER"),
+                        "★ BESTSELLER",
                       ),
                   ),
                   React.createElement(
@@ -5790,7 +5629,7 @@ function CollectionSection({ setPage: e }) {
                         "span",
                         {
                           style: {
-                            fontFamily: "'Plus Jakarta Sans'",
+                            fontFamily: "'Inter'",
                             fontSize: 24,
                             fontWeight: 700,
                             color: T.teal,
@@ -5802,7 +5641,7 @@ function CollectionSection({ setPage: e }) {
                         "span",
                         {
                           style: {
-                            fontFamily: "'Plus Jakarta Sans'",
+                            fontFamily: "'Inter'",
                             fontSize: 11,
                             color: T.textMuted,
                           },
@@ -5814,7 +5653,7 @@ function CollectionSection({ setPage: e }) {
                       "p",
                       {
                         style: {
-                          fontFamily: "'Plus Jakarta Sans'",
+                          fontFamily: "'Inter'",
                           fontSize: 13,
                           color: T.textMuted,
                           lineHeight: 1.6,
@@ -5847,7 +5686,7 @@ function CollectionSection({ setPage: e }) {
                             fontSize: 14,
                             fontWeight: 600,
                             cursor: "pointer",
-                            fontFamily: "'Plus Jakarta Sans'",
+                            fontFamily: "'Inter'",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -5889,7 +5728,7 @@ function CollectionSection({ setPage: e }) {
                               fontSize: 13,
                               fontWeight: 600,
                               cursor: "pointer",
-                              fontFamily: "'Plus Jakarta Sans'",
+                              fontFamily: "'Inter'",
                             },
                           },
                           "Amazon",
@@ -5913,7 +5752,7 @@ function CollectionSection({ setPage: e }) {
                               fontSize: 13,
                               fontWeight: 600,
                               cursor: "pointer",
-                              fontFamily: "'Plus Jakarta Sans'",
+                              fontFamily: "'Inter'",
                             },
                           },
                           "Flipkart",
@@ -5928,7 +5767,7 @@ function CollectionSection({ setPage: e }) {
                           "div",
                           {
                             style: {
-                              fontFamily: "'Plus Jakarta Sans'",
+                              fontFamily: "'Inter'",
                               fontSize: 11,
                               letterSpacing: "0.13em",
                               color: T.teal,
@@ -5952,18 +5791,17 @@ function CollectionSection({ setPage: e }) {
                               },
                             },
                             React.createElement(
-                                "span",
-                                {
-                                  style: {
-                                    lineHeight: 1,
-                                    flexShrink: 0,
-                                    marginTop: 1,
-                                    display: "inline-flex",
-                                    color: T.gold,
-                                  },
+                              "span",
+                              {
+                                style: {
+                                  fontSize: 18,
+                                  lineHeight: 1,
+                                  flexShrink: 0,
+                                  marginTop: 1,
                                 },
-                                React.createElement(NevIcon, { name: e.icon, size: 18, color: T.gold }),
-                              ),
+                              },
+                              e.icon,
+                            ),
                             React.createElement(
                               "div",
                               null,
@@ -5971,7 +5809,7 @@ function CollectionSection({ setPage: e }) {
                                 "div",
                                 {
                                   style: {
-                                    fontFamily: "'Plus Jakarta Sans'",
+                                    fontFamily: "'Inter'",
                                     fontSize: 13,
                                     fontWeight: 600,
                                     color: T.text,
@@ -5984,7 +5822,7 @@ function CollectionSection({ setPage: e }) {
                                 "div",
                                 {
                                   style: {
-                                    fontFamily: "'Plus Jakarta Sans'",
+                                    fontFamily: "'Inter'",
                                     fontSize: 12,
                                     color: T.textMuted,
                                     lineHeight: 1.55,
@@ -6022,7 +5860,7 @@ function CollectionSection({ setPage: e }) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Plus Jakarta Sans'",
+                                fontFamily: "'Inter'",
                                 fontSize: 10,
                                 letterSpacing: "0.12em",
                                 color: T.teal,
@@ -6037,7 +5875,7 @@ function CollectionSection({ setPage: e }) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Plus Jakarta Sans'",
+                                fontFamily: "'Inter'",
                                 fontSize: 12,
                                 color: T.textMuted,
                               },
@@ -6093,7 +5931,7 @@ function InstagramReels() {
             "div",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 11,
                 fontWeight: 600,
                 letterSpacing: "0.18em",
@@ -6134,7 +5972,7 @@ function InstagramReels() {
               color: "#fff",
               borderRadius: 9999,
               padding: "10px 20px",
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 13,
               fontWeight: 600,
             },
@@ -6166,19 +6004,19 @@ function InstagramReels() {
         [
           {
             url: "https://www.instagram.com/reel/DYELcq4xsH7/",
-            bg: "reel1.jpg.jpg",
+            bg: "reel1.webp",
           },
           {
             url: "https://www.instagram.com/reel/DXvomNwRm32/",
-            bg: "reel2.jpg.jpg",
+            bg: "reel2.webp",
           },
           {
             url: "https://www.instagram.com/reel/DYRB_piR_vB/",
-            bg: "reel3.jpg.jpg",
+            bg: "reel3.webp",
           },
           {
             url: "https://www.instagram.com/reel/DYGw0YQxn40/",
-            bg: "reel4.jpg.jpg",
+            bg: "reel4.webp",
           },
         ].map((e, t) =>
           React.createElement(
@@ -6296,7 +6134,7 @@ function InstagramReels() {
                 "div",
                 {
                   style: {
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 10,
                     fontWeight: 700,
                     letterSpacing: "0.1em",
@@ -6310,7 +6148,7 @@ function InstagramReels() {
                 "div",
                 {
                   style: {
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 11,
                     color: "#fff",
                     opacity: 0.9,
@@ -6371,6 +6209,7 @@ const ritualTeas = {
     ]
   }
 };
+
 function HowToBrewSection() {
   const { isMobile: e } = useViewport();
   const [selectedTeaKey, setSelectedTeaKey] = useState('oolong');
@@ -6382,14 +6221,16 @@ function HowToBrewSection() {
   const [bubbles, setBubbles] = useState([]);
   const [statusText, setStatusText] = useState("Ready to steep at 90°C for 3 Min");
   const steamCanvasRef = useRef(null);
+
   const config = ritualTeas[selectedTeaKey];
+
   useEffect(() => {
     if (!isBrewing) return;
-
+    
     let animFrame;
     const start = Date.now();
     const duration = time * 4000;
-
+    
     const spawnBubble = () => {
       const id = Math.random();
       const newBubble = {
@@ -6403,16 +6244,18 @@ function HowToBrewSection() {
         setBubbles(prev => prev.filter(b => b.id !== id));
       }, (newBubble.duration + 0.5) * 1000);
     };
+
     const tick = () => {
       const elapsed = Date.now() - start;
       const currentProgress = Math.min(elapsed / duration, 1);
-
+      
       setProgress(currentProgress);
       setSwirlSpeed(Math.max(0.08, 1 - currentProgress * 1.1));
-
+      
       if (Math.random() > 0.92) {
         spawnBubble();
       }
+
       const matchedStep = config.steps.find((s, idx) => {
         const next = config.steps[idx + 1];
         return currentProgress >= s.p && (!next || currentProgress < next.p);
@@ -6420,6 +6263,7 @@ function HowToBrewSection() {
       if (matchedStep) {
         setStatusText(matchedStep.text);
       }
+
       if (elapsed < duration) {
         animFrame = requestAnimationFrame(tick);
       } else {
@@ -6427,25 +6271,26 @@ function HowToBrewSection() {
         setStatusText("Infusion complete. Savor the untamed cup.");
       }
     };
-
+    
     animFrame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(animFrame);
   }, [isBrewing, selectedTeaKey, time]);
+
   useEffect(() => {
     const canvas = steamCanvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-
+    
     let animFrame;
     let w = (canvas.width = canvas.offsetWidth);
     let h = (canvas.height = canvas.offsetHeight);
-
+    
     let particles = [];
-
+    
     const loop = () => {
       ctx.clearRect(0, 0, w, h);
       if (!isBrewing) return;
-
+      
       const threshold = 1 - (temp - 70) / 60;
       if (Math.random() > Math.min(0.85, 0.4 + threshold)) {
         particles.push({
@@ -6457,35 +6302,36 @@ function HowToBrewSection() {
           alpha: Math.random() * 0.16 + 0.08
         });
       }
-
+      
       particles.forEach((p, idx) => {
         p.x += p.vx;
         p.y += p.vy;
         p.r += 0.07;
         p.alpha -= 0.003;
-
+        
         if (p.alpha <= 0 || p.y < 0) {
           particles.splice(idx, 1);
           return;
         }
-
+        
         ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();
       });
-
+      
       animFrame = requestAnimationFrame(loop);
     };
-
+    
     if (isBrewing) {
       loop();
     } else {
       ctx.clearRect(0, 0, w, h);
     }
-
+    
     return () => cancelAnimationFrame(animFrame);
   }, [isBrewing, temp]);
+
   const selectRitualTea = (key) => {
     if (isBrewing) return;
     setSelectedTeaKey(key);
@@ -6495,6 +6341,7 @@ function HowToBrewSection() {
     setProgress(0);
     setStatusText(`Ready to steep at ${tc.temp}°C for ${tc.time} Min`);
   };
+
   const startSteeping = () => {
     if (isBrewing) return;
     setProgress(0);
@@ -6503,8 +6350,9 @@ function HowToBrewSection() {
     setIsBrewing(true);
     setStatusText("Pouring water... waking the leaf.");
   };
-  const liquidHeight = isBrewing ? 85 : (progress >= 1 ? 85 : 0);
 
+  const liquidHeight = isBrewing ? 85 : (progress >= 1 ? 85 : 0);
+  
   let liquidColor = 'transparent';
   if (isBrewing || progress >= 1) {
     if (progress <= 0.25) {
@@ -6513,16 +6361,17 @@ function HowToBrewSection() {
       liquidColor = config.color;
     }
   }
+
   const leafElements = Array.from({ length: 8 }).map((_, idx) => {
     const timeFactor = Date.now() / (300 * swirlSpeed);
     const angle = timeFactor + idx * (Math.PI / 4);
     const leafScale = 0.2 + progress * 0.95;
-
+    
     let left = 20 + idx * 16;
     let bottom = 10;
     let rot = 0;
     let trans = "all 1.5s ease-out";
-
+    
     if (isBrewing) {
       if (swirlSpeed > 0.15) {
         left = Math.sin(angle) * 45 + 70;
@@ -6539,7 +6388,7 @@ function HowToBrewSection() {
       left = 15 + idx * 18;
       rot = idx * 40 - 80;
     }
-
+    
     return React.createElement("div", {
       key: idx,
       className: "liquid-leaf",
@@ -6552,6 +6401,7 @@ function HowToBrewSection() {
       }
     });
   });
+
   return React.createElement(
     "section",
     {
@@ -6592,7 +6442,7 @@ function HowToBrewSection() {
                 "span",
                 {
                   style: {
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 12,
                     fontWeight: 600,
                     letterSpacing: "0.14em",
@@ -6621,7 +6471,7 @@ function HowToBrewSection() {
               "p",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 15,
                   color: T.tealLight,
                   lineHeight: 1.7
@@ -6635,7 +6485,7 @@ function HowToBrewSection() {
             {
               style: {
                 display: "grid",
-                gridTemplateColumns: e ? "repeat(2, 1fr)" : "repeat(4, 1fr)",
+                gridTemplateColumns: "repeat(4, 1fr)",
                 gap: 12
               }
             },
@@ -6657,7 +6507,7 @@ function HowToBrewSection() {
                     fontWeight: 600,
                     textTransform: "capitalize",
                     transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease",
-                    fontFamily: "'Plus Jakarta Sans'"
+                    fontFamily: "'Inter'"
                   }
                 },
                 key
@@ -6742,7 +6592,7 @@ function HowToBrewSection() {
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                   transition: "background-color 200ms ease, color 200ms ease, transform 160ms var(--ease-out)",
-                  fontFamily: "'Plus Jakarta Sans'"
+                  fontFamily: "'Inter'"
                 }
               },
               isBrewing ? "Steeping..." : "Start Infusion"
@@ -6847,7 +6697,7 @@ function FAQSection() {
             "span",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 12,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
@@ -6855,7 +6705,7 @@ function FAQSection() {
                 textTransform: "uppercase",
               },
             },
-            "Questions?",
+            "Got Questions?",
           ),
           React.createElement("div", {
             style: { height: 1, width: 48, background: T.gold },
@@ -6871,7 +6721,7 @@ function FAQSection() {
               color: T.text,
             },
           },
-          "Things people usually ask",
+          "Frequently Asked Questions",
         ),
       ),
       React.createElement(
@@ -6880,31 +6730,31 @@ function FAQSection() {
         [
           {
             q: "Do you deliver across India?",
-            a: "Yes — we deliver everywhere in India via Amazon and Flipkart. You can also order directly on WhatsApp if you want a more personal experience.",
+            a: "Yes! We deliver pan-India via Amazon and Flipkart. You can also order directly on WhatsApp for personal assistance.",
           },
           {
             q: "How long does delivery take?",
-            a: "Amazon and Flipkart orders take 3–5 business days. WhatsApp orders go out within 24 hours of confirmation.",
+            a: "Amazon and Flipkart orders typically arrive in 3–5 business days. WhatsApp orders are dispatched within 24 hours.",
           },
           {
             q: "What is the shelf life of the tea?",
-            a: "24 months from manufacture, stored cool and dry, out of direct sunlight. The seal keeps the leaf fresh — once opened, use within a few months for best flavour.",
+            a: "All Nevisan teas have a shelf life of 24 months from the date of manufacture when stored in a cool, dry place away from direct sunlight.",
           },
           {
-            q: "Is Nevisan tea really organic and chemical-free?",
-            a: "Yes. Every batch carries PGS-India Organic Certification — a government-recognised verification, not a self-declared claim. Zero pesticides from field to pack.",
+            q: "Is your tea organic and chemical free?",
+            a: "Yes. Every batch is PGS-India organic certified and grown without pesticides or chemicals. From soil to seal, we guarantee it.",
           },
           {
             q: "Can the tea be steeped more than once?",
-            a: "Yes. Whole-leaf tea holds its oils through the first steep, so the second cup is genuinely worth having — not just coloured water.",
+            a: "Absolutely. Because we use 100% whole leaf tea, most of our varieties can be steeped twice — the second cup is just as rewarding.",
           },
           {
             q: "Do you offer bulk or wholesale orders?",
-            a: "Yes. For cafes, hotels, offices, or gifting, WhatsApp us at +91 98642 45687. We'll sort out pricing and quantities directly.",
+            a: "Yes! For bulk orders for hotels, cafes, offices or gifting, reach out to us directly on WhatsApp at +91 98642 45687.",
           },
           {
             q: "What is your return policy?",
-            a: "Tea is consumable, so we can't accept returns on opened packs. But if your order arrives damaged, near expiry, or incorrect, WhatsApp us within 48 hours and we'll replace it — no questions, no forms.",
+            a: "As tea is a consumable product, all sales are final and non-returnable. However, if you receive a product that is near expiry, damaged, or incorrect, contact us on WhatsApp within 48 hours of delivery and we will replace it immediately.",
           },
         ].map((n, o) =>
           React.createElement(
@@ -6943,7 +6793,7 @@ function FAQSection() {
                 "span",
                 {
                   style: {
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: e ? 14 : 15,
                     fontWeight: 600,
                     color: T.text,
@@ -6982,7 +6832,7 @@ function FAQSection() {
                   "p",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: e ? 13 : 14,
                       color: T.textMuted,
                       lineHeight: 1.7,
@@ -7002,13 +6852,13 @@ function FAQSection() {
           "p",
           {
             style: {
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 14,
               color: T.textMuted,
               marginBottom: 16,
             },
           },
-          "Something else?",
+          "Still have a question?",
         ),
         React.createElement(
           "a",
@@ -7024,7 +6874,7 @@ function FAQSection() {
               color: "#fff",
               borderRadius: 9999,
               padding: "12px 28px",
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 14,
               fontWeight: 600,
               textDecoration: "none",
@@ -7205,7 +7055,7 @@ function TrustBadges() {
             "span",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: e ? 12 : 13,
                 fontWeight: 500,
                 color: "#2a3a3b",
@@ -7220,102 +7070,6 @@ function TrustBadges() {
     ),
   );
 }
-function StatsSection() {
-  const { isMobile: e } = useViewport(),
-    [ref, inView] = useInView(0.15);
-  const stats = [
-    { value: 10, suffix: "", label: "Tea Varieties" },
-    { value: 1, suffix: "", label: "Origin Garden" },
-    { value: 100, suffix: "%", label: "Pesticide Free" },
-    { value: 499, suffix: "₹", label: "MRP Per Pack", prefix: true },
-  ];
-  return React.createElement(
-    "section",
-    {
-      ref,
-      style: {
-        background: T.tealDark,
-        padding: e ? "80px 20px" : "120px 32px",
-        textAlign: "center",
-        position: "relative",
-        overflow: "hidden",
-      },
-    },
-    /* Gold particle dots */
-    ...[...Array(14)].map((_, i) =>
-      React.createElement("div", {
-        key: i,
-        style: {
-          position: "absolute",
-          width: i % 3 === 0 ? 4 : 2,
-          height: i % 3 === 0 ? 4 : 2,
-          borderRadius: "50%",
-          background: T.gold,
-          opacity: 0.25 + (i % 4) * 0.1,
-          top: `${10 + (i * 6.2) % 80}%`,
-          left: `${5 + (i * 7.3) % 90}%`,
-          pointerEvents: "none",
-          animation: `float ${2.5 + (i % 3)}s ease-in-out infinite alternate`,
-          animationDelay: `${i * 0.3}s`,
-        },
-      }),
-    ),
-    React.createElement(
-      "div",
-      { style: { maxWidth: 900, margin: "0 auto", position: "relative" } },
-      /* Label */
-      React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 32 } },
-        React.createElement("div", { style: { width: 40, height: 1, background: "rgba(201,168,76,0.5)" } }),
-        React.createElement("span", { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", color: T.gold, textTransform: "uppercase" } }, "By the Numbers"),
-        React.createElement("div", { style: { width: 40, height: 1, background: "rgba(201,168,76,0.5)" } }),
-      ),
-      /* Heading */
-      React.createElement("h2", {
-        style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: "clamp(28px, 4.5vw, 58px)", color: T.white, lineHeight: 1.2, marginBottom: 8 },
-      }, "Grown with ", React.createElement("em", { style: { color: T.gold, fontStyle: "italic" } }, "purpose.")),
-      React.createElement("h2", {
-        style: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: "clamp(28px, 4.5vw, 58px)", color: T.white, lineHeight: 1.2, marginBottom: 20 },
-      }, "Delivered with care."),
-      React.createElement("p", {
-        style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 15, color: "rgba(255,255,255,0.55)", maxWidth: 480, margin: "0 auto", lineHeight: 1.7, marginBottom: e ? 48 : 64 },
-      }, "Every variety traces back to one place — one climate, one soil, one address in Golaghat that we can actually point to on a map."),
-      /* Stats */
-      React.createElement(
-        "div",
-        {
-          style: {
-            display: "grid",
-            gridTemplateColumns: e ? "repeat(2,1fr)" : "repeat(4,1fr)",
-            gap: e ? 24 : 40,
-          },
-        },
-        stats.map(({ value, suffix, label, prefix }, idx) =>
-          React.createElement(
-            "div",
-            {
-              key: label,
-              style: {
-                opacity: inView ? 1 : 0,
-                transform: inView ? "translateY(0)" : "translateY(20px)",
-                transition: `opacity 0.6s ease ${idx * 120}ms, transform 0.6s ease ${idx * 120}ms`,
-              },
-            },
-            React.createElement(
-              "div",
-              { style: { fontFamily: "'Playfair Display', Georgia, serif", fontSize: e ? 40 : 52, fontWeight: 400, color: T.gold, lineHeight: 1 } },
-              prefix ? "₹" + value : value + suffix,
-            ),
-            React.createElement(
-              "div",
-              { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 12, fontWeight: 500, letterSpacing: "0.1em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", marginTop: 8 } },
-              label,
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
-}
 function HomePage({ setPage: e }) {
   return React.createElement(
     "div",
@@ -7324,9 +7078,7 @@ function HomePage({ setPage: e }) {
     React.createElement(Ticker, null),
     React.createElement(TrustBadges, null),
     React.createElement(CollectionSection, { setPage: e }),
-    React.createElement(StatsSection, null),
-    React.createElement(OriginSection, null),
-    React.createElement(BenefitsSection, null),
+    React.createElement(PhilosophySection, null),
     React.createElement(HowToBrewSection, null),
     React.createElement(WhereToBuy, null),
     React.createElement(Testimonials, null),
@@ -7336,13 +7088,13 @@ function HomePage({ setPage: e }) {
   );
 }
 const PAGE_PHOTOS = {
-  ourStory: "1.jpg",
-  about: "2.jpg",
-  collection: "3.jpg",
-  journal: "4.jpg",
-  wholesale: "5.jpg",
-  certifications: "6.jpg",
-  contact: "7.jpg",
+  ourStory: "1.webp",
+  about: "2.webp",
+  collection: "3.webp",
+  journal: "4.webp",
+  wholesale: "5.webp",
+  certifications: "6.webp",
+  contact: "7.webp",
 };
 function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
   const { isMobile: o } = useViewport();
@@ -7353,7 +7105,7 @@ function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
         position: "relative",
         height: o ? 300 : 420,
         overflow: "hidden",
-        marginTop: o ? 108 : 68,
+        marginTop: 68,
         backgroundColor: T.tealDark,
         backgroundImage: `url(${e})`,
         backgroundSize: "cover",
@@ -7388,7 +7140,7 @@ function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
         "div",
         {
           style: {
-            fontFamily: "'Plus Jakarta Sans'",
+            fontFamily: "'Inter'",
             fontSize: 11,
             fontWeight: 600,
             letterSpacing: "0.2em",
@@ -7428,7 +7180,7 @@ function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
           "p",
           {
             style: {
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: o ? 14 : 16,
               color: "rgba(255,255,255,0.72)",
               maxWidth: 500,
@@ -7448,11 +7200,11 @@ function OurStoryPage({ setPage: e }) {
     React.createElement(PageHero, {
       photo: PAGE_PHOTOS.ourStory,
       label: "Single Origin · Golaghat, Assam",
-      title: "From one garden to your cup",
+      title: "Where every leaf begins",
       subtitle:
-        "Assam grows some of the finest tea in the world. Most of it leaves on export trucks. What stays behind usually ends up as dust. We decided that was a problem worth fixing.",
+        "We grew up next to the world's best tea gardens — and decided the rest of India should taste them too.",
     }),
-    React.createElement(OriginSection, null),
+    React.createElement(PhilosophySection, null),
     React.createElement(
       "div",
       { style: { background: T.cream, padding: o ? "60px 20px" : "100px 32px" } },
@@ -7466,7 +7218,7 @@ function OurStoryPage({ setPage: e }) {
             "span",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 11,
                 fontWeight: 600,
                 letterSpacing: "0.16em",
@@ -7489,7 +7241,7 @@ function OurStoryPage({ setPage: e }) {
                 lineHeight: 1.25,
               },
             },
-            "How the tea gets from Golaghat to your cup"
+            "The Journey of the Perfect Leaf"
           )
         ),
         React.createElement(
@@ -7504,18 +7256,18 @@ function OurStoryPage({ setPage: e }) {
           [
             {
               num: "01",
-              title: "The garden in Golaghat",
-              desc: "Golaghat sits in the upper Brahmaputra valley — one of the few places on earth where the soil, rainfall, and daily temperature swings combine to produce tea with real complexity. We source from one processing house there, in small batches. That means what arrives at your door was made recently and handled carefully — not blended with four other estates or sitting in a warehouse.",
+              title: "The Assam Sourcing (Golaghat)",
+              desc: "Deep in the rolling hills of Golaghat, Assam, near the paths of the Brahmaputra River, grow our whole orthodox tea leaves. Sourced directly from our estate, every batch is handcrafted in small quantities to preserve the raw, whole-leaf character of single-origin Assam tea. We respect the soil, and in return, it gives us some of the boldest, most complex teas in the world.",
             },
             {
               num: "02",
-              title: "Why tea bags taste the way they do",
-              desc: "Open a standard tea bag and you'll find CTC — cut, torn, and curled leaf fragments, sometimes outright dust from the processing floor. It brews fast, it's often bitter, and you get one steep out of it before the flavour is gone. Whole leaf works differently. The oils stay in the leaf until you add hot water. That's why the cup is smoother, more layered, and worth going back to for a second steep.",
+              title: "The Antidote to 'Bitter Dust'",
+              desc: "Most commercial green teas are made from leftover 'tea dust' swept from factory floors and packed into paper tea bags, resulting in a bitter, astringent cup. Nevisan is the antidote. We pack only whole, unbroken leaves that gently unfurl in hot water, releasing a naturally sweet, smooth flavor that can be steeped twice. No bitterness, just pure leaf.",
             },
             {
               num: "03",
-              title: "Each blend starts with a reason",
-              desc: "We don't blend for aesthetics. Every variety starts with a question: what does this person actually need? Spearmint for hormonal skin. GABA Oolong for an anxious mind. Chamomile for a restless night. Rum and Whiskey for the people who want a proper evening drink without the hangover. If an ingredient doesn't do something real, it doesn't go in.",
+              title: "The Alchemy of Flavor & Function",
+              desc: "We believe wellness shouldn't taste boring. We take our clean orthodox tea and blend it with organic botanicals—like Spearmint to balance hormones, GABA Oolong to calm an overactive mind, and pure Chamomile to restore sleep. Then, we add a touch of gourmet sophistication—infusing our leaves with rich, warm, non-alcoholic notes of charred oak Whiskey and sugarcane Rum.",
             },
           ].map((item, idx) =>
             React.createElement(
@@ -7563,7 +7315,7 @@ function OurStoryPage({ setPage: e }) {
                   "p",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 15,
                       color: T.textMuted,
                       lineHeight: 1.75,
@@ -7582,198 +7334,184 @@ function OurStoryPage({ setPage: e }) {
 }
 const POSTS = [
   {
-    title: "Why Your Tea Bag Is Lying to You",
+    title: "Why Whole Leaf Tea Tastes Different",
     slug: "why-whole-leaf-tea-tastes-different",
     date: "August 2025",
-    author: "Master Blender Uditi",
-    readTime: "4 min read",
     tag: "CRAFT",
-    relatedTeas: ["Organic Green Tea", "Lemongrass Green Tea"],
     excerpt:
-      "Tear open a standard tea bag and you'll find dust, not tea. Here's what whole leaf actually means — and why it changes everything in your cup.",
+      "Most commercial teas use broken leaves and dust — it brews fast but loses the complex flavour compounds locked in whole leaves.",
     body: [
-      "Go ahead, tear open a supermarket tea bag. That brown powder inside? That's CTC — Cut, Tear, Curl. It's an industrial method that shreds whole leaves into uniform granules sized for speed and colour, not flavour. You get a fast, dark brew. You do not get tea.",
-      "A whole leaf is exactly what it sounds like: the leaf stayed intact through every step of processing. That matters because the parts that make tea interesting — the essential oils, the amino acids, the flavour compounds — are still locked inside the leaf structure. When you add hot water, they release slowly, fully, in layers.",
-      "This is why you can steep a Nevisan tea two or even three times and get a different cup each time. The first steep is bright and aromatic. The second is softer, more rounded. The third has a subtle sweetness that catches you off guard. Tea drinkers in Japan and Taiwan have known about this for centuries. We're just catching up.",
-      "When you buy whole leaf, you're paying for the full story of the plant — from the soil it grew in, to the hands that processed it, to the moment it opens in your cup. That's not a premium. That's just what tea is supposed to be."
-    ]
+      "Walk into any supermarket and pick up a tea bag. Tear it open. What you'll find is CTC — Cut, Tear, Curl — a method that reduces whole tea leaves into tiny granules optimised for speed and colour, not taste.",
+      "Whole leaf tea is different in every way. The entire leaf is kept intact through processing, which means the essential oils, amino acids (especially L-theanine), and flavour compounds remain locked inside — releasing slowly and fully as the leaf unfurls in hot water.",
+      "This is why Nevisan teas can be steeped two or three times. The first steep releases the brighter, more aromatic top notes. The second steep — after a minute of rest — brings out the deeper, more rounded body of the tea. By the third, you're getting the subtle, surprisingly sweet finish that tea drinkers in Japan and Taiwan have known about for centuries.",
+      "When you buy whole leaf, you're not just buying tea. You're buying the full story of the leaf — from how it grew, to how it was processed, to what it becomes in your cup.",
+    ],
   },
   {
-    title: "What Actually Happens in Your Brain When You Drink GABA Tea",
+    title: "The Science Behind GABA Tea",
     slug: "science-behind-gaba-tea",
     date: "September 2025",
-    author: "Nevisan Botanical Team",
-    readTime: "5 min read",
     tag: "WELLNESS",
-    relatedTeas: ["GABA Oolong Tea", "Chamomile Green Tea"],
     excerpt:
-      "GABA is your nervous system's off switch. Here's the unusual processing technique that coaxes oolong leaves into producing far more of it.",
+      "GABA is your brain's natural calming signal. Here's how Nevisan's oolong leaves are processed to naturally amplify it.",
     body: [
-      "Most people feel something when they drink GABA Oolong — a quietness, a settling. It's not placebo. There's a real mechanism behind it, and it starts with a neurotransmitter your brain already makes called GABA, or gamma-aminobutyric acid.",
-      "GABA is the primary signal your nervous system uses to slow things down. When your brain fires too fast — the anxious spiral, the 2am loop of thoughts — GABA is what eventually says: stop. Low GABA is linked to anxiety, poor sleep, and that particular kind of mental restlessness that makes it hard to sit still.",
-      "Here's the interesting part: most teas contain almost no GABA. But in the 1980s, Japanese researchers discovered that when oolong leaves are sealed in a nitrogen-rich, oxygen-free environment during processing, the leaves undergo a specific chemical shift that multiplies their GABA content by 4 to 10 times. That's the anaerobic processing technique Nevisan uses.",
-      "The result is a tea that calms without sedating. Chamomile will send you toward sleep. GABA Oolong lets you be still and present at the same time — good for reading, for a long conversation, for the hour before bed when you want to wind down without switching off entirely. Clinical studies have looked at it for blood pressure and sleep quality too, but honestly the simplest way to understand it is to brew a cup at 9pm and pay attention to what happens next."
-    ]
+      "GABA — gamma-aminobutyric acid — is the primary inhibitory neurotransmitter in your brain. In simple terms, it's the signal your nervous system sends to slow down, stop over-firing, and relax. Low GABA is associated with anxiety, poor sleep, and mental restlessness.",
+      "Most teas contain very little GABA naturally. But when oolong tea leaves are exposed to nitrogen-rich, oxygen-free environments during processing (a technique developed in Japan in the 1980s), the leaves undergo a specific biochemical reaction that dramatically increases GABA content — often by 4 to 10 times.",
+      "Nevisan's GABA Oolong is processed using this exact anaerobic method. The result is a tea that supports deep relaxation and mental clarity without sedation. Unlike chamomile (which promotes sleep), GABA tea allows you to be calm and focused simultaneously.",
+      "Regular consumption has been studied for blood pressure reduction, improved sleep quality, and anxiety management — making it one of the most functionally potent teas in our collection.",
+    ],
   },
   {
-    title: "The Tea Region Nobody Talks About (But Should)",
+    title: "Golaghat: India's Hidden Tea Belt",
     slug: "golaghat-indias-hidden-tea-belt",
     date: "October 2025",
-    author: "Single-Estate Origin Team",
-    readTime: "4 min read",
     tag: "ORIGIN",
-    relatedTeas: ["Organic Green Tea", "Tulsi Green Tea"],
     excerpt:
-      "Everyone knows Darjeeling. Serious tea people know Golaghat — a small district in upper Assam that quietly produces some of the most complex tea in the world.",
+      "While Darjeeling gets the headlines, Golaghat in upper Assam quietly produces some of the boldest, most complex teas in the world.",
     body: [
-      "Ask someone to name an Indian tea region and they'll say Darjeeling. It's the obvious answer, the one on every premium label, backed by 150 years of marketing. But if you ask the people who actually spend their lives tasting tea — the buyers, the blenders, the obsessives — a different name comes up: Golaghat.",
-      "Golaghat sits in the upper Brahmaputra valley in Assam, where the soil is a layered combination of red clay, river alluvium, and centuries of organic decomposition. The humidity rarely drops below 75%. The seasonal temperature swings are dramatic. For the tea plant, this is a form of constant gentle stress — and stressed plants respond by producing more of the complex compounds that create flavour. It's the same reason good wine grapes come from difficult terrain.",
-      "Every Nevisan tea is sourced from a single estate in Golaghat. We say that a lot, but the implications are worth spelling out. Single-origin means you can trace exactly where the leaf came from — which garden, which season, which processing run. There are no blends quietly averaging out lesser-quality batches. What's in the pack is what grew in that specific place.",
-      "Darjeeling is excellent. Golaghat is honest. That difference is why it's where Nevisan begins."
-    ]
+      'Ask most people to name an Indian tea region and they\'ll say Darjeeling. The "Champagne of teas" has built an unmatched reputation over 150 years of marketing. But among tea professionals and serious drinkers, a different region commands deep respect: Golaghat, in upper Assam.',
+      "Golaghat sits in the Brahmaputra valley, where the soil is a unique combination of red clay, alluvial deposits from the river, and centuries of decomposed organic matter. The humidity is extreme — averaging 80% year round — and the temperature swings between seasons create a plant under constant gentle stress, which forces it to develop complex defensive compounds that translate directly into flavour.",
+      "Every Nevisan tea comes from a single garden in Golaghat. This matters because single-origin means traceability — you know exactly where your tea came from, who grew it, and how it was processed. There are no blends covering up lesser-quality leaves. What's in the pack is exactly what grew in that garden.",
+      "This is the foundational commitment behind Nevisan: one origin, one standard, complete transparency.",
+    ],
   },
   {
-    title: "The Three Steeps: Getting More from Every Cup",
+    title: "How to Get Three Steeps from One Serving",
     slug: "how-to-get-three-steeps",
     date: "November 2025",
-    author: "Nevisan Brewing Lab",
-    readTime: "3 min read",
     tag: "BREWING",
-    relatedTeas: ["Organic Green Tea", "GABA Oolong Tea"],
     excerpt:
-      "If you're throwing away the leaves after one steep, you're throwing away the best part of the cup.",
+      "Whole leaf teas open up with each steep. The first is bold, the second more rounded, the third surprisingly sweet.",
     body: [
-      "Most people steep their tea once and dump the leaves. With broken-leaf tea bags, that's fine — there's nothing left to give. With whole-leaf tea, you've barely started.",
-      "Think of it this way: the first steep is the introduction. The second is the conversation. The third is when things get interesting.",
-      "First steep — use the temperature on the pack (usually 80–90°C) and go for 2 to 3 minutes. This pull is the most aromatic, the brightest, the most characteristic of that particular tea. It's bold and clean.",
-      "Second steep — drain the leaves completely, let them rest for about 60 seconds, then add fresh water at the same temperature. Steep for another 2 to 3 minutes. The cup will be softer. The edges round out. A lot of people find this one their favourite.",
-      "Third steep — rest again, then extend the steep to 3 or 4 minutes. This is where the sweetness hides. It's subtle, almost surprising. Experienced tea drinkers often save this one for the evening.",
-      "One thing not to do: don't squeeze or press the leaves when you're done. That releases bitterness that was never meant to be in the cup. Let the water do everything. The leaf will give you what it has."
-    ]
+      "One of the most common mistakes people make with whole leaf tea is throwing it away after the first steep. This is like eating only the crust of a sourdough loaf.",
+      "Here's how to get the most from every serving of Nevisan tea:",
+      'First Steep: Use water at the temperature specified on your tea (typically 80–90°C). Steep for 2–3 minutes. This releases the brightest, most aromatic compounds — the "top notes" of the tea. This is the boldest, most characteristic cup.',
+      "Second Steep: Let the leaves rest for 60 seconds after draining. Add fresh water at the same temperature. Steep for 2–3 minutes. The body opens up further. You'll notice the cup is softer, more rounded — often more complex than the first.",
+      "Third Steep: Rest again, then steep for 3–4 minutes. This is where the subtle sweetness lives. Many experienced drinkers consider this their favourite cup of the three.",
+      "Pro tip: Don't squeeze or press the leaves — this releases bitterness. Let the water do the work.",
+    ],
   },
   {
-    title: "14 Attempts. One Cup. The Story of Rum Green Tea.",
+    title: "Rum Green Tea: How We Made It",
     slug: "rum-green-tea-how-we-made-it",
     date: "December 2025",
-    author: "Master Blender Uditi",
-    readTime: "5 min read",
     tag: "CRAFT",
-    relatedTeas: ["Rum Green Tea", "Whiskey Green Tea"],
     excerpt:
-      "No alcohol, no artificial flavouring. Just a question worth obsessing over: can a tea genuinely feel like a warm evening?",
+      "No alcohol. No artificial flavour. Just 14 attempts and a precise cold-infusion technique using natural botanicals.",
     body: [
-      "The question that started it was simple: can a tea feel like a warm evening without the alcohol? Not a mocktail — you still need a shaker and a setup for those. A tea. Something you brew in a cup, that genuinely evokes the character of aged rum.",
-      "The challenge is that rum's complexity comes from barrel ageing. Years of contact with charred wood create hundreds of interacting compounds — vanillins, esters, caramel phenols — that no single botanical can replicate. So we didn't try to use a single botanical. We built a structure: a warm Assam green tea base, specific naturally sweet ingredients for the caramel mid-note, a herb for the warm etheric quality rum has, and a cold-infusion technique that lets everything integrate slowly without the bitterness that heat extraction produces.",
-      "Attempts one through eight were too sweet. Nine and ten were sharp in the wrong way. Eleven had warmth but no depth. Twelve tasted like a dessert. Thirteen was genuinely close — the profile was almost right — but the finish dropped off.",
-      "Attempt fourteen was the one. First sip: warming, slightly sweet. Mid-palate: herbal, with body. Finish: clean, with a mild spice that lingers. We've made no changes to the recipe since. Sometimes getting something right means being willing to try it fourteen times."
-    ]
+      "The idea came from a simple question: what if you could drink something that felt like a warm evening without the alcohol? Not a mocktail — those still require mixing and equipment. A tea. Something you could brew in a cup and that would genuinely evoke the character of aged rum.",
+      "The challenge was that rum's complexity comes from barrel ageing — a process that creates hundreds of interacting chemical compounds over years. No single botanical can replicate that. So we built it from multiple elements: a warm Assam green base, naturally sweet botanicals for the caramel undertone, a specific herb for the warm etheric note, and a precise cold-infusion technique that allows the botanicals to integrate without the bitterness that heat extraction creates.",
+      "Attempts 1 through 8 were too sweet. 9 and 10 were too sharp. 11 was close but lacked warmth. 12 tasted like dessert. 13 was almost right — but the finish wasn't there.",
+      "Attempt 14 hit the balance. The first sip is warming and slightly sweet. The mid-palate opens up with the herbal depth. The finish is clean with a slight spice. We've made no changes since.",
+    ],
   },
   {
-    title: "When to Drink Which Tea: A Practical Guide to Your Day",
+    title: "Morning vs Evening Teas: A Simple Guide",
     slug: "morning-vs-evening-teas",
     date: "January 2026",
-    author: "Nevisan Wellness Team",
-    readTime: "4 min read",
     tag: "WELLNESS",
-    relatedTeas: ["Lemongrass Green Tea", "Chamomile Green Tea"],
     excerpt:
-      "The compounds in each tea interact with your body differently depending on the time of day. Here's how to match what you drink to when you drink it.",
+      "Lemongrass and Spearmint for mornings. Chamomile and GABA for evenings. Here's why each tea works best at certain times.",
     body: [
-      "Tea isn't one-size-fits-all, and not just because of taste. The active compounds in each variety — caffeine levels, specific polyphenols, adaptogens, amino acids — interact with your body differently depending on where you are in your daily rhythm.",
-      "In the morning, from roughly 6am to noon, green tea is doing its best work. Organic Green Tea or Lemongrass Green delivers caffeine paired with L-theanine, which smooths out the alertness into something sustained and calm — no cortisol spike, no mid-morning crash. Lemongrass also helps with digestion after overnight fasting. If hormonal breakouts are something you're dealing with, Spearmint mid-morning is worth building into the routine.",
-      "Afternoons are when Rum and Whiskey Green teas earn their place. The bold character suits the natural energy dip around 2pm, and the green tea base keeps your mind clear. Blue Flower is quieter but visually striking — a good choice for an afternoon pause that doesn't make you drowsy.",
-      "Evenings call for either Chamomile or GABA Oolong, and the choice comes down to what you actually want. Chamomile is for winding down properly — it will move you toward sleep. GABA Oolong is for being calm and still present — good for reading, for creative work, for conversations you want to actually be in.",
-      "Tulsi sits outside these categories. It's an adaptogen, meaning it responds to your body's state rather than imposing one. Morning, afternoon, evening — it works."
-    ]
+      "Not all teas are equal at all hours. The compounds in each variety interact differently with your body depending on where you are in your daily rhythm. Here's how to match your Nevisan tea to your time of day:",
+      "Morning (6am – 12pm): Organic Green Tea or Lemongrass Green Tea. Both deliver clean caffeine combined with L-theanine — a calm, sustained alertness without the cortisol spike of coffee. Lemongrass adds a digestive benefit that's useful after overnight fasting. Spearmint works well mid-morning if you're prone to hormonal breakouts.",
+      "Afternoon (12pm – 5pm): Rum or Whiskey Green Tea. The bold character suits the afternoon energy dip, while the green tea base maintains mental alertness. Blue Flower is also excellent here — it's visually striking and mildly calming without making you sleepy.",
+      "Evening (5pm – bedtime): Chamomile or GABA Oolong. Chamomile for those who want to fully unwind and improve sleep quality. GABA Oolong for those who want to relax while staying mentally present — ideal for creative work or quiet reading.",
+      "Tulsi works at any hour — it's an adaptogen, meaning it reads what your body needs (energy or calm) and responds accordingly.",
+    ],
   },
   {
-    title: "Spearmint Tea and Hormonal Skin: What the Research Shows",
-    slug: "spearmint-tea-hormonal-balance-pcos",
+    title:
+      "Blue Butterfly Pea Flower Tea: What Makes It Turn Purple and Why It's Worth Drinking",
+    slug: "blue-butterfly-pea-flower-tea",
     date: "February 2026",
-    author: "Nevisan Research Team",
-    readTime: "5 min read",
-    tag: "HORMONAL HEALTH",
-    relatedTeas: ["Spearmint Green Tea", "Tulsi Green Tea"],
+    tag: "WELLNESS",
     excerpt:
-      "Two cups of spearmint tea a day reduced free testosterone levels in PCOS patients by a measurable margin. Here's the science behind why it works.",
+      "Blue butterfly pea flower tea gets its colour from anthocyanins — powerful antioxidants that also explain its mood-lifting, brain-supporting reputation.",
     body: [
-      "Hormonal acne is frustrating in a specific way — topical treatments address what's on the surface, but the cause is internal. Excess free testosterone signals sebaceous glands to overproduce oil. The breakout is just where that process becomes visible.",
-      "A clinical trial published in Phytotherapy Research gave women with PCOS two cups of spearmint tea daily for 30 days. At the end, plasma free testosterone levels had fallen significantly. The mechanism is rosmarinic acid and polyphenols in spearmint inhibiting 5-alpha reductase — the enzyme that converts testosterone into DHT, the form that drives androgenic effects.",
-      "Nevisan's Spearmint Green Tea combines organic Mentha spicata with whole-leaf Assam green. The spearmint delivers the anti-androgenic effect. The green tea adds EGCG catechins and L-theanine — compounds that support skin health from a different angle, reducing inflammation and cortisol-driven breakouts.",
-      "The practical suggestion: two grams in 85°C water for two minutes every morning. Consistency matters more than quantity here. It's not a fast fix — hormonal cycles don't change overnight — but users who stick with it for four to six weeks typically notice a real difference in both skin clarity and cycle regularity."
-    ]
+      "Blue butterfly pea flower tea is made from the dried petals of Clitoria ternatea, a plant native to Southeast Asia and parts of India. The flowers produce a vivid cobalt-blue infusion unlike anything else in the plant world. When blended with green tea, as in Nevisan's Blue Flower Green, the result is a cup that's visually striking and nutritionally interesting — not just a novelty drink for social media.",
+      "The blue colour comes from anthocyanins, a class of flavonoid antioxidants also found in blueberries and red cabbage. These pigments are pH-sensitive, which is why adding lemon juice to blue butterfly pea tea shifts it from blue to violet to pink. The science behind the colour change is simple acid-base chemistry — the anthocyanins acting as natural indicators responding to the acidity of the liquid.",
+      "Research into butterfly pea flower is still developing, but early studies suggest its anthocyanins may support cognitive function, reduce oxidative stress, and have mild anti-anxiety effects. Some research points to proanthocyanidins in the flower helping with skin elasticity and eye health. These are not proven cure-all claims, but the antioxidant profile is genuinely high compared to many common herbal teas.",
+      "When blue butterfly pea is paired with a light green tea base, you get the grassy, umami notes of green tea alongside the subtly earthy, almost woody flavour of the flower. The caffeine level stays moderate, making it suitable in the afternoon. Look for blends where the green tea is whole-leaf and the flower petals are actually visible — not ground into the blend and hiding in a bag.",
+    ],
   },
   {
-    title: "Drinking Without Drinking: How We Recreated an Evening Spirit in a Cup of Tea",
-    slug: "non-alcoholic-botanical-whiskey-rum-tea",
+    title:
+      "Spearmint Tea and Hormonal Balance: What the Research Actually Says",
+    slug: "spearmint-tea-hormonal-balance",
     date: "March 2026",
-    author: "Master Blender Uditi",
-    readTime: "6 min read",
-    tag: "NON-ALCOHOLIC",
-    relatedTeas: ["Whiskey Green Tea", "Rum Green Tea"],
+    tag: "WELLNESS",
     excerpt:
-      "Toasted oak, peat aromatics, cold-extracted botanicals — here's how Nevisan built the texture and finish of aged spirits into a tea with zero alcohol.",
+      "Spearmint tea has been studied for its ability to reduce androgens in women, making it one of the few herbal teas with direct hormonal research behind it.",
     body: [
-      "The market for non-alcoholic drinks has changed in the last few years. People aren't giving up alcohol because they have to — they're choosing not to drink, and they want something worth drinking in its place. Fruit juice doesn't cut it at 9pm. Neither does sparkling water.",
-      "The problem with recreating spirits in a non-alcoholic format is depth. Aged whiskey and rum get their character from years inside charred barrels. The wood breaks down slowly, donating vanillin, tannins, and specific smoky phenols that create the dry, complex finish you recognise. No amount of grape juice gets there.",
-      "We approached it differently. Toasted oak wood and peat-smoke aromatics were cold-extracted into our whole-leaf Assam green tea base. Cold extraction preserves the aromatic compounds without releasing the bitter tannins that heat would pull out. Sugarcane botanicals added the caramel mid-note that rum carries. Whiskey got a different botanical profile — drier, with more wood-forward character.",
-      "The result is 0.0% ABV, no sugar, no artificial additives. Brew it hot and drink it from a heavy glass. Or brew it strong, let it cool, and pour it over a large ice sphere with a twist of lemon. It's the most honest evening ritual we know of — all the texture and ritual of a dram, none of the morning aftermath."
-    ]
+      "Spearmint tea is one of the more researched herbal teas when it comes to hormonal health. A clinical trial published in Phytotherapy Research found that women with PCOS who drank two cups of spearmint tea daily for 30 days showed a significant reduction in free testosterone levels and an improvement in LH to FSH ratios. These are meaningful hormonal markers. The mechanism is thought to involve spearmint's ability to inhibit 5-alpha reductase, the enzyme that converts testosterone to its more potent form.",
+      "For women dealing with PCOS, hirsutism, or androgen-related acne, spearmint tea is sometimes recommended as a supportive, low-risk addition to a broader approach — not as a standalone treatment. The research is specific enough that some functional medicine practitioners include it in hormonal health protocols.",
+      "Spearmint is different from peppermint — it's milder, sweeter, and lower in menthol. When blended with green tea, as in Nevisan's Spearmint Green, the result is a bright, cooling cup with a clean finish. The green tea adds antioxidants and L-theanine, making the combination genuinely useful rather than just pleasant.",
+      "If you're exploring spearmint tea for hormonal reasons, consistency matters more than quantity. Two cups a day for several weeks is what the research used — not a single strong brew once in a while. Whole-leaf spearmint blended with real green tea is worth seeking out over fannings-based bags, where the volatile oils that carry most of spearmint's active compounds have largely dissipated.",
+    ],
   },
   {
-    title: "The Blue Cup: What Butterfly Pea Flower Actually Does",
-    slug: "butterfly-pea-flower-blue-tea-benefits",
+    title: "Tulsi Green Tea: India's Ancient Adaptogen Meets Single-Origin Tea",
+    slug: "tulsi-green-tea-adaptogen",
     date: "April 2026",
-    author: "Nevisan Botanical Team",
-    readTime: "4 min read",
     tag: "WELLNESS",
-    relatedTeas: ["Blue Flower Green Tea", "Chamomile Green Tea"],
     excerpt:
-      "That vivid blue colour is real — no dye, no trickery. And behind the colour is a compound with genuine antioxidant and cognitive benefits.",
+      "Tulsi, or holy basil, has been used in Ayurvedic medicine for thousands of years — blended with green tea, it becomes one of the most balanced cups you can brew.",
     body: [
-      "The first time most people see Blue Flower tea, they assume there's a trick. No food colouring produces that particular shade of deep indigo naturally. But Clitoria ternatea — butterfly pea flower — does, through a class of pigments called anthocyanins that also happen to be among the most studied antioxidants in plant science.",
-      "What makes the colour even more interesting is that it's pH-sensitive. Add a few drops of lemon juice and the blue shifts to purple, then to a warm pink depending on how acidic you go. It's genuinely one of the most visually alive drinks you can make at home, entirely through natural chemistry.",
-      "Beyond the colour, the research is promising. Anthocyanins from butterfly pea have been studied for memory and cognitive function — there's early evidence they support acetylcholine signalling, which is the neurotransmitter involved in learning and recall. Some traditional Ayurvedic preparations used the plant specifically for mental clarity.",
-      "Nevisan's Blue Flower Green Tea pairs the butterfly pea with whole-leaf Assam green, which adds L-theanine and EGCG to the antioxidant profile. The result tastes delicate — mildly floral, with the clean, grassy character of the green base underneath. Brew it without lemon first so you see the blue before it shifts. Then add a squeeze. That colour change alone is worth the cup."
-    ]
+      "Tulsi, known botanically as Ocimum tenuiflorum and commonly called holy basil, is one of the most revered plants in Indian tradition. It has been used in Ayurvedic medicine for at least 3,000 years for respiratory support, stress relief, and immune function. As an adaptogen — a class of plants thought to help the body regulate its stress response — tulsi has been studied for its effects on cortisol, immune function, and blood sugar stability.",
+      "When tulsi is blended with green tea, the pairing is unusually well-suited. Green tea brings antioxidants, mild caffeine, and L-theanine. Tulsi adds eugenol, ursolic acid, and rosmarinic acid, along with a distinct clove-like, slightly peppery aroma. The flavour combination is warming without being heavy, and the adaptogenic properties of tulsi complement the calm focus that L-theanine supports.",
+      "Studies have shown reductions in cortisol levels, improvements in cognitive function under stress, and anti-inflammatory effects from regular tulsi consumption. It is not a sedative — it does not make you drowsy — but many people report a noticeable sense of mental ease when they drink it regularly. Nevisan's Tulsi Green uses whole holy basil leaves alongside Assam green tea, keeping the ratio balanced so neither ingredient overwhelms the other.",
+      "For anyone looking to reduce daily stimulant load while still supporting focus, tulsi green tea is a useful starting point. It has enough caffeine to be functional in the morning without the cortisol spike of coffee. It's also one of the few blends where the Indian heritage of the herb is fully intact — tulsi grown in India, paired with tea grown in India, brewed simply at around 80°C for two to three minutes.",
+    ],
   },
   {
-    title: "Tulsi: The Adaptogen That Pays Attention",
-    slug: "tulsi-holy-basil-adaptogen-benefits",
+    title:
+      "Chamomile Green Tea: Why This Evening Blend Works Better Than Either Alone",
+    slug: "chamomile-green-tea-evening-blend",
     date: "May 2026",
-    author: "Nevisan Wellness Team",
-    readTime: "5 min read",
     tag: "WELLNESS",
-    relatedTeas: ["Tulsi Green Tea", "GABA Oolong Tea"],
     excerpt:
-      "Tulsi doesn't pick a direction — it reads your body's state and responds to it. That's what makes an adaptogen different from every other functional ingredient.",
+      "Chamomile and green tea together offer something neither delivers alone — the calming properties of chamomile with the antioxidant depth of whole-leaf green tea.",
     body: [
-      "Most functional teas work in one direction. Chamomile calms. Green tea energises. GABA Oolong quiets mental noise. Tulsi does something harder to categorise: it responds to what your body actually needs rather than pushing in a fixed direction.",
-      "This is what the word adaptogen means in a technical sense. An adaptogenic herb modulates the stress-response system — primarily the HPA axis, which controls cortisol production — in a way that pulls towards balance rather than towards a specific state. High cortisol, tulsi helps bring it down. Low energy and mental fog, tulsi helps restore clarity. The same plant, different effects, depending on where your body starts.",
-      "Tulsi — holy basil, Ocimum tenuiflorum — has been used in Ayurvedic medicine for thousands of years, but Western clinical research has started catching up. Studies have looked at it for reducing anxiety scores, improving memory and cognitive function, and supporting thyroid regulation. The active compounds include eugenol, rosmarinic acid, and ursolic acid, which work through multiple pathways rather than a single mechanism.",
-      "In practice, this means Tulsi Green Tea is the most versatile cup in the Nevisan range. Morning, afternoon, evening — it works at all three. If you're in a season of high stress and your body is doing a lot, this is probably the tea to reach for most consistently."
-    ]
+      "Chamomile is one of the most widely consumed herbal teas in the world, usually drunk on its own before bed. Green tea is usually positioned as a morning drink. Pairing them sounds counterintuitive, but the combination works because green tea brewed at lower temperatures and shorter times keeps caffeine low while retaining its antioxidant content. Blended with chamomile, it creates an evening cup that does not sacrifice nutritional value just to be caffeine-light.",
+      "The active compound in chamomile most associated with its calming effects is apigenin, a flavonoid that binds to GABA receptors in the brain — the same receptors that benzodiazepines act on, though far more gently. Research suggests chamomile can meaningfully reduce anxiety symptoms and improve sleep quality in people with mild insomnia. It is a well-studied herb with a consistent body of evidence behind it.",
+      "Green tea brings EGCG, the primary catechin in green tea and one of the most researched antioxidants in the food supply. L-theanine promotes alpha-wave activity in the brain — relaxed alertness rather than sedation. In the evening, both chamomile and L-theanine point in the same direction: calm without grogginess.",
+      "Nevisan's Chamomile Green uses whole chamomile flowers alongside Assam green tea leaves. The brew is best kept around 75 to 80°C and steeped for no more than two minutes — chamomile can turn bitter if over-steeped, and green tea gets astringent above 90°C. Done right, the cup is floral, slightly sweet, and genuinely useful as part of a wind-down routine.",
+    ],
   },
   {
-    title: "Cold Brew: The Summer Method Nobody Tells You About",
-    slug: "cold-brew-green-tea-guide",
-    date: "June 2026",
-    author: "Nevisan Brewing Lab",
-    readTime: "4 min read",
-    tag: "BREWING",
-    relatedTeas: ["Organic Green Tea", "Blue Flower Green Tea"],
+    title:
+      "Green Tea vs Coffee: The Caffeine Difference Nobody Explains Properly",
+    slug: "green-tea-vs-coffee-caffeine",
+    date: "May 2026",
+    tag: "WELLNESS",
     excerpt:
-      "Cold brewing whole-leaf tea overnight extracts all the flavour with almost none of the bitterness. It's also the laziest good cup of tea you'll ever make.",
+      "Green tea has less caffeine than coffee, but L-theanine changes how your body processes it entirely — and that difference matters more than the number.",
     body: [
-      "Here's the problem with hot-brewed green tea in summer: temperature control matters a lot, and most people overbrew it. Too hot, too long, and green tea turns bitter fast. Cold brew sidesteps the whole issue.",
-      "The method is almost embarrassingly simple. Add 3 grams of whole-leaf tea per 250ml of cold filtered water. Drop it in a glass jar or pitcher. Put it in the fridge. Come back in 6 to 8 hours — or just leave it overnight. Pour it out and drink it.",
-      "Cold water extracts differently from hot. It picks up the sweet and aromatic compounds first, while leaving behind a lot of the catechins and tannins that create bitterness and astringency in an overbrewed hot cup. The result is cleaner, lighter, and noticeably sweeter than the same tea brewed hot. First-timers usually don't believe it's the same tea.",
-      "A few things worth knowing: cold brew is lower in caffeine than hot brew — roughly 30 to 40% less — so it's a gentler option if you're caffeine-sensitive or brewing an afternoon cup. It also keeps well. Refrigerated in a sealed jar, it stays good for two to three days, which means you can make a batch on Sunday night and have cold cups ready through Wednesday.",
-      "Our Blue Flower green tea is particularly good cold-brewed — the anthocyanin colour stays vivid and the flavour becomes almost dessert-like. Organic Green is clean and almost savoury cold. Try both before settling on a favourite."
-    ]
-  }
+      "A standard cup of coffee contains roughly 80 to 120mg of caffeine. A cup of green tea contains between 20 and 50mg depending on variety, steeping time, and water temperature. On paper, coffee wins if you need a strong stimulant hit. But the comparison stops being straightforward once you factor in what else is in each cup. Coffee delivers caffeine in relative isolation. Green tea delivers caffeine alongside L-theanine, an amino acid that changes the experience significantly.",
+      "L-theanine promotes relaxed alertness by increasing alpha-wave activity in the brain and moderating the excitatory effects of caffeine. Many people describe green tea as producing focus without the edge — concentration that does not tip into anxiety or jitteriness. Studies pairing caffeine and L-theanine have found improved attention and accuracy on cognitive tasks compared to caffeine alone. This is consistent across multiple controlled trials.",
+      "For people who experience cortisol spikes with coffee — the mid-morning crash, afternoon slump, difficulty sleeping — green tea often behaves differently. The slower caffeine curve means less of a spike and less of a subsequent dip. Brewing single-origin whole-leaf tea, like Nevisan's Organic Green, gives you more control over caffeine content than a standardised tea bag does — lower temperature and shorter steeping time both reduce it further.",
+      "The other variable people overlook is added sugar and milk. Most coffee consumption in India involves significant sugar and milk, which independently contributes to energy spikes and crashes. Green tea is most often drunk plain, which removes that variable. If the goal is sustained, clean energy without a 3pm crash, switching from coffee to a high-quality whole-leaf green tea is one of the most practical single changes you can make to a daily routine.",
+    ],
+  },
+  {
+    title:
+      "How to Buy Real Green Tea in India: What to Look For and What to Avoid",
+    slug: "how-to-buy-real-green-tea-india",
+    date: "May 2026",
+    tag: "CRAFT",
+    excerpt:
+      "Most green tea sold in India is low-grade CTC or artificially flavoured — here is how to tell the difference before you buy.",
+    body: [
+      'The Indian packaged tea market is dominated by CTC — Cut, Tear, Curl — a processing method designed for strong, fast-brewing chai. Some companies sell what they label as "green tea" using CTC-processed leaves that have been lightly dried rather than fully oxidised. The result looks like green tea on packaging, but the flavour, antioxidant content, and brewing behaviour are all different. If your green tea brews dark and bitter in under a minute, it is almost certainly CTC.',
+      "Whole-leaf green tea should look like leaves, not uniform pellets or dust. When you open a packet of genuine whole-leaf tea, you should be able to identify the leaf structure — rolled, twisted, or flat depending on variety, but visibly leaf-like. Fresh green tea has a grassy, vegetal, sometimes floral aroma. If it smells of artificial flavouring or very little at all, the tea is either old or misrepresented.",
+      'Single-origin matters for green tea more than most categories. A brand that specifies the garden, district, and harvest gives you information you can verify. A brand that says only "Himalayan green tea" or "premium Indian blend" is telling you nothing traceable. Nevisan sources exclusively from a single garden in Golaghat, Assam — one origin, one standard, no blending to cover inconsistency.',
+      "Chemical-free cultivation is rarely disclosed but increasingly important. Most commercial Indian tea, including tea sold as green, is grown with synthetic pesticides. Whole-leaf, single-origin teas from smaller gardens are more likely to use minimal inputs — not because smaller gardens are automatically virtuous, but because the economics work differently when selling whole leaf at a premium. Ask brands directly: do they test for pesticide residues? Reluctance to answer is itself information.",
+      "Finally, price is a rough signal. Genuinely good whole-leaf green tea is not cheap to produce. If you are buying green tea in India for under ₹200 for 100g, you are almost certainly not getting whole-leaf, single-origin, chemical-free tea regardless of what the packaging says. Hand-picking, careful processing, and proper storage all cost money. Brands that price accordingly are reflecting real cost of production, not overcharging.",
+    ],
+  },
 ];
-function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
+function ArticleModal({ post: e, onClose: t }) {
   return (
     useEffect(() => {
       const e = (e) => {
@@ -7845,7 +7583,7 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
                 "span",
                 {
                   style: {
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 10,
                     letterSpacing: "0.14em",
                     color: T.gold,
@@ -7890,7 +7628,7 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
               "span",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 12,
                   color: T.textMuted,
                 },
@@ -7914,7 +7652,7 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
                 {
                   key: t,
                   style: {
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 15,
                     color: T.text,
                     lineHeight: 1.8,
@@ -7924,103 +7662,6 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
                 e,
               ),
             ),
-            e.relatedTeas &&
-              React.createElement(
-                "div",
-                {
-                  style: {
-                    marginTop: 24,
-                    padding: 16,
-                    background: "rgba(27,122,130,0.05)",
-                    borderRadius: 12,
-                    border: `1px dashed ${T.teal}`,
-                  },
-                },
-                React.createElement(
-                  "h4",
-                  {
-                    style: {
-                      fontFamily: "'Playfair Display', Georgia, serif",
-                      fontSize: 13,
-                      fontWeight: 700,
-                      letterSpacing: "0.08em",
-                      color: T.teal,
-                      textTransform: "uppercase",
-                      marginBottom: 10,
-                    },
-                  },
-                  "Related & Recommended",
-                ),
-                React.createElement(
-                  "div",
-                  {
-                    style: {
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: 8,
-                      fontSize: 13.5,
-                    },
-                  },
-                  [
-                    ...e.relatedTeas.map((name) => {
-                      return React.createElement(
-                        "div",
-                        { key: name, style: { display: "flex", alignItems: "center", gap: 8 } },
-                        React.createElement(
-                          "svg",
-                          { width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: T.teal, strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
-                          React.createElement("path", { d: "M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2z" }),
-                          React.createElement("path", { d: "M9 22v-4" })
-                        ),
-                        React.createElement(
-                          "a",
-                          {
-                            href: "#",
-                            onClick: (evt) => {
-                              evt.preventDefault();
-                              const url = new URL(window.location.href);
-                              url.searchParams.set("tea", name);
-                              window.history.pushState({}, "", url.toString());
-                              if (a) a("Collection");
-                              t();
-                            },
-                            style: {
-                              color: T.teal,
-                              fontWeight: 600,
-                              textDecoration: "underline",
-                              cursor: "pointer",
-                            },
-                          },
-                          `Shop ${name}`,
-                        ),
-                      );
-                    }),
-                    React.createElement(
-                      "div",
-                      { style: { display: "flex", alignItems: "center", gap: 8 } },
-                      React.createElement(
-                        "svg",
-                        { width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: T.teal, strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
-                        React.createElement("path", { d: "M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" }),
-                        React.createElement("path", { d: "M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" })
-                      ),
-                      React.createElement(
-                        "a",
-                        {
-                          href: window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/faq/",
-                          target: "_blank",
-                          style: {
-                            color: T.teal,
-                            fontWeight: 600,
-                            textDecoration: "underline",
-                          },
-                        },
-                        "Read our Brewing & FAQ Guide",
-                      ),
-                    ),
-                  ],
-                ),
-              ),
             React.createElement(
               "div",
               {
@@ -8045,7 +7686,7 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
                     borderRadius: 9999,
                     padding: "10px 22px",
                     cursor: "pointer",
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 13,
                     fontWeight: 600,
                   },
@@ -8063,7 +7704,7 @@ function ArticleModal({ post: e, onClose: t, onViewTea: a }) {
                     borderRadius: 9999,
                     padding: "10px 22px",
                     cursor: "pointer",
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 13,
                   },
                 },
@@ -8155,7 +7796,7 @@ function JournalPage({ setPage: e }) {
                   "span",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 10,
                       letterSpacing: "0.14em",
                       color: T.gold,
@@ -8170,7 +7811,7 @@ function JournalPage({ setPage: e }) {
                   "span",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 12,
                       color: T.textMuted,
                     },
@@ -8196,7 +7837,7 @@ function JournalPage({ setPage: e }) {
                 "p",
                 {
                   style: {
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 13,
                     color: T.textMuted,
                     lineHeight: 1.7,
@@ -8209,7 +7850,7 @@ function JournalPage({ setPage: e }) {
                 {
                   style: {
                     marginTop: 18,
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 12,
                     color: T.teal,
                     fontWeight: 600,
@@ -8233,7 +7874,7 @@ function JournalPage({ setPage: e }) {
       ),
     ),
     React.createElement(Footer, { setPage: e }),
-    a && React.createElement(ArticleModal, { post: a, onClose: () => n(null), onViewTea: e }),
+    a && React.createElement(ArticleModal, { post: a, onClose: () => n(null) }),
   );
 }
 function AboutPage({ setPage: e }) {
@@ -8251,8 +7892,8 @@ function AboutPage({ setPage: e }) {
       photo: PAGE_PHOTOS.about,
       label: "Our Story",
       title:
-        "We grew up in Guwahati, next to some of the world's finest tea gardens. The tea at home was still bad.",
-      subtitle: "That gap bothered us for years before we actually did something about it.",
+        "We grew up next to the world's best tea. And drank mediocre tea anyway.",
+      subtitle: "Until we decided to do something about it.",
     }),
     React.createElement(
       "div",
@@ -8288,37 +7929,37 @@ function AboutPage({ setPage: e }) {
                 marginBottom: 16,
               },
             },
-            "Why we started",
+            "Why Nevisan exists",
           ),
           React.createElement(
             "p",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 15,
                 color: T.textMuted,
                 lineHeight: 1.8,
                 marginBottom: 16,
               },
             },
-            "Growing up in Guwahati, we watched Assam's finest tea leave on export trucks. What came back — what we actually drank — was the dust and fragments left after the good stuff was taken. We drank it for years without questioning it. Then one day we did, and everything changed.",
+            "Growing up in Guwahati, we watched Assam's most beautiful teas leave on trucks — only to return as broken dust inside someone else's brand. We drank that dust like everyone else. Until we stopped and asked: what does the actual leaf taste like?",
           ),
           React.createElement(
             "p",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 15,
                 color: T.textMuted,
                 lineHeight: 1.8,
               },
             },
-            "That question took us to Golaghat. To a small processing house called Tailor Made Tea, where the leaf is handled the way it always should have been. One garden, whole leaves, nothing added. That's the entire model.",
+            "That question led us to Golaghat. To Tailor Made Tea — a small processing house that handles the leaf the way it deserves to be handled. One garden. Whole leaves. Nothing added. That's Nevisan.",
           ),
         ),
         React.createElement(
           "div",
-          { style: { gridColumn: "1 / -1" } },
+          null,
           React.createElement(
             "h2",
             {
@@ -8327,147 +7968,52 @@ function AboutPage({ setPage: e }) {
                 fontWeight: 400,
                 fontSize: 24,
                 color: T.text,
-                marginBottom: 28,
-                textAlign: "center",
+                marginBottom: 16,
               },
             },
-            "What we actually do differently",
+            "What makes us different",
           ),
-          React.createElement(
-            "div",
-            { className: "nev-bento" },
+          [
+            {
+              icon: "🌱",
+              text: "Single origin — Golaghat, Assam, every variety",
+            },
+            {
+              icon: "🍃",
+              text: "Whole leaf only — no CTC, no fannings, no dust",
+            },
+            {
+              icon: "✅",
+              text: "PGS-India certified organic — pesticide-free from soil to seal",
+            },
+            { icon: "🔬", text: "FSSAI certified — food safety compliant" },
+            { icon: "📦", text: "Small batch — freshness guaranteed" },
+            {
+              icon: "💬",
+              text: "Direct to consumer — no middlemen, fresher stock",
+            },
+          ].map((e, t) =>
             React.createElement(
               "div",
               {
-                className: "nev-bento-card nev-bento-card--forest nev-bento-large",
-                style: { position: "relative", overflow: "hidden" },
-              },
-              React.createElement("div", {
+                key: t,
                 style: {
-                  position: "absolute", inset: 0,
-                  background: "radial-gradient(circle at 20% 80%, rgba(201,168,76,0.12) 0%, transparent 60%)",
-                  pointerEvents: "none",
+                  display: "flex",
+                  gap: 12,
+                  alignItems: "center",
+                  marginBottom: 14,
                 },
-              }),
-              React.createElement("span", { className: "nev-bento-icon" }, String.fromCodePoint(0x1F331)),
-              React.createElement("span", { className: "nev-bento-label", style: { color: "#C9A84C" } }, "Origin"),
+              },
+              React.createElement("span", { style: { fontSize: 18 } }, e.icon),
               React.createElement(
-                "h3",
-                { className: "nev-bento-title", style: { fontSize: 28, color: "#F8F6F2" } },
-                "One garden. Every variety."
-              ),
-              React.createElement(
-                "p",
-                { className: "nev-bento-desc", style: { fontSize: 15, color: "#F8F6F2", maxWidth: 320 } },
-                "Everything comes from one garden in Golaghat. No blending across estates, no hiding origins. One terroir, expressed as clearly as we can manage."
-              ),
-              React.createElement(
-                "div",
+                "span",
                 {
-                  className: "nev-bento-badge",
-                  style: { background: "rgba(201,168,76,0.15)", color: "#C9A84C", border: "1px solid rgba(201,168,76,0.25)" },
+                  style: { fontFamily: "'Inter'", fontSize: 14, color: T.text },
                 },
-                "Golaghat, Assam"
-              )
+                e.text,
+              ),
             ),
-            React.createElement(
-              "div",
-              { className: "nev-bento-card nev-bento-card--gold nev-bento-wide" },
-              React.createElement("span", { className: "nev-bento-icon" }, String.fromCodePoint(0x1F343)),
-              React.createElement("span", { className: "nev-bento-label", style: { color: "#C9A84C" } }, "Craft"),
-              React.createElement(
-                "h3",
-                { className: "nev-bento-title", style: { fontSize: 20, color: "#F8F6F2" } },
-                "Whole leaf only"
-              ),
-              React.createElement(
-                "p",
-                { className: "nev-bento-desc", style: { fontSize: 13, color: "#F8F6F2" } },
-                "No CTC processing, no fannings, no dust. The whole leaf keeps its oils intact — which is why it brews properly and holds up to a second steep."
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "nev-bento-card nev-bento-card--teal nev-bento-tall" },
-              React.createElement("span", { className: "nev-bento-icon" }, String.fromCodePoint(0x2705)),
-              React.createElement("span", { className: "nev-bento-label", style: { color: "#6EC6CA" } }, "Certified"),
-              React.createElement(
-                "h3",
-                { className: "nev-bento-title", style: { fontSize: 20, color: "#F8F6F2" } },
-                "PGS-India Organic"
-              ),
-              React.createElement(
-                "p",
-                { className: "nev-bento-desc", style: { fontSize: 13, color: "#F8F6F2" } },
-                "Pesticide-free from soil to seal. PGS-India is a government-recognised certification with actual verification — not just something you print on a label."
-              ),
-              React.createElement(
-                "div",
-                {
-                  className: "nev-bento-badge",
-                  style: { background: "rgba(110,198,202,0.12)", color: "#6EC6CA", border: "1px solid rgba(110,198,202,0.2)" },
-                },
-                "FSSAI Certified too"
-              )
-            ),
-            React.createElement(
-              "div",
-              {
-                className: "nev-bento-card nev-bento-card--mist",
-                style: { border: "1px solid rgba(31,46,36,0.12)" },
-              },
-              React.createElement("span", { className: "nev-bento-icon" }, String.fromCodePoint(0x1F52C)),
-              React.createElement("span", { className: "nev-bento-label", style: { color: T.teal } }, "Safety"),
-              React.createElement(
-                "h3",
-                { className: "nev-bento-title", style: { fontSize: 17, color: T.text } },
-                "FSSAI Certified"
-              ),
-              React.createElement(
-                "p",
-                { className: "nev-bento-desc", style: { fontSize: 13, color: T.textMuted } },
-                "Food safety compliant at every stage."
-              )
-            ),
-            React.createElement(
-              "div",
-              {
-                className: "nev-bento-card nev-bento-card--mist",
-                style: { border: "1px solid rgba(201,168,76,0.12)" },
-              },
-              React.createElement("span", { className: "nev-bento-icon" }, String.fromCodePoint(0x1F4E6)),
-              React.createElement("span", { className: "nev-bento-label", style: { color: T.gold } }, "Freshness"),
-              React.createElement(
-                "h3",
-                { className: "nev-bento-title", style: { fontSize: 17, color: T.text } },
-                "Small batch"
-              ),
-              React.createElement(
-                "p",
-                { className: "nev-bento-desc", style: { fontSize: 13, color: T.textMuted } },
-                "Freshness guaranteed — we never hold old stock."
-              )
-            ),
-            React.createElement(
-              "div",
-              {
-                className: "nev-bento-card nev-bento-card--mist",
-                style: { border: "1px solid rgba(31,46,36,0.1)" },
-              },
-              React.createElement("span", { className: "nev-bento-icon" }, String.fromCodePoint(0x1F4AC)),
-              React.createElement("span", { className: "nev-bento-label", style: { color: T.teal } }, "Direct"),
-              React.createElement(
-                "h3",
-                { className: "nev-bento-title", style: { fontSize: 17, color: T.text } },
-                "No middlemen"
-              ),
-              React.createElement(
-                "p",
-                { className: "nev-bento-desc", style: { fontSize: 13, color: T.textMuted } },
-                "Direct to consumer — fresher stock, real conversations."
-              )
-            )
-          )
+          ),
         ),
       ),
       React.createElement(
@@ -8480,7 +8026,7 @@ function AboutPage({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 11,
                 fontWeight: 600,
                 letterSpacing: "0.18em",
@@ -8489,7 +8035,7 @@ function AboutPage({ setPage: e }) {
                 marginBottom: 12,
               },
             },
-            "Our Origin Story",
+            "The People Behind Nevisan",
           ),
           React.createElement(
             "h2",
@@ -8503,13 +8049,13 @@ function AboutPage({ setPage: e }) {
                 marginBottom: 16,
               },
             },
-            "Two people from Guwahati who wanted better tea",
+            "Founded in 2025 by a husband & wife",
           ),
           React.createElement(
             "p",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 15,
                 color: T.textMuted,
                 lineHeight: 1.75,
@@ -8517,7 +8063,7 @@ function AboutPage({ setPage: e }) {
                 margin: "0 auto",
               },
             },
-            "Nevisan didn't start with a business plan. It started with a frustration we couldn't shake — why does the region that grows some of the world's finest tea produce tea that most people in India never actually taste in its real form?",
+            "Nevisan didn't start with a business plan. It started with a frustration — and a question neither of us could stop asking: why does the world's best tea region produce tea that most Indians never actually taste?",
           ),
         ),
         React.createElement(
@@ -8538,7 +8084,7 @@ function AboutPage({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 11,
                 letterSpacing: "0.16em",
                 color: T.gold,
@@ -8561,7 +8107,7 @@ function AboutPage({ setPage: e }) {
                 marginBottom: 20,
               },
             },
-            "When we started Nevisan, we weren't trying to build a company. We just wanted to drink the tea that grows twenty minutes from where we grew up but somehow never made it into any shop we could find. So we went to Golaghat, met the growers, and started bringing back the whole leaf — the part that usually gets exported or blended away by the time it reaches anyone. Every tea we sell is one we drink at home. If something ever isn't right, message us on WhatsApp. One of us will reply — not a support team.",
+            "When we started Nevisan, we weren't trying to build a tea company. We just wanted to drink the tea we grew up next to but could never actually find in a shop. So we went to the gardens in Golaghat ourselves, met the growers, and brought back the whole leaf, the good stuff that usually gets exported or blended away. Every tea we sell is one we drink at home, every single day. And if something is ever not right, message us on WhatsApp. A real person, one of us, will reply.",
           ),
           React.createElement(
             "div",
@@ -8580,7 +8126,7 @@ function AboutPage({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 15,
                 fontWeight: 600,
                 color: T.teal,
@@ -8592,7 +8138,7 @@ function AboutPage({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 12,
                 color: T.textMuted,
                 marginTop: 2,
@@ -8615,13 +8161,13 @@ function AboutPage({ setPage: e }) {
               initials: "NJ",
               name: "Nishant Jain",
               role: "Founder",
-              bio: "Nishant grew up in Guwahati with some of India's best tea gardens nearby — and the tea at home was still mediocre. That gap nagged at him for years. Nevisan is what happened when he decided to close it.",
+              bio: "Nishant grew up in Guwahati with tea gardens practically in his backyard — and somehow the tea at home was still mediocre. That contradiction never sat right with him. Nevisan is his answer to it: get the real leaf, and get it to the people who deserve it.",
             },
             {
               initials: "UJ",
               name: "Uditi Jain",
               role: "Founder & Creative Director",
-              bio: "Uditi thinks the experience of a thing matters as much as the thing itself. She shapes everything you see, read, and feel with Nevisan — so that the tea arrives in a way that feels considered, not just functional.",
+              bio: "Uditi believes the way something feels matters as much as what it does. She shapes every part of what you experience with Nevisan — the words, the design, the moment you open the pack — so that drinking good tea also feels like a small, meaningful ritual.",
             },
           ].map((e) =>
             React.createElement(
@@ -8671,7 +8217,7 @@ function AboutPage({ setPage: e }) {
                 "div",
                 {
                   style: {
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 10,
                     fontWeight: 700,
                     letterSpacing: "0.16em",
@@ -8699,7 +8245,7 @@ function AboutPage({ setPage: e }) {
                 "p",
                 {
                   style: {
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 14,
                     color: T.textMuted,
                     lineHeight: 1.75,
@@ -8732,13 +8278,13 @@ function AboutPage({ setPage: e }) {
               marginBottom: 16,
             },
           },
-            "Still a small business. Still two people. Still answering our own WhatsApp.",
+          "We're not a corporation. We're a family.",
         ),
         React.createElement(
           "p",
           {
             style: {
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 15,
               color: "rgba(255,255,255,0.8)",
               lineHeight: 1.7,
@@ -8746,7 +8292,7 @@ function AboutPage({ setPage: e }) {
               margin: "0 auto 28px",
             },
           },
-          "Mahabir Enterprise, Guwahati — that's the registered name. In practice it's a husband and wife who answer their own WhatsApp and pack their own orders. Every sale still feels personal to us. We want to keep it that way for as long as we can.",
+          "Mahabir Enterprise, Guwahati — that's us. A husband, a wife, and a conviction that people across India deserve to taste what Assam's gardens are actually capable of. Every order we get still feels personal. We want it to stay that way.",
         ),
         React.createElement(
           "button",
@@ -8759,7 +8305,7 @@ function AboutPage({ setPage: e }) {
               borderRadius: 9999,
               padding: "13px 32px",
               cursor: "pointer",
-              fontFamily: "'Plus Jakarta Sans'",
+              fontFamily: "'Inter'",
               fontSize: 14,
               fontWeight: 700,
             },
@@ -8903,7 +8449,7 @@ function CertificationsPage({ setPage: e }) {
                   "div",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 11,
                       color: e.color,
                       fontWeight: 600,
@@ -8918,7 +8464,7 @@ function CertificationsPage({ setPage: e }) {
               "p",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 13,
                   color: T.textMuted,
                   lineHeight: 1.7,
@@ -8953,10 +8499,10 @@ function WholesalePage({ setPage: e }) {
     },
     React.createElement(PageHero, {
       photo: PAGE_PHOTOS.wholesale,
-      label: "Wholesale & Bulk",
-      title: "Tea your customers will ask about",
+      label: "For Businesses",
+      title: "Wholesale & Bulk Orders",
       subtitle:
-        "For cafes, hotels, retail stores, and corporate gifting. Single-origin whole-leaf tea that gives people a reason to come back.",
+        "Premium single-origin Assam teas for cafés, hotels, gifting and retail — straight from Golaghat.",
     }),
     React.createElement(
       "div",
@@ -8988,7 +8534,7 @@ function WholesalePage({ setPage: e }) {
             "span",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 12,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
@@ -9012,7 +8558,7 @@ function WholesalePage({ setPage: e }) {
               color: T.text,
             },
           },
-          "Who we work with",
+          "Built for businesses that value quality",
         ),
       ),
       React.createElement(
@@ -9028,33 +8574,33 @@ function WholesalePage({ setPage: e }) {
         [
           {
             icon: "☕",
-            title: "Cafes & Restaurants",
-            desc: "A tea your regulars will ask about by name. Single-origin, whole-leaf, 50gm packs. Minimum 20–30 packs per variety.",
+            title: "Cafés & Restaurants",
+            desc: "Serve premium single-origin Assam tea on your menu. Each pack is 50gm — minimum order 20–30 packs.",
           },
           {
             icon: "🏨",
             title: "Hotels & Resorts",
-            desc: "In-room and restaurant service. 50gm packs work for individual portions and look right on a tray.",
+            desc: "In-room and restaurant tea service. Each pack is 50gm, perfect for individual servings.",
           },
           {
             icon: "🎁",
             title: "Corporate Gifting",
-            desc: "Something people actually keep and use, not a gift that ends up in a drawer. Minimum 20 packs per order.",
+            desc: "Curated tea gift sets for employees, clients and events. Minimum 20 packs per order.",
           },
           {
             icon: "🛒",
             title: "Retail Stores",
-            desc: "Stock that sells itself once customers taste it. Consistent supply, reasonable margins, no middlemen.",
+            desc: "Stock Nevisan in your store. Competitive margins and consistent supply guaranteed.",
           },
           {
             icon: "🏥",
             title: "Wellness Centres",
-            desc: "Organic, functional teas that fit naturally into a wellness context. GABA, Chamomile, Tulsi \u2014 they belong here.",
+            desc: "Herbal and green tea blends for spas, yoga studios and wellness retreats.",
           },
           {
             icon: "📦",
             title: "Online Resellers",
-            desc: "Resell through your own channel. We handle fulfilment — you handle the relationship.",
+            desc: "Resell Nevisan through your own platform. Dropshipping and bulk fulfilment available.",
           },
         ].map((e, t) =>
           React.createElement(
@@ -9070,8 +8616,8 @@ function WholesalePage({ setPage: e }) {
             },
             React.createElement(
               "div",
-              { style: { marginBottom: 12, display: "flex", color: T.gold } },
-              React.createElement(NevIcon, { name: e.icon, size: 32, color: T.gold }),
+              { style: { fontSize: 30, marginBottom: 12 } },
+              e.icon,
             ),
             React.createElement(
               "div",
@@ -9090,7 +8636,7 @@ function WholesalePage({ setPage: e }) {
               "div",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 13,
                   color: T.textMuted,
                   lineHeight: 1.65,
@@ -9124,7 +8670,7 @@ function WholesalePage({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 12,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
@@ -9147,7 +8693,7 @@ function WholesalePage({ setPage: e }) {
                 lineHeight: 1.3,
               },
             },
-            "Here's what's included.",
+            "Simple, transparent and reliable",
           ),
           React.createElement(
             "div",
@@ -9197,7 +8743,7 @@ function WholesalePage({ setPage: e }) {
                   "span",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 14,
                       color: T.text,
                     },
@@ -9220,7 +8766,7 @@ function WholesalePage({ setPage: e }) {
               "div",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 12,
                   fontWeight: 600,
                   color: T.teal,
@@ -9235,7 +8781,7 @@ function WholesalePage({ setPage: e }) {
               "div",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 14,
                   color: T.textMuted,
                   lineHeight: 1.6,
@@ -9277,14 +8823,14 @@ function WholesalePage({ setPage: e }) {
             "p",
             {
               style: {
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 fontSize: 13,
                 color: T.textMuted,
                 marginBottom: 24,
                 lineHeight: 1.6,
               },
             },
-            "Fill this in and we'll send pricing and availability directly on WhatsApp — usually within a few hours.",
+            "Fill in the details below — we'll send you pricing and availability on WhatsApp.",
           ),
           React.createElement(
             "div",
@@ -9314,7 +8860,7 @@ function WholesalePage({ setPage: e }) {
                   "label",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 11,
                       fontWeight: 600,
                       color: T.teal,
@@ -9336,7 +8882,7 @@ function WholesalePage({ setPage: e }) {
                     padding: "11px 14px",
                     borderRadius: 10,
                     border: "1.5px solid #e8e4de",
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 14,
                     color: T.text,
                     background: "#fff",
@@ -9353,7 +8899,7 @@ function WholesalePage({ setPage: e }) {
                 "label",
                 {
                   style: {
-                    fontFamily: "'Plus Jakarta Sans'",
+                    fontFamily: "'Inter'",
                     fontSize: 11,
                     fontWeight: 600,
                     color: T.teal,
@@ -9376,7 +8922,7 @@ function WholesalePage({ setPage: e }) {
                   padding: "11px 14px",
                   borderRadius: 10,
                   border: "1.5px solid #e8e4de",
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 14,
                   color: T.text,
                   background: "#fff",
@@ -9405,7 +8951,7 @@ function WholesalePage({ setPage: e }) {
                   fontSize: 15,
                   fontWeight: 700,
                   cursor: "pointer",
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -9446,7 +8992,7 @@ function ContactPage({ setPage: e }) {
       padding: "12px 16px",
       border: "1.5px solid #e0dcd4",
       borderRadius: 10,
-      fontFamily: "'Plus Jakarta Sans'",
+      fontFamily: "'Inter'",
       fontSize: 14,
       color: T.text,
       background: T.white,
@@ -9550,7 +9096,7 @@ function ContactPage({ setPage: e }) {
                   "div",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 11,
                       letterSpacing: "0.12em",
                       color: T.textMuted,
@@ -9564,7 +9110,7 @@ function ContactPage({ setPage: e }) {
                   "div",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 15,
                       color: e.action ? T.teal : T.text,
                       fontWeight: e.action ? 500 : 400,
@@ -9589,7 +9135,7 @@ function ContactPage({ setPage: e }) {
               "p",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 13,
                   color: "rgba(255,255,255,0.85)",
                   lineHeight: 1.7,
@@ -9609,7 +9155,7 @@ function ContactPage({ setPage: e }) {
                   borderRadius: 9999,
                   padding: "10px 24px",
                   cursor: "pointer",
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 13,
                   fontWeight: 600,
                 },
@@ -9653,7 +9199,7 @@ function ContactPage({ setPage: e }) {
                   "p",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 14,
                       color: T.textMuted,
                     },
@@ -9672,7 +9218,7 @@ function ContactPage({ setPage: e }) {
                       borderRadius: 9999,
                       padding: "10px 28px",
                       cursor: "pointer",
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 13,
                     },
                   },
@@ -9711,7 +9257,7 @@ function ContactPage({ setPage: e }) {
                     "label",
                     {
                       style: {
-                        fontFamily: "'Plus Jakarta Sans'",
+                        fontFamily: "'Inter'",
                         fontSize: 12,
                         color: T.textMuted,
                         letterSpacing: "0.08em",
@@ -9738,7 +9284,7 @@ function ContactPage({ setPage: e }) {
                     "label",
                     {
                       style: {
-                        fontFamily: "'Plus Jakarta Sans'",
+                        fontFamily: "'Inter'",
                         fontSize: 12,
                         color: T.textMuted,
                         letterSpacing: "0.08em",
@@ -9767,7 +9313,7 @@ function ContactPage({ setPage: e }) {
                     "label",
                     {
                       style: {
-                        fontFamily: "'Plus Jakarta Sans'",
+                        fontFamily: "'Inter'",
                         fontSize: 12,
                         color: T.textMuted,
                         letterSpacing: "0.08em",
@@ -9802,7 +9348,7 @@ function ContactPage({ setPage: e }) {
                       borderRadius: 12,
                       padding: "14px",
                       cursor: "pointer",
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 14,
                       fontWeight: 600,
                       transition: "filter 200ms",
@@ -9822,41 +9368,14 @@ function ContactPage({ setPage: e }) {
   );
 }
 function App() {
-  const [e, t] = useState(() => {
-    if (typeof window === "undefined") return "Home";
+  const [e, t] = useState("Home"),
+    [a, n] = useState("undefined" != typeof window ? window.innerWidth : 1200);
+  useEffect(() => {
     try {
       var __tea = new URLSearchParams(window.location.search).get("tea");
-      if (__tea) return "Collection";
+      if (__tea) t("Collection");
     } catch (__e) {}
-    var h = window.location.hash;
-    if (h === "#collection") return "Collection";
-    if (h === "#our-story") return "Our Story";
-    if (h === "#about") return "About";
-    if (h === "#journal") return "Journal";
-    if (h === "#contact") return "Contact";
-    if (h === "#certifications") return "Certifications";
-    if (h === "#wholesale") return "Wholesale";
-    return "Home";
-  }),
-    [a, n] = useState("undefined" != typeof window ? window.innerWidth : 1200);
-  
-  useEffect(() => {
-    const handleHash = () => {
-      var h = window.location.hash;
-      var pg = "Home";
-      if (h === "#collection") pg = "Collection";
-      else if (h === "#our-story") pg = "Our Story";
-      else if (h === "#about") pg = "About";
-      else if (h === "#journal") pg = "Journal";
-      else if (h === "#contact") pg = "Contact";
-      else if (h === "#certifications") pg = "Certifications";
-      else if (h === "#wholesale") pg = "Wholesale";
-      t(pg);
-    };
-    window.addEventListener("hashchange", handleHash);
-    return () => window.removeEventListener("hashchange", handleHash);
   }, []);
-
   useEffect(() => {
     const e = () => n(window.innerWidth);
     return (
@@ -9865,22 +9384,8 @@ function App() {
     );
   }, []);
   const o = { isMobile: a < 768, isTablet: a < 1024 },
-    i = (pg) => {
-      var hash = "#home";
-      if (pg === "Collection") hash = "#collection";
-      else if (pg === "Our Story") hash = "#our-story";
-      else if (pg === "About") hash = "#about";
-      else if (pg === "Journal") hash = "#journal";
-      else if (pg === "Contact") hash = "#contact";
-      else if (pg === "Certifications") hash = "#certifications";
-      else if (pg === "Wholesale") hash = "#wholesale";
-      
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      if (window.location.hash !== hash) {
-        window.location.hash = hash;
-      } else {
-        t(pg);
-      }
+    i = (e) => {
+      (window.scrollTo({ top: 0, behavior: "smooth" }), t(e));
     };
   let r;
   return (
@@ -9989,7 +9494,7 @@ function CartSheet({ onClose: e }) {
               "div",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 12,
                   color: T.textMuted,
                   marginTop: 2,
@@ -10045,8 +9550,7 @@ function CartSheet({ onClose: e }) {
                     height: 54,
                     borderRadius: 10,
                     overflow: "hidden",
-                    background: T.white,
-                    border: "1px solid #eee",
+                    background: e.tea.bg,
                     flexShrink: 0,
                   },
                 },
@@ -10058,9 +9562,7 @@ function CartSheet({ onClose: e }) {
                       style: {
                         width: "100%",
                         height: "100%",
-                        objectFit: "contain",
-                        padding: "4px",
-                        boxSizing: "border-box",
+                        objectFit: "cover",
                       },
                     })
                   : React.createElement(
@@ -10084,7 +9586,7 @@ function CartSheet({ onClose: e }) {
                   "div",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 13,
                       fontWeight: 600,
                       color: T.text,
@@ -10098,7 +9600,7 @@ function CartSheet({ onClose: e }) {
                   "div",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 13,
                       fontWeight: 700,
                       color: T.teal,
@@ -10143,7 +9645,7 @@ function CartSheet({ onClose: e }) {
                   "span",
                   {
                     style: {
-                      fontFamily: "'Plus Jakarta Sans'",
+                      fontFamily: "'Inter'",
                       fontSize: 16,
                       fontWeight: 700,
                       color: T.text,
@@ -10201,7 +9703,7 @@ function CartSheet({ onClose: e }) {
               "span",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 14,
                   color: T.textMuted,
                 },
@@ -10212,7 +9714,7 @@ function CartSheet({ onClose: e }) {
               "span",
               {
                 style: {
-                  fontFamily: "'Plus Jakarta Sans'",
+                  fontFamily: "'Inter'",
                   fontSize: 22,
                   fontWeight: 700,
                   color: T.teal,
@@ -10272,7 +9774,7 @@ function CartSheet({ onClose: e }) {
                 fontSize: 15,
                 fontWeight: 700,
                 cursor: "pointer",
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -10347,7 +9849,7 @@ function CartFAB() {
                 justifyContent: "center",
                 fontSize: 11,
                 fontWeight: 700,
-                fontFamily: "'Plus Jakarta Sans'",
+                fontFamily: "'Inter'",
               },
             },
             n,
@@ -10375,7 +9877,7 @@ function AddToCartBtn({ tea: e, onAdded: t }) {
         fontSize: 14,
         fontWeight: 700,
         cursor: "pointer",
-        fontFamily: "'Plus Jakarta Sans'",
+        fontFamily: "'Inter'",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -10436,34 +9938,6 @@ function WhatsAppFAB() {
     )
   );
 }
-
-class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
-  static getDerivedStateFromError(error) {
-    return { hasError: true };
-  }
-  componentDidCatch(error, errorInfo) {
-    console.error("Nevisan Error Boundary caught error:", error, errorInfo);
-  }
-  render() {
-    if (this.state.hasError) {
-      return React.createElement("div", { style: { padding: "80px 20px", textAlign: "center", fontFamily: "'Plus Jakarta Sans', sans-serif" } },
-        React.createElement("h2", { style: { color: "#1F2E24", fontFamily: "'Playfair Display', serif", fontSize: 28, marginBottom: 12 } }, "Nevisan Tea"),
-        React.createElement("p", { style: { color: "#5C7064", margin: "16px 0", fontSize: 15 } }, "An unexpected display issue occurred while rendering."),
-        React.createElement("button", {
-          onClick: () => window.location.reload(),
-          style: { background: "#C9A84C", color: "#15271B", border: "none", padding: "12px 24px", borderRadius: 8, cursor: "pointer", fontWeight: 600 }
-        }, "Reload Page")
-      );
-    }
-    return this.props.children;
-  }
-}
-
 ReactDOM.createRoot(document.getElementById("root")).render(
-  React.createElement(ErrorBoundary, null, React.createElement(App, null)),
+  React.createElement(App, null),
 );
-

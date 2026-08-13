@@ -493,7 +493,7 @@ function Nav({ page: e, setPage: t }) {
         !s &&
           React.createElement(
             "div",
-            { style: { display: "flex", gap: 32, alignItems: "center" } },
+            { style: { display: "flex", gap: 20, alignItems: "center" } },
             a.map((t) =>
               React.createElement(
                 "button",
@@ -505,7 +505,7 @@ function Nav({ page: e, setPage: t }) {
                     border: "none",
                     cursor: "pointer",
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: 400,
                     color: e === t ? T.gold : "rgba(255,255,255,0.82)",
                     transition: "color 150ms",

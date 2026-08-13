@@ -2208,6 +2208,47 @@ function TeaCard({ tea, onView, onImageClick, index = 0 }) {
             ),
           ),
           React.createElement(
+            "div",
+            {
+              style: {
+                display: "flex",
+                gap: 8,
+                marginBottom: 12,
+                flexWrap: "wrap",
+              },
+            },
+            React.createElement(
+              "span",
+              {
+                style: {
+                  background: "rgba(35,65,45,0.08)",
+                  color: T.teal,
+                  fontSize: 10,
+                  fontWeight: 600,
+                  padding: "3px 8px",
+                  borderRadius: 4,
+                  letterSpacing: "0.04em",
+                },
+              },
+              "🌱 PGS-India Organic",
+            ),
+            React.createElement(
+              "span",
+              {
+                style: {
+                  background: "rgba(35,65,45,0.08)",
+                  color: T.teal,
+                  fontSize: 10,
+                  fontWeight: 600,
+                  padding: "3px 8px",
+                  borderRadius: 4,
+                  letterSpacing: "0.04em",
+                },
+              },
+              "✅ FSSAI Certified",
+            ),
+          ),
+          React.createElement(
             "button",
             {
               onClick: (a) => {

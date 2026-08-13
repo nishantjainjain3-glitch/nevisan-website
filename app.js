@@ -4826,6 +4826,109 @@ function Footer({ setPage: e }) {
               "GSTIN 18AFAPJ8203P1Z7",
             ),
           ),
+          React.createElement(
+            "div",
+            {
+              style: {
+                marginTop: 24,
+                padding: "20px",
+                background: "rgba(255,255,255,0.05)",
+                borderRadius: 12,
+                border: "1px solid rgba(255,255,255,0.1)",
+              },
+            },
+            React.createElement(
+              "div",
+              {
+                style: {
+                  fontFamily: "'Plus Jakarta Sans'",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  letterSpacing: "0.12em",
+                  color: T.gold,
+                  textTransform: "uppercase",
+                  marginBottom: 8,
+                },
+              },
+              "Free Tea Brewing Guide",
+            ),
+            React.createElement(
+              "p",
+              {
+                style: {
+                  fontFamily: "'Plus Jakarta Sans'",
+                  fontSize: 12,
+                  color: "rgba(255,255,255,0.6)",
+                  marginBottom: 12,
+                  lineHeight: 1.5,
+                },
+              },
+              "Sign up for our newsletter and get a free comprehensive tea brewing guide PDF delivered to your inbox.",
+            ),
+            React.createElement(
+              "form",
+              {
+                onSubmit: (e) => {
+                  e.preventDefault();
+                  const email = e.target.email.value;
+                  if (email) {
+                    alert("Thank you for signing up! Your free Tea Brewing Guide will be sent to " + email);
+                    e.target.reset();
+                  }
+                },
+                style: {
+                  display: "flex",
+                  gap: 8,
+                  flexWrap: "wrap",
+                },
+              },
+              React.createElement(
+                "input",
+                {
+                  type: "email",
+                  name: "email",
+                  placeholder: "Your email address",
+                  required: true,
+                  style: {
+                    flex: 1,
+                    minWidth: 180,
+                    padding: "10px 14px",
+                    borderRadius: 8,
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    background: "rgba(255,255,255,0.08)",
+                    color: "#fff",
+                    fontFamily: "'Plus Jakarta Sans'",
+                    fontSize: 13,
+                    outline: "none",
+                  },
+                },
+              ),
+              React.createElement(
+                "button",
+                {
+                  type: "submit",
+                  style: {
+                    padding: "10px 20px",
+                    borderRadius: 8,
+                    border: "none",
+                    background: T.gold,
+                    color: T.tealDark,
+                    fontFamily: "'Plus Jakarta Sans'",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    cursor: "pointer",
+                    letterSpacing: "0.04em",
+                    transition: "filter 0.2s",
+                  },
+                  onMouseEnter: (e) =>
+                    (e.currentTarget.style.filter = "brightness(1.1)"),
+                  onMouseLeave: (e) =>
+                    (e.currentTarget.style.filter = "none"),
+                },
+                "Get Free Guide",
+              ),
+            ),
+          ),
         ),
         React.createElement(
           "div",

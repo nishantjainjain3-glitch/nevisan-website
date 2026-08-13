@@ -616,7 +616,7 @@ function Nav({ page: e, setPage: t }) {
             gap: 20,
           },
         },
-        a.filter(item => item !== "FAQ" && item !== "Quiz").map((t) => {
+        a.map((t) => {
           const isActive = e === t;
           return React.createElement(
             "button",

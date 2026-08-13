@@ -417,7 +417,8 @@
           blueflower: "BlueFlower-1",
           rum: "RUM-1",
           whiskey: "9E-23FO-LL8Q",
-          organic: "Unflavoured-1"
+          organic: "Unflavoured-1",
+          ginger: "Ginger-1"
         };
         const sku = skuMap[teaKey];
         if (sku && typeof fbq !== "undefined") {
@@ -509,6 +510,15 @@
         bg: "radial-gradient(circle, #f2f7ec 0%, #fff 100%)",
         amazon: "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
         flipkart: "https://www.flipkart.com/store/nevisan"
+      },
+      ginger: {
+        name: "Ginger Green Tea",
+        img: "../teas/ginger.png",
+        benefit: "Metabolic Activation & Immunity Support",
+        desc: "Warming, zingy ginger blended with whole leaf Assam green tea. Activates metabolism, supports immunity, and soothes digestion. The perfect morning tea for clean energy without the cortisol spike.",
+        bg: "radial-gradient(circle, #fef9e7 0%, #fff 100%)",
+        amazon: "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+        flipkart: "https://www.flipkart.com/store/nevisan"
       }
     };
 
@@ -522,6 +532,7 @@
           { text: "Manage PCOS, hormonal balance, or oily skin", emoji: "🌸", scores: { spearmint: 5 } },
           { text: "Support digestion, ease bloating, and boost metabolism", emoji: "🍋", scores: { lemongrass: 5 } },
           { text: "Strengthen immunity, get antioxidants, and feel sharp", emoji: "🛡️", scores: { tulsi: 3, blueflower: 3, organic: 1 } },
+          { text: "Activate metabolism, boost immunity, and soothe digestion", emoji: "🫚", scores: { ginger: 5 } },
           { text: "Savor a unique, premium, non-alcoholic evening ritual", emoji: "🥃", scores: { rum: 4, whiskey: 4 } }
         ]
       },
@@ -534,6 +545,7 @@
           { text: "Cool, clean, and refreshing mint", emoji: "🍃", scores: { spearmint: 4 } },
           { text: "Citrusy, zesty, and refreshing lemon notes", emoji: "🍋", scores: { lemongrass: 4 } },
           { text: "Warm, spicy, and grounding herbal notes", emoji: "🌿", scores: { tulsi: 4 } },
+          { text: "Warm, spicy, and grounding with a zingy kick", emoji: "🫚", scores: { ginger: 4 } },
           { text: "Sweet, rich spices like dark aged rum", emoji: "🍹", scores: { rum: 4 } },
           { text: "Woody, bold, and smoky like peated whiskey", emoji: "🪵", scores: { whiskey: 4 } },
           { text: "Pure, fresh, clean, and classic grassy green tea", emoji: "🍵", scores: { organic: 4 } }
@@ -545,7 +557,7 @@
         options: [
           { text: "Tired, anxious, or winding down in the evening", emoji: "🌙", scores: { chamomile: 3, gaba: 3, rum: 2, whiskey: 2 } },
           { text: "Bloated, heavy, or looking for an after-meal tea", emoji: "🍽️", scores: { lemongrass: 4 } },
-          { text: "Sluggish, needing clean energy and focus in the morning", emoji: "☀️", scores: { organic: 3, lemongrass: 2, blueflower: 3, spearmint: 2 } },
+          { text: "Sluggish, needing clean energy and focus in the morning", emoji: "☀️", scores: { organic: 3, lemongrass: 2, blueflower: 3, spearmint: 2, ginger: 3 } },
           { text: "Stressed at work and wanting calm focus at any time", emoji: "💻", scores: { gaba: 4, tulsi: 3 } }
         ]
       }

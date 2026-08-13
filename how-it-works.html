@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works — Nevisan Tea | Ordering Process</title>
+  <meta name="description" content="Learn how to order Nevisan whole-leaf Assam tea. Simple 3-step process via WhatsApp, Amazon, or Flipkart. Free delivery across India.">
+  <meta property="og:title" content="How It Works — Nevisan Tea | Ordering Process">
+  <meta property="og:description" content="Simple 3-step process to order Nevisan tea. Choose your tea, place order via WhatsApp/Amazon/Flipkart, and get free delivery.">
+  <meta property="og:image" content="https://nevisan.in/hero-bg.jpg">
+  <meta property="og:url" content="https://nevisan.in/how-it-works">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://nevisan.in/how-it-works">
+  <link rel="icon" type="image/jpeg" href="/nevisan-logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3Q7DNWTKP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-W3Q7DNWTKP');
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --teal: #23412D;
+      --teal-dark: #15271B;
+      --teal-mid: #1E3626;
+      --gold: #C9A84C;
+      --gold-lt: #f0e4c0;
+      --cream: #F8F6F2;
+      --cream-dk: #EEE9DF;
+      --text: #1F2E24;
+      --muted: #3D5245;
+      --border: #E2DDD5;
+      --white: #ffffff;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      background: var(--teal-dark);
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      color: transparent;
+      background: linear-gradient(90deg, #fff 0%, var(--gold) 55%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-link { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-link:hover { color: #fff; }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--teal-dark);
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: filter 0.2s;
+    }
+    .nav-cta:hover { filter: brightness(1.08); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-mid) 60%, #1a4a2e 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 24px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .hero-label span { height: 1px; width: 40px; background: var(--gold); display: block; }
+    .hero-label p { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 5vw, 54px);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .hero p { color: rgba(255,255,255,0.72); font-size: 16px; max-width: 500px; margin: 0 auto 28px; }
+
+    /* MAIN */
+    .main { max-width: 860px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    /* STEPS */
+    .steps { display: flex; flex-direction: column; gap: 32px; margin-top: 40px; }
+    .step {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .step:hover {
+      box-shadow: 0 8px 32px rgba(35,65,45,0.08);
+      border-color: rgba(35,65,45,0.15);
+    }
+    .step-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      min-width: 60px;
+      text-align: center;
+    }
+    .step-content { flex: 1; }
+    .step-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--teal-dark);
+      margin-bottom: 8px;
+    }
+    .step-content p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .step-methods {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .method-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(35,65,45,0.08);
+      color: var(--teal);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .method-badge:hover {
+      background: rgba(35,65,45,0.15);
+    }
+
+    /* DELIVERY INFO */
+    .delivery-info {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-mid) 100%);
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+      margin: 56px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .delivery-info::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 180px; height: 180px;
+      background: rgba(201,168,76,0.08);
+      border-radius: 50%;
+    }
+    .delivery-info h2 { font-family: 'Playfair Display', serif; color: #fff; font-size: 28px; font-weight: 400; margin-bottom: 10px; }
+    .delivery-info p { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 24px; }
+    .delivery-features {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .delivery-feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .delivery-feature-icon {
+      font-size: 32px;
+    }
+    .delivery-feature-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+
+    /* CTA */
+    .cta-strip {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+      margin: 56px 0;
+      border: 1px solid var(--border);
+    }
+    .cta-strip h2 { font-family: 'Playfair Display', serif; color: var(--teal-dark); font-size: 28px; font-weight: 400; margin-bottom: 10px; }
+    .cta-strip p { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-gold { display: inline-block; background: var(--gold); color: var(--teal-dark); padding: 13px 30px; border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none; letter-spacing: 0.04em; transition: filter 0.2s; }
+    .btn-gold:hover { filter: brightness(1.08); }
+    .btn-outline { display: inline-block; border: 1px solid var(--teal); color: var(--teal); padding: 13px 30px; border-radius: 8px; font-size: 13px; text-decoration: none; transition: background 0.2s; }
+    .btn-outline:hover { background: rgba(35,65,45,0.08); }
+
+    /* FOOTER */
+    footer {
+      background: var(--teal-dark);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    footer a { color: rgba(255,255,255,0.75); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .hero { padding: 60px 20px 52px; }
+      .main { padding: 40px 16px 72px; }
+      .step { flex-direction: column; gap: 16px; }
+      .step-number { font-size: 36px; min-width: auto; text-align: left; }
+      .delivery-info { padding: 36px 24px; }
+      .delivery-features { gap: 16px; }
+      .cta-strip { padding: 36px 24px; }
+      .cta-strip h2 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="https://nevisan.in" class="nav-logo">NEVISAN</a>
+    <div class="nav-right">
+      <a href="https://nevisan.in/#collection" class="nav-link">Shop</a>
+      <a href="https://nevisan.in/faq" class="nav-link">FAQ</a>
+      <a href="https://nevisan.in/quiz" class="nav-link">Quiz</a>
+      <a href="https://wa.me/919864245687" class="nav-cta">Order Now</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-label">
+      <span></span>
+      <p>How It Works</p>
+      <span></span>
+    </div>
+    <h1>Ordering Nevisan Tea</h1>
+    <p>Simple, fast, and convenient. Choose your favourite whole-leaf Assam tea and get it delivered to your doorstep in 3–5 days.</p>
+  </div>
+
+  <div class="main">
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Choose Your Tea</h3>
+          <p>Browse our collection of 10 whole-leaf Assam teas. From pure Organic Green Tea to exotic blends like GABA Oolong and Blue Flower Green Tea — there's something for every palate.</p>
+          <div class="step-methods">
+            <a href="https://nevisan.in/#collection" class="method-badge">🍃 View Collection</a>
+            <a href="https://nevisan.in/quiz" class="method-badge">🧠 Take the Quiz</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Place Your Order</h3>
+          <p>Choose your preferred ordering method. We offer multiple convenient options to suit your lifestyle.</p>
+          <div class="step-methods">
+            <a href="https://wa.me/919864245687" class="method-badge">💬 WhatsApp</a>
+            <a href="https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E" class="method-badge">📦 Amazon</a>
+            <a href="https://www.flipkart.com/store/nevisan" class="method-badge">🛒 Flipkart</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Enjoy Your Tea</h3>
+          <p>Your order arrives in 3–5 business days, carefully packaged to preserve freshness. Each 50g pack contains whole, unbroken leaves from our single garden in Golaghat, Assam.</p>
+          <div class="step-methods">
+            <span class="method-badge">🚚 Free Delivery</span>
+            <span class="method-badge">📦 Secure Packaging</span>
+            <span class="method-badge">🌱 Fresh from Garden</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="delivery-info">
+      <h2>Delivery Details</h2>
+      <p>We deliver across India with free shipping on all orders.</p>
+      <div class="delivery-features">
+        <div class="delivery-feature">
+          <div class="delivery-feature-icon">🚚</div>
+          <div class="delivery-feature-text">3–5 Business Days</div>
+        </div>
+        <div class="delivery-feature">
+          <div class="delivery-feature-icon">🆓</div>
+          <div class="delivery-feature-text">Free Shipping</div>
+        </div>
+        <div class="delivery-feature">
+          <div class="delivery-feature-icon">📦</div>
+          <div class="delivery-feature-text">Secure Packaging</div>
+        </div>
+        <div class="delivery-feature">
+          <div class="delivery-feature-icon">🔄</div>
+          <div class="delivery-feature-text">Easy Returns</div>
+        </div>
+      </div>
+      <a href="https://wa.me/919864245687" class="btn-gold">💬 Order via WhatsApp</a>
+    </div>
+
+    <div class="cta-strip">
+      <h2>Ready to Experience Nevisan?</h2>
+      <p>Join 10,000+ tea lovers who have made the switch to whole-leaf, single-origin Assam tea.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/919864245687" class="btn-gold">💬 Order via WhatsApp</a>
+        <a href="https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E" class="btn-outline">📦 Buy on Amazon</a>
+        <a href="https://www.flipkart.com/store/nevisan" class="btn-outline">🛒 Buy on Flipkart</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Nevisan Tea. Grown in Golaghat, Assam. Sourced honestly. <a href="https://nevisan.in">Back to Homepage</a></p>
+  </footer>
+</body>
+</html>

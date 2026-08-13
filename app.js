@@ -396,6 +396,8 @@ function Nav({ page: e, setPage: t }) {
       "Contact",
       "FAQ",
       "Quiz",
+      "Testimonials",
+      "Blog",
     ],
     n = "Home" === e,
     [o, i] = useState(!1),
@@ -425,7 +427,11 @@ function Nav({ page: e, setPage: t }) {
       ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/faq/")
       : "Quiz" === e
         ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/quiz/")
-        : (t(e), l(!1));
+        : "Testimonials" === e
+          ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/testimonials.html")
+          : "Blog" === e
+            ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/blog.html")
+            : (t(e), l(!1));
   };
   return React.createElement(
     React.Fragment,

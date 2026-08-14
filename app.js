@@ -398,7 +398,26 @@ function Nav({ page: e, setPage: t }) {
       "Quiz",
       "Testimonials",
       "Blog",
+      "Locations",
+      "Bangalore",
+      "Chennai",
+      "Delhi",
+      "Hyderabad",
+      "Jaipur",
+      "Kolkata",
+      "Mumbai",
+      "Pune",
     ],
+    const locationUrls = {
+      "Bangalore": "/locations/tea-delivery-bangalore/",
+      "Chennai": "/locations/tea-delivery-chennai/",
+      "Delhi": "/locations/tea-delivery-delhi/",
+      "Hyderabad": "/locations/tea-delivery-hyderabad/",
+      "Jaipur": "/locations/tea-delivery-jaipur/",
+      "Kolkata": "/locations/tea-delivery-kolkata/",
+      "Mumbai": "/locations/tea-delivery-mumbai/",
+      "Pune": "/locations/tea-delivery-pune/",
+    },
     n = "Home" === e,
     [o, i] = useState(!1),
     [r, l] = useState(!1),
@@ -423,15 +442,21 @@ function Nav({ page: e, setPage: t }) {
       [r],
     ));
   const c = (e) => {
-    "FAQ" === e
-      ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/faq/")
-      : "Quiz" === e
-        ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/quiz/")
-        : "Testimonials" === e
-          ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/testimonials.html")
-          : "Blog" === e
-            ? (window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/blog.html")
-            : (t(e), l(!1));
+    const locations = ["Bangalore", "Chennai", "Delhi", "Hyderabad", "Jaipur", "Kolkata", "Mumbai", "Pune"];
+    if (locations.includes(e)) {
+      window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/locations/tea-delivery-" + e.toLowerCase() + "/";
+    } else if ("FAQ" === e) {
+      window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/faq/";
+    } else if ("Quiz" === e) {
+      window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/quiz/";
+    } else if ("Testimonials" === e) {
+      window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/testimonials.html";
+    } else if ("Blog" === e) {
+      window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "") + "/blog.html";
+    } else {
+      t(e);
+      l(!1);
+    }
   };
   return React.createElement(
     React.Fragment,
@@ -494,8 +519,64 @@ function Nav({ page: e, setPage: t }) {
           React.createElement(
             "div",
             { style: { display: "flex", gap: 20, alignItems: "center" } },
-            a.map((t) =>
-              React.createElement(
+            a.map((t) => {
+              if (locationUrls[t]) {
+                return React.createElement(
+                  "a",
+                  {
+                    key: t,
+                    href: locationUrls[t],
+                    style: {
+                      background: "none",
+                      border: "none",
+                      cursor: "pointer",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontSize: 12,
+                      fontWeight: 400,
+                      color: "rgba(255,255,255,0.82)",
+                      transition: "color 150ms",
+                      padding: 0,
+                      textDecoration: "none",
+                    },
+                    onMouseEnter: (a) => {
+                      a.currentTarget.style.color = "#fff";
+                    },
+                    onMouseLeave: (a) => {
+                      a.currentTarget.style.color = "rgba(255,255,255,0.82)";
+                    },
+                  },
+                  t,
+                );
+              }
+              if (t === "Locations") {
+                return React.createElement(
+                  "a",
+                  {
+                    key: t,
+                    href: "/locations/",
+                    style: {
+                      background: "none",
+                      border: "none",
+                      cursor: "pointer",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontSize: 12,
+                      fontWeight: 400,
+                      color: "rgba(255,255,255,0.82)",
+                      transition: "color 150ms",
+                      padding: 0,
+                      textDecoration: "none",
+                    },
+                    onMouseEnter: (a) => {
+                      a.currentTarget.style.color = "#fff";
+                    },
+                    onMouseLeave: (a) => {
+                      a.currentTarget.style.color = "rgba(255,255,255,0.82)";
+                    },
+                  },
+                  t,
+                );
+              }
+              return React.createElement(
                 "button",
                 {
                   key: t,
@@ -520,8 +601,8 @@ function Nav({ page: e, setPage: t }) {
                   },
                 },
                 t,
-              ),
-            ),
+              );
+            }),
             React.createElement(
               "button",
               {
@@ -618,6 +699,58 @@ function Nav({ page: e, setPage: t }) {
         },
         a.map((t) => {
           const isActive = e === t;
+          if (locationUrls[t]) {
+            return React.createElement(
+              "a",
+              {
+                key: t,
+                href: locationUrls[t],
+                style: {
+                  background: "none",
+                  border: "none",
+                  color: "rgba(255,255,255,0.65)",
+                  fontFamily: "'Plus Jakarta Sans'",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  whiteSpace: "nowrap",
+                  cursor: "pointer",
+                  padding: "8px 0",
+                  position: "relative",
+                  transition: "color 200ms ease",
+                  textDecoration: "none",
+                },
+              },
+              t,
+            );
+          }
+          if (t === "Locations") {
+            return React.createElement(
+              "a",
+              {
+                key: t,
+                href: "/locations/",
+                style: {
+                  background: "none",
+                  border: "none",
+                  color: "rgba(255,255,255,0.65)",
+                  fontFamily: "'Plus Jakarta Sans'",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  whiteSpace: "nowrap",
+                  cursor: "pointer",
+                  padding: "8px 0",
+                  position: "relative",
+                  transition: "color 200ms ease",
+                  textDecoration: "none",
+                },
+              },
+              t,
+            );
+          }
           return React.createElement(
             "button",
             {
@@ -681,8 +814,62 @@ function Nav({ page: e, setPage: t }) {
               gap: 4,
             },
           },
-          a.map((t, n) =>
-            React.createElement(
+          a.map((t, n) => {
+            if (locationUrls[t]) {
+              return React.createElement(
+                "a",
+                {
+                  key: t,
+                  href: locationUrls[t],
+                  style: {
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: 28,
+                    fontWeight: 400,
+                    color: "rgba(255,255,255,0.85)",
+                    padding: "14px 0",
+                    textDecoration: "none",
+                    borderBottom:
+                      n < a.length - 1
+                        ? "1px solid rgba(255,255,255,0.08)"
+                        : "none",
+                    animation: `menu-open 0.3s ease ${0.06 * n}s both`,
+                  },
+                },
+                t,
+              );
+            }
+            if (t === "Locations") {
+              return React.createElement(
+                "a",
+                {
+                  key: t,
+                  href: "/locations/",
+                  style: {
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: 28,
+                    fontWeight: 400,
+                    color: "rgba(255,255,255,0.85)",
+                    padding: "14px 0",
+                    textDecoration: "none",
+                    borderBottom:
+                      n < a.length - 1
+                        ? "1px solid rgba(255,255,255,0.08)"
+                        : "none",
+                    animation: `menu-open 0.3s ease ${0.06 * n}s both`,
+                  },
+                },
+                t,
+              );
+            }
+            return React.createElement(
               "button",
               {
                 key: t,
@@ -705,8 +892,8 @@ function Nav({ page: e, setPage: t }) {
                 },
               },
               t,
-            ),
-          ),
+            );
+          }),
           React.createElement(
             "div",
             {

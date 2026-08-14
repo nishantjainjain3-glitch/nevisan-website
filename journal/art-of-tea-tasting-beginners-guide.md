@@ -55,72 +55,72 @@ The finish is what remains after you swallow. Good tea has:
 
 ## Tasting Nevisan's Range
 
-Here's what to look for in each variety:
+Here's what to look for in each variety. For a deeper dive into choosing the right tea for your lifestyle, check out our [guide to matching tea to your routine →](/journal/how-to-choose-right-tea-for-your-lifestyle)
 
-### Organic Green Tea
+### [Organic Green Tea](https://nevisan.in/#organic-green-tea)
 - **Dry aroma:** Fresh, grassy, slightly malty
 - **Liquor:** Bright golden-green, clear
 - **Flavour:** Clean, fresh, grassy with a sweet finish
 - **Body:** Light to medium
 - **Best for:** Understanding the baseline Assam character
 
-### Lemongrass Green Tea
+### [Lemongrass Green Tea](https://nevisan.in/#lemongrass-green-tea)
 - **Dry aroma:** Citrusy, zesty, refreshing
 - **Liquor:** Pale golden-green
 - **Flavour:** Bright lemon notes with a clean green tea base
 - **Body:** Light, refreshing
 - **Best for:** Post-meal digestion and morning refreshment
 
-### Blue Flower Green Tea
+### [Blue Flower Green Tea](https://nevisan.in/#blue-flower-green-tea)
 - **Dry aroma:** Floral, slightly earthy
 - **Liquor:** Stunning cobalt blue (turns purple with lemon)
 - **Flavour:** Mild, floral, with subtle green tea character
 - **Body:** Light, delicate
 - **Best for:** Visual spectacle and nootropic focus
 
-### Spearmint Green Tea
+### [Spearmint Green Tea](https://nevisan.in/#spearmint-green-tea)
 - **Dry aroma:** Cool, sweet, minty
 - **Liquor:** Pale green, clear
 - **Flavour:** Cool mint with a sweet, clean finish
 - **Body:** Light, refreshing
 - **Best for:** Afternoon refreshment and hormonal balance
 
-### Tulsi Green Tea
+### [Tulsi Green Tea](https://nevisan.in/#tulsi-green-tea)
 - **Dry aroma:** Earthy, aromatic, slightly peppery
 - **Liquor:** Warm amber-green
 - **Flavour:** Earthy, spicy, with a clove-like undertone
 - **Body:** Medium, warming
 - **Best for:** Stress relief and immunity
 
-### Chamomile Green Tea
+### [Chamomile Green Tea](https://nevisan.in/#chamomile-green-tea)
 - **Dry aroma:** Sweet, floral, apple-like
 - **Liquor:** Pale golden
 - **Flavour:** Sweet, honey-like, soothing
 - **Body:** Light, gentle
 - **Best for:** Evening wind-down and sleep support
 
-### GABA Oolong Tea
+### [GABA Oolong Tea](https://nevisan.in/#gaba-oolong-tea)
 - **Dry aroma:** Complex, slightly floral, earthy
 - **Liquor:** Warm amber-gold
 - **Flavour:** Smooth, mellow, with a natural sweetness
 - **Body:** Medium, rounded
 - **Best for:** Calm focus and blood pressure support
 
-### Rum Green Tea
+### [Rum Green Tea](https://nevisan.in/#rum-green-tea)
 - **Dry aroma:** Warm, sweet, caramelised
 - **Liquor:** Rich amber
 - **Flavour:** Warm, sweet, with rum-like character
 - **Body:** Medium, comforting
 - **Best for:** Evening ritual and non-alcoholic indulgence
 
-### Whiskey Green Tea
+### [Whiskey Green Tea](https://nevisan.in/#whiskey-green-tea)
 - **Dry aroma:** Smoky, woody, oaky
 - **Liquor:** Deep amber
 - **Flavour:** Smoky, woody, complex
 - **Body:** Medium to full, deep
 - **Best for:** Sophisticated evening wind-down
 
-### Ginger Green Tea
+### [Ginger Green Tea](https://nevisan.in/#ginger-green-tea)
 - **Dry aroma:** Warm, spicy, zingy
 - **Liquor:** Bright golden-green
 - **Flavour:** Warm ginger spice with a clean green tea base

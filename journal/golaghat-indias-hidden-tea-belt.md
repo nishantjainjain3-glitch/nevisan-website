@@ -245,6 +245,11 @@ The combination of unique geological blessings, ideal climatic conditions, gener
 
 As the global tea community continues to seek meaningful connections to origin and production methods, Golaghat stands ready to take its rightful place—not as Darjeeling's competitor, but as a distinguished counterpart in India's rich tea heritage, offering its own distinctive expression of what makes Camellia sinensis such a remarkable plant.
 
-*Discover the depth of Golaghat for yourself with Nevisan's single-origin Assam teas, each batch traceable to our specific garden in this remarkable tea belt.*
+*Discover the depth of Golaghat for yourself with [Nevisan's single-origin Assam teas →](https://nevisan.in/#collection), each batch traceable to our specific garden in this remarkable tea belt.*
+
+**Further Reading:**
+- [Why Whole Leaf Tea Tastes Different →](/journal/why-whole-leaf-tea-tastes-different)
+- [The Complete Guide to Assam Whole Leaf Tea →](/journal/assam-whole-leaf-tea-guide)
+- [How to Choose the Right Tea for Your Lifestyle →](/journal/how-to-choose-right-tea-for-your-lifestyle)
 
 **Last Updated: August 2026 | Nevisan Tea Research & Terroir Team**

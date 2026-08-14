@@ -79,6 +79,12 @@ Habitual consumption : Regular drinkers who transitioned from dust or bagged tea
 - Smoother digestion after tea consumption
 - Greater ability to detect subtle flavor differences between batches or flushes
 
+---
+
+## Experience Nevisan Whole-Leaf Assam Tea
+
+Ready to taste the difference? Explore our [complete collection of whole-leaf Assam teas →](https://nevisan.in/#collection) and find your perfect match. Not sure where to start? Take our [2-minute tea quiz →](https://nevisan.in/quiz) or read our [guide to choosing the right tea for your lifestyle →](/journal/how-to-choose-right-tea-for-your-lifestyle).
+
 ## Pairing suggestions That Respect Quality
 
 Pairing whole-leaf Assam with food is about complementing without masking. The brisk, malty character of Assam pairs naturally with:

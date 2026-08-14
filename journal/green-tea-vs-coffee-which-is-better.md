@@ -75,8 +75,8 @@ Green tea contains significantly less caffeine than coffee. More importantly, it
 ## Nevisan's Recommendation
 
 For the best green tea experience, try:
-- **Organic Green Tea** — pure, clean, classic Assam green tea
-- **GABA Oolong** — for calm focus and blood pressure support
-- **Ginger Green Tea** — for morning metabolic activation
+- **[Organic Green Tea](https://nevisan.in/#organic-green-tea)** — pure, clean, classic Assam green tea
+- **[GABA Oolong Tea](https://nevisan.in/#gaba-oolong-tea)** — for calm focus and blood pressure support. [Read the science behind GABA tea →](/journal/science-behind-gaba-tea)
+- **[Ginger Green Tea](https://nevisan.in/#ginger-green-tea)** — for morning metabolic activation and digestion
 
 All Nevisan teas are whole-leaf, single-origin, and PGS-India organic certified. Order via WhatsApp at +91 98642 45687 or find us on Amazon India and Flipkart.

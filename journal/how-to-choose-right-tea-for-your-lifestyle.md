@@ -7,20 +7,20 @@ With nine varieties of whole-leaf Assam green tea, Nevisan offers something for 
 Nevisan teas fall into three broad categories:
 
 ### Morning & Energy Teas
-- **Organic Green Tea** — pure, clean, grassy. Perfect for purists who want unflavoured Assam green tea. Best for morning energy and daily antioxidants.
-- **Lemongrass Green Tea** — zesty, refreshing, digestive. Ideal for post-meal digestion and metabolic activation. Great after breakfast or lunch.
-- **Ginger Green Tea** — warming, spicy, grounding. Built for morning activation. Supports metabolism, immunity, and digestion. Perfect if you need a clean energy start without coffee's cortisol spike.
-- **Blue Flower Green Tea** — beautiful, nootropic, antioxidant-rich. The colour-changing brew is a sensory experience. Good for morning focus and cognitive support.
+- **[Organic Green Tea](https://nevisan.in/#organic-green-tea)** — pure, clean, grassy. Perfect for purists who want unflavoured Assam green tea. Best for morning energy and daily antioxidants.
+- **[Lemongrass Green Tea](https://nevisan.in/#lemongrass-green-tea)** — zesty, refreshing, digestive. Ideal for post-meal digestion and metabolic activation. Great after breakfast or lunch.
+- **[Ginger Green Tea](https://nevisan.in/#ginger-green-tea)** — warming, spicy, grounding. Built for morning activation. Supports metabolism, immunity, and digestion. Perfect if you need a clean energy start without coffee's cortisol spike.
+- **[Blue Flower Green Tea](https://nevisan.in/#blue-flower-green-tea)** — beautiful, nootropic, antioxidant-rich. The colour-changing brew is a sensory experience. Good for morning focus and cognitive support.
 
 ### Afternoon & Focus Teas
-- **GABA Oolong Tea** — smooth, complex, calming without sedation. The best choice for afternoon focus when you want calm productivity. Supports blood pressure and reduces background anxiety.
-- **Tulsi Green Tea** — earthy, aromatic, adaptogenic. Helps the body adapt to stress and strengthens immunity. Ideal for the afternoon slump or stressful workdays.
-- **Spearmint Green Tea** — cool, refreshing, hormonally balancing. Great for afternoon refreshment, especially for women managing PCOS or hormonal acne.
+- **[GABA Oolong Tea](https://nevisan.in/#gaba-oolong-tea)** — smooth, complex, calming without sedation. The best choice for afternoon focus when you want calm productivity. Supports blood pressure and reduces background anxiety. [Learn about the science behind GABA →](/journal/science-behind-gaba-tea)
+- **[Tulsi Green Tea](https://nevisan.in/#tulsi-green-tea)** — earthy, aromatic, adaptogenic. Helps the body adapt to stress and strengthens immunity. Ideal for the afternoon slump or stressful workdays. [Discover tulsi's adaptogenic power →](/journal/tulsi-green-tea-adaptogen)
+- **[Spearmint Green Tea](https://nevisan.in/#spearmint-green-tea)** — cool, refreshing, hormonally balancing. Great for afternoon refreshment, especially for women managing PCOS or hormonal acne. [Explore spearmint's hormonal benefits →](/journal/spearmint-tea-hormonal-balance)
 
 ### Evening & Wind-Down Teas
-- **Chamomile Green Tea** — sweet, floral, sleep-supporting. Contains apigenin which gently binds to calming receptors. Drink 30–45 minutes before bed.
-- **Rum Green Tea** — warm, sweet, non-alcoholic evening ritual. All the character of aged rum without the alcohol. Perfect for unwinding after a long day.
-- **Whiskey Green Tea** — smoky, oaky, sophisticated. Captures the woody character of peated whiskey. Ideal for evening relaxation without sedation.
+- **[Chamomile Green Tea](https://nevisan.in/#chamomile-green-tea)** — sweet, floral, sleep-supporting. Contains apigenin which gently binds to calming receptors. Drink 30–45 minutes before bed.
+- **[Rum Green Tea](https://nevisan.in/#rum-green-tea)** — warm, sweet, non-alcoholic evening ritual. All the character of aged rum without the alcohol. Perfect for unwinding after a long day.
+- **[Whiskey Green Tea](https://nevisan.in/#whiskey-green-tea)** — smoky, oaky, sophisticated. Captures the woody character of peated whiskey. Ideal for evening relaxation without sedation.
 
 ## Matching Tea to Your Goals
 

@@ -45,9 +45,9 @@ To get the most from your green tea:
 ## Nevisan's Recommendation
 
 For maximum health benefits, we recommend rotating between:
-- **Organic Green Tea** — pure EGCG and L-theanine for daily antioxidants
-- **GABA Oolong** — for calm focus and blood pressure support
-- **Tulsi Green Tea** — for stress reduction and immunity
-- **Spearmint Green Tea** — for hormonal balance and skin health
+- **[Organic Green Tea](https://nevisan.in/#organic-green-tea)** — pure EGCG and L-theanine for daily antioxidants
+- **[GABA Oolong Tea](https://nevisan.in/#gaba-oolong-tea)** — for calm focus and blood pressure support. [Read the science behind GABA tea →](/journal/science-behind-gaba-tea)
+- **[Tulsi Green Tea](https://nevisan.in/#tulsi-green-tea)** — for stress reduction and immunity. [Learn about tulsi as an adaptogen →](/journal/tulsi-green-tea-adaptogen)
+- **[Spearmint Green Tea](https://nevisan.in/#spearmint-green-tea)** — for hormonal balance and skin health. [Discover spearmint's hormonal benefits →](/journal/spearmint-tea-hormonal-balance)
 
 Each variety is whole-leaf, single-origin, and PGS-India organic certified — grown without pesticides or chemicals in Golaghat, Assam.

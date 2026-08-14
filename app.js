@@ -1,3 +1,4 @@
+// Cache invalidation: redeploy to force GitHub Pages CDN refresh — 2026-08-14
 const trackExternalClick = (e, t) => {
   try {
     const m = {

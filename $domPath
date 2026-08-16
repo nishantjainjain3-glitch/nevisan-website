@@ -169,7 +169,7 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     {
       "@type": "Product",
       "name": "Nevisan Lemongrass Green Tea",
-      "description": "Whole leaf Assam green tea blended with lemongrass. Aids digestion, boosts metabolism and naturally detoxifies. PGS-India organic certified, chemical-free. 50g pack, MRP ₹499.",
+      "description": "Whole leaf Assam green tea blended with lemongrass. A refreshing citrus infusion with a clean, crisp finish. PGS-India organic certified, chemical-free. 50g pack, MRP ₹499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
       "image": "https://nevisan.in/teas/chamomile.png",
       "url": "https://nevisan.in/",
@@ -180,7 +180,7 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     {
       "@type": "Product",
       "name": "Nevisan Blue Flower Green Tea",
-      "description": "Whole leaf Assam green tea with butterfly pea flower. Rich in anthocyanin antioxidants. Calming, nootropic and visually stunning — turns purple when you add lemon. 50g pack, MRP ₹499.",
+      "description": "Whole leaf Assam green tea with butterfly pea flower. Rich in anthocyanin antioxidants. Calming and visually stunning — turns purple when you add lemon. 50g pack, MRP ₹499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
       "image": "https://nevisan.in/teas/tulsi.png",
       "url": "https://nevisan.in/",
@@ -202,7 +202,7 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     {
       "@type": "Product",
       "name": "Nevisan Spearmint Green Tea",
-      "description": "Whole leaf Assam green tea blended with spearmint. Clinically studied anti-androgenic properties — beneficial for PCOS, hormonal balance and skin clarity. 50g pack, MRP ₹499.",
+      "description": "Whole leaf Assam green tea blended with spearmint. A bright, cooling infusion with a clean, refreshing finish. 50g pack, MRP ₹499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
       "image": "https://nevisan.in/teas/rum.png",
       "url": "https://nevisan.in/",
@@ -213,7 +213,7 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     {
       "@type": "Product",
       "name": "Nevisan Tulsi Green Tea",
-      "description": "Whole leaf Assam green tea with tulsi (holy basil). A powerful adaptogen that strengthens immunity, reduces cortisol and promotes calm focus. Ayurvedic tradition meets single-origin tea. 50g pack, MRP ₹499.",
+      "description": "Whole leaf Assam green tea with tulsi (holy basil). A warming, herbaceous infusion rooted in Ayurvedic tradition. 50g pack, MRP ₹499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
       "image": "https://nevisan.in/teas/whiskey.png",
       "url": "https://nevisan.in/",
@@ -224,7 +224,7 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     {
       "@type": "Product",
       "name": "Nevisan Chamomile Green Tea",
-      "description": "Whole leaf Assam green tea with chamomile. Contains apigenin — binds to sleep receptors for natural, non-drowsy calm. Ideal for evenings and winding down. 50g pack, MRP ₹499.",
+      "description": "Whole leaf Assam green tea with chamomile. A soothing, honeyed infusion perfect for evenings and winding down. 50g pack, MRP ₹499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
       "image": "https://nevisan.in/teas/organic.png",
       "url": "https://nevisan.in/",
@@ -246,7 +246,7 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     {
       "@type": "Product",
       "name": "Nevisan GABA Oolong Tea",
-      "description": "Nitrogen-processed oolong tea with naturally elevated GABA content. GABA is the brain's calming neurotransmitter — reduces anxiety, improves sleep quality and lowers blood pressure. 50g pack, MRP ₹499.",
+      "description": "Nitrogen-processed oolong tea with naturally elevated GABA content. A malty, honeyed cup with a smooth, calming character. 50g pack, MRP ₹499.",
       "brand": { "@type": "Brand", "name": "Nevisan" },
       "image": "https://nevisan.in/teas/lemongrass.png",
       "url": "https://nevisan.in/",
@@ -295,17 +295,17 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
         {
           "@type": "Question",
           "name": "Is spearmint tea good for PCOS?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Clinical research published in Phytotherapy Research found that two cups of spearmint tea daily reduced free testosterone levels in women with PCOS. Spearmint may inhibit 5-alpha reductase, the enzyme that converts testosterone to its more potent form. Nevisan's Spearmint Green combines whole-leaf spearmint with Assam green tea." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Spearmint tea has been studied for its potential effects on androgen levels. Some research suggests it may help support hormonal balance as part of a broader wellness approach. Nevisan's Spearmint Green combines whole-leaf spearmint with Assam green tea for a bright, cooling infusion." }
         },
         {
           "@type": "Question",
           "name": "What are the benefits of tulsi green tea?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Tulsi (holy basil) is an adaptogen used in Ayurvedic medicine for 3,000 years. Research shows it can reduce cortisol, support immune function, and improve cognitive performance under stress. Combined with green tea's L-theanine and antioxidants, tulsi green tea supports calm, sustained focus without sedation." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Tulsi (holy basil) has a long history in Ayurvedic tradition as a revered herb. Combined with green tea's L-theanine and antioxidants, tulsi green tea offers a warming, herbaceous cup that supports calm, sustained focus without sedation." }
         },
         {
           "@type": "Question",
           "name": "What is GABA oolong tea and what is it good for?",
-          "acceptedAnswer": { "@type": "Answer", "text": "GABA oolong is made by processing tea leaves in a nitrogen-rich, oxygen-free environment, dramatically increasing GABA content. GABA is the brain's main calming neurotransmitter. Regular consumption is associated with reduced anxiety, better sleep quality, and lower blood pressure. Unlike chamomile, GABA tea allows calm without drowsiness." }
+          "acceptedAnswer": { "@type": "Answer", "text": "GABA oolong is made by processing tea leaves in a nitrogen-rich, oxygen-free environment, dramatically increasing GABA content. This gives the tea a distinctive malty, honeyed character with a smooth, calming profile. Unlike chamomile, GABA oolong offers calm without drowsiness." }
         },
         {
           "@type": "Question",
@@ -330,7 +330,7 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
         {
           "@type": "Question",
           "name": "Does chamomile green tea help with sleep?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Chamomile contains apigenin, a flavonoid that binds to GABA receptors in the brain, producing a mild calming effect. Research supports chamomile for reducing mild anxiety and improving sleep quality. When blended with green tea at low brewing temperatures, you get chamomile's calming properties alongside green tea antioxidants with minimal caffeine." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Chamomile has been traditionally used as a soothing herbal infusion. When blended with green tea at low brewing temperatures, you get chamomile's gentle, honeyed character alongside green tea antioxidants with minimal caffeine." }
         },
         {
           "@type": "Question",
@@ -353,8 +353,8 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
     { "@type": "BlogPosting", "headline": "How to Get Three Steeps from One Serving", "datePublished": "2025-11-01", "author": { "@type": "Organization", "name": "Nevisan" }, "publisher": { "@type": "Organization", "name": "Nevisan", "logo": { "@type": "ImageObject", "url": "https://nevisan.in/hero-bg.jpg" } }, "description": "Whole leaf teas open up with each steep. A guide to first, second and third steeping of Nevisan teas.", "url": "https://nevisan.in/journal/how-to-get-three-steeps" },
     { "@type": "BlogPosting", "headline": "Rum Green Tea: How We Made It", "datePublished": "2025-12-01", "author": { "@type": "Organization", "name": "Nevisan" }, "publisher": { "@type": "Organization", "name": "Nevisan", "logo": { "@type": "ImageObject", "url": "https://nevisan.in/hero-bg.jpg" } }, "description": "No alcohol, no artificial flavour. Just 14 attempts and a precise cold-infusion technique using natural botanicals to create Rum Green Tea.", "url": "https://nevisan.in/journal/rum-green-tea-how-we-made-it" },
     { "@type": "BlogPosting", "headline": "Morning vs Evening Teas: A Simple Guide", "datePublished": "2026-01-01", "author": { "@type": "Organization", "name": "Nevisan" }, "publisher": { "@type": "Organization", "name": "Nevisan", "logo": { "@type": "ImageObject", "url": "https://nevisan.in/hero-bg.jpg" } }, "description": "Lemongrass and Spearmint for mornings. Chamomile and GABA for evenings. Why each Nevisan tea works best at certain times.", "url": "https://nevisan.in/journal/morning-vs-evening-teas" },
-    { "@type": "BlogPosting", "headline": "Blue Butterfly Pea Flower Tea: What Makes It Turn Purple and Why It's Worth Drinking", "datePublished": "2026-02-01", "author": { "@type": "Organization", "name": "Nevisan" }, "publisher": { "@type": "Organization", "name": "Nevisan", "logo": { "@type": "ImageObject", "url": "https://nevisan.in/hero-bg.jpg" } }, "description": "Blue butterfly pea flower tea gets its colour from anthocyanins — powerful antioxidants that explain its mood-lifting, brain-supporting reputation.", "url": "https://nevisan.in/journal/blue-butterfly-pea-flower-tea" },
-    { "@type": "BlogPosting", "headline": "Spearmint Tea and Hormonal Balance: What the Research Actually Says", "datePublished": "2026-03-01", "author": { "@type": "Organization", "name": "Nevisan" }, "publisher": { "@type": "Organization", "name": "Nevisan", "logo": { "@type": "ImageObject", "url": "https://nevisan.in/hero-bg.jpg" } }, "description": "Spearmint tea has been clinically studied for reducing androgens in women with PCOS — one of the few herbal teas with direct hormonal research.", "url": "https://nevisan.in/journal/spearmint-tea-hormonal-balance" },
+    { "@type": "BlogPosting", "headline": "Blue Butterfly Pea Flower Tea: What Makes It Turn Purple and Why It's Worth Drinking", "datePublished": "2026-02-01", "author": { "@type": "Organization", "name": "Nevisan" }, "publisher": { "@type": "Organization", "name": "Nevisan", "logo": { "@type": "ImageObject", "url": "https://nevisan.in/hero-bg.jpg" } }, "description": "Blue butterfly pea flower tea gets its colour from anthocyanins — powerful antioxidants that give the tea its vivid blue hue and make it a visually striking addition to any cup.", "url": "https://nevisan.in/journal/blue-butterfly-pea-flower-tea" },
+    { "@type": "BlogPosting", "headline": "Spearmint Tea and Hormonal Balance: What the Research Actually Says", "datePublished": "2026-03-01", "author": { "@type": "Organization", "name": "Nevisan" }, "publisher": { "@type": "Organization", "name": "Nevisan", "logo": { "@type": "ImageObject", "url": "https://nevisan.in/hero-bg.jpg" } }, "description": "Spearmint tea has been studied for its potential effects on hormonal balance. This article explores what current research says about spearmint and androgen levels.", "url": "https://nevisan.in/journal/spearmint-tea-hormonal-balance" },
     { "@type": "BlogPosting", "headline": "Tulsi Green Tea: India's Ancient Adaptogen Meets Single-Origin Tea", "datePublished": "2026-04-01", "author": { "@type": "Organization", "name": "Nevisan" }, "publisher": { "@type": "Organization", "name": "Nevisan", "logo": { "@type": "ImageObject", "url": "https://nevisan.in/hero-bg.jpg" } }, "description": "Tulsi, or holy basil, has been used in Ayurvedic medicine for 3000 years. Blended with Assam green tea it becomes one of the most balanced cups you can brew.", "url": "https://nevisan.in/journal/tulsi-green-tea-adaptogen" },
     { "@type": "BlogPosting", "headline": "Chamomile Green Tea: Why This Evening Blend Works Better Than Either Alone", "datePublished": "2026-05-01", "author": { "@type": "Organization", "name": "Nevisan" }, "publisher": { "@type": "Organization", "name": "Nevisan", "logo": { "@type": "ImageObject", "url": "https://nevisan.in/hero-bg.jpg" } }, "description": "Chamomile and green tea together offer calming properties of chamomile with the antioxidant depth of whole-leaf green tea.", "url": "https://nevisan.in/journal/chamomile-green-tea-evening-blend" },
     { "@type": "BlogPosting", "headline": "Green Tea vs Coffee: The Caffeine Difference Nobody Explains Properly", "datePublished": "2026-05-10", "author": { "@type": "Organization", "name": "Nevisan" }, "publisher": { "@type": "Organization", "name": "Nevisan", "logo": { "@type": "ImageObject", "url": "https://nevisan.in/hero-bg.jpg" } }, "description": "Green tea has less caffeine than coffee, but L-theanine changes how your body processes it entirely — and that difference matters more than the number.", "url": "https://nevisan.in/journal/green-tea-vs-coffee-caffeine" },

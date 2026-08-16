@@ -1285,28 +1285,28 @@ const TEAS = [
     benefits: [
       {
         icon: "🌿",
-        title: "Aids Digestion",
-        desc: "Lemongrass relaxes the digestive tract, reducing bloating, cramps and indigestion.",
+        title: "Digestive Comfort",
+        desc: "Lemongrass is traditionally used to soothe the digestive tract and ease bloating.",
       },
       {
         icon: "🔥",
-        title: "Boosts Metabolism",
-        desc: "Natural citral activates enzymes that enhance fat metabolism and support healthy weight.",
+        title: "Metabolism Support",
+        desc: "Natural citral in lemongrass may help support healthy metabolic function.",
       },
       {
         icon: "💧",
-        title: "Detoxifying",
-        desc: "Acts as a natural diuretic, flushing toxins while keeping you hydrated and refreshed.",
+        title: "Hydrating & Refreshing",
+        desc: "A naturally hydrating herbal tea with a bright, citrusy flavour.",
       },
       {
         icon: "😌",
-        title: "Reduces Anxiety",
-        desc: "Mild sedative properties calm the nervous system — perfect as a mid-day stress reliever.",
+        title: "Calming",
+        desc: "Gentle and soothing — a pleasant mid-day cup to help you unwind.",
       },
       {
         icon: "🦠",
-        title: "Anti-microbial",
-        desc: "Naturally fights harmful bacteria and fungi, supporting gut health and immunity.",
+        title: "Gut-Friendly",
+        desc: "Lemongrass has been used traditionally to support digestive wellness.",
       },
     ],
   },
@@ -1323,28 +1323,28 @@ const TEAS = [
     benefits: [
       {
         icon: "🫐",
-        title: "Rich in Antioxidants",
-        desc: "Butterfly pea flower is packed with anthocyanins — among the highest antioxidant content of any plant.",
+        title: "Antioxidant-Rich",
+        desc: "Butterfly pea flower contains anthocyanins, the same compounds found in blueberries.",
       },
       {
         icon: "🧠",
-        title: "Enhances Brain Function",
-        desc: "Improves memory, focus and cognitive clarity. A natural nootropic without caffeine crash.",
+        title: "Calm Focus",
+        desc: "A naturally caffeine-free option for moments when you want clarity without stimulation.",
       },
       {
         icon: "✨",
-        title: "Skin & Hair Health",
-        desc: "Anthocyanins boost collagen, reducing wrinkles and promoting stronger, shinier hair.",
+        title: "Vibrant & Fun",
+        desc: "The colour-changing effect makes every cup a visual experience — add lemon for the surprise.",
       },
       {
         icon: "😴",
-        title: "Calming & Sleep-Supportive",
-        desc: "Mildly sedative — reduces stress hormones and promotes deeper, more restful sleep.",
+        title: "Soothing Evening Cup",
+        desc: "A gentle, caffeine-free herbal tea perfect for winding down in the evening.",
       },
       {
         icon: "🌈",
-        title: "Changes Colour with Lemon",
-        desc: "Add lemon and watch it turn from blue to pink — a stunning natural pH reaction.",
+        title: "Colour-Changing Fun",
+        desc: "Add lemon and watch it shift from blue to purple — a natural pH reaction.",
       },
     ],
   },
@@ -1400,28 +1400,28 @@ const TEAS = [
     benefits: [
       {
         icon: "⚖️",
-        title: "Hormonal Balance",
-        desc: "Proven anti-androgenic properties — helps regulate hormones, especially beneficial for PCOS.",
+        title: "Hormonal Wellness",
+        desc: "A bright, cooling mint infusion with a clean, refreshing finish. Popular for its naturally uplifting character.",
       },
       {
         icon: "🧖",
-        title: "Reduces Acne",
-        desc: "By lowering excess androgens, spearmint naturally reduces hormonal breakouts and oily skin.",
+        title: "Skin-Friendly",
+        desc: "A gentle, refreshing tea that fits well into a holistic skincare routine.",
       },
       {
         icon: "💨",
-        title: "Fresh Breath & Digestion",
-        desc: "Soothes the gut, freshens breath and relieves nausea and IBS discomfort.",
+        title: "Fresh & Soothing",
+        desc: "Naturally refreshing — great for fresh breath and digestive comfort after meals.",
       },
       {
         icon: "🧠",
-        title: "Improves Memory",
-        desc: "Spearmint extract improves working memory and alertness within weeks of regular use.",
+        title: "Mental Refreshment",
+        desc: "The bright, minty flavour of spearmint is naturally uplifting and clarifying.",
       },
       {
         icon: "🌸",
-        title: "Anti-Inflammatory",
-        desc: "Rich in rosmarinic acid — reduces inflammation throughout the body, easing joint discomfort.",
+        title: "Gentle & Soothing",
+        desc: "Spearmint has been used for centuries as a calming, anti-inflammatory herb.",
       },
     ],
   },
@@ -1438,28 +1438,28 @@ const TEAS = [
     benefits: [
       {
         icon: "🛡️",
-        title: "Immunity Booster",
-        desc: "Tulsi (Holy Basil) is a powerful adaptogen that strengthens immunity and fights pathogens.",
+        title: "Immunity Support",
+        desc: "Tulsi (Holy Basil) has a long history in Ayurvedic tradition. A warming, herbaceous infusion with a distinctive clove-like aroma.",
       },
       {
         icon: "🧘",
-        title: "Stress & Anxiety Relief",
-        desc: "Reduces cortisol (stress hormone) and promotes calm focus — Ayurveda's go-to for mental balance.",
+        title: "Stress & Calm",
+        desc: "Tulsi is traditionally used to promote calm focus and mental balance.",
       },
       {
         icon: "🫁",
-        title: "Respiratory Health",
-        desc: "Opens airways, soothes sore throats and relieves congestion — especially helpful in season changes.",
+        title: "Respiratory Comfort",
+        desc: "A soothing cup that many enjoy during seasonal changes for throat and chest comfort.",
       },
       {
         icon: "🩸",
-        title: "Blood Sugar Support",
-        desc: "Clinical studies show Tulsi helps moderate blood sugar spikes — beneficial for diabetics.",
+        title: "Metabolic Wellness",
+        desc: "Tulsi is traditionally used to support healthy blood sugar levels as part of a balanced lifestyle.",
       },
       {
         icon: "🌱",
-        title: "Detox & Liver Health",
-        desc: "Natural detoxifier that supports liver function and flushes toxins from the bloodstream.",
+        title: "Liver & Wellness",
+        desc: "Tulsi has been used in Ayurvedic practice to support liver function and overall well-being.",
       },
     ],
   },
@@ -1476,28 +1476,28 @@ const TEAS = [
     benefits: [
       {
         icon: "😴",
-        title: "Deep Sleep Aid",
-        desc: "Chamomile contains apigenin — binds to sleep receptors in the brain, promoting restful sleep.",
+        title: "Relaxing Evening Tea",
+        desc: "Chamomile is a time-honoured herb traditionally used to promote relaxation and restful sleep.",
       },
       {
         icon: "😌",
-        title: "Anxiety & Stress Relief",
-        desc: "Clinically shown to reduce anxiety disorder symptoms. Calm without drowsiness during the day.",
+        title: "Calm & Gentle",
+        desc: "A soothing, caffeine-free cup that helps you unwind without drowsiness during the day.",
       },
       {
         icon: "🫀",
-        title: "Heart Health",
-        desc: "Antioxidants lower LDL cholesterol and protect against cardiovascular disease over time.",
+        title: "Heart-Friendly",
+        desc: "Chamomile contains antioxidants that may support cardiovascular wellness as part of a balanced diet.",
       },
       {
         icon: "🍽️",
         title: "Digestive Comfort",
-        desc: "Soothes stomach cramps, IBS, and indigestion. Ideal to drink 30 minutes after meals.",
+        desc: "Traditionally used to soothe stomach discomfort and aid digestion after meals.",
       },
       {
         icon: "🧴",
-        title: "Skin Healing",
-        desc: "Anti-inflammatory properties reduce redness, eczema and speed up natural skin healing.",
+        title: "Gentle on the Body",
+        desc: "Chamomile's anti-inflammatory properties have been valued for centuries for skin and body comfort.",
       },
     ],
   },
@@ -1513,23 +1513,23 @@ const TEAS = [
     benefits: [
       {
         icon: "🥃",
-        title: "100% Non-Alcoholic",
-        desc: "Captures the bold, smoky character of aged whiskey using natural botanicals — zero alcohol.",
+        title: "Zero Alcohol",
+        desc: "All the bold, smoky warmth of aged whiskey — crafted entirely from natural botanicals.",
       },
       {
         icon: "💚",
         title: "Green Tea Antioxidants",
-        desc: "Assam green tea delivers EGCG — among the most potent antioxidants found in nature.",
+        desc: "Assam green tea delivers EGCG catechins, a natural antioxidant found in all green teas.",
       },
       {
         icon: "🔥",
-        title: "Metabolism Boost",
-        desc: "Green tea catechins speed up fat oxidation and support a healthy metabolism.",
+        title: "Metabolism Support",
+        desc: "Green tea catechins may help support healthy metabolic function as part of an active lifestyle.",
       },
       {
         icon: "🧠",
-        title: "Mental Alertness",
-        desc: "L-theanine and caffeine produce calm, sustained focus without jitteriness or crash.",
+        title: "Calm Focus",
+        desc: "L-theanine and caffeine together provide steady, composed energy without jitters.",
       },
       {
         icon: "🌿",
@@ -1550,28 +1550,28 @@ const TEAS = [
     benefits: [
       {
         icon: "🧘",
-        title: "Deep Relaxation",
-        desc: "GABA is the brain's calming neurotransmitter — naturally elevated through the fermentation process.",
+        title: "Calm & Relaxed",
+        desc: "GABA is a naturally occurring neurotransmitter associated with relaxation and calm.",
       },
       {
         icon: "🧠",
-        title: "Mental Clarity",
-        desc: "Reduces anxiety without brain fog — promotes a clear, calm, focused state of mind.",
+        title: "Clear Mind",
+        desc: "A balanced cup that supports a calm, focused state without overstimulation.",
       },
       {
         icon: "😴",
-        title: "Better Sleep Quality",
-        desc: "Higher GABA levels improve sleep onset and depth — without the grogginess of sleep aids.",
+        title: "Evening Wind-Down",
+        desc: "A naturally mellow tea perfect for transitioning into a restful evening.",
       },
       {
         icon: "💪",
-        title: "Muscle Recovery",
-        desc: "GABA supports HGH (human growth hormone) release, aiding muscle repair after exercise.",
+        title: "Post-Workout Recovery",
+        desc: "A soothing cup to enjoy after exercise as part of a balanced recovery routine.",
       },
       {
         icon: "❤️",
-        title: "Blood Pressure Support",
-        desc: "Studies show GABA oolong reduces blood pressure in hypertensive patients with regular use.",
+        title: "Heart Wellness",
+        desc: "GABA oolong is traditionally enjoyed as part of a heart-healthy lifestyle.",
       },
     ],
   },
@@ -1590,27 +1590,27 @@ const TEAS = [
       {
         icon: "🌱",
         title: "PGS-India Certified Organic",
-        desc: "Verified pesticide-free by Participatory Guarantee System of India. Pure from soil to seal.",
+        desc: "Certified organic by the Participatory Guarantee System of India — grown without synthetic pesticides or chemicals.",
       },
       {
         icon: "⚡",
-        title: "Clean, Sustained Energy",
-        desc: "Natural caffeine + L-theanine gives steady energy without jitters or afternoon crash.",
+        title: "Gentle, Steady Energy",
+        desc: "Natural caffeine paired with L-theanine provides a calm, focused lift without jitters.",
       },
       {
         icon: "🛡️",
-        title: "Powerful Antioxidants",
-        desc: "EGCG catechins fight free radicals, reduce inflammation and protect against chronic disease.",
+        title: "Antioxidant-Rich",
+        desc: "EGCG catechins are natural antioxidants that help protect cells from oxidative stress.",
       },
       {
         icon: "🏃",
-        title: "Fat Burning",
-        desc: "Boosts fat oxidation by up to 17% and improves athletic endurance when consumed regularly.",
+        title: "Active Lifestyle Support",
+        desc: "Green tea is a popular choice for those pursuing an active, health-conscious lifestyle.",
       },
       {
         icon: "🧬",
-        title: "Anti-Ageing",
-        desc: "Polyphenols protect DNA from damage, slow cellular ageing and support long-term brain health.",
+        title: "Long-Term Wellness",
+        desc: "Rich in polyphenols that may support healthy ageing and cognitive function over time.",
       },
     ],
   },
@@ -1628,28 +1628,28 @@ const TEAS = [
     benefits: [
       {
         icon: "🫚",
-        title: "Immune Booster",
-        desc: "Ginger's active compounds naturally enhance white blood cell count and support immune response.",
+        title: "Immune Support",
+        desc: "Ginger has been used for centuries as a warming herb to support the body's natural defences.",
       },
       {
         icon: "🔥",
-        title: "Soothing Warmth",
-        desc: "Increases peripheral circulation and comforts dry, ticklish throats instantly.",
+        title: "Warming & Comforting",
+        desc: "A naturally warming cup that soothes the throat and comforts the body.",
       },
       {
         icon: "😌",
-        title: "Stomach Settler",
-        desc: "Highly effective at reducing symptoms of nausea, motion sickness, and digestive upset.",
+        title: "Digestive Comfort",
+        desc: "Ginger is traditionally used to ease nausea, motion sickness, and digestive discomfort.",
       },
       {
         icon: "💪",
         title: "Anti-Inflammatory",
-        desc: "Reduces inflammatory markers throughout the body, easing muscle soreness.",
+        desc: "Ginger contains compounds that may help reduce inflammation and ease muscle soreness.",
       },
       {
         icon: "🩺",
-        title: "Cardio Health",
-        desc: "Helps maintain healthy blood sugar levels and supports vascular function.",
+        title: "Metabolic Wellness",
+        desc: "Ginger is traditionally used to support healthy blood sugar levels and vascular function.",
       },
     ],
   },
@@ -1684,52 +1684,52 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
   const profiles = {
     "GABA Oolong Tea": {
       palate: "Malty, Wild Honey, Baked Stone Fruit",
-      brew: "90°C · 3-4 Mins · Up to 4 Infusions",
+      brew: "85°C · 3 Mins · Up to 3 Infusions",
       badge: "Signature Reserve"
     },
     "Lemongrass Green Tea": {
       palate: "Crisp Citrus, Grassy, Mild Sweetness",
-      brew: "80°C · 2 Mins · Up to 3 Infusions",
+      brew: "90°C · 2–3 Mins · Can steep twice",
       badge: "Popular"
     },
     "Spearmint Green Tea": {
       palate: "Refreshing Mint, Brisk Green, Clean Finish",
-      brew: "80°C · 2 Mins · Up to 3 Infusions",
-      badge: "Hormonal Balance"
+      brew: "85°C · 2 Mins · Light and refreshing",
+      badge: "Cooling Mint"
     },
     "Rum Green Tea": {
       palate: "Warm Spiced Rum, Sugarcane, Oak wood",
-      brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
+      brew: "90°C · 3 Mins · Excellent hot or iced",
       badge: "Exotic Infusion"
     },
     "Whiskey Green Tea": {
       palate: "Oaky Smoke, Malt, Subtle Sweetness",
-      brew: "80°C · 1.5-2 Mins · Up to 3 Infusions",
+      brew: "90°C · 3 Mins · Bold, best enjoyed slowly",
       badge: "Bold Reserve"
     },
     "Blue Flower Green Tea": {
       palate: "Cobalt Blue, Mild Floral, Earthy sweetness",
-      brew: "85°C · 2 Mins · Up to 3 Infusions",
+      brew: "85°C · 2–3 Mins · No milk needed",
       badge: "Color Magic"
     },
     "Tulsi Green Tea": {
       palate: "Spicy Tulsi, Herbaceous, Bready warmth",
-      brew: "85°C · 2 Mins · Up to 3 Infusions",
-      badge: "Immunity"
+      brew: "90°C · 3–4 Mins · Best plain or with honey",
+      badge: "Ayurvedic Tradition"
     },
     "Chamomile Green Tea": {
       palate: "Soothing Chamomile, Honeyed Apples, Floral",
-      brew: "85°C · 3 Mins · Up to 3 Infusions",
+      brew: "85°C · 4 Mins · Best before bed",
       badge: "Stress Relief"
     },
     "Organic Green Tea": {
       palate: "Pure Vegetal, Umami, Clean Grassy notes",
-      brew: "80°C · 2 Mins · Up to 3 Infusions",
+      brew: "80°C · 2 Mins · Never boiling water",
       badge: "Estate Classic"
     },
     "Ginger Green Tea": {
       palate: "Spicy Ginger, Honeyed Warmth, Brisk Green",
-      brew: "85°C · 2-3 Mins · Up to 3 Infusions",
+      brew: "85°C · 2–3 Mins · Best warm",
       badge: "Warming Wellness"
     }
   };
@@ -2474,10 +2474,10 @@ function CollectionPage({}) {
           },
         },
         [
-          { label: "All Blends", value: "ALL" },
-          { label: "Estate Greens", value: "GREEN" },
-          { label: "Wellness / Adaptogens", value: "WELLNESS" },
-          { label: "Specialty Cures", value: "SPECIALTY" }
+          { label: "All Teas", value: "ALL" },
+          { label: "Green Teas", value: "GREEN" },
+          { label: "Wellness", value: "WELLNESS" },
+          { label: "Specialty Blends", value: "SPECIALTY" }
         ].map(filter => {
           const isSelected = activeFilter === filter.value;
           return React.createElement(
@@ -2512,7 +2512,7 @@ function CollectionPage({}) {
           if (activeFilter === "ALL") return true;
           if (activeFilter === "GREEN") return tea.name !== "GABA Oolong Tea";
           if (activeFilter === "WELLNESS") {
-            return ["Lemongrass Green Tea", "Blue Flower Green Tea", "Spearmint Green Tea", "Tulsi Green Tea", "Chamomile Green Tea", "Ginger Green Tea"].includes(tea.name);
+            return ["Lemongrass Green Tea", "Blue Flower Green Tea", "Spearmint Green Tea", "Tulsi Green Tea", "Chamomile Green Tea", "Ginger Green Tea", "Organic Green Tea"].includes(tea.name);
           }
           if (activeFilter === "SPECIALTY") {
             return ["GABA Oolong Tea", "Whiskey Green Tea", "Rum Green Tea"].includes(tea.name);
@@ -5094,7 +5094,7 @@ function CollectionSection({ setPage: e }) {
                 color: T.text,
               },
             },
-            "Nine varieties, one origin",
+            "Ten varieties, one origin",
           ),
         ),
         React.createElement(
@@ -6813,7 +6813,7 @@ function FAQSection() {
           },
           {
             q: "Is your tea organic and chemical free?",
-            a: "Yes. Every batch is PGS-India organic certified and grown without pesticides or chemicals. From soil to seal, we guarantee it.",
+            a: "Yes. Every batch is PGS-India organic certified and grown without pesticides or chemicals. From soil to seal, we stand by that commitment.",
           },
           {
             q: "Can the tea be steeped more than once?",
@@ -7485,10 +7485,10 @@ const POSTS = [
       "Lemongrass and Spearmint for mornings. Chamomile and GABA for evenings. Here's why each tea works best at certain times.",
     body: [
       "Not all teas are equal at all hours. The compounds in each variety interact differently with your body depending on where you are in your daily rhythm. Here's how to match your Nevisan tea to your time of day:",
-      "Morning (6am – 12pm): Organic Green Tea or Lemongrass Green Tea. Both deliver clean caffeine combined with L-theanine — a calm, sustained alertness without the cortisol spike of coffee. Lemongrass adds a digestive benefit that's useful after overnight fasting. Spearmint works well mid-morning if you're prone to hormonal breakouts.",
+      "Morning (6am – 12pm): Organic Green Tea or Lemongrass Green Tea. Both deliver clean caffeine combined with L-theanine — a calm, sustained alertness without the jittery edge of coffee. Lemongrass adds a bright, citrusy note that's refreshing after overnight fasting. Spearmint works well mid-morning for a cooling, minty pick-me-up.",
       "Afternoon (12pm – 5pm): Rum or Whiskey Green Tea. The bold character suits the afternoon energy dip, while the green tea base maintains mental alertness. Blue Flower is also excellent here — it's visually striking and mildly calming without making you sleepy.",
-      "Evening (5pm – bedtime): Chamomile or GABA Oolong. Chamomile for those who want to fully unwind and improve sleep quality. GABA Oolong for those who want to relax while staying mentally present — ideal for creative work or quiet reading.",
-      "Tulsi works at any hour — it's an adaptogen, meaning it reads what your body needs (energy or calm) and responds accordingly.",
+      "Evening (5pm – bedtime): Chamomile or GABA Oolong. Chamomile for those who want a gentle, floral cup to wind down. GABA Oolong for those who want to relax while staying mentally present — ideal for creative work or quiet reading.",
+      "Tulsi works at any hour — its warm, herbaceous character makes it a versatile choice whether you need a gentle start to the day or a calming cup in the evening.",
     ],
   },
   {
@@ -7498,40 +7498,42 @@ const POSTS = [
     date: "February 2026",
     tag: "WELLNESS",
     excerpt:
-      "Blue butterfly pea flower tea gets its colour from anthocyanins — powerful antioxidants that also explain its mood-lifting, brain-supporting reputation.",
+      "Blue butterfly pea flower tea gets its colour from anthocyanins — natural pigments that give the tea its vivid blue hue and make it a visually striking addition to any cup.",
     body: [
       "Blue butterfly pea flower tea is made from the dried petals of Clitoria ternatea, a plant native to Southeast Asia and parts of India. The flowers produce a vivid cobalt-blue infusion unlike anything else in the plant world. When blended with green tea, as in Nevisan's Blue Flower Green, the result is a cup that's visually striking and nutritionally interesting — not just a novelty drink for social media.",
       "The blue colour comes from anthocyanins, a class of flavonoid antioxidants also found in blueberries and red cabbage. These pigments are pH-sensitive, which is why adding lemon juice to blue butterfly pea tea shifts it from blue to violet to pink. The science behind the colour change is simple acid-base chemistry — the anthocyanins acting as natural indicators responding to the acidity of the liquid.",
-      "Research into butterfly pea flower is still developing, but early studies suggest its anthocyanins may support cognitive function, reduce oxidative stress, and have mild anti-anxiety effects. Some research points to proanthocyanidins in the flower helping with skin elasticity and eye health. These are not proven cure-all claims, but the antioxidant profile is genuinely high compared to many common herbal teas.",
+      "The anthocyanins in butterfly pea flower are the same class of pigments found in blueberries and red cabbage. These natural compounds give the tea its vivid colour and are part of what makes it nutritionally interesting. The flower also contains proanthocyanidins, which contribute to its antioxidant profile. Compared to many common herbal teas, butterfly pea flower offers a distinctive combination of visual appeal and natural compounds.",
       "When blue butterfly pea is paired with a light green tea base, you get the grassy, umami notes of green tea alongside the subtly earthy, almost woody flavour of the flower. The caffeine level stays moderate, making it suitable in the afternoon. Look for blends where the green tea is whole-leaf and the flower petals are actually visible — not ground into the blend and hiding in a bag.",
     ],
   },
   {
     title:
-      "Spearmint Tea and Hormonal Balance: What the Research Actually Says",
-    slug: "spearmint-tea-hormonal-balance",
+      "Spearmint Tea: A Refreshing Mint Infusion with a Rich History",
+    slug: "spearmint-tea-refreshing-mint",
     date: "March 2026",
     tag: "WELLNESS",
     excerpt:
-      "Spearmint tea has been studied for its ability to reduce androgens in women, making it one of the few herbal teas with direct hormonal research behind it.",
+      "Spearmint tea is a bright, cooling mint infusion with a long history of use across cultures. Here's what makes it a distinctive and enjoyable cup.",
     body: [
-      "Spearmint tea is one of the more researched herbal teas when it comes to hormonal health. A clinical trial published in Phytotherapy Research found that women with PCOS who drank two cups of spearmint tea daily for 30 days showed a significant reduction in free testosterone levels and an improvement in LH to FSH ratios. These are meaningful hormonal markers. The mechanism is thought to involve spearmint's ability to inhibit 5-alpha reductase, the enzyme that converts testosterone to its more potent form.",
-      "For women dealing with PCOS, hirsutism, or androgen-related acne, spearmint tea is sometimes recommended as a supportive, low-risk addition to a broader approach — not as a standalone treatment. The research is specific enough that some functional medicine practitioners include it in hormonal health protocols.",
+      "Spearmint tea is one of the more popular herbal infusions worldwide, valued for its bright, cooling character and clean, refreshing finish. Unlike peppermint, spearmint is milder and sweeter, with lower menthol content that makes it gentler on the palate. When blended with green tea, as in Nevisan's Spearmint Green, the result is a cup that's both uplifting and smooth — the mint brightness balanced by the grassy depth of whole-leaf Assam green tea.",
+      "Spearmint has been used for centuries across different cultures for its distinctive flavour and aromatic qualities. The essential oils in spearmint leaves, particularly carvone, give the tea its characteristic minty aroma and cooling sensation. These volatile compounds are best preserved in whole-leaf blends, where the leaves are cut rather than ground — allowing the oils to release gradually during steeping.",
+      "Spearmint is different from peppermint — it's milder, sweeter, and lower in menthol. When blended with green tea, as in Nevisan's Spearmint Green, the result is a bright, cooling cup with a clean finish. The green tea adds antioxidants and L-theanine, making the combination genuinely refreshing rather than just pleasant.",
+      "If you're exploring spearmint tea, consistency matters more than quantity. Two cups a day for several weeks is a good way to develop an appreciation for its flavour profile. Whole-leaf spearmint blended with real green tea is worth seeking out over fannings-based bags, where the volatile oils that carry most of spearmint's character have largely dissipated.",
       "Spearmint is different from peppermint — it's milder, sweeter, and lower in menthol. When blended with green tea, as in Nevisan's Spearmint Green, the result is a bright, cooling cup with a clean finish. The green tea adds antioxidants and L-theanine, making the combination genuinely useful rather than just pleasant.",
       "If you're exploring spearmint tea for hormonal reasons, consistency matters more than quantity. Two cups a day for several weeks is what the research used — not a single strong brew once in a while. Whole-leaf spearmint blended with real green tea is worth seeking out over fannings-based bags, where the volatile oils that carry most of spearmint's active compounds have largely dissipated.",
     ],
   },
   {
-    title: "Tulsi Green Tea: India's Ancient Adaptogen Meets Single-Origin Tea",
-    slug: "tulsi-green-tea-adaptogen",
+    title: "Tulsi Green Tea: A Warming Ayurvedic Blend with Single-Origin Assam Tea",
+    slug: "tulsi-green-tea-ayurvedic-blend",
     date: "April 2026",
     tag: "WELLNESS",
     excerpt:
-      "Tulsi, or holy basil, has been used in Ayurvedic medicine for thousands of years — blended with green tea, it becomes one of the most balanced cups you can brew.",
+      "Tulsi, or holy basil, has a long history in Indian tradition — blended with Assam green tea, it creates a warming, herbaceous cup with a distinctive clove-like aroma.",
     body: [
-      "Tulsi, known botanically as Ocimum tenuiflorum and commonly called holy basil, is one of the most revered plants in Indian tradition. It has been used in Ayurvedic medicine for at least 3,000 years for respiratory support, stress relief, and immune function. As an adaptogen — a class of plants thought to help the body regulate its stress response — tulsi has been studied for its effects on cortisol, immune function, and blood sugar stability.",
-      "When tulsi is blended with green tea, the pairing is unusually well-suited. Green tea brings antioxidants, mild caffeine, and L-theanine. Tulsi adds eugenol, ursolic acid, and rosmarinic acid, along with a distinct clove-like, slightly peppery aroma. The flavour combination is warming without being heavy, and the adaptogenic properties of tulsi complement the calm focus that L-theanine supports.",
-      "Studies have shown reductions in cortisol levels, improvements in cognitive function under stress, and anti-inflammatory effects from regular tulsi consumption. It is not a sedative — it does not make you drowsy — but many people report a noticeable sense of mental ease when they drink it regularly. Nevisan's Tulsi Green uses whole holy basil leaves alongside Assam green tea, keeping the ratio balanced so neither ingredient overwhelms the other.",
+      "Tulsi, known botanically as Ocimum tenuiflorum and commonly called holy basil, is one of the most revered plants in Indian tradition. It has been used in Ayurvedic practice for centuries, valued for its distinctive flavour and aromatic qualities. The plant contains eugenol, ursolic acid, and rosmarinic acid — compounds that contribute to its characteristic clove-like, slightly peppery aroma and warm, herbaceous taste.",
+      "When tulsi is blended with green tea, the pairing is unusually well-suited. Green tea brings antioxidants, mild caffeine, and L-theanine. Tulsi adds its own set of natural compounds, along with a distinct clove-like, slightly peppery aroma. The flavour combination is warming without being heavy, and the herbaceous character of tulsi complements the calm focus that L-theanine supports.",
+      "Nevisan's Tulsi Green uses whole holy basil leaves alongside Assam green tea, keeping the ratio balanced so neither ingredient overwhelms the other. The result is a cup that's both grounding and refreshing — the kind of tea that works well whether you're starting your morning or taking a quiet break in the afternoon. Brew at around 90°C for three to four minutes to get the full flavour from both ingredients.",
       "For anyone looking to reduce daily stimulant load while still supporting focus, tulsi green tea is a useful starting point. It has enough caffeine to be functional in the morning without the cortisol spike of coffee. It's also one of the few blends where the Indian heritage of the herb is fully intact — tulsi grown in India, paired with tea grown in India, brewed simply at around 80°C for two to three minutes.",
     ],
   },
@@ -7545,7 +7547,7 @@ const POSTS = [
       "Chamomile and green tea together offer something neither delivers alone — the calming properties of chamomile with the antioxidant depth of whole-leaf green tea.",
     body: [
       "Chamomile is one of the most widely consumed herbal teas in the world, usually drunk on its own before bed. Green tea is usually positioned as a morning drink. Pairing them sounds counterintuitive, but the combination works because green tea brewed at lower temperatures and shorter times keeps caffeine low while retaining its antioxidant content. Blended with chamomile, it creates an evening cup that does not sacrifice nutritional value just to be caffeine-light.",
-      "The active compound in chamomile most associated with its calming effects is apigenin, a flavonoid that binds to GABA receptors in the brain — the same receptors that benzodiazepines act on, though far more gently. Research suggests chamomile can meaningfully reduce anxiety symptoms and improve sleep quality in people with mild insomnia. It is a well-studied herb with a consistent body of evidence behind it.",
+      "The active compound in chamomile most associated with its calming effects is apigenin, a flavonoid that contributes to the tea's naturally soothing character. Chamomile has been used for centuries as a gentle evening infusion, and its floral, slightly sweet flavour makes it one of the most widely consumed herbal teas in the world. It is a well-loved herb with a long history of use as a calming evening cup.",
       "Green tea brings EGCG, the primary catechin in green tea and one of the most researched antioxidants in the food supply. L-theanine promotes alpha-wave activity in the brain — relaxed alertness rather than sedation. In the evening, both chamomile and L-theanine point in the same direction: calm without grogginess.",
       "Nevisan's Chamomile Green uses whole chamomile flowers alongside Assam green tea leaves. The brew is best kept around 75 to 80°C and steeped for no more than two minutes — chamomile can turn bitter if over-steeped, and green tea gets astringent above 90°C. Done right, the cup is floral, slightly sweet, and genuinely useful as part of a wind-down routine.",
     ],
@@ -8062,7 +8064,7 @@ function AboutPage({ setPage: e }) {
               text: "PGS-India certified organic — pesticide-free from soil to seal",
             },
             { icon: "🔬", text: "FSSAI certified — food safety compliant" },
-            { icon: "📦", text: "Small batch — freshness guaranteed" },
+            { icon: "📦", text: "Small batch — freshness sealed in every pack" },
             {
               icon: "💬",
               text: "Direct to consumer — no middlemen, fresher stock",
@@ -8665,7 +8667,7 @@ function WholesalePage({ setPage: e }) {
           {
             icon: "🛒",
             title: "Retail Stores",
-            desc: "Stock Nevisan in your store. Competitive margins and consistent supply guaranteed.",
+            desc: "Stock Nevisan in your store. Competitive margins and reliable, consistent supply.",
           },
           {
             icon: "🏥",

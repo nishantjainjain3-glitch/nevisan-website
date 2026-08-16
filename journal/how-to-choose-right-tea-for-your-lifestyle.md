@@ -1,6 +1,6 @@
 # How to Choose the Right Tea for Your Lifestyle
 
-With nine varieties of whole-leaf Assam green tea, Nevisan offers something for every taste, health goal, and daily routine. This guide helps you match the right tea to your lifestyle.
+With ten varieties of whole-leaf Assam green tea, Nevisan offers something for every taste, health goal, and daily routine. This guide helps you match the right tea to your lifestyle.
 
 ## Understanding the Nevisan Range
 

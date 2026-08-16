@@ -10,7 +10,7 @@ Indian tea buyers — curious, health-aware, willing to spend ₹499 for quality
 
 ## Product Purpose
 
-Nevisan is a single-origin premium tea brand from Golaghat, Assam — whole leaf, chemical-free, PGS-India certified organic. Nine varieties: green, lemongrass, GABA oolong, chamomile, and specialty blends. The website exists to convert curious visitors into buyers via WhatsApp, Amazon, or Flipkart. Success = someone who lands, believes, and acts.
+Nevisan is a single-origin premium tea brand from Golaghat, Assam — whole leaf, chemical-free, PGS-India certified organic. Ten varieties: green, lemongrass, GABA oolong, chamomile, and specialty blends. The website exists to convert curious visitors into buyers via WhatsApp, Amazon, or Flipkart. Success = someone who lands, believes, and acts.
 
 ## Brand Personality
 

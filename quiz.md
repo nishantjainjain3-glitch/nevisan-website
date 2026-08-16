@@ -37,7 +37,7 @@ Find your perfect Nevisan tea blend by answering 3 quick questions.
 
 Each answer option has weighted scores for specific teas. The tea with the highest total score across all 3 questions is the recommended match. Default fallback is Organic Green Tea.
 
-## Products in Quiz (9 varieties)
+## Products in Quiz (10 varieties)
 
 - GABA Oolong Tea
 - Chamomile Green Tea

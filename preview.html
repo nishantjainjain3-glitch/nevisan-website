@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#15271B">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Buy Organic Green Tea Online India | Nevisan — Whole Leaf Assam Tea" />
+  <meta name="twitter:description" content="10 varieties of chemical-free whole-leaf tea from Golaghat, Assam. Lemongrass, GABA Oolong, Chamomile & more. MRP ₹499. Order on WhatsApp, Amazon, Flipkart." />
+  <meta name="twitter:image" content="https://nevisan.in/hero-bg.jpg" />
   <title>Nevisan - Immersive 3D Tea Ceremony</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -465,9 +471,28 @@
         font-size: 34px;
       }
     }
+
+  /* Skip link for keyboard accessibility */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1a3c2a;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 10000;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0 0 4px 0;
+    transition: top 0.2s;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="film-grain"></div>
 
@@ -496,7 +521,7 @@
   </header>
 
   <!-- Pinned scroll container -->
-  <div class="ceremony-container">
+  <div class="ceremony-container" id="main-content">
     <div class="sticky-viewport">
       
       <!-- 3D Canvas -->

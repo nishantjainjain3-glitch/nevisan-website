@@ -396,6 +396,8 @@ function Nav({ page: e, setPage: t }) {
     React.createElement(
       "nav",
       {
+        role: "navigation",
+        "aria-label": "Main navigation",
         style: {
           position: "fixed",
           top: 0,
@@ -438,7 +440,7 @@ function Nav({ page: e, setPage: t }) {
             {
               style: {
                 fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: s ? 15 : 18,
+                fontSize: s ? 16 : 18,
                 color: T.white,
                 letterSpacing: "0.18em",
                 fontWeight: 400,
@@ -463,7 +465,7 @@ function Nav({ page: e, setPage: t }) {
                       border: "none",
                       cursor: "pointer",
                       fontFamily: "'Inter', sans-serif",
-                      fontSize: 14,
+                      fontSize: 16,
                       fontWeight: 400,
                       color: "rgba(255,255,255,0.82)",
                       transition: "color 150ms",
@@ -490,7 +492,7 @@ function Nav({ page: e, setPage: t }) {
                     border: "none",
                     cursor: "pointer",
                     fontFamily: "'Inter', sans-serif",
-                    fontSize: 14,
+                    fontSize: 16,
                     fontWeight: 400,
                     color: e === t ? T.gold : "rgba(255,255,255,0.82)",
                     transition: "color 150ms",
@@ -517,7 +519,7 @@ function Nav({ page: e, setPage: t }) {
                   border: "none",
                   borderRadius: 9999,
                   padding: "9px 22px",
-                  fontSize: 13,
+                  fontSize: 16,
                   fontWeight: 600,
                   cursor: "pointer",
                   fontFamily: "'Inter', sans-serif",
@@ -552,7 +554,7 @@ function Nav({ page: e, setPage: t }) {
                   border: "none",
                   borderRadius: 9999,
                   padding: "7px 14px",
-                  fontSize: 12,
+                  fontSize: 16,
                   fontWeight: 600,
                   cursor: "pointer",
                   fontFamily: "'Inter'",
@@ -565,6 +567,8 @@ function Nav({ page: e, setPage: t }) {
               {
                 onClick: () => l((e) => !e),
                 "aria-label": r ? "Close menu" : "Open menu",
+                "aria-expanded": r,
+                "aria-controls": "mobile-menu",
                 style: {
                   background: "none",
                   border: "none",
@@ -677,7 +681,7 @@ function Nav({ page: e, setPage: t }) {
                   border: "none",
                   borderRadius: 9999,
                   padding: "16px",
-                  fontSize: 15,
+                  fontSize: 16,
                   fontWeight: 700,
                   cursor: "pointer",
                   fontFamily: "'Inter'",
@@ -701,7 +705,7 @@ function Nav({ page: e, setPage: t }) {
                   border: "none",
                   borderRadius: 9999,
                   padding: "16px",
-                  fontSize: 15,
+                  fontSize: 16,
                   fontWeight: 700,
                   cursor: "pointer",
                   fontFamily: "'Inter'",
@@ -723,7 +727,7 @@ function Nav({ page: e, setPage: t }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 12,
+                  fontSize: 16,
                   color: "rgba(255,255,255,0.4)",
                   marginBottom: 8,
                 },
@@ -735,7 +739,7 @@ function Nav({ page: e, setPage: t }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 12,
+                  fontSize: 16,
                   color: "rgba(255,255,255,0.4)",
                 },
               },
@@ -778,7 +782,7 @@ function Ticker() {
             key: t,
             style: {
               fontFamily: "'Inter', sans-serif",
-              fontSize: 12,
+              fontSize: 16,
               fontWeight: 600,
               letterSpacing: "0.12em",
               color: "rgba(255,255,255,0.9)",
@@ -790,7 +794,7 @@ function Ticker() {
           },
           React.createElement(
             "span",
-            { style: { color: T.gold, fontSize: 8 } },
+            { style: { color: T.gold, fontSize: 12 } },
             "●",
           ),
           e,
@@ -943,7 +947,7 @@ function Hero({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 11,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.18em",
                 color: T.gold,
@@ -1072,7 +1076,7 @@ function Hero({ setPage: e }) {
                   border: "none",
                   borderRadius: 9999,
                   padding: "15px 40px",
-                  fontSize: 15,
+                  fontSize: 16,
                   fontWeight: 600,
                   cursor: "pointer",
                   fontFamily: "'Inter'",
@@ -1095,7 +1099,7 @@ function Hero({ setPage: e }) {
                   border: "1px solid rgba(255,255,255,0.35)",
                   borderRadius: 9999,
                   padding: "15px 36px",
-                  fontSize: 15,
+                  fontSize: 16,
                   fontWeight: 400,
                   cursor: "pointer",
                   fontFamily: "'Inter'",
@@ -1159,7 +1163,7 @@ function Hero({ setPage: e }) {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: 11,
+                      fontSize: 16,
                       color: "rgba(255,255,255,0.45)",
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
@@ -1201,7 +1205,7 @@ function Hero({ setPage: e }) {
           "span",
           {
             style: {
-              fontSize: 9,
+              fontSize: 16,
               color: "rgba(255,255,255,0.35)",
               letterSpacing: "0.14em",
               fontFamily: "'Inter'",
@@ -1656,7 +1660,7 @@ function TagChip({ label: e, color: t }) {
     {
       style: {
         fontFamily: "'Inter'",
-        fontSize: 10,
+        fontSize: 16,
         fontWeight: 600,
         letterSpacing: "0.08em",
         color: t || T.teal,
@@ -1873,7 +1877,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
               right: 12,
               background: T.gold,
               color: T.tealDark,
-              fontSize: 9,
+              fontSize: 16,
               fontWeight: 700,
               letterSpacing: "0.08em",
               padding: "4px 10px",
@@ -1894,7 +1898,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
               right: 12,
               background: "#2a6a2a",
               color: "#fff",
-              fontSize: 9,
+              fontSize: 16,
               fontWeight: 700,
               letterSpacing: "0.08em",
               padding: "4px 10px",
@@ -1922,7 +1926,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
         {
           style: {
             fontFamily: "'Inter'",
-            fontSize: 10,
+            fontSize: 16,
             fontWeight: 700,
             letterSpacing: "0.12em",
             color: T.gold,
@@ -1952,7 +1956,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
         {
           style: {
             fontFamily: "'Inter'",
-            fontSize: 13,
+            fontSize: 16,
             color: T.textMuted,
             lineHeight: 1.55,
             marginBottom: 14,
@@ -1976,13 +1980,13 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
         },
         React.createElement(
           "div",
-          { style: { display: "flex", fontSize: 12.5, lineHeight: 1.4 } },
+          { style: { display: "flex", fontSize: 16, lineHeight: 1.4 } },
           React.createElement("span", { style: { fontWeight: 600, width: 80, color: T.teal, flexShrink: 0 } }, "Palate:"),
           React.createElement("span", { style: { color: T.textMuted } }, prof.palate)
         ),
         React.createElement(
           "div",
-          { style: { display: "flex", fontSize: 12.5, lineHeight: 1.4 } },
+          { style: { display: "flex", fontSize: 16, lineHeight: 1.4 } },
           React.createElement("span", { style: { fontWeight: 600, width: 80, color: T.teal, flexShrink: 0 } }, "Brewing:"),
           React.createElement("span", { style: { color: T.textMuted } }, prof.brew)
         )
@@ -2030,7 +2034,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
                 {
                   style: {
                     fontFamily: "'Inter'",
-                    fontSize: 11,
+                    fontSize: 16,
                     color: T.textMuted,
                   },
                 },
@@ -2050,7 +2054,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
                 border: `1px solid ${T.teal}`,
                 borderRadius: 8,
                 padding: "7px 14px",
-                fontSize: 11,
+                fontSize: 16,
                 fontWeight: 500,
                 cursor: "pointer",
                 fontFamily: "'Inter'",
@@ -2083,7 +2087,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
                 border: "none",
                 borderRadius: 8,
                 padding: "11px",
-                fontSize: 14,
+                fontSize: 16,
                 fontWeight: 600,
                 cursor: "pointer",
                 fontFamily: "'Inter'",
@@ -2131,7 +2135,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
                   style: {
                     padding: "12px 16px 8px",
                     fontFamily: "'Inter'",
-                    fontSize: 10,
+                    fontSize: 16,
                     fontWeight: 700,
                     letterSpacing: "0.12em",
                     color: T.textMuted,
@@ -2227,7 +2231,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
                       {
                         style: {
                           fontFamily: "'Inter'",
-                          fontSize: 14,
+                          fontSize: 16,
                           fontWeight: 600,
                           color: T.text,
                         },
@@ -2239,7 +2243,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
                       {
                         style: {
                           fontFamily: "'Inter'",
-                          fontSize: 11,
+                          fontSize: 16,
                           color: T.textMuted,
                         },
                       },
@@ -2418,7 +2422,7 @@ function CollectionPage({}) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 12,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
                 color: T.teal,
@@ -2449,7 +2453,7 @@ function CollectionPage({}) {
           {
             style: {
               fontFamily: "'Inter'",
-              fontSize: 15,
+              fontSize: 16,
               color: T.textMuted,
               maxWidth: 480,
               margin: "0 auto",
@@ -2487,7 +2491,7 @@ function CollectionPage({}) {
                 border: isSelected ? "1px solid #1F2E24" : "1px solid rgba(31, 46, 36, 0.1)",
                 borderRadius: 9999,
                 padding: o ? "6px 14px" : "8px 20px",
-                fontSize: 13,
+                fontSize: 16,
                 fontWeight: 600,
                 cursor: "pointer",
                 fontFamily: "'Inter'",
@@ -2664,7 +2668,7 @@ function CollectionPage({}) {
                           {
                             style: {
                               fontFamily: "'Inter'",
-                              fontSize: 11,
+                              fontSize: 16,
                               color: T.textMuted,
                             },
                           },
@@ -2679,7 +2683,7 @@ function CollectionPage({}) {
                               display: "inline-block",
                               background: T.gold,
                               color: T.tealDark,
-                              fontSize: 9,
+                              fontSize: 16,
                               fontWeight: 700,
                               padding: "3px 9px",
                               borderRadius: 9999,
@@ -2704,7 +2708,7 @@ function CollectionPage({}) {
                           width: 30,
                           height: 30,
                           cursor: "pointer",
-                          fontSize: 15,
+                          fontSize: 16,
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -2739,7 +2743,7 @@ function CollectionPage({}) {
                           border: "none",
                           borderRadius: 9999,
                           padding: "11px",
-                          fontSize: 13,
+                          fontSize: 16,
                           fontWeight: 600,
                           cursor: "pointer",
                           fontFamily: "'Inter'",
@@ -2781,7 +2785,7 @@ function CollectionPage({}) {
                             border: "none",
                             borderRadius: 9999,
                             padding: "9px",
-                            fontSize: 13,
+                            fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
                             fontFamily: "'Inter'",
@@ -2805,7 +2809,7 @@ function CollectionPage({}) {
                             border: "none",
                             borderRadius: 9999,
                             padding: "9px",
-                            fontSize: 13,
+                            fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
                             fontFamily: "'Inter'",
@@ -2825,7 +2829,7 @@ function CollectionPage({}) {
                       {
                         style: {
                           fontFamily: "'Inter'",
-                          fontSize: 13,
+                          fontSize: 16,
                           color: T.textMuted,
                           lineHeight: 1.6,
                           marginBottom: 12,
@@ -2842,7 +2846,7 @@ function CollectionPage({}) {
                           {
                             style: {
                               fontFamily: "'Inter'",
-                              fontSize: 11,
+                              fontSize: 16,
                               letterSpacing: "0.13em",
                               color: T.teal,
                               textTransform: "uppercase",
@@ -2884,7 +2888,7 @@ function CollectionPage({}) {
                                 {
                                   style: {
                                     fontFamily: "'Inter'",
-                                    fontSize: 12,
+                                    fontSize: 16,
                                     fontWeight: 600,
                                     color: T.text,
                                   },
@@ -2896,7 +2900,7 @@ function CollectionPage({}) {
                                 {
                                   style: {
                                     fontFamily: "'Inter'",
-                                    fontSize: 11,
+                                    fontSize: 16,
                                     color: T.textMuted,
                                     lineHeight: 1.5,
                                   },
@@ -2933,7 +2937,7 @@ function CollectionPage({}) {
                             {
                               style: {
                                 fontFamily: "'Inter'",
-                                fontSize: 10,
+                                fontSize: 16,
                                 letterSpacing: "0.12em",
                                 color: T.teal,
                                 textTransform: "uppercase",
@@ -2948,7 +2952,7 @@ function CollectionPage({}) {
                             {
                               style: {
                                 fontFamily: "'Inter'",
-                                fontSize: 12,
+                                fontSize: 16,
                                 color: T.textMuted,
                               },
                             },
@@ -3041,7 +3045,7 @@ function CollectionPage({}) {
                             left: 14,
                             background: T.gold,
                             color: T.tealDark,
-                            fontSize: 9,
+                            fontSize: 16,
                             fontWeight: 700,
                             letterSpacing: "0.08em",
                             padding: "4px 10px",
@@ -3094,7 +3098,7 @@ function CollectionPage({}) {
                         {
                           style: {
                             fontFamily: "'Inter'",
-                            fontSize: 11,
+                            fontSize: 16,
                             color: T.textMuted,
                           },
                         },
@@ -3106,7 +3110,7 @@ function CollectionPage({}) {
                       {
                         style: {
                           fontFamily: "'Inter'",
-                          fontSize: 13,
+                          fontSize: 16,
                           color: T.textMuted,
                           lineHeight: 1.6,
                           marginBottom: 12,
@@ -3135,7 +3139,7 @@ function CollectionPage({}) {
                             border: "none",
                             borderRadius: 9999,
                             padding: "13px",
-                            fontSize: 14,
+                            fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
                             fontFamily: "'Inter'",
@@ -3177,7 +3181,7 @@ function CollectionPage({}) {
                               border: "none",
                               borderRadius: 9999,
                               padding: "11px",
-                              fontSize: 13,
+                              fontSize: 16,
                               fontWeight: 600,
                               cursor: "pointer",
                               fontFamily: "'Inter'",
@@ -3201,7 +3205,7 @@ function CollectionPage({}) {
                               border: "none",
                               borderRadius: 9999,
                               padding: "11px",
-                              fontSize: 13,
+                              fontSize: 16,
                               fontWeight: 600,
                               cursor: "pointer",
                               fontFamily: "'Inter'",
@@ -3238,7 +3242,7 @@ function CollectionPage({}) {
                           {
                             style: {
                               fontFamily: "'Inter'",
-                              fontSize: 11,
+                              fontSize: 16,
                               letterSpacing: "0.13em",
                               color: T.teal,
                               textTransform: "uppercase",
@@ -3288,7 +3292,7 @@ function CollectionPage({}) {
                                   {
                                     style: {
                                       fontFamily: "'Inter'",
-                                      fontSize: 13,
+                                      fontSize: 16,
                                       fontWeight: 600,
                                       color: T.text,
                                       marginBottom: 2,
@@ -3301,7 +3305,7 @@ function CollectionPage({}) {
                                   {
                                     style: {
                                       fontFamily: "'Inter'",
-                                      fontSize: 12,
+                                      fontSize: 16,
                                       color: T.textMuted,
                                       lineHeight: 1.55,
                                     },
@@ -3340,7 +3344,7 @@ function CollectionPage({}) {
                             {
                               style: {
                                 fontFamily: "'Inter'",
-                                fontSize: 10,
+                                fontSize: 16,
                                 letterSpacing: "0.12em",
                                 color: T.teal,
                                 textTransform: "uppercase",
@@ -3355,7 +3359,7 @@ function CollectionPage({}) {
                             {
                               style: {
                                 fontFamily: "'Inter'",
-                                fontSize: 12,
+                                fontSize: 16,
                                 color: T.textMuted,
                               },
                             },
@@ -3543,7 +3547,7 @@ function PhilosophySection() {
             "data-gsap-reveal": !0,
             style: {
               fontFamily: "'Inter'",
-              fontSize: 11,
+              fontSize: 16,
               fontWeight: 600,
               letterSpacing: "0.16em",
               color: T.gold,
@@ -3591,7 +3595,7 @@ function PhilosophySection() {
             style: {
               fontFamily: "'Playfair Display', Georgia, serif",
               fontStyle: "italic",
-              fontSize: 15,
+              fontSize: 16,
               color: "rgba(255,255,255,0.6)",
               lineHeight: 1.65,
               marginBottom: 32,
@@ -3614,7 +3618,7 @@ function PhilosophySection() {
                 key: e,
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 10,
+                  fontSize: 16,
                   fontWeight: 500,
                   letterSpacing: "0.08em",
                   color: "rgba(255,255,255,0.7)",
@@ -3703,7 +3707,7 @@ function PhilosophySection() {
                 {
                   style: {
                     fontFamily: "'Inter'",
-                    fontSize: 13,
+                    fontSize: 16,
                     color: "rgba(255,255,255,0.65)",
                     lineHeight: 1.6,
                   },
@@ -3751,7 +3755,7 @@ function BuyCard({ c: e, inView: t, index: a }) {
             right: 16,
             background: T.gold,
             color: T.tealDark,
-            fontSize: 8,
+            fontSize: 16,
             fontWeight: 700,
             letterSpacing: "0.1em",
             padding: "3px 8px",
@@ -3795,7 +3799,7 @@ function BuyCard({ c: e, inView: t, index: a }) {
       {
         style: {
           fontFamily: "'Inter'",
-          fontSize: 13,
+          fontSize: 16,
           color: e.primary ? "rgba(255,255,255,0.75)" : T.textMuted,
           marginBottom: 28,
           lineHeight: 1.55,
@@ -3814,7 +3818,7 @@ function BuyCard({ c: e, inView: t, index: a }) {
           border: e.primary ? "none" : `1.5px solid ${T.teal}`,
           borderRadius: 9999,
           padding: "12px",
-          fontSize: 13,
+          fontSize: 16,
           fontWeight: 600,
           cursor: "pointer",
           fontFamily: "'Inter'",
@@ -3888,7 +3892,7 @@ function WhereToBuy() {
           {
             style: {
               fontFamily: "'Inter'",
-              fontSize: 12,
+              fontSize: 16,
               fontWeight: 600,
               letterSpacing: "0.14em",
               color: T.teal,
@@ -3919,7 +3923,7 @@ function WhereToBuy() {
         {
           style: {
             fontFamily: "'Inter'",
-            fontSize: 15,
+            fontSize: 16,
             color: T.textMuted,
             marginBottom: n ? 36 : 56,
           },
@@ -3987,7 +3991,7 @@ function ReviewCard({ r: e, inView: t, index: a }) {
         style: {
           fontFamily: "'Playfair Display', Georgia, serif",
           fontStyle: "italic",
-          fontSize: 15,
+          fontSize: 16,
           color: T.text,
           lineHeight: 1.7,
           marginBottom: 24,
@@ -4002,7 +4006,7 @@ function ReviewCard({ r: e, inView: t, index: a }) {
       {
         style: {
           fontFamily: "'Inter'",
-          fontSize: 13,
+          fontSize: 16,
           fontWeight: 600,
           color: T.teal,
         },
@@ -4011,7 +4015,7 @@ function ReviewCard({ r: e, inView: t, index: a }) {
     ),
     React.createElement(
       "div",
-      { style: { fontFamily: "'Inter'", fontSize: 12, color: T.textMuted } },
+      { style: { fontFamily: "'Inter'", fontSize: 16, color: T.textMuted } },
       e.loc,
     ),
   );
@@ -4060,7 +4064,7 @@ function ReviewForm() {
       border: "1.5px solid #e0dcd4",
       borderRadius: 10,
       fontFamily: "'Inter'",
-      fontSize: 14,
+      fontSize: 16,
       color: "#1a1a1a",
       background: "#fff",
       outline: "none",
@@ -4094,7 +4098,7 @@ function ReviewForm() {
           {
             style: {
               fontFamily: "'Inter'",
-              fontSize: 14,
+              fontSize: 16,
               color: "#666",
               lineHeight: 1.7,
               maxWidth: 360,
@@ -4117,7 +4121,7 @@ function ReviewForm() {
               padding: "10px 28px",
               cursor: "pointer",
               fontFamily: "'Inter'",
-              fontSize: 13,
+              fontSize: 16,
             },
           },
           "Write another review",
@@ -4161,7 +4165,7 @@ function ReviewForm() {
           {
             style: {
               fontFamily: "'Inter'",
-              fontSize: 13,
+              fontSize: 16,
               color: "#5f6f70",
               marginBottom: 24,
             },
@@ -4176,7 +4180,7 @@ function ReviewForm() {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 11,
+                fontSize: 16,
                 letterSpacing: "0.1em",
                 color: "#5f6f70",
                 textTransform: "uppercase",
@@ -4209,7 +4213,7 @@ function ReviewForm() {
                 htmlFor: "wholesale-name",
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 11,
+                  fontSize: 16,
                   letterSpacing: "0.1em",
                   color: "#5f6f70",
                   textTransform: "uppercase",
@@ -4239,7 +4243,7 @@ function ReviewForm() {
                 htmlFor: "wholesale-city",
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 11,
+                  fontSize: 16,
                   letterSpacing: "0.1em",
                   color: "#5f6f70",
                   textTransform: "uppercase",
@@ -4269,7 +4273,7 @@ function ReviewForm() {
               htmlFor: "wholesale-tea",
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 11,
+                fontSize: 16,
                 letterSpacing: "0.1em",
                 color: "#5f6f70",
                 textTransform: "uppercase",
@@ -4317,7 +4321,7 @@ function ReviewForm() {
               htmlFor: "wholesale-review",
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 11,
+                fontSize: 16,
                 letterSpacing: "0.1em",
                 color: "#5f6f70",
                 textTransform: "uppercase",
@@ -4346,7 +4350,7 @@ function ReviewForm() {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 13,
+                fontSize: 16,
                 color: "#e8312a",
                 marginBottom: 14,
               },
@@ -4367,7 +4371,7 @@ function ReviewForm() {
               padding: "14px",
               cursor: "pointer",
               fontFamily: "'Inter'",
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: 600,
               transition: "filter 200ms",
             },
@@ -4382,7 +4386,7 @@ function ReviewForm() {
           {
             style: {
               fontFamily: "'Inter'",
-              fontSize: 11,
+              fontSize: 16,
               color: "#767676",
               textAlign: "center",
               marginTop: 10,
@@ -4430,7 +4434,7 @@ function Testimonials() {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 12,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
                 color: T.teal,
@@ -4461,7 +4465,7 @@ function Testimonials() {
           "p",
           {
             "data-gsap-reveal": !0,
-            style: { fontFamily: "'Inter'", fontSize: 15, color: T.textMuted },
+            style: { fontFamily: "'Inter'", fontSize: 16, color: T.textMuted },
           },
           "Sincere words from our community of tea drinkers. Direct and unedited reviews.",
         ),
@@ -4552,7 +4556,7 @@ function Testimonials() {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 11,
+                  fontSize: 16,
                   fontWeight: 600,
                   letterSpacing: "0.14em",
                   color: T.teal,
@@ -4599,6 +4603,7 @@ function Footer({ setPage: e }) {
   return React.createElement(
     "footer",
     {
+      role: "contentinfo",
       style: {
         background: T.tealDark,
         color: "rgba(255,255,255,0.8)",
@@ -4627,7 +4632,7 @@ function Footer({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 13,
+                fontSize: 16,
                 lineHeight: 1.7,
                 color: "rgba(255,255,255,0.55)",
                 marginTop: 20,
@@ -4649,7 +4654,7 @@ function Footer({ setPage: e }) {
                 border: "none",
                 borderRadius: 9999,
                 padding: "9px 20px",
-                fontSize: 12,
+                fontSize: 16,
                 fontWeight: 600,
                 cursor: "pointer",
                 fontFamily: "'Inter'",
@@ -4683,7 +4688,7 @@ function Footer({ setPage: e }) {
                   borderRadius: 6,
                   padding: "5px 12px",
                   fontFamily: "'Inter'",
-                  fontSize: 10,
+                  fontSize: 16,
                   color: "rgba(255,255,255,0.4)",
                   letterSpacing: "0.06em",
                 },
@@ -4698,7 +4703,7 @@ function Footer({ setPage: e }) {
                   borderRadius: 6,
                   padding: "5px 12px",
                   fontFamily: "'Inter'",
-                  fontSize: 10,
+                  fontSize: 16,
                   color: "rgba(255,255,255,0.4)",
                   letterSpacing: "0.06em",
                 },
@@ -4715,7 +4720,7 @@ function Footer({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 11,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
                 color: T.gold,
@@ -4743,7 +4748,7 @@ function Footer({ setPage: e }) {
                 onClick: () => e("Collection"),
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 13,
+                  fontSize: 16,
                   color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
                   cursor: "pointer",
@@ -4766,7 +4771,7 @@ function Footer({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 11,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
                 color: T.gold,
@@ -4797,7 +4802,7 @@ function Footer({ setPage: e }) {
                 },
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 13,
+                  fontSize: 16,
                   color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
                   cursor: "pointer",
@@ -4820,7 +4825,7 @@ function Footer({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 11,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
                 color: T.gold,
@@ -4852,7 +4857,7 @@ function Footer({ setPage: e }) {
                 onClick: () => window.open(t, "_blank"),
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 13,
+                  fontSize: 16,
                   color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
                   cursor: "pointer",
@@ -4885,7 +4890,7 @@ function Footer({ setPage: e }) {
           {
             style: {
               fontFamily: "'Inter'",
-              fontSize: 12,
+              fontSize: 16,
               color: "rgba(255,255,255,0.35)",
               display: "flex",
               alignItems: "center",
@@ -4921,7 +4926,7 @@ function Footer({ setPage: e }) {
                 key: e,
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 10,
+                  fontSize: 16,
                   fontWeight: 600,
                   letterSpacing: "0.06em",
                   color: "rgba(255,255,255,0.4)",
@@ -5008,7 +5013,7 @@ function CollectionSection({ setPage: e }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 13,
+                  fontSize: 16,
                   color: "rgba(255,255,255,0.75)",
                 },
               },
@@ -5025,7 +5030,7 @@ function CollectionSection({ setPage: e }) {
               padding: "11px 24px",
               borderRadius: 9999,
               fontFamily: "'Inter'",
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: 600,
               whiteSpace: "nowrap",
             },
@@ -5068,7 +5073,7 @@ function CollectionSection({ setPage: e }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 12,
+                  fontSize: 16,
                   fontWeight: 600,
                   letterSpacing: "0.14em",
                   color: T.teal,
@@ -5103,7 +5108,7 @@ function CollectionSection({ setPage: e }) {
               border: `1.5px solid ${T.teal}`,
               borderRadius: 9999,
               padding: "10px 28px",
-              fontSize: 13,
+              fontSize: 16,
               fontWeight: 500,
               cursor: "pointer",
               fontFamily: "'Inter'",
@@ -5284,7 +5289,7 @@ function CollectionSection({ setPage: e }) {
                           {
                             style: {
                               fontFamily: "'Inter'",
-                              fontSize: 11,
+                              fontSize: 16,
                               color: T.textMuted,
                             },
                           },
@@ -5299,7 +5304,7 @@ function CollectionSection({ setPage: e }) {
                               display: "inline-block",
                               background: T.gold,
                               color: T.tealDark,
-                              fontSize: 9,
+                              fontSize: 16,
                               fontWeight: 700,
                               padding: "3px 9px",
                               borderRadius: 9999,
@@ -5324,7 +5329,7 @@ function CollectionSection({ setPage: e }) {
                           width: 30,
                           height: 30,
                           cursor: "pointer",
-                          fontSize: 15,
+                          fontSize: 16,
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -5359,7 +5364,7 @@ function CollectionSection({ setPage: e }) {
                           border: "none",
                           borderRadius: 9999,
                           padding: "11px",
-                          fontSize: 13,
+                          fontSize: 16,
                           fontWeight: 600,
                           cursor: "pointer",
                           fontFamily: "'Inter'",
@@ -5401,7 +5406,7 @@ function CollectionSection({ setPage: e }) {
                             border: "none",
                             borderRadius: 9999,
                             padding: "9px",
-                            fontSize: 13,
+                            fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
                             fontFamily: "'Inter'",
@@ -5425,7 +5430,7 @@ function CollectionSection({ setPage: e }) {
                             border: "none",
                             borderRadius: 9999,
                             padding: "9px",
-                            fontSize: 13,
+                            fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
                             fontFamily: "'Inter'",
@@ -5445,7 +5450,7 @@ function CollectionSection({ setPage: e }) {
                       {
                         style: {
                           fontFamily: "'Inter'",
-                          fontSize: 13,
+                          fontSize: 16,
                           color: T.textMuted,
                           lineHeight: 1.6,
                           marginBottom: 12,
@@ -5462,7 +5467,7 @@ function CollectionSection({ setPage: e }) {
                           {
                             style: {
                               fontFamily: "'Inter'",
-                              fontSize: 11,
+                              fontSize: 16,
                               letterSpacing: "0.13em",
                               color: T.teal,
                               textTransform: "uppercase",
@@ -5504,7 +5509,7 @@ function CollectionSection({ setPage: e }) {
                                 {
                                   style: {
                                     fontFamily: "'Inter'",
-                                    fontSize: 12,
+                                    fontSize: 16,
                                     fontWeight: 600,
                                     color: T.text,
                                   },
@@ -5516,7 +5521,7 @@ function CollectionSection({ setPage: e }) {
                                 {
                                   style: {
                                     fontFamily: "'Inter'",
-                                    fontSize: 11,
+                                    fontSize: 16,
                                     color: T.textMuted,
                                     lineHeight: 1.5,
                                   },
@@ -5553,7 +5558,7 @@ function CollectionSection({ setPage: e }) {
                             {
                               style: {
                                 fontFamily: "'Inter'",
-                                fontSize: 10,
+                                fontSize: 16,
                                 letterSpacing: "0.12em",
                                 color: T.teal,
                                 textTransform: "uppercase",
@@ -5568,7 +5573,7 @@ function CollectionSection({ setPage: e }) {
                             {
                               style: {
                                 fontFamily: "'Inter'",
-                                fontSize: 12,
+                                fontSize: 16,
                                 color: T.textMuted,
                               },
                             },
@@ -5655,7 +5660,7 @@ function CollectionSection({ setPage: e }) {
                             left: 14,
                             background: T.gold,
                             color: T.tealDark,
-                            fontSize: 9,
+                            fontSize: 16,
                             fontWeight: 700,
                             letterSpacing: "0.08em",
                             padding: "4px 10px",
@@ -5708,7 +5713,7 @@ function CollectionSection({ setPage: e }) {
                         {
                           style: {
                             fontFamily: "'Inter'",
-                            fontSize: 11,
+                            fontSize: 16,
                             color: T.textMuted,
                           },
                         },
@@ -5720,7 +5725,7 @@ function CollectionSection({ setPage: e }) {
                       {
                         style: {
                           fontFamily: "'Inter'",
-                          fontSize: 13,
+                          fontSize: 16,
                           color: T.textMuted,
                           lineHeight: 1.6,
                           marginBottom: 12,
@@ -5749,7 +5754,7 @@ function CollectionSection({ setPage: e }) {
                             border: "none",
                             borderRadius: 9999,
                             padding: "13px",
-                            fontSize: 14,
+                            fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
                             fontFamily: "'Inter'",
@@ -5791,7 +5796,7 @@ function CollectionSection({ setPage: e }) {
                               border: "none",
                               borderRadius: 9999,
                               padding: "11px",
-                              fontSize: 13,
+                              fontSize: 16,
                               fontWeight: 600,
                               cursor: "pointer",
                               fontFamily: "'Inter'",
@@ -5815,7 +5820,7 @@ function CollectionSection({ setPage: e }) {
                               border: "none",
                               borderRadius: 9999,
                               padding: "11px",
-                              fontSize: 13,
+                              fontSize: 16,
                               fontWeight: 600,
                               cursor: "pointer",
                               fontFamily: "'Inter'",
@@ -5834,7 +5839,7 @@ function CollectionSection({ setPage: e }) {
                           {
                             style: {
                               fontFamily: "'Inter'",
-                              fontSize: 11,
+                              fontSize: 16,
                               letterSpacing: "0.13em",
                               color: T.teal,
                               textTransform: "uppercase",
@@ -5876,7 +5881,7 @@ function CollectionSection({ setPage: e }) {
                                 {
                                   style: {
                                     fontFamily: "'Inter'",
-                                    fontSize: 13,
+                                    fontSize: 16,
                                     fontWeight: 600,
                                     color: T.text,
                                     marginBottom: 2,
@@ -5889,7 +5894,7 @@ function CollectionSection({ setPage: e }) {
                                 {
                                   style: {
                                     fontFamily: "'Inter'",
-                                    fontSize: 12,
+                                    fontSize: 16,
                                     color: T.textMuted,
                                     lineHeight: 1.55,
                                   },
@@ -5927,7 +5932,7 @@ function CollectionSection({ setPage: e }) {
                             {
                               style: {
                                 fontFamily: "'Inter'",
-                                fontSize: 10,
+                                fontSize: 16,
                                 letterSpacing: "0.12em",
                                 color: T.teal,
                                 textTransform: "uppercase",
@@ -5942,7 +5947,7 @@ function CollectionSection({ setPage: e }) {
                             {
                               style: {
                                 fontFamily: "'Inter'",
-                                fontSize: 12,
+                                fontSize: 16,
                                 color: T.textMuted,
                               },
                             },
@@ -5998,7 +6003,7 @@ function InstagramReels() {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 11,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.18em",
                 color: T.teal,
@@ -6039,7 +6044,7 @@ function InstagramReels() {
               borderRadius: 9999,
               padding: "10px 20px",
               fontFamily: "'Inter'",
-              fontSize: 13,
+              fontSize: 16,
               fontWeight: 600,
             },
           },
@@ -6201,7 +6206,7 @@ function InstagramReels() {
                 {
                   style: {
                     fontFamily: "'Inter'",
-                    fontSize: 10,
+                    fontSize: 16,
                     fontWeight: 700,
                     letterSpacing: "0.1em",
                     color: "rgba(255,255,255,0.7)",
@@ -6215,7 +6220,7 @@ function InstagramReels() {
                 {
                   style: {
                     fontFamily: "'Inter'",
-                    fontSize: 11,
+                    fontSize: 16,
                     color: "#fff",
                     opacity: 0.9,
                   },
@@ -6509,7 +6514,7 @@ function HowToBrewSection() {
                 {
                   style: {
                     fontFamily: "'Inter'",
-                    fontSize: 12,
+                    fontSize: 16,
                     fontWeight: 600,
                     letterSpacing: "0.14em",
                     color: T.gold,
@@ -6538,7 +6543,7 @@ function HowToBrewSection() {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 15,
+                  fontSize: 16,
                   color: T.tealLight,
                   lineHeight: 1.7
                 }
@@ -6569,7 +6574,7 @@ function HowToBrewSection() {
                     padding: "12px",
                     borderRadius: 8,
                     cursor: isBrewing ? "not-allowed" : "pointer",
-                    fontSize: 13,
+                    fontSize: 16,
                     fontWeight: 600,
                     textTransform: "capitalize",
                     transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease",
@@ -6585,7 +6590,7 @@ function HowToBrewSection() {
             { style: { display: "flex", flexDirection: "column", gap: 10 } },
             React.createElement(
               "div",
-              { style: { display: "flex", justifyContent: "space-between", fontSize: 13, fontWeight: 600 } },
+              { style: { display: "flex", justifyContent: "space-between", fontSize: 16, fontWeight: 600 } },
               React.createElement("span", null, "Water Temperature"),
               React.createElement("span", { style: { color: T.gold } }, temp + "°C")
             ),
@@ -6614,7 +6619,7 @@ function HowToBrewSection() {
             { style: { display: "flex", flexDirection: "column", gap: 10 } },
             React.createElement(
               "div",
-              { style: { display: "flex", justifyContent: "space-between", fontSize: 13, fontWeight: 600 } },
+              { style: { display: "flex", justifyContent: "space-between", fontSize: 16, fontWeight: 600 } },
               React.createElement("span", null, "Steeping Time"),
               React.createElement("span", { style: { color: T.gold } }, time + " Min")
             ),
@@ -6652,7 +6657,7 @@ function HowToBrewSection() {
                   border: "none",
                   padding: "16px 36px",
                   borderRadius: 8,
-                  fontSize: 14,
+                  fontSize: 16,
                   fontWeight: 700,
                   cursor: isBrewing ? "not-allowed" : "pointer",
                   letterSpacing: "0.08em",
@@ -6764,7 +6769,7 @@ function FAQSection() {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 12,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
                 color: T.teal,
@@ -6860,7 +6865,7 @@ function FAQSection() {
                 {
                   style: {
                     fontFamily: "'Inter'",
-                    fontSize: e ? 14 : 15,
+                    fontSize: 16,
                     fontWeight: 600,
                     color: T.text,
                     lineHeight: 1.4,
@@ -6899,7 +6904,7 @@ function FAQSection() {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: e ? 13 : 14,
+                      fontSize: 16,
                       color: T.textMuted,
                       lineHeight: 1.7,
                       margin: 0,
@@ -6919,7 +6924,7 @@ function FAQSection() {
           {
             style: {
               fontFamily: "'Inter'",
-              fontSize: 14,
+              fontSize: 16,
               color: T.textMuted,
               marginBottom: 16,
             },
@@ -6941,7 +6946,7 @@ function FAQSection() {
               borderRadius: 9999,
               padding: "12px 28px",
               fontFamily: "'Inter'",
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: 600,
               textDecoration: "none",
             },
@@ -7122,7 +7127,7 @@ function TrustBadges() {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: e ? 12 : 13,
+                fontSize: 16,
                 fontWeight: 500,
                 color: "#2a3a3b",
                 whiteSpace: "nowrap",
@@ -7207,7 +7212,7 @@ function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
         {
           style: {
             fontFamily: "'Inter'",
-            fontSize: 11,
+            fontSize: 16,
             fontWeight: 600,
             letterSpacing: "0.2em",
             color: T.gold,
@@ -7247,7 +7252,7 @@ function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
           {
             style: {
               fontFamily: "'Inter'",
-              fontSize: o ? 14 : 16,
+              fontSize: 16,
               color: "rgba(255,255,255,0.72)",
               maxWidth: 500,
               lineHeight: 1.65,
@@ -7285,7 +7290,7 @@ function OurStoryPage({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 11,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.16em",
                 color: T.gold,
@@ -7382,7 +7387,7 @@ function OurStoryPage({ setPage: e }) {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: 15,
+                      fontSize: 16,
                       color: T.textMuted,
                       lineHeight: 1.75,
                     },
@@ -7597,6 +7602,9 @@ function ArticleModal({ post: e, onClose: t }) {
         "div",
         {
           onClick: t,
+          role: "dialog",
+          "aria-modal": "true",
+          "aria-label": "Article",
           style: {
             position: "fixed",
             inset: 0,
@@ -7650,7 +7658,7 @@ function ArticleModal({ post: e, onClose: t }) {
                 {
                   style: {
                     fontFamily: "'Inter'",
-                    fontSize: 10,
+                    fontSize: 16,
                     letterSpacing: "0.14em",
                     color: T.gold,
                     background: "rgba(201,168,76,0.12)",
@@ -7664,6 +7672,7 @@ function ArticleModal({ post: e, onClose: t }) {
                 "button",
                 {
                   onClick: t,
+                  "aria-label": "Close article",
                   style: {
                     background: "none",
                     border: "none",
@@ -7695,7 +7704,7 @@ function ArticleModal({ post: e, onClose: t }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 12,
+                  fontSize: 16,
                   color: T.textMuted,
                 },
               },
@@ -7719,7 +7728,7 @@ function ArticleModal({ post: e, onClose: t }) {
                   key: t,
                   style: {
                     fontFamily: "'Inter'",
-                    fontSize: 15,
+                    fontSize: 16,
                     color: T.text,
                     lineHeight: 1.8,
                     marginBottom: 18,
@@ -7753,7 +7762,7 @@ function ArticleModal({ post: e, onClose: t }) {
                     padding: "10px 22px",
                     cursor: "pointer",
                     fontFamily: "'Inter'",
-                    fontSize: 13,
+                    fontSize: 16,
                     fontWeight: 600,
                   },
                 },
@@ -7771,7 +7780,7 @@ function ArticleModal({ post: e, onClose: t }) {
                     padding: "10px 22px",
                     cursor: "pointer",
                     fontFamily: "'Inter'",
-                    fontSize: 13,
+                    fontSize: 16,
                   },
                 },
                 "← Back to Journal",
@@ -7863,7 +7872,7 @@ function JournalPage({ setPage: e }) {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: 10,
+                      fontSize: 16,
                       letterSpacing: "0.14em",
                       color: T.gold,
                       background: "rgba(201,168,76,0.12)",
@@ -7878,7 +7887,7 @@ function JournalPage({ setPage: e }) {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: 12,
+                      fontSize: 16,
                       color: T.textMuted,
                     },
                   },
@@ -7904,7 +7913,7 @@ function JournalPage({ setPage: e }) {
                 {
                   style: {
                     fontFamily: "'Inter'",
-                    fontSize: 13,
+                    fontSize: 16,
                     color: T.textMuted,
                     lineHeight: 1.7,
                   },
@@ -7917,7 +7926,7 @@ function JournalPage({ setPage: e }) {
                   style: {
                     marginTop: 18,
                     fontFamily: "'Inter'",
-                    fontSize: 12,
+                    fontSize: 16,
                     color: T.teal,
                     fontWeight: 600,
                     letterSpacing: "0.05em",
@@ -8002,7 +8011,7 @@ function AboutPage({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 15,
+                fontSize: 16,
                 color: T.textMuted,
                 lineHeight: 1.8,
                 marginBottom: 16,
@@ -8015,7 +8024,7 @@ function AboutPage({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 15,
+                fontSize: 16,
                 color: T.textMuted,
                 lineHeight: 1.8,
               },
@@ -8074,7 +8083,7 @@ function AboutPage({ setPage: e }) {
               React.createElement(
                 "span",
                 {
-                  style: { fontFamily: "'Inter'", fontSize: 14, color: T.text },
+                  style: { fontFamily: "'Inter'", fontSize: 16, color: T.text },
                 },
                 e.text,
               ),
@@ -8093,7 +8102,7 @@ function AboutPage({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 11,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.18em",
                 color: T.teal,
@@ -8122,7 +8131,7 @@ function AboutPage({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 15,
+                fontSize: 16,
                 color: T.textMuted,
                 lineHeight: 1.75,
                 maxWidth: 560,
@@ -8151,7 +8160,7 @@ function AboutPage({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 11,
+                fontSize: 16,
                 letterSpacing: "0.16em",
                 color: T.gold,
                 textTransform: "uppercase",
@@ -8181,7 +8190,7 @@ function AboutPage({ setPage: e }) {
               style: {
                 fontFamily: "'Playfair Display', Georgia, serif",
                 fontStyle: "italic",
-                fontSize: 15,
+                fontSize: 16,
                 color: T.textMuted,
                 marginBottom: 6,
               },
@@ -8193,7 +8202,7 @@ function AboutPage({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 15,
+                fontSize: 16,
                 fontWeight: 600,
                 color: T.teal,
               },
@@ -8205,7 +8214,7 @@ function AboutPage({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 12,
+                fontSize: 16,
                 color: T.textMuted,
                 marginTop: 2,
               },
@@ -8284,7 +8293,7 @@ function AboutPage({ setPage: e }) {
                 {
                   style: {
                     fontFamily: "'Inter'",
-                    fontSize: 10,
+                    fontSize: 16,
                     fontWeight: 700,
                     letterSpacing: "0.16em",
                     color: T.gold,
@@ -8312,7 +8321,7 @@ function AboutPage({ setPage: e }) {
                 {
                   style: {
                     fontFamily: "'Inter'",
-                    fontSize: 14,
+                    fontSize: 16,
                     color: T.textMuted,
                     lineHeight: 1.75,
                   },
@@ -8351,7 +8360,7 @@ function AboutPage({ setPage: e }) {
           {
             style: {
               fontFamily: "'Inter'",
-              fontSize: 15,
+              fontSize: 16,
               color: "rgba(255,255,255,0.8)",
               lineHeight: 1.7,
               maxWidth: 540,
@@ -8372,7 +8381,7 @@ function AboutPage({ setPage: e }) {
               padding: "13px 32px",
               cursor: "pointer",
               fontFamily: "'Inter'",
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: 700,
             },
           },
@@ -8516,7 +8525,7 @@ function CertificationsPage({ setPage: e }) {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: 11,
+                      fontSize: 16,
                       color: e.color,
                       fontWeight: 600,
                       letterSpacing: "0.06em",
@@ -8531,7 +8540,7 @@ function CertificationsPage({ setPage: e }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 13,
+                  fontSize: 16,
                   color: T.textMuted,
                   lineHeight: 1.7,
                 },
@@ -8601,7 +8610,7 @@ function WholesalePage({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 12,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
                 color: T.teal,
@@ -8703,7 +8712,7 @@ function WholesalePage({ setPage: e }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 13,
+                  fontSize: 16,
                   color: T.textMuted,
                   lineHeight: 1.65,
                 },
@@ -8737,7 +8746,7 @@ function WholesalePage({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 12,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
                 color: T.teal,
@@ -8801,7 +8810,7 @@ function WholesalePage({ setPage: e }) {
                   },
                   React.createElement(
                     "span",
-                    { style: { color: "#fff", fontSize: 12, fontWeight: 700 } },
+                    { style: { color: "#fff", fontSize: 16, fontWeight: 700 } },
                     "✓",
                   ),
                 ),
@@ -8810,7 +8819,7 @@ function WholesalePage({ setPage: e }) {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: 14,
+                      fontSize: 16,
                       color: T.text,
                     },
                   },
@@ -8833,7 +8842,7 @@ function WholesalePage({ setPage: e }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 12,
+                  fontSize: 16,
                   fontWeight: 600,
                   color: T.teal,
                   textTransform: "uppercase",
@@ -8848,7 +8857,7 @@ function WholesalePage({ setPage: e }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 14,
+                  fontSize: 16,
                   color: T.textMuted,
                   lineHeight: 1.6,
                 },
@@ -8890,7 +8899,7 @@ function WholesalePage({ setPage: e }) {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 13,
+                fontSize: 16,
                 color: T.textMuted,
                 marginBottom: 24,
                 lineHeight: 1.6,
@@ -8927,7 +8936,7 @@ function WholesalePage({ setPage: e }) {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: 11,
+                      fontSize: 16,
                       fontWeight: 600,
                       color: T.teal,
                       textTransform: "uppercase",
@@ -8949,7 +8958,7 @@ function WholesalePage({ setPage: e }) {
                     borderRadius: 10,
                     border: "1.5px solid #e8e4de",
                     fontFamily: "'Inter'",
-                    fontSize: 14,
+                    fontSize: 16,
                     color: T.text,
                     background: "#fff",
                     outline: "none",
@@ -8966,7 +8975,7 @@ function WholesalePage({ setPage: e }) {
                 {
                   style: {
                     fontFamily: "'Inter'",
-                    fontSize: 11,
+                    fontSize: 16,
                     fontWeight: 600,
                     color: T.teal,
                     textTransform: "uppercase",
@@ -8989,7 +8998,7 @@ function WholesalePage({ setPage: e }) {
                   borderRadius: 10,
                   border: "1.5px solid #e8e4de",
                   fontFamily: "'Inter'",
-                  fontSize: 14,
+                  fontSize: 16,
                   color: T.text,
                   background: "#fff",
                   outline: "none",
@@ -9014,7 +9023,7 @@ function WholesalePage({ setPage: e }) {
                   border: "none",
                   borderRadius: 9999,
                   padding: "14px",
-                  fontSize: 15,
+                  fontSize: 16,
                   fontWeight: 700,
                   cursor: "pointer",
                   fontFamily: "'Inter'",
@@ -9059,7 +9068,7 @@ function ContactPage({ setPage: e }) {
       border: "1.5px solid #e0dcd4",
       borderRadius: 10,
       fontFamily: "'Inter'",
-      fontSize: 14,
+      fontSize: 16,
       color: T.text,
       background: T.white,
       outline: "none",
@@ -9163,7 +9172,7 @@ function ContactPage({ setPage: e }) {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: 11,
+                      fontSize: 16,
                       letterSpacing: "0.12em",
                       color: T.textMuted,
                       textTransform: "uppercase",
@@ -9177,7 +9186,7 @@ function ContactPage({ setPage: e }) {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: 15,
+                      fontSize: 16,
                       color: e.action ? T.teal : T.text,
                       fontWeight: e.action ? 500 : 400,
                     },
@@ -9202,7 +9211,7 @@ function ContactPage({ setPage: e }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 13,
+                  fontSize: 16,
                   color: "rgba(255,255,255,0.85)",
                   lineHeight: 1.7,
                   marginBottom: 14,
@@ -9222,7 +9231,7 @@ function ContactPage({ setPage: e }) {
                   padding: "10px 24px",
                   cursor: "pointer",
                   fontFamily: "'Inter'",
-                  fontSize: 13,
+                  fontSize: 16,
                   fontWeight: 600,
                 },
               },
@@ -9266,7 +9275,7 @@ function ContactPage({ setPage: e }) {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: 14,
+                      fontSize: 16,
                       color: T.textMuted,
                     },
                   },
@@ -9285,7 +9294,7 @@ function ContactPage({ setPage: e }) {
                       padding: "10px 28px",
                       cursor: "pointer",
                       fontFamily: "'Inter'",
-                      fontSize: 13,
+                      fontSize: 16,
                     },
                   },
                   "Send another",
@@ -9324,7 +9333,7 @@ function ContactPage({ setPage: e }) {
                     {
                       style: {
                         fontFamily: "'Inter'",
-                        fontSize: 12,
+                        fontSize: 16,
                         color: T.textMuted,
                         letterSpacing: "0.08em",
                         display: "block",
@@ -9351,7 +9360,7 @@ function ContactPage({ setPage: e }) {
                     {
                       style: {
                         fontFamily: "'Inter'",
-                        fontSize: 12,
+                        fontSize: 16,
                         color: T.textMuted,
                         letterSpacing: "0.08em",
                         display: "block",
@@ -9380,7 +9389,7 @@ function ContactPage({ setPage: e }) {
                     {
                       style: {
                         fontFamily: "'Inter'",
-                        fontSize: 12,
+                        fontSize: 16,
                         color: T.textMuted,
                         letterSpacing: "0.08em",
                         display: "block",
@@ -9415,7 +9424,7 @@ function ContactPage({ setPage: e }) {
                       padding: "14px",
                       cursor: "pointer",
                       fontFamily: "'Inter'",
-                      fontSize: 14,
+                      fontSize: 16,
                       fontWeight: 600,
                       transition: "filter 200ms",
                     },
@@ -9484,10 +9493,11 @@ function App() {
       React.createElement(
         ViewportCtx.Provider,
         { value: o },
-        React.createElement(ScrollProgress, null),
-        React.createElement(CursorGlow, null),
+        React.createElement("a", { href: "#main-content", style: { position: "fixed", top: 0, left: 0, background: "#173020", color: "#fff", padding: "8px 16px", zIndex: 10000, textDecoration: "none", borderRadius: "0 0 8px 0", fontSize: 14, fontWeight: 600, fontFamily: "'Inter', sans-serif" } }, "Skip to main content"),
+        React.createElement(ScrollProgress, { "aria-hidden": "true" }),
+        React.createElement(CursorGlow, { "aria-hidden": "true" }),
         React.createElement(Nav, { page: e, setPage: i }),
-        r,
+        React.createElement("div", { role: "main", id: "main-content" }, r),
         React.createElement(CartFAB, null),
         React.createElement(WhatsAppFAB, null),
       ),
@@ -9502,6 +9512,9 @@ function CartSheet({ onClose: e }) {
     React.createElement(
       "div",
       {
+        role: "dialog",
+        "aria-modal": "true",
+        "aria-label": "Shopping cart",
         style: {
           position: "fixed",
           inset: 0,
@@ -9561,7 +9574,7 @@ function CartSheet({ onClose: e }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 12,
+                  fontSize: 16,
                   color: T.textMuted,
                   marginTop: 2,
                 },
@@ -9576,6 +9589,7 @@ function CartSheet({ onClose: e }) {
             "button",
             {
               onClick: e,
+              "aria-label": "Close cart",
               style: {
                 background: "rgba(0,0,0,0.07)",
                 border: "none",
@@ -9653,7 +9667,7 @@ function CartSheet({ onClose: e }) {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: 13,
+                      fontSize: 16,
                       fontWeight: 600,
                       color: T.text,
                       marginBottom: 2,
@@ -9667,7 +9681,7 @@ function CartSheet({ onClose: e }) {
                   {
                     style: {
                       fontFamily: "'Inter'",
-                      fontSize: 13,
+                      fontSize: 16,
                       fontWeight: 700,
                       color: T.teal,
                     },
@@ -9770,7 +9784,7 @@ function CartSheet({ onClose: e }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 14,
+                  fontSize: 16,
                   color: T.textMuted,
                 },
               },
@@ -9837,7 +9851,7 @@ function CartSheet({ onClose: e }) {
                 border: "none",
                 borderRadius: 9999,
                 padding: "14px",
-                fontSize: 15,
+                fontSize: 16,
                 fontWeight: 700,
                 cursor: "pointer",
                 fontFamily: "'Inter'",
@@ -9901,6 +9915,8 @@ function CartFAB() {
           React.createElement(
             "div",
             {
+              "aria-live": "polite",
+              "aria-atomic": "true",
               style: {
                 position: "absolute",
                 top: -4,
@@ -9913,7 +9929,7 @@ function CartFAB() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: 11,
+                fontSize: 16,
                 fontWeight: 700,
                 fontFamily: "'Inter'",
               },
@@ -9940,7 +9956,7 @@ function AddToCartBtn({ tea: e, onAdded: t }) {
         border: "none",
         borderRadius: 9999,
         padding: "13px",
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: 700,
         cursor: "pointer",
         fontFamily: "'Inter'",

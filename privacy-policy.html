@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#15271B">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <title>Privacy Policy | Nevisan Tea</title>
     <meta name="description" content="Nevisan Tea's privacy policy outlining how we collect, use, and protect your personal information when you visit our website or purchase our products.">
     <link rel="canonical" href="https://nevisan.in/privacy-policy">
@@ -271,9 +273,28 @@
                 padding: 2rem 1.25rem;
             }
         }
+
+  /* Skip link for keyboard accessibility */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1a3c2a;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 10000;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0 0 4px 0;
+    transition: top 0.2s;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
     <nav class="nav" aria-label="Main navigation">
         <a class="nav-logo" href="https://nevisan.in">Nevisan</a>
@@ -281,7 +302,7 @@
     </nav>
 
     <!-- Page Content -->
-    <main class="content-wrapper">
+    <main class="content-wrapper" id="main-content">
         <header class="page-header">
             <h1 class="page-title">Privacy Policy</h1>
             <p class="page-meta">Last updated: August 1, 2026</p>

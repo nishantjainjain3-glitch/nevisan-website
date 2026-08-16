@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#15271B">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Buy Organic Green Tea Online India | Nevisan — Whole Leaf Assam Tea" />
+  <meta name="twitter:description" content="10 varieties of chemical-free whole-leaf tea from Golaghat, Assam. Lemongrass, GABA Oolong, Chamomile & more. MRP ₹499. Order on WhatsApp, Amazon, Flipkart." />
+  <meta name="twitter:image" content="https://nevisan.in/hero-bg.jpg" />
   <title>Tea Blog & Journal — Nevisan Tea</title>
   <meta name="description" content="Explore Nevisan's tea journal: guides on whole-leaf Assam tea, brewing techniques, health benefits, and the science behind your favourite blends.">
   <meta property="og:title" content="Tea Blog & Journal — Nevisan Tea">
@@ -213,9 +219,28 @@
       .cta-strip { padding: 36px 24px; }
       .cta-strip h2 { font-size: 22px; }
     }
+
+  /* Skip link for keyboard accessibility */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1a3c2a;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 10000;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0 0 4px 0;
+    transition: top 0.2s;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav>
     <a href="https://nevisan.in" class="nav-logo">NEVISAN</a>
     <div class="nav-right">
@@ -236,7 +261,7 @@
     <p>Deep dives into whole-leaf Assam tea, brewing mastery, health benefits, and the stories behind your favourite Nevisan blends.</p>
   </div>
 
-  <div class="main">
+  <div class="main" id="main-content">
     <div class="blog-grid">
       <a href="https://nevisan.in/journal/assam-whole-leaf-tea-guide.md" class="blog-card">
         <h3>The Complete Guide to Assam Whole Leaf Tea</h3>

@@ -1051,7 +1051,7 @@ function Hero({ setPage: e }) {
                   "opacity 0.8s ease-out 0.65s, transform 0.8s ease-out 0.65s",
               },
             },
-            "Nine varieties. One garden in Golaghat, Assam. Whole leaf, chemical-free, steeped in nothing but intention.",
+            "Ten varieties, one origin. One garden in Golaghat, Assam. Whole leaf, chemical-free, steeped in nothing but intention.",
           ),
           React.createElement(
             "div",

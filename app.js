@@ -1675,8 +1675,8 @@ function TagChip({ label: e, color: t }) {
 }
 function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
   const { isMobile: mobile } = useViewport();
-  const isFeatured = (n === 0 || n === 5 || n === 9) && !mobile;
-  const isMidHorizontal = (n === 3) && !mobile;
+  const isFeatured = false;
+  const isMidHorizontal = false;
   const [o, i] = useState(!1),
     [r, l] = useState(!1),
     [s, c] = useState({ x: 0, y: 0 }),
@@ -1807,9 +1807,9 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
         opacity: g ? 1 : 0,
         translate: g ? "0 0" : "0 32px",
         transitionDelay: 0.07 * n + "s",
-        gridColumn: (isFeatured || isMidHorizontal) ? "1 / -1" : "auto",
-        display: (isFeatured || isMidHorizontal) ? "grid" : "block",
-        gridTemplateColumns: isFeatured ? "1.2fr 0.8fr" : isMidHorizontal ? "0.8fr 1.2fr" : "none",
+        gridColumn: "auto",
+        display: "block",
+        gridTemplateColumns: "none",
       },
     },
     React.createElement(
@@ -1817,12 +1817,12 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
       {
         style: {
           background: e.bg,
-          height: (isFeatured || isMidHorizontal) ? "100%" : 200,
-          minHeight: (isFeatured || isMidHorizontal) ? 340 : 200,
+          height: 200,
+          minHeight: 200,
           overflow: "hidden",
           position: "relative",
           cursor: "zoom-in",
-          order: isMidHorizontal ? 2 : 1,
+          order: 1,
         },
         onClick: (t) => {
           (t.stopPropagation(), a && a(e.img, e.name));
@@ -1915,12 +1915,12 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
       "div",
       {
         style: {
-          padding: (isFeatured || isMidHorizontal) ? (mobile ? "20px" : "36px 40px") : "20px 20px 20px",
+          padding: "20px 20px 20px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           height: "100%",
-          order: isMidHorizontal ? 1 : 2,
+          order: 2,
         }
       },
       React.createElement(
@@ -1945,7 +1945,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
           style: {
             fontFamily: "'Playfair Display', Georgia, serif",
             fontWeight: 400,
-            fontSize: (isFeatured || isMidHorizontal) ? 28 : 18,
+            fontSize: 18,
             color: T.text,
             marginBottom: 8,
             lineHeight: 1.3,
@@ -1962,7 +1962,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
             color: T.textMuted,
             lineHeight: 1.55,
             marginBottom: 14,
-            minHeight: (isFeatured || isMidHorizontal) ? "auto" : 54,
+            minHeight: 54,
           },
         },
         e.short,

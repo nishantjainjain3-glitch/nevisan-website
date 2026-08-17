@@ -1271,6 +1271,7 @@ function RippleButton({
     ),
   );
 }
+const teaSlug = (name) => name.toLowerCase().replace(/\s+/g, "-");
 const TEAS = [
   {
     name: "Lemongrass Green Tea",
@@ -1674,7 +1675,7 @@ function TagChip({ label: e, color: t }) {
 }
 function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
   const { isMobile: mobile } = useViewport();
-  const isFeatured = (n === 0 || n === 6 || n === 9) && !mobile;
+  const isFeatured = (n === 0 || n === 5 || n === 9) && !mobile;
   const isMidHorizontal = (n === 3) && !mobile;
   const [o, i] = useState(!1),
     [r, l] = useState(!1),
@@ -1749,6 +1750,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
   return React.createElement(
     "div",
     {
+      id: teaSlug(e.name),
       ref: p,
       className: "card-hover-lift",
       onMouseEnter: () => i(!0),
@@ -2360,7 +2362,7 @@ function CollectionPage({}) {
     [a, n] = useState(null),
     [activeFilter, setActiveFilter] = useState("ALL"),
     { isMobile: o, isTablet: i } = useViewport(),
-    r = o ? "1fr" : "repeat(2, 1fr)";
+    r = o ? "1fr" : i ? "repeat(2, 1fr)" : "repeat(3, 1fr)";
   useEffect(() => {
     try {
       var __tea = new URLSearchParams(window.location.search).get("tea");
@@ -2378,6 +2380,7 @@ function CollectionPage({}) {
   return React.createElement(
     "div",
     {
+      id: "collection",
       style: {
         background: T.cream,
         minHeight: "100vh",
@@ -2506,7 +2509,7 @@ function CollectionPage({}) {
       React.createElement(
         "div",
         {
-          style: { display: "grid", gridTemplateColumns: r, gap: o ? 16 : 56 },
+          style: { display: "grid", gridTemplateColumns: r, gap: o ? 16 : 32 },
         },
         TEAS.filter(tea => {
           if (activeFilter === "ALL") return true;

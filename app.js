@@ -293,7 +293,7 @@ function NevLogo({ size: e = 56 }) {
     style: {
       width: e,
       height: e,
-      objectFit: "contain",
+      objectFit: "cover",
       borderRadius: 8,
       display: "block",
       mixBlendMode: "multiply",
@@ -869,7 +869,7 @@ function Hero({ setPage: e }) {
                 inset: 0,
                 width: "100%",
                 height: "100%",
-                objectFit: "contain",
+                objectFit: "cover",
                 objectPosition: "center",
                 filter: "saturate(1.1) brightness(0.78)",
               },
@@ -887,7 +887,7 @@ function Hero({ setPage: e }) {
                   inset: 0,
                   width: "100%",
                   height: "100%",
-                  objectFit: "contain",
+                  objectFit: "cover",
                   filter: "saturate(1.15) brightness(0.78)",
                 },
               },
@@ -1838,7 +1838,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
             style: {
               width: "100%",
               height: "100%",
-              objectFit: "contain",
+              objectFit: "cover",
               transform: o ? "scale(1.07)" : "scale(1)",
               transition: "transform 500ms ease",
             },
@@ -1919,6 +1919,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+          height: "100%",
           order: 2,
         }
       },
@@ -2606,7 +2607,7 @@ function CollectionPage({}) {
                             style: {
                               width: "100%",
                               height: "100%",
-                              objectFit: "contain",
+                              objectFit: "cover",
                             },
                           })
                         : React.createElement(
@@ -2991,7 +2992,7 @@ function CollectionPage({}) {
                           style: {
                             width: "100%",
                             height: "100%",
-                            objectFit: "contain",
+                            objectFit: "cover",
                           },
                         })
                       : React.createElement(
@@ -5227,7 +5228,7 @@ function CollectionSection({ setPage: e }) {
                             style: {
                               width: "100%",
                               height: "100%",
-                              objectFit: "contain",
+                              objectFit: "cover",
                             },
                           })
                         : React.createElement(
@@ -5606,7 +5607,7 @@ function CollectionSection({ setPage: e }) {
                           style: {
                             width: "100%",
                             height: "100%",
-                            objectFit: "contain",
+                            objectFit: "cover",
                           },
                         })
                       : React.createElement(
@@ -9646,7 +9647,7 @@ function CartSheet({ onClose: e }) {
                       style: {
                         width: "100%",
                         height: "100%",
-                        objectFit: "contain",
+                        objectFit: "cover",
                       },
                     })
                   : React.createElement(

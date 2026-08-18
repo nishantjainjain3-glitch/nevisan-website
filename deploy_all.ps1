@@ -58,4 +58,5 @@ function Upload-File($localPath, $githubPath, $commitMessage) {
 Write-Output "Starting full deployment..."
 Upload-File (Join-Path $PSScriptRoot "index.html") "index.html" "Deploy production index.html - luxury color theme, leaf canvas background"
 Upload-File (Join-Path $PSScriptRoot "app.js") "app.js" "Deploy production app.js - forest green theme, interactive brewing, Guestbook headers, staggered cards"
+Upload-File (Join-Path $PSScriptRoot "faq/index.html") "faq/index.html" "Deploy FAQ page - 100+ questions about Nevisan tea"
 Write-Output "Full deployment complete!"

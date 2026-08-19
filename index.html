@@ -232,23 +232,22 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
             "handlingTime": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitCode": "DAY" },
             "transitTime": { "@type": "QuantitativeValue", "minValue": "3", "maxValue": "5", "unitCode": "DAY" }
           }
-        ,
+        }
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
         "reviewCount": "128",
         "bestRating": "5",
         "worstRating": "1"
-      }
-    },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "IN",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnAllowed",
-          "merchantReturnDays": "10",
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
-        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "IN",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnAllowed",
+        "merchantReturnDays": "10",
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
       }
     },
     {
@@ -929,15 +928,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           el.style.transform = `translate3d(0, ${yOffset}px, 0)`;
           el.style.setProperty('--parallax-y', `${yOffset}px`);
         }
-      ,
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "128",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    });
+      });
       requestAnimationFrame(updateParallax);
     }
     window.addEventListener('DOMContentLoaded', () => {

@@ -293,7 +293,7 @@ function NevLogo({ size: e = 56 }) {
     style: {
       width: e,
       height: e,
-      objectFit: "contain",
+      objectFit: "cover",
       borderRadius: 8,
       display: "block",
       mixBlendMode: "multiply",
@@ -518,7 +518,7 @@ function Nav({ page: e, setPage: t }) {
                   color: T.tealDark,
                   border: "none",
                   borderRadius: 9999,
-                  padding: "9px 22px",
+                  padding: "14px 22px",
                   fontSize: 16,
                   fontWeight: 600,
                   cursor: "pointer",
@@ -553,7 +553,7 @@ function Nav({ page: e, setPage: t }) {
                   color: "#fff",
                   border: "none",
                   borderRadius: 9999,
-                  padding: "7px 14px",
+                  padding: "14px 14px",
                   fontSize: 16,
                   fontWeight: 600,
                   cursor: "pointer",
@@ -573,7 +573,7 @@ function Nav({ page: e, setPage: t }) {
                   background: "none",
                   border: "none",
                   cursor: "pointer",
-                  padding: 4,
+                  padding: "14px",
                 },
               },
               React.createElement(HamburgerIcon, { open: r }),
@@ -648,7 +648,7 @@ function Nav({ page: e, setPage: t }) {
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 28,
                   fontWeight: 400,
-                  color: e === t ? T.gold : "rgba(255,255,255,0.85)",
+                  color: e === t ? "#D4AF37" : "rgba(255,255,255,0.85)",
                   padding: "14px 0",
                   borderBottom:
                     n < a.length - 1
@@ -794,7 +794,7 @@ function Ticker() {
           },
           React.createElement(
             "span",
-            { style: { color: T.gold, fontSize: 12 } },
+            { style: { color: T.gold, fontSize: 14 } },
             "●",
           ),
           e,
@@ -869,7 +869,7 @@ function Hero({ setPage: e }) {
                 inset: 0,
                 width: "100%",
                 height: "100%",
-                objectFit: "contain",
+                objectFit: "cover",
                 objectPosition: "center",
                 filter: "saturate(1.1) brightness(0.78)",
               },
@@ -887,7 +887,7 @@ function Hero({ setPage: e }) {
                   inset: 0,
                   width: "100%",
                   height: "100%",
-                  objectFit: "contain",
+                  objectFit: "cover",
                   filter: "saturate(1.15) brightness(0.78)",
                 },
               },
@@ -950,7 +950,7 @@ function Hero({ setPage: e }) {
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.18em",
-                color: T.gold,
+                color: "#D4AF37",
                 textTransform: "uppercase",
                 marginBottom: 24,
                 opacity: t ? 1 : 0,
@@ -1002,7 +1002,7 @@ function Hero({ setPage: e }) {
               },
             },
             React.createElement(
-              "h1",
+              "span",
               {
                 style: {
                   fontFamily: "'Playfair Display', Georgia, serif",
@@ -1010,7 +1010,7 @@ function Hero({ setPage: e }) {
                   fontStyle: "italic",
                   fontSize: "clamp(44px, 5.5vw, 78px)",
                   lineHeight: 1.08,
-                  color: T.gold,
+                  color: "#D4AF37",
                   opacity: t ? 1 : 0,
                   transform: t ? "translateY(0)" : "translateY(40px)",
                   transition:
@@ -1838,7 +1838,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
             style: {
               width: "100%",
               height: "100%",
-              objectFit: "contain",
+              objectFit: "cover",
               transform: o ? "scale(1.07)" : "scale(1)",
               transition: "transform 500ms ease",
             },
@@ -1919,6 +1919,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+          height: "100%",
           order: 2,
         }
       },
@@ -2054,7 +2055,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
                 color: T.teal,
                 border: `1px solid ${T.teal}`,
                 borderRadius: 8,
-                padding: "7px 14px",
+                padding: "14px 14px",
                 fontSize: 16,
                 fontWeight: 500,
                 cursor: "pointer",
@@ -2109,6 +2110,14 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
               onClick: (e) => {
                 (e.stopPropagation(), m(!1));
               },
+              onKeyDown: (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  m(!1);
+                }
+              },
+              role: "button",
+              tabIndex: 0,
               style: { position: "fixed", inset: 0, zIndex: 49 },
             }),
           d &&
@@ -2285,6 +2294,9 @@ function ImageLightbox({ img: e, name: t, onClose: a }) {
       "div",
       {
         onClick: a,
+        role: "dialog",
+        "aria-modal": "true",
+        "aria-label": "Image preview",
         style: {
           position: "fixed",
           inset: 0,
@@ -2492,7 +2504,7 @@ function CollectionPage({}) {
                 color: isSelected ? "#F8F6F2" : "#1F2E24",
                 border: isSelected ? "1px solid #1F2E24" : "1px solid rgba(31, 46, 36, 0.1)",
                 borderRadius: 9999,
-                padding: o ? "6px 14px" : "8px 20px",
+                padding: o ? "14px 14px" : "14px 20px",
                 fontSize: 16,
                 fontWeight: 600,
                 cursor: "pointer",
@@ -2606,7 +2618,7 @@ function CollectionPage({}) {
                             style: {
                               width: "100%",
                               height: "100%",
-                              objectFit: "contain",
+                              objectFit: "cover",
                             },
                           })
                         : React.createElement(
@@ -2700,6 +2712,7 @@ function CollectionPage({}) {
                         onClick: (e) => {
                           (e.stopPropagation(), t(null));
                         },
+                        "aria-label": "Close",
                         style: {
                           position: "absolute",
                           top: 14,
@@ -2786,7 +2799,7 @@ function CollectionPage({}) {
                             color: "#fff",
                             border: "none",
                             borderRadius: 9999,
-                            padding: "9px",
+                            padding: "14px",
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
@@ -2810,7 +2823,7 @@ function CollectionPage({}) {
                             color: "#fff",
                             border: "none",
                             borderRadius: 9999,
-                            padding: "9px",
+                            padding: "14px",
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
@@ -2991,7 +3004,7 @@ function CollectionPage({}) {
                           style: {
                             width: "100%",
                             height: "100%",
-                            objectFit: "contain",
+                            objectFit: "cover",
                           },
                         })
                       : React.createElement(
@@ -4069,7 +4082,6 @@ function ReviewForm() {
       fontSize: 16,
       color: "#1a1a1a",
       background: "#fff",
-      outline: "none",
       boxSizing: "border-box",
       transition: "border-color 200ms",
     };
@@ -4636,7 +4648,7 @@ function Footer({ setPage: e }) {
                 fontFamily: "'Inter'",
                 fontSize: 16,
                 lineHeight: 1.7,
-                color: "rgba(255,255,255,0.55)",
+                color: "rgba(255,255,255,0.7)",
                 marginTop: 20,
                 maxWidth: 280,
               },
@@ -4655,7 +4667,7 @@ function Footer({ setPage: e }) {
                 color: "#fff",
                 border: "none",
                 borderRadius: 9999,
-                padding: "9px 20px",
+                padding: "14px 20px",
                 fontSize: 16,
                 fontWeight: 600,
                 cursor: "pointer",
@@ -4691,7 +4703,7 @@ function Footer({ setPage: e }) {
                   padding: "5px 12px",
                   fontFamily: "'Inter'",
                   fontSize: 16,
-                  color: "rgba(255,255,255,0.4)",
+                  color: "rgba(255,255,255,0.6)",
                   letterSpacing: "0.06em",
                 },
               },
@@ -4706,7 +4718,7 @@ function Footer({ setPage: e }) {
                   padding: "5px 12px",
                   fontFamily: "'Inter'",
                   fontSize: 16,
-                  color: "rgba(255,255,255,0.4)",
+                  color: "rgba(255,255,255,0.6)",
                   letterSpacing: "0.06em",
                 },
               },
@@ -4725,7 +4737,7 @@ function Footer({ setPage: e }) {
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
-                color: T.gold,
+                color: "#D4AF37",
                 textTransform: "uppercase",
                 marginBottom: 20,
               },
@@ -4776,7 +4788,7 @@ function Footer({ setPage: e }) {
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
-                color: T.gold,
+                color: "#D4AF37",
                 textTransform: "uppercase",
                 marginBottom: 20,
               },
@@ -4830,7 +4842,7 @@ function Footer({ setPage: e }) {
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
-                color: T.gold,
+                color: "#D4AF37",
                 textTransform: "uppercase",
                 marginBottom: 20,
               },
@@ -5227,7 +5239,7 @@ function CollectionSection({ setPage: e }) {
                             style: {
                               width: "100%",
                               height: "100%",
-                              objectFit: "contain",
+                              objectFit: "cover",
                             },
                           })
                         : React.createElement(
@@ -5321,6 +5333,7 @@ function CollectionSection({ setPage: e }) {
                         onClick: (e) => {
                           (e.stopPropagation(), l(null));
                         },
+                        "aria-label": "Close",
                         style: {
                           position: "absolute",
                           top: 0,
@@ -5407,7 +5420,7 @@ function CollectionSection({ setPage: e }) {
                             color: "#fff",
                             border: "none",
                             borderRadius: 9999,
-                            padding: "9px",
+                            padding: "14px",
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
@@ -5431,7 +5444,7 @@ function CollectionSection({ setPage: e }) {
                             color: "#fff",
                             border: "none",
                             borderRadius: 9999,
-                            padding: "9px",
+                            padding: "14px",
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
@@ -5606,7 +5619,7 @@ function CollectionSection({ setPage: e }) {
                           style: {
                             width: "100%",
                             height: "100%",
-                            objectFit: "contain",
+                            objectFit: "cover",
                           },
                         })
                       : React.createElement(
@@ -6299,7 +6312,8 @@ function HowToBrewSection() {
 
   useEffect(() => {
     if (!isBrewing) return;
-    
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     let animFrame;
     const start = Date.now();
     const duration = time * 4000;
@@ -6352,6 +6366,7 @@ function HowToBrewSection() {
   useEffect(() => {
     const canvas = steamCanvasRef.current;
     if (!canvas) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const ctx = canvas.getContext('2d');
     
     let animFrame;
@@ -6519,7 +6534,7 @@ function HowToBrewSection() {
                     fontSize: 16,
                     fontWeight: 600,
                     letterSpacing: "0.14em",
-                    color: T.gold,
+                    color: "#D4AF37",
                     textTransform: "uppercase"
                   }
                 },
@@ -6602,6 +6617,7 @@ function HowToBrewSection() {
               max: 100,
               value: temp,
               disabled: isBrewing,
+              "aria-label": "Water temperature",
               onChange: (x) => {
                 setTemp(Number(x.target.value));
                 setStatusText(`Ready to steep at ${x.target.value}°C for ${time} Min`);
@@ -6611,9 +6627,10 @@ function HowToBrewSection() {
                 height: 4,
                 background: "rgba(255,255,255,0.15)",
                 borderRadius: 2,
-                outline: "none",
                 cursor: isBrewing ? "not-allowed" : "pointer"
               }
+              onFocus: (e) => (e.target.style.boxShadow = "0 0 0 3px rgba(27,122,130,0.4)"),
+              onBlur: (e) => (e.target.style.boxShadow = "none")
             })
           ),
           React.createElement(
@@ -6631,6 +6648,7 @@ function HowToBrewSection() {
               max: 6,
               value: time,
               disabled: isBrewing,
+              "aria-label": "Steeping time",
               onChange: (x) => {
                 setTime(Number(x.target.value));
                 setStatusText(`Ready to steep at ${temp}°C for ${x.target.value} Min`);
@@ -6640,9 +6658,10 @@ function HowToBrewSection() {
                 height: 4,
                 background: "rgba(255,255,255,0.15)",
                 borderRadius: 2,
-                outline: "none",
                 cursor: isBrewing ? "not-allowed" : "pointer"
               }
+              onFocus: (e) => (e.target.style.boxShadow = "0 0 0 3px rgba(27,122,130,0.4)"),
+              onBlur: (e) => (e.target.style.boxShadow = "none")
             })
           ),
           React.createElement(
@@ -6693,7 +6712,7 @@ function HowToBrewSection() {
             React.createElement("div", { className: "glass-mug-outline" }),
             React.createElement("div", { className: "glass-mug-inner-wall" }),
             React.createElement("div", { className: "glass-mug-handle" }),
-            React.createElement("canvas", { ref: steamCanvasRef, id: "steam-canvas" }),
+            React.createElement("canvas", { ref: steamCanvasRef, id: "steam-canvas", "aria-hidden": "true" }),
             React.createElement(
               "div",
               {
@@ -6801,33 +6820,312 @@ function FAQSection() {
         "div",
         { style: { display: "flex", flexDirection: "column", gap: 12 } },
         [
+          // ── About Nevisan ──
           {
-            q: "Do you deliver across India?",
-            a: "Yes! We deliver pan-India via Amazon and Flipkart. You can also order directly on WhatsApp for personal assistance.",
+            q: "What is Nevisan tea?",
+            a: "Nevisan is a single-origin, whole-leaf tea brand from Golaghat, Assam. Every variety — from Lemongrass Green to GABA Oolong — is sourced from one PGS-India certified organic garden. No pesticides, no artificial flavours, no blending with inferior leaves. The brand was founded on a simple conviction: the world's finest tea region should produce tea that Indians can actually taste and afford.",
           },
           {
-            q: "How long does delivery take?",
-            a: "Amazon and Flipkart orders typically arrive in 3–5 business days. WhatsApp orders are dispatched within 24 hours.",
+            q: "Where is Nevisan tea grown?",
+            a: "All Nevisan teas are sourced from a single garden in Golaghat, upper Assam — one of India's most mineral-rich tea-growing regions. The Brahmaputra valley soil, extreme humidity (averaging 80% year-round) and seasonal temperature variation create exceptional depth and complexity in the leaves.",
           },
           {
-            q: "What is the shelf life of the tea?",
-            a: "All Nevisan teas have a shelf life of 24 months from the date of manufacture when stored in a cool, dry place away from direct sunlight.",
+            q: "Is Nevisan tea organic and chemical-free?",
+            a: "Yes. Every batch is PGS-India organic certified — grown without synthetic pesticides, herbicides or chemical fertilisers. Nevisan also batch-tests for pesticide residues. From soil to seal, completely chemical-free.",
           },
           {
-            q: "Is your tea organic and chemical free?",
-            a: "Yes. Every batch is PGS-India organic certified and grown without pesticides or chemicals. From soil to seal, we stand by that commitment.",
+            q: "What makes Nevisan different from supermarket tea?",
+            a: "Most supermarket tea uses CTC — Cut, Tear, Curl — which reduces whole leaves to granules for fast, strong brewing. Nevisan uses 100% whole leaf that can be steeped 2–3 times, retaining more L-theanine, EGCG antioxidants and essential oils.",
+          },
+          {
+            q: "How many varieties does Nevisan offer?",
+            a: "Nevisan currently offers ten varieties: Lemongrass Green, Blue Flower Green, Rum Green, Spearmint Green, Tulsi Green, Chamomile Green, Whiskey Green, GABA Oolong, Organic Green Tea, and Ginger Green Tea. Each is whole-leaf, single-origin and PGS-India certified organic.",
+          },
+          {
+            q: "Who founded Nevisan and why?",
+            a: "Nevisan was founded by a team from Guwahati, Assam, frustrated by one observation: Golaghat grows tea that buyers in Japan and Europe pay a premium for, yet most Indians drink mass-produced CTC dust. The founders went back to the garden to bring the whole leaf, directly to Indian homes.",
+          },
+          {
+            q: "Is Nevisan a D2C brand?",
+            a: "Yes — Nevisan sells directly to customers via Amazon, Flipkart and WhatsApp (+91 98642 45687). The WhatsApp channel allows direct conversation with the founders, who respond personally to questions about which tea is right for you.",
+          },
+          {
+            q: "Does Nevisan have a physical store?",
+            a: "Currently Nevisan operates exclusively online via Amazon, Flipkart and WhatsApp. There is no physical retail store. This direct model keeps costs lower and ensures every pack is fresh — not sitting on a shelf for months.",
+          },
+          {
+            q: "Is Nevisan tea FSSAI approved?",
+            a: "Yes. All Nevisan teas are FSSAI licensed and comply with Food Safety and Standards Authority of India regulations. The FSSAI license number is printed on every pack.",
+          },
+          {
+            q: "Can I visit the Nevisan tea garden?",
+            a: "The garden is in Golaghat, Assam and is not currently open for public visits. However, Nevisan documents the garden and processing through its journal and Instagram. You can follow @nevisan.tea for behind-the-scenes content.",
+          },
+          {
+            q: "What is the story behind the name Nevisan?",
+            a: "The name 'Nevisan' combines 'Ne' from the founders' vision of naturalness and 'visan' from the Sanskrit word for poison/toxin — reflecting the brand's commitment to pure, chemical-free teas that detoxify and nourish the body.",
+          },
+          {
+            q: "How much does Nevisan tea cost?",
+            a: "All Nevisan teas are priced at MRP ₹499 for a 50g pack. Each pack makes 25+ cups steeped once, or 50–75 cups when re-steeped. That works out to ₹6–10 per cup — less than café tea and comparable to premium tea bags, but with dramatically better quality.",
+          },
+          {
+            q: "Which Nevisan tea should I buy first?",
+            a: "Depends on your goal: General wellness + energy: Lemongrass Green or Organic Green. Hormonal health / PCOS: Spearmint Green. Sleep and anxiety: GABA Oolong or Chamomile Green. Stress / immunity: Tulsi Green. Unusual evening ritual: Rum Green or Whiskey Green. Antioxidants + visual wow: Blue Flower Green. If still unsure, take the Tea Quiz on the website.",
+          },
+          // ── Product Varieties ──
+          {
+            q: "What does Lemongrass Green Tea taste like?",
+            a: "Bright, citrusy and refreshing. The lemongrass gives a clean lemon-like note without sourness. The green tea base adds a grassy, slightly sweet undertone. It brews a pale golden colour and is light enough to drink without sweetener — though a small amount of honey enhances it beautifully.",
+          },
+          {
+            q: "What are the benefits of Lemongrass Green Tea?",
+            a: "Lemongrass green tea offers multiple benefits: aids digestion by relaxing the digestive tract, acts as a natural diuretic, supports metabolism, and has mild antimicrobial properties that benefit gut health. Combined with Assam green tea, it also delivers EGCG antioxidants and L-theanine for calm, sustained focus.",
+          },
+          {
+            q: "Is lemongrass tea good for digestion?",
+            a: "Yes — lemongrass contains compounds that relax the smooth muscle of the digestive tract, relieving bloating, cramps and indigestion. Best consumed 30 minutes after meals.",
+          },
+          {
+            q: "Does lemongrass tea help with weight loss?",
+            a: "Lemongrass acts as a mild diuretic and metabolism supporter, and the green tea base contains EGCG which is linked to fat oxidation. The effect is real but modest — consistent daily consumption as part of a balanced diet and active lifestyle is where results come from.",
+          },
+          {
+            q: "When is the best time to drink lemongrass green tea?",
+            a: "Morning (after breakfast) or mid-morning is ideal — the caffeine provides clean energy and the lemongrass supports digestion. Also excellent after lunch. Avoid after 5pm if you are caffeine-sensitive.",
+          },
+          {
+            q: "Can pregnant women drink lemongrass tea?",
+            a: "Lemongrass in large quantities is generally not recommended during pregnancy as it may stimulate uterine contractions. One occasional cup is considered low-risk, but we recommend consulting your doctor before drinking it regularly.",
+          },
+          {
+            q: "What is Blue Flower Green Tea?",
+            a: "Blue Flower Green Tea is a premium blend of whole-leaf Assam green tea with butterfly pea flowers (Clitoria ternatea). The flowers produce a vivid cobalt-blue brew rich in anthocyanin antioxidants. When you add lemon, the tea transforms from blue to purple — a natural pH reaction, no dyes involved.",
+          },
+          {
+            q: "Why does Blue Flower tea change colour with lemon?",
+            a: "The colour change is a natural pH reaction. The anthocyanins in butterfly pea flower act as natural pH indicators — blue in neutral pH, shifting to violet and pink as acidity increases. Adding lemon juice triggers this shift instantly. Pure botany, no tricks.",
+          },
+          {
+            q: "What are the benefits of Blue Flower Green Tea?",
+            a: "Butterfly pea flower is rich in anthocyanins linked to cognitive function, reduced oxidative stress and mild anti-anxiety effects. Some research points to proanthocyanidins helping with skin elasticity and eye health. Combined with green tea, you also get EGCG, L-theanine and moderate caffeine for sustained focus.",
+          },
+          {
+            q: "What does Blue Flower Green Tea taste like?",
+            a: "Mildly earthy and slightly woody from the butterfly pea petals, with the grassy freshness of Assam green tea underneath. The flavour is subtle — the visual impact is more dramatic than the taste. With lemon and honey it becomes a bright, lightly floral drink.",
+          },
+          {
+            q: "Can I make iced Blue Flower tea?",
+            a: "Absolutely — it is spectacular as iced tea. Cold-brew in cold water for 6–8 hours in the fridge for a deep cobalt blue. Pour over ice, then add lemon at the table for a live colour change from blue to purple.",
+          },
+          {
+            q: "Is Blue Flower Green Tea safe to drink daily?",
+            a: "Yes. Butterfly pea flower has been consumed as a traditional beverage in Southeast Asia for centuries. People on blood thinners should consult a doctor before consuming regularly, as some research suggests mild anticoagulant properties in high doses.",
+          },
+          {
+            q: "Does Rum Green Tea contain alcohol?",
+            a: "No — zero alcohol. Nevisan Rum Green Tea is made entirely from natural botanicals that evoke the warmth and character of aged rum. No alcohol, no artificial flavouring, no additives. It is completely safe for non-drinkers, people in recovery, children and pregnant women.",
+          },
+          {
+            q: "What does Rum Green Tea taste like?",
+            a: "The first sip is warm and slightly sweet. The mid-palate opens up with herbal depth and a hint of spice. The finish is clean with a warm, lingering quality that resembles the sensation of a small sip of aged rum — without the alcohol. Bold, exotic and perfect as an evening ritual.",
+          },
+          {
+            q: "How was Rum Green Tea made?",
+            a: "It took 14 attempts over several months. The challenge: rum's complexity comes from barrel ageing — hundreds of interacting compounds developed over years. The Nevisan team built the flavour from multiple natural elements using a cold-infusion technique. Attempt 14 got it right. No changes since.",
+          },
+          {
+            q: "When should I drink Rum Green Tea?",
+            a: "The best time is in the late afternoon or evening (5pm onwards) as a relaxing, warming, zero-alcohol alternative to cocktails. Because it contains whole-leaf Assam green tea with mild caffeine, if you are very caffeine-sensitive, enjoy it before 8pm.",
+          },
+          {
+            q: "Is Rum Green Tea good for relaxation?",
+            a: "Yes — the combination of green tea L-theanine (calm focus) and the warm rum flavour creates a soothing, meditative experience. It's perfect for evening relaxation without the sedative effects of chamomile.",
+          },
+          {
+            q: "What is Spearmint Green Tea good for?",
+            a: "Spearmint Green Tea is particularly beneficial for hormonal health, especially PCOS. Spearmint has been shown to reduce excess androgens and support balanced hormone levels. It also aids digestion, freshens breath and provides a cooling, refreshing taste.",
+          },
+          {
+            q: "Is spearmint tea good for PCOS?",
+            a: "Yes — several studies show that spearmint tea can significantly reduce free testosterone levels and improve hormone balance in women with PCOS. It also helps with hirsutism (excess hair growth) and supports overall reproductive health. Drink 1–2 cups daily for best results.",
+          },
+          {
+            q: "What does Spearmint Green Tea taste like?",
+            a: "Cool, refreshing and mildly sweet. The spearmint gives a clean, cooling sensation without the sharpness of peppermint. The Assam green tea base adds a malty depth that balances the mint. Delicious hot or iced, and naturally caffeine-free in terms of the mint's effect.",
+          },
+          {
+            q: "What is Tulsi Green Tea good for?",
+            a: "Tulsi (holy basil) is one of India's most revered medicinal plants. Tulsi Green Tea supports immunity, reduces stress, helps with respiratory health and has anti-inflammatory properties. It is an excellent daily wellness tea, especially during seasonal changes and monsoon.",
+          },
+          {
+            q: "What does Tulsi Green Tea taste like?",
+            a: "Earthy, slightly peppery and aromatic. The Tulsi adds a distinctive clove-like depth that pairs beautifully with the grassy Assam green tea base. It has a warm, comforting character — perfect for morning or early evening.",
+          },
+          {
+            q: "What is Chamomile Green Tea good for?",
+            a: "Chamomile is renowned for its calming and sleep-supporting properties. Chamomile Green Tea helps with anxiety, insomnia, digestive discomfort and mild inflammation. The combination with green tea adds antioxidants while chamomile provides gentle relaxation without drowsiness during the day.",
+          },
+          {
+            q: "Can I drink Chamomile Green Tea before bed?",
+            a: "Yes — chamomile is one of the best bedtime teas. It promotes relaxation and can help with sleep quality. The small amount of caffeine from the green tea base is minimal, but if you are very sensitive, you may want to drink it 1–2 hours before bed.",
+          },
+          {
+            q: "What is GABA Oolong Tea?",
+            a: "GABA Oolong is a speciality tea where the leaves are processed in a nitrogen-rich environment to increase Gamma-Aminobutyric Acid (GABA) content. GABA is a neurotransmitter that promotes relaxation, reduces anxiety and may help with sleep quality. It is a unique, functional tea with a rich, mellow flavour.",
+          },
+          {
+            q: "What are the benefits of GABA Oolong Tea?",
+            a: "GABA Oolong may help reduce stress and anxiety, promote relaxation, improve sleep quality and support focus without jitters. The oolong processing gives it a smooth, partially oxidised flavour that is richer than green tea but lighter than black tea.",
+          },
+          {
+            q: "What does GABA Oolong Tea taste like?",
+            a: "Rich, mellow and smooth with a subtle roasted note. The GABA processing gives it a distinctive umami depth that is both satisfying and calming. It has less astringency than green tea and a lingering, pleasant aftertaste.",
+          },
+          {
+            q: "What is Whiskey Green Tea?",
+            a: "Whiskey Green Tea is a creative blend of whole-leaf Assam green tea with natural botanicals that evoke the warm, smoky character of aged whiskey. Like Rum Green Tea, it is 100% non-alcoholic — a sensory experience, not an alcoholic beverage. It is perfect as an evening wind-down ritual.",
+          },
+          {
+            q: "What does Whiskey Green Tea taste like?",
+            a: "Warm, smoky and slightly sweet with a hint of oak and spice. The natural botanicals create a complex flavour profile reminiscent of aged whiskey — without a drop of alcohol. Smooth, warming and perfect for slow sipping in the evening.",
+          },
+          {
+            q: "What is Organic Green Tea?",
+            a: "Organic Green Tea is Nevisan's classic, pure whole-leaf Assam green tea with no added botanicals or flavours. It is the foundation of the Nevisan range — simple, clean and showcasing the natural character of Golaghat tea. Rich in EGCG antioxidants, L-theanine and moderate caffeine.",
+          },
+          {
+            q: "What does Organic Green Tea taste like?",
+            a: "Clean, grassy and slightly sweet with a subtle malty undertone from the Assam terroir. It is the purest expression of Nevisan's whole-leaf philosophy — no added flavours, just the tea as it grows. Light, refreshing and endlessly re-steepable.",
+          },
+          {
+            q: "What is Ginger Green Tea?",
+            a: "Ginger Green Tea blends whole-leaf Assam green tea with natural dried ginger. It is a warming, spicy blend that combines the antioxidants of green tea with ginger's digestive and anti-inflammatory properties. Perfect for cold weather, monsoon and post-meal digestion.",
+          },
+          {
+            q: "What does Ginger Green Tea taste like?",
+            a: "Warm, spicy and invigorating. The ginger provides a clean heat that builds gradually, while the green tea base adds freshness and balance. It is naturally energising and comforting — excellent with a touch of honey on cold mornings.",
+          },
+          // ── Brewing & Storage ──
+          {
+            q: "How do I brew Nevisan green tea?",
+            a: "Use 1 teaspoon (≈2g) of whole-leaf tea per 200ml of water. Heat water to 80–85°C (not boiling — boiling water burns green tea leaves and makes it bitter). Steep for 2–3 minutes for the first infusion. For the second steep, add 30 seconds to the timing. Whole-leaf tea can typically be steeped 2–3 times.",
+          },
+          {
+            q: "What is the ideal water temperature for green tea?",
+            a: "80–85°C is ideal for green tea. Boiling water (100°C) burns the delicate leaves, releasing excessive tannins that cause bitterness. If you don't have a temperature-controlled kettle, bring water to a boil, then let it sit uncovered for 2–3 minutes before pouring.",
           },
           {
             q: "Can the tea be steeped more than once?",
-            a: "Absolutely. Because we use 100% whole leaf tea, most of our varieties can be steeped twice — the second cup is just as rewarding.",
+            a: "Absolutely. Because we use 100% whole leaf tea, most of our varieties can be steeped twice — the second cup is just as rewarding. Some varieties like GABA Oolong and Organic Green Tea can even be steeped 3 times. Each steep releases different flavour compounds.",
           },
           {
-            q: "Do you offer bulk or wholesale orders?",
-            a: "Yes! For bulk orders for hotels, cafes, offices or gifting, reach out to us directly on WhatsApp at +91 98642 45687.",
+            q: "What is the shelf life of the tea?",
+            a: "All Nevisan teas have a shelf life of 24 months from the date of manufacture when stored in a cool, dry place away from direct sunlight. The vacuum-sealed packs preserve freshness for the full shelf life.",
           },
+          {
+            q: "How should I store my Nevisan tea?",
+            a: "Store in a cool, dry place away from direct sunlight, moisture and strong odours. Keep the pack sealed when not in use. Avoid storing in the fridge unless you live in an extremely hot, humid climate — condensation can damage the leaves when removed from cold storage.",
+          },
+          {
+            q: "Can I use a tea infuser or strainer?",
+            a: "Yes — a mesh infuser or strainer works perfectly. For the best experience, use a wide infuser that allows the leaves room to unfurl. Tight infusers restrict leaf expansion and can result in a weaker brew. A simple muslin bag or a glass teapot with a built-in strainer also works well.",
+          },
+          {
+            q: "How much tea should I use per cup?",
+            a: "1 teaspoon (≈2g) of whole-leaf tea per 200ml of water is the standard ratio. For a stronger brew, use 1.5 teaspoons. For a lighter brew, use ¾ teaspoon. Adjust to your taste — whole-leaf tea is forgiving and rewards experimentation.",
+          },
+          // ── Ordering & Delivery ──
+          {
+            q: "Where can I buy Nevisan tea?",
+            a: "Nevisan tea is available on Amazon India, Flipkart, and via WhatsApp direct orders at +91 98642 45687. You can also order directly through our website. For corporate gifting and bulk orders, contact us on WhatsApp.",
+          },
+          {
+            q: "Do you deliver across India?",
+            a: "Yes! We deliver pan-India via Amazon and Flipkart. You can also order directly on WhatsApp for personal assistance with variety selection and order tracking.",
+          },
+          {
+            q: "How long does delivery take?",
+            a: "Amazon and Flipkart orders typically arrive in 3–5 business days for most cities, and 5–7 days for Tier 2/3 cities and remote areas. WhatsApp orders are dispatched within 24 hours of confirmation.",
+          },
+          {
+            q: "Is delivery free?",
+            a: "Delivery charges depend on your Amazon or Flipkart account type and order value. Amazon Prime members typically get free delivery. For WhatsApp direct orders, shipping cost is minimal and communicated transparently before order confirmation.",
+          },
+          {
+            q: "Can I order on WhatsApp?",
+            a: "Yes — WhatsApp ordering at +91 98642 45687 is available and recommended for first-time buyers. The founders respond personally, help you choose the right variety, and confirm your order directly. Payment is via UPI, bank transfer or any standard method.",
+          },
+          {
+            q: "Can I buy a sample or trial pack?",
+            a: "Currently all teas are available as individual 50g packs. You can message on WhatsApp (+91 98642 45687) to ask for recommendations before purchasing — the team will help you narrow down to 1–2 varieties most suited to your taste and health goals.",
+          },
+          {
+            q: "Are there any discount offers available?",
+            a: "Yes! We regularly offer launch discounts, bundle deals and festival offers. Subscribe to our WhatsApp channel or follow us on Instagram (@nevisan.tea) for the latest deals. First-time customers often get a special welcome discount.",
+          },
+          {
+            q: "Can I buy Nevisan tea outside India?",
+            a: "Currently, Nevisan teas are available only within India. We are exploring international shipping options. Sign up on our website to be notified when international delivery becomes available.",
+          },
+          {
+            q: "Do you offer subscription or recurring orders?",
+            a: "Yes, we offer subscription plans for regular tea drinkers. You can set up monthly or bi-monthly deliveries at a discounted rate. Contact us on WhatsApp to set up your subscription.",
+          },
+          {
+            q: "How can I track my order?",
+            a: "Once your order is shipped, you'll receive a tracking link via WhatsApp and SMS. You can also track your order on the respective platform (Amazon/Flipkart) where you made the purchase.",
+          },
+          // ── Returns & Quality ──
           {
             q: "What is your return policy?",
             a: "As tea is a consumable product, all sales are final and non-returnable. However, if you receive a product that is near expiry, damaged, or incorrect, contact us on WhatsApp within 48 hours of delivery and we will replace it immediately.",
+          },
+          {
+            q: "Can I return Nevisan tea if I don't like it?",
+            a: "Nevisan teas purchased on Amazon follow Amazon's standard return policy. For WhatsApp direct orders, contact +91 98642 45687 — the team responds personally to any quality concerns. If you receive a batch with any quality issue, it will be replaced without question.",
+          },
+          {
+            q: "What if my order arrives damaged?",
+            a: "If your order arrives damaged, near expiry, or incorrect, contact us on WhatsApp at +91 98642 45687 within 48 hours of delivery with a photo. We will replace it immediately — no questions asked.",
+          },
+          {
+            q: "What if my order is damaged or incorrect?",
+            a: "We have a no-questions-asked replacement policy. If your order arrives damaged or is incorrect, contact us on WhatsApp within 48 hours with photos, and we'll send a replacement or full refund immediately.",
+          },
+          // ── Gifting & Bulk ──
+          {
+            q: "Do you offer bulk or wholesale orders?",
+            a: "Yes. Bulk orders are available for hotels, cafes, offices and corporate gifting. Contact via WhatsApp at +91 98642 45687. Minimum order is typically 20–30 packs of 50g. Custom assorted packs and branded gifting can also be arranged.",
+          },
+          {
+            q: "Can I gift Nevisan tea?",
+            a: "Absolutely — Nevisan tea makes a premium, thoughtful gift. You can order individual packs or request custom assorted gift packs via WhatsApp. The beautiful packaging and unique varieties make it an impressive gift for any occasion.",
+          },
+          // ── Health & Safety ──
+          {
+            q: "Is Nevisan tea safe for children?",
+            a: "Nevisan teas contain moderate caffeine from the green tea base, so we recommend them for ages 12 and above in moderation. The herbal varieties (Chamomile, Tulsi) are gentler options for younger teens. Always consult a paediatrician for children under 12.",
+          },
+          {
+            q: "Can I drink Nevisan tea during pregnancy?",
+            a: "Green tea in moderation (1–2 cups/day) is generally considered safe during pregnancy. However, we recommend consulting your doctor before regular consumption. The herbal varieties like Chamomile should also be discussed with your doctor.",
+          },
+          {
+            q: "Is Nevisan tea good for weight loss?",
+            a: "Nevisan teas contain EGCG antioxidants and L-theanine that support metabolism and fat oxidation. The effect is real but modest — consistent daily consumption as part of a balanced diet and active lifestyle is where results come from. Lemongrass Green and Organic Green are particularly popular for wellness routines.",
+          },
+          {
+            q: "Can I add milk or sugar to Nevisan teas?",
+            a: "Milk is not recommended — milk proteins bind to catechins and significantly reduce antioxidant absorption. Honey is the best sweetener (add after brewing, as heat degrades honey's beneficial compounds). Lemon works beautifully with Lemongrass and Blue Flower — and adds a dramatic colour change to the Blue Flower tea.",
+          },
+          {
+            q: "How do I know if green tea is real and not fake?",
+            a: "Four signs of real whole-leaf green tea: 1. It looks like actual leaves — rolled, twisted or flat but visibly leaf-like. 2. It smells grassy and fresh when you open the pack — not artificial. 3. It brews pale gold or green, not dark brown. 4. The brand specifies a single origin — garden name, region — not just 'premium Himalayan tea'. Vague sourcing language almost always means low-grade blended CTC.",
+          },
+          {
+            q: "Why is Nevisan tea ₹499 when cheaper options exist?",
+            a: "Green tea under ₹200 for 100g is almost always CTC, artificially flavoured, or from undisclosed blended sources. Whole-leaf, single-origin, organic tea costs more: no pesticides means lower yield, hand-picking adds labour, and careful slow processing takes more time. At ₹6–10 per cup when re-steeped, Nevisan is comparable in value — and dramatically superior in quality.",
           },
         ].map((n, o) =>
           React.createElement(
@@ -6848,6 +7146,9 @@ function FAQSection() {
             React.createElement(
               "button",
               {
+                id: `faq-button-${o}`,
+                "aria-expanded": t === o,
+                "aria-controls": `faq-panel-${o}`,
                 onClick: () => a(t === o ? null : o),
                 style: {
                   width: "100%",
@@ -6893,7 +7194,12 @@ function FAQSection() {
             t === o &&
               React.createElement(
                 "div",
-                { style: { padding: e ? "0 18px 18px" : "0 28px 24px" } },
+                {
+                  id: `faq-panel-${o}`,
+                  role: "region",
+                  "aria-labelledby": `faq-button-${o}`,
+                  style: { padding: e ? "0 18px 18px" : "0 28px 24px" },
+                },
                 React.createElement("div", {
                   style: {
                     height: 1,
@@ -7390,7 +7696,7 @@ function OurStoryPage({ setPage: e }) {
                     style: {
                       fontFamily: "'Inter'",
                       fontSize: 16,
-                      color: T.textMuted,
+                      color: "rgba(255,255,255,0.7)",
                       lineHeight: 1.75,
                     },
                   },
@@ -8955,6 +9261,7 @@ function WholesalePage({ setPage: e }) {
                   value: a[e.key],
                   onChange: (t) =>
                     n((a) => ({ ...a, [e.key]: t.target.value })),
+                  "aria-label": e.label,
                   placeholder: e.placeholder,
                   style: {
                     width: "100%",
@@ -8965,9 +9272,10 @@ function WholesalePage({ setPage: e }) {
                     fontSize: 16,
                     color: T.text,
                     background: "#fff",
-                    outline: "none",
                     boxSizing: "border-box",
                   },
+                  onFocus: (e) => (e.target.style.borderColor = T.teal),
+                  onBlur: (e) => (e.target.style.borderColor = "#e8e4de"),
                 }),
               ),
             ),
@@ -9005,10 +9313,11 @@ function WholesalePage({ setPage: e }) {
                   fontSize: 16,
                   color: T.text,
                   background: "#fff",
-                  outline: "none",
                   resize: "vertical",
                   boxSizing: "border-box",
                 },
+                onFocus: (e) => (e.target.style.borderColor = T.teal),
+                onBlur: (e) => (e.target.style.borderColor = "#e8e4de"),
               }),
             ),
             React.createElement(
@@ -9075,7 +9384,6 @@ function ContactPage({ setPage: e }) {
       fontSize: 16,
       color: T.text,
       background: T.white,
-      outline: "none",
       boxSizing: "border-box",
       transition: "border-color 200ms",
     };
@@ -9349,6 +9657,7 @@ function ContactPage({ setPage: e }) {
                   React.createElement("input", {
                     required: !0,
                     style: r,
+                    "aria-label": "Your name",
                     placeholder: "e.g. Priya Sharma",
                     value: a.name,
                     onChange: (e) => n((t) => ({ ...t, name: e.target.value })),
@@ -9377,6 +9686,7 @@ function ContactPage({ setPage: e }) {
                     required: !0,
                     type: "email",
                     style: r,
+                    "aria-label": "Email",
                     placeholder: "you@example.com",
                     value: a.email,
                     onChange: (e) =>
@@ -9497,11 +9807,11 @@ function App() {
       React.createElement(
         ViewportCtx.Provider,
         { value: o },
-        React.createElement("a", { href: "#main-content", style: { position: "fixed", top: 0, left: 0, background: "#173020", color: "#fff", padding: "8px 16px", zIndex: 10000, textDecoration: "none", borderRadius: "0 0 8px 0", fontSize: 14, fontWeight: 600, fontFamily: "'Inter', sans-serif" } }, "Skip to main content"),
+        React.createElement("a", { href: "#main-content", style: { position: "fixed", top: 0, left: 0, background: "#173020", color: "#fff", padding: "8px 16px", zIndex: 10000, textDecoration: "none", borderRadius: "0 0 8px 0", fontSize: 16, fontWeight: 600, fontFamily: "'Inter', sans-serif" } }, "Skip to main content"),
         React.createElement(ScrollProgress, { "aria-hidden": "true" }),
         React.createElement(CursorGlow, { "aria-hidden": "true" }),
         React.createElement(Nav, { page: e, setPage: i }),
-        React.createElement("div", { role: "main", id: "main-content" }, r),
+        React.createElement("main", { id: "main-content" }, r),
         React.createElement(CartFAB, null),
         React.createElement(WhatsAppFAB, null),
       ),
@@ -9646,7 +9956,7 @@ function CartSheet({ onClose: e }) {
                       style: {
                         width: "100%",
                         height: "100%",
-                        objectFit: "contain",
+                        objectFit: "cover",
                       },
                     })
                   : React.createElement(
@@ -9896,6 +10206,7 @@ function CartFAB() {
           "button",
           {
             onClick: () => a(!0),
+            "aria-label": "Open shopping cart",
             style: {
               position: "fixed",
               bottom: 90,

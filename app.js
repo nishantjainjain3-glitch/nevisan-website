@@ -6627,8 +6627,8 @@ function HowToBrewSection() {
                 height: 4,
                 background: "rgba(255,255,255,0.15)",
                 borderRadius: 2,
-                cursor: isBrewing ? "not-allowed" : "pointer"
-              }
+                cursor: isBrewing ? "not-allowed" : "pointer",
+              },
               onFocus: (e) => (e.target.style.boxShadow = "0 0 0 3px rgba(27,122,130,0.4)"),
               onBlur: (e) => (e.target.style.boxShadow = "none")
             })
@@ -6658,8 +6658,8 @@ function HowToBrewSection() {
                 height: 4,
                 background: "rgba(255,255,255,0.15)",
                 borderRadius: 2,
-                cursor: isBrewing ? "not-allowed" : "pointer"
-              }
+                cursor: isBrewing ? "not-allowed" : "pointer",
+              },
               onFocus: (e) => (e.target.style.boxShadow = "0 0 0 3px rgba(27,122,130,0.4)"),
               onBlur: (e) => (e.target.style.boxShadow = "none")
             })

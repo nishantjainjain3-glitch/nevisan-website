@@ -518,7 +518,7 @@ function Nav({ page: e, setPage: t }) {
                   color: T.tealDark,
                   border: "none",
                   borderRadius: 9999,
-                  padding: "9px 22px",
+                  padding: "14px 22px",
                   fontSize: 16,
                   fontWeight: 600,
                   cursor: "pointer",
@@ -553,7 +553,7 @@ function Nav({ page: e, setPage: t }) {
                   color: "#fff",
                   border: "none",
                   borderRadius: 9999,
-                  padding: "7px 14px",
+                  padding: "14px 14px",
                   fontSize: 16,
                   fontWeight: 600,
                   cursor: "pointer",
@@ -573,7 +573,7 @@ function Nav({ page: e, setPage: t }) {
                   background: "none",
                   border: "none",
                   cursor: "pointer",
-                  padding: 4,
+                  padding: "14px",
                 },
               },
               React.createElement(HamburgerIcon, { open: r }),
@@ -648,7 +648,7 @@ function Nav({ page: e, setPage: t }) {
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 28,
                   fontWeight: 400,
-                  color: e === t ? T.gold : "rgba(255,255,255,0.85)",
+                  color: e === t ? "#D4AF37" : "rgba(255,255,255,0.85)",
                   padding: "14px 0",
                   borderBottom:
                     n < a.length - 1
@@ -950,7 +950,7 @@ function Hero({ setPage: e }) {
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.18em",
-                color: T.gold,
+                color: "#D4AF37",
                 textTransform: "uppercase",
                 marginBottom: 24,
                 opacity: t ? 1 : 0,
@@ -1002,7 +1002,7 @@ function Hero({ setPage: e }) {
               },
             },
             React.createElement(
-              "h1",
+              "span",
               {
                 style: {
                   fontFamily: "'Playfair Display', Georgia, serif",
@@ -1010,7 +1010,7 @@ function Hero({ setPage: e }) {
                   fontStyle: "italic",
                   fontSize: "clamp(44px, 5.5vw, 78px)",
                   lineHeight: 1.08,
-                  color: T.gold,
+                  color: "#D4AF37",
                   opacity: t ? 1 : 0,
                   transform: t ? "translateY(0)" : "translateY(40px)",
                   transition:
@@ -2055,7 +2055,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
                 color: T.teal,
                 border: `1px solid ${T.teal}`,
                 borderRadius: 8,
-                padding: "7px 14px",
+                padding: "14px 14px",
                 fontSize: 16,
                 fontWeight: 500,
                 cursor: "pointer",
@@ -2110,6 +2110,14 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
               onClick: (e) => {
                 (e.stopPropagation(), m(!1));
               },
+              onKeyDown: (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  m(!1);
+                }
+              },
+              role: "button",
+              tabIndex: 0,
               style: { position: "fixed", inset: 0, zIndex: 49 },
             }),
           d &&
@@ -2286,6 +2294,9 @@ function ImageLightbox({ img: e, name: t, onClose: a }) {
       "div",
       {
         onClick: a,
+        role: "dialog",
+        "aria-modal": "true",
+        "aria-label": "Image preview",
         style: {
           position: "fixed",
           inset: 0,
@@ -2493,7 +2504,7 @@ function CollectionPage({}) {
                 color: isSelected ? "#F8F6F2" : "#1F2E24",
                 border: isSelected ? "1px solid #1F2E24" : "1px solid rgba(31, 46, 36, 0.1)",
                 borderRadius: 9999,
-                padding: o ? "6px 14px" : "8px 20px",
+                padding: o ? "14px 14px" : "14px 20px",
                 fontSize: 16,
                 fontWeight: 600,
                 cursor: "pointer",
@@ -2701,6 +2712,7 @@ function CollectionPage({}) {
                         onClick: (e) => {
                           (e.stopPropagation(), t(null));
                         },
+                        "aria-label": "Close",
                         style: {
                           position: "absolute",
                           top: 14,
@@ -2787,7 +2799,7 @@ function CollectionPage({}) {
                             color: "#fff",
                             border: "none",
                             borderRadius: 9999,
-                            padding: "9px",
+                            padding: "14px",
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
@@ -2811,7 +2823,7 @@ function CollectionPage({}) {
                             color: "#fff",
                             border: "none",
                             borderRadius: 9999,
-                            padding: "9px",
+                            padding: "14px",
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
@@ -4070,7 +4082,6 @@ function ReviewForm() {
       fontSize: 16,
       color: "#1a1a1a",
       background: "#fff",
-      outline: "none",
       boxSizing: "border-box",
       transition: "border-color 200ms",
     };
@@ -4637,7 +4648,7 @@ function Footer({ setPage: e }) {
                 fontFamily: "'Inter'",
                 fontSize: 16,
                 lineHeight: 1.7,
-                color: "rgba(255,255,255,0.55)",
+                color: "rgba(255,255,255,0.7)",
                 marginTop: 20,
                 maxWidth: 280,
               },
@@ -4656,7 +4667,7 @@ function Footer({ setPage: e }) {
                 color: "#fff",
                 border: "none",
                 borderRadius: 9999,
-                padding: "9px 20px",
+                padding: "14px 20px",
                 fontSize: 16,
                 fontWeight: 600,
                 cursor: "pointer",
@@ -4692,7 +4703,7 @@ function Footer({ setPage: e }) {
                   padding: "5px 12px",
                   fontFamily: "'Inter'",
                   fontSize: 16,
-                  color: "rgba(255,255,255,0.4)",
+                  color: "rgba(255,255,255,0.6)",
                   letterSpacing: "0.06em",
                 },
               },
@@ -4707,7 +4718,7 @@ function Footer({ setPage: e }) {
                   padding: "5px 12px",
                   fontFamily: "'Inter'",
                   fontSize: 16,
-                  color: "rgba(255,255,255,0.4)",
+                  color: "rgba(255,255,255,0.6)",
                   letterSpacing: "0.06em",
                 },
               },
@@ -4726,7 +4737,7 @@ function Footer({ setPage: e }) {
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
-                color: T.gold,
+                color: "#D4AF37",
                 textTransform: "uppercase",
                 marginBottom: 20,
               },
@@ -4777,7 +4788,7 @@ function Footer({ setPage: e }) {
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
-                color: T.gold,
+                color: "#D4AF37",
                 textTransform: "uppercase",
                 marginBottom: 20,
               },
@@ -4831,7 +4842,7 @@ function Footer({ setPage: e }) {
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
-                color: T.gold,
+                color: "#D4AF37",
                 textTransform: "uppercase",
                 marginBottom: 20,
               },
@@ -5322,6 +5333,7 @@ function CollectionSection({ setPage: e }) {
                         onClick: (e) => {
                           (e.stopPropagation(), l(null));
                         },
+                        "aria-label": "Close",
                         style: {
                           position: "absolute",
                           top: 0,
@@ -5408,7 +5420,7 @@ function CollectionSection({ setPage: e }) {
                             color: "#fff",
                             border: "none",
                             borderRadius: 9999,
-                            padding: "9px",
+                            padding: "14px",
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
@@ -5432,7 +5444,7 @@ function CollectionSection({ setPage: e }) {
                             color: "#fff",
                             border: "none",
                             borderRadius: 9999,
-                            padding: "9px",
+                            padding: "14px",
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
@@ -6522,7 +6534,7 @@ function HowToBrewSection() {
                     fontSize: 16,
                     fontWeight: 600,
                     letterSpacing: "0.14em",
-                    color: T.gold,
+                    color: "#D4AF37",
                     textTransform: "uppercase"
                   }
                 },
@@ -6605,6 +6617,7 @@ function HowToBrewSection() {
               max: 100,
               value: temp,
               disabled: isBrewing,
+              "aria-label": "Water temperature",
               onChange: (x) => {
                 setTemp(Number(x.target.value));
                 setStatusText(`Ready to steep at ${x.target.value}°C for ${time} Min`);
@@ -6614,9 +6627,10 @@ function HowToBrewSection() {
                 height: 4,
                 background: "rgba(255,255,255,0.15)",
                 borderRadius: 2,
-                outline: "none",
                 cursor: isBrewing ? "not-allowed" : "pointer"
               }
+              onFocus: (e) => (e.target.style.boxShadow = "0 0 0 3px rgba(27,122,130,0.4)"),
+              onBlur: (e) => (e.target.style.boxShadow = "none")
             })
           ),
           React.createElement(
@@ -6634,6 +6648,7 @@ function HowToBrewSection() {
               max: 6,
               value: time,
               disabled: isBrewing,
+              "aria-label": "Steeping time",
               onChange: (x) => {
                 setTime(Number(x.target.value));
                 setStatusText(`Ready to steep at ${temp}°C for ${x.target.value} Min`);
@@ -6643,9 +6658,10 @@ function HowToBrewSection() {
                 height: 4,
                 background: "rgba(255,255,255,0.15)",
                 borderRadius: 2,
-                outline: "none",
                 cursor: isBrewing ? "not-allowed" : "pointer"
               }
+              onFocus: (e) => (e.target.style.boxShadow = "0 0 0 3px rgba(27,122,130,0.4)"),
+              onBlur: (e) => (e.target.style.boxShadow = "none")
             })
           ),
           React.createElement(
@@ -7130,6 +7146,9 @@ function FAQSection() {
             React.createElement(
               "button",
               {
+                id: `faq-button-${o}`,
+                "aria-expanded": t === o,
+                "aria-controls": `faq-panel-${o}`,
                 onClick: () => a(t === o ? null : o),
                 style: {
                   width: "100%",
@@ -7175,7 +7194,12 @@ function FAQSection() {
             t === o &&
               React.createElement(
                 "div",
-                { style: { padding: e ? "0 18px 18px" : "0 28px 24px" } },
+                {
+                  id: `faq-panel-${o}`,
+                  role: "region",
+                  "aria-labelledby": `faq-button-${o}`,
+                  style: { padding: e ? "0 18px 18px" : "0 28px 24px" },
+                },
                 React.createElement("div", {
                   style: {
                     height: 1,
@@ -7672,7 +7696,7 @@ function OurStoryPage({ setPage: e }) {
                     style: {
                       fontFamily: "'Inter'",
                       fontSize: 16,
-                      color: T.textMuted,
+                      color: "rgba(255,255,255,0.7)",
                       lineHeight: 1.75,
                     },
                   },
@@ -9237,6 +9261,7 @@ function WholesalePage({ setPage: e }) {
                   value: a[e.key],
                   onChange: (t) =>
                     n((a) => ({ ...a, [e.key]: t.target.value })),
+                  "aria-label": e.label,
                   placeholder: e.placeholder,
                   style: {
                     width: "100%",
@@ -9247,9 +9272,10 @@ function WholesalePage({ setPage: e }) {
                     fontSize: 16,
                     color: T.text,
                     background: "#fff",
-                    outline: "none",
                     boxSizing: "border-box",
                   },
+                  onFocus: (e) => (e.target.style.borderColor = T.teal),
+                  onBlur: (e) => (e.target.style.borderColor = "#e8e4de"),
                 }),
               ),
             ),
@@ -9287,10 +9313,11 @@ function WholesalePage({ setPage: e }) {
                   fontSize: 16,
                   color: T.text,
                   background: "#fff",
-                  outline: "none",
                   resize: "vertical",
                   boxSizing: "border-box",
                 },
+                onFocus: (e) => (e.target.style.borderColor = T.teal),
+                onBlur: (e) => (e.target.style.borderColor = "#e8e4de"),
               }),
             ),
             React.createElement(
@@ -9357,7 +9384,6 @@ function ContactPage({ setPage: e }) {
       fontSize: 16,
       color: T.text,
       background: T.white,
-      outline: "none",
       boxSizing: "border-box",
       transition: "border-color 200ms",
     };
@@ -9631,6 +9657,7 @@ function ContactPage({ setPage: e }) {
                   React.createElement("input", {
                     required: !0,
                     style: r,
+                    "aria-label": "Your name",
                     placeholder: "e.g. Priya Sharma",
                     value: a.name,
                     onChange: (e) => n((t) => ({ ...t, name: e.target.value })),
@@ -9659,6 +9686,7 @@ function ContactPage({ setPage: e }) {
                     required: !0,
                     type: "email",
                     style: r,
+                    "aria-label": "Email",
                     placeholder: "you@example.com",
                     value: a.email,
                     onChange: (e) =>
@@ -9783,7 +9811,7 @@ function App() {
         React.createElement(ScrollProgress, { "aria-hidden": "true" }),
         React.createElement(CursorGlow, { "aria-hidden": "true" }),
         React.createElement(Nav, { page: e, setPage: i }),
-        React.createElement("div", { role: "main", id: "main-content" }, r),
+        React.createElement("main", { id: "main-content" }, r),
         React.createElement(CartFAB, null),
         React.createElement(WhatsAppFAB, null),
       ),

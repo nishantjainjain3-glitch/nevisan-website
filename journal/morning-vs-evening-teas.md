@@ -1,3 +1,0 @@
-# Morning vs Evening Teas: How to Time Your Cup
-
-The article details tea timing for daily rhythms. Mornings (6am–12pm): "Organic Green Tea or Lemongrass Green Tea" provide clean caffeine with L-theanine for calm alertness; "Lemongrass adds a digestive benefit" after fasting, and "Spearmint works well mid-morning" for hormonal breakouts. Afternoons (12pm–5pm): "Rum or Whiskey Green Tea" suits the energy dip, while "Blue Flower is also excellent" — visually striking and mildly calming. Evenings (5pm–bedtime): "Chamomile or GABA Oolong" aid relaxation; chamomile improves sleep, while GABA Oolong supports mental presence for reading or creativity. "Tulsi works at any hour" as an adaptogen responding to bodily needs.

@@ -6857,10 +6857,10 @@ function HowToBrewSection() {
 function FAQSection() {
   const { isMobile: e } = useViewport(),
     [t, a] = useState(null);
-    const frontFaqs = [
+      const frontFaqs = [
     {
-      q: "What makes Nevisan whole-leaf Assam tea different from regular tea?",
-      a: "Most commercial tea uses CTC (Cut, Tear, Curl) processing that grinds leaves into dust for fast, bitter extraction. Nevisan uses 100% whole, unbroken leaves hand-plucked from our organic garden in Golaghat, Assam. Whole leaves retain natural essential oils and antioxidants, releasing gentle sweetness without bitterness and allowing up to 3 separate steeps.",
+      q: "Why is Nevisan Green Tea considered the best green tea available in the market?",
+      a: "Nevisan is superior to commercial supermarket tea in 6 key ways: 1) 100% Whole Intact Leaves (never pulverized CTC dust or paper bag fannings); 2) Single-Origin PGS-India Certified Organic Garden in Golaghat, Assam (100% pesticide-free); 3) Triple-Steeping (2–3 infusions per teaspoon, delivering 50–75 cups per pack at just ₹6–8/cup); 4) Naturally Low Caffeine (15–25mg) paired with high natural L-theanine for calm focus with zero jitters or crashes; 5) Real Farm Botanicals (whole chamomile flowers, spearmint for PCOS, butterfly pea, active gingerols); 6) Lab-Tested Pure Nutrition (0g sugar, 0g fat, 0g carbs, <1 kcal brewed).",
     },
     {
       q: "Does Nevisan tea contain caffeine, and what are the nutritional values?",

@@ -258,6 +258,41 @@
 
     
     *:focus-visible { outline: 2.5px solid #C9A84C !important; outline-offset: 2px !important; }
+  
+    .share-bar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 24px 0;
+      padding: 16px 0;
+      border-top: 1px solid var(--border, #E2DDD5);
+      border-bottom: 1px solid var(--border, #E2DDD5);
+    }
+    .share-label {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted, #5C7064);
+    }
+    .share-btn {
+      min-height: 48px;
+      min-width: 48px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .share-wa { background: #25D366; color: #fff !important; }
+    .share-tw { background: #000000; color: #fff !important; }
+    .share-copy { background: #EAE6DF; color: #15271B !important; cursor: pointer; border: none; }
+      
   </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/jpeg" href="/nevisan-logo.jpeg">
@@ -279,6 +314,14 @@
     </header>
 
     <article>
+
+    <!-- ── SOCIAL SHARING BAR ── -->
+    <div class="share-bar">
+      <span class="share-label">Share Guide:</span>
+      <a href="https://api.whatsapp.com/send?text=Non-Alcoholic%20Botanical%20Whiskey%20%26%20Rum%20Teas%20%7C%20Nevisan%20Tea%20https%3A%2F%2Fnevisan.in%2Fjournal%2Fnon-alcoholic-botanical-whiskey-rum-tea%2F" target="_blank" rel="noopener" class="share-btn share-wa" aria-label="Share on WhatsApp">💬 WhatsApp</a>
+      <a href="https://twitter.com/intent/tweet?text=Non-Alcoholic%20Botanical%20Whiskey%20%26%20Rum%20Teas%20%7C%20Nevisan%20Tea&url=https%3A%2F%2Fnevisan.in%2Fjournal%2Fnon-alcoholic-botanical-whiskey-rum-tea%2F" target="_blank" rel="noopener" class="share-btn share-tw" aria-label="Share on X">𝕏 Post</a>
+      <button onclick="navigator.clipboard.writeText('https://nevisan.in/journal/non-alcoholic-botanical-whiskey-rum-tea/'); alert('Link copied to clipboard!');" class="share-btn share-copy" aria-label="Copy Link">📋 Copy Link</button>
+    </div>
       <p>Toasted oak, peat aromatics, cold-extracted botanicals — here's how Nevisan built the texture and finish of aged spirits into a tea with zero alcohol.</p>
 <h2>The Challenge</h2>
 <p>The market for non-alcoholic drinks has changed in the last few years. People aren't giving up alcohol because they have to — they're choosing not to drink, and they want something worth drinking in its place. Fruit juice doesn't cut it at 9pm. Neither does sparkling water.</p>

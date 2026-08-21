@@ -856,6 +856,23 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
   }
 </style>
 
+
+<script>
+  window.trackOutboundClick = function(channel, label) {
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', 'purchase_intent', {
+          event_category: 'ecommerce',
+          event_label: channel + ': ' + label
+        });
+      }
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', { content_name: label, content_category: channel });
+      }
+    } catch(e) {}
+  };
+</script>
+
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>

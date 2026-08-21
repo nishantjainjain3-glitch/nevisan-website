@@ -4800,7 +4800,7 @@ function Footer({ setPage: e }) {
                   letterSpacing: "0.06em",
                 },
               },
-              "FSSAI 10325001000313",
+              "FSSAI 10325001000313 (Marketer) · FSSAI 0321120000114 (Manufacturer)",
             ),
             React.createElement(
               "div",
@@ -8580,7 +8580,7 @@ function CertificationsPage({ setPage: e }) {
         [
           {
             name: "FSSAI Certified",
-            number: "FSSAI 10325001000313",
+            number: "FSSAI 10325001000313 (Marketer) · FSSAI 0321120000114 (Manufacturer)",
             icon: "\ud83c\udfdb",
             color: "#1b4f8a",
             desc: "Food Safety and Standards Authority of India. Nevisan meets all regulatory requirements for food safety, labelling and hygiene standards set by the Government of India.",

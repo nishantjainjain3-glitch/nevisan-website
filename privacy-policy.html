@@ -1,405 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#15271B">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <title>Privacy Policy | Nevisan Tea</title>
-    <meta name="description" content="Nevisan Tea's privacy policy outlining how we collect, use, and protect your personal information when you visit our website or purchase our products.">
-    <link rel="canonical" href="https://nevisan.in/privacy-policy">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Privacy Policy | Nevisan Tea">
-    <meta property="og:description" content="Nevisan Tea's privacy policy outlining how we collect, use, and protect your personal information when you visit our website or purchase our products.">
-    <meta property="og:url" content="https://nevisan.in/privacy-policy">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Nevisan Tea">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Privacy Policy | Nevisan Tea">
-    <meta name="twitter:description" content="Nevisan Tea's privacy policy outlining how we collect, use, and protect your personal information when you visit our website or purchase our products.">
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Privacy Policy | Nevisan Tea",
-      "description": "Nevisan Tea's privacy policy outlining how we collect, use, and protect your personal information when you visit our website or purchase our products.",
-      "url": "https://nevisan.in/privacy-policy",
-      "author": {
-        "@type": "Organization",
-        "name": "Nevisan Tea",
-        "url": "https://nevisan.in"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Nevisan Tea",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://nevisan.in/assets/logo.png"
-        }
-      },
-      "license": "https://creativecommons.org/licenses/by/4.0/",
-      "isAccessibleForFree": true,
-      "datePublished": "2026-08-01",
-      "dateModified": "2026-08-01"
-    }
-    </script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        :root {
-            --teal:  #1b7a82;
-            --gold:  #c9a84c;
-            --cream: #f9f6f0;
-            --ink:   #1a1a1a;
-            --muted: #6b6b6b;
-            --border: #e0dad0;
-        }
-
-        html {
-            font-size: 16px;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--cream);
-            color: var(--ink);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        /* ── Navigation ── */
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--teal);
-            padding: 0 1.5rem;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-        }
-
-        .nav-logo {
-            color: #ffffff;
-            text-decoration: none;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.35rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .nav-logo:hover {
-            color: var(--gold);
-            transition: color 0.2s;
-        }
-
-        .nav-cta {
-            background: var(--gold);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 0.45rem 1.1rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            transition: background 0.2s, transform 0.1s;
-        }
-
-        .nav-cta:hover {
-            background: #b8923e;
-            transform: translateY(-1px);
-        }
-
-        /* ── Content Container ── */
-        .content-wrapper {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem 4rem;
-        }
-
-        /* ── Page Header ── */
-        .page-header {
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .page-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: clamp(1.75rem, 5vw, 2.6rem);
-            font-weight: 700;
-            color: var(--ink);
-            line-height: 1.25;
-            margin-bottom: 1rem;
-        }
-
-        .page-meta {
-            color: var(--muted);
-            font-size: 0.85rem;
-            letter-spacing: 0.03em;
-        }
-
-        /* ── Content ── */
-        .content h1, .content h2, .content h3 {
-            font-family: 'Playfair Display', Georgia, serif;
-            color: var(--ink);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .content h1 {
-            font-size: 1.75rem;
-        }
-
-        .content h2 {
-            font-size: 1.5rem;
-        }
-
-        .content h3 {
-            font-size: 1.25rem;
-        }
-
-        .content p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            color: var(--ink);
-        }
-
-        .content ul, .content ol {
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
-        }
-
-        .content li {
-            margin-bottom: 0.5rem;
-        }
-
-        .content a {
-            color: var(--teal);
-            text-decoration: underline;
-        }
-
-        .content a:hover {
-            color: var(--gold);
-        }
-
-        /* ── CTA Section ── */
-        .cta-section {
-            margin-top: 3.5rem;
-            padding: 2.5rem 2rem;
-            background: var(--teal);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.4rem;
-            color: #ffffff;
-            margin-bottom: 0.6rem;
-        }
-
-        .cta-section p {
-            color: rgba(255,255,255,0.82);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: var(--gold);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 0.75rem 2rem;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            transition: background 0.2s, transform 0.1s;
-        }
-
-        .cta-btn:hover {
-            background: #b8923e;
-            transform: translateY(-1px);
-        }
-
-        /* ── Footer ── */
-        footer {
-            background: #12555b;
-            color: rgba(255,255,255,0.65);
-            text-align: center;
-            padding: 1.5rem 1rem;
-            font-size: 0.82rem;
-            line-height: 1.7;
-        }
-
-        footer a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 600px) {
-            .content-wrapper {
-                padding: 2rem 1rem 3rem;
-            }
-
-            .cta-section {
-                padding: 2rem 1.25rem;
-            }
-        }
-
-  /* Skip link for keyboard accessibility */
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #1a3c2a;
-    color: #fff;
-    padding: 8px 16px;
-    z-index: 10000;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 0 0 4px 0;
-    transition: top 0.2s;
-  }
-  .skip-link:focus {
-    top: 0;
-  }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#15271B">
+  <title>Privacy Policy — DPDP &amp; GDPR Compliant | Nevisan Tea</title>
+  <meta name="description" content="Privacy Policy for Nevisan Tea. Learn how we collect, protect, and handle your data under the Indian DPDP Act 2023 and GDPR.">
+  <link rel="canonical" href="https://nevisan.in/privacy-policy.html">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/jpeg" href="/nevisan-logo.jpeg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy — Nevisan Tea">
+  <meta name="twitter:description" content="DPDP and GDPR compliant privacy policy for Nevisan Tea.">
+  <meta name="twitter:image" content="https://nevisan.in/hero-bg.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #15271B;
+      --gold: #C9A84C;
+      --cream: #F8F6F2;
+      --ink: #1F2E24;
+      --muted: #5C7064;
+      --border: #E2DDD5;
+    }
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      background: var(--gold);
+      color: var(--teal);
+      padding: 10px 18px;
+      z-index: 9999;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 16px; }
+    nav {
+      background: var(--teal);
+      padding: 0 1.5rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--teal);
+      text-decoration: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    main {
+      flex: 1;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 2.8rem);
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+    .meta-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+    }
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem;
+      color: var(--teal);
+      margin: 2rem 0 0.8rem;
+    }
+    p, ul {
+      margin-bottom: 1.2rem;
+      color: #334439;
+    }
+    ul { padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    a { color: var(--teal); font-weight: 600; text-decoration: underline; }
+    .card-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    footer {
+      background: var(--teal);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.88rem;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Navigation -->
-    <nav class="nav" aria-label="Main navigation">
-        <a class="nav-logo" href="https://nevisan.in">Nevisan</a>
-        <a class="nav-cta" href="https://nevisan.in/#collection">Shop Now</a>
-    </nav>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav aria-label="Main navigation">
+    <a class="nav-logo" href="https://nevisan.in/">NEVISAN</a>
+    <a class="nav-cta" href="https://nevisan.in/#collection">Shop Teas</a>
+  </nav>
 
-    <!-- Page Content -->
-    <main class="content-wrapper" id="main-content">
-        <header class="page-header">
-            <h1 class="page-title">Privacy Policy</h1>
-            <p class="page-meta">Last updated: August 1, 2026</p>
-        </header>
+  <main id="main-content">
+    <h1>Privacy Policy</h1>
+    <p class="meta-date">Last Updated: August 2026 · Compliant with Digital Personal Data Protection (DPDP) Act 2023 &amp; GDPR</p>
 
-        <div class="content">
-            <p>At Nevisan Tea, accessible from nevisan.in, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Nevisan Tea and how we use it.</p>
+    <div class="card-box">
+      <strong>Data Fiduciary / Controller:</strong><br>
+      Mahabir Enterprise (Marketer &amp; Packer of Nevisan Tea)<br>
+      Citi Point, G.S. Road, Guwahati, Kamrup Metropolitan, Assam - 781008<br>
+      FSSAI License: 10325001000313 · Support: <a href="mailto:nevisan12@gmail.com">nevisan12@gmail.com</a>
+    </div>
 
-            <h2>Information We Collect</h2>
-            <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.</p>
-            <p>If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.</p>
-            <p>When you register for an Account, we may ask for your contact information, including items such as name, company name, address, email address, and telephone number.</p>
+    <h2>1. Information We Collect</h2>
+    <p>We collect personal information that you voluntarily provide when placing an order, contacting support, or interacting with our website:</p>
+    <ul>
+      <li><strong>Order &amp; Delivery Information:</strong> Name, shipping address, WhatsApp/phone number, and email address when you order through WhatsApp or our official marketplace channels (Amazon, Flipkart).</li>
+      <li><strong>Browsing &amp; Technical Data:</strong> Anonymized IP addresses, browser type, device information, and pages visited collected via Google Analytics (GA4) and Meta Pixel to improve user experience.</li>
+      <li><strong>Quiz Preferences:</strong> Non-personally identifiable taste, mood, and wellness goals submitted during our tea recommendation quiz.</li>
+    </ul>
 
-            <h2>How We Use Your Information</h2>
-            <p>We use the information we collect in various ways, including to:</p>
-            <ul>
-                <li>Provide, operate, and maintain our website</li>
-                <li>Improve, personalize, and expand our website</li>
-                <li>Understand and analyze how you use our website</li>
-                <li>Develop new products, services, features, and functionality</li>
-                <li>Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes</li>
-                <li>Send you emails</li>
-                <li>Find and prevent fraud</li>
-            </ul>
+    <h2>2. Purpose of Data Processing</h2>
+    <p>Your information is processed strictly for legitimate operational purposes:</p>
+    <ul>
+      <li>To process, fulfill, and ship your tea orders pan-India.</li>
+      <li>To provide order tracking updates via WhatsApp or SMS.</li>
+      <li>To maintain website security and optimize performance.</li>
+      <li>To comply with statutory tax, invoicing, and FSSAI regulatory requirements.</li>
+    </ul>
 
-            <h2>Log Files</h2>
-            <p>Nevisan Tea follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, internet service provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.</p>
-            <p>These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
+    <h2>3. Cookies &amp; Tracking Technologies</h2>
+    <p>We use essential cookies to maintain cart state and optional analytics cookies (Google Analytics, Meta Pixel) to understand site performance. You can manage or decline non-essential cookies at any time via our cookie consent banner or your browser settings.</p>
 
-            <h2>Cookies and Web Beacons</h2>
-            <p>Like any other website, Nevisan Tea uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
-            <p>Google DoubleClick DART Cookie: Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network privacy policy at the following URL – <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">https://policies.google.com/technologies/ads</a></p>
+    <h2>4. Data Sharing &amp; Third Parties</h2>
+    <p>We do not sell, rent, or trade your personal data. We only share necessary data with trusted logistics partners (India Post, express couriers) and secure e-commerce platforms (Amazon, Flipkart) to complete deliveries.</p>
 
-            <h2>Advertising Partners Privacy Policies</h2>
-            <p>You may consult this list to find the privacy policy for each of the advertising partners of Nevisan Tea.</p>
-            <p>Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Nevisan Tea, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
-            <p>Note that Nevisan Tea has no access to or control over these cookies that are used by third-party advertisers.</p>
+    <h2>5. Data Retention &amp; Security</h2>
+    <p>We retain transaction data only as long as required for accounting, tax, and consumer protection laws. We employ SSL/TLS 256-bit encryption for all data transfers.</p>
 
-            <h2>Privacy Policies</h2>
-            <p>You may consult the Privacy Policies of the third-party ad servers used by Nevisan Tea by following the links:</p>
-            <ul>
-                <li>Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
-                <li>Meta/Facebook: <a href="https://www.facebook.com/about/privacy/" target="_blank" rel="noopener">https://www.facebook.com/about/privacy/</a></li>
-            </ul>
+    <h2>6. Your Rights &amp; Grievance Officer</h2>
+    <p>Under the DPDP Act 2023 and GDPR, you have the right to access, correct, or request deletion of your personal data. For grievances or privacy requests, contact:</p>
+    <div class="card-box">
+      <strong>Grievance Officer:</strong> Mahabir Enterprise<br>
+      Citi Point, G.S. Road, Guwahati, Assam - 781008<br>
+      Email: <a href="mailto:nevisan12@gmail.com">nevisan12@gmail.com</a> · Phone: <a href="tel:+919864245687">+91-9864245687</a>
+    </div>
+  </main>
 
-            <h2>CCPA Privacy Rights (California Do Not Sell My Personal Information)</h2>
-            <p>Under the CCPA, among other rights, California consumers have the right to:</p>
-            <ul>
-                <li>Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.</li>
-                <li>Request that a business delete any personal data about the consumer that a business has collected.</li>
-                <li>Request that a business that sells a consumer's personal data, not sell the consumer's personal data.</li>
-                <li>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</li>
-            </ul>
-
-            <h2>GDPR Data Protection Rights</h2>
-            <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</p>
-            <ul>
-                <li>The right to access – You have the right to request copies of your personal data.</li>
-                <li>The right to rectification – You have the right to request that we correct any information you think is inaccurate.</li>
-                <li>The right to erasure – You have the right to request that we delete your personal data, under certain conditions.</li>
-                <li>The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions.</li>
-                <li>The right to object to processing – You have the right to object to the processing of your personal data, under certain conditions.</li>
-                <li>The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
-                <li>The right to withdraw consent – You have the right to withdraw your consent for us to use your personal data at any time.</li>
-            </ul>
-
-            <h2>Children's Information</h2>
-            <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
-            <p>Nevisan Tea does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
-
-            <h2>Changes to This Privacy Policy</h2>
-            <p>We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
-            <p>These changes are effective immediately, after they are posted on this page.</p>
-
-            <h2>Contact Us</h2>
-            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us via WhatsApp at +91 98642 45687.</p>
-        </div>
-
-        <!-- CTA Block -->
-        <div class="cta-section" role="complementary">
-            <h2>Explore the Collection</h2>
-            <p>Single-origin whole-leaf teas from Golaghat, Assam — brewed for flavour, backed by science.</p>
-            <a class="cta-btn" href="https://nevisan.in/#collection">Shop Nevisan Teas</a><a class="cta-btn" href="https://nevisan.in/quiz" style="background:transparent;border:2px solid rgba(255,255,255,0.55);margin-left:0.6rem;">🍵 Take the Tea Quiz</a>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>
-            <a href="https://nevisan.in">nevisan.in</a>
-            &nbsp;&nbsp;·&nbsp;&nbsp;
-            &copy; 2026 Nevisan Tea &nbsp;·&nbsp; Mahabir Enterprise, Guwahati, Assam
-        </p>
-    </footer>
+  <footer>
+    <p>&copy; 2026 Nevisan Tea &nbsp;·&nbsp; Single-Origin Assam Tea from Golaghat &nbsp;·&nbsp; <a href="https://nevisan.in/">nevisan.in</a></p>
+  </footer>
 </body>
 </html>

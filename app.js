@@ -390,9 +390,8 @@ function Nav({ page: e, setPage: t }) {
         ? (window.location.href = "/quiz")
         : (t(e), l(!1));
   };
-  return React.createElement(
-    React.Fragment,
-    null,
+  return React.createElement(React.Fragment, null,
+    React.createElement(CookieConsentBanner, null),
     React.createElement(
       "nav",
       {
@@ -9594,6 +9593,108 @@ function ContactPage({ setPage: e }) {
     React.createElement(Footer, { setPage: e }),
   );
 }
+
+// ── COOKIE CONSENT BANNER (DPDP & GDPR COMPLIANT) ──
+function CookieConsentBanner() {
+  const [visible, setVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    try {
+      const consent = localStorage.getItem("nevisan_cookie_consent");
+      if (!consent) {
+        const timer = setTimeout(() => setVisible(true), 1200);
+        return () => clearTimeout(timer);
+      }
+    } catch (e) {}
+  }, []);
+
+  const handleConsent = (accepted) => {
+    try {
+      localStorage.setItem("nevisan_cookie_consent", accepted ? "accepted" : "declined");
+    } catch (e) {}
+    setVisible(false);
+  };
+
+  if (!visible) return null;
+
+  return React.createElement(
+    "div",
+    {
+      role: "region",
+      "aria-label": "Cookie Consent",
+      style: {
+        position: "fixed",
+        bottom: "20px",
+        left: "20px",
+        right: "20px",
+        maxWidth: "480px",
+        background: "#15271B",
+        color: "#F8F6F2",
+        padding: "18px 22px",
+        borderRadius: "14px",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.35)",
+        zIndex: 99999,
+        border: "1px solid rgba(201,168,76,0.3)",
+        fontFamily: "'Inter', sans-serif",
+        fontSize: "13.5px",
+        lineHeight: "1.5",
+        animation: "fadeIn 0.3s ease"
+      }
+    },
+    React.createElement(
+      "p",
+      { style: { margin: "0 0 12px 0", color: "#E0DDD5" } },
+      "We use cookies to improve your browsing experience, analyze traffic, and support secure order processing in accordance with our ",
+      React.createElement(
+        "a",
+        {
+          href: "/privacy-policy.html",
+          style: { color: "#C9A84C", textDecoration: "underline" }
+        },
+        "Privacy Policy"
+      ),
+      "."
+    ),
+    React.createElement(
+      "div",
+      { style: { display: "flex", gap: "10px", justifyContent: "flex-end" } },
+      React.createElement(
+        "button",
+        {
+          onClick: () => handleConsent(false),
+          style: {
+            background: "transparent",
+            border: "1px solid rgba(255,255,255,0.3)",
+            color: "#fff",
+            padding: "6px 14px",
+            borderRadius: "6px",
+            fontSize: "12.5px",
+            cursor: "pointer"
+          }
+        },
+        "Decline"
+      ),
+      React.createElement(
+        "button",
+        {
+          onClick: () => handleConsent(true),
+          style: {
+            background: "#C9A84C",
+            border: "none",
+            color: "#15271B",
+            fontWeight: "700",
+            padding: "6px 16px",
+            borderRadius: "6px",
+            fontSize: "12.5px",
+            cursor: "pointer"
+          }
+        },
+        "Accept All"
+      )
+    )
+  );
+}
+
 function App() {
   const [e, t] = useState("Home"),
     [a, n] = useState("undefined" != typeof window ? window.innerWidth : 1200);

@@ -1,371 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#15271B">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <title>Terms of Service | Nevisan Tea</title>
-    <meta name="description" content="Nevisan Tea's terms of service governing your use of our website and purchase of our products.">
-    <link rel="canonical" href="https://nevisan.in/terms-of-service">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Terms of Service | Nevisan Tea">
-    <meta property="og:description" content="Nevisan Tea's terms of service governing your use of our website and purchase of our products.">
-    <meta property="og:url" content="https://nevisan.in/terms-of-service">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Nevisan Tea">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Terms of Service | Nevisan Tea">
-    <meta name="twitter:description" content="Nevisan Tea's terms of service governing your use of our website and purchase of our products.">
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Terms of Service | Nevisan Tea",
-      "description": "Nevisan Tea's terms of service governing your use of our website and purchase of our products.",
-      "url": "https://nevisan.in/terms-of-service",
-      "author": {
-        "@type": "Organization",
-        "name": "Nevisan Tea",
-        "url": "https://nevisan.in"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Nevisan Tea",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://nevisan.in/assets/logo.png"
-        }
-      },
-      "license": "https://creativecommons.org/licenses/by/4.0/",
-      "isAccessibleForFree": true,
-      "datePublished": "2026-08-01",
-      "dateModified": "2026-08-01"
-    }
-    </script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        :root {
-            --teal:  #1b7a82;
-            --gold:  #c9a84c;
-            --cream: #f9f6f0;
-            --ink:   #1a1a1a;
-            --muted: #6b6b6b;
-            --border: #e0dad0;
-        }
-
-        html {
-            font-size: 16px;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--cream);
-            color: var(--ink);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        /* ── Navigation ── */
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--teal);
-            padding: 0 1.5rem;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-        }
-
-        .nav-logo {
-            color: #ffffff;
-            text-decoration: none;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.35rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .nav-logo:hover {
-            color: var(--gold);
-            transition: color 0.2s;
-        }
-
-        .nav-cta {
-            background: var(--gold);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 0.45rem 1.1rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            transition: background 0.2s, transform 0.1s;
-        }
-
-        .nav-cta:hover {
-            background: #b8923e;
-            transform: translateY(-1px);
-        }
-
-        /* ── Content Container ── */
-        .content-wrapper {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem 4rem;
-        }
-
-        /* ── Page Header ── */
-        .page-header {
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .page-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: clamp(1.75rem, 5vw, 2.6rem);
-            font-weight: 700;
-            color: var(--ink);
-            line-height: 1.25;
-            margin-bottom: 1rem;
-        }
-
-        .page-meta {
-            color: var(--muted);
-            font-size: 0.85rem;
-            letter-spacing: 0.03em;
-        }
-
-        /* ── Content ── */
-        .content h1, .content h2, .content h3 {
-            font-family: 'Playfair Display', Georgia, serif;
-            color: var(--ink);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .content h1 {
-            font-size: 1.75rem;
-        }
-
-        .content h2 {
-            font-size: 1.5rem;
-        }
-
-        .content h3 {
-            font-size: 1.25rem;
-        }
-
-        .content p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            color: var(--ink);
-        }
-
-        .content ul, .content ol {
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
-        }
-
-        .content li {
-            margin-bottom: 0.5rem;
-        }
-
-        .content a {
-            color: var(--teal);
-            text-decoration: underline;
-        }
-
-        .content a:hover {
-            color: var(--gold);
-        }
-
-        /* ── CTA Section ── */
-        .cta-section {
-            margin-top: 3.5rem;
-            padding: 2.5rem 2rem;
-            background: var(--teal);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.4rem;
-            color: #ffffff;
-            margin-bottom: 0.6rem;
-        }
-
-        .cta-section p {
-            color: rgba(255,255,255,0.82);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: var(--gold);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 0.75rem 2rem;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            transition: background 0.2s, transform 0.1s;
-        }
-
-        .cta-btn:hover {
-            background: #b8923e;
-            transform: translateY(-1px);
-        }
-
-        /* ── Footer ── */
-        footer {
-            background: #12555b;
-            color: rgba(255,255,255,0.65);
-            text-align: center;
-            padding: 1.5rem 1rem;
-            font-size: 0.82rem;
-            line-height: 1.7;
-        }
-
-        footer a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 600px) {
-            .content-wrapper {
-                padding: 2rem 1rem 3rem;
-            }
-
-            .cta-section {
-                padding: 2rem 1.25rem;
-            }
-        }
-
-  /* Skip link for keyboard accessibility */
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #1a3c2a;
-    color: #fff;
-    padding: 8px 16px;
-    z-index: 10000;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 0 0 4px 0;
-    transition: top 0.2s;
-  }
-  .skip-link:focus {
-    top: 0;
-  }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#15271B">
+  <title>Terms of Service | Nevisan Tea</title>
+  <meta name="description" content="Terms of Service for Nevisan Tea. Read about our ordering, shipping, 18-month shelf life, return, and cancellation policies.">
+  <link rel="canonical" href="https://nevisan.in/terms-of-service.html">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/jpeg" href="/nevisan-logo.jpeg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Terms of Service — Nevisan Tea">
+  <meta name="twitter:description" content="Terms of service and purchasing policy for Nevisan Tea.">
+  <meta name="twitter:image" content="https://nevisan.in/hero-bg.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #15271B;
+      --gold: #C9A84C;
+      --cream: #F8F6F2;
+      --ink: #1F2E24;
+      --muted: #5C7064;
+      --border: #E2DDD5;
+    }
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      background: var(--gold);
+      color: var(--teal);
+      padding: 10px 18px;
+      z-index: 9999;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 16px; }
+    nav {
+      background: var(--teal);
+      padding: 0 1.5rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--teal);
+      text-decoration: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    main {
+      flex: 1;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 2.8rem);
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+    .meta-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+    }
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem;
+      color: var(--teal);
+      margin: 2rem 0 0.8rem;
+    }
+    p, ul {
+      margin-bottom: 1.2rem;
+      color: #334439;
+    }
+    ul { padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    a { color: var(--teal); font-weight: 600; text-decoration: underline; }
+    .card-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    footer {
+      background: var(--teal);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.88rem;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Navigation -->
-    <nav class="nav" aria-label="Main navigation">
-        <a class="nav-logo" href="https://nevisan.in">Nevisan</a>
-        <a class="nav-cta" href="https://nevisan.in/#collection">Shop Now</a>
-    </nav>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav aria-label="Main navigation">
+    <a class="nav-logo" href="https://nevisan.in/">NEVISAN</a>
+    <a class="nav-cta" href="https://nevisan.in/#collection">Shop Teas</a>
+  </nav>
 
-    <!-- Page Content -->
-    <main class="content-wrapper" id="main-content">
-        <header class="page-header">
-            <h1 class="page-title">Terms of Service</h1>
-            <p class="page-meta">Last updated: August 1, 2026</p>
-        </header>
+  <main id="main-content">
+    <h1>Terms of Service</h1>
+    <p class="meta-date">Last Updated: August 2026 · Governing Law: Assam, India</p>
 
-        <div class="content">
-            <p>Welcome to Nevisan Tea!</p>
-            <p>These terms and conditions outline the rules and regulations for the use of Nevisan Tea's Website, located at nevisan.in.</p>
-            <p>By accessing this website we assume you accept these terms and conditions. Do not continue to use Nevisan Tea if you do not agree to take all of the terms and conditions stated on this page.</p>
+    <div class="card-box">
+      <strong>Brand &amp; Commercial Entity:</strong><br>
+      Nevisan Tea — Marketed by Mahabir Enterprise<br>
+      Citi Point, G.S. Road, Guwahati, Assam - 781008<br>
+      FSSAI License (Marketer): 10325001000313 · FSSAI License (Manufacturer): 0321120000114
+    </div>
 
-            <h2>Definitions</h2>
-            <p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company's terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client.</p>
+    <h2>1. General Terms</h2>
+    <p>By accessing <a href="https://nevisan.in">nevisan.in</a> or purchasing Nevisan Tea products, you agree to these Terms of Service. All content, trademarks, tea formulations, and imagery are intellectual property of Nevisan Tea and Mahabir Enterprise.</p>
 
-            <h2>Intellectual Property Rights</h2>
-            <p>Except where otherwise noted, the content on this website is the property of Nevisan Tea and its licensors. All rights reserved.</p>
-            <p>You may view and/or print pages from https://nevisan.in for your personal use subject to restrictions set in these terms and conditions.</p>
+    <h2>2. Product Specifications &amp; Shelf Life</h2>
+    <p>Nevisan whole-leaf teas are 100% single-origin Assam teas grown in Golaghat. All packs have a shelf life of <strong>18 months from packing</strong> (recommended for consumption within 3 months of opening). Store in a cool, dry place away from direct sunlight.</p>
 
-            <h2>Disclaimer</h2>
-            <p>To the maximum extent permitted by applicable law, Nevisan Tea excludes all representations, warranties and conditions relating to our website and the use of this website. Nothing in this disclaimer will:</p>
-            <ul>
-                <li>limit or exclude our or your liability for death or personal injury resulting from negligence;</li>
-                <li>limit or exclude our or your liability for fraud or fraudulent misrepresentation;</li>
-                <li>limit any of our or your liabilities in any way that is not permitted under applicable law;</li>
-                <li>exclude any of our or your liabilities that may not be excluded under applicable law.</li>
-            </ul>
+    <h2>3. Pricing &amp; Payments</h2>
+    <p>All prices listed on nevisan.in, Amazon, and Flipkart are in Indian Rupees (INR) inclusive of applicable GST. We reserve the right to modify prices without prior notice.</p>
 
-            <h2>Limitations of Liability</h2>
-            <p>In no event shall Nevisan Tea, nor any of its officers, directors and employees, be liable for anything arising out of or in any way connected with your use of this Website whether such liability is under contract, tort or otherwise, including without limitation, for any indirect, consequential or special liability arising out of or in any way connected with your use of this Website.</p>
-            <p>To the maximum extent permitted by applicable law, in no event shall Nevisan Tea be liable for any indirect or consequential loss or damage whatsoever (including without limitation loss of business, loss of profit, loss of income, loss or corruption of data, loss of use value or loss arising out of or in connection with business interruption) resulting from the use of or inability to use this Website.</p>
+    <h2>4. Shipping &amp; Delivery</h2>
+    <p>Orders are dispatched direct from Guwahati/Golaghat within 24–48 hours via express courier or India Post. Typical pan-India transit time is 3–7 business days.</p>
 
-            <h2>Indemnification</h2>
-            <p>You hereby indemnify to the fullest extent Nevisan Tea from and against any and all liabilities, costs, demands, causes of action, damages and expenses arising out of or in any way related to your breach of any of the provisions of these Terms.</p>
+    <h2>5. Returns &amp; Replacement Policy</h2>
+    <p>Because tea is a food &amp; beverage consumable, we accept returns or replacements within <strong>7 days of delivery</strong> only in cases of damaged transit packaging, manufacturer defects, or incorrect item delivery. To initiate a claim, WhatsApp our team at <a href="https://wa.me/919864245687">+91-9864245687</a> with photos of the unboxing.</p>
 
-            <h2>Links to Other Websites</h2>
-            <p>Our Website may contain links to other websites that are not owned or controlled by Nevisan Tea.</p>
-            <p>Please be aware that we are not responsible for the privacy practices of such other websites. We encourage you to be aware when you leave our website and to read the privacy statements of each and every website that may collect personal information.</p>
+    <h2>6. Non-Alcoholic Botanical Formulations</h2>
+    <p>Nevisan Rum Green Tea and Whiskey Green Tea are <strong>0.0% alcohol botanical blends</strong> designed for sensory unwinding. They contain zero ethyl alcohol and are safe for non-drinkers, drivers, and daily wellness.</p>
 
-            <h2>Changes to These Terms and Conditions</h2>
-            <p>We may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. Your continued use of our Website following any changes to these Terms and Conditions will constitute your acknowledgement and acceptance of the changes.</p>
+    <h2>7. Governing Jurisdiction</h2>
+    <p>Any disputes arising out of website usage or purchases are subject to the exclusive jurisdiction of the competent courts in <strong>Guwahati, Assam, India</strong>.</p>
+  </main>
 
-            <h2>Contact Us</h2>
-            <p>If you have any questions about our Terms and Conditions, please contact us via WhatsApp at +91 98642 45687.</p>
-        </div>
-
-        <!-- CTA Block -->
-        <div class="cta-section" role="complementary">
-            <h2>Explore the Collection</h2>
-            <p>Single-origin whole-leaf teas from Golaghat, Assam — brewed for flavour, backed by science.</p>
-            <a class="cta-btn" href="https://nevisan.in/#collection">Shop Nevisan Teas</a><a class="cta-btn" href="https://nevisan.in/quiz" style="background:transparent;border:2px solid rgba(255,255,255,0.55);margin-left:0.6rem;">🍵 Take the Tea Quiz</a>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>
-            <a href="https://nevisan.in">nevisan.in</a>
-            &nbsp;&nbsp;·&nbsp;&nbsp;
-            &copy; 2026 Nevisan Tea &nbsp;·&nbsp; Mahabir Enterprise, Guwahati, Assam
-        </p>
-    </footer>
+  <footer>
+    <p>&copy; 2026 Nevisan Tea &nbsp;·&nbsp; Single-Origin Assam Tea from Golaghat &nbsp;·&nbsp; <a href="https://nevisan.in/">nevisan.in</a></p>
+  </footer>
 </body>
 </html>

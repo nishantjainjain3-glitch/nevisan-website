@@ -103,6 +103,7 @@
         .product-section p { font-size: 1.02rem; line-height: 1.75; color: #2b3a30; margin-bottom: 0.75rem; }
         .product-section ul { list-style: none; padding: 0; }
         .info-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.95rem; }
+        .info-table th { padding: 10px 12px; border-bottom: 2px solid var(--border); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--teal); }
         .badge-grid { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 1rem; }
         .spec-badge { background: #F8F6F2; border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 0.85rem; font-weight: 600; color: var(--teal); }
         footer { background: var(--teal); color: rgba(255,255,255,0.7); text-align: center; padding: 2.5rem 1rem; font-size: 0.88rem; }
@@ -165,16 +166,28 @@
         </div>
 
         <div class="product-section">
-            <h2>Nutritional Facts (Per 100g)</h2>
+            <h2>Nutritional Facts & Caffeine Profile</h2>
+            <p style="font-size: 0.92rem; color: var(--muted); margin-bottom: 0.75rem;">Official certified laboratory values for loose leaf and brewed liquor:</p>
             <table class="info-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Nutrient / Parameter</th>
+                        <th style="text-align: center;">Per 100g (Dry Leaf)</th>
+                        <th style="text-align: right;">Brewed (2g in 150ml Hot Water)</th>
+                    </tr>
+                </thead>
                 <tbody>
-                    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #e0dad0; font-weight: 500; text-transform: capitalize;">energy</td><td style="padding: 6px 12px; border-bottom: 1px solid #e0dad0; text-align: right; color: #1b7a82; font-weight: 600;">104.22 Kcal</td></tr>
-<tr><td style="padding: 6px 12px; border-bottom: 1px solid #e0dad0; font-weight: 500; text-transform: capitalize;">protein</td><td style="padding: 6px 12px; border-bottom: 1px solid #e0dad0; text-align: right; color: #1b7a82; font-weight: 600;">23.28g</td></tr>
-<tr><td style="padding: 6px 12px; border-bottom: 1px solid #e0dad0; font-weight: 500; text-transform: capitalize;">fat</td><td style="padding: 6px 12px; border-bottom: 1px solid #e0dad0; text-align: right; color: #1b7a82; font-weight: 600;">Trace</td></tr>
-<tr><td style="padding: 6px 12px; border-bottom: 1px solid #e0dad0; font-weight: 500; text-transform: capitalize;">carbs</td><td style="padding: 6px 12px; border-bottom: 1px solid #e0dad0; text-align: right; color: #1b7a82; font-weight: 600;">4.9g</td></tr>
-<tr><td style="padding: 6px 12px; border-bottom: 1px solid #e0dad0; font-weight: 500; text-transform: capitalize;">sugar</td><td style="padding: 6px 12px; border-bottom: 1px solid #e0dad0; text-align: right; color: #1b7a82; font-weight: 600;">Trace</td></tr>
+                    <tr><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; font-weight: 500;">Energy (Kcal)</td><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; text-align: center; color: #5C7064;">104.22 Kcal</td><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; text-align: right; color: #15271B; font-weight: 700;">Trace (< 1 Kcal)</td></tr>
+<tr><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; font-weight: 500;">Protein</td><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; text-align: center; color: #5C7064;">23.28g</td><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; text-align: right; color: #15271B; font-weight: 700;">Trace</td></tr>
+<tr><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; font-weight: 500;">Fat</td><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; text-align: center; color: #5C7064;">Trace</td><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; text-align: right; color: #15271B; font-weight: 700;">Nil (0g)</td></tr>
+<tr><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; font-weight: 500;">Carbohydrate</td><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; text-align: center; color: #5C7064;">4.9g</td><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; text-align: right; color: #15271B; font-weight: 700;">Nil (0g)</td></tr>
+<tr><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; font-weight: 500;">Sugar</td><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; text-align: center; color: #5C7064;">Trace</td><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; text-align: right; color: #15271B; font-weight: 700;">Nil (0g)</td></tr>
+<tr><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; font-weight: 500;">Caffeine</td><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; text-align: center; color: #5C7064;">Low</td><td style="padding: 8px 12px; border-bottom: 1px solid #e0dad0; text-align: right; color: #15271B; font-weight: 700;">20–25 mg (Gentle Energy)</td></tr>
                 </tbody>
             </table>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #3D5245; background: #F8F6F2; padding: 10px 14px; border-radius: 8px;">
+                💡 <strong>Low Caffeine & Zero Sugar:</strong> Our whole-leaf teas deliver gentle alertness without jitteriness or caffeine crashes. Zero fat, zero carbs, and zero sugar when steeped in hot water.
+            </p>
         </div>
 
         <div class="product-section">

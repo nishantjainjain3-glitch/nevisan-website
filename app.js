@@ -6857,10 +6857,14 @@ function HowToBrewSection() {
 function FAQSection() {
   const { isMobile: e } = useViewport(),
     [t, a] = useState(null);
-  const frontFaqs = [
+    const frontFaqs = [
     {
       q: "What makes Nevisan whole-leaf Assam tea different from regular tea?",
       a: "Most commercial tea uses CTC (Cut, Tear, Curl) processing that grinds leaves into dust for fast, bitter extraction. Nevisan uses 100% whole, unbroken leaves hand-plucked from our organic garden in Golaghat, Assam. Whole leaves retain natural essential oils and antioxidants, releasing gentle sweetness without bitterness and allowing up to 3 separate steeps.",
+    },
+    {
+      q: "Does Nevisan tea contain caffeine, and what are the nutritional values?",
+      a: "Nevisan whole-leaf green tea has naturally low caffeine (only 15–25mg per cup, about 1/5th of a cup of coffee) combined with high L-theanine for sustained calm focus with zero jitters or crashes. When brewed in hot water, every cup has Nil Fat (0g), Nil Carbohydrates (0g), Nil Sugar (0g), and Trace Calories (<1 kcal), making it 100% keto, diabetic, and fasting-friendly.",
     },
     {
       q: "Where is Nevisan tea grown, and is it 100% chemical-free?",
@@ -6868,19 +6872,15 @@ function FAQSection() {
     },
     {
       q: "How do I brew whole-leaf green tea for the best taste?",
-      a: "Use 2 to 2.5g (about 1 teaspoon) of tea per 200ml of hot water at 85°C–90°C (never boiling water, as boiling water scalds delicate leaves). Steep for 2–3 minutes for the first cup. Whole leaves release flavor gradually without bitterness.",
+      a: "Use 2 to 2.5g (about 1 teaspoon) of tea per cup in hot water at 85°C–90°C (just prior to a rolling boil). Steep for 1.5 to 2 minutes. Whole leaves release flavor gradually without bitterness.",
     },
     {
       q: "Can I really steep Nevisan whole-leaf tea multiple times?",
-      a: "Yes! Because the leaf remains intact, different layers of flavor and aroma extract over consecutive brews. The second steep is often smoother and sweeter than the first, giving you 50–75 cups from a single 50g pack.",
+      a: "Yes! Because the leaf remains intact, different layers of flavor and aroma extract over consecutive brews. The second steep is often smoother, sweeter, and even lower in caffeine, giving you 50–75 cups from a single 50g pack.",
     },
     {
       q: "Which Nevisan tea variety is best for my daily routine?",
-      a: "For morning digestion and energy: Lemongrass Green or Organic Green. For hormonal balance and PCOS: Spearmint Green. For calm sleep and relaxation: GABA Oolong or Chamomile Green. For stress relief: Tulsi Green. For a zero-alcohol evening drink: Rum or Whiskey Green. Take our 2-minute Tea Quiz on the homepage for personalized guidance.",
-    },
-    {
-      q: "How do I order Nevisan tea with pan-India delivery?",
-      a: "You can order directly on WhatsApp (+91-9864245687) for fresh garden dispatch, or buy via Amazon India and Flipkart. All orders ship with secure pan-India express delivery.",
+      a: "For morning digestion and energy: Lemongrass Green or Organic Green. For hormonal balance and PCOS: Spearmint Green. For calm sleep and relaxation: GABA Oolong or Chamomile Green. For stress relief: Tulsi Green. For a zero-alcohol evening drink: Rum or Whiskey Green.",
     },
   ];
 

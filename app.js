@@ -6857,12 +6857,42 @@ function HowToBrewSection() {
 function FAQSection() {
   const { isMobile: e } = useViewport(),
     [t, a] = useState(null);
+  const frontFaqs = [
+    {
+      q: "What makes Nevisan whole-leaf Assam tea different from regular tea?",
+      a: "Most commercial tea uses CTC (Cut, Tear, Curl) processing that grinds leaves into dust for fast, bitter extraction. Nevisan uses 100% whole, unbroken leaves hand-plucked from our organic garden in Golaghat, Assam. Whole leaves retain natural essential oils and antioxidants, releasing gentle sweetness without bitterness and allowing up to 3 separate steeps.",
+    },
+    {
+      q: "Where is Nevisan tea grown, and is it 100% chemical-free?",
+      a: "Every batch comes from our single-origin garden in Golaghat, upper Assam — a mineral-rich terroir in the Brahmaputra valley. All our teas are PGS-India organic certified and 100% free from synthetic pesticides, herbicides, and artificial flavors.",
+    },
+    {
+      q: "How do I brew whole-leaf green tea for the best taste?",
+      a: "Use 1.5g (about 1 teaspoon) of tea per 200ml of hot water at 80°C–85°C (never boiling water, as boiling water scalds delicate leaves). Steep for 2–3 minutes for the first cup. Whole leaves release flavor gradually without bitterness.",
+    },
+    {
+      q: "Can I really steep Nevisan whole-leaf tea multiple times?",
+      a: "Yes! Because the leaf remains intact, different layers of flavor and aroma extract over consecutive brews. The second steep is often smoother and sweeter than the first, giving you 50–75 cups from a single 50g pack.",
+    },
+    {
+      q: "Which Nevisan tea variety is best for my daily routine?",
+      a: "For morning digestion and energy: Lemongrass Green or Organic Green. For hormonal balance and PCOS: Spearmint Green. For calm sleep and relaxation: GABA Oolong or Chamomile Green. For stress relief: Tulsi Green. For a zero-alcohol evening drink: Rum or Whiskey Green. Take our 2-minute Tea Quiz on the homepage for personalized guidance.",
+    },
+    {
+      q: "How do I order Nevisan tea with pan-India delivery?",
+      a: "You can order directly on WhatsApp (+91-9864245687) for fresh garden dispatch, or buy via Amazon India and Flipkart. All orders ship with secure pan-India express delivery.",
+    },
+  ];
+
   return React.createElement(
     "section",
-    { style: { background: T.cream, padding: e ? "60px 20px" : "100px 32px" } },
+    {
+      id: "faq-section",
+      style: { background: T.cream, padding: e ? "60px 20px" : "100px 32px" },
+    },
     React.createElement(
       "div",
-      { style: { maxWidth: 760, margin: "0 auto" } },
+      { style: { maxWidth: 780, margin: "0 auto" } },
       React.createElement(
         "div",
         { style: { textAlign: "center", marginBottom: e ? 36 : 56 } },
@@ -6885,7 +6915,7 @@ function FAQSection() {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 16,
+                fontSize: 14,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
                 color: T.teal,
@@ -6906,366 +6936,70 @@ function FAQSection() {
               fontWeight: 400,
               fontSize: "clamp(24px, 3.5vw, 42px)",
               color: T.text,
+              marginBottom: 12,
             },
           },
           "Frequently Asked Questions",
+        ),
+        React.createElement(
+          "p",
+          {
+            style: {
+              fontFamily: "'Inter'",
+              fontSize: 15,
+              color: T.textMuted,
+              maxWidth: 540,
+              margin: "0 auto",
+            },
+          },
+          "Core answers about our single-origin Golaghat harvest, brewing ritual, and express delivery.",
         ),
       ),
       React.createElement(
         "div",
         { style: { display: "flex", flexDirection: "column", gap: 12 } },
-        [
-          // ── About Nevisan ──
-          {
-            q: "What is Nevisan tea?",
-            a: "Nevisan is a single-origin, whole-leaf tea brand from Golaghat, Assam. Every variety — from Lemongrass Green to GABA Oolong — is sourced from one PGS-India certified organic garden. No pesticides, no artificial flavours, no blending with inferior leaves. The brand was founded on a simple conviction: the world's finest tea region should produce tea that Indians can actually taste and afford.",
-          },
-          {
-            q: "Where is Nevisan tea grown?",
-            a: "All Nevisan teas are sourced from a single garden in Golaghat, upper Assam — one of India's most mineral-rich tea-growing regions. The Brahmaputra valley soil, extreme humidity (averaging 80% year-round) and seasonal temperature variation create exceptional depth and complexity in the leaves.",
-          },
-          {
-            q: "Is Nevisan tea organic and chemical-free?",
-            a: "Yes. Every batch is PGS-India organic certified — grown without synthetic pesticides, herbicides or chemical fertilisers. Nevisan also batch-tests for pesticide residues. From soil to seal, completely chemical-free.",
-          },
-          {
-            q: "What makes Nevisan different from supermarket tea?",
-            a: "Most supermarket tea uses CTC — Cut, Tear, Curl — which reduces whole leaves to granules for fast, strong brewing. Nevisan uses 100% whole leaf that can be steeped 2–3 times, retaining more L-theanine, EGCG antioxidants and essential oils.",
-          },
-          {
-            q: "How many varieties does Nevisan offer?",
-            a: "Nevisan currently offers ten varieties: Lemongrass Green, Blue Flower Green, Rum Green, Spearmint Green, Tulsi Green, Chamomile Green, Whiskey Green, GABA Oolong, Organic Green Tea, and Ginger Green Tea. Each is whole-leaf, single-origin and PGS-India certified organic.",
-          },
-          {
-            q: "Who founded Nevisan and why?",
-            a: "Nevisan was founded by a team from Guwahati, Assam, frustrated by one observation: Golaghat grows tea that buyers in Japan and Europe pay a premium for, yet most Indians drink mass-produced CTC dust. The founders went back to the garden to bring the whole leaf, directly to Indian homes.",
-          },
-          {
-            q: "Is Nevisan a D2C brand?",
-            a: "Yes — Nevisan sells directly to customers via Amazon, Flipkart and WhatsApp (+91 98642 45687). The WhatsApp channel allows direct conversation with the founders, who respond personally to questions about which tea is right for you.",
-          },
-          {
-            q: "Does Nevisan have a physical store?",
-            a: "Currently Nevisan operates exclusively online via Amazon, Flipkart and WhatsApp. There is no physical retail store. This direct model keeps costs lower and ensures every pack is fresh — not sitting on a shelf for months.",
-          },
-          {
-            q: "Is Nevisan tea FSSAI approved?",
-            a: "Yes. All Nevisan teas are FSSAI licensed and comply with Food Safety and Standards Authority of India regulations. The FSSAI license number is printed on every pack.",
-          },
-          {
-            q: "Can I visit the Nevisan tea garden?",
-            a: "The garden is in Golaghat, Assam and is not currently open for public visits. However, Nevisan documents the garden and processing through its journal and Instagram. You can follow @nevisan.tea for behind-the-scenes content.",
-          },
-          {
-            q: "What is the story behind the name Nevisan?",
-            a: "The name 'Nevisan' combines 'Ne' from the founders' vision of naturalness and 'visan' from the Sanskrit word for poison/toxin — reflecting the brand's commitment to pure, chemical-free teas that detoxify and nourish the body.",
-          },
-          {
-            q: "How much does Nevisan tea cost?",
-            a: "All Nevisan teas are priced at MRP ₹499 for a 50g pack. Each pack makes 25+ cups steeped once, or 50–75 cups when re-steeped. That works out to ₹6–10 per cup — less than café tea and comparable to premium tea bags, but with dramatically better quality.",
-          },
-          {
-            q: "Which Nevisan tea should I buy first?",
-            a: "Depends on your goal: General wellness + energy: Lemongrass Green or Organic Green. Hormonal health / PCOS: Spearmint Green. Sleep and anxiety: GABA Oolong or Chamomile Green. Stress / immunity: Tulsi Green. Unusual evening ritual: Rum Green or Whiskey Green. Antioxidants + visual wow: Blue Flower Green. If still unsure, take the Tea Quiz on the website.",
-          },
-          // ── Product Varieties ──
-          {
-            q: "What does Lemongrass Green Tea taste like?",
-            a: "Bright, citrusy and refreshing. The lemongrass gives a clean lemon-like note without sourness. The green tea base adds a grassy, slightly sweet undertone. It brews a pale golden colour and is light enough to drink without sweetener — though a small amount of honey enhances it beautifully.",
-          },
-          {
-            q: "What are the benefits of Lemongrass Green Tea?",
-            a: "Lemongrass green tea offers multiple benefits: aids digestion by relaxing the digestive tract, acts as a natural diuretic, supports metabolism, and has mild antimicrobial properties that benefit gut health. Combined with Assam green tea, it also delivers EGCG antioxidants and L-theanine for calm, sustained focus.",
-          },
-          {
-            q: "Is lemongrass tea good for digestion?",
-            a: "Yes — lemongrass contains compounds that relax the smooth muscle of the digestive tract, relieving bloating, cramps and indigestion. Best consumed 30 minutes after meals.",
-          },
-          {
-            q: "Does lemongrass tea help with weight loss?",
-            a: "Lemongrass acts as a mild diuretic and metabolism supporter, and the green tea base contains EGCG which is linked to fat oxidation. The effect is real but modest — consistent daily consumption as part of a balanced diet and active lifestyle is where results come from.",
-          },
-          {
-            q: "When is the best time to drink lemongrass green tea?",
-            a: "Morning (after breakfast) or mid-morning is ideal — the caffeine provides clean energy and the lemongrass supports digestion. Also excellent after lunch. Avoid after 5pm if you are caffeine-sensitive.",
-          },
-          {
-            q: "Can pregnant women drink lemongrass tea?",
-            a: "Lemongrass in large quantities is generally not recommended during pregnancy as it may stimulate uterine contractions. One occasional cup is considered low-risk, but we recommend consulting your doctor before drinking it regularly.",
-          },
-          {
-            q: "What is Blue Flower Green Tea?",
-            a: "Blue Flower Green Tea is a premium blend of whole-leaf Assam green tea with butterfly pea flowers (Clitoria ternatea). The flowers produce a vivid cobalt-blue brew rich in anthocyanin antioxidants. When you add lemon, the tea transforms from blue to purple — a natural pH reaction, no dyes involved.",
-          },
-          {
-            q: "Why does Blue Flower tea change colour with lemon?",
-            a: "The colour change is a natural pH reaction. The anthocyanins in butterfly pea flower act as natural pH indicators — blue in neutral pH, shifting to violet and pink as acidity increases. Adding lemon juice triggers this shift instantly. Pure botany, no tricks.",
-          },
-          {
-            q: "What are the benefits of Blue Flower Green Tea?",
-            a: "Butterfly pea flower is rich in anthocyanins linked to cognitive function, reduced oxidative stress and mild anti-anxiety effects. Some research points to proanthocyanidins helping with skin elasticity and eye health. Combined with green tea, you also get EGCG, L-theanine and moderate caffeine for sustained focus.",
-          },
-          {
-            q: "What does Blue Flower Green Tea taste like?",
-            a: "Mildly earthy and slightly woody from the butterfly pea petals, with the grassy freshness of Assam green tea underneath. The flavour is subtle — the visual impact is more dramatic than the taste. With lemon and honey it becomes a bright, lightly floral drink.",
-          },
-          {
-            q: "Can I make iced Blue Flower tea?",
-            a: "Absolutely — it is spectacular as iced tea. Cold-brew in cold water for 6–8 hours in the fridge for a deep cobalt blue. Pour over ice, then add lemon at the table for a live colour change from blue to purple.",
-          },
-          {
-            q: "Is Blue Flower Green Tea safe to drink daily?",
-            a: "Yes. Butterfly pea flower has been consumed as a traditional beverage in Southeast Asia for centuries. People on blood thinners should consult a doctor before consuming regularly, as some research suggests mild anticoagulant properties in high doses.",
-          },
-          {
-            q: "Does Rum Green Tea contain alcohol?",
-            a: "No — zero alcohol. Nevisan Rum Green Tea is made entirely from natural botanicals that evoke the warmth and character of aged rum. No alcohol, no artificial flavouring, no additives. It is completely safe for non-drinkers, people in recovery, children and pregnant women.",
-          },
-          {
-            q: "What does Rum Green Tea taste like?",
-            a: "The first sip is warm and slightly sweet. The mid-palate opens up with herbal depth and a hint of spice. The finish is clean with a warm, lingering quality that resembles the sensation of a small sip of aged rum — without the alcohol. Bold, exotic and perfect as an evening ritual.",
-          },
-          {
-            q: "How was Rum Green Tea made?",
-            a: "It took 14 attempts over several months. The challenge: rum's complexity comes from barrel ageing — hundreds of interacting compounds developed over years. The Nevisan team built the flavour from multiple natural elements using a cold-infusion technique. Attempt 14 got it right. No changes since.",
-          },
-          {
-            q: "When should I drink Rum Green Tea?",
-            a: "The best time is in the late afternoon or evening (5pm onwards) as a relaxing, warming, zero-alcohol alternative to cocktails. Because it contains whole-leaf Assam green tea with mild caffeine, if you are very caffeine-sensitive, enjoy it before 8pm.",
-          },
-          {
-            q: "Is Rum Green Tea good for relaxation?",
-            a: "Yes — the combination of green tea L-theanine (calm focus) and the warm rum flavour creates a soothing, meditative experience. It's perfect for evening relaxation without the sedative effects of chamomile.",
-          },
-          {
-            q: "What is Spearmint Green Tea good for?",
-            a: "Spearmint Green Tea is particularly beneficial for hormonal health, especially PCOS. Spearmint has been shown to reduce excess androgens and support balanced hormone levels. It also aids digestion, freshens breath and provides a cooling, refreshing taste.",
-          },
-          {
-            q: "Is spearmint tea good for PCOS?",
-            a: "Yes — several studies show that spearmint tea can significantly reduce free testosterone levels and improve hormone balance in women with PCOS. It also helps with hirsutism (excess hair growth) and supports overall reproductive health. Drink 1–2 cups daily for best results.",
-          },
-          {
-            q: "What does Spearmint Green Tea taste like?",
-            a: "Cool, refreshing and mildly sweet. The spearmint gives a clean, cooling sensation without the sharpness of peppermint. The Assam green tea base adds a malty depth that balances the mint. Delicious hot or iced, and naturally caffeine-free in terms of the mint's effect.",
-          },
-          {
-            q: "What is Tulsi Green Tea good for?",
-            a: "Tulsi (holy basil) is one of India's most revered medicinal plants. Tulsi Green Tea supports immunity, reduces stress, helps with respiratory health and has anti-inflammatory properties. It is an excellent daily wellness tea, especially during seasonal changes and monsoon.",
-          },
-          {
-            q: "What does Tulsi Green Tea taste like?",
-            a: "Earthy, slightly peppery and aromatic. The Tulsi adds a distinctive clove-like depth that pairs beautifully with the grassy Assam green tea base. It has a warm, comforting character — perfect for morning or early evening.",
-          },
-          {
-            q: "What is Chamomile Green Tea good for?",
-            a: "Chamomile is renowned for its calming and sleep-supporting properties. Chamomile Green Tea helps with anxiety, insomnia, digestive discomfort and mild inflammation. The combination with green tea adds antioxidants while chamomile provides gentle relaxation without drowsiness during the day.",
-          },
-          {
-            q: "Can I drink Chamomile Green Tea before bed?",
-            a: "Yes — chamomile is one of the best bedtime teas. It promotes relaxation and can help with sleep quality. The small amount of caffeine from the green tea base is minimal, but if you are very sensitive, you may want to drink it 1–2 hours before bed.",
-          },
-          {
-            q: "What is GABA Oolong Tea?",
-            a: "GABA Oolong is a speciality tea where the leaves are processed in a nitrogen-rich environment to increase Gamma-Aminobutyric Acid (GABA) content. GABA is a neurotransmitter that promotes relaxation, reduces anxiety and may help with sleep quality. It is a unique, functional tea with a rich, mellow flavour.",
-          },
-          {
-            q: "What are the benefits of GABA Oolong Tea?",
-            a: "GABA Oolong may help reduce stress and anxiety, promote relaxation, improve sleep quality and support focus without jitters. The oolong processing gives it a smooth, partially oxidised flavour that is richer than green tea but lighter than black tea.",
-          },
-          {
-            q: "What does GABA Oolong Tea taste like?",
-            a: "Rich, mellow and smooth with a subtle roasted note. The GABA processing gives it a distinctive umami depth that is both satisfying and calming. It has less astringency than green tea and a lingering, pleasant aftertaste.",
-          },
-          {
-            q: "What is Whiskey Green Tea?",
-            a: "Whiskey Green Tea is a creative blend of whole-leaf Assam green tea with natural botanicals that evoke the warm, smoky character of aged whiskey. Like Rum Green Tea, it is 100% non-alcoholic — a sensory experience, not an alcoholic beverage. It is perfect as an evening wind-down ritual.",
-          },
-          {
-            q: "What does Whiskey Green Tea taste like?",
-            a: "Warm, smoky and slightly sweet with a hint of oak and spice. The natural botanicals create a complex flavour profile reminiscent of aged whiskey — without a drop of alcohol. Smooth, warming and perfect for slow sipping in the evening.",
-          },
-          {
-            q: "What is Organic Green Tea?",
-            a: "Organic Green Tea is Nevisan's classic, pure whole-leaf Assam green tea with no added botanicals or flavours. It is the foundation of the Nevisan range — simple, clean and showcasing the natural character of Golaghat tea. Rich in EGCG antioxidants, L-theanine and moderate caffeine.",
-          },
-          {
-            q: "What does Organic Green Tea taste like?",
-            a: "Clean, grassy and slightly sweet with a subtle malty undertone from the Assam terroir. It is the purest expression of Nevisan's whole-leaf philosophy — no added flavours, just the tea as it grows. Light, refreshing and endlessly re-steepable.",
-          },
-          {
-            q: "What is Ginger Green Tea?",
-            a: "Ginger Green Tea blends whole-leaf Assam green tea with natural dried ginger. It is a warming, spicy blend that combines the antioxidants of green tea with ginger's digestive and anti-inflammatory properties. Perfect for cold weather, monsoon and post-meal digestion.",
-          },
-          {
-            q: "What does Ginger Green Tea taste like?",
-            a: "Warm, spicy and invigorating. The ginger provides a clean heat that builds gradually, while the green tea base adds freshness and balance. It is naturally energising and comforting — excellent with a touch of honey on cold mornings.",
-          },
-          // ── Brewing & Storage ──
-          {
-            q: "How do I brew Nevisan green tea?",
-            a: "Use 1 teaspoon (≈2g) of whole-leaf tea per 200ml of water. Heat water to 80–85°C (not boiling — boiling water burns green tea leaves and makes it bitter). Steep for 2–3 minutes for the first infusion. For the second steep, add 30 seconds to the timing. Whole-leaf tea can typically be steeped 2–3 times.",
-          },
-          {
-            q: "What is the ideal water temperature for green tea?",
-            a: "80–85°C is ideal for green tea. Boiling water (100°C) burns the delicate leaves, releasing excessive tannins that cause bitterness. If you don't have a temperature-controlled kettle, bring water to a boil, then let it sit uncovered for 2–3 minutes before pouring.",
-          },
-          {
-            q: "Can the tea be steeped more than once?",
-            a: "Absolutely. Because we use 100% whole leaf tea, most of our varieties can be steeped twice — the second cup is just as rewarding. Some varieties like GABA Oolong and Organic Green Tea can even be steeped 3 times. Each steep releases different flavour compounds.",
-          },
-          {
-            q: "What is the shelf life of the tea?",
-            a: "All Nevisan teas have a shelf life of 24 months from the date of manufacture when stored in a cool, dry place away from direct sunlight. The vacuum-sealed packs preserve freshness for the full shelf life.",
-          },
-          {
-            q: "How should I store my Nevisan tea?",
-            a: "Store in a cool, dry place away from direct sunlight, moisture and strong odours. Keep the pack sealed when not in use. Avoid storing in the fridge unless you live in an extremely hot, humid climate — condensation can damage the leaves when removed from cold storage.",
-          },
-          {
-            q: "Can I use a tea infuser or strainer?",
-            a: "Yes — a mesh infuser or strainer works perfectly. For the best experience, use a wide infuser that allows the leaves room to unfurl. Tight infusers restrict leaf expansion and can result in a weaker brew. A simple muslin bag or a glass teapot with a built-in strainer also works well.",
-          },
-          {
-            q: "How much tea should I use per cup?",
-            a: "1 teaspoon (≈2g) of whole-leaf tea per 200ml of water is the standard ratio. For a stronger brew, use 1.5 teaspoons. For a lighter brew, use ¾ teaspoon. Adjust to your taste — whole-leaf tea is forgiving and rewards experimentation.",
-          },
-          // ── Ordering & Delivery ──
-          {
-            q: "Where can I buy Nevisan tea?",
-            a: "Nevisan tea is available on Amazon India, Flipkart, and via WhatsApp direct orders at +91 98642 45687. You can also order directly through our website. For corporate gifting and bulk orders, contact us on WhatsApp.",
-          },
-          {
-            q: "Do you deliver across India?",
-            a: "Yes! We deliver pan-India via Amazon and Flipkart. You can also order directly on WhatsApp for personal assistance with variety selection and order tracking.",
-          },
-          {
-            q: "How long does delivery take?",
-            a: "Amazon and Flipkart orders typically arrive in 3–5 business days for most cities, and 5–7 days for Tier 2/3 cities and remote areas. WhatsApp orders are dispatched within 24 hours of confirmation.",
-          },
-          {
-            q: "Is delivery free?",
-            a: "Delivery charges depend on your Amazon or Flipkart account type and order value. Amazon Prime members typically get free delivery. For WhatsApp direct orders, shipping cost is minimal and communicated transparently before order confirmation.",
-          },
-          {
-            q: "Can I order on WhatsApp?",
-            a: "Yes — WhatsApp ordering at +91 98642 45687 is available and recommended for first-time buyers. The founders respond personally, help you choose the right variety, and confirm your order directly. Payment is via UPI, bank transfer or any standard method.",
-          },
-          {
-            q: "Can I buy a sample or trial pack?",
-            a: "Currently all teas are available as individual 50g packs. You can message on WhatsApp (+91 98642 45687) to ask for recommendations before purchasing — the team will help you narrow down to 1–2 varieties most suited to your taste and health goals.",
-          },
-          {
-            q: "Are there any discount offers available?",
-            a: "Yes! We regularly offer launch discounts, bundle deals and festival offers. Subscribe to our WhatsApp channel or follow us on Instagram (@nevisan.tea) for the latest deals. First-time customers often get a special welcome discount.",
-          },
-          {
-            q: "Can I buy Nevisan tea outside India?",
-            a: "Currently, Nevisan teas are available only within India. We are exploring international shipping options. Sign up on our website to be notified when international delivery becomes available.",
-          },
-          {
-            q: "Do you offer subscription or recurring orders?",
-            a: "Yes, we offer subscription plans for regular tea drinkers. You can set up monthly or bi-monthly deliveries at a discounted rate. Contact us on WhatsApp to set up your subscription.",
-          },
-          {
-            q: "How can I track my order?",
-            a: "Once your order is shipped, you'll receive a tracking link via WhatsApp and SMS. You can also track your order on the respective platform (Amazon/Flipkart) where you made the purchase.",
-          },
-          // ── Returns & Quality ──
-          {
-            q: "What is your return policy?",
-            a: "As tea is a consumable product, all sales are final and non-returnable. However, if you receive a product that is near expiry, damaged, or incorrect, contact us on WhatsApp within 48 hours of delivery and we will replace it immediately.",
-          },
-          {
-            q: "Can I return Nevisan tea if I don't like it?",
-            a: "Nevisan teas purchased on Amazon follow Amazon's standard return policy. For WhatsApp direct orders, contact +91 98642 45687 — the team responds personally to any quality concerns. If you receive a batch with any quality issue, it will be replaced without question.",
-          },
-          {
-            q: "What if my order arrives damaged?",
-            a: "If your order arrives damaged, near expiry, or incorrect, contact us on WhatsApp at +91 98642 45687 within 48 hours of delivery with a photo. We will replace it immediately — no questions asked.",
-          },
-          {
-            q: "What if my order is damaged or incorrect?",
-            a: "We have a no-questions-asked replacement policy. If your order arrives damaged or is incorrect, contact us on WhatsApp within 48 hours with photos, and we'll send a replacement or full refund immediately.",
-          },
-          // ── Gifting & Bulk ──
-          {
-            q: "Do you offer bulk or wholesale orders?",
-            a: "Yes. Bulk orders are available for hotels, cafes, offices and corporate gifting. Contact via WhatsApp at +91 98642 45687. Minimum order is typically 20–30 packs of 50g. Custom assorted packs and branded gifting can also be arranged.",
-          },
-          {
-            q: "Can I gift Nevisan tea?",
-            a: "Absolutely — Nevisan tea makes a premium, thoughtful gift. You can order individual packs or request custom assorted gift packs via WhatsApp. The beautiful packaging and unique varieties make it an impressive gift for any occasion.",
-          },
-          // ── Health & Safety ──
-          {
-            q: "Is Nevisan tea safe for children?",
-            a: "Nevisan teas contain moderate caffeine from the green tea base, so we recommend them for ages 12 and above in moderation. The herbal varieties (Chamomile, Tulsi) are gentler options for younger teens. Always consult a paediatrician for children under 12.",
-          },
-          {
-            q: "Can I drink Nevisan tea during pregnancy?",
-            a: "Green tea in moderation (1–2 cups/day) is generally considered safe during pregnancy. However, we recommend consulting your doctor before regular consumption. The herbal varieties like Chamomile should also be discussed with your doctor.",
-          },
-          {
-            q: "Is Nevisan tea good for weight loss?",
-            a: "Nevisan teas contain EGCG antioxidants and L-theanine that support metabolism and fat oxidation. The effect is real but modest — consistent daily consumption as part of a balanced diet and active lifestyle is where results come from. Lemongrass Green and Organic Green are particularly popular for wellness routines.",
-          },
-          {
-            q: "Can I add milk or sugar to Nevisan teas?",
-            a: "Milk is not recommended — milk proteins bind to catechins and significantly reduce antioxidant absorption. Honey is the best sweetener (add after brewing, as heat degrades honey's beneficial compounds). Lemon works beautifully with Lemongrass and Blue Flower — and adds a dramatic colour change to the Blue Flower tea.",
-          },
-          {
-            q: "How do I know if green tea is real and not fake?",
-            a: "Four signs of real whole-leaf green tea: 1. It looks like actual leaves — rolled, twisted or flat but visibly leaf-like. 2. It smells grassy and fresh when you open the pack — not artificial. 3. It brews pale gold or green, not dark brown. 4. The brand specifies a single origin — garden name, region — not just 'premium Himalayan tea'. Vague sourcing language almost always means low-grade blended CTC.",
-          },
-          {
-            q: "Why is Nevisan tea ₹499 when cheaper options exist?",
-            a: "Green tea under ₹200 for 100g is almost always CTC, artificially flavoured, or from undisclosed blended sources. Whole-leaf, single-origin, organic tea costs more: no pesticides means lower yield, hand-picking adds labour, and careful slow processing takes more time. At ₹6–10 per cup when re-steeped, Nevisan is comparable in value — and dramatically superior in quality.",
-          },
-        ].map((n, o) =>
-          React.createElement(
+        frontFaqs.map((n, o) => {
+          const isOpened = t === o;
+          return React.createElement(
             "div",
             {
               key: o,
               style: {
-                background: "#fff",
+                background: T.white,
                 borderRadius: 14,
+                border: `1px solid ${isOpened ? T.teal : T.border}`,
                 overflow: "hidden",
-                boxShadow:
-                  t === o
-                    ? "0 4px 24px rgba(0,0,0,0.08)"
-                    : "0 1px 4px rgba(0,0,0,0.05)",
-                transition: "box-shadow 0.2s ease",
+                boxShadow: isOpened
+                  ? "0 8px 24px rgba(21, 39, 27, 0.08)"
+                  : "0 2px 8px rgba(0,0,0,0.03)",
+                transition: "all 200ms ease",
               },
             },
             React.createElement(
               "button",
               {
-                id: `faq-button-${o}`,
-                "aria-expanded": t === o,
-                "aria-controls": `faq-panel-${o}`,
-                onClick: () => a(t === o ? null : o),
+                onClick: () => a(isOpened ? null : o),
                 style: {
                   width: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  padding: e ? "16px 18px" : "20px 28px",
+                  textAlign: "left",
                   background: "none",
                   border: "none",
-                  cursor: "pointer",
-                  textAlign: "left",
+                  padding: e ? "16px 18px" : "20px 24px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
                   gap: 16,
+                  cursor: "pointer",
+                  fontFamily: "'Inter'",
                 },
               },
               React.createElement(
                 "span",
                 {
                   style: {
-                    fontFamily: "'Inter'",
-                    fontSize: 16,
+                    fontSize: e ? 15 : 16,
                     fontWeight: 600,
-                    color: T.text,
+                    color: isOpened ? T.teal : T.text,
                     lineHeight: 1.4,
                   },
                 },
@@ -7275,64 +7009,83 @@ function FAQSection() {
                 "span",
                 {
                   style: {
-                    fontSize: 18,
-                    color: T.teal,
+                    width: 28,
+                    height: 28,
+                    borderRadius: "50%",
+                    background: isOpened ? T.teal : "rgba(21, 39, 27, 0.06)",
+                    color: isOpened ? "#fff" : T.teal,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 16,
                     flexShrink: 0,
-                    transition: "transform 0.25s ease",
-                    transform: t === o ? "rotate(45deg)" : "rotate(0deg)",
-                    display: "inline-block",
+                    transform: isOpened ? "rotate(45deg)" : "rotate(0deg)",
+                    transition: "transform 200ms ease, background 200ms ease",
                   },
                 },
                 "+",
               ),
             ),
-            t === o &&
+            isOpened &&
               React.createElement(
                 "div",
                 {
-                  id: `faq-panel-${o}`,
-                  role: "region",
-                  "aria-labelledby": `faq-button-${o}`,
-                  style: { padding: e ? "0 18px 18px" : "0 28px 24px" },
-                },
-                React.createElement("div", {
                   style: {
-                    height: 1,
-                    background: "#f0ede8",
-                    marginBottom: e ? 14 : 18,
+                    padding: e ? "0 18px 18px" : "0 24px 22px",
+                    fontFamily: "'Inter'",
+                    fontSize: 14,
+                    color: T.textMuted,
+                    lineHeight: 1.7,
+                    borderTop: "1px solid #f0ede6",
+                    paddingTop: 14,
                   },
-                }),
-                React.createElement(
-                  "p",
-                  {
-                    style: {
-                      fontFamily: "'Inter'",
-                      fontSize: 16,
-                      color: T.textMuted,
-                      lineHeight: 1.7,
-                      margin: 0,
-                    },
-                  },
-                  n.a,
-                ),
+                },
+                n.a,
               ),
-          ),
-        ),
+          );
+        }),
       ),
       React.createElement(
         "div",
-        { style: { textAlign: "center", marginTop: 40 } },
+        {
+          style: {
+            textAlign: "center",
+            marginTop: 44,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 14,
+          },
+        },
         React.createElement(
-          "p",
+          "a",
           {
+            href: "/faq",
             style: {
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              background: T.teal,
+              color: "#ffffff",
+              borderRadius: 9999,
+              padding: "14px 32px",
               fontFamily: "'Inter'",
-              fontSize: 16,
-              color: T.textMuted,
-              marginBottom: 16,
+              fontSize: 15,
+              fontWeight: 600,
+              textDecoration: "none",
+              boxShadow: "0 4px 16px rgba(21, 39, 27, 0.2)",
+              transition: "all 200ms ease",
+            },
+            onMouseEnter: (e) => {
+              e.currentTarget.style.filter = "brightness(1.15)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+            },
+            onMouseLeave: (e) => {
+              e.currentTarget.style.filter = "none";
+              e.currentTarget.style.transform = "none";
             },
           },
-          "Still have a question?",
+          "View All 330+ Questions in the Complete FAQ Hub →",
         ),
         React.createElement(
           "a",
@@ -7347,24 +7100,14 @@ function FAQSection() {
               background: "#25D366",
               color: "#fff",
               borderRadius: 9999,
-              padding: "12px 28px",
+              padding: "10px 22px",
               fontFamily: "'Inter'",
-              fontSize: 16,
+              fontSize: 13,
               fontWeight: 600,
               textDecoration: "none",
             },
           },
-          React.createElement(
-            "svg",
-            { width: "16", height: "16", viewBox: "0 0 24 24", fill: "#fff" },
-            React.createElement("path", {
-              d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z",
-            }),
-            React.createElement("path", {
-              d: "M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.523 5.836L.057 23.643a.5.5 0 00.625.601l5.963-1.583A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.045-1.395l-.361-.214-3.741.993.984-3.648-.235-.374A9.808 9.808 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z",
-            }),
-          ),
-          "Ask us on WhatsApp",
+          "💬 Have a specific question? Ask on WhatsApp",
         ),
       ),
     ),

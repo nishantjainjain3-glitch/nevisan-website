@@ -73,7 +73,7 @@ At Nevisan, every leaf comes from one specific garden in Golaghat—a practice t
 
 **Monsoon Flush (June-September):**
 - **Peak Growth Period:** Maximum leaf production
-- **Characteristics:** Fuller body, robust flavor, deep color
+- **Characteristics:** Fuller body, brisk malt flavor, deep amber color
 - **Chemical Profile:** Highest in polyphenols and caffeine
 - **Harvest Interval:** Every 4-6 days (rapid growth requires frequent plucking)
 
@@ -175,7 +175,7 @@ Golaghat's tea estates are increasingly adopting environmentally responsible met
 ## Brewing Golaghat Tea: Unlocking Its Full Potential
 
 ### **Water Temperature Matters**
-Given Golaghat tea's robust nature:
+Because Golaghat tea has thicker, richer leaves:
 - **Black Tea Varieties:** 95-100°C (just off boil) for full extraction
 - **Green Tea Varieties:** 80-85°C to preserve delicate compounds
 - **White Tea Varieties:** 75-80°C to avoid damaging delicate buds
@@ -187,7 +187,7 @@ Given Golaghat tea's robust nature:
 - **Note:** Golaghat teas often yield excellent fourth and fifth steeps, especially with gongfu method
 
 ### **Leaf-to-Water Ratio**
-- **Standard:** 2.5g per 150ml (slightly higher than Darjeeling due to robust leaf structure)
+- **Standard:** 2.5g per 150ml (slightly higher than Darjeeling due to thick whole-leaf structure)
 - **Adjustment:** Increase for stronger brew, decrease for lighter preference
 - **Experiment:** Try 3g per 150ml for morning boldness, 2g per 200ml for afternoon refinement
 
@@ -226,7 +226,7 @@ Tea cultivation in Assam represents:
 A: Golaghat tea typically exhibits greater complexity, higher aromatic compound concentration, and a more balanced polyphenol profile than teas from lower-altitude or less diverse soil regions of Assam.
 
 **Q: Is Golaghat tea always black tea?**
-A: While primarily known for robust black teas, Golaghat also produces exceptional green, white, and specialty teas when processed appropriately.
+A: While primarily known for full-bodied black teas, Golaghat also produces exceptional green, white, and specialty teas when processed appropriately.
 
 **Q: What time of year produces the best Golaghat tea?**
 A: Many connoisseurs prefer the second flush (October-November) for its famous malty character, though first flush (March-April) offers remarkable floral and brisk qualities prized by different palates.
@@ -235,11 +235,11 @@ A: Many connoisseurs prefer the second flush (October-November) for its famous m
 A: Store in an airtight container away from light, heat, moisture, and strong odors. Ideal storage is in a cool, dark place at consistent temperature—refrigeration is not recommended due to moisture risk.
 
 **Q: Can Golaghat tea be enjoyed with milk and sugar?**
-A: Absolutely! Golaghat's robust character makes it exceptional for milk tea (traditional Indian chai) and stands up well to sweeteners, though connoisseurs often recommend trying it straight first to appreciate its natural complexity.
+A: Absolutely! Golaghat's strong malt character makes it exceptional for milk tea (traditional Indian chai) and stands up well to sweeteners, though connoisseurs often recommend trying it straight first to appreciate its natural complexity.
 
 ## Conclusion: The Quiet Excellence of Golaghat
 
-While Darjeeling may enjoy greater fame, Golaghat represents something perhaps more valuable in today's tea landscape: **authentic, terroir-driven excellence** without the need for elaborate marketing narratives.
+While Darjeeling may enjoy greater fame, Golaghat represents something perhaps more valuable in the tea market: **authentic, terroir-driven excellence** without the need for elaborate marketing narratives.
 
 The combination of unique geological blessings, ideal climatic conditions, generations of agricultural expertise, and meticulous processing creates teas that speak for themselves—bold, complex, and deeply satisfying. When you drink a cup of Nevisan tea sourced from Golaghat, you're experiencing the distilled essence of a remarkable place where soil, sun, rain, and human skill combine to create something truly special.
 

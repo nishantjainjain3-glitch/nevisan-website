@@ -1,6 +1,6 @@
 # The Art of Tea Tasting: A Beginner's Guide
 
-Tea tasting is a sensory experience that goes far beyond simply drinking a cup. Like wine or coffee, tea has nuanced flavours, aromas, and textures that reveal themselves when you pay attention. This beginner's guide will help you develop your palate and appreciate Nevisan's whole-leaf Assam teas like a connoisseur.
+Tea tasting is a sensory craft that goes far beyond simply drinking a cup. Like wine or coffee, tea has subtle flavours, distinct aromas, and textures that reveal themselves when you pay attention. This beginner's guide will help you develop your palate and appreciate Nevisan's whole-leaf Assam teas like a connoisseur.
 
 ## What You Need
 
@@ -26,7 +26,7 @@ After brewing, examine the **liquor** (the liquid):
 
 ### 2. Aroma
 Smell the dry leaves first, then the wet leaves after brewing, and finally the liquor. Good tea has:
-- **Complex aroma** — multiple layers, not just one note
+- **Complex aroma** — multiple distinct aroma layers
 - **Freshness** — no stale or musty smells
 - **Origin character** — Assam teas should have a malty, earthy undertone
 

@@ -12,7 +12,7 @@ Assam produces more tea than any other region in the world, yet most of it never
 
 The term refers to how much the leaf is broken during processing. Whole-leaf tea consists primarily of intact leaf fragments — not dust, fannings, or crushed particles. In conventional Indian grading, this corresponds more closely to OP (Orange Pekoe), FOP (Flowery Orange Pekoe), and TGFOP (Tippy Golden Flowery Orange Pekoe) grades rather than BOP (Broken Orange Pekoe) or CTC (Crush-Tear-Curl) broken-leaf or dust grades.
 
-Whole-leaf is not just a marketing term. It preserves volatile aromatic compounds more effectively, protects polyphenols and amino acids from oxidation, slows the release of bitter tannins during brewing, and generally produces a more complex cup with better aftertaste and less astringency.
+Whole leaves preserve volatile aromatic compounds more effectively, protects polyphenols and amino acids from oxidation, slows the release of bitter tannins during brewing, and generally produces a more complex cup with better aftertaste and less astringency.
 
 ## Why Assam Tea Has Such a Distinct Flavour
 
@@ -148,7 +148,7 @@ The wide world of Assam tea is worth exploring from that starting point — not 
       "name": "Is Assam tea stronger than other black teas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Assam tea typically has a bolder, more robust flavor profile compared to other black teas, with higher polyphenol content contributing to its characteristic briskness and body. However, strength depends on brewing method and leaf-to-water ratio rather than an inherent property of the tea itself."
+        "text": "Assam tea has a bolder, full-bodied flavour profile compared to other black teas, with higher polyphenol content contributing to its characteristic briskness and body. However, strength depends on brewing method and leaf-to-water ratio rather than an inherent property of the tea itself."
       }
     },
     {

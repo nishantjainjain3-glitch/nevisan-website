@@ -170,7 +170,7 @@
             text-decoration: none;
             padding: 0.45rem 1.1rem;
             border-radius: 4px;
-            font-size: 0.8rem;
+            font-size: 1rem;
             font-weight: 600;
             letter-spacing: 0.06em;
             text-transform: uppercase;
@@ -207,7 +207,7 @@
 
         .page-meta {
             color: var(--muted);
-            font-size: 0.85rem;
+            font-size: 1rem;
             letter-spacing: 0.03em;
         }
 
@@ -308,7 +308,7 @@
 
         .cta-section p {
             color: rgba(255,255,255,0.82);
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin-bottom: 1.5rem;
         }
 
@@ -320,7 +320,7 @@
             padding: 0.75rem 2rem;
             border-radius: 5px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 1rem;
             letter-spacing: 0.05em;
             text-transform: uppercase;
             transition: background 0.2s, transform 0.1s;
@@ -337,7 +337,7 @@
             color: rgba(255,255,255,0.65);
             text-align: center;
             padding: 1.5rem 1rem;
-            font-size: 0.82rem;
+            font-size: 1rem;
             line-height: 1.7;
         }
 
@@ -394,7 +394,7 @@
       border-bottom: 1px solid var(--border, #E2DDD5);
     }
     .share-label {
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -408,7 +408,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 13.5px;
+      font-size: 16px;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s;
@@ -738,5 +738,27 @@
             <a href="/terms-of-service.html">Terms of Service</a>
         </p>
     </footer>
+
+<!-- ── COOKIE CONSENT BANNER (DPDP & GDPR) ── -->
+<div id="cookie-consent-banner" role="region" aria-label="Cookie Consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:480px;background:#15271B;color:#F8F6F2;padding:18px 22px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:99999;border:1px solid rgba(201,168,76,0.3);font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;">
+  <p style="margin:0 0 12px 0;color:#E0DDD5;font-size:16px;">We use cookies to improve your browsing experience, analyze traffic, and support secure order processing in accordance with our <a href="/privacy-policy.html" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a>.</p>
+  <div style="display:flex;gap:10px;justify-content:flex-end;">
+    <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','declined');" style="background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:16px;cursor:pointer;">Decline</button>
+    <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','accepted');" style="background:#C9A84C;border:none;color:#15271B;font-weight:700;padding:8px 18px;border-radius:6px;font-size:16px;cursor:pointer;">Accept All</button>
+  </div>
+</div>
+<script>
+  (function(){
+    try {
+      if(!localStorage.getItem('nevisan_cookie_consent')){
+        setTimeout(function(){
+          var b = document.getElementById('cookie-consent-banner');
+          if(b) b.style.display='block';
+        }, 1000);
+      }
+    }catch(e){}
+  })();
+</script>
+
 </body>
 </html>

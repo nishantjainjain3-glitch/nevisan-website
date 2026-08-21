@@ -120,7 +120,7 @@
       text-decoration: none;
       padding: 0.5rem 1.2rem;
       border-radius: 6px;
-      font-size: 0.82rem;
+      font-size: 1rem;
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -141,7 +141,7 @@
       display: inline-block;
       background: rgba(201, 168, 76, 0.15);
       color: #8c6e20;
-      font-size: 0.75rem;
+      font-size: 1rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -233,7 +233,7 @@
       color: rgba(255,255,255,0.7);
       text-align: center;
       padding: 2rem 1rem;
-      font-size: 0.88rem;
+      font-size: 1rem;
     }
     footer a { color: var(--gold); text-decoration: none; }
   
@@ -270,7 +270,7 @@
       border-bottom: 1px solid var(--border, #E2DDD5);
     }
     .share-label {
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -284,7 +284,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 13.5px;
+      font-size: 16px;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s;
@@ -355,10 +355,10 @@
     
     <!-- ── CONTEXTUAL PRODUCT RECOMMENDATION ── -->
     <div style="background: #ffffff; border: 1.5px solid #E2DDD5; border-left: 4px solid #C9A84C; border-radius: 12px; padding: 24px; margin: 32px 0; box-shadow: 0 4px 16px rgba(21,39,27,0.04);">
-      <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C9A84C; display: block; margin-bottom: 6px;">Featured Single-Origin Harvest</span>
+      <span style="font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C9A84C; display: block; margin-bottom: 6px;">Featured Single-Origin Harvest</span>
       <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 20px; color: #15271B; margin-bottom: 8px;">Non-Alcoholic Botanical Teas (Rum & Whiskey)</h3>
-      <p style="font-size: 14.5px; color: #4A5B50; margin-bottom: 16px; line-height: 1.5;">Aged Spirit Aromatics with 0.0% Alcohol, 0g Sugar & 100% Pure Plant Botanicals</p>
-      <a href="/products/rum-green-tea/" style="display: inline-block; background: #15271B; color: #F8F6F2; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 13.5px; text-decoration: none; transition: background 0.2s;">Explore 0.0% Botanical Teas &rarr;</a>
+      <p style="font-size: 16px; color: #4A5B50; margin-bottom: 16px; line-height: 1.5;">Aged Spirit Aromatics with 0.0% Alcohol, 0g Sugar & 100% Pure Plant Botanicals</p>
+      <a href="/products/rum-green-tea/" style="display: inline-block; background: #15271B; color: #F8F6F2; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 16px; text-decoration: none; transition: background 0.2s;">Explore 0.0% Botanical Teas &rarr;</a>
     </div>
 </article>
 
@@ -372,5 +372,27 @@
   <footer>
     <p>&copy; 2026 Nevisan Tea &nbsp;·&nbsp; Single-Origin Assam Tea from Golaghat &nbsp;·&nbsp; <a href="https://nevisan.in/">nevisan.in</a></p>
   </footer>
+
+<!-- ── COOKIE CONSENT BANNER (DPDP & GDPR) ── -->
+<div id="cookie-consent-banner" role="region" aria-label="Cookie Consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:480px;background:#15271B;color:#F8F6F2;padding:18px 22px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:99999;border:1px solid rgba(201,168,76,0.3);font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;">
+  <p style="margin:0 0 12px 0;color:#E0DDD5;font-size:16px;">We use cookies to improve your browsing experience, analyze traffic, and support secure order processing in accordance with our <a href="/privacy-policy.html" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a>.</p>
+  <div style="display:flex;gap:10px;justify-content:flex-end;">
+    <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','declined');" style="background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:16px;cursor:pointer;">Decline</button>
+    <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','accepted');" style="background:#C9A84C;border:none;color:#15271B;font-weight:700;padding:8px 18px;border-radius:6px;font-size:16px;cursor:pointer;">Accept All</button>
+  </div>
+</div>
+<script>
+  (function(){
+    try {
+      if(!localStorage.getItem('nevisan_cookie_consent')){
+        setTimeout(function(){
+          var b = document.getElementById('cookie-consent-banner');
+          if(b) b.style.display='block';
+        }, 1000);
+      }
+    }catch(e){}
+  })();
+</script>
+
 </body>
 </html>

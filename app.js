@@ -1673,6 +1673,268 @@ function TagChip({ label: e, color: t }) {
     e,
   );
 }
+
+function BuyModal({ tea: e, onClose: t }) {
+  const { isMobile: n } = useViewport();
+  useEffect(() => {
+    const e = (e) => "Escape" === e.key && t();
+    return (
+      window.addEventListener("keydown", e),
+      () => window.removeEventListener("keydown", e)
+    );
+  }, [t]);
+  return ReactDOM.createPortal(
+    React.createElement(
+      "div",
+      {
+        role: "dialog",
+        "aria-modal": "true",
+        "aria-label": `Buy ${e.name}`,
+        onClick: (e) => {
+          e.stopPropagation();
+          t();
+        },
+        style: {
+          position: "fixed",
+          inset: 0,
+          background: "rgba(15, 39, 27, 0.65)",
+          backdropFilter: "blur(6px)",
+          zIndex: 9999,
+          display: "flex",
+          alignItems: n ? "flex-end" : "center",
+          justifyContent: "center",
+          padding: n ? 0 : 20,
+          animation: "overlay-fade 0.2s ease both",
+        },
+      },
+      React.createElement(
+        "div",
+        {
+          onClick: (e) => e.stopPropagation(),
+          style: {
+            background: "#ffffff",
+            borderRadius: n ? "24px 24px 0 0" : 20,
+            width: "100%",
+            maxWidth: 460,
+            padding: n ? "24px 20px 32px" : "28px 24px",
+            boxShadow: "0 24px 60px rgba(0,0,0,0.3)",
+            border: `1px solid ${T.border}`,
+            animation: n ? "slide-up 0.25s ease both" : "page-enter 0.25s ease both",
+          },
+        },
+        React.createElement(
+          "div",
+          {
+            style: {
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: 16,
+            },
+          },
+          React.createElement(
+            "div",
+            null,
+            React.createElement(
+              "span",
+              {
+                style: {
+                  fontFamily: "'Inter'",
+                  fontSize: 14,
+                  fontWeight: 700,
+                  letterSpacing: "0.12em",
+                  color: T.gold,
+                  textTransform: "uppercase",
+                },
+              },
+              "Choose where to buy",
+            ),
+            React.createElement(
+              "h3",
+              {
+                style: {
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontSize: 22,
+                  color: T.text,
+                  margin: "4px 0 0",
+                },
+              },
+              e.name,
+            ),
+          ),
+          React.createElement(
+            "button",
+            {
+              onClick: t,
+              "aria-label": "Close",
+              style: {
+                background: "rgba(0,0,0,0.06)",
+                border: "none",
+                borderRadius: "50%",
+                width: 34,
+                height: 34,
+                fontSize: 16,
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: T.text,
+              },
+            },
+            "✕",
+          ),
+        ),
+        React.createElement(
+          "div",
+          {
+            style: {
+              display: "flex",
+              flexDirection: "column",
+              gap: 10,
+              marginTop: 14,
+            },
+          },
+          React.createElement(
+            "button",
+            {
+              onClick: () => {
+                openWhatsApp(e.name);
+                t();
+              },
+              style: {
+                width: "100%",
+                background: "#25D366",
+                color: "#fff",
+                border: "none",
+                borderRadius: 12,
+                padding: "14px 16px",
+                fontSize: 16,
+                fontWeight: 600,
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: 14,
+                fontFamily: "'Inter', sans-serif",
+                transition: "filter 0.2s",
+              },
+              onMouseEnter: (e) => (e.currentTarget.style.filter = "brightness(1.08)"),
+              onMouseLeave: (e) => (e.currentTarget.style.filter = "none"),
+            },
+            React.createElement("span", { style: { fontSize: 22 } }, "💬"),
+            React.createElement(
+              "div",
+              { style: { textAlign: "left", flex: 1 } },
+              React.createElement(
+                "div",
+                { style: { fontWeight: 600, fontSize: 16 } },
+                "Order Direct via WhatsApp",
+              ),
+              React.createElement(
+                "div",
+                { style: { fontSize: 13, opacity: 0.9, marginTop: 2 } },
+                "Direct garden supply · Free delivery guidance",
+              ),
+            ),
+            React.createElement("span", { style: { fontSize: 20, fontWeight: 700 } }, "›"),
+          ),
+          React.createElement(
+            "button",
+            {
+              onClick: () => {
+                trackExternalClick(e.name, "Amazon");
+                window.open(
+                  "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+                  "_blank",
+                );
+                t();
+              },
+              style: {
+                width: "100%",
+                background: "#FF9900",
+                color: "#000",
+                border: "none",
+                borderRadius: 12,
+                padding: "14px 16px",
+                fontSize: 16,
+                fontWeight: 600,
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: 14,
+                fontFamily: "'Inter', sans-serif",
+                transition: "filter 0.2s",
+              },
+              onMouseEnter: (e) => (e.currentTarget.style.filter = "brightness(1.08)"),
+              onMouseLeave: (e) => (e.currentTarget.style.filter = "none"),
+            },
+            React.createElement("span", { style: { fontSize: 22 } }, "🛒"),
+            React.createElement(
+              "div",
+              { style: { textAlign: "left", flex: 1 } },
+              React.createElement(
+                "div",
+                { style: { fontWeight: 600, fontSize: 16 } },
+                "Buy on Amazon India",
+              ),
+              React.createElement(
+                "div",
+                { style: { fontSize: 13, opacity: 0.8, marginTop: 2 } },
+                "Prime fast delivery · Secure Amazon payment",
+              ),
+            ),
+            React.createElement("span", { style: { fontSize: 20, fontWeight: 700 } }, "›"),
+          ),
+          React.createElement(
+            "button",
+            {
+              onClick: () => {
+                trackExternalClick(e.name, "Flipkart");
+                window.open("https://www.flipkart.com/store/nevisan", "_blank");
+                t();
+              },
+              style: {
+                width: "100%",
+                background: "#2874F0",
+                color: "#fff",
+                border: "none",
+                borderRadius: 12,
+                padding: "14px 16px",
+                fontSize: 16,
+                fontWeight: 600,
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: 14,
+                fontFamily: "'Inter', sans-serif",
+                transition: "filter 0.2s",
+              },
+              onMouseEnter: (e) => (e.currentTarget.style.filter = "brightness(1.08)"),
+              onMouseLeave: (e) => (e.currentTarget.style.filter = "none"),
+            },
+            React.createElement("span", { style: { fontSize: 22 } }, "🛍️"),
+            React.createElement(
+              "div",
+              { style: { textAlign: "left", flex: 1 } },
+              React.createElement(
+                "div",
+                { style: { fontWeight: 600, fontSize: 16 } },
+                "Buy on Flipkart",
+              ),
+              React.createElement(
+                "div",
+                { style: { fontSize: 13, opacity: 0.9, marginTop: 2 } },
+                "Official brand store · Reliable pan-India shipping",
+              ),
+            ),
+            React.createElement("span", { style: { fontSize: 20, fontWeight: 700 } }, "›"),
+          ),
+        ),
+      ),
+    ),
+    document.body,
+  );
+}
+
 function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
   const { isMobile: mobile } = useViewport();
   const isFeatured = false;
@@ -2105,175 +2367,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
             },
             "Buy Now ↑",
           ),
-          d &&
-            React.createElement("div", {
-              onClick: (e) => {
-                (e.stopPropagation(), m(!1));
-              },
-              onKeyDown: (e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  m(!1);
-                }
-              },
-              role: "button",
-              tabIndex: 0,
-              style: { position: "fixed", inset: 0, zIndex: 49 },
-            }),
-          d &&
-            React.createElement(
-              "div",
-              {
-                onClick: (e) => e.stopPropagation(),
-                style: {
-                  position: "absolute",
-                  bottom: "110%",
-                  left: 0,
-                  right: 0,
-                  background: "#fff",
-                  borderRadius: 14,
-                  boxShadow: "0 12px 40px rgba(0,0,0,0.18)",
-                  border: `1px solid ${T.border}`,
-                  overflow: "hidden",
-                  zIndex: 50,
-                  animation: "page-enter 0.18s ease both",
-                },
-              },
-              React.createElement(
-                "div",
-                {
-                  style: {
-                    padding: "12px 16px 8px",
-                    fontFamily: "'Inter'",
-                    fontSize: 16,
-                    fontWeight: 700,
-                    letterSpacing: "0.12em",
-                    color: T.textMuted,
-                    textTransform: "uppercase",
-                  },
-                },
-                "Choose where to buy",
-              ),
-              [
-                {
-                  label: "WhatsApp",
-                  sub: "Direct from Nevisan · Fastest",
-                  bg: "#25D366",
-                  emoji: "💬",
-                  action: () => {
-                    (openWhatsApp(e.name), m(!1));
-                  },
-                },
-                {
-                  label: "Amazon",
-                  sub: "amazon.in",
-                  bg: "#FF9900",
-                  emoji: "🛒",
-                  action: () => {
-                    trackExternalClick(e.name, "Amazon");
-                    window.open(
-                      "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
-                      "_blank",
-                    );
-                    m(!1);
-                  },
-                },
-                {
-                  label: "Flipkart",
-                  sub: "flipkart.com",
-                  bg: "#2874F0",
-                  emoji: "🛍️",
-                  action: () => {
-                    trackExternalClick(e.name, "Flipkart");
-                    window.open(
-                      "https://www.flipkart.com/store/nevisan",
-                      "_blank",
-                    );
-                    m(!1);
-                  },
-                },
-              ].map((e) =>
-                React.createElement(
-                  "button",
-                  {
-                    key: e.label,
-                    onClick: e.action,
-                    style: {
-                      width: "100%",
-                      background: "none",
-                      border: "none",
-                      cursor: "pointer",
-                      padding: "12px 16px",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 14,
-                      borderTop: `1px solid ${T.border}`,
-                      transition: "background 150ms",
-                      WebkitTapHighlightColor: "transparent",
-                    },
-                    onMouseEnter: (e) =>
-                      (e.currentTarget.style.background = "#f5f5f5"),
-                    onMouseLeave: (e) =>
-                      (e.currentTarget.style.background = "none"),
-                  },
-                  React.createElement(
-                    "div",
-                    {
-                      style: {
-                        width: 36,
-                        height: 36,
-                        borderRadius: 9,
-                        background: e.bg,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: 18,
-                        flexShrink: 0,
-                      },
-                    },
-                    e.emoji,
-                  ),
-                  React.createElement(
-                    "div",
-                    { style: { textAlign: "left" } },
-                    React.createElement(
-                      "div",
-                      {
-                        style: {
-                          fontFamily: "'Inter'",
-                          fontSize: 16,
-                          fontWeight: 600,
-                          color: T.text,
-                        },
-                      },
-                      e.label,
-                    ),
-                    React.createElement(
-                      "div",
-                      {
-                        style: {
-                          fontFamily: "'Inter'",
-                          fontSize: 16,
-                          color: T.textMuted,
-                        },
-                      },
-                      e.sub,
-                    ),
-                  ),
-                  React.createElement(
-                    "div",
-                    {
-                      style: {
-                        marginLeft: "auto",
-                        color: T.textMuted,
-                        fontSize: 16,
-                      },
-                    },
-                    "›",
-                  ),
-                ),
-              ),
-            ),
+                d && React.createElement(BuyModal, { tea: e, onClose: () => m(!1) }),
         ),
       ),
     ),
@@ -4962,7 +5056,8 @@ function CollectionSection({ setPage: e }) {
     a = useGsapReveal(),
     { isMobile: n, isTablet: o } = useViewport(),
     i = n ? "1fr" : o ? "repeat(2,1fr)" : "repeat(3,1fr)",
-    [r, l] = useState(null);
+    [r, l] = useState(null),
+    [activeLightbox, setActiveLightbox] = useState(null);
   return React.createElement(
     "div",
     { style: { background: T.cream, padding: n ? "60px 20px" : "100px 32px" } },
@@ -5152,6 +5247,7 @@ function CollectionSection({ setPage: e }) {
             key: e.name,
             tea: e,
             onView: l,
+            onImageClick: (img, name) => setActiveLightbox({ img, name }),
             index: t,
           }),
         ),

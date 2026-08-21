@@ -1935,10 +1935,9 @@ function BuyModal({ tea: e, onClose: t }) {
   );
 }
 
+
 function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
   const { isMobile: mobile } = useViewport();
-  const isFeatured = false;
-  const isMidHorizontal = false;
   const [o, i] = useState(!1),
     [r, l] = useState(!1),
     [s, c] = useState({ x: 0, y: 0 }),
@@ -1946,53 +1945,53 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
     [p, g] = useInView(0.1);
   const profiles = {
     "GABA Oolong Tea": {
-      palate: "Malty, Wild Honey, Baked Stone Fruit",
-      brew: "85°C · 3 Mins · Up to 3 Infusions",
+      palate: "Malty, Wild Honey, Stone Fruit",
+      brew: "85°C · 3 Mins · 3 Steeps",
       badge: "Signature Reserve"
     },
     "Lemongrass Green Tea": {
       palate: "Crisp Citrus, Grassy, Mild Sweetness",
-      brew: "90°C · 2–3 Mins · Can steep twice",
+      brew: "90°C · 2–3 Mins · 2 Steeps",
       badge: "Popular"
     },
     "Spearmint Green Tea": {
-      palate: "Refreshing Mint, Brisk Green, Clean Finish",
-      brew: "85°C · 2 Mins · Light and refreshing",
+      palate: "Refreshing Mint, Clean Finish",
+      brew: "85°C · 2 Mins · Cooling",
       badge: "Cooling Mint"
     },
     "Rum Green Tea": {
-      palate: "Warm Spiced Rum, Sugarcane, Oak wood",
-      brew: "90°C · 3 Mins · Excellent hot or iced",
+      palate: "Spiced Rum, Sugarcane, Oak",
+      brew: "90°C · 3 Mins · Hot or Iced",
       badge: "Exotic Infusion"
     },
     "Whiskey Green Tea": {
-      palate: "Oaky Smoke, Malt, Subtle Sweetness",
-      brew: "90°C · 3 Mins · Bold, best enjoyed slowly",
+      palate: "Oaky Smoke, Malt, Sweetness",
+      brew: "90°C · 3 Mins · Bold",
       badge: "Bold Reserve"
     },
     "Blue Flower Green Tea": {
-      palate: "Cobalt Blue, Mild Floral, Earthy sweetness",
-      brew: "85°C · 2–3 Mins · No milk needed",
+      palate: "Cobalt Blue, Mild Floral, Sweet",
+      brew: "85°C · 2–3 Mins · No Milk",
       badge: "Color Magic"
     },
     "Tulsi Green Tea": {
-      palate: "Spicy Tulsi, Herbaceous, Bready warmth",
-      brew: "90°C · 3–4 Mins · Best plain or with honey",
-      badge: "Ayurvedic Tradition"
+      palate: "Spicy Tulsi, Herbaceous Warmth",
+      brew: "90°C · 3–4 Mins · Ayurvedic",
+      badge: "Ayurvedic Classic"
     },
     "Chamomile Green Tea": {
-      palate: "Soothing Chamomile, Honeyed Apples, Floral",
-      brew: "85°C · 4 Mins · Best before bed",
+      palate: "Honeyed Apples, Sweet Floral",
+      brew: "85°C · 4 Mins · Bedtime",
       badge: "Stress Relief"
     },
     "Organic Green Tea": {
-      palate: "Pure Vegetal, Umami, Clean Grassy notes",
-      brew: "80°C · 2 Mins · Never boiling water",
+      palate: "Vegetal, Umami, Clean Grassy",
+      brew: "80°C · 2 Mins · Pure Leaf",
       badge: "Estate Classic"
     },
     "Ginger Green Tea": {
-      palate: "Spicy Ginger, Honeyed Warmth, Brisk Green",
-      brew: "85°C · 2–3 Mins · Best warm",
+      palate: "Spicy Ginger, Honeyed Warmth",
+      brew: "85°C · 2–3 Mins · Warming",
       badge: "Warming Wellness"
     }
   };
@@ -2002,13 +2001,14 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
     badge: e.badge || "Organic Reserve"
   };
   const f = useCallback((e) => {
-      if (!p.current) return;
-      const t = p.current.getBoundingClientRect();
-      c({
-        x: 12 * ((e.clientX - t.left) / t.width - 0.5),
-        y: -12 * ((e.clientY - t.top) / t.height - 0.5),
-      });
-    }, []);
+    if (!p.current) return;
+    const t = p.current.getBoundingClientRect();
+    c({
+      x: 10 * ((e.clientX - t.left) / t.width - 0.5),
+      y: -10 * ((e.clientY - t.top) / t.height - 0.5),
+    });
+  }, []);
+
   return React.createElement(
     "div",
     {
@@ -2021,9 +2021,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
       },
       onMouseMove: f,
       onTouchStart: () => l(!0),
-      onTouchEnd: (e) => {
-        l(!1);
-      },
+      onTouchEnd: () => l(!1),
       onClick: () => {
         try {
           const m = {
@@ -2051,102 +2049,103 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
         t(e);
       },
       style: {
-        background: T.white,
+        background: "#ffffff",
         borderRadius: 16,
         overflow: "hidden",
         boxShadow: o
-          ? "0 20px 60px rgba(27,122,130,0.2), 0 4px 16px rgba(0,0,0,0.08)"
-          : "0 2px 12px rgba(0,0,0,0.06)",
+          ? "0 18px 45px rgba(21, 39, 27, 0.16), 0 4px 12px rgba(0,0,0,0.06)"
+          : "0 2px 10px rgba(0,0,0,0.05)",
+        border: "1px solid rgba(21, 39, 27, 0.08)",
         transform: o
-          ? `perspective(900px) rotateX(${s.y}deg) rotateY(${s.x}deg) translateY(-6px) scale(1.01)`
+          ? `perspective(900px) rotateX(${s.y}deg) rotateY(${s.x}deg) translateY(-5px) scale(1.01)`
           : r
-            ? "perspective(900px) scale(0.97)"
+            ? "perspective(900px) scale(0.98)"
             : "perspective(900px) rotateX(0) rotateY(0) translateY(0) scale(1)",
         transition: o
-          ? "box-shadow 250ms ease, transform 120ms ease"
-          : "box-shadow 350ms ease, transform 350ms ease, opacity 0.6s ease-out, translate 0.6s ease-out",
+          ? "box-shadow 200ms ease, transform 100ms ease"
+          : "box-shadow 300ms ease, transform 300ms ease, opacity 0.5s ease-out, translate 0.5s ease-out",
         cursor: "pointer",
         opacity: g ? 1 : 0,
-        translate: g ? "0 0" : "0 32px",
-        transitionDelay: 0.07 * n + "s",
-        gridColumn: "auto",
-        display: "block",
-        gridTemplateColumns: "none",
+        translate: g ? "0 0" : "0 24px",
+        transitionDelay: 0.05 * n + "s",
+        display: "flex",
+        flexDirection: "column",
       },
     },
     React.createElement(
       "div",
       {
         style: {
-          background: e.bg,
-          height: 200,
-          minHeight: 200,
+          background: e.bg || "#f4f6f3",
+          height: 180,
+          minHeight: 180,
           overflow: "hidden",
           position: "relative",
           cursor: "zoom-in",
-          order: 1,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         },
         onClick: (t) => {
-          (t.stopPropagation(), a && a(e.img, e.name));
+          t.stopPropagation();
+          a && a(e.img, e.name);
         },
       },
       e.img
         ? React.createElement("img", {
             src: e.img,
-            alt: `${e.name} - Nevisan whole leaf tea from Golaghat Assam`,
+            alt: `${e.name} - Nevisan single origin Assam tea`,
             loading: "lazy",
-            width: "400",
-            height: "400",
+            width: "360",
+            height: "180",
             style: {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              transform: o ? "scale(1.07)" : "scale(1)",
-              transition: "transform 500ms ease",
+              transform: o ? "scale(1.06)" : "scale(1)",
+              transition: "transform 400ms ease",
             },
           })
         : React.createElement(
-            "div",
-            {
-              style: {
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                height: "100%",
-              },
-            },
-            React.createElement(
-              "span",
-              { style: { fontSize: 48, opacity: 0.7 } },
-              "🍃",
-            ),
+            "span",
+            { style: { fontSize: 44, opacity: 0.7 } },
+            "🍃",
           ),
-      React.createElement("div", {
-        style: {
-          position: "absolute",
-          inset: 0,
-          background:
-            "linear-gradient(to top, rgba(15,63,69,0.35) 0%, transparent 60%)",
-          opacity: o ? 1 : 0,
-          transition: "opacity 300ms ease",
+      React.createElement(
+        "div",
+        {
+          style: {
+            position: "absolute",
+            bottom: 8,
+            right: 8,
+            background: "rgba(0,0,0,0.65)",
+            color: "#fff",
+            fontSize: 11,
+            fontWeight: 600,
+            padding: "3px 8px",
+            borderRadius: 6,
+            backdropFilter: "blur(4px)",
+            letterSpacing: "0.04em",
+          },
         },
-      }),
+        "🔍 Zoom",
+      ),
       e.bestseller &&
         React.createElement(
           "div",
           {
             style: {
               position: "absolute",
-              top: 12,
-              right: 12,
+              top: 10,
+              right: 10,
               background: T.gold,
               color: T.tealDark,
-              fontSize: 16,
+              fontSize: 11,
               fontWeight: 700,
               letterSpacing: "0.08em",
-              padding: "4px 10px",
+              padding: "4px 9px",
               borderRadius: 9999,
-              boxShadow: "0 2px 8px rgba(201,168,76,0.4)",
+              boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
             },
           },
           "★ BESTSELLER",
@@ -2158,45 +2157,41 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
           {
             style: {
               position: "absolute",
-              top: 12,
-              right: 12,
-              background: "#2a6a2a",
+              top: 10,
+              right: 10,
+              background: "#15271B",
               color: "#fff",
-              fontSize: 16,
+              fontSize: 11,
               fontWeight: 700,
               letterSpacing: "0.08em",
-              padding: "4px 10px",
+              padding: "4px 9px",
               borderRadius: 9999,
             },
           },
-          "✓ ",
-          e.badge,
+          "✓ " + e.badge,
         ),
     ),
     React.createElement(
       "div",
       {
         style: {
-          padding: "20px 20px 20px",
+          padding: "16px 18px 18px",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          height: "100%",
-          order: 2,
-        }
+          flex: 1,
+        },
       },
       React.createElement(
         "span",
         {
           style: {
             fontFamily: "'Inter'",
-            fontSize: 16,
+            fontSize: 12,
             fontWeight: 700,
             letterSpacing: "0.12em",
             color: T.gold,
             textTransform: "uppercase",
-            marginBottom: 6,
-            display: "block",
+            marginBottom: 4,
           },
         },
         prof.badge,
@@ -2206,11 +2201,11 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
         {
           style: {
             fontFamily: "'Playfair Display', Georgia, serif",
-            fontWeight: 400,
-            fontSize: 18,
-            color: T.text,
-            marginBottom: 8,
-            lineHeight: 1.3,
+            fontWeight: 700,
+            fontSize: 19,
+            color: "#15271B",
+            marginBottom: 6,
+            lineHeight: 1.25,
           },
         },
         e.name,
@@ -2220,11 +2215,11 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
         {
           style: {
             fontFamily: "'Inter'",
-            fontSize: 16,
-            color: T.textMuted,
-            lineHeight: 1.55,
-            marginBottom: 14,
-            minHeight: 54,
+            fontSize: 13,
+            color: "#5C7064",
+            lineHeight: 1.45,
+            marginBottom: 12,
+            minHeight: 38,
           },
         },
         e.short,
@@ -2233,31 +2228,38 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
         "div",
         {
           style: {
-            borderTop: `1px solid ${T.border}`,
-            borderBottom: `1px solid ${T.border}`,
-            padding: "12px 0",
-            margin: "14px 0",
+            background: "#F8F6F2",
+            borderRadius: 8,
+            padding: "8px 10px",
+            marginBottom: 14,
+            fontSize: 12,
             display: "flex",
             flexDirection: "column",
-            gap: 8,
+            gap: 4,
           },
         },
         React.createElement(
           "div",
-          { style: { display: "flex", fontSize: 16, lineHeight: 1.4 } },
-          React.createElement("span", { style: { fontWeight: 600, width: 80, color: T.teal, flexShrink: 0 } }, "Palate:"),
-          React.createElement("span", { style: { color: T.textMuted } }, prof.palate)
+          { style: { display: "flex" } },
+          React.createElement("strong", { style: { width: 62, color: "#15271B", flexShrink: 0 } }, "Palate:"),
+          React.createElement("span", { style: { color: "#5C7064" } }, prof.palate),
         ),
         React.createElement(
           "div",
-          { style: { display: "flex", fontSize: 16, lineHeight: 1.4 } },
-          React.createElement("span", { style: { fontWeight: 600, width: 80, color: T.teal, flexShrink: 0 } }, "Brewing:"),
-          React.createElement("span", { style: { color: T.textMuted } }, prof.brew)
-        )
+          { style: { display: "flex" } },
+          React.createElement("strong", { style: { width: 62, color: "#15271B", flexShrink: 0 } }, "Brewing:"),
+          React.createElement("span", { style: { color: "#5C7064" } }, prof.brew),
+        ),
       ),
       React.createElement(
         "div",
-        { style: { borderTop: `1px solid ${T.border}`, paddingTop: 14 } },
+        {
+          style: {
+            marginTop: "auto",
+            borderTop: "1px solid #E2DDD5",
+            paddingTop: 12,
+          },
+        },
         React.createElement(
           "div",
           {
@@ -2265,114 +2267,111 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              marginBottom: 12,
+              marginBottom: 10,
             },
           },
           React.createElement(
             "div",
             null,
             React.createElement(
-              "div",
+              "span",
               {
                 style: {
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 6,
-                  marginBottom: 2,
+                  fontFamily: "'Inter'",
+                  fontSize: 18,
+                  fontWeight: 700,
+                  color: "#15271B",
                 },
               },
-              React.createElement(
-                "span",
-                {
-                  style: {
-                    fontFamily: "'Inter'",
-                    fontSize: 18,
-                    fontWeight: 700,
-                    color: T.teal,
-                  },
+              "₹499",
+            ),
+            React.createElement(
+              "span",
+              {
+                style: {
+                  fontFamily: "'Inter'",
+                  fontSize: 13,
+                  color: "#5C7064",
+                  marginLeft: 4,
                 },
-                "MRP ₹499",
-              ),
-              React.createElement(
-                "span",
-                {
-                  style: {
-                    fontFamily: "'Inter'",
-                    fontSize: 16,
-                    color: T.textMuted,
-                  },
-                },
-                "· 50 gm",
-              ),
+              },
+              "· 50g",
             ),
           ),
           React.createElement(
             "button",
             {
               onClick: (a) => {
-                (a.stopPropagation(), t(e));
+                a.stopPropagation();
+                t(e);
               },
               style: {
                 background: "transparent",
-                color: T.teal,
-                border: `1px solid ${T.teal}`,
-                borderRadius: 8,
-                padding: "14px 14px",
-                fontSize: 16,
-                fontWeight: 500,
-                cursor: "pointer",
-                fontFamily: "'Inter'",
-                letterSpacing: "0.04em",
-                transition: "background 200ms",
-              },
-              onMouseEnter: (e) => {
-                e.currentTarget.style.background = "rgba(27,122,130,0.07)";
-              },
-              onMouseLeave: (e) => {
-                e.currentTarget.style.background = "transparent";
-              },
-            },
-            "Details",
-          ),
-        ),
-        React.createElement(
-          "div",
-          { style: { position: "relative" } },
-          React.createElement(
-            "button",
-            {
-              onClick: (e) => {
-                (e.stopPropagation(), m((e) => !e));
-              },
-              style: {
-                width: "100%",
-                background: T.teal,
-                color: "#fff",
-                border: "none",
-                borderRadius: 8,
-                padding: "11px",
-                fontSize: 16,
+                color: "#15271B",
+                border: "1px solid #15271B",
+                borderRadius: 6,
+                padding: "6px 12px",
+                fontSize: 12,
                 fontWeight: 600,
                 cursor: "pointer",
                 fontFamily: "'Inter'",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 6,
-                transition: "filter 200ms",
+                letterSpacing: "0.03em",
+                transition: "all 150ms",
               },
-              onMouseEnter: (e) =>
-                (e.currentTarget.style.filter = "brightness(1.1)"),
-              onMouseLeave: (e) => (e.currentTarget.style.filter = "none"),
+              onMouseEnter: (e) => {
+                e.currentTarget.style.background = "#15271B";
+                e.currentTarget.style.color = "#ffffff";
+              },
+              onMouseLeave: (e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "#15271B";
+              },
             },
-            "Buy Now ↑",
+            "Details →",
           ),
-                d && React.createElement(BuyModal, { tea: e, onClose: () => m(!1) }),
         ),
+        React.createElement(
+          "button",
+          {
+            onClick: (e) => {
+              e.stopPropagation();
+              m(!0);
+            },
+            style: {
+              width: "100%",
+              background: "#15271B",
+              color: "#ffffff",
+              border: "none",
+              borderRadius: 8,
+              padding: "10px 12px",
+              fontSize: 14,
+              fontWeight: 600,
+              cursor: "pointer",
+              fontFamily: "'Inter'",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 6,
+              boxShadow: "0 2px 6px rgba(21, 39, 27, 0.2)",
+              transition: "filter 150ms, transform 100ms",
+            },
+            onMouseEnter: (e) => {
+              e.currentTarget.style.filter = "brightness(1.15)";
+              e.currentTarget.style.transform = "translateY(-1px)";
+            },
+            onMouseLeave: (e) => {
+              e.currentTarget.style.filter = "none";
+              e.currentTarget.style.transform = "none";
+            },
+          },
+          "Buy Now (WhatsApp · Amazon · Flipkart) ↑",
+        ),
+        d && React.createElement(BuyModal, { tea: e, onClose: () => m(!1) }),
       ),
     ),
   );
 }
+
 function ImageLightbox({ img: e, name: t, onClose: a }) {
   return (
     useEffect(() => {

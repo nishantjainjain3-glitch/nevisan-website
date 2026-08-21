@@ -794,7 +794,7 @@ function Ticker() {
           },
           React.createElement(
             "span",
-            { style: { color: T.gold, fontSize: 14 } },
+            { style: { color: T.gold, fontSize: 16 } },
             "●",
           ),
           e,
@@ -1740,7 +1740,7 @@ function BuyModal({ tea: e, onClose: t }) {
               {
                 style: {
                   fontFamily: "'Inter'",
-                  fontSize: 14,
+                  fontSize: 16,
                   fontWeight: 700,
                   letterSpacing: "0.12em",
                   color: T.gold,
@@ -2344,7 +2344,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
               border: "none",
               borderRadius: 8,
               padding: "10px 12px",
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: 600,
               cursor: "pointer",
               fontFamily: "'Inter'",
@@ -4088,7 +4088,7 @@ function ReviewCard({ r: e, inView: t, index: a }) {
         .map((e, t) =>
           React.createElement(
             "span",
-            { key: t, style: { color: T.gold, fontSize: 14 } },
+            { key: t, style: { color: T.gold, fontSize: 16 } },
             "★",
           ),
         ),
@@ -6915,7 +6915,7 @@ function FAQSection() {
             {
               style: {
                 fontFamily: "'Inter'",
-                fontSize: 14,
+                fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
                 color: T.teal,
@@ -7033,7 +7033,7 @@ function FAQSection() {
                   style: {
                     padding: e ? "0 18px 18px" : "0 24px 22px",
                     fontFamily: "'Inter'",
-                    fontSize: 14,
+                    fontSize: 16,
                     color: T.textMuted,
                     lineHeight: 1.7,
                     borderTop: "1px solid #f0ede6",

@@ -350,9 +350,30 @@
                 padding: 2rem 1.25rem;
             }
         }
+    
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      background: var(--gold, #C9A84C);
+      color: var(--teal, #15271B);
+      padding: 10px 18px;
+      z-index: 9999;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 16px;
+    }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
     <nav class="nav" aria-label="Main navigation">
         <a class="nav-logo" href="https://nevisan.in">Nevisan</a>
@@ -360,7 +381,7 @@
     </nav>
 
     <!-- Page Content -->
-    <main class="content-wrapper">
+    <main id="main-content" class="content-wrapper">
         <header class="page-header">
             <h1 class="page-title">The Science Behind GABA Tea: How This Special Oolong Calms Your Mind Without Drowsiness</h1>
             <p class="page-meta">September 2025 · Updated August 2026 · Nevisan Tea Journal</p>

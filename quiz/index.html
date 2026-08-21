@@ -378,16 +378,37 @@
       .quiz-card { padding: 24px; }
       .quiz-wrapper { padding: 20px 10px; }
     }
+  
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      background: var(--gold, #C9A84C);
+      color: var(--teal, #15271B);
+      padding: 10px 18px;
+      z-index: 9999;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 16px;
+    }
+
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav>
     <a href="https://nevisan.in" class="nav-logo">NEVISAN</a>
     <a href="https://nevisan.in/#collection" class="nav-shop">Shop Now</a>
   </nav>
 
-  <div class="quiz-wrapper">
+  <div class="quiz-wrapper" id="main-content">
     <div class="quiz-card" id="quiz-card">
       <div id="quiz-flow">
         <div class="quiz-header">

@@ -6868,7 +6868,7 @@ function FAQSection() {
     },
     {
       q: "How do I brew whole-leaf green tea for the best taste?",
-      a: "Use 1.5g (about 1 teaspoon) of tea per 200ml of hot water at 80°C–85°C (never boiling water, as boiling water scalds delicate leaves). Steep for 2–3 minutes for the first cup. Whole leaves release flavor gradually without bitterness.",
+      a: "Use 2 to 2.5g (about 1 teaspoon) of tea per 200ml of hot water at 85°C–90°C (never boiling water, as boiling water scalds delicate leaves). Steep for 2–3 minutes for the first cup. Whole leaves release flavor gradually without bitterness.",
     },
     {
       q: "Can I really steep Nevisan whole-leaf tea multiple times?",

@@ -4868,7 +4868,7 @@ function Footer({ setPage: e }) {
                 marginBottom: 20,
               },
             },
-            "Teas",
+            "Collection",
           ),
                     [
             { label: "Spearmint", slug: "spearmint-green-tea" },

@@ -2940,7 +2940,7 @@ function CollectionPage({}) {
                           onClick: () => {
                             trackExternalClick(e.name, "Flipkart");
                             window.open(
-                              "https://www.flipkart.com/store/nevisan",
+                              getDirectFlipkartUrl(e?.name || (typeof t !== "undefined" && t?.name) || (typeof tea !== "undefined" && tea?.name) || ""),
                               "_blank",
                             );
                           },
@@ -3336,7 +3336,7 @@ function CollectionPage({}) {
                             onClick: () => {
                               trackExternalClick(e.name, "Flipkart");
                               window.open(
-                                "https://www.flipkart.com/store/nevisan",
+                                getDirectFlipkartUrl(e?.name || (typeof t !== "undefined" && t?.name) || (typeof tea !== "undefined" && tea?.name) || ""),
                                 "_blank",
                               );
                             },
@@ -5563,7 +5563,7 @@ function CollectionSection({ setPage: e }) {
                           onClick: () => {
                             trackExternalClick(e.name, "Flipkart");
                             window.open(
-                              "https://www.flipkart.com/store/nevisan",
+                              getDirectFlipkartUrl(e?.name || (typeof t !== "undefined" && t?.name) || (typeof tea !== "undefined" && tea?.name) || ""),
                               "_blank",
                             );
                           },
@@ -5953,7 +5953,7 @@ function CollectionSection({ setPage: e }) {
                             onClick: () => {
                               trackExternalClick(e.name, "Flipkart");
                               window.open(
-                                "https://www.flipkart.com/store/nevisan",
+                                getDirectFlipkartUrl(e?.name || (typeof t !== "undefined" && t?.name) || (typeof tea !== "undefined" && tea?.name) || ""),
                                 "_blank",
                               );
                             },

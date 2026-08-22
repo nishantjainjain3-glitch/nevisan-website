@@ -1876,7 +1876,7 @@ function BuyModal({ tea: e, onClose: t }) {
               onClick: () => {
                 trackExternalClick(e.name, "Amazon");
                 window.open(
-                  "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+                  getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
                   "_blank",
                 );
                 t();
@@ -2916,7 +2916,7 @@ function CollectionPage({}) {
                           onClick: () => {
                             trackExternalClick(e.name, "Amazon");
                             window.open(
-                              "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+                              getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
                               "_blank",
                             );
                           },
@@ -3312,7 +3312,7 @@ function CollectionPage({}) {
                             onClick: () => {
                               trackExternalClick(e.name, "Amazon");
                               window.open(
-                                "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+                                getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
                                 "_blank",
                               );
                             },
@@ -3992,7 +3992,7 @@ function WhereToBuy() {
         icon: "📦",
         action: () =>
           window.open(
-            "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+            getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
             "_blank",
           ),
         primary: !1,
@@ -4983,7 +4983,7 @@ function Footer({ setPage: e }) {
             { label: "WhatsApp", url: `https://wa.me/${WA_NUMBER}` },
             {
               label: "Amazon Store",
-              url: "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+              url: getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
             },
             {
               label: "Flipkart",
@@ -5539,7 +5539,7 @@ function CollectionSection({ setPage: e }) {
                           onClick: () => {
                             trackExternalClick(e.name, "Amazon");
                             window.open(
-                              "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+                              getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
                               "_blank",
                             );
                           },
@@ -5929,7 +5929,7 @@ function CollectionSection({ setPage: e }) {
                             onClick: () => {
                               trackExternalClick(e.name, "Amazon");
                               window.open(
-                                "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E?lp_asin=B0G38DJN2M&ref_=ast_bln",
+                                getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
                                 "_blank",
                               );
                             },

@@ -4085,11 +4085,8 @@ function WhereToBuy() {
           React.createElement(BuyCard, {
             key: e.name,
             c: e,
-            inView: t,
-            index: a,
-          }),
-        ),
-      ),
+            inView: t, index: a, }), ), ),
+React.createElement("div", { style: { textAlign: "center", marginBottom: 48 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "14px 32px", fontFamily: "'Inter'", fontSize: 16, fontWeight: 600, textDecoration: "none", cursor: "pointer" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "View All 380+ Customer Reviews", React.createElement("span", null, "→"))),
     ),
   );
 }
@@ -4666,11 +4663,8 @@ function Testimonials() {
           React.createElement(ReviewCard, {
             key: e.name,
             r: e,
-            inView: t,
-            index: a,
-          }),
-        ),
-      ),
+            inView: t, index: a, }), ), ),
+React.createElement("div", { style: { textAlign: "center", marginBottom: 48 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "14px 32px", fontFamily: "'Inter'", fontSize: 16, fontWeight: 600, textDecoration: "none", cursor: "pointer" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "View All 380+ Customer Reviews", React.createElement("span", null, "→"))),
       React.createElement(
         "div",
         { style: { maxWidth: 680, margin: "0 auto" } },

@@ -1,3 +1,37 @@
+
+const NEVISAN_MARKETPLACE_MAP = {
+  amazon: {
+    "Spearmint Green Tea": "https://www.amazon.in/dp/B0GTR2GXW2",
+    "GABA Oolong Tea": "https://www.amazon.in/dp/B0GTRBXKP8",
+    "Organic Green Tea": "https://www.amazon.in/dp/B0FV2N83XD",
+    "Blue Flower Green Tea": "https://www.amazon.in/dp/B0FTZ7KQ5B",
+    "Lemongrass Green Tea": "https://www.amazon.in/dp/B0FSZSZ1ZM",
+    "Tulsi Green Tea": "https://www.amazon.in/dp/B0FSZVRPSG",
+    "Chamomile Green Tea": "https://www.amazon.in/dp/B0FV2QGRBM",
+    "Whiskey Green Tea": "https://www.amazon.in/dp/B0FSZXVWXD",
+    "Rum Green Tea": "https://www.amazon.in/dp/B0FV2QVGVL",
+    "Ginger Green Tea": "https://www.amazon.in/dp/B0G38DJN2M"
+  },
+  flipkart: {
+    "Spearmint Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHHYQNAYYQHF5P",
+    "Chamomile Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHK53HCGSRWHAH",
+    "Rum Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHK6GMGQAUZDZS",
+    "Lemongrass Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHHEGBGZ5XCXVZ",
+    "Organic Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHK63NTFXN8CGS",
+    "GABA Oolong Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHHXQAGVCGGGVF",
+    "Blue Flower Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHK2XFGHV2GRYA",
+    "Tulsi Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHK7GXBJDKC9XM",
+    "Whiskey Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHHEJ9YS493UA2",
+    "Ginger Green Tea": "https://www.flipkart.com/store/nevisan"
+  }
+};
+function getDirectAmazonUrl(name) {
+  return NEVISAN_MARKETPLACE_MAP.amazon[name] || "https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E";
+}
+function getDirectFlipkartUrl(name) {
+  return NEVISAN_MARKETPLACE_MAP.flipkart[name] || "https://www.flipkart.com/store/nevisan";
+}
+
 const trackExternalClick = (e, t) => {
   try {
     const m = {
@@ -1888,7 +1922,7 @@ function BuyModal({ tea: e, onClose: t }) {
             {
               onClick: () => {
                 trackExternalClick(e.name, "Flipkart");
-                window.open("https://www.flipkart.com/store/nevisan", "_blank");
+                window.open(getDirectFlipkartUrl(e?.name || t?.name || ""), "_blank");
                 t();
               },
               style: {
@@ -3969,7 +4003,7 @@ function WhereToBuy() {
         cta: "Shop on Flipkart",
         icon: "🛍️",
         action: () =>
-          window.open("https://www.flipkart.com/store/nevisan", "_blank"),
+          window.open(getDirectFlipkartUrl(e?.name || t?.name || ""), "_blank"),
         primary: !1,
       },
     ],

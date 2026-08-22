@@ -4870,27 +4870,30 @@ function Footer({ setPage: e }) {
             },
             "Teas",
           ),
-          [
-            "Lemongrass",
-            "Blue Flower",
-            "Spearmint",
-            "Chamomile",
-            "Tulsi",
-            "Rum",
-            "Whiskey",
-            "GABA Oolong",
-            "Organic Green",
-          ].map((t) =>
+                    [
+            { label: "Spearmint", slug: "spearmint-green-tea" },
+            { label: "Chamomile", slug: "chamomile-green-tea" },
+            { label: "GABA Oolong", slug: "gaba-oolong-tea" },
+            { label: "Lemongrass", slug: "lemongrass-green-tea" },
+            { label: "Tulsi (Holy Basil)", slug: "tulsi-green-tea" },
+            { label: "Blue Butterfly Pea", slug: "blue-flower-green-tea" },
+            { label: "Spiced Rum (0.0%)", slug: "rum-green-tea" },
+            { label: "Smoky Whiskey (0.0%)", slug: "whiskey-green-tea" },
+            { label: "Ginger", slug: "ginger-green-tea" },
+            { label: "Classic Organic", slug: "organic-green-tea" },
+          ].map(({ label: t, slug: s }) =>
             React.createElement(
-              "div",
+              "a",
               {
                 key: t,
-                onClick: () => e("Collection"),
+                href: `/products/${s}/`,
                 style: {
                   fontFamily: "'Inter'",
                   fontSize: 16,
                   color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
+                  display: "block",
+                  textDecoration: "none",
                   cursor: "pointer",
                   transition: "color 150ms",
                 },

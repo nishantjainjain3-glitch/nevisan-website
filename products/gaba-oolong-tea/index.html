@@ -128,7 +128,60 @@
       top: 16px;
     }
 
-    </style>
+    
+    /* Sticky Mobile Buy Bar */
+    .sticky-buy-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(21, 39, 27, 0.96);
+      backdrop-filter: blur(10px);
+      padding: 12px 16px;
+      z-index: 999;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
+      border-top: 1px solid rgba(201, 168, 76, 0.3);
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .sticky-price {
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .sticky-price span {
+      display: block;
+      font-size: 11px;
+      color: #C9A84C;
+      font-weight: 400;
+    }
+    .sticky-btns {
+      display: flex;
+      gap: 8px;
+      flex: 1;
+      justify-content: flex-end;
+    }
+    .sticky-btn {
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sticky-wa { background: #25D366; color: #fff !important; }
+    .sticky-amz { background: #FF9900; color: #000 !important; }
+    @media (max-width: 768px) {
+      .sticky-buy-bar { display: flex; }
+      body { padding-bottom: 70px; }
+    }
+    
+  </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/jpeg" href="/nevisan-logo.jpeg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -251,7 +304,34 @@
                 <span class="spec-badge">✓ Pure Vegetarian</span>
             </div>
         </div>
-    </main>
+    
+    <!-- ── VERIFIED CUSTOMER REVIEWS ── -->
+    <section class="customer-reviews" style="background: #fff; border: 1.5px solid var(--border, #E2DDD5); border-radius: 16px; padding: 32px 24px; margin: 40px 0; box-shadow: 0 4px 16px rgba(21,39,27,0.04);">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <span style="color: #C9A84C; font-size: 18px; letter-spacing: 2px;">★★★★★</span>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: var(--teal, #15271B); margin-top: 6px;">Verified Customer Reviews</h2>
+        <p style="font-size: 14px; color: var(--muted, #5C7064);">Real feedback from tea drinkers across India</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        
+          <div style="background: var(--cream, #F8F6F2); border: 1px solid rgba(201,168,76,0.25); border-radius: 12px; padding: 20px;">
+            <div style="color: #C9A84C; font-size: 14px; margin-bottom: 4px;">★★★★★</div>
+            <h3 style="font-size: 15px; font-weight: 700; color: #15271B; margin-bottom: 6px;">Exceptional focus & anxiety relief</h3>
+            <p style="font-size: 13.5px; color: #4A5B50; line-height: 1.5; margin-bottom: 12px;">"The GABA processing makes a real difference. Clean amber liquor with a smooth honeyed finish. Highly recommended for focus."</p>
+            <div style="font-size: 12px; font-weight: 600; color: var(--muted, #5C7064);">✓ Rohan D., Hyderabad</div>
+          </div>
+        
+          <div style="background: var(--cream, #F8F6F2); border: 1px solid rgba(201,168,76,0.25); border-radius: 12px; padding: 20px;">
+            <div style="color: #C9A84C; font-size: 14px; margin-bottom: 4px;">★★★★★</div>
+            <h3 style="font-size: 15px; font-weight: 700; color: #15271B; margin-bottom: 6px;">Subtle and deeply relaxing</h3>
+            <p style="font-size: 13.5px; color: #4A5B50; line-height: 1.5; margin-bottom: 12px;">"Easily steeps 3 times. The second steep is even sweeter than the first."</p>
+            <div style="font-size: 12px; font-weight: 600; color: var(--muted, #5C7064);">✓ Sneha P., Kolkata</div>
+          </div>
+        
+      </div>
+    </section>
+  </main>
 
     <footer>
         <p>&copy; 2026 Nevisan Tea &nbsp;·&nbsp; Single-Origin Assam Tea from Golaghat &nbsp;·&nbsp; <a href="https://nevisan.in/">nevisan.in</a></p>
@@ -279,5 +359,17 @@
   })();
 </script>
 
+
+    <!-- ── STICKY MOBILE BUY BAR ── -->
+    <div class="sticky-buy-bar">
+      <div class="sticky-price">
+        ₹499
+        <span>50g (50–75 cups)</span>
+      </div>
+      <div class="sticky-btns">
+        <a href="https://wa.me/919864245687?text=Hi%20Nevisan!%20I%20would%20like%20to%20order%20gaba%20oolong%20tea" target="_blank" rel="noopener" class="sticky-btn sticky-wa">💬 WhatsApp</a>
+        <a href="https://www.amazon.in/stores/NEVISAN/page/51CB39DB-29D6-4C38-8CC0-1D10087E5C8E" target="_blank" rel="noopener" class="sticky-btn sticky-amz">📦 Amazon</a>
+      </div>
+    </div>
 </body>
 </html>

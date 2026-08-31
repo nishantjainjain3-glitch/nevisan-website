@@ -7,7 +7,8 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="https://nevisan.in/hero-bg.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="/hero-mobile.webp?v=2" media="(max-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href="https://nevisan.in/hero-bg.jpg" media="(min-width: 769px)" fetchpriority="high">
 
   <link rel="alternate" type="application/ld+json" href="/llms-full.txt" title="LLMs Full Context">
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs Context">
@@ -925,17 +926,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Background Leaf Canvas (Falling Leaves) -->
   <canvas id="global-leaf-canvas" aria-hidden="true" style="position: fixed; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; opacity: 0.4;"></canvas>
 
-  <div id="root" style="position: relative; z-index: 2;">
-    <header style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
-      <h1>Buy Organic Green Tea Online India | Whole Leaf Assam Tea — Nevisan</h1>
-      <p>100% whole-leaf, chemical-free single-origin teas from Golaghat, Assam. PGS-India certified organic.</p>
-    </header>
-    <main style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
-      <h2>Our Premium Whole Leaf Tea Collection</h2>
-      <h2>Why Choose Nevisan Single-Origin Assam Tea</h2>
-      <h2>Frequently Asked Questions About Nevisan Tea</h2>
-      <h2>Customer Reviews &amp; Testimonials</h2>
-    </main>
+    <div id="root" style="position: relative; z-index: 2;">
+    <!-- Pre-rendered Static Hero for Instant Mobile Paint (FCP < 0.8s) -->
+    <div id="ssr-hero-placeholder" style="position: relative; height: 100vh; min-height: 620px; overflow: hidden; background: #0b1a10;">
+      <img src="/hero-mobile.webp?v=2" alt="Nevisan tea garden in Golaghat Assam" fetchpriority="high" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(1.1) brightness(0.78);" />
+      <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,26,16,0.92) 0%, rgba(11,26,16,0.4) 50%, rgba(11,26,16,0.7) 100%);"></div>
+      
+      <!-- Instant Top Nav -->
+      <nav style="position: absolute; top: 0; left: 0; right: 0; height: 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 10;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="/nevisan-logo.jpeg" alt="Nevisan Logo" style="width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #C9A84C;" />
+          <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #fff; letter-spacing: 0.18em; font-weight: 700;">NEVISAN</span>
+        </div>
+        <a href="https://wa.me/919864245687" style="background: #25D366; color: #fff; border-radius: 9999px; padding: 8px 16px; font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 6px;">💬 Order</a>
+      </nav>
+
+      <!-- Instant Hero Content -->
+      <div style="position: absolute; bottom: 12%; left: 20px; right: 20px; z-index: 10; max-width: 600px;">
+        <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(201,168,76,0.18); border: 1px solid rgba(201,168,76,0.4); border-radius: 9999px; padding: 4px 12px; margin-bottom: 12px;">
+          <span style="color: #C9A84C; font-size: 12px;">★</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: #F8F6F2; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">Single-Origin Assam Whole Leaf</span>
+        </div>
+        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 6vw, 48px); color: #ffffff; line-height: 1.15; margin: 0 0 12px; font-weight: 400;">
+          Taste what Assam<br /><em style="color: #C9A84C; font-style: italic;">really grows.</em>
+        </h1>
+        <p style="font-family: 'Inter', sans-serif; font-size: 14.5px; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0 0 20px;">
+          100% whole-leaf, chemical-free teas direct from Golaghat. Certified PGS-India Organic.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="#collection" style="background: #C9A84C; color: #15271B; border-radius: 9999px; padding: 12px 26px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 16px rgba(201,168,76,0.35);">Shop Collection →</a>
+          <a href="/quiz/" style="background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 9999px; padding: 12px 22px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none;">Find Your Tea</a>
+        </div>
+      </div>
+    </div>
   </div>
 
 

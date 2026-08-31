@@ -2,6 +2,13 @@
 <!-- Version: 1.0.4 - 2026-08-18 - Force redeploy -->
 <html lang="en">
 <head>
+  <!-- Performance & Preload Optimizations for Mobile Core Web Vitals -->
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="https://nevisan.in/hero-bg.jpg" fetchpriority="high">
+
   <link rel="alternate" type="application/ld+json" href="/llms-full.txt" title="LLMs Full Context">
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs Context">
 <meta charset="UTF-8">
@@ -899,11 +906,11 @@ src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"
 <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-WN76CRVR"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous" defer></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 
 
   <!-- CSS-only scroll progress bar (MWG animation-timeline) -->
@@ -936,7 +943,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
   /* ══ STRING-TUNE PARALLAX ANIMATION ENGINE (FIDDLE.DIGITAL SPEC) ══ */
-  (function initStringTune() {
+  document.addEventListener('DOMContentLoaded', function initStringTune() {
     function updateParallax() {
       const scrollY = window.scrollY || window.pageYOffset;
       const elements = document.querySelectorAll('[string="parallax"]');
@@ -1078,7 +1085,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
   /* ══ THREE.JS 3D PARTICLE FLOW FIELD (NEVISAN ASSAM TEA PARTICLES) ══ */
-  (function initThreeParticles() {
+  document.addEventListener('DOMContentLoaded', function initThreeParticles() {
     const canvas = document.getElementById('global-leaf-canvas');
     if (!canvas || typeof THREE === 'undefined') return;
 
@@ -1215,7 +1222,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
   }
 </script>
-<script src="/app.js?v=58"></script>
+<script src="/app.js?v=59" defer></script>
 
 <!-- ── COOKIE CONSENT BANNER (DPDP & GDPR) ── -->
 <div id="cookie-consent-banner" role="region" aria-label="Cookie Consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:480px;background:#15271B;color:#F8F6F2;padding:18px 22px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:99999;border:1px solid rgba(201,168,76,0.3);font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;">

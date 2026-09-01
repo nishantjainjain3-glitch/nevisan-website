@@ -209,6 +209,11 @@
   </script>
   <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"/></noscript>
 
+
+
+</head>
+<body>
+
 <style id="nevisan-unified-nav-css">
 .nevisan-global-nav {
   position: fixed;
@@ -217,7 +222,7 @@
   right: 0;
   z-index: 99999;
   height: 72px;
-  background: rgba(21, 39, 27, 0.96);
+  background: rgba(21, 39, 27, 0.98);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(201, 168, 76, 0.2);
@@ -319,19 +324,81 @@
   gap: 4px;
   white-space: nowrap;
 }
+.nevisan-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 26px;
+}
+.nevisan-mobile-toggle span {
+  display: block;
+  height: 2.5px;
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.nevisan-mobile-toggle.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.nevisan-mobile-toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.nevisan-mobile-toggle.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Fullscreen Slideout Drawer */
+.nevisan-mobile-drawer {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0B1A10;
+  z-index: 99998;
+  padding: 24px 28px 40px;
+  flex-direction: column;
+  overflow-y: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.nevisan-mobile-drawer.is-open {
+  display: flex;
+}
+.nevisan-drawer-link {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nevisan-drawer-link.active,
+.nevisan-drawer-link--gold {
+  color: #D4AF37;
+}
+
 @media (max-width: 960px) {
   .nevisan-nav-links { display: none; }
+  .nevisan-mobile-toggle { display: flex; }
   .nevisan-nav-container { padding: 0 16px; }
-  .nevisan-nav-title { font-size: 17px; }
-  .nevisan-nav-logo { width: 34px; height: 34px; }
+  .nevisan-nav-title { font-size: 18px; }
+  .nevisan-nav-logo { width: 36px; height: 36px; }
+  .nevisan-btn-shop { display: none; }
 }
 </style>
 
-</head>
-<body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-<!-- Unified Luxury Nevisan Navigation Header -->
+<!-- Universal Luxury Nevisan Navigation Header -->
 <nav class="nevisan-global-nav" role="navigation" aria-label="Main navigation">
   <div class="nevisan-nav-container">
     <a href="https://nevisan.in/" class="nevisan-nav-brand">
@@ -351,9 +418,53 @@
     <div class="nevisan-nav-actions">
       <a href="https://wa.me/919864245687" class="nevisan-btn-order" target="_blank" rel="noopener">💬 Order</a>
       <a href="https://nevisan.in/#collection" class="nevisan-btn-shop">Shop Now</a>
+      <button class="nevisan-mobile-toggle" id="nevisanMobileToggle" aria-label="Toggle navigation menu" onclick="toggleNevisanMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
 </nav>
+
+<!-- Full Mobile Slideout Drawer Menu -->
+<div class="nevisan-mobile-drawer" id="nevisanMobileDrawer">
+  <a href="https://nevisan.in/#collection" class="nevisan-drawer-link" onclick="toggleNevisanMenu()">Collection</a>
+  <a href="https://nevisan.in/#about" class="nevisan-drawer-link" onclick="toggleNevisanMenu()">Our Story</a>
+  <a href="https://nevisan.in/reviews/" class="nevisan-drawer-link nevisan-drawer-link--gold" onclick="toggleNevisanMenu()"><span style="color:#C9A84C;">★</span>Customer Reviews (380+)</a>
+  <a href="https://nevisan.in/quiz/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">Tea Finder Quiz</a>
+  <a href="https://nevisan.in/bulk/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">Wholesale Supply</a>
+  <a href="https://nevisan.in/faq/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">FAQ &amp; Health Guide</a>
+  <a href="https://nevisan.in/locations/" class="nevisan-drawer-link" onclick="toggleNevisanMenu()">Locations (8 Metros)</a>
+  <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px;">
+    <a href="https://nevisan.in/#collection" class="nevisan-btn-shop" style="text-align: center; padding: 14px; display: block;" onclick="toggleNevisanMenu()">Shop the Collection</a>
+    <a href="https://wa.me/919864245687" class="nevisan-btn-order" style="text-align: center; padding: 14px; justify-content: center;" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
+  </div>
+</div>
+
+<script>
+function toggleNevisanMenu() {
+  var toggle = document.getElementById('nevisanMobileToggle');
+  var drawer = document.getElementById('nevisanMobileDrawer');
+  if (toggle && drawer) {
+    var isOpen = drawer.classList.contains('is-open');
+    if (isOpen) {
+      drawer.classList.remove('is-open');
+      toggle.classList.remove('is-active');
+      document.body.style.overflow = '';
+    } else {
+      drawer.classList.add('is-open');
+      toggle.classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+}
+</script>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+<!-- Unified Luxury Nevisan Navigation Header -->
+
 
     <main class="product-wrapper" id="main-content">
         <h1 class="product-title">Whiskey Green Tea</h1>

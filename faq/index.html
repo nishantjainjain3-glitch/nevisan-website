@@ -991,7 +991,7 @@
   }
 
   /* ── HERO ── */
-  .hero {
+  .hero { padding-top: 100px !important; 
     background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-mid) 60%, #153822 100%);
     color: #fff;
     text-align: center;
@@ -1339,18 +1339,154 @@
     fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1600935891006535&ev=PageView&noscript=1"/></noscript>
+
+<style id="nevisan-unified-nav-css">
+.nevisan-global-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  height: 72px;
+  background: rgba(21, 39, 27, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.nevisan-nav-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nevisan-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.nevisan-nav-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid #C9A84C;
+  object-fit: cover;
+  display: block;
+}
+.nevisan-nav-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #FFFFFF;
+}
+.nevisan-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nevisan-nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 150ms ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nevisan-nav-link:hover {
+  color: #FFFFFF;
+}
+.nevisan-nav-link--gold,
+.nevisan-nav-link.active {
+  color: #D4AF37;
+}
+.nevisan-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nevisan-btn-shop {
+  background: #C9A84C;
+  color: #15271B !important;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 12px rgba(201, 168, 76, 0.35);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  display: inline-block;
+}
+.nevisan-btn-shop:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 18px rgba(201, 168, 76, 0.55);
+}
+.nevisan-btn-order {
+  background: #25D366;
+  color: #FFFFFF !important;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+@media (max-width: 960px) {
+  .nevisan-nav-links { display: none; }
+  .nevisan-nav-container { padding: 0 16px; }
+  .nevisan-nav-title { font-size: 17px; }
+  .nevisan-nav-logo { width: 34px; height: 34px; }
+}
+</style>
+
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<nav>
-  <a class="nav-logo" href="https://nevisan.in/">NEVISAN</a>
-  <div class="nav-right">
-    <a class="nav-link" href="https://nevisan.in/#collection">Collection</a>
-    <a class="nav-link" href="https://nevisan.in/contact.html">Contact</a>
-    <a class="nav-cta" href="https://nevisan.in/#collection">Shop Teas</a>
+
+<!-- Unified Luxury Nevisan Navigation Header -->
+<nav class="nevisan-global-nav" role="navigation" aria-label="Main navigation">
+  <div class="nevisan-nav-container">
+    <a href="https://nevisan.in/" class="nevisan-nav-brand">
+      <img src="https://nevisan.in/nevisan-logo.jpeg" alt="Nevisan Logo" class="nevisan-nav-logo" width="40" height="40" />
+      <span class="nevisan-nav-title">NEVISAN</span>
+    </a>
+    
+    <div class="nevisan-nav-links">
+      <a href="https://nevisan.in/#collection" class="nevisan-nav-link">Collection</a>
+      <a href="https://nevisan.in/#about" class="nevisan-nav-link">Our Story</a>
+      <a href="https://nevisan.in/reviews/" class="nevisan-nav-link nevisan-nav-link--gold"><span style="color:#C9A84C;">★</span>Reviews</a>
+      <a href="https://nevisan.in/quiz/" class="nevisan-nav-link ">Tea Quiz</a>
+      <a href="https://nevisan.in/bulk/" class="nevisan-nav-link ">Wholesale</a>
+      <a href="https://nevisan.in/faq/" class="nevisan-nav-link active">FAQ</a>
+    </div>
+
+    <div class="nevisan-nav-actions">
+      <a href="https://wa.me/919864245687" class="nevisan-btn-order" target="_blank" rel="noopener">💬 Order</a>
+      <a href="https://nevisan.in/#collection" class="nevisan-btn-shop">Shop Now</a>
+    </div>
   </div>
 </nav>
+
 
 <header class="hero">
   <span class="hero-eyebrow">Flavor &amp; Knowledge Hub</span>

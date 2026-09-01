@@ -454,9 +454,9 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 .nevisan-nav-container {
-  max-width: 1240px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 28px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -484,10 +484,15 @@
   letter-spacing: 0.18em;
   color: #FFFFFF;
 }
-.nevisan-nav-links {
+.nevisan-nav-right {
   display: flex;
   align-items: center;
   gap: 28px;
+}
+.nevisan-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -507,14 +512,9 @@
 .nevisan-nav-link:hover {
   color: #FFFFFF;
 }
-.nevisan-nav-link--gold,
-.nevisan-nav-link.active {
+.nevisan-nav-link.active,
+.nevisan-nav-link--gold {
   color: #D4AF37;
-}
-.nevisan-nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
 }
 .nevisan-btn-shop {
   background: #C9A84C;
@@ -529,12 +529,20 @@
   box-shadow: 0 2px 12px rgba(201, 168, 76, 0.35);
   transition: transform 200ms ease, box-shadow 200ms ease;
   display: inline-block;
+  margin-left: 4px;
 }
 .nevisan-btn-shop:hover {
   transform: scale(1.04);
   box-shadow: 0 4px 18px rgba(201, 168, 76, 0.55);
 }
-.nevisan-btn-order {
+
+/* Mobile Header Controls */
+.nevisan-mobile-controls {
+  display: none;
+  align-items: center;
+  gap: 12px;
+}
+.nevisan-btn-order-mobile {
   background: #25D366;
   color: #FFFFFF !important;
   font-family: 'Inter', sans-serif;
@@ -549,15 +557,15 @@
   white-space: nowrap;
 }
 .nevisan-mobile-toggle {
-  display: none;
   background: none;
   border: none;
   cursor: pointer;
   padding: 6px;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 32px;
-  height: 26px;
+  height: 24px;
 }
 .nevisan-mobile-toggle span {
   display: block;
@@ -577,7 +585,7 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Fullscreen Slideout Drawer */
+/* Mobile Slideout Drawer */
 .nevisan-mobile-drawer {
   display: none;
   position: fixed;
@@ -613,14 +621,14 @@
 }
 
 @media (max-width: 960px) {
-  .nevisan-nav-links { display: none; }
-  .nevisan-mobile-toggle { display: flex; }
-  .nevisan-nav-container { padding: 0 16px; }
+  .nevisan-nav-right { display: none; }
+  .nevisan-mobile-controls { display: flex; }
+  .nevisan-nav-container { padding: 0 18px; }
   .nevisan-nav-title { font-size: 18px; }
   .nevisan-nav-logo { width: 36px; height: 36px; }
-  .nevisan-btn-shop { display: none; }
 }
 </style>
+
 
 <!-- Universal Luxury Nevisan Navigation Header -->
 <nav class="nevisan-global-nav" role="navigation" aria-label="Main navigation">
@@ -630,18 +638,20 @@
       <span class="nevisan-nav-title">NEVISAN</span>
     </a>
     
-    <div class="nevisan-nav-links">
-      <a href="https://nevisan.in/#collection" class="nevisan-nav-link">Collection</a>
-      <a href="https://nevisan.in/#about" class="nevisan-nav-link">Our Story</a>
-      <a href="https://nevisan.in/reviews/" class="nevisan-nav-link nevisan-nav-link--gold"><span style="color:#C9A84C;">★</span>Reviews</a>
-      <a href="https://nevisan.in/quiz/" class="nevisan-nav-link ">Tea Quiz</a>
-      <a href="https://nevisan.in/bulk/" class="nevisan-nav-link ">Wholesale</a>
-      <a href="https://nevisan.in/faq/" class="nevisan-nav-link ">FAQ</a>
+    <div class="nevisan-nav-right">
+      <div class="nevisan-nav-links">
+        <a href="https://nevisan.in/#collection" class="nevisan-nav-link">Collection</a>
+        <a href="https://nevisan.in/#about" class="nevisan-nav-link">Our Story</a>
+        <a href="https://nevisan.in/reviews/" class="nevisan-nav-link nevisan-nav-link--gold"><span style="color:#C9A84C;">★</span>Reviews</a>
+        <a href="https://nevisan.in/quiz/" class="nevisan-nav-link ">Tea Quiz</a>
+        <a href="https://nevisan.in/faq/" class="nevisan-nav-link ">FAQ</a>
+      </div>
+      <a href="https://nevisan.in/#collection" class="nevisan-btn-shop">Shop Now</a>
     </div>
 
-    <div class="nevisan-nav-actions">
-      <a href="https://wa.me/919864245687" class="nevisan-btn-order" target="_blank" rel="noopener">💬 Order</a>
-      <a href="https://nevisan.in/#collection" class="nevisan-btn-shop">Shop Now</a>
+    <!-- Mobile Header Actions (WhatsApp + Hamburger) -->
+    <div class="nevisan-mobile-controls">
+      <a href="https://wa.me/919864245687" class="nevisan-btn-order-mobile" target="_blank" rel="noopener">💬 Order</a>
       <button class="nevisan-mobile-toggle" id="nevisanMobileToggle" aria-label="Toggle navigation menu" onclick="toggleNevisanMenu()">
         <span></span>
         <span></span>
@@ -657,12 +667,12 @@
   <a href="https://nevisan.in/#about" class="nevisan-drawer-link" onclick="toggleNevisanMenu()">Our Story</a>
   <a href="https://nevisan.in/reviews/" class="nevisan-drawer-link nevisan-drawer-link--gold" onclick="toggleNevisanMenu()"><span style="color:#C9A84C;">★</span>Customer Reviews (380+)</a>
   <a href="https://nevisan.in/quiz/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">Tea Finder Quiz</a>
-  <a href="https://nevisan.in/bulk/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">Wholesale Supply</a>
   <a href="https://nevisan.in/faq/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">FAQ &amp; Health Guide</a>
+  <a href="https://nevisan.in/bulk/" class="nevisan-drawer-link" onclick="toggleNevisanMenu()">Wholesale Supply</a>
   <a href="https://nevisan.in/locations/" class="nevisan-drawer-link" onclick="toggleNevisanMenu()">Locations (8 Metros)</a>
   <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px;">
-    <a href="https://nevisan.in/#collection" class="nevisan-btn-shop" style="text-align: center; padding: 14px; display: block;" onclick="toggleNevisanMenu()">Shop the Collection</a>
-    <a href="https://wa.me/919864245687" class="nevisan-btn-order" style="text-align: center; padding: 14px; justify-content: center;" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
+    <a href="https://nevisan.in/#collection" class="nevisan-btn-shop" style="text-align: center; padding: 14px; display: block; margin: 0;" onclick="toggleNevisanMenu()">Shop the Collection</a>
+    <a href="https://wa.me/919864245687" class="nevisan-btn-order-mobile" style="text-align: center; padding: 14px; justify-content: center;" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
   </div>
 </div>
 
@@ -684,6 +694,14 @@ function toggleNevisanMenu() {
   }
 }
 </script>
+
+
+
+
+<!-- Universal Luxury Nevisan Navigation Header -->
+
+
+
 
 
     <!-- Navigation -->

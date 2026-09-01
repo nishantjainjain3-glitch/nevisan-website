@@ -374,12 +374,11 @@ function HamburgerIcon({ open: e }) {
 }
 function Nav({ page: e, setPage: t }) {
   // Essential clean desktop links (no clutter, no line wrapping)
-  const desktopLinks = [
+    const desktopLinks = [
     { label: "Collection", id: "Collection" },
     { label: "Our Story", id: "Our Story" },
     { label: "★ Reviews", id: "Reviews", href: "/reviews/" },
     { label: "Tea Quiz", id: "Quiz", href: "/quiz/" },
-    { label: "Wholesale", id: "Wholesale" },
     { label: "FAQ", id: "FAQ", href: "/faq" },
   ];
 

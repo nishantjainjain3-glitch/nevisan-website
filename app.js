@@ -373,60 +373,75 @@ function HamburgerIcon({ open: e }) {
   );
 }
 function Nav({ page: e, setPage: t }) {
+  // Essential clean desktop links (no clutter, no line wrapping)
+  const desktopLinks = [
+    { label: "Collection", id: "Collection" },
+    { label: "Our Story", id: "Our Story" },
+    { label: "★ Reviews", id: "Reviews", href: "/reviews/" },
+    { label: "Tea Quiz", id: "Quiz", href: "/quiz/" },
+    { label: "Wholesale", id: "Wholesale" },
+    { label: "FAQ", id: "FAQ", href: "/faq" },
+  ];
+
+  // Full links list for mobile drawer & navigation
   const a = [
-      "Home",
-      "Collection",
-      "Our Story",
-      "Reviews",
-      "About",
-      "Wholesale",
-      "Contact",
-      "FAQ",
-      "Quiz",
-      "Locations",
-    ]
-    const locationUrls = {
-      "Bangalore": "/locations/tea-delivery-bangalore/",
-      "Chennai": "/locations/tea-delivery-chennai/",
-      "Delhi": "/locations/tea-delivery-delhi/",
-      "Hyderabad": "/locations/tea-delivery-hyderabad/",
-      "Jaipur": "/locations/tea-delivery-jaipur/",
-      "Kolkata": "/locations/tea-delivery-kolkata/",
-      "Mumbai": "/locations/tea-delivery-mumbai/",
-      "Pune": "/locations/tea-delivery-pune/",
-    },
-    n = "Home" === e,
-    [o, i] = useState(!1),
-    [r, l] = useState(!1),
-    { isMobile: s } = useViewport();
-  (useEffect(() => {
-    const e = () => i(window.scrollY > 60);
-    return (
-      window.addEventListener("scroll", e, { passive: !0 }),
-      () => window.removeEventListener("scroll", e)
-    );
-  }, []),
-    useEffect(() => {
-      s || l(!1);
-    }, [s]),
-    useEffect(
-      () => (
-        (document.body.style.overflow = r ? "hidden" : ""),
-        () => {
-          document.body.style.overflow = "";
-        }
-      ),
-      [r],
-    ));
-  const c = (e) => {
-    "Reviews" === e
-      ? (window.location.href = "/reviews/")
-      : "FAQ" === e
-      ? (window.location.href = "/faq")
-      : "Quiz" === e
-        ? (window.location.href = "/quiz")
-        : (t(e), l(!1));
+    "Collection",
+    "Our Story",
+    "Reviews",
+    "Tea Quiz",
+    "Wholesale",
+    "About",
+    "Contact",
+    "FAQ",
+    "Locations",
+  ];
+
+  const locationUrls = {
+    "Bangalore": "/locations/tea-delivery-bangalore/",
+    "Chennai": "/locations/tea-delivery-chennai/",
+    "Delhi": "/locations/tea-delivery-delhi/",
+    "Hyderabad": "/locations/tea-delivery-hyderabad/",
+    "Jaipur": "/locations/tea-delivery-jaipur/",
+    "Kolkata": "/locations/tea-delivery-kolkata/",
+    "Mumbai": "/locations/tea-delivery-mumbai/",
+    "Pune": "/locations/tea-delivery-pune/",
   };
+
+  const n = "Home" === e;
+  const [o, i] = useState(!1);
+  const [r, l] = useState(!1);
+  const { isMobile: s } = useViewport();
+
+  useEffect(() => {
+    const handleScroll = () => i(window.scrollY > 60);
+    window.addEventListener("scroll", handleScroll, { passive: !0 });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    s || l(!1);
+  }, [s]);
+
+  useEffect(() => {
+    document.body.style.overflow = r ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [r]);
+
+  const c = (item) => {
+    if (item === "Reviews") {
+      window.location.href = "/reviews/";
+    } else if (item === "FAQ") {
+      window.location.href = "/faq";
+    } else if (item === "Quiz" || item === "Tea Quiz") {
+      window.location.href = "/quiz/";
+    } else {
+      t(item);
+      l(!1);
+    }
+  };
+
   return React.createElement(React.Fragment, null,
     React.createElement(CookieConsentBanner, null),
     React.createElement(
@@ -440,25 +455,27 @@ function Nav({ page: e, setPage: t }) {
           left: 0,
           right: 0,
           zIndex: 100,
-          background: n ? (o ? "rgba(21, 39, 27, 0.95)" : "transparent") : T.teal,
+          background: n ? (o ? "rgba(21, 39, 27, 0.96)" : "transparent") : T.teal,
           backdropFilter: (n && o) || r ? "blur(16px)" : "none",
-          transition: "background 400ms ease",
-          borderBottom: n && o ? "1px solid rgba(255,255,255,0.08)" : "none",
+          transition: "background 300ms ease, box-shadow 300ms ease",
+          borderBottom: n && o ? "1px solid rgba(201,168,76,0.15)" : "none",
+          boxShadow: n && o ? "0 4px 20px rgba(0,0,0,0.25)" : "none",
         },
       },
       React.createElement(
         "div",
         {
           style: {
-            maxWidth: 1200,
+            maxWidth: 1240,
             margin: "0 auto",
-            padding: s ? "0 20px" : "0 32px",
+            padding: s ? "0 18px" : "0 32px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            height: 68,
+            height: 72,
           },
         },
+        /* Logo Brand Block */
         React.createElement(
           "div",
           {
@@ -466,111 +483,88 @@ function Nav({ page: e, setPage: t }) {
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
-              gap: 10,
+              gap: 12,
+              flexShrink: 0,
             },
             onClick: () => c("Home"),
           },
-          React.createElement(NevLogo, { size: 42 }),
+          React.createElement(NevLogo, { size: 40 }),
           React.createElement(
             "span",
             {
               style: {
                 fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: s ? 16 : 18,
+                fontSize: s ? 17 : 20,
                 color: T.white,
                 letterSpacing: "0.18em",
-                fontWeight: 400,
+                fontWeight: 700,
+                whiteSpace: "nowrap",
               },
             },
             "NEVISAN",
           ),
         ),
+
+        /* Clean Luxury Desktop Nav Links */
         !s &&
           React.createElement(
             "div",
-            { style: { display: "flex", gap: 32, alignItems: "center" } },
-            a.map((t) => {
-              if (t === "Reviews") {
+            {
+              style: {
+                display: "flex",
+                gap: 28,
+                alignItems: "center",
+              },
+            },
+            desktopLinks.map((item) => {
+              if (item.href) {
                 return React.createElement(
                   "a",
                   {
-                    key: t,
-                    href: "/reviews/",
+                    key: item.label,
+                    href: item.href,
                     style: {
-                      background: "none",
-                      border: "none",
-                      cursor: "pointer",
                       fontFamily: "'Inter', sans-serif",
-                      fontSize: 16,
+                      fontSize: 14.5,
                       fontWeight: 500,
-                      color: "rgba(255,255,255,0.85)",
-                      transition: "color 150ms",
-                      padding: 0,
+                      color: item.label.includes("★") ? "#D4AF37" : "rgba(255,255,255,0.85)",
                       textDecoration: "none",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 4,
-                    },
-                    onMouseEnter: (a) => (a.currentTarget.style.color = "#C9A84C"),
-                    onMouseLeave: (a) => (a.currentTarget.style.color = "rgba(255,255,255,0.85)"),
-                  },
-                  React.createElement("span", { style: { color: "#C9A84C", fontSize: 13 } }, "★"),
-                  "Reviews"
-                );
-              }
-              if (t === "Locations") {
-                return React.createElement(
-                  "a",
-                  {
-                    key: t,
-                    href: "/locations/",
-                    style: {
-                      background: "none",
-                      border: "none",
+                      whiteSpace: "nowrap",
+                      transition: "color 150ms ease",
                       cursor: "pointer",
-                      fontFamily: "'Inter', sans-serif",
-                      fontSize: 16,
-                      fontWeight: 400,
-                      color: "rgba(255,255,255,0.82)",
-                      transition: "color 150ms",
-                      padding: 0,
-                      textDecoration: "none",
+                      padding: "6px 0",
                     },
-                    onMouseEnter: (a) => {
-                      a.currentTarget.style.color = "#fff";
-                    },
-                    onMouseLeave: (a) => {
-                      a.currentTarget.style.color = "rgba(255,255,255,0.82)";
-                    },
+                    onMouseEnter: (e) => (e.currentTarget.style.color = "#FFFFFF"),
+                    onMouseLeave: (e) => (e.currentTarget.style.color = item.label.includes("★") ? "#D4AF37" : "rgba(255,255,255,0.85)"),
                   },
-                  t,
+                  item.label,
                 );
               }
               return React.createElement(
                 "button",
                 {
-                  key: t,
-                  onClick: () => c(t),
+                  key: item.label,
+                  onClick: () => c(item.id),
                   style: {
                     background: "none",
                     border: "none",
-                    cursor: "pointer",
                     fontFamily: "'Inter', sans-serif",
-                    fontSize: 16,
-                    fontWeight: 400,
-                    color: e === t ? T.gold : "rgba(255,255,255,0.82)",
-                    transition: "color 150ms",
-                    padding: 0,
+                    fontSize: 14.5,
+                    fontWeight: 500,
+                    color: e === item.id ? T.gold : "rgba(255,255,255,0.85)",
+                    cursor: "pointer",
+                    whiteSpace: "nowrap",
+                    transition: "color 150ms ease",
+                    padding: "6px 0",
                   },
-                  onMouseEnter: (a) => {
-                    e !== t && (a.currentTarget.style.color = "#fff");
+                  onMouseEnter: (evt) => {
+                    if (e !== item.id) evt.currentTarget.style.color = "#FFFFFF";
                   },
-                  onMouseLeave: (a) => {
-                    e !== t &&
-                      (a.currentTarget.style.color = "rgba(255,255,255,0.82)");
+                  onMouseLeave: (evt) => {
+                    if (e !== item.id) evt.currentTarget.style.color = "rgba(255,255,255,0.85)";
                   },
                 },
-                t,
+                item.label,
               );
             }),
             React.createElement(
@@ -582,32 +576,34 @@ function Nav({ page: e, setPage: t }) {
                   color: T.tealDark,
                   border: "none",
                   borderRadius: 9999,
-                  padding: "14px 22px",
-                  fontSize: 16,
-                  fontWeight: 600,
+                  padding: "10px 22px",
+                  fontSize: 14,
+                  fontWeight: 700,
                   cursor: "pointer",
                   fontFamily: "'Inter', sans-serif",
+                  whiteSpace: "nowrap",
                   transition: "transform 200ms, box-shadow 200ms",
-                  boxShadow: "0 2px 12px rgba(201,168,76,0.3)",
+                  boxShadow: "0 2px 12px rgba(201,168,76,0.35)",
+                  marginLeft: 6,
                 },
                 onMouseEnter: (e) => {
-                  ((e.currentTarget.style.transform = "scale(1.05)"),
-                    (e.currentTarget.style.boxShadow =
-                      "0 4px 20px rgba(201,168,76,0.5)"));
+                  e.currentTarget.style.transform = "scale(1.04)";
+                  e.currentTarget.style.boxShadow = "0 4px 18px rgba(201,168,76,0.55)";
                 },
                 onMouseLeave: (e) => {
-                  ((e.currentTarget.style.transform = "scale(1)"),
-                    (e.currentTarget.style.boxShadow =
-                      "0 2px 12px rgba(201,168,76,0.3)"));
+                  e.currentTarget.style.transform = "scale(1)";
+                  e.currentTarget.style.boxShadow = "0 2px 12px rgba(201,168,76,0.35)";
                 },
               },
               "Shop Now",
             ),
           ),
+
+        /* Mobile Header Actions (WhatsApp + Hamburger) */
         s &&
           React.createElement(
             "div",
-            { style: { display: "flex", alignItems: "center", gap: 16 } },
+            { style: { display: "flex", alignItems: "center", gap: 12 } },
             React.createElement(
               "button",
               {
@@ -617,11 +613,14 @@ function Nav({ page: e, setPage: t }) {
                   color: "#fff",
                   border: "none",
                   borderRadius: 9999,
-                  padding: "14px 14px",
-                  fontSize: 16,
+                  padding: "8px 14px",
+                  fontSize: 13.5,
                   fontWeight: 600,
                   cursor: "pointer",
                   fontFamily: "'Inter'",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 4,
                 },
               },
               "💬 Order",
@@ -629,7 +628,7 @@ function Nav({ page: e, setPage: t }) {
             React.createElement(
               "button",
               {
-                onClick: () => l((e) => !e),
+                onClick: () => l((prev) => !prev),
                 "aria-label": r ? "Close menu" : "Open menu",
                 "aria-expanded": r,
                 "aria-controls": "mobile-menu",
@@ -637,7 +636,10 @@ function Nav({ page: e, setPage: t }) {
                   background: "none",
                   border: "none",
                   cursor: "pointer",
-                  padding: "14px",
+                  padding: "8px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 },
               },
               React.createElement(HamburgerIcon, { open: r }),
@@ -645,6 +647,8 @@ function Nav({ page: e, setPage: t }) {
           ),
       ),
     ),
+
+    /* Mobile Drawer Menu */
     s &&
       r &&
       React.createElement(
@@ -658,6 +662,7 @@ function Nav({ page: e, setPage: t }) {
             display: "flex",
             flexDirection: "column",
             paddingTop: 68,
+            overflowY: "auto",
             animation: "overlay-fade 0.25s ease both",
           },
         },
@@ -665,29 +670,26 @@ function Nav({ page: e, setPage: t }) {
           "div",
           {
             style: {
-              padding: "32px 28px",
+              padding: "24px 24px 40px",
               display: "flex",
               flexDirection: "column",
-              gap: 4,
+              gap: 2,
             },
           },
-          a.map((t, n) => {
-            if (t === "Reviews") {
+          a.map((item, idx) => {
+            if (item === "Reviews") {
               return React.createElement(
                 "a",
                 {
-                  key: t,
+                  key: item,
                   href: "/reviews/",
                   style: {
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
                     textAlign: "left",
                     fontFamily: "'Playfair Display', Georgia, serif",
-                    fontSize: 28,
+                    fontSize: 24,
                     fontWeight: 400,
                     color: "#D4AF37",
-                    padding: "14px 0",
+                    padding: "12px 0",
                     textDecoration: "none",
                     borderBottom: "1px solid rgba(255,255,255,0.08)",
                     display: "flex",
@@ -695,72 +697,96 @@ function Nav({ page: e, setPage: t }) {
                     gap: 8,
                   },
                 },
-                React.createElement("span", { style: { color: "#C9A84C", fontSize: 20 } }, "★"),
-                "Reviews (380+)"
+                React.createElement("span", { style: { color: "#C9A84C", fontSize: 18 } }, "★"),
+                "Customer Reviews (380+)",
               );
             }
-            if (t === "Locations") {
+            if (item === "Tea Quiz") {
               return React.createElement(
                 "a",
                 {
-                  key: t,
-                  href: "/locations/",
+                  key: item,
+                  href: "/quiz/",
                   style: {
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
                     textAlign: "left",
                     fontFamily: "'Playfair Display', Georgia, serif",
-                    fontSize: 28,
+                    fontSize: 24,
                     fontWeight: 400,
-                    color: "rgba(255,255,255,0.85)",
-                    padding: "14px 0",
+                    color: "rgba(255,255,255,0.9)",
+                    padding: "12px 0",
                     textDecoration: "none",
-                    borderBottom:
-                      n < a.length - 1
-                        ? "1px solid rgba(255,255,255,0.08)"
-                        : "none",
-                    animation: `menu-open 0.3s ease ${0.06 * n}s both`,
+                    borderBottom: "1px solid rgba(255,255,255,0.08)",
                   },
                 },
-                t,
+                "Tea Finder Quiz",
+              );
+            }
+            if (item === "FAQ") {
+              return React.createElement(
+                "a",
+                {
+                  key: item,
+                  href: "/faq",
+                  style: {
+                    textAlign: "left",
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: 24,
+                    fontWeight: 400,
+                    color: "rgba(255,255,255,0.9)",
+                    padding: "12px 0",
+                    textDecoration: "none",
+                    borderBottom: "1px solid rgba(255,255,255,0.08)",
+                  },
+                },
+                "FAQ & Health Guide",
+              );
+            }
+            if (item === "Locations") {
+              return React.createElement(
+                "a",
+                {
+                  key: item,
+                  href: "/locations/",
+                  style: {
+                    textAlign: "left",
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: 24,
+                    fontWeight: 400,
+                    color: "rgba(255,255,255,0.9)",
+                    padding: "12px 0",
+                    textDecoration: "none",
+                    borderBottom: "1px solid rgba(255,255,255,0.08)",
+                  },
+                },
+                "Locations (8 Metros)",
               );
             }
             return React.createElement(
               "button",
               {
-                key: t,
-                onClick: () => c(t),
+                key: item,
+                onClick: () => c(item),
                 style: {
                   background: "none",
                   border: "none",
                   cursor: "pointer",
                   textAlign: "left",
                   fontFamily: "'Playfair Display', Georgia, serif",
-                  fontSize: 28,
+                  fontSize: 24,
                   fontWeight: 400,
-                  color: e === t ? "#D4AF37" : "rgba(255,255,255,0.85)",
-                  padding: "14px 0",
-                  borderBottom:
-                    n < a.length - 1
-                      ? "1px solid rgba(255,255,255,0.08)"
-                      : "none",
-                  animation: `menu-open 0.3s ease ${0.06 * n}s both`,
+                  color: e === item ? "#D4AF37" : "rgba(255,255,255,0.9)",
+                  padding: "12px 0",
+                  borderBottom: "1px solid rgba(255,255,255,0.08)",
                 },
               },
-              t,
+              item,
             );
           }),
           React.createElement(
             "div",
-            {
-              style: {
-                marginTop: 32,
-                animation: "menu-open 0.3s ease 0.35s both",
-              },
-            },
+            { style: { marginTop: 28 } },
             React.createElement(
-              RippleButton,
+              "button",
               {
                 onClick: () => {
                   c("Collection");
@@ -771,8 +797,8 @@ function Nav({ page: e, setPage: t }) {
                   color: T.tealDark,
                   border: "none",
                   borderRadius: 9999,
-                  padding: "16px",
-                  fontSize: 16,
+                  padding: "15px",
+                  fontSize: 15,
                   fontWeight: 700,
                   cursor: "pointer",
                   fontFamily: "'Inter'",
@@ -780,7 +806,6 @@ function Nav({ page: e, setPage: t }) {
                   alignItems: "center",
                   justifyContent: "center",
                 },
-                hoverStyle: { filter: "brightness(1.05)" },
               },
               "Shop the Collection",
             ),
@@ -795,46 +820,14 @@ function Nav({ page: e, setPage: t }) {
                   color: "#fff",
                   border: "none",
                   borderRadius: 9999,
-                  padding: "16px",
-                  fontSize: 16,
+                  padding: "15px",
+                  fontSize: 15,
                   fontWeight: 700,
                   cursor: "pointer",
                   fontFamily: "'Inter'",
                 },
               },
               "💬 Order on WhatsApp",
-            ),
-          ),
-          React.createElement(
-            "div",
-            {
-              style: {
-                marginTop: 32,
-                animation: "menu-open 0.3s ease 0.42s both",
-              },
-            },
-            React.createElement(
-              "div",
-              {
-                style: {
-                  fontFamily: "'Inter'",
-                  fontSize: 16,
-                  color: "rgba(255,255,255,0.4)",
-                  marginBottom: 8,
-                },
-              },
-              "nevisan12@gmail.com",
-            ),
-            React.createElement(
-              "div",
-              {
-                style: {
-                  fontFamily: "'Inter'",
-                  fontSize: 16,
-                  color: "rgba(255,255,255,0.4)",
-                },
-              },
-              "+91 98642 45687",
             ),
           ),
         ),

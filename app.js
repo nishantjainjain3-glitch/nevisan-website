@@ -377,6 +377,7 @@ function Nav({ page: e, setPage: t }) {
       "Home",
       "Collection",
       "Our Story",
+      "Reviews",
       "About",
       "Wholesale",
       "Contact",
@@ -418,7 +419,9 @@ function Nav({ page: e, setPage: t }) {
       [r],
     ));
   const c = (e) => {
-    "FAQ" === e
+    "Reviews" === e
+      ? (window.location.href = "/reviews/")
+      : "FAQ" === e
       ? (window.location.href = "/faq")
       : "Quiz" === e
         ? (window.location.href = "/quiz")
@@ -487,6 +490,34 @@ function Nav({ page: e, setPage: t }) {
             "div",
             { style: { display: "flex", gap: 32, alignItems: "center" } },
             a.map((t) => {
+              if (t === "Reviews") {
+                return React.createElement(
+                  "a",
+                  {
+                    key: t,
+                    href: "/reviews/",
+                    style: {
+                      background: "none",
+                      border: "none",
+                      cursor: "pointer",
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: 16,
+                      fontWeight: 500,
+                      color: "rgba(255,255,255,0.85)",
+                      transition: "color 150ms",
+                      padding: 0,
+                      textDecoration: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 4,
+                    },
+                    onMouseEnter: (a) => (a.currentTarget.style.color = "#C9A84C"),
+                    onMouseLeave: (a) => (a.currentTarget.style.color = "rgba(255,255,255,0.85)"),
+                  },
+                  React.createElement("span", { style: { color: "#C9A84C", fontSize: 13 } }, "★"),
+                  "Reviews"
+                );
+              }
               if (t === "Locations") {
                 return React.createElement(
                   "a",
@@ -641,6 +672,33 @@ function Nav({ page: e, setPage: t }) {
             },
           },
           a.map((t, n) => {
+            if (t === "Reviews") {
+              return React.createElement(
+                "a",
+                {
+                  key: t,
+                  href: "/reviews/",
+                  style: {
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: 28,
+                    fontWeight: 400,
+                    color: "#D4AF37",
+                    padding: "14px 0",
+                    textDecoration: "none",
+                    borderBottom: "1px solid rgba(255,255,255,0.08)",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                  },
+                },
+                React.createElement("span", { style: { color: "#C9A84C", fontSize: 20 } }, "★"),
+                "Reviews (380+)"
+              );
+            }
             if (t === "Locations") {
               return React.createElement(
                 "a",
@@ -1085,6 +1143,29 @@ function Hero({ setPage: e }) {
               },
             },
             "Ten varieties, one origin. One garden in Golaghat, Assam. Whole leaf, chemical-free, steeped in nothing but intention.",
+          ),
+          React.createElement(
+            "a",
+            {
+              href: "/reviews/",
+              style: {
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                marginBottom: 28,
+                textDecoration: "none",
+                background: "rgba(21, 39, 27, 0.75)",
+                border: "1px solid rgba(201,168,76,0.45)",
+                borderRadius: 9999,
+                padding: "8px 20px",
+                backdropFilter: "blur(6px)",
+                cursor: "pointer",
+                width: "fit-content",
+              },
+            },
+            React.createElement("span", { style: { color: "#C9A84C", fontSize: 14 } }, "★★★★★"),
+            React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 14, color: "#fff", fontWeight: 600 } }, "4.9/5 Rating"),
+            React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 14, color: "rgba(255,255,255,0.8)" } }, "· 380+ Verified Customer Reviews ›")
           ),
           React.createElement(
             "div",
@@ -4606,6 +4687,7 @@ function Testimonials() {
           },
           "Sincere words from our community of tea drinkers. Direct and unedited reviews.",
         ),
+        React.createElement("div", { style: { textAlign: "center", marginTop: 20, marginBottom: 32 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "12px 28px", fontFamily: "'Inter'", fontSize: 15, fontWeight: 600, textDecoration: "none", cursor: "pointer", boxShadow: "0 4px 16px rgba(21,39,27,0.18)" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "View All 380+ Verified Customer Reviews", React.createElement("span", null, "→"))),
       ),
       React.createElement(
         "div",

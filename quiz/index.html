@@ -112,15 +112,13 @@
     }
 
     .quiz-card {
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: #ffffff;
       border: 1px solid var(--border);
-      border-radius: 24px;
+      border-radius: 20px;
       width: 100%;
-      max-width: 600px;
+      max-width: 620px;
       padding: 40px;
-      box-shadow: 0 12px 40px rgba(15, 63, 69, 0.08);
+      box-shadow: 0 16px 48px rgba(21, 39, 27, 0.12);
       transition: all 0.3s ease;
       position: relative;
     }
@@ -566,7 +564,14 @@
 </nav>
 
 
-  <div class="quiz-wrapper" id="main-content">
+  <header class="hero-quiz-banner" style="background: linear-gradient(180deg, var(--teal) 0%, #1c3324 100%); color: #fff; padding: 110px 24px 40px; text-align: center;">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <span style="font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 12px; display: inline-block; background: rgba(201,168,76,0.15); padding: 4px 14px; border-radius: 999px; border: 1px solid rgba(201,168,76,0.3);">TEA MATCH DISCOVERY</span>
+        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 4.5vw, 44px); font-weight: 400; line-height: 1.2; margin: 10px 0 12px;">Find Your Perfect Tea Blend</h1>
+        <p style="font-size: 16px; color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto;">Take our 60-second sommelier quiz to discover your personalized whole-leaf Assam match based on your wellness goals and daily routine.</p>
+      </div>
+    </header>
+    <div class="quiz-wrapper" id="main-content">
     <div class="quiz-card" id="quiz-card">
       <div id="quiz-flow">
         <div class="quiz-header">
@@ -588,7 +593,8 @@
   </div>
 
   <footer>
-    <p>&copy; 2026 Nevisan Tea. Grown in Golaghat, Assam. Sourced honestly. <a href="https://nevisan.in">Back to Homepage</a></p>
+    <p>&copy; 2026 Nevisan Tea &nbsp;·&nbsp; Single-Origin Assam Tea from Golaghat &nbsp;·&nbsp; <a href="https://nevisan.in/">nevisan.in</a></p>
+    <p style="margin-top: 6px; font-size: 13px; opacity: 0.8;">FSSAI 10325001000313 · Support: nevisan12@gmail.com · +91-9864245687</p>
   </footer>
 
   <script>

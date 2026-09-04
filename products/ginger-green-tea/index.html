@@ -21,45 +21,87 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "Nevisan Ginger Green Tea",
-      "image": "https://nevisan.in/teas/ginger.png",
-      "description": "Sourced from the pristine, certified organic mini tea estates of Golaghat, Assam, this luxury blend seamlessly marries hand-rolled green tea leaves with select natural ginger flakes. Cultivated entirely without chemical pesticides, NEVISAN delivers an elegant, low-astringency profile marked by a deeply comforting, warming finish.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Nevisan"
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Nevisan Ginger Green Tea",
+  "image": "https://nevisan.in/teas/ginger.png",
+  "description": "Sourced from the pristine, certified organic mini tea estates of Golaghat, Assam, this luxury blend seamlessly marries hand-rolled green tea leaves with select natural ginger flakes. Cultivated entirely without chemical pesticides, NEVISAN delivers an elegant, low-astringency profile marked by a deeply comforting, warming finish.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Nevisan"
+  },
+  "sku": "ginger-green-tea",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://nevisan.in/products/ginger-green-tea",
+    "priceCurrency": "INR",
+    "price": "499",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Nevisan Tea"
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "IN",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": "10",
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "INR"
       },
-      "sku": "ginger-green-tea",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://nevisan.in/products/ginger-green-tea",
-        "priceCurrency": "INR",
-        "price": "499",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "Nevisan Tea"
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "IN"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "1",
+          "maxValue": "2",
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "3",
+          "maxValue": "5",
+          "unitCode": "DAY"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "27",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Rajesh Patel" },
-          "datePublished": "2026-02-08",
-          "reviewBody": "Gentle warming ginger kick that balances naturally with the Assam green tea base."
-        }
-      ]
+      }
     }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "27",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rajesh Patel"
+      },
+      "datePublished": "2026-02-08",
+      "reviewBody": "Gentle warming ginger kick that balances naturally with the Assam green tea base."
+    }
+  ]
+}
     </script>
 
     <script type="application/ld+json">

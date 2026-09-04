@@ -21,45 +21,87 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "Nevisan Organic Green Tea",
-      "image": "https://nevisan.in/teas/organic.png",
-      "description": "Sourced from the pristine gardens of Golaghat, Assam, our Organic Green Tea is a testament to uncompromised purity. Cultivated in nutrient-rich soils, each batch of our single-origin, certified organic green tea is hand-selected at peak harvest — offering a clean, sophisticated cup that honors the true legacy of premium tea craftsmanship.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Nevisan"
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Nevisan Organic Green Tea",
+  "image": "https://nevisan.in/teas/organic.png",
+  "description": "Sourced from the pristine gardens of Golaghat, Assam, our Organic Green Tea is a testament to uncompromised purity. Cultivated in nutrient-rich soils, each batch of our single-origin, certified organic green tea is hand-selected at peak harvest — offering a clean, sophisticated cup that honors the true legacy of premium tea craftsmanship.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Nevisan"
+  },
+  "sku": "organic-green-tea",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://nevisan.in/products/organic-green-tea",
+    "priceCurrency": "INR",
+    "price": "499",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Nevisan Tea"
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "IN",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": "10",
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "INR"
       },
-      "sku": "organic-green-tea",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://nevisan.in/products/organic-green-tea",
-        "priceCurrency": "INR",
-        "price": "499",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "Nevisan Tea"
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "IN"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "1",
+          "maxValue": "2",
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "3",
+          "maxValue": "5",
+          "unitCode": "DAY"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "128",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Aditi Sharma" },
-          "datePublished": "2026-02-14",
-          "reviewBody": "Genuine whole leaves, beautiful golden-green liquor with zero bitterness. You can clearly taste the difference of single-origin Assam tea."
-        }
-      ]
+      }
     }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "128",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Aditi Sharma"
+      },
+      "datePublished": "2026-02-14",
+      "reviewBody": "Genuine whole leaves, beautiful golden-green liquor with zero bitterness. You can clearly taste the difference of single-origin Assam tea."
+    }
+  ]
+}
     </script>
 
     <script type="application/ld+json">

@@ -21,45 +21,87 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "Nevisan Spearmint Green Tea",
-      "image": "https://nevisan.in/teas/spearmint.png",
-      "description": "This transcends standard mint tea. This is a rare, small-batch Spearmint Organic Green Tea harvested exclusively from the rain-nourished, single-origin valley estates of Golaghat, Assam. Hand-rolled with meticulous devotion by local artisans, our whole leaves are entirely chemical-free.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Nevisan"
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Nevisan Spearmint Green Tea",
+  "image": "https://nevisan.in/teas/spearmint.png",
+  "description": "This transcends standard mint tea. This is a rare, small-batch Spearmint Organic Green Tea harvested exclusively from the rain-nourished, single-origin valley estates of Golaghat, Assam. Hand-rolled with meticulous devotion by local artisans, our whole leaves are entirely chemical-free.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Nevisan"
+  },
+  "sku": "spearmint-green-tea",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://nevisan.in/products/spearmint-green-tea",
+    "priceCurrency": "INR",
+    "price": "499",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Nevisan Tea"
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "IN",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": "10",
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "INR"
       },
-      "sku": "spearmint-green-tea",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://nevisan.in/products/spearmint-green-tea",
-        "priceCurrency": "INR",
-        "price": "499",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "Nevisan Tea"
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "IN"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "1",
+          "maxValue": "2",
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "3",
+          "maxValue": "5",
+          "unitCode": "DAY"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "42",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Priya S." },
-          "datePublished": "2026-02-25",
-          "reviewBody": "Real crushed spearmint leaves blended with sweet whole-leaf green tea. Smooth and refreshing."
-        }
-      ]
+      }
     }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "42",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Priya S."
+      },
+      "datePublished": "2026-02-25",
+      "reviewBody": "Real crushed spearmint leaves blended with sweet whole-leaf green tea. Smooth and refreshing."
+    }
+  ]
+}
     </script>
 
     <script type="application/ld+json">

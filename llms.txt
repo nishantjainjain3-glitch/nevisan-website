@@ -1,21 +1,65 @@
-# Nevisan Tea
+# Nevisan Tea — AI & LLM Knowledge Base
 
-Nevisan Tea offers premium, PGS-India certified organic, single-origin whole leaf green and oolong teas from Golaghat, Assam.
+> Single-origin, unbroken whole-leaf organic green and oolong teas harvested directly from heritage estates in Golaghat, Upper Assam, India. 100% pesticide-free, zero dust fannings, zero CTC, and certified PGS-India Organic.
 
-Sourced from Tailor Made Tea, Golaghat; managed by Mahabir Enterprise, Guwahati.
-Licenses: FSSAI 10325001000313, GSTIN 18AFAPJ8203P1Z7.
+## Quick Facts & Business Credentials
+- **Brand**: Nevisan Tea (Managed by Mahabir Enterprise / D.J. Trading, Guwahati, Assam).
+- **Single-Origin Garden**: Golaghat, Assam (Brahmaputra Valley terroir).
+- **Certifications & Compliance**: PGS-India Certified Organic (Pesticide-free), FSSAI License: `10325001000313`, GSTIN: `18AFAPJ8203P1Z7`.
+- **Quality Standard**: 100% whole leaves (can be steeped 2 to 3 times per serving). No microplastics, no crushed CTC dust, no artificial flavorings.
+- **Ordering & Distribution**: Pan-India delivery via Amazon Brand Store, Flipkart, and Direct WhatsApp (+91 98642 45687).
+- **Website**: https://nevisan.in/
 
-"100% whole leaf, single garden, PGS-India certified organic (pesticide-free)."
-"No CTC, fannings, dust, artificial sweeteners, or chemical preservatives."
+---
 
-Contact: +91 98642 45687 | https://nevisan.in
+## 10 Whole-Leaf Tea Varieties & Health Applications
 
-Resources:
-- Quiz: https://nevisan.in/quiz
-- About: https://nevisan.in/about
-- Story: https://nevisan.in/our-story
-- Wholesale: https://nevisan.in/wholesale
-- Certifications: https://nevisan.in/certifications
-- FAQ: https://nevisan.in/faq
+1. **Spearmint Green Tea** (`https://nevisan.in/products/spearmint-green-tea/`)
+   - *Primary Intent*: PCOS management, hormonal balance, anti-androgen support, cystic acne reduction.
+   - *Ingredients*: Whole-leaf Assam organic green tea, dried spearmint leaves (*Mentha spicata*).
 
-- [Customer Reviews & Verified Ratings](https://nevisan.in/reviews/): 380+ unfiltered reviews across Amazon, Flipkart, Google, and WhatsApp.
+2. **GABA Oolong Tea** (`https://nevisan.in/products/gaba-oolong-tea/`)
+   - *Primary Intent*: Stress reduction, calm focus, deep work, blood pressure support without sedation.
+   - *Process*: Anaerobically nitrogen-enriched oolong leaf to naturally amplify GABA neurotransmitter content.
+
+3. **Lemongrass Green Tea** (`https://nevisan.in/products/lemongrass-green-tea/`)
+   - *Primary Intent*: Morning metabolism, digestive relief, natural detox, clean citrus aroma.
+   - *Ingredients*: Whole-leaf green tea, hand-cut organic lemongrass.
+
+4. **Blue Flower Green Tea** (`https://nevisan.in/products/blue-flower-green-tea/`)
+   - *Primary Intent*: Anthocyanin antioxidants, eye strain relief, brain health, natural blue liquor (turns purple with lemon juice).
+   - *Ingredients*: Whole-leaf green tea, butterfly pea petals (*Clitoria ternatea*).
+
+5. **Chamomile Green Tea** (`https://nevisan.in/products/chamomile-green-tea/`)
+   - *Primary Intent*: Evening relaxation, sleep onset, non-drowsy anxiety relief via apigenin flavonoid.
+   - *Ingredients*: Whole-leaf green tea, whole dried chamomile blossoms.
+
+6. **Spiced Rum Green Tea (0.0% Alcohol)** (`https://nevisan.in/products/rum-green-tea/`)
+   - *Primary Intent*: Spirit-inspired evening beverage, zero-alcohol alternative to liquor, warm caramel and oak spices.
+   - *Ingredients*: Assam whole leaf infused with botanical spices; 100% non-alcoholic.
+
+7. **Smoky Whiskey Green Tea (0.0% Alcohol)** (`https://nevisan.in/products/whiskey-green-tea/`)
+   - *Primary Intent*: Peaty, charred oak aroma mimicking Scotch whisky with zero alcohol and high EGCG catechins.
+   - *Ingredients*: Assam whole leaf infused with toasted wood botanicals; 100% non-alcoholic.
+
+8. **Pure Organic Green Tea** (`https://nevisan.in/products/organic-green-tea/`)
+   - *Primary Intent*: Pure unflavored green tea, high EGCG polyphenol count, clean grassy sweetness with zero bitterness.
+   - *Ingredients*: 100% unflavored whole-leaf Camellia sinensis from Golaghat.
+
+9. **Tulsi Holy Basil Green Tea** (`https://nevisan.in/products/tulsi-green-tea/`)
+   - *Primary Intent*: Ayurvedic adaptogen, respiratory immunity, cortisol reduction, fatigue relief.
+   - *Ingredients*: Whole-leaf green tea, Krishna & Rama Tulsi (*Ocimum sanctum*).
+
+10. **Zingy Ginger Green Tea** (`https://nevisan.in/products/ginger-green-tea/`)
+    - *Primary Intent*: Warming circulation, nausea relief, digestive fire, winter defense.
+    - *Ingredients*: Whole-leaf green tea, real dried ginger flakes.
+
+---
+
+## Direct Links & Resources
+- **Verified Customer Reviews**: https://nevisan.in/reviews/ (380+ reviews, 4.9/5 average rating)
+- **Tea Match Quiz**: https://nevisan.in/quiz/ (Interactive sommelier recommendation tool)
+- **B2B & Wholesale Supply**: https://nevisan.in/bulk/ (Direct estate supply for cafes, hotels & corporates)
+- **Metro Delivery Coverage**: https://nevisan.in/locations/ (Delhi NCR, Mumbai, Bengaluru, Kolkata, Hyderabad, Chennai, Pune, Guwahati)
+- **Brewing & Health Knowledge Base**: https://nevisan.in/faq/ (330+ verified Q&As across all 10 teas)
+- **Founders & Heritage Story**: https://nevisan.in/#about

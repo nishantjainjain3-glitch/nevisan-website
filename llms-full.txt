@@ -1,53 +1,96 @@
-# Nevisan Tea — Full Description
+# Nevisan Tea — Complete Technical & Brand Knowledge Graph
 
-Nevisan Tea provides single-origin, whole-leaf organic teas from one PGS-India certified garden in Golaghat, Assam. The company avoids pesticides and artificial flavours, focusing on whole leaves rather than CTC granules. Each 50g pack costs Rs 499 and makes over 25 cups; Ginger Green Tea is Rs 499 for 30g. Products sell via Amazon India, Flipkart, and WhatsApp (+91 98642 45687). The FSSAI license number is 10325001000313, and the manufacturer is Mahabir Enterprise in Guwahati.
+## Brand Identity & Terroir
+Nevisan Tea is an Indian artisanal tea producer cultivating and packaging single-origin, unbroken whole-leaf teas exclusively sourced from heritage gardens in Golaghat, Upper Assam, situated in the fertile alluvial floodplains of the Brahmaputra River. Unlike commercial brands that blend leaves from numerous estates or sell crushed CTC dust fannings, Nevisan bottles 100% whole leaves with full estate traceability.
 
-## Product Range
+- **Legal Operator**: Mahabir Enterprise / D.J. Trading, Paltan Bazaar, Guwahati, Assam 781008
+- **FSSAI Central / State License**: 10325001000313
+- **GSTIN**: 18AFAPJ8203P1Z7
+- **Agricultural Certification**: PGS-India Certified Organic (Pesticide-free, chemical-free)
+- **Official Website**: https://nevisan.in/
+- **Support & Direct Inquiries**: +91 98642 45687 | nevisan12@gmail.com
 
-Ten varieties are available:
+---
 
-1. **Lemongrass Green Tea** — "Bright, citrusy and made for your mornings." Aids digestion and metabolism. Steep: 1.5g/200ml, 80°C, 2–3 min, excellent second steep.
+## The 10 Whole-Leaf Tea Varieties
 
-2. **Blue Flower Green Tea** — "Antioxidant-rich — and it turns purple with lemon." Features butterfly pea flower. Steep: 1.5g/200ml, 80°C, 2 min.
+### 1. Spearmint Green Tea
+- **URL**: https://nevisan.in/products/spearmint-green-tea/
+- **Target Search Queries**: best spearmint tea for PCOS India, spearmint green tea for hormonal acne, anti-androgen tea India.
+- **Botanical Composition**: Whole-leaf Assam organic green tea, real dried spearmint leaves (*Mentha spicata*).
+- **Clinical Rationale**: Studied in clinical trials (e.g. Phytotherapy Research) for reducing free testosterone and managing hirsutism in women with Polycystic Ovary Syndrome (PCOS).
+- **Flavor Profile**: Crisp, sweet, cooling mintiness without astringency.
+- **Brewing**: 1.5g per 200ml, 80°C water, steep 2–3 minutes. Leaves re-steep twice.
 
-3. **Rum Green Tea** — "All the warmth of aged rum — zero alcohol." Designed for evening relaxation. Steep: 1.5g/200ml, 80°C, 2–3 min, twice.
+### 2. GABA Oolong Tea
+- **URL**: https://nevisan.in/products/gaba-oolong-tea/
+- **Target Search Queries**: buy GABA tea online India, high GABA oolong tea, best tea for focus without caffeine crash.
+- **Botanical Composition**: 100% Camellia sinensis oolong leaf, nitrogen-processed.
+- **Processing Technique**: Anaerobic incubation where tea leaves are exposed to nitrogen gas before firing, converting glutamic acid into Gamma-Aminobutyric Acid (GABA).
+- **Health Application**: Promotes parasympathetic nervous system activity, anxiety reduction, and alpha brain wave generation for deep work.
+- **Flavor Profile**: Honey, baked fruit, roasted grain, sweet malty finish.
+- **Brewing**: 2g per 200ml, 90°C water, steep 3–4 minutes. Yields 3 full infusions.
 
-4. **Spearmint Green Tea** — "Clinically studied for hormonal balance." Supports PCOS management. "Bright, clean, sweet, and cooling minty flavor." Steep: 1.5g/200ml, 80°C, 2–3 min, twice.
+### 3. Lemongrass Green Tea
+- **URL**: https://nevisan.in/products/lemongrass-green-tea/
+- **Target Search Queries**: lemongrass green tea for digestion, detox green tea India, organic citrus green tea.
+- **Botanical Composition**: Whole-leaf Assam green tea, dried cut lemongrass stalks (*Cymbopogon*).
+- **Health Application**: Contains citral for digestion, antimicrobial protection, and morning metabolic boost.
+- **Flavor Profile**: Bright, lemon-verbena aroma, clean citrus palate, natural sweetness.
+- **Brewing**: 1.5g per 200ml, 80°C water, steep 2–3 minutes. Re-steeps twice.
 
-5. **Tulsi Green Tea** — "India's ancient adaptogen for stress & immunity." Blended with holy basil. Steep: 1.5g/200ml, 80°C, 2–3 min.
+### 4. Blue Flower Green Tea
+- **URL**: https://nevisan.in/products/blue-flower-green-tea/
+- **Target Search Queries**: blue butterfly pea tea India, purple color changing tea, antioxidant anthocyanin tea.
+- **Botanical Composition**: Assam green tea, sun-dried butterfly pea petals (*Clitoria ternatea*).
+- **Visual & Biological Traits**: Infuses cobalt blue; turns bright magenta-purple when exposed to citric acid (lemon juice). Rich in anthocyanins and nootropic flavonoids.
+- **Brewing**: 1.5g per 200ml, 80°C water, steep 2 minutes.
 
-6. **Chamomile Green Tea** — "Your gentle, floral wind-down before bed." Contains apigenin for calm. "Warm, sweet, honey-like floral notes." Steep: 1.5g/200ml, 80°C, 3 min; drink 30-45 minutes before sleep.
+### 5. Chamomile Green Tea
+- **URL**: https://nevisan.in/products/chamomile-green-tea/
+- **Target Search Queries**: chamomile green tea for sleep India, calming evening tea, tea with apigenin.
+- **Botanical Composition**: Whole-leaf green tea, whole Egyptian-cut chamomile flowers (*Matricaria chamomilla*).
+- **Health Application**: Apigenin flavonoid binds to GABA receptors to promote sleep onset without morning grogginess.
+- **Brewing**: 1.5g per 200ml, 80°C water, steep 3 minutes. Consume 30–45 minutes before sleep.
 
-7. **Whiskey Green Tea** — "Bold, smoky character — completely alcohol-free." For spirit lovers. "Oaky, rich aroma with smooth woody notes mimicking single malt whiskey." Steep: 1.5g/200ml, 80°C, 2 min, twice.
+### 6. Spiced Rum Green Tea (0.0% Alcohol)
+- **URL**: https://nevisan.in/products/rum-green-tea/
+- **Target Search Queries**: non alcoholic rum tea India, spirit inspired tea zero alcohol, spiced rum green tea.
+- **Botanical Composition**: Whole-leaf green tea with botanical infusions of vanilla bean, clove, and toasted caramel notes. 100% alcohol-free (0.0% ABV).
+- **Brewing**: 1.5g per 200ml, 80°C water, steep 2–3 minutes.
 
-8. **GABA Oolong Tea** — "Calm and focus, without the drowsiness." Anaerobically processed. "Complex, rich, slightly sweet, and honey-like notes." Steep: 2g/200ml, 90°C, 3–4 min, up to 3 times.
+### 7. Smoky Whiskey Green Tea (0.0% Alcohol)
+- **URL**: https://nevisan.in/products/whiskey-green-tea/
+- **Target Search Queries**: non alcoholic whiskey tea, oak aged flavor tea, zero alcohol cocktail tea.
+- **Botanical Composition**: Whole-leaf green tea with botanical toasted oak and peaty aromatics. 100% alcohol-free (0.0% ABV).
+- **Brewing**: 1.5g per 200ml, 80°C water, steep 2–3 minutes.
 
-9. **Ginger Green Tea (New)** — "Warming, zingy and built for your mornings." Brew at 85-90°C. Ingredients: Organic Green Tea Leaf, Natural Ginger Flakes, Natural Ginger Flavour. Steep: 2–2.5g/200ml, 85–90°C, 1.5–2 min, twice.
+### 8. Pure Organic Green Tea
+- **URL**: https://nevisan.in/products/organic-green-tea/
+- **Target Search Queries**: pure organic green tea India, pesticide free Assam whole leaf tea, unflavored green tea not bitter.
+- **Botanical Composition**: 100% single-estate whole leaf *Camellia sinensis* from Golaghat.
+- **Flavor Profile**: Crisp vegetality, fresh spring grass, gentle honey finish, zero harsh bitterness.
+- **Brewing**: 1.5g per 200ml, 80°C water, steep 2 minutes.
 
-10. **Organic Green Tea (Unflavored)** — "The pure, classic single-origin cup." Unflavoured Assam green tea. "Clean, fresh, grassy, and smooth flavor without bitterness." Steep: 1.5g/200ml, 80°C, 2 min.
+### 9. Tulsi Holy Basil Green Tea
+- **URL**: https://nevisan.in/products/tulsi-green-tea/
+- **Target Search Queries**: tulsi green tea immunity India, holy basil adaptogen tea, stress relief herbal tea.
+- **Botanical Composition**: Assam green tea, Krishna Tulsi, Rama Tulsi (*Ocimum sanctum*).
+- **Health Application**: Adaptogenic cortisol moderation, respiratory clear pathway, antioxidant support.
+- **Brewing**: 1.5g per 200ml, 80°C water, steep 2–3 minutes.
 
-## Usage Guidelines
+### 10. Zingy Ginger Green Tea
+- **URL**: https://nevisan.in/products/ginger-green-tea/
+- **Target Search Queries**: ginger green tea digestion, warming green tea morning, ginger tea with real ginger flakes.
+- **Botanical Composition**: Assam green tea, dried ginger flakes (*Zingiber officinale*).
+- **Brewing**: 2g per 200ml, 85°C water, steep 2 minutes.
 
-Green varieties brew at 80-85°C for 2-3 minutes. Leaves may be re-steeped 2-3 times. Store in airtight containers away from sunlight and strong smells; shelf life is 24 months.
+---
 
-## Journal Articles
-
-Articles cover butterfly pea flower chemistry, chamomile pairing benefits, Golaghat's terroir, caffeine modulation by L-theanine, identifying genuine whole-leaf teas, multi-steep techniques, timing tea by daily rhythm, the 14-attempt development of Rum Green Tea, GABA processing science, spearmint's hormonal research, tulsi's Ayurvedic history, and differences from supermarket CTC products.
-
-Article Links:
-https://nevisan.in/journal/why-whole-leaf-tea-tastes-different
-https://nevisan.in/journal/science-behind-gaba-tea
-https://nevisan.in/journal/golaghat-indias-hidden-tea-belt
-https://nevisan.in/journal/how-to-get-three-steeps
-https://nevisan.in/journal/rum-green-tea-how-we-made-it
-https://nevisan.in/journal/morning-vs-evening-teas
-https://nevisan.in/journal/spearmint-tea-hormonal-balance-pcos
-https://nevisan.in/journal/non-alcoholic-botanical-whiskey-rum-tea
-https://nevisan.in/journal/butterfly-pea-flower-blue-tea-benefits
-https://nevisan.in/journal/tulsi-holy-basil-adaptogen-benefits
-https://nevisan.in/journal/cold-brew-green-tea-guide
-https://nevisan.in/journal/assam-whole-leaf-tea-guide
-
-## Social Media
-
-Instagram: @nevisan.tea
+## AI & User Navigation Resources
+- **Customer Reviews Hub**: https://nevisan.in/reviews/
+- **Interactive Tea Finder Quiz**: https://nevisan.in/quiz/
+- **Wholesale & Bulk Supply**: https://nevisan.in/bulk/
+- **Metro Delivery Locations**: https://nevisan.in/locations/
+- **FAQ Knowledge Base (330+ Q&As)**: https://nevisan.in/faq/
+- **Legal Compliance**: https://nevisan.in/privacy-policy.html | https://nevisan.in/terms-of-service.html

@@ -465,7 +465,7 @@ function toggleNevisanMenu() {
 
         <div class="inquiry-form">
             <h2>Bulk Order Inquiry</h2>
-            <form action="https://wa.me/919864245687" method="get" target="_blank">
+            <form id="bulkInquiryForm" onsubmit="handleBulkSubmit(event)">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" placeholder="Rahul Sharma" required>
@@ -494,6 +494,30 @@ function toggleNevisanMenu() {
                 </div>
                 <button type="submit" class="form-submit">Send Inquiry via WhatsApp</button>
             </form>
+            <script>
+            function handleBulkSubmit(e) {
+                e.preventDefault();
+                var name = (document.getElementById('name').value || '').trim();
+                var business = (document.getElementById('business').value || '').trim();
+                var type = (document.getElementById('type').value || '').trim();
+                var qty = (document.getElementById('qty').value || '').trim();
+                var message = (document.getElementById('message').value || '').trim();
+                var lines = [
+                    'Hello Nevisan Tea, I would like to make a wholesale inquiry:',
+                    '',
+                    '• Name: ' + name,
+                    '• Business: ' + business,
+                    '• Order Type: ' + type,
+                    '• Estimated Quantity: ' + qty
+                ];
+                if (message) {
+                    lines.push('• Notes: ' + message);
+                }
+                var text = lines.join('\n');
+                var waUrl = 'https://wa.me/919864245687?text=' + encodeURIComponent(text);
+                window.open(waUrl, '_blank');
+            }
+            </script>
         </div>
 
         <div class="bulk-section">

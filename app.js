@@ -6763,7 +6763,7 @@ function HowToBrewSection() {
                   lineHeight: 1.7
                 }
               },
-              "Experience the sensory transition of whole leaves unfolding in our custom brewing glass. Adjust parameters to unlock their volatile oils."
+              "Experience the sensory transition of whole leaves unfolding in our custom brewing glass. Adjust parameters to release their natural aroma."
             )
           ),
           React.createElement(
@@ -7689,7 +7689,7 @@ const POSTS = [
     excerpt:
       "While Darjeeling gets the headlines, Golaghat in upper Assam quietly produces some of the boldest, most complex teas in the world.",
     body: [
-      'Ask most people to name an Indian tea region and they\'ll say Darjeeling. The "Champagne of teas" has built an unmatched reputation over 150 years of marketing. But among tea professionals and serious drinkers, a different region commands deep respect: Golaghat, in upper Assam.',
+      'Ask most people to name an Indian tea region and they\'ll say Darjeeling. The "Champagne of teas" has built a widespread reputation over 150 years of marketing. But among tea professionals and serious drinkers, a different region commands deep respect: Golaghat, in upper Assam.',
       "Golaghat sits in the Brahmaputra valley, where the soil is a unique combination of red clay, alluvial deposits from the river, and centuries of decomposed organic matter. The humidity is extreme — averaging 80% year round — and the temperature swings between seasons create a plant under constant gentle stress, which forces it to develop complex defensive compounds that translate directly into flavour.",
       "Every Nevisan tea comes from a single garden in Golaghat. This matters because single-origin means traceability — you know exactly where your tea came from, who grew it, and how it was processed. There are no blends covering up lesser-quality leaves. What's in the pack is exactly what grew in that garden.",
       "This is the foundational commitment behind Nevisan: one origin, one standard, complete transparency.",
@@ -7782,7 +7782,7 @@ const POSTS = [
     body: [
       "Tulsi, known botanically as Ocimum tenuiflorum and commonly called holy basil, is one of the most revered plants in Indian tradition. It has been used in Ayurvedic practice for centuries, valued for its distinctive flavour and aromatic qualities. The plant contains eugenol, ursolic acid, and rosmarinic acid — compounds that contribute to its characteristic clove-like, slightly peppery aroma and warm, herbaceous taste.",
       "When tulsi is blended with green tea, the pairing is unusually well-suited. Green tea brings antioxidants, mild caffeine, and L-theanine. Tulsi adds its own set of natural compounds, along with a distinct clove-like, slightly peppery aroma. The flavour combination is warming without being heavy, and the herbaceous character of tulsi complements the calm focus that L-theanine supports.",
-      "Nevisan's Tulsi Green uses whole holy basil leaves alongside Assam green tea, keeping the ratio balanced so neither ingredient overwhelms the other. The result is a cup that's both grounding and refreshing — the kind of tea that works well whether you're starting your morning or taking a quiet break in the afternoon. Brew at around 90°C for three to four minutes to get the full flavour from both ingredients.",
+      "Nevisan's Tulsi Green uses whole holy basil leaves alongside Assam green tea, keeping the ratio balanced so neither ingredient overwhelms the other. The result is a cup that's both grounding and refreshing — the kind of tea that works well in the morning or during a quiet afternoon break. Brew at around 90°C for three to four minutes to get the full flavour from both ingredients.",
       "For anyone looking to reduce daily stimulant load while still supporting focus, tulsi green tea is a useful starting point. It has enough caffeine to be functional in the morning without the cortisol spike of coffee. It's also one of the few blends where the Indian heritage of the herb is fully intact — tulsi grown in India, paired with tea grown in India, brewed simply at around 80°C for two to three minutes.",
     ],
   },
@@ -8911,7 +8911,7 @@ function WholesalePage({ setPage: e }) {
           {
             icon: "🎁",
             title: "Corporate Gifting",
-            desc: "Curated tea gift sets for employees, clients and events. Minimum 20 packs per order.",
+            desc: "Custom tea gift boxes for employees, clients, and corporate events. Minimum 20 packs per order.",
           },
           {
             icon: "🛒",

@@ -8,3 +8,7 @@ package-lock.json
 flipkart_tokens.json
 *tokens.json
 *credentials*.json
+
+# Python bytecode
+__pycache__/
+*.pyc

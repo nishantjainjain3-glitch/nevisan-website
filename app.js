@@ -22,7 +22,7 @@ const NEVISAN_MARKETPLACE_MAP = {
     "Blue Flower Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHK2XFGHV2GRYA",
     "Tulsi Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHK7GXBJDKC9XM",
     "Whiskey Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHHEJ9YS493UA2",
-    "Ginger Green Tea": "https://www.flipkart.com/store/nevisan"
+    "Ginger Green Tea": "https://www.flipkart.com/search?q=nevisan+ginger+green+tea"
   }
 };
 function getDirectAmazonUrl(name) {

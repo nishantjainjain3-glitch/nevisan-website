@@ -1,3 +1,10 @@
 node_modules/
 package.json
 package-lock.json
+
+# Secrets, credentials, and API tokens
+.env
+*.env
+flipkart_tokens.json
+*tokens.json
+*credentials*.json

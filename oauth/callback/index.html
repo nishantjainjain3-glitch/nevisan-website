@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Ads API Authorization | Nevisan Tea</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --teal: #1b7a82;
+            --teal-dark: #13585e;
+            --gold: #c9a84c;
+            --cream: #f9f6f0;
+            --ink: #1a1a1a;
+            --muted: #666;
+            --border: #e2ded7;
+            --card-bg: #ffffff;
+            --success-bg: #eaf7ed;
+            --success-border: #97d8a6;
+            --success-text: #1d6932;
+            --error-bg: #fde8e8;
+            --error-border: #f8b4b4;
+            --error-text: #9b1c1c;
+        }
+        body {
+            background-color: var(--cream);
+            color: var(--ink);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .nav {
+            background: var(--teal);
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .nav-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .nav-tag {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .container {
+            max-width: 720px;
+            width: 100%;
+            margin: 2.5rem auto;
+            padding: 0 1.25rem;
+            flex: 1;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+        }
+        .card-header {
+            margin-bottom: 1.75rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.25rem;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+        }
+        .badge-success { background: var(--success-bg); color: var(--success-text); border: 1px solid var(--success-border); }
+        .badge-info { background: #e8f4fd; color: #1e6bb8; border: 1px solid #b3d7f5; }
+        .badge-error { background: var(--error-bg); color: var(--error-text); border: 1px solid var(--error-border); }
+
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--teal-dark);
+            margin-bottom: 0.35rem;
+        }
+        p.subtitle {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .section-label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .code-box {
+            position: relative;
+            background: #1e242b;
+            color: #f3f4f6;
+            font-family: 'Fira Code', monospace, Courier;
+            font-size: 0.9rem;
+            padding: 1rem 3.5rem 1rem 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            word-break: break-all;
+            margin-bottom: 1.5rem;
+            border: 1px solid #374151;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 50%;
+            right: 0.75rem;
+            transform: translateY(-50%);
+            background: #374151;
+            color: #fff;
+            border: none;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+        .copy-btn:hover { background: #4b5563; }
+        .copy-btn.copied { background: var(--success-text); }
+
+        .step-list {
+            list-style: none;
+            margin: 1.5rem 0 0;
+            padding: 0;
+            border-top: 1px solid var(--border);
+            padding-top: 1.25rem;
+        }
+        .step-list li {
+            display: flex;
+            gap: 0.85rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .step-num {
+            flex-shrink: 0;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--teal);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .step-content code {
+            background: #f1ede4;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #b33939;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--ink);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 0.75rem 0.9rem;
+            font-size: 0.95rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            background: #fff;
+            color: var(--ink);
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(27,122,130,0.15);
+        }
+        .input-hint {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-top: 0.35rem;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            background: var(--teal);
+            color: #fff;
+            border: none;
+            padding: 0.85rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-primary:hover { background: var(--teal-dark); }
+
+        .meta-table {
+            width: 100%;
+            margin-top: 1.25rem;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        .meta-table td {
+            padding: 0.5rem 0;
+            border-top: 1px solid var(--border);
+        }
+        .meta-table td:first-child {
+            color: var(--muted);
+            width: 35%;
+            font-weight: 500;
+        }
+        .meta-table td:last-child {
+            font-family: 'Fira Code', monospace;
+            word-break: break-all;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .footer-note a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="nav">
+        <a href="/" class="nav-brand">Nevisan</a>
+        <span class="nav-tag">Seller Partner API Integration</span>
+    </header>
+
+    <main class="container">
+        <div class="card" id="state-container">
+            <!-- Dynamic State View will render here -->
+        </div>
+        <p class="footer-note">
+            Nevisan Tea Private Endpoint &bull; <a href="/">Return to Store</a>
+        </p>
+    </main>
+
+    <script>
+        (function() {
+            const container = document.getElementById('state-container');
+            const urlParams = new URLSearchParams(window.location.search);
+            const authCode = urlParams.get('code');
+            const state = urlParams.get('state');
+            const error = urlParams.get('error');
+            const errorDescription = urlParams.get('error_description');
+
+            if (authCode) {
+                renderCodeSuccess(authCode, state);
+            } else if (error) {
+                renderError(error, errorDescription);
+            } else {
+                renderConnectForm();
+            }
+
+            function copyToClipboard(text, buttonElement) {
+                navigator.clipboard.writeText(text).then(function() {
+                    const originalText = buttonElement.innerText;
+                    buttonElement.innerText = 'Copied!';
+                    buttonElement.classList.add('copied');
+                    setTimeout(function() {
+                        buttonElement.innerText = originalText;
+                        buttonElement.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+
+            function renderCodeSuccess(code, receivedState) {
+                container.innerHTML = `
+                    <div class="card-header">
+                        <span class="badge badge-success">&#10003; Authorization Code Received</span>
+                        <h1>Flipkart Authorization Succeeded</h1>
+                        <p class="subtitle">Flipkart has verified your seller credentials and issued a single-use authorization code.</p>
+                    </div>
+
+                    <div class="section-label">
+                        <span>Authorization Code</span>
+                    </div>
+                    <div class="code-box">
+                        <span id="auth-code-text">${escapeHtml(code)}</span>
+                        <button class="copy-btn" id="copy-code-btn">Copy Code</button>
+                    </div>
+
+                    <div class="section-label">
+                        <span>Local CLI Token Exchange Command</span>
+                    </div>
+                    <div class="code-box">
+                        <span id="auth-cmd-text">python flipkart_auth.py --code ${escapeHtml(code)}</span>
+                        <button class="copy-btn" id="copy-cmd-btn">Copy Command</button>
+                    </div>
+
+                    <ul class="step-list">
+                        <li>
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <strong>Copy the command above.</strong> It passes this code directly into your local authentication exchange script.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <strong>Run it in your project terminal.</strong> The script contacts Flipkart's token endpoint and writes your 6-month refresh token to <code>flipkart_tokens.json</code>.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <strong>Keep credentials confidential.</strong> The client secret and refresh token remain on your local machine and are never uploaded to GitHub.
+                            </div>
+                        </li>
+                    </ul>
+
+                    <table class="meta-table">
+                        <tr>
+                            <td>Timestamp</td>
+                            <td>${new Date().toISOString()}</td>
+                        </tr>
+                        ${receivedState ? `<tr><td>State Token</td><td>${escapeHtml(receivedState)}</td></tr>` : ''}
+                        <tr>
+                            <td>Redirect URI</td>
+                            <td>https://nevisan.in/oauth/callback/</td>
+                        </tr>
+                    </table>
+                `;
+
+                document.getElementById('copy-code-btn').addEventListener('click', function() {
+                    copyToClipboard(code, this);
+                });
+                document.getElementById('copy-cmd-btn').addEventListener('click', function() {
+                    copyToClipboard(`python flipkart_auth.py --code ${code}`, this);
+                });
+            }
+
+            function renderError(errCode, errDesc) {
+                container.innerHTML = `
+                    <div class="card-header">
+                        <span class="badge badge-error">&#9888; Authorization Error</span>
+                        <h1>Flipkart Authorization Failed</h1>
+                        <p class="subtitle">Flipkart returned an error response during the authorization handshake.</p>
+                    </div>
+
+                    <div class="code-box" style="background: #2b1d1d; border-color: #5c2424; color: #fca5a5;">
+                        <strong>${escapeHtml(errCode)}</strong>: ${escapeHtml(errDesc || 'No details provided by Flipkart.')}
+                    </div>
+
+                    <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                        Common causes include an unregistered Redirect URI, mismatched Client ID, or logging in with an unauthorized Flipkart account.
+                    </p>
+
+                    <a href="/oauth/callback/" class="btn-primary" style="text-decoration: none;">Try Again</a>
+                `;
+            }
+
+            function renderConnectForm() {
+                const savedClientId = localStorage.getItem('flipkart_client_id') || '';
+
+                container.innerHTML = `
+                    <div class="card-header">
+                        <span class="badge badge-info">Flipkart Ads OAuth Portal</span>
+                        <h1>Connect to Flipkart Ads</h1>
+                        <p class="subtitle">Authorize Nevisan Tea ad automation scripts to interact with your Flipkart Seller Ads account.</p>
+                    </div>
+
+                    <form id="connect-form">
+                        <div class="form-group">
+                            <label for="client-id-input">Flipkart Client ID (Application ID)</label>
+                            <input type="text" id="client-id-input" placeholder="e.g. 5d92a0e4-18c3-4d7a-b42e-..." value="${escapeHtml(savedClientId)}" required>
+                            <div class="input-hint">Provided in the Flipkart Seller Developer Admin portal.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Registered Redirect URI</label>
+                            <input type="text" value="https://nevisan.in/oauth/callback/" readonly style="background: #f4f0e8; color: #555;">
+                            <div class="input-hint">Ensure this exact URL is added to your Flipkart Developer App settings.</div>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="connect-btn">
+                            Log In & Authorize with Flipkart
+                        </button>
+                    </form>
+
+                    <table class="meta-table">
+                        <tr>
+                            <td>OAuth Endpoint</td>
+                            <td>https://api.flipkart.net/oauth-service/oauth/authorize</td>
+                        </tr>
+                        <tr>
+                            <td>API Scope</td>
+                            <td>Seller_Api</td>
+                        </tr>
+                        <tr>
+                            <td>Response Type</td>
+                            <td>code (Authorization Code Flow)</td>
+                        </tr>
+                    </table>
+                `;
+
+                document.getElementById('connect-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const clientId = document.getElementById('client-id-input').value.trim();
+                    if (!clientId) {
+                        alert('Please enter your Flipkart Client ID.');
+                        return;
+                    }
+
+                    localStorage.setItem('flipkart_client_id', clientId);
+
+                    const stateToken = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+                    sessionStorage.setItem('oauth_state', stateToken);
+
+                    const redirectUri = 'https://nevisan.in/oauth/callback/';
+                    const authUrl = 'https://api.flipkart.net/oauth-service/oauth/authorize' +
+                        '?client_id=' + encodeURIComponent(clientId) +
+                        '&redirect_uri=' + encodeURIComponent(redirectUri) +
+                        '&response_type=code' +
+                        '&scope=Seller_Api' +
+                        '&state=' + encodeURIComponent(stateToken);
+
+                    window.location.href = authUrl;
+                });
+            }
+
+            function escapeHtml(str) {
+                if (!str) return '';
+                return String(str)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#039;');
+            }
+        })();
+    </script>
+</body>
+</html>

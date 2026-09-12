@@ -950,52 +950,16 @@
     --text:      #1F2E24;
     --muted:     #5C7064;
     --border:    #E2DDD5;
-    --white:     #ffffff;
+    --white:     #FFFFFF;
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; overflow-x: hidden; }
-
-  /* ── NAV ── */
-  nav {
-    background: var(--teal);
-    padding: 0 32px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 200;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.25);
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    color: #ffffff;
-  }
-  .nav-right { display: flex; align-items: center; gap: 18px; }
-  .nav-link { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.2s; }
-  .nav-link:hover { color: #fff; }
-  .nav-cta {
-    background: var(--gold);
-    color: var(--teal);
-    padding: 8px 18px;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
 
   /* ── HERO ── */
   .hero {
     padding-top: 110px !important;
     background: linear-gradient(180deg, var(--teal) 0%, #1c3324 100%);
-    color: #fff;
+    color: #FFFFFF;
     text-align: center;
     padding: 110px 24px 60px;
     position: relative;
@@ -1003,10 +967,9 @@
   .hero-eyebrow {
     display: inline-block;
     color: var(--gold);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+    letter-spacing: 0.12em;
     margin-bottom: 12px;
     background: rgba(201,168,76,0.12);
     padding: 6px 16px;
@@ -1015,13 +978,13 @@
   }
   .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(26px, 4.5vw, 46px);
+    font-size: clamp(26px, 4vw, 36px);
     font-weight: 600;
     line-height: 1.25;
     margin-bottom: 14px;
   }
   .hero-subtitle {
-    font-size: clamp(14px, 1.8vw, 17px);
+    font-size: 16px;
     color: rgba(255,255,255,0.85);
     max-width: 640px;
     margin: 0 auto 28px;
@@ -1057,7 +1020,7 @@
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 18px;
+    font-size: 16px;
     color: var(--muted);
     pointer-events: none;
   }
@@ -1076,10 +1039,20 @@
     margin: 0 auto;
     padding: 14px 20px;
     display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .filter-inner {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      padding: 12px 16px;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
   }
   .filter-pill {
     background: var(--cream);
@@ -1087,7 +1060,7 @@
     color: var(--text);
     padding: 8px 16px;
     border-radius: 99px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     white-space: nowrap;
@@ -1099,25 +1072,28 @@
   }
   .filter-pill:hover {
     background: var(--teal-soft);
-    color: #fff;
+    color: #FFFFFF;
     border-color: var(--teal-soft);
   }
   .filter-pill.active {
     background: var(--teal);
-    color: #fff;
+    color: #FFFFFF;
     border-color: var(--teal);
     box-shadow: 0 2px 8px rgba(21,39,27,0.25);
   }
   .pill-badge {
     background: rgba(0,0,0,0.08);
-    font-size: 16px;
+    font-size: 14px;
     padding: 2px 6px;
     border-radius: 99px;
     font-weight: 700;
   }
   .filter-pill.active .pill-badge {
-    background: var(--gold);
-    color: var(--teal);
+    background: rgba(0,0,0,0.08);
+    font-size: 14px;
+    padding: 2px 6px;
+    border-radius: 99px;
+    font-weight: 700;
   }
 
   /* ── MAIN CONTENT ── */
@@ -1141,12 +1117,12 @@
     border-bottom: 2px solid var(--border);
   }
   .section-icon {
-    font-size: 32px;
+    font-size: 24px;
     line-height: 1;
     background: #fff;
     border: 1px solid var(--border);
     padding: 12px;
-    border-radius: 16px;
+    border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
   .section-info { flex: 1; }
@@ -1158,20 +1134,213 @@
   }
   .section-tagline {
     font-size: 16px;
-    color: var(--muted);
+    color: var(--teal);
     margin-bottom: 6px;
-    font-weight: 500;
+    font-weight: 600;
+    line-height: 1.4;
   }
   .section-count {
     display: inline-block;
     background: rgba(201,168,76,0.15);
-    color: #8C6D23;
-    font-size: 16px;
+    color: var(--gold);
+    font-size: 14px;
     font-weight: 700;
     padding: 2px 8px;
-    border-radius: 4px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  
+  /* ── FAQ CONTROLS TOOLBAR ── */
+  .faq-controls-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .faq-status-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  .faq-status-badge {
+    background: var(--teal);
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 6px;
+  }
+  .faq-status-text {
+    color: var(--text);
+    font-size: 14px;
+  }
+  .faq-controls-btns {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .faq-control-pill {
+    background: var(--cream);
+    color: var(--teal);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+  }
+  .faq-control-pill:hover {
+    background: var(--teal);
+    color: #FFFFFF;
+    border-color: var(--teal);
+  }
+
+  /* ── SECTION COLLAPSE & EXPAND INTERACTION ── */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.2s ease;
+  }
+  .section-head:hover {
+    opacity: 0.92;
+  }
+  .section-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .section-toggle-cue {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .section-chevron-btn {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: var(--teal);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.25s ease, background 0.2s ease;
+    border: none;
+  }
+  .faq-section-block.is-collapsed {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .faq-section-block.is-collapsed:hover {
+    box-shadow: 0 4px 14px rgba(21,39,27,0.06);
+    border-color: var(--teal);
+  }
+  .faq-section-block.is-collapsed .section-head {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  .faq-section-block.is-collapsed .qa-list {
+    display: none !important;
+  }
+  .faq-section-block.is-collapsed .section-chevron-btn {
+    transform: rotate(-90deg);
+  }
+
+  /* ── MARKET COMPARISON TABLE (Issue 8) ── */
+  .market-table-wrap {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-top: 16px;
+  }
+  .market-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .market-table th {
+    padding: 16px 20px;
+    text-align: left;
+    background: var(--cream);
+    color: var(--teal);
+    font-weight: 700;
+    border-bottom: 2px solid var(--border);
+  }
+  .market-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0ede6;
+    vertical-align: middle;
+    color: var(--text);
+  }
+  .market-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ── FLOATING BACK TO TOP BUTTON (Issue 9) ── */
+  .back-to-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    background: var(--teal);
+    color: var(--gold);
+    border: 1.5px solid var(--gold);
+    border-radius: 99px;
+    padding: 10px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .back-to-top:hover {
+    background: var(--gold);
+    color: var(--teal);
+    border-color: var(--teal);
+    box-shadow: 0 8px 24px rgba(201, 168, 76, 0.45);
   }
 
   /* ── ACCORDION ── */
@@ -1222,12 +1391,12 @@
   details.faq-item[open] .s-icon {
     transform: rotate(45deg);
     background: var(--teal);
-    color: #fff;
+    color: #FFFFFF;
   }
   .answer {
     padding: 0 22px 20px;
     font-size: 16px;
-    color: #334439;
+    color: var(--text);
     line-height: 1.8;
     border-top: 1px solid #f2ede4;
     padding-top: 16px;
@@ -1239,19 +1408,19 @@
   /* ── FOOTER CTA ── */
   .footer-cta {
     background: var(--teal);
-    border-radius: 18px;
+    border-radius: 12px;
     padding: 44px 32px;
     text-align: center;
-    color: #fff;
+    color: #FFFFFF;
     margin-top: 40px;
   }
   .footer-cta h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 26px;
+    font-size: 24px;
     margin-bottom: 10px;
   }
   .footer-cta p {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.85);
     font-size: 16px;
     max-width: 500px;
     margin: 0 auto 24px;
@@ -1264,7 +1433,7 @@
   }
   .btn-wa {
     background: #25D366;
-    color: #fff;
+    color: #FFFFFF;
     text-decoration: none;
     font-weight: 600;
     padding: 12px 24px;
@@ -1282,16 +1451,15 @@
     padding: 12px 24px;
     border-radius: 99px;
     font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
   }
 
   footer {
     background: var(--teal-dark);
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.85);
     text-align: center;
     padding: 30px 20px;
-    font-size: 16px;
+    font-size: 14px;
   }
   footer a { color: var(--gold); text-decoration: none; }
 
@@ -1299,8 +1467,8 @@
       position: absolute;
       top: -100px;
       left: 16px;
-      background: var(--gold, #C9A84C);
-      color: var(--teal, #15271B);
+      background: var(--gold);
+      color: var(--teal);
       padding: 10px 18px;
       z-index: 9999;
       font-weight: 700;
@@ -1410,7 +1578,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
   white-space: nowrap;
   transition: color 150ms ease;
@@ -1423,16 +1591,16 @@
 }
 .nevisan-nav-link.active,
 .nevisan-nav-link--gold {
-  color: #D4AF37;
+  color: var(--gold);
 }
 .nevisan-btn-shop {
   background: #C9A84C;
   color: #15271B !important;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 13.5px;
+  font-size: 14px;
   padding: 9px 20px;
-  border-radius: 9999px;
+  border-radius: 99px;
   text-decoration: none;
   white-space: nowrap;
   box-shadow: 0 2px 12px rgba(201, 168, 76, 0.35);
@@ -1456,9 +1624,9 @@
   color: #FFFFFF !important;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 13.5px;
+  font-size: 14px;
   padding: 8px 14px;
-  border-radius: 9999px;
+  border-radius: 99px;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -1481,7 +1649,7 @@
   height: 2.5px;
   width: 100%;
   background: #FFFFFF;
-  border-radius: 2px;
+  border-radius: 6px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .nevisan-mobile-toggle.is-active span:nth-child(1) {
@@ -1516,7 +1684,7 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 20px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
   padding: 13px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -1526,14 +1694,14 @@
 }
 .nevisan-drawer-link.active,
 .nevisan-drawer-link--gold {
-  color: #D4AF37;
+  color: var(--gold);
 }
 
 @media (max-width: 1080px) {
   .nevisan-nav-right { display: none; }
   .nevisan-mobile-controls { display: flex; }
   .nevisan-nav-container { padding: 0 18px; }
-  .nevisan-nav-title { font-size: 18px; }
+  .nevisan-nav-title { font-size: 20px; }
   .nevisan-nav-logo { width: 36px; height: 36px; }
 }
 </style>
@@ -1749,82 +1917,105 @@ function toggleNevisanMenu() {
 </div>
 
 <main class="main-content" id="main-content">
-  <div id="no-results" style="display: none; text-align: center; padding: 60px 20px; background: #fff; border-radius: 16px; border: 1px solid var(--border);">
-    <div style="font-size: 40px; margin-bottom: 12px;">🍃</div>
-    <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: var(--teal); margin-bottom: 8px;">No matching questions found</h3>
+  <div id="no-results" style="display: none; text-align: center; padding: 60px 20px; background: #fff; border-radius: 12px; border: 1px solid var(--border);">
+    <div style="font-size: 24px; margin-bottom: 12px;">🍃</div>
+    <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--teal); margin-bottom: 8px;">No matching questions found</h3>
     <p style="color: var(--muted); font-size: 16px; margin-bottom: 20px;">Have a specific question not listed here? Ask our team directly on WhatsApp.</p>
     <a href="https://wa.me/919864245687?text=Hi%20Nevisan!%20I%20have%20a%20question%20about%20your%20teas." class="btn-wa" target="_blank" rel="noopener">💬 Chat with Nevisan on WhatsApp</a>
   </div>
 
   
   <!-- ── MARKET COMPARISON SPOTLIGHT ── -->
-  <div class="market-spotlight" style="background: #ffffff; border: 1.5px solid var(--border); border-radius: 16px; padding: 32px 28px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(21,39,27,0.05);">
-    <div style="text-align: center; max-width: 680px; margin: 0 auto 24px;">
-      <span style="display: inline-block; background: rgba(201,168,76,0.15); color: #8C6D23; font-size: 16px; font-weight: 700; padding: 4px 14px; border-radius: 99px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px;">Market Comparison</span>
-      <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(22px, 3.5vw, 32px); color: var(--teal); margin-bottom: 8px;">Why Nevisan is the Best Green Tea in the Market</h2>
+  <div class="market-spotlight" style="background: #FFFFFF; border: 1.5px solid var(--border); border-radius: 12px; padding: 32px 28px; margin-bottom: 32px; box-shadow: 0 4px 20px rgba(21,39,27,0.05);">
+    <div style="text-align: center; max-width: 680px; margin: 0 auto 20px;">
+      <span style="display: inline-block; background: rgba(201,168,76,0.15); color: var(--gold); font-size: 14px; font-weight: 700; padding: 4px 14px; border-radius: 99px; letter-spacing: 0.05em; margin-bottom: 10px;">Market Comparison</span>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--teal); margin-bottom: 8px;">Why Nevisan is the Best Green Tea in the Market</h2>
       <p style="font-size: 16px; color: var(--muted); line-height: 1.6;">How our single-origin Golaghat harvest compares to commercial supermarket tea bags and mass-market CTC dust:</p>
     </div>
 
-    <div style="overflow-x: auto;">
-      <table style="width: 100%; border-collapse: collapse; font-size: 16px; line-height: 1.5;">
+    <div class="market-table-wrap">
+      <table class="market-table">
         <thead>
-          <tr style="background: var(--cream); border-bottom: 2px solid var(--border);">
-            <th style="padding: 12px 14px; text-align: left; color: var(--teal); font-weight: 700;">Feature / Parameter</th>
-            <th style="padding: 12px 14px; text-align: left; color: #15271B; font-weight: 700; background: rgba(35,65,45,0.08);">🍃 Nevisan Whole-Leaf Tea</th>
-            <th style="padding: 12px 14px; text-align: left; color: #7A3E3E; font-weight: 600;">Supermarket Tea Bags & CTC</th>
+          <tr>
+            <th>Feature / Parameter</th>
+            <th style="background: rgba(35,65,45,0.08); color: var(--teal);">🍃 Nevisan Whole-Leaf Tea</th>
+            <th style="color: #7A3E3E;">Supermarket Tea Bags & CTC</th>
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom: 1px solid #f0ede6;">
-            <td style="padding: 12px 14px; font-weight: 600;">Leaf Quality</td>
-            <td style="padding: 12px 14px; font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">100% Unbroken Whole Leaf (hand-plucked)</td>
-            <td style="padding: 12px 14px; color: #666;">Crushed CTC dust & machine-shredded fannings</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #f0ede6;">
-            <td style="padding: 12px 14px; font-weight: 600;">Sourcing & Garden</td>
-            <td style="padding: 12px 14px; font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">Single-Origin PGS-India Organic (Golaghat, Assam)</td>
-            <td style="padding: 12px 14px; color: #666;">Multi-source industrial blends from various regions</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #f0ede6;">
-            <td style="padding: 12px 14px; font-weight: 600;">Steep Count & Value</td>
-            <td style="padding: 12px 14px; font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">2 to 3 Full Steeps (50–75 cups per pack · ₹6–8/cup)</td>
-            <td style="padding: 12px 14px; color: #666;">1 Single quick dip (spent in 30 seconds)</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #f0ede6;">
-            <td style="padding: 12px 14px; font-weight: 600;">Taste & Bitterness</td>
-            <td style="padding: 12px 14px; font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">Smooth vegetal sweetness, zero harsh bitterness</td>
-            <td style="padding: 12px 14px; color: #666;">High astringency, harsh bitterness & dry mouthfeel</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #f0ede6;">
-            <td style="padding: 12px 14px; font-weight: 600;">Caffeine & Energy</td>
-            <td style="padding: 12px 14px; font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">Low (15–25mg) + high natural L-theanine (Zero Jitters)</td>
-            <td style="padding: 12px 14px; color: #666;">Fast-spiking caffeine with post-drink energy crash</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #f0ede6;">
-            <td style="padding: 12px 14px; font-weight: 600;">Botanical Quality</td>
-            <td style="padding: 12px 14px; font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">Whole chamomile flowers, spearmint leaves, active gingerols</td>
-            <td style="padding: 12px 14px; color: #666;">Synthetic flavor sprays and pulverized powders</td>
+          <tr>
+            <td style="font-weight: 600;">Leaf Quality</td>
+            <td style="font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">100% Unbroken Whole Leaf (hand-plucked)</td>
+            <td style="color: var(--muted);">Crushed CTC dust & machine-shredded fannings</td>
           </tr>
           <tr>
-            <td style="padding: 12px 14px; font-weight: 600;">Nutrition (Brewed)</td>
-            <td style="padding: 12px 14px; font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">0g Sugar · 0g Fat · 0g Carbs · Trace Calories</td>
-            <td style="padding: 12px 14px; color: #666;">Often added flavor sugars or carrier starches</td>
+            <td style="font-weight: 600;">Sourcing & Garden</td>
+            <td style="font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">Single-Origin PGS-India Organic (Golaghat, Assam)</td>
+            <td style="color: var(--muted);">Multi-source industrial blends from various regions</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600;">Steep Count & Value</td>
+            <td style="font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">2 to 3 Full Steeps (50–75 cups per pack · ₹6–8/cup)</td>
+            <td style="color: var(--muted);">1 Single quick dip (spent in 30 seconds)</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600;">Taste & Bitterness</td>
+            <td style="font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">Smooth vegetal sweetness, zero harsh bitterness</td>
+            <td style="color: var(--muted);">High astringency, harsh bitterness & dry mouthfeel</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600;">Caffeine & Energy</td>
+            <td style="font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">Low (15–25mg) + high natural L-theanine (Zero Jitters)</td>
+            <td style="color: var(--muted);">Fast-spiking caffeine with post-drink energy crash</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600;">Botanical Quality</td>
+            <td style="font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">Whole chamomile flowers, spearmint leaves, active gingerols</td>
+            <td style="color: var(--muted);">Synthetic flavor sprays and pulverized powders</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600;">Nutrition (Brewed)</td>
+            <td style="font-weight: 600; color: var(--teal); background: rgba(35,65,45,0.03);">0g Sugar · 0g Fat · 0g Carbs · Trace Calories</td>
+            <td style="color: var(--muted);">Often added flavor sugars or carrier starches</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 
+  
+  <!-- ── CATEGORY & QUESTION CONTROLS TOOLBAR ── -->
+  <div class="faq-controls-bar">
+    <div class="faq-status-info">
+      <span class="faq-status-badge">Category View</span>
+      <span class="faq-status-text">Showing <strong id="active-category-label">All Categories</strong> (<span id="active-count-label">331 Questions</span>)</span>
+    </div>
+    <div class="faq-controls-btns">
+      <button type="button" id="btn-collapse-all-sections" class="faq-control-pill" aria-label="Collapse all tea sections for quick browsing">
+        <span>⊟</span> Collapse All Sections
+      </button>
+      <button type="button" id="btn-expand-all-sections" class="faq-control-pill" aria-label="Expand all tea sections">
+        <span>⊞</span> Expand All Sections
+      </button>
+    </div>
+  </div>
+
   <div id="faq-container">
     
     <section class="faq-section-block" id="lemongrass" data-cat="lemongrass">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Lemongrass Green Tea">
         <div class="section-icon">🍋</div>
         <div class="section-info">
           <h2 class="section-title">Lemongrass Green Tea</h2>
           <p class="section-tagline">Crisp Citrus Refreshment, Digestion & Metabolism</p>
-          <span class="section-count">17 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">17 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Lemongrass Green Tea section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
 
@@ -2138,13 +2329,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="blue-flower" data-cat="blue-flower">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Blue Flower Green Tea">
         <div class="section-icon">🦋</div>
         <div class="section-info">
           <h2 class="section-title">Blue Flower Green Tea</h2>
           <p class="section-tagline">Butterfly Pea Flower & Natural Color Transformation</p>
-          <span class="section-count">35 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">35 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Blue Flower Green Tea section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -2466,13 +2663,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="spearmint" data-cat="spearmint">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Spearmint Green Tea">
         <div class="section-icon">🍃</div>
         <div class="section-info">
           <h2 class="section-title">Spearmint Green Tea</h2>
           <p class="section-tagline">Hormonal Harmony, PCOS Support & Cooling Mint</p>
-          <span class="section-count">12 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">12 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Spearmint Green Tea section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -2587,13 +2790,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="rum" data-cat="rum">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Rum Green Tea">
         <div class="section-icon">🥃</div>
         <div class="section-info">
           <h2 class="section-title">Rum Green Tea</h2>
           <p class="section-tagline">Warm Spiced Rum Botanical Aroma · 0.0% Alcohol</p>
-          <span class="section-count">1 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">1 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Rum Green Tea section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -2609,13 +2818,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="whiskey" data-cat="whiskey">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Whiskey Green Tea">
         <div class="section-icon">🪵</div>
         <div class="section-info">
           <h2 class="section-title">Whiskey Green Tea</h2>
           <p class="section-tagline">Smoky Peated Single Malt Notes · 0.0% Alcohol</p>
-          <span class="section-count">8 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">8 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Whiskey Green Tea section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -2694,13 +2909,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="tulsi" data-cat="tulsi">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Tulsi Green Tea">
         <div class="section-icon">🪔</div>
         <div class="section-info">
           <h2 class="section-title">Tulsi Green Tea</h2>
           <p class="section-tagline">Sacred Holy Basil Adaptogen & Stress Resilience</p>
-          <span class="section-count">28 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">28 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Tulsi Green Tea section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -2959,13 +3180,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="chamomile" data-cat="chamomile">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Chamomile Green Tea">
         <div class="section-icon">🌼</div>
         <div class="section-info">
           <h2 class="section-title">Chamomile Green Tea</h2>
           <p class="section-tagline">Whole Chamomile Flowers & Restful Sleep</p>
-          <span class="section-count">15 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">15 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Chamomile Green Tea section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -3107,13 +3334,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="gaba-oolong" data-cat="gaba-oolong">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand GABA Oolong Tea">
         <div class="section-icon">🍵</div>
         <div class="section-info">
           <h2 class="section-title">GABA Oolong Tea</h2>
           <p class="section-tagline">Nitrogen-Enriched Oolong & Deep Neurological Calm</p>
-          <span class="section-count">13 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">13 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle GABA Oolong Tea section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -3237,13 +3470,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="organic-green" data-cat="organic-green">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Organic Green Tea">
         <div class="section-icon">🌱</div>
         <div class="section-info">
           <h2 class="section-title">Organic Green Tea</h2>
           <p class="section-tagline">100% Whole-Leaf Single-Origin Assamica</p>
-          <span class="section-count">69 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">69 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Organic Green Tea section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -3871,13 +4110,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="ginger" data-cat="ginger">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Ginger Green Tea">
         <div class="section-icon">🫚</div>
         <div class="section-info">
           <h2 class="section-title">Ginger Green Tea</h2>
           <p class="section-tagline">Active Gingerols, Warming Energy & Immune Support</p>
-          <span class="section-count">7 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">7 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Ginger Green Tea section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -3947,13 +4192,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="nutrition-caffeine" data-cat="nutrition-caffeine">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Nutrition, Low Caffeine & Fasting">
         <div class="section-icon">📊</div>
         <div class="section-info">
           <h2 class="section-title">Nutrition, Low Caffeine & Fasting</h2>
           <p class="section-tagline">15–25mg Gentle Caffeine, 0g Sugar, Nil Fat & Fasting Facts</p>
-          <span class="section-count">28 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">28 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Nutrition, Low Caffeine & Fasting section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -4212,13 +4463,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="brewing-guide" data-cat="brewing-guide">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Brewing Temperatures & Multi-Steeping">
         <div class="section-icon">🫖</div>
         <div class="section-info">
           <h2 class="section-title">Brewing Temperatures & Multi-Steeping</h2>
           <p class="section-tagline">85°C–90°C Temperature, Grams Per Cup & 3x Steeping</p>
-          <span class="section-count">45 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">45 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Brewing Temperatures & Multi-Steeping section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -4630,13 +4887,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="sourcing-certifications" data-cat="sourcing-certifications">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Garden Sourcing, FSSAI & Organic Standards">
         <div class="section-icon">🏆</div>
         <div class="section-info">
           <h2 class="section-title">Garden Sourcing, FSSAI & Organic Standards</h2>
           <p class="section-tagline">Golaghat Terroir, Tailor Made Tea & Mahabir Enterprise</p>
-          <span class="section-count">18 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">18 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Garden Sourcing, FSSAI & Organic Standards section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -4805,13 +5068,19 @@ function toggleNevisanMenu() {
       </div>
     </section>
     <section class="faq-section-block" id="ordering-shipping" data-cat="ordering-shipping">
-      <div class="section-head">
+      <div class="section-head" role="button" tabindex="0" aria-expanded="true" title="Click to collapse or expand Ordering, 18-Month Shelf Life & Pan-India Shipping">
         <div class="section-icon">📦</div>
         <div class="section-info">
           <h2 class="section-title">Ordering, 18-Month Shelf Life & Pan-India Shipping</h2>
           <p class="section-tagline">WhatsApp Garden Dispatch, Amazon, Flipkart & Storage</p>
-          <span class="section-count">35 Questions Answered</span>
+          <div class="section-meta-row">
+            <span class="section-count">35 Questions Answered</span>
+            <span class="section-toggle-cue">Click to collapse ▲</span>
+          </div>
         </div>
+        <button type="button" class="section-chevron-btn" aria-label="Toggle Ordering, 18-Month Shelf Life & Pan-India Shipping section">
+          <span class="chevron-icon">▾</span>
+        </button>
       </div>
       <div class="qa-list">
         
@@ -5162,7 +5431,7 @@ function toggleNevisanMenu() {
   </div>
 
     <!-- ── STATUTORY HEALTH DISCLAIMER ── -->
-    <div style="margin: 40px auto 20px; max-width: 900px; padding: 18px 22px; background: #F8F6F2; border: 1.5px solid #E2DDD5; border-radius: 12px; font-size: 13.5px; color: #5C7064; line-height: 1.6; text-align: center;">
+    <div style="margin: 40px auto 20px; max-width: 900px; padding: 18px 22px; background: var(--cream); border: 1.5px solid #E2DDD5; border-radius: 12px; font-size: 14px; color: #5C7064; line-height: 1.6; text-align: center;">
       <strong>⚠️ Statutory Health &amp; FSSAI Disclaimer:</strong> Nevisan whole-leaf teas are natural botanical beverages crafted for daily wellness and lifestyle support. Statements on this site are not evaluated by medical regulatory authorities and our products are not intended to diagnose, treat, cure, or prevent any disease. Individuals with existing medical conditions, those who are pregnant, or those taking prescription medications should consult their physician.
     </div>
 
@@ -5170,10 +5439,80 @@ function toggleNevisanMenu() {
 
 <footer>
     <p>&copy; 2026 Nevisan Tea &nbsp;·&nbsp; Single-Origin Assam Tea from Golaghat &nbsp;·&nbsp; <a href="https://nevisan.in/">nevisan.in</a></p>
-    <p style="margin-top: 6px; font-size: 13px; opacity: 0.8;">FSSAI 10325001000313 · Support: nevisan12@gmail.com · +91-9864245687</p>
+    <p style="margin-top: 6px; font-size: 14px; opacity: 0.8;">FSSAI 10325001000313 · Support: nevisan12@gmail.com · +91-9864245687</p>
   </footer>
 
 <script>
+  
+  // Section Collapse and Expand Controls
+  const faqBlocks = document.querySelectorAll('.faq-section-block');
+  const btnCollapseAll = document.getElementById('btn-collapse-all-sections');
+  const btnExpandAll = document.getElementById('btn-expand-all-sections');
+  const activeCategoryLabel = document.getElementById('active-category-label');
+  const activeCountLabel = document.getElementById('active-count-label');
+
+  function updateSectionCue(sec, isCollapsed) {
+    const cue = sec.querySelector('.section-toggle-cue');
+    const head = sec.querySelector('.section-head');
+    if (cue) cue.textContent = isCollapsed ? 'Click to expand ▼' : 'Click to collapse ▲';
+    if (head) head.setAttribute('aria-expanded', !isCollapsed);
+  }
+
+  faqBlocks.forEach(sec => {
+    const head = sec.querySelector('.section-head');
+    if (head) {
+      head.addEventListener('click', (e) => {
+        // Toggle collapse
+        const isCollapsed = sec.classList.toggle('is-collapsed');
+        updateSectionCue(sec, isCollapsed);
+      });
+      head.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          head.click();
+        }
+      });
+    }
+  });
+
+  if (btnCollapseAll) {
+    btnCollapseAll.addEventListener('click', () => {
+      faqBlocks.forEach(sec => {
+        if (sec.style.display !== 'none') {
+          sec.classList.add('is-collapsed');
+          updateSectionCue(sec, true);
+        }
+      });
+    });
+  }
+
+  if (btnExpandAll) {
+    btnExpandAll.addEventListener('click', () => {
+      faqBlocks.forEach(sec => {
+        if (sec.style.display !== 'none') {
+          sec.classList.remove('is-collapsed');
+          updateSectionCue(sec, false);
+        }
+      });
+    });
+  }
+
+  // Floating Back to Top Button
+  const backToTopBtn = document.getElementById('back-to-top');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 350) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   // Filter pills logic
   const filterPills = document.querySelectorAll('.filter-pill');
   const sections = document.querySelectorAll('.faq-section-block');
@@ -5187,11 +5526,22 @@ function toggleNevisanMenu() {
       const filter = pill.getAttribute('data-filter');
       
       if (filter === 'all') {
-        sections.forEach(sec => sec.style.display = 'block');
+        sections.forEach(sec => {
+          sec.style.display = 'block';
+        });
+        if (activeCategoryLabel) activeCategoryLabel.textContent = 'All Categories';
+        if (activeCountLabel) activeCountLabel.textContent = '331 Questions';
       } else {
+        const pillText = pill.querySelector('span:nth-of-type(2)') || pill.querySelector('span');
+        const pillCount = pill.querySelector('.pill-badge');
+        if (activeCategoryLabel && pillText) activeCategoryLabel.textContent = pillText.textContent.trim();
+        if (activeCountLabel && pillCount) activeCountLabel.textContent = pillCount.textContent.trim() + ' Questions';
+
         sections.forEach(sec => {
           if (sec.id === filter) {
             sec.style.display = 'block';
+            sec.classList.remove('is-collapsed');
+            updateSectionCue(sec, false);
             sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
           } else {
             sec.style.display = 'none';
@@ -5251,8 +5601,8 @@ function toggleNevisanMenu() {
 
 
 <!-- ── COOKIE CONSENT BANNER (DPDP & GDPR) ── -->
-<div id="cookie-consent-banner" role="region" aria-label="Cookie Consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:480px;background:#15271B;color:#F8F6F2;padding:18px 22px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:99999;border:1px solid rgba(201,168,76,0.3);font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;">
-  <p style="margin:0 0 12px 0;color:#E0DDD5;font-size:16px;">We use cookies to improve your browsing experience, analyze traffic, and support secure order processing in accordance with our <a href="/privacy-policy.html" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a>.</p>
+<div id="cookie-consent-banner" role="region" aria-label="Cookie Consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:480px;background:var(--teal);color:#FFFFFF;padding:18px 22px;border-radius: 12px;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:99999;border:1px solid rgba(201,168,76,0.3);font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;">
+  <p style="margin:0 0 12px 0;color:rgba(255,255,255,0.85);font-size:16px;">We use cookies to improve your browsing experience, analyze traffic, and support secure order processing in accordance with our <a href="/privacy-policy.html" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;justify-content:flex-end;">
     <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','declined');" style="background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:16px;cursor:pointer;">Decline</button>
     <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','accepted');" style="background:#C9A84C;border:none;color:#15271B;font-weight:700;padding:8px 18px;border-radius:6px;font-size:16px;cursor:pointer;">Accept All</button>
@@ -5270,6 +5620,13 @@ function toggleNevisanMenu() {
     }catch(e){}
   })();
 </script>
+
+
+<!-- ── FLOATING BACK TO TOP BUTTON ── -->
+<button id="back-to-top" class="back-to-top" aria-label="Back to top of page" title="Back to top">
+  <span style="font-size: 16px;">↑</span>
+  <span>Back to Top</span>
+</button>
 
 </body>
 </html>

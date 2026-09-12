@@ -68,14 +68,14 @@
         html { font-size: 16px; scroll-behavior: smooth; }
         body { padding-top: 72px !important;  background-color: var(--cream); color: var(--ink); font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; min-height: 100vh; }
         .nav { position: sticky; top: 0; z-index: 100; background: var(--teal); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
-        .nav-logo { color: #fff; text-decoration: none; font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-        .nav-cta { background: var(--gold); color: #fff; text-decoration: none; padding: 0.45rem 1.1rem; border-radius: 4px; font-size: 1rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+        .nav-logo { color: #FFFFFF; text-decoration: none; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+        .nav-cta { background: var(--gold); color: #FFFFFF; text-decoration: none; padding: 0.45rem 1.1rem; border-radius: 6px; font-size: 1rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
         .bulk-wrapper { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
         .bulk-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.75rem, 5vw, 2.6rem); font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 1rem; }
-        .bulk-subtitle { color: var(--muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2.5rem; }
+        .bulk-subtitle { color: var(--muted); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; }
         .bulk-section { margin-bottom: 2.5rem; }
-        .bulk-section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; color: var(--teal); margin-bottom: 0.75rem; }
-        .bulk-section p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; }
+        .bulk-section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; color: var(--teal); margin-bottom: 0.75rem; }
+        .bulk-section p { font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -88,18 +88,18 @@
         @media (max-width: 500px) {
             .pricing-grid { grid-template-columns: 1fr; }
         }
-        .pricing-card { background: #fff; border-radius: 8px; padding: 1.5rem; border: 2px solid var(--border); text-align: center; transition: border-color 0.2s; }
+        .pricing-card { background: #fff; border-radius: 12px; padding: 1.5rem; border: 2px solid var(--border); text-align: center; transition: border-color 0.2s; }
         .pricing-card:hover { border-color: var(--teal); }
         .pricing-card.featured { border-color: var(--gold); background: #fffdf5; }
-        .pricing-tier { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; font-weight: 700; color: var(--teal); margin-bottom: 0.5rem; }
+        .pricing-tier { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--teal); margin-bottom: 0.5rem; }
         .pricing-qty { font-size: 1rem; color: var(--muted); margin-bottom: 0.75rem; }
         .pricing-price { font-size: 1.5rem; font-weight: 700; color: var(--ink); }
         .pricing-price span { font-size: 1rem; color: var(--muted); font-weight: 400; }
-        .inquiry-form { background: #fff; border-radius: 8px; padding: 2rem; border: 1px solid var(--border); margin-top: 2rem; }
-        .inquiry-form h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; color: var(--teal); margin-bottom: 1rem; }
+        .inquiry-form { background: #fff; border-radius: 12px; padding: 2rem; border: 1px solid var(--border); margin-top: 2rem; }
+        .inquiry-form h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; color: var(--teal); margin-bottom: 1rem; }
         .form-group { margin-bottom: 1rem; }
         .form-group label { display: block; font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.65rem 0.85rem; border: 1px solid var(--border); border-radius: 5px; font-family: 'Inter', system-ui, sans-serif; font-size: 1rem; background: var(--cream); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.65rem 0.85rem; border: 1px solid var(--border); border-radius: 6px; font-family: 'Inter', system-ui, sans-serif; font-size: 1rem; background: var(--cream); }
         .form-group textarea { resize: vertical; min-height: 80px; }
         .form-submit {
             display: flex;
@@ -111,9 +111,9 @@
             color: #15271B;
             text-decoration: none;
             padding: 1rem 2rem;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1rem;
             letter-spacing: 0.03em;
             border: none;
             cursor: pointer;
@@ -121,10 +121,10 @@
             transition: background 0.2s, transform 0.1s;
         }
         .form-submit:hover { background: #b8923e; }
-        .faq-item { margin-bottom: 1.25rem; padding: 1rem 1.25rem; background: #fff; border-radius: 8px; border: 1px solid var(--border); }
+        .faq-item { margin-bottom: 1.25rem; padding: 1rem 1.25rem; background: #fff; border-radius: 12px; border: 1px solid var(--border); }
         .faq-item h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; color: var(--teal); margin-bottom: 0.4rem; }
         .faq-item p { font-size: 1rem; color: var(--muted); margin: 0; }
-        footer { background: #12555b; color: rgba(255,255,255,0.65); text-align: center; padding: 1.5rem 1rem; font-size: 1rem; }
+        footer { background: #12555b; color: rgba(255,255,255,0.85); text-align: center; padding: 1.5rem 1rem; font-size: 1rem; }
         footer a { color: var(--gold); text-decoration: none; }
         @media (max-width: 600px) { .bulk-wrapper { padding: 2rem 1rem 3rem; } .pricing-grid { grid-template-columns: 1fr; } }
     </style>
@@ -227,7 +227,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
   white-space: nowrap;
   transition: color 150ms ease;
@@ -240,16 +240,16 @@
 }
 .nevisan-nav-link.active,
 .nevisan-nav-link--gold {
-  color: #D4AF37;
+  color: #C9A84C;
 }
 .nevisan-btn-shop {
   background: #C9A84C;
   color: #15271B !important;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 13.5px;
+  font-size: 14px;
   padding: 9px 20px;
-  border-radius: 9999px;
+  border-radius: 99px;
   text-decoration: none;
   white-space: nowrap;
   box-shadow: 0 2px 12px rgba(201, 168, 76, 0.35);
@@ -273,9 +273,9 @@
   color: #FFFFFF !important;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 13.5px;
+  font-size: 14px;
   padding: 8px 14px;
-  border-radius: 9999px;
+  border-radius: 99px;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -298,7 +298,7 @@
   height: 2.5px;
   width: 100%;
   background: #FFFFFF;
-  border-radius: 2px;
+  border-radius: 6px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .nevisan-mobile-toggle.is-active span:nth-child(1) {
@@ -333,7 +333,7 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 20px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
   padding: 13px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -343,14 +343,14 @@
 }
 .nevisan-drawer-link.active,
 .nevisan-drawer-link--gold {
-  color: #D4AF37;
+  color: #C9A84C;
 }
 
 @media (max-width: 1080px) {
   .nevisan-nav-right { display: none; }
   .nevisan-mobile-controls { display: flex; }
   .nevisan-nav-container { padding: 0 18px; }
-  .nevisan-nav-title { font-size: 18px; }
+  .nevisan-nav-title { font-size: 16px; }
   .nevisan-nav-logo { width: 36px; height: 36px; }
 }
 </style>
@@ -489,7 +489,7 @@ function toggleNevisanMenu() {
 
         <div class="inquiry-form" style="margin-top: 2.5rem;">
             <h2>How to Order: Bulk Inquiry</h2>
-            <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 1.05rem;">Fill in the inquiry form below and we will get back to you within 24 hours with a custom quote. For immediate assistance, you can also message us directly on WhatsApp at +91 98642 45687.</p>
+            <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 1rem;">Fill in the inquiry form below and we will get back to you within 24 hours with a custom quote. For immediate assistance, you can also message us directly on WhatsApp at +91 98642 45687.</p>
             <form id="bulkInquiryForm" onsubmit="handleBulkSubmit(event)">
                 <div class="form-group">
                     <label for="name">Your Name</label>
@@ -572,7 +572,7 @@ function toggleNevisanMenu() {
     <footer><p><a href="https://nevisan.in">nevisan.in</a> &nbsp;&nbsp;·&nbsp;&nbsp; &copy; 2026 Nevisan Tea &nbsp;·&nbsp; Mahabir Enterprise, Guwahati, Assam</p></footer>
 
 <!-- ── COOKIE CONSENT BANNER (DPDP & GDPR) ── -->
-<div id="cookie-consent-banner" role="region" aria-label="Cookie Consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:480px;background:#15271B;color:#F8F6F2;padding:18px 22px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:99999;border:1px solid rgba(201,168,76,0.3);font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;">
+<div id="cookie-consent-banner" role="region" aria-label="Cookie Consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:480px;background:#15271B;color:#F8F6F2;padding:18px 22px;border-radius: 12px;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:99999;border:1px solid rgba(201,168,76,0.3);font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;">
   <p style="margin:0 0 12px 0;color:#E0DDD5;font-size:16px;">We use cookies to improve your browsing experience, analyze traffic, and support secure order processing in accordance with our <a href="/privacy-policy.html" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;justify-content:flex-end;">
     <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','declined');" style="background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:16px;cursor:pointer;">Decline</button>

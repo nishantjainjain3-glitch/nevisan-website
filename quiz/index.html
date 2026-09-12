@@ -108,7 +108,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
+      padding: 16px 20px 40px;
     }
 
     .quiz-card {
@@ -150,15 +150,17 @@
     }
 
     .step-dot {
-      width: 8px;
-      height: 8px;
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
-      background: var(--cream-dark);
+      background: rgba(201, 168, 76, 0.25);
+      border: 2px solid var(--gold);
       transition: all 0.3s ease;
     }
 
     .step-dot.active {
-      background: var(--teal);
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(201, 168, 76, 0.6);
       transform: scale(1.2);
     }
 
@@ -495,7 +497,12 @@
 .nevisan-nav-link:hover {
   color: #FFFFFF;
 }
-.nevisan-nav-link.active,
+.nevisan-nav-link.active {
+  color: #D4AF37 !important;
+  border-bottom: 2px solid #D4AF37;
+  padding-bottom: 4px;
+  font-weight: 600;
+}
 .nevisan-nav-link--gold {
   color: #D4AF37;
 }
@@ -704,9 +711,9 @@ function toggleNevisanMenu() {
 
 
 
-  <header class="hero-quiz-banner" style="background: linear-gradient(180deg, var(--teal) 0%, #1c3324 100%); color: #fff; padding: 110px 24px 40px; text-align: center;">
+  <header class="hero-quiz-banner" style="background: linear-gradient(180deg, var(--teal) 0%, #1c3324 100%); color: #fff; padding: 100px 24px 20px; text-align: center;">
       <div style="max-width: 800px; margin: 0 auto;">
-        <span style="font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 12px; display: inline-block; background: rgba(201,168,76,0.15); padding: 4px 14px; border-radius: 999px; border: 1px solid rgba(201,168,76,0.3);">TEA MATCH DISCOVERY</span>
+        <span style="font-size: 12px; letter-spacing: 0.15em; text-transform: none; color: var(--gold); font-weight: 700; margin-bottom: 12px; display: inline-block; background: rgba(201,168,76,0.15); padding: 4px 14px; border-radius: 999px; border: 1px solid rgba(201,168,76,0.3);">Tea Match Discovery</span>
         <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 4.5vw, 44px); font-weight: 400; line-height: 1.2; margin: 10px 0 12px;">Find Your Perfect Tea Blend</h1>
         <p style="font-size: 16px; color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto;">Take our 60-second sommelier quiz to discover your personalized whole-leaf Assam match based on your wellness goals and daily routine.</p>
       </div>
@@ -715,8 +722,8 @@ function toggleNevisanMenu() {
     <div class="quiz-card" id="quiz-card">
       <div id="quiz-flow">
         <div class="quiz-header">
-          <h1>Find Your Perfect Blend</h1>
-          <p>Answer 3 quick questions to discover your personalized Nevisan tea match.</p>
+          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: var(--teal); margin: 0 0 6px;">Question 1 of 3</h2>
+          <p style="color: var(--muted); font-size: 15px; margin: 0 0 16px;">Answer 3 quick questions to discover your personalized Nevisan tea match.</p>
         </div>
         
         <div class="steps">
@@ -1025,7 +1032,7 @@ function toggleNevisanMenu() {
       document.getElementById("quiz-card").innerHTML = `
         <div id="quiz-flow">
           <div class="quiz-header">
-            <h1>Find Your Perfect Blend</h1>
+          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: var(--teal); margin: 0 0 6px;">Question 1 of 3</h2>
             <p>Answer 3 quick questions to discover your personalized Nevisan tea match.</p>
           </div>
           

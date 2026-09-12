@@ -76,7 +76,18 @@
         .bulk-section { margin-bottom: 2.5rem; }
         .bulk-section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; color: var(--teal); margin-bottom: 0.75rem; }
         .bulk-section p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        @media (max-width: 900px) {
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 500px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
         .pricing-card { background: #fff; border-radius: 8px; padding: 1.5rem; border: 2px solid var(--border); text-align: center; transition: border-color 0.2s; }
         .pricing-card:hover { border-color: var(--teal); }
         .pricing-card.featured { border-color: var(--gold); background: #fffdf5; }
@@ -90,7 +101,25 @@
         .form-group label { display: block; font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
         .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.65rem 0.85rem; border: 1px solid var(--border); border-radius: 5px; font-family: 'Inter', system-ui, sans-serif; font-size: 1rem; background: var(--cream); }
         .form-group textarea { resize: vertical; min-height: 80px; }
-        .form-submit { display: inline-block; background: var(--gold); color: #fff; text-decoration: none; padding: 0.75rem 2rem; border-radius: 5px; font-weight: 600; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; border: none; cursor: pointer; margin-top: 0.5rem; }
+        .form-submit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: var(--gold);
+            color: #15271B;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.03em;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background 0.2s, transform 0.1s;
+        }
         .form-submit:hover { background: #b8923e; }
         .faq-item { margin-bottom: 1.25rem; padding: 1rem 1.25rem; background: #fff; border-radius: 8px; border: 1px solid var(--border); }
         .faq-item h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; color: var(--teal); margin-bottom: 0.4rem; }
@@ -458,13 +487,9 @@ function toggleNevisanMenu() {
             <p>All prices are per 50g pouch. MRP is ₹499. Bulk discounts apply to any combination of teas. Custom blends for corporate gifting start at 50kg minimum.</p>
         </div>
 
-        <div class="bulk-section">
-            <h2>How to Order</h2>
-            <p>Fill in the inquiry form below and we'll get back to you within 24 hours with a custom quote. For faster service, message us directly on WhatsApp at +91 98642 45687.</p>
-        </div>
-
-        <div class="inquiry-form">
-            <h2>Bulk Order Inquiry</h2>
+        <div class="inquiry-form" style="margin-top: 2.5rem;">
+            <h2>How to Order: Bulk Inquiry</h2>
+            <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 1.05rem;">Fill in the inquiry form below and we will get back to you within 24 hours with a custom quote. For immediate assistance, you can also message us directly on WhatsApp at +91 98642 45687.</p>
             <form id="bulkInquiryForm" onsubmit="handleBulkSubmit(event)">
                 <div class="form-group">
                     <label for="name">Your Name</label>

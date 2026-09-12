@@ -2338,12 +2338,12 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
           style: {
             background: "#F8F6F2",
             borderRadius: 8,
-            padding: "8px 10px",
+            padding: "14px 14px",
             marginBottom: 14,
             fontSize: 12,
             display: "flex",
             flexDirection: "column",
-            gap: 4,
+            gap: 6,
           },
         },
         React.createElement(
@@ -2414,12 +2414,12 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
                 t(e);
               },
               style: {
-                background: "transparent",
+                background: "#F4F7F4",
                 color: "#15271B",
-                border: "1px solid #15271B",
-                borderRadius: 6,
-                padding: "6px 12px",
-                fontSize: 12,
+                border: "1.5px solid #15271B",
+                borderRadius: 8,
+                padding: "8px 16px",
+                fontSize: 14,
                 fontWeight: 600,
                 cursor: "pointer",
                 fontFamily: "'Inter'",
@@ -2431,7 +2431,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
                 e.currentTarget.style.color = "#ffffff";
               },
               onMouseLeave: (e) => {
-                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.background = "#F4F7F4";
                 e.currentTarget.style.color = "#15271B";
               },
             },
@@ -2472,7 +2472,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
               e.currentTarget.style.transform = "none";
             },
           },
-          "Buy Now (WhatsApp · Amazon · Flipkart) ↑",
+          "Buy Now →",
         ),
         d && React.createElement(BuyModal, { tea: e, onClose: () => m(!1) }),
       ),
@@ -3957,6 +3957,10 @@ function BuyCard({ c: e, inView: t, index: a }) {
         overflow: "hidden",
         opacity: t ? 1 : 0,
         transitionDelay: 0.1 * a + "s",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        height: "100%",
       },
       onMouseEnter: () => o(!0),
       onMouseLeave: () => o(!1),
@@ -4029,16 +4033,17 @@ function BuyCard({ c: e, inView: t, index: a }) {
         onClick: e.action,
         style: {
           width: "100%",
-          background: e.primary ? T.gold : "transparent",
-          color: e.primary ? T.tealDark : T.teal,
-          border: e.primary ? "none" : `1.5px solid ${T.teal}`,
+          background: e.primary ? T.gold : T.tealDark,
+          color: e.primary ? T.tealDark : T.white,
+          border: e.primary ? `1.5px solid ${T.gold}` : `1.5px solid ${T.gold}`,
           borderRadius: 9999,
-          padding: "12px",
+          padding: "14px 20px",
           fontSize: 16,
           fontWeight: 600,
           cursor: "pointer",
           fontFamily: "'Inter'",
           display: "flex",
+          marginTop: "auto",
           alignItems: "center",
           justifyContent: "center",
         },
@@ -4063,7 +4068,7 @@ function WhereToBuy() {
       {
         name: "Amazon India",
         desc: "Fast delivery nationwide",
-        cta: "Shop on Amazon",
+        cta: "📦 Shop on Amazon",
         icon: "📦",
         action: () =>
           window.open(
@@ -4075,7 +4080,7 @@ function WhereToBuy() {
       {
         name: "Flipkart",
         desc: "Fast delivery · Easy checkout",
-        cta: "Shop on Flipkart",
+        cta: "🛍️ Shop on Flipkart",
         icon: "🛍️",
         action: () =>
           window.open(getDirectFlipkartUrl(e?.name || t?.name || ""), "_blank"),
@@ -4161,7 +4166,7 @@ function WhereToBuy() {
             key: e.name,
             c: e,
             inView: t, index: a, }), ), ),
-React.createElement("div", { style: { textAlign: "center", marginBottom: 48 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "14px 32px", fontFamily: "'Inter'", fontSize: 16, fontWeight: 600, textDecoration: "none", cursor: "pointer" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "View All 380+ Customer Reviews", React.createElement("span", null, "→"))),
+React.createElement("div", { style: { textAlign: "center", marginTop: 48, marginBottom: 32 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "14px 32px", fontFamily: "'Inter'", fontSize: 16, fontWeight: 600, textDecoration: "none", cursor: "pointer" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "View All 380+ Customer Reviews", React.createElement("span", null, "→"))),
     ),
   );
 }
@@ -4237,27 +4242,43 @@ function StarRating({ value: e, onChange: t }) {
   const [a, n] = React.useState(0);
   return React.createElement(
     "div",
-    { style: { display: "flex", gap: 4 } },
+    { role: "radiogroup", "aria-label": "Product rating", style: { display: "flex", gap: 8, alignItems: "center" } },
     [1, 2, 3, 4, 5].map((o) =>
       React.createElement(
-        "span",
+        "button",
         {
           key: o,
+          type: "button",
+          role: "radio",
+          "aria-checked": o <= (a || e),
+          "aria-label": o + " out of 5 stars",
           onMouseEnter: () => t && n(o),
           onMouseLeave: () => t && n(0),
           onClick: () => t && t(o),
           style: {
-            fontSize: 28,
+            background: "none",
+            border: "none",
+            padding: "2px 4px",
+            fontSize: 34,
             cursor: t ? "pointer" : "default",
-            color: o <= (a || e) ? "#f5a623" : "#ddd",
-            transition: "color 120ms, transform 120ms",
-            transform: o <= (a || e) ? "scale(1.15)" : "scale(1)",
-            display: "inline-block",
+            color: o <= (a || e) ? "#f5a623" : "rgba(201, 168, 76, 0.45)",
+            textShadow: o <= (a || e) ? "0 0 8px rgba(245, 166, 35, 0.4)" : "none",
+            transition: "color 120ms, transform 120ms, text-shadow 120ms",
+            transform: o <= (a || e) ? "scale(1.2)" : "scale(1)",
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            lineHeight: 1,
           },
         },
         "★",
       ),
     ),
+    React.createElement(
+      "span",
+      { style: { fontFamily: "'Inter'", fontSize: 13, color: "#5C7064", marginLeft: 8 } },
+      (a || e) > 0 ? (a || e) + " of 5 stars" : "(Click to rate)"
+    )
   );
 }
 function ReviewForm() {
@@ -4591,7 +4612,7 @@ function ReviewForm() {
               (e.currentTarget.style.filter = "brightness(1.1)"),
             onMouseLeave: (e) => (e.currentTarget.style.filter = "none"),
           },
-          "Submit Review via WhatsApp →",
+          "💬 Submit Review via WhatsApp →",
         ),
         React.createElement(
           "p",
@@ -6755,9 +6776,8 @@ function HowToBrewSection() {
                     fontFamily: "'Inter'",
                     fontSize: 16,
                     fontWeight: 600,
-                    letterSpacing: "0.14em",
-                    color: "#D4AF37",
-                    textTransform: "uppercase"
+                    letterSpacing: "0.06em",
+                    color: "#D4AF37"
                   }
                 },
                 "Interactive Steeping"
@@ -6807,9 +6827,9 @@ function HowToBrewSection() {
                   onClick: () => selectRitualTea(key),
                   disabled: isBrewing,
                   style: {
-                    background: selectedTeaKey === key ? T.gold : "transparent",
-                    border: `1px solid ${selectedTeaKey === key ? T.gold : "rgba(255,255,255,0.15)"}`,
-                    color: selectedTeaKey === key ? T.tealDark : T.tealLight,
+                    background: selectedTeaKey === key ? T.gold : "rgba(255,255,255,0.08)",
+                    border: `1.5px solid ${selectedTeaKey === key ? T.gold : "rgba(255,255,255,0.35)"}`,
+                    color: selectedTeaKey === key ? T.tealDark : "#ffffff",
                     padding: "12px",
                     borderRadius: 8,
                     cursor: isBrewing ? "not-allowed" : "pointer",
@@ -6846,9 +6866,10 @@ function HowToBrewSection() {
               },
               style: {
                 width: "100%",
-                height: 4,
-                background: "rgba(255,255,255,0.15)",
-                borderRadius: 2,
+                height: 8,
+                accentColor: T.gold,
+                background: "rgba(255,255,255,0.25)",
+                borderRadius: 4,
                 cursor: isBrewing ? "not-allowed" : "pointer",
               },
               onFocus: (e) => (e.target.style.boxShadow = "0 0 0 3px rgba(27,122,130,0.4)"),
@@ -6877,9 +6898,10 @@ function HowToBrewSection() {
               },
               style: {
                 width: "100%",
-                height: 4,
-                background: "rgba(255,255,255,0.15)",
-                borderRadius: 2,
+                height: 8,
+                accentColor: T.gold,
+                background: "rgba(255,255,255,0.25)",
+                borderRadius: 4,
                 cursor: isBrewing ? "not-allowed" : "pointer",
               },
               onFocus: (e) => (e.target.style.boxShadow = "0 0 0 3px rgba(27,122,130,0.4)"),

@@ -5125,6 +5125,30 @@ function Footer({ setPage: e }) {
             },
             "AI Directory",
           ),
+          React.createElement("span", null, "\u00b7"),
+          React.createElement(
+            "a",
+            {
+              href: "/terms-of-service.html",
+              style: {
+                color: "rgba(255,255,255,0.45)",
+                textDecoration: "none",
+              },
+            },
+            "Terms",
+          ),
+          React.createElement("span", null, "\u00b7"),
+          React.createElement(
+            "a",
+            {
+              href: "/privacy-policy.html",
+              style: {
+                color: "rgba(255,255,255,0.45)",
+                textDecoration: "none",
+              },
+            },
+            "Privacy",
+          )
         ),
         React.createElement(
           "div",

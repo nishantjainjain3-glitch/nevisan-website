@@ -290,10 +290,30 @@
             <div class="signup-section">
             <h2>Stay in the Cup</h2>
             <p>Get one email per week — tea tips, new journal posts, and garden updates. No spam, no fluff.</p>
-            <form class="signup-form" action="mailto:nevisan12@gmail.com?subject=Email Signup" method="post" enctype="text/plain">
-                <input type="email" name="email" placeholder="Your email address" required>
+            <form class="signup-form" id="journalSignupForm" onsubmit="handleJournalSubscribe(event)">
+                <input type="email" id="subscriberEmail" name="email" placeholder="Your email address" required>
                 <button type="submit">Subscribe</button>
             </form>
+            <div id="signupSuccessMsg" style="display: none; margin-top: 14px; padding: 12px 16px; background: rgba(201, 168, 76, 0.15); border: 1px solid #c9a84c; border-radius: 6px; color: #15271b; font-size: 0.95rem;">
+                🌿 <strong>You are on the list.</strong> Thank you for subscribing. We will send you weekly tea guides, tasting notes, and seasonal garden updates from Golaghat.
+            </div>
+            <script>
+            function handleJournalSubscribe(e) {
+                e.preventDefault();
+                var emailInput = document.getElementById('subscriberEmail');
+                var val = (emailInput.value || '').trim();
+                if (!val) return;
+                try {
+                    var list = JSON.parse(localStorage.getItem('nevisan_subscribers') || '[]');
+                    if (!list.includes(val)) {
+                        list.push(val);
+                        localStorage.setItem('nevisan_subscribers', JSON.stringify(list));
+                    }
+                } catch(err){}
+                document.getElementById('journalSignupForm').style.display = 'none';
+                document.getElementById('signupSuccessMsg').style.display = 'block';
+            }
+            </script>
         </div>
     <footer><p><a href="https://nevisan.in">nevisan.in</a> &nbsp;&nbsp;·&nbsp;&nbsp; &copy; 2026 Nevisan Tea &nbsp;·&nbsp; Mahabir Enterprise, Guwahati, Assam</p></footer>
 

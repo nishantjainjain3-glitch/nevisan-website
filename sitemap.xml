@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nevisan.in/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -44,61 +44,61 @@
   </url>
   <url>
     <loc>https://nevisan.in/products/blue-flower-green-tea/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nevisan.in/products/chamomile-green-tea/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nevisan.in/products/gaba-oolong-tea/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nevisan.in/products/ginger-green-tea/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nevisan.in/products/lemongrass-green-tea/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nevisan.in/products/organic-green-tea/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nevisan.in/products/rum-green-tea/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nevisan.in/products/spearmint-green-tea/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nevisan.in/products/tulsi-green-tea/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nevisan.in/products/whiskey-green-tea/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -304,6 +304,24 @@
     <loc>https://nevisan.in/journal/best-spearmint-tea-for-pcos-in-india/</loc>
     <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nevisan.in/journal/best-chamomile-tea-for-sleep-in-india/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nevisan.in/journal/best-blue-tea-butterfly-pea-flower-india/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nevisan.in/journal/best-green-tea-for-weight-loss-in-india/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>

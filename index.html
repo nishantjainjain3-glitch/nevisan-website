@@ -1657,7 +1657,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
   /* ══ STRING-TUNE PARALLAX ANIMATION ENGINE (FIDDLE.DIGITAL SPEC) ══ */
-  document.addEventListener('DOMContentLoaded', function initStringTune() {
+  (function initStringTune() {
     function updateParallax() {
       const scrollY = window.scrollY || window.pageYOffset;
       const elements = document.querySelectorAll('[string="parallax"]');

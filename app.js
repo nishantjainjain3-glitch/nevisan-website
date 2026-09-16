@@ -9896,7 +9896,6 @@ function App() {
       React.createElement(
         ViewportCtx.Provider,
         { value: o },
-        React.createElement("a", { href: "#main-content", style: { position: "fixed", top: 0, left: 0, background: "#173020", color: "#fff", padding: "8px 16px", zIndex: 10000, textDecoration: "none", borderRadius: "0 0 8px 0", fontSize: 16, fontWeight: 600, fontFamily: "'Inter', sans-serif" } }, "Skip to main content"),
         React.createElement(ScrollProgress, { "aria-hidden": "true" }),
         React.createElement(CursorGlow, { "aria-hidden": "true" }),
         React.createElement(Nav, { page: e, setPage: i }),

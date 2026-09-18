@@ -4872,7 +4872,7 @@ function Footer({ setPage: e }) {
             },
             "Packed with care in Guwahati.",
             React.createElement("br", null),
-            "nevisan12@gmail.com · +91 98642 45687",
+            "care@nevisan.in · +91 98642 45687",
           ),
           React.createElement(
             "button",
@@ -9422,8 +9422,8 @@ function ContactPage({ setPage: e }) {
             {
               icon: "📧",
               label: "Email",
-              value: "nevisan12@gmail.com",
-              action: () => window.open("mailto:nevisan12@gmail.com"),
+              value: "care@nevisan.in",
+              action: () => window.open("mailto:care@nevisan.in"),
             },
             {
               icon: "📍",

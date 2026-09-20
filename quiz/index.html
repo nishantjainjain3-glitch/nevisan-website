@@ -422,6 +422,7 @@
 
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <style id="nevisan-unified-nav-css">
 .nevisan-global-nav {
@@ -687,30 +688,6 @@ function toggleNevisanMenu() {
 }
 </script>
 
-
-
-
-
-<!-- Universal Luxury Nevisan Navigation Header -->
-
-
-
-
-
-
-
-<!-- Universal Luxury Nevisan Navigation Header -->
-
-
-
-
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  
-<!-- Unified Luxury Nevisan Navigation Header -->
-
-
-
   <header class="hero-quiz-banner" style="background: linear-gradient(180deg, var(--teal) 0%, #1c3324 100%); color: #FFFFFF; padding: 100px 24px 20px; text-align: center;">
       <div style="max-width: 800px; margin: 0 auto;">
         <span style="font-size: 14px; letter-spacing: 0.15em; text-transform: none; color: var(--gold); font-weight: 700; margin-bottom: 12px; display: inline-block; background: rgba(201,168,76,0.15); padding: 4px 14px; border-radius: 99px; border: 1px solid rgba(201,168,76,0.3);">Tea Match Discovery</span>
@@ -905,7 +882,7 @@ function toggleNevisanMenu() {
     // Quiz State Variables
     let currentStep = 0;
     const userSelections = [];
-    const container = document.getElementById("quiz-question-container");
+    let container = document.getElementById("quiz-question-container");
 
     // Start rendering the first question
     function renderQuestion() {

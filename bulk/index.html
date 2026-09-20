@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -88,13 +88,13 @@
         @media (max-width: 500px) {
             .pricing-grid { grid-template-columns: 1fr; }
         }
-        .pricing-card { background: #fff; border-radius: 12px; padding: 1.5rem; border: 2px solid var(--border); text-align: center; transition: border-color 0.2s; }
+        .pricing-card { background: #fff; border-radius: 12px; padding: 1.5rem; border: 2px solid var(--border); text-align: center; transition: border-color 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
         .pricing-card:hover { border-color: var(--teal); }
         .pricing-card.featured { border-color: var(--gold); background: #fffdf5; }
-        .pricing-tier { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--teal); margin-bottom: 0.5rem; }
-        .pricing-qty { font-size: 1rem; color: var(--muted); margin-bottom: 0.75rem; }
-        .pricing-price { font-size: 1.5rem; font-weight: 700; color: var(--ink); }
-        .pricing-price span { font-size: 1rem; color: var(--muted); font-weight: 400; }
+        .pricing-tier { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; font-weight: 700; color: var(--teal); margin-bottom: 0.35rem; }
+        .pricing-qty { font-size: 0.95rem; font-weight: 600; color: var(--gold); margin-bottom: 0.5rem; }
+        .pricing-price { font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+        .pricing-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
         .inquiry-form { background: #fff; border-radius: 12px; padding: 2rem; border: 1px solid var(--border); margin-top: 2rem; }
         .inquiry-form h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; color: var(--teal); margin-bottom: 1rem; }
         .form-group { margin-bottom: 1rem; }
@@ -446,11 +446,11 @@ function toggleNevisanMenu() {
 
     <main class="bulk-wrapper">
         <h1 class="bulk-title">Bulk & Wholesale Tea Orders</h1>
-        <p class="bulk-subtitle">For cafes, hotels, retail stores, and corporate gifting. Direct from our Golaghat garden — fresh stock, honest prices, no middleman markup.</p>
+        <p class="bulk-subtitle">For cafes, hotels, retail stores, and corporate gifting. Direct from our Golaghat garden — fresh stock, custom wholesale pricing, no middleman markup.</p>
 
         <div class="bulk-section">
             <h2>Why Buy Bulk from Nevisan?</h2>
-            <p>Most wholesale tea comes from brokers who blend across gardens and warehouses. We don't. When you order bulk from Nevisan, you get the same whole-leaf, single-origin, PGS-India certified tea that we sell individually — just at a lower per-unit price. No quality compromise. No blending. No middlemen.</p>
+            <p>Most wholesale tea comes from brokers who blend across gardens and warehouses. We don't. When you order bulk from Nevisan, you get the same whole-leaf, single-origin, PGS-India certified tea that we sell individually — supplied directly from our estate at wholesale rates. No quality compromise. No blending. No middlemen.</p>
             <ul>
                 <li>Same whole-leaf, single-origin tea — no downgrade for bulk orders</li>
                 <li>PGS-India certified organic — verified, not self-declared</li>
@@ -461,35 +461,49 @@ function toggleNevisanMenu() {
         </div>
 
         <div class="bulk-section">
-            <h2>Pricing Tiers</h2>
+            <h2>Wholesale Order Volumes</h2>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <div class="pricing-tier">Starter</div>
-                    <div class="pricing-qty">5–9kg</div>
-                    <div class="pricing-price">₹420 <span>/ 50g</span></div>
+                    <div>
+                        <div class="pricing-tier">Starter &amp; Trial</div>
+                        <div class="pricing-qty">5–9 kg</div>
+                        <div class="pricing-price">Quote on Request</div>
+                    </div>
+                    <div class="pricing-desc">For boutique cafés, trial menus, and small specialty retailers.</div>
                 </div>
                 <div class="pricing-card featured">
-                    <div class="pricing-tier">Business</div>
-                    <div class="pricing-qty">10–24kg</div>
-                    <div class="pricing-price">₹380 <span>/ 50g</span></div>
+                    <div>
+                        <div class="pricing-tier">Cafés &amp; Dining</div>
+                        <div class="pricing-qty">10–24 kg</div>
+                        <div class="pricing-price">Quote on Request</div>
+                    </div>
+                    <div class="pricing-desc">For busy restaurants, tearooms, and regular beverage programs.</div>
                 </div>
                 <div class="pricing-card">
-                    <div class="pricing-tier">Partner</div>
-                    <div class="pricing-qty">25–49kg</div>
-                    <div class="pricing-price">₹350 <span>/ 50g</span></div>
+                    <div>
+                        <div class="pricing-tier">Retail &amp; Distribution</div>
+                        <div class="pricing-qty">25–49 kg</div>
+                        <div class="pricing-price">Quote on Request</div>
+                    </div>
+                    <div class="pricing-desc">For gourmet organic stores, supermarkets, and regional partners.</div>
                 </div>
                 <div class="pricing-card">
-                    <div class="pricing-tier">Enterprise</div>
-                    <div class="pricing-qty">50kg+</div>
-                    <div class="pricing-price">Custom <span>pricing</span></div>
+                    <div>
+                        <div class="pricing-tier">Enterprise &amp; Gifting</div>
+                        <div class="pricing-qty">50 kg+</div>
+                        <div class="pricing-price">Custom Solutions</div>
+                    </div>
+                    <div class="pricing-desc">For corporate gift sets, branded packaging, and custom blends.</div>
                 </div>
             </div>
-            <p>All prices are per 50g pouch. MRP is ₹499. Bulk discounts apply to any combination of teas. Custom blends for corporate gifting start at 50kg minimum.</p>
+            <div style="background: #fffdf5; border: 1.5px solid var(--gold); border-radius: 12px; padding: 1.25rem 1.5rem; margin-top: 1.25rem;">
+                <p style="margin: 0; color: var(--ink); line-height: 1.6; font-size: 0.95rem;"><strong>Have a requirement?</strong> Contact us with your details and we will provide you with custom wholesale prices tailored to your order quantity, varieties, and delivery schedule.</p>
+            </div>
         </div>
 
         <div class="inquiry-form" style="margin-top: 2.5rem;">
-            <h2>How to Order: Bulk Inquiry</h2>
-            <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 1rem;">Fill in the inquiry form below and we will get back to you within 24 hours with a custom quote. For immediate assistance, you can also message us directly on WhatsApp at +91 98642 45687.</p>
+            <h2>Send Your Requirement for Pricing</h2>
+            <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 1rem;">Fill in the requirement form below and we will get back to you with our wholesale prices and quotation within 24 hours. For immediate assistance, you can also message us directly on WhatsApp at +91 98642 45687.</p>
             <form id="bulkInquiryForm" onsubmit="handleBulkSubmit(event)">
                 <div class="form-group">
                     <label for="name">Your Name</label>
@@ -510,14 +524,14 @@ function toggleNevisanMenu() {
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="qty">Estimated Quantity</label>
+                    <label for="qty">Estimated Quantity &amp; Preferred Blends</label>
                     <input type="text" id="qty" name="qty" placeholder="e.g., 10kg mixed, 20kg Organic Green Tea" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Additional Notes</label>
-                    <textarea id="message" name="message" placeholder="Any specific requirements, timeline, or questions?"></textarea>
+                    <label for="message">Specific Requirements / Notes</label>
+                    <textarea id="message" name="message" placeholder="Any specific varieties, packaging requirements, timeline, or delivery notes?"></textarea>
                 </div>
-                <button type="submit" class="form-submit">Send Inquiry via WhatsApp</button>
+                <button type="submit" class="form-submit">Send Requirement via WhatsApp</button>
             </form>
             <script>
             function handleBulkSubmit(e) {
@@ -528,7 +542,7 @@ function toggleNevisanMenu() {
                 var qty = (document.getElementById('qty').value || '').trim();
                 var message = (document.getElementById('message').value || '').trim();
                 var lines = [
-                    'Hello Nevisan Tea, I would like to make a wholesale inquiry:',
+                    'Hello Nevisan Tea, I would like to share my bulk requirement and request wholesale pricing:',
                     '',
                     '• Name: ' + name,
                     '• Business: ' + business,
@@ -552,12 +566,16 @@ function toggleNevisanMenu() {
                 <p>5kg (100 pouches of 50g each). For corporate gifting, the minimum is 50kg with custom packaging options.</p>
             </div>
             <div class="faq-item">
-                <h3>How long does delivery take?</h3>
-                <p>Pan-India delivery via Amazon and Flipkart takes 3–5 business days. For bulk orders above 25kg, we use dedicated courier partners with 2–3 day delivery.</p>
+                <h3>How do I receive wholesale pricing?</h3>
+                <p>Simply send your requirement through the form above or message us directly on WhatsApp at +91 98642 45687. Share your business details, estimated quantity, and varieties needed, and we will provide you with our wholesale price sheet and quote.</p>
             </div>
             <div class="faq-item">
                 <h3>Can I mix different teas in one bulk order?</h3>
-                <p>Yes. You can combine any number of varieties in a single bulk order. Each tea is priced according to the tier you fall into based on total quantity.</p>
+                <p>Yes. You can combine any number of varieties in a single bulk order. We provide custom pricing based on your overall volume across all selected blends.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How long does delivery take?</h3>
+                <p>Pan-India delivery via Amazon and Flipkart takes 3–5 business days. For bulk orders above 25kg, we use dedicated courier partners with 2–3 day delivery.</p>
             </div>
             <div class="faq-item">
                 <h3>Do you offer custom branding for corporate gifts?</h3>
@@ -565,7 +583,7 @@ function toggleNevisanMenu() {
             </div>
             <div class="faq-item">
                 <h3>Is the bulk tea the same quality as individual pouches?</h3>
-                <p>Exactly the same. We don't downgrade quality for bulk orders. Same whole-leaf, same PGS-India certification, same garden origin. Just a better price.</p>
+                <p>Exactly the same. We don't downgrade quality for bulk orders. Same whole-leaf, same PGS-India certification, same garden origin — direct from our estate at wholesale pricing.</p>
             </div>
         </div>
     </main>

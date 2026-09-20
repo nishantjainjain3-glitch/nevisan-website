@@ -925,8 +925,8 @@ function Hero({ setPage: e }) {
         ref: r,
         style: {
           position: "relative",
-          height: "100vh",
-          minHeight: 620,
+          height: i ? "auto" : "100vh",
+          minHeight: i ? 640 : 740,
           overflow: "hidden",
           background: T.tealDark,
         },
@@ -1017,8 +1017,9 @@ function Hero({ setPage: e }) {
             zIndex: 10,
             maxWidth: 1200,
             margin: "0 auto",
-            padding: i ? "0 22px" : "0 40px",
-            height: "100%",
+            padding: i ? "92px 22px 36px" : "104px 40px 40px",
+            minHeight: i ? 640 : "100%",
+            boxSizing: "border-box",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -1390,6 +1391,7 @@ const TEAS = [
     color: "#3a7a50",
     img: "teas/lemongrass.webp?v=2",
     price: 499,
+    badge: "DIGESTION",
     brew: "90°C · 2–3 min · Can steep twice",
     benefits: [
       {
@@ -1428,6 +1430,7 @@ const TEAS = [
     color: "#2a5a8a",
     img: "teas/blue-flower.webp?v=2",
     price: 499,
+    badge: "SKIN GLOW",
     brew: "85°C · 2–3 min · No milk needed",
     benefits: [
       {
@@ -1466,6 +1469,7 @@ const TEAS = [
     color: "#8a6a10",
     img: "teas/rum.webp?v=2",
     price: 499,
+    badge: "ZERO ALCOHOL",
     bestseller: !0,
     brew: "90°C · 3 min · Excellent hot or iced",
     benefits: [
@@ -1505,6 +1509,7 @@ const TEAS = [
     color: "#6a3a8a",
     img: "teas/spearmint.webp?v=2",
     price: 499,
+    badge: "HORMONAL BALANCE",
     brew: "85°C · 2 min · Light and refreshing",
     benefits: [
       {
@@ -1543,6 +1548,7 @@ const TEAS = [
     color: "#3a7a50",
     img: "teas/tulsi.webp?v=2",
     price: 499,
+    badge: "DAILY IMMUNITY",
     brew: "90°C · 3–4 min · Best plain or with honey",
     benefits: [
       {
@@ -1581,6 +1587,7 @@ const TEAS = [
     color: "#8a6a10",
     img: "teas/chamomile.webp?v=2",
     price: 499,
+    badge: "SLEEP & CALM",
     brew: "85°C · 4 min · Best before bed",
     benefits: [
       {
@@ -1618,6 +1625,7 @@ const TEAS = [
     color: "#5a4030",
     img: "teas/whiskey.webp?v=2",
     price: 499,
+    badge: "ZERO ALCOHOL",
     brew: "90°C · 3 min · Bold, best enjoyed slowly",
     benefits: [
       {
@@ -1655,6 +1663,7 @@ const TEAS = [
     color: "#1b7a82",
     img: "teas/gaba.webp?v=2",
     price: 499,
+    badge: "STRESS RELIEF",
     brew: "85°C · 3 min · Nitrogen-anaerobic processed",
     benefits: [
       {

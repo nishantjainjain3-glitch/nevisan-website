@@ -7692,7 +7692,7 @@ function OurStoryPage({ setPage: e }) {
                     style: {
                       fontFamily: "'Inter'",
                       fontSize: 16,
-                      color: "rgba(255,255,255,0.7)",
+                      color: T.textMuted,
                       lineHeight: 1.75,
                     },
                   },

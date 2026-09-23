@@ -2069,7 +2069,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
     "Lemongrass Green Tea": {
       palate: "Crisp Citrus, Grassy, Mild Sweetness",
       brew: "90°C · 2–3 Mins · 2 Steeps",
-      badge: "Popular"
+      badge: "Citrus Digestion"
     },
     "Spearmint Green Tea": {
       palate: "Refreshing Mint, Clean Finish",
@@ -2079,12 +2079,12 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
     "Rum Green Tea": {
       palate: "Spiced Rum, Sugarcane, Oak",
       brew: "90°C · 3 Mins · Hot or Iced",
-      badge: "Exotic Infusion"
+      badge: "Spiced Rum Botanicals"
     },
     "Whiskey Green Tea": {
       palate: "Oaky Smoke, Malt, Sweetness",
       brew: "90°C · 3 Mins · Bold",
-      badge: "Bold Reserve"
+      badge: "Smoky Oak Reserve"
     },
     "Blue Flower Green Tea": {
       palate: "Cobalt Blue, Mild Floral, Sweet",
@@ -2099,17 +2099,22 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
     "Chamomile Green Tea": {
       palate: "Honeyed Apples, Sweet Floral",
       brew: "85°C · 4 Mins · Bedtime",
-      badge: "Stress Relief"
+      badge: "Bedtime Floral"
     },
     "Organic Green Tea": {
       palate: "Vegetal, Umami, Clean Grassy",
       brew: "80°C · 2 Mins · Pure Leaf",
-      badge: "Estate Classic"
+      badge: "Estate Organic"
     },
     "Ginger Green Tea": {
       palate: "Spicy Ginger, Honeyed Warmth",
       brew: "85°C · 2–3 Mins · Warming",
       badge: "Warming Wellness"
+    },
+    "GABA Oolong Tea": {
+      palate: "Stone-fruit, Toasty Amber, Smooth Honey",
+      brew: "85°C · 2 Mins · Nitrogen Fermented",
+      badge: "Artisan Oolong"
     }
   };
   const prof = profiles[e.name] || {

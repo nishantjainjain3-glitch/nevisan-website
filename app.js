@@ -10,7 +10,7 @@ const NEVISAN_MARKETPLACE_MAP = {
     "Chamomile Green Tea": "https://www.amazon.in/dp/B0FV2QGRBM",
     "Whiskey Green Tea": "https://www.amazon.in/dp/B0FSZXVWXD",
     "Rum Green Tea": "https://www.amazon.in/dp/B0FV2QVGVL",
-    "Ginger Green Tea": "https://www.amazon.in/dp/B0G38DJN2M"
+    "Ginger Green Tea": "https://www.amazon.in/dp/B0H6PZYPMP"
   },
   flipkart: {
     "Spearmint Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHHYQNAYYQHF5P",
@@ -22,7 +22,7 @@ const NEVISAN_MARKETPLACE_MAP = {
     "Blue Flower Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHK2XFGHV2GRYA",
     "Tulsi Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHK7GXBJDKC9XM",
     "Whiskey Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHHEJ9YS493UA2",
-    "Ginger Green Tea": "https://www.flipkart.com/search?q=nevisan+ginger+green+tea"
+    "Ginger Green Tea": "https://www.flipkart.com/product/p/itme?pid=TEAHZZMRQGGFAKPS"
   }
 };
 function getDirectAmazonUrl(name) {

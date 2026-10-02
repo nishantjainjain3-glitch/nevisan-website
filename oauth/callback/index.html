@@ -287,6 +287,12 @@
             const errorDescription = urlParams.get('error_description');
 
             if (authCode) {
+                const storedState = sessionStorage.getItem('oauth_state');
+                if (storedState && state && state !== storedState) {
+                    renderError('invalid_state', 'OAuth state validation failed. The state parameter returned by Flipkart did not match your session state. This may indicate an expired session or unauthorized callback.');
+                    return;
+                }
+                sessionStorage.removeItem('oauth_state');
                 renderCodeSuccess(authCode, state);
             } else if (error) {
                 renderError(error, errorDescription);

@@ -48,13 +48,16 @@ const trackExternalClick = (e, t) => {
     };
     const s = m[e];
     if (s && typeof fbq !== "undefined") {
-      fbq("track", "AddToCart", {
+      fbq("trackCustom", "MarketplaceOutboundClick", {
+        content_name: e,
         content_ids: [s],
         content_type: "product",
+        destination: t,
         value: 499,
         currency: "INR",
       });
-      fbq("track", "Purchase", {
+      fbq("track", "InitiateCheckout", {
+        content_name: e,
         content_ids: [s],
         content_type: "product",
         value: 499,
@@ -301,13 +304,15 @@ function openWhatsApp(e = "") {
     };
     const s = m[e];
     if (s && typeof fbq !== "undefined") {
-      fbq("track", "AddToCart", {
+      fbq("track", "Contact", {
+        content_name: e,
         content_ids: [s],
         content_type: "product",
         value: 499,
         currency: "INR",
       });
-      fbq("track", "Purchase", {
+      fbq("track", "InitiateCheckout", {
+        content_name: e,
         content_ids: [s],
         content_type: "product",
         value: 499,
@@ -10103,7 +10108,7 @@ function CartSheet({ onClose: e }) {
                     },
                   },
                   "₹",
-                  275 * e.qty,
+                  (e.tea.price || 499) * e.qty,
                 ),
               ),
               React.createElement(
@@ -10242,16 +10247,23 @@ function CartSheet({ onClose: e }) {
                     .map((item) => m[item.tea.name])
                     .filter(Boolean);
                   if (skus.length > 0 && typeof fbq !== "undefined") {
-                    fbq("track", "Purchase", {
+                    fbq("track", "InitiateCheckout", {
                       content_ids: skus,
                       content_type: "product",
+                      num_items: i,
+                      value: o,
+                      currency: "INR",
+                    });
+                    fbq("trackCustom", "WhatsAppOrderClick", {
+                      content_ids: skus,
+                      num_items: i,
                       value: o,
                       currency: "INR",
                     });
                   }
                 } catch (err) {}
                 const a = t
-                  .map((e) => `• ${e.tea.name} x${e.qty} = ₹${275 * e.qty}`)
+                  .map((e) => `• ${e.tea.name} x${e.qty} = ₹${(e.tea.price || 499) * e.qty}`)
                   .join("\n");
                 (window.open(
                   `https://wa.me/919864245687?text=${encodeURIComponent(`Hi Nevisan! I'd like to place an order:\n\n${a}\n\nTotal: ₹${o} (${i} packs × 50gm)\n\nPlease confirm my order and share delivery details.`)}`,

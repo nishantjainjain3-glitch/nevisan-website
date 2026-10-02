@@ -738,8 +738,8 @@ function toggleNevisanMenu() {
         };
         const sku = skuMap[teaKey];
         if (sku && typeof fbq !== "undefined") {
-          fbq("track", "AddToCart", { content_ids: [sku], content_type: "product", value: 499, currency: "INR" });
-          fbq("track", "Purchase", { content_ids: [sku], content_type: "product", value: 499, currency: "INR" });
+          fbq("trackCustom", "MarketplaceOutboundClick", { content_name: teaKey, content_ids: [sku], content_type: "product", destination: platform, value: 499, currency: "INR" });
+          fbq("track", "InitiateCheckout", { content_name: teaKey, content_ids: [sku], content_type: "product", value: 499, currency: "INR" });
         }
       } catch (err) {}
     };

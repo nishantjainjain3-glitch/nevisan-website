@@ -1165,7 +1165,7 @@ function Hero({ setPage: e }) {
             },
             React.createElement("span", { style: { color: "#C9A84C", fontSize: 14 } }, "★★★★★"),
             React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 14, color: "#fff", fontWeight: 600 } }, "4.9/5 Rating"),
-            React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 14, color: "rgba(255,255,255,0.8)" } }, "· 380+ Verified Customer Reviews ›")
+            React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 14, color: "rgba(255,255,255,0.8)" } }, "· Customer Reviews & Community Ratings ›")
           ),
           React.createElement(
             "div",
@@ -4721,7 +4721,7 @@ function Testimonials() {
           },
           "Sincere words from our community of tea drinkers. Direct and unedited reviews.",
         ),
-        React.createElement("div", { style: { textAlign: "center", marginTop: 20, marginBottom: 32 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "12px 28px", fontFamily: "'Inter'", fontSize: 15, fontWeight: 600, textDecoration: "none", cursor: "pointer", boxShadow: "0 4px 16px rgba(21,39,27,0.18)" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "View All 380+ Verified Customer Reviews", React.createElement("span", null, "→"))),
+        React.createElement("div", { style: { textAlign: "center", marginTop: 20, marginBottom: 32 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "12px 28px", fontFamily: "'Inter'", fontSize: 15, fontWeight: 600, textDecoration: "none", cursor: "pointer", boxShadow: "0 4px 16px rgba(21,39,27,0.18)" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "Explore Customer Reviews & Tasting Notes", React.createElement("span", null, "→"))),
       ),
       React.createElement(
         "div",

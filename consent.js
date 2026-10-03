@@ -38,6 +38,10 @@
     window.fbq('consent', 'revoke');
   }
 
+  // Centralized Meta Pixel initialization & PageView
+  window.fbq('init', '1600935891006535');
+  window.fbq('track', 'PageView');
+
   // 3. Global Consent Update Handler
   window.updateNevisanConsent = function(accepted) {
     try {

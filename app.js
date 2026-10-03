@@ -322,7 +322,7 @@ function openWhatsApp(e = "") {
   } catch (err) {}
   window.open(
     `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(e ? `Hi Nevisan! I would like to order *${e}* (MRP ₹499 · 50 gm). Please help me with the order details.` : "Hi Nevisan! I would like to order your tea. Please help me with the details.")}`,
-    "_blank",
+    "_blank", "noopener,noreferrer",
   );
 }
 function NevLogo({ size: e = 56 }) {
@@ -704,7 +704,7 @@ function Nav({ page: e, setPage: t }) {
                   },
                 },
                 React.createElement("span", { style: { color: "#C9A84C", fontSize: 18 } }, "★"),
-                "Customer Reviews (380+)",
+                "Customer Reviews",
               );
             }
             if (item === "Tea Quiz") {
@@ -1959,7 +1959,7 @@ function BuyModal({ tea: e, onClose: t }) {
                 trackExternalClick(e.name, "Amazon");
                 window.open(
                   getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
-                  "_blank",
+                  "_blank", "noopener,noreferrer",
                 );
                 t();
               },
@@ -2004,7 +2004,7 @@ function BuyModal({ tea: e, onClose: t }) {
             {
               onClick: () => {
                 trackExternalClick(e.name, "Flipkart");
-                window.open(getDirectFlipkartUrl(e?.name || t?.name || ""), "_blank");
+                window.open(getDirectFlipkartUrl(e?.name || t?.name || ""), "_blank", "noopener,noreferrer");
                 t();
               },
               style: {
@@ -3004,7 +3004,7 @@ function CollectionPage({}) {
                             trackExternalClick(e.name, "Amazon");
                             window.open(
                               getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
-                              "_blank",
+                              "_blank", "noopener,noreferrer",
                             );
                           },
                           style: {
@@ -3028,7 +3028,7 @@ function CollectionPage({}) {
                             trackExternalClick(e.name, "Flipkart");
                             window.open(
                               getDirectFlipkartUrl(e?.name || (typeof t !== "undefined" && t?.name) || (typeof tea !== "undefined" && tea?.name) || ""),
-                              "_blank",
+                              "_blank", "noopener,noreferrer",
                             );
                           },
                           style: {
@@ -3400,7 +3400,7 @@ function CollectionPage({}) {
                               trackExternalClick(e.name, "Amazon");
                               window.open(
                                 getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
-                                "_blank",
+                                "_blank", "noopener,noreferrer",
                               );
                             },
                             style: {
@@ -3424,7 +3424,7 @@ function CollectionPage({}) {
                               trackExternalClick(e.name, "Flipkart");
                               window.open(
                                 getDirectFlipkartUrl(e?.name || (typeof t !== "undefined" && t?.name) || (typeof tea !== "undefined" && tea?.name) || ""),
-                                "_blank",
+                                "_blank", "noopener,noreferrer",
                               );
                             },
                             style: {
@@ -4085,7 +4085,7 @@ function WhereToBuy() {
         action: () =>
           window.open(
             getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
-            "_blank",
+            "_blank", "noopener,noreferrer",
           ),
         primary: !1,
       },
@@ -4095,7 +4095,7 @@ function WhereToBuy() {
         cta: "🛍️ Shop on Flipkart",
         icon: "🛍️",
         action: () =>
-          window.open(getDirectFlipkartUrl(e?.name || t?.name || ""), "_blank"),
+          window.open(getDirectFlipkartUrl(e?.name || t?.name || ""), "_blank", "noopener,noreferrer"),
         primary: !1,
       },
     ],
@@ -4386,7 +4386,7 @@ function ReviewForm() {
             const a = "★".repeat(t.rating) + "☆".repeat(5 - t.rating);
             (window.open(
               `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`🌿 *New Nevisan Review*\n\n${a} ${t.rating}/5\n\n*Customer:* ${t.name}${t.loc ? ` (${t.loc})` : ""}\n*Tea:* ${t.tea || "Not specified"}\n\n*Review:*\n"${t.text}"\n\n_Submitted via nevisan.in_`)}`,
-              "_blank",
+              "_blank", "noopener,noreferrer",
             ),
               o(!0));
           },
@@ -5097,7 +5097,7 @@ function Footer({ setPage: e }) {
               "div",
               {
                 key: e,
-                onClick: () => window.open(t, "_blank"),
+                onClick: () => window.open(t, "_blank", "noopener,noreferrer"),
                 style: {
                   fontFamily: "'Inter'",
                   fontSize: 16,
@@ -5667,7 +5667,7 @@ function CollectionSection({ setPage: e }) {
                             trackExternalClick(e.name, "Amazon");
                             window.open(
                               getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
-                              "_blank",
+                              "_blank", "noopener,noreferrer",
                             );
                           },
                           style: {
@@ -5691,7 +5691,7 @@ function CollectionSection({ setPage: e }) {
                             trackExternalClick(e.name, "Flipkart");
                             window.open(
                               getDirectFlipkartUrl(e?.name || (typeof t !== "undefined" && t?.name) || (typeof tea !== "undefined" && tea?.name) || ""),
-                              "_blank",
+                              "_blank", "noopener,noreferrer",
                             );
                           },
                           style: {
@@ -6057,7 +6057,7 @@ function CollectionSection({ setPage: e }) {
                               trackExternalClick(e.name, "Amazon");
                               window.open(
                                 getDirectAmazonUrl(e?.name || (typeof t !== 'undefined' && t?.name) || (typeof tea !== 'undefined' && tea?.name) || ""),
-                                "_blank",
+                                "_blank", "noopener,noreferrer",
                               );
                             },
                             style: {
@@ -6081,7 +6081,7 @@ function CollectionSection({ setPage: e }) {
                               trackExternalClick(e.name, "Flipkart");
                               window.open(
                                 getDirectFlipkartUrl(e?.name || (typeof t !== "undefined" && t?.name) || (typeof tea !== "undefined" && tea?.name) || ""),
-                                "_blank",
+                                "_blank", "noopener,noreferrer",
                               );
                             },
                             style: {
@@ -9325,7 +9325,7 @@ function WholesalePage({ setPage: e }) {
                 onClick: () => {
                   window.open(
                     `https://wa.me/919864245687?text=${encodeURIComponent(`Hi Nevisan! I'd like to inquire about wholesale/bulk ordering.\n\nName: ${a.name}\nBusiness: ${a.business}\nBusiness Type: ${a.type}\nEstimated Quantity: ${a.qty}\nMessage: ${a.message}`)}`,
-                    "_blank",
+                    "_blank", "noopener,noreferrer",
                   );
                 },
                 style: {
@@ -9618,7 +9618,7 @@ function ContactPage({ setPage: e }) {
                     (e.preventDefault(),
                       window.open(
                         `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hi Nevisan! My name is ${a.name}. ${a.message} (Reply to: ${a.email})`)}`,
-                        "_blank",
+                        "_blank", "noopener,noreferrer",
                       ),
                       i(!0));
                   },
@@ -10279,7 +10279,7 @@ function CartSheet({ onClose: e }) {
                   .join("\n");
                 (window.open(
                   `https://wa.me/919864245687?text=${encodeURIComponent(`Hi Nevisan! I'd like to place an order:\n\n${a}\n\nTotal: ₹${o} (${i} packs × 50gm)\n\nPlease confirm my order and share delivery details.`)}`,
-                  "_blank",
+                  "_blank", "noopener,noreferrer",
                 ),
                   n(),
                   e());

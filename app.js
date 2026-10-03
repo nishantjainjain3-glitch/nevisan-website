@@ -9779,7 +9779,26 @@ function CookieConsentBanner() {
 
   const handleConsent = (accepted) => {
     try {
-      localStorage.setItem("nevisan_cookie_consent", accepted ? "accepted" : "declined");
+      if (typeof window.updateNevisanConsent === "function") {
+        window.updateNevisanConsent(accepted);
+      } else {
+        localStorage.setItem("nevisan_cookie_consent", accepted ? "accepted" : "declined");
+        if (typeof gtag === "function") {
+          gtag("consent", "update", {
+            ad_storage: accepted ? "granted" : "denied",
+            analytics_storage: accepted ? "granted" : "denied",
+            ad_user_data: accepted ? "granted" : "denied",
+            ad_personalization: accepted ? "granted" : "denied",
+          });
+        }
+        if (typeof fbq === "function") {
+          if (accepted) {
+            fbq("consent", "grant");
+          } else {
+            fbq("consent", "revoke");
+          }
+        }
+      }
     } catch (e) {}
     setVisible(false);
   };

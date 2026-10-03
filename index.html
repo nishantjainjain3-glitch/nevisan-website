@@ -14,6 +14,46 @@
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs Context">
 <meta charset="UTF-8">
 <link rel="manifest" href="manifest.json">
+<!-- Google Consent Mode v2 Setup -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  var userConsent = null;
+  try {
+    userConsent = localStorage.getItem('nevisan_cookie_consent');
+  } catch(e) {}
+
+  gtag('consent', 'default', {
+    'ad_storage': userConsent === 'accepted' ? 'granted' : 'denied',
+    'analytics_storage': userConsent === 'accepted' ? 'granted' : 'denied',
+    'ad_user_data': userConsent === 'accepted' ? 'granted' : 'denied',
+    'ad_personalization': userConsent === 'accepted' ? 'granted' : 'denied',
+    'wait_for_update': 500
+  });
+
+  window.updateNevisanConsent = function(accepted) {
+    try {
+      localStorage.setItem('nevisan_cookie_consent', accepted ? 'accepted' : 'declined');
+      gtag('consent', 'update', {
+        'ad_storage': accepted ? 'granted' : 'denied',
+        'analytics_storage': accepted ? 'granted' : 'denied',
+        'ad_user_data': accepted ? 'granted' : 'denied',
+        'ad_personalization': accepted ? 'granted' : 'denied'
+      });
+      if (typeof fbq === 'function') {
+        if (accepted) {
+          fbq('consent', 'grant');
+        } else {
+          fbq('consent', 'revoke');
+        }
+      }
+    } catch(e) {}
+    var b = document.getElementById('cookie-consent-banner');
+    if (b) b.style.display = 'none';
+  };
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -24,8 +64,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3Q7DNWTKP"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-W3Q7DNWTKP');
 </script>
@@ -40,6 +78,9 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1600935891006535');
+if (userConsent !== 'accepted') {
+  fbq('consent', 'revoke');
+}
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" alt=""

@@ -7,15 +7,15 @@
   <script src="/consent.js"></script>
   <title>Tea Match Quiz — Find Your Perfect Blend | Nevisan Tea</title>
   <!-- End Meta Pixel Code -->
-  <meta name="description" content="Take our 60-second tea match quiz to discover your ideal single-origin Assam green tea based on your health goals, mood, taste preferences &amp; daily routine.">
+  <meta name="description" content="Take our 60-second tea match quiz to discover your ideal single-origin Assam green tea based on your tea preferences, mood, taste preferences &amp; daily routine.">
   <meta property="og:title" content="Tea Match Quiz — Find Your Perfect Blend | Nevisan Tea">
-  <meta property="og:description" content="Take our 60-second tea match quiz to discover your ideal single-origin Assam green tea based on your health goals, mood &amp; taste preferences.">
+  <meta property="og:description" content="Take our 60-second tea match quiz to discover your ideal single-origin Assam green tea based on your tea preferences, mood &amp; taste preferences.">
   <meta property="og:image" content="https://nevisan.in/hero-bg.jpg">
   <meta property="og:url" content="https://nevisan.in/quiz/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tea Match Quiz — Find Your Perfect Blend | Nevisan Tea">
-  <meta name="twitter:description" content="Take our 60-second tea match quiz to discover your ideal single-origin Assam green tea based on your health goals, mood &amp; taste preferences.">
+  <meta name="twitter:description" content="Take our 60-second tea match quiz to discover your ideal single-origin Assam green tea based on your tea preferences, mood &amp; taste preferences.">
   <meta name="twitter:image" content="https://nevisan.in/hero-bg.jpg">
   <link rel="canonical" href="https://nevisan.in/quiz/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -394,7 +394,7 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Tea Match Quiz — Find Your Perfect Blend | Nevisan Tea",
-    "description": "Take our 60-second tea match quiz to discover your ideal single-origin Assam green tea based on your health goals, mood, taste preferences &amp; daily routine.",
+    "description": "Take our 60-second tea match quiz to discover your ideal single-origin Assam green tea based on your tea preferences, mood, taste preferences &amp; daily routine.",
     "url": "https://nevisan.in/quiz/",
     "publisher": {
       "@type": "Organization",
@@ -723,7 +723,7 @@ function toggleNevisanMenu() {
           ginger: "Ginger-1"
         };
         const sku = skuMap[teaKey];
-        if (sku && typeof fbq !== "undefined") {
+        if (sku && typeof fbq === "function" && window.hasNevisanConsent?.()) {
           fbq("trackCustom", "MarketplaceOutboundClick", { content_name: teaKey, content_ids: [sku], content_type: "product", destination: platform, value: 499, currency: "INR" });
           fbq("track", "InitiateCheckout", { content_name: teaKey, content_ids: [sku], content_type: "product", value: 499, currency: "INR" });
         }
@@ -736,7 +736,7 @@ function toggleNevisanMenu() {
         name: "GABA Oolong Tea",
         img: "../teas/gaba.png",
         benefit: "Calm Focus & Evening Relaxation",
-        desc: "Premium nitrogen-processed oolong tea with elevated natural GABA levels. Helps quiet mental chatter, supports restful evening wind-down, and eases everyday nervous tension with a clean, amber-gold cup.",
+        desc: "Premium nitrogen-processed oolong tea with a smooth, mellow character and an amber-gold cup. Enjoy it as part of a quiet tea ritual; it naturally contains caffeine.",
         bg: "radial-gradient(circle, #eedfc5 0%, #fff 100%)",
         amazon: "https://www.amazon.in/dp/B0GTRBXKP8",
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHHXQAGVCGGGVF"
@@ -744,8 +744,8 @@ function toggleNevisanMenu() {
       chamomile: {
         name: "Chamomile Green Tea",
         img: "../teas/chamomile.png",
-        benefit: "Restful Sleep & Mindful Calm",
-        desc: "Whole chamomile flowers blended with low-caffeine Assam green tea. Chamomile contains apigenin, known for soothing evening comfort and preparing your body for a peaceful, deep night's sleep.",
+        benefit: "Soft Floral & Evening Tea Rituals",
+        desc: "Whole chamomile flowers blended with Assam green tea for a soft floral cup. This blend contains caffeine; choose your serving time to suit your routine.",
         bg: "radial-gradient(circle, #fffbe8 0%, #fff 100%)",
         amazon: "https://www.amazon.in/dp/B0FV2QGRBM",
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHK53HCGSRWHAH"
@@ -753,8 +753,8 @@ function toggleNevisanMenu() {
       spearmint: {
         name: "Spearmint Green Tea",
         img: "../teas/spearmint.png",
-        benefit: "Hormonal Balance & Clear Skin",
-        desc: "Cool, sweet spearmint blended with whole-leaf green tea. Spearmint has been traditionally studied for its anti-androgenic potential, creating a refreshing daily ritual to support hormonal balance and clear skin.",
+        benefit: "Cool Mint & Everyday Refreshment",
+        desc: "Cool, sweet spearmint blended with whole-leaf green tea for a crisp mint cup and a refreshing daily tea ritual.",
         bg: "radial-gradient(circle, #eaf6ee 0%, #fff 100%)",
         amazon: "https://www.amazon.in/dp/B0GTR2GXW2",
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHHYQNAYYQHF5P"
@@ -762,8 +762,8 @@ function toggleNevisanMenu() {
       lemongrass: {
         name: "Lemongrass Green Tea",
         img: "../teas/lemongrass.png",
-        benefit: "Digestion, Bloating & Metabolism",
-        desc: "Zesty, refreshing lemongrass paired with whole leaf Assam green tea. Helps relax the smooth muscles of the digestive tract, rapidly relieving post-meal bloating and heaviness while naturally supporting metabolic rates.",
+        benefit: "Bright Citrus & After-Meal Refreshment",
+        desc: "Zesty, refreshing lemongrass paired with whole-leaf Assam green tea. A bright citrus blend commonly enjoyed after meals for a refreshing, light finish.",
         bg: "radial-gradient(circle, #f9f7dc 0%, #fff 100%)",
         amazon: "https://www.amazon.in/dp/B0FSZSZ1ZM",
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHHEGBGZ5XCXVZ"
@@ -781,7 +781,7 @@ function toggleNevisanMenu() {
         name: "Blue Flower Green Tea",
         img: "../teas/blue-flower.png",
         benefit: "Mindful Focus & Botanical Antioxidants",
-        desc: "Beautiful butterfly pea flower petals blended with whole leaf green tea. Rich in brain-boosting anthocyanin antioxidants. The tea brews a gorgeous cobalt blue and turns a vivid violet with a squeeze of fresh lemon juice!",
+        desc: "Beautiful butterfly pea flower petals blended with whole leaf green tea. Butterfly pea flowers contribute naturally occurring anthocyanin pigments and a distinctive blue color. The tea brews a gorgeous cobalt blue and turns a vivid violet with a squeeze of fresh lemon juice!",
         bg: "radial-gradient(circle, #e6effa 0%, #fff 100%)",
         amazon: "https://www.amazon.in/dp/B0FTZ7KQ5B",
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHK2XFGHV2GRYA"
@@ -828,13 +828,13 @@ function toggleNevisanMenu() {
     const questions = [
       {
         id: 0,
-        title: "1. What is your primary wellness goal?",
+        title: "1. What kind of tea break are you looking for?",
         options: [
-          { text: "Unwind from daily stress and sleep deeper", emoji: "💆", scores: { gaba: 3, chamomile: 3, tulsi: 1 } },
-          { text: "Support hormonal balance and skin clarity", emoji: "🌸", scores: { spearmint: 5 } },
-          { text: "Support digestion, ease bloating, and boost metabolism", emoji: "🍋", scores: { lemongrass: 5 } },
-          { text: "Strengthen immunity, get antioxidants, and feel sharp", emoji: "🛡️", scores: { tulsi: 3, blueflower: 3, organic: 1 } },
-          { text: "Activate metabolism, boost immunity, and soothe digestion", emoji: "🫚", scores: { ginger: 5 } },
+          { text: "Enjoy a mellow, floral evening tea ritual", emoji: "💆", scores: { gaba: 3, chamomile: 3, tulsi: 1 } },
+          { text: "Enjoy a cool, refreshing mint cup", emoji: "🌸", scores: { spearmint: 5 } },
+          { text: "Enjoy bright citrus refreshment after meals", emoji: "🍋", scores: { lemongrass: 5 } },
+          { text: "Explore herbal aromas and colorful botanical blends", emoji: "🛡️", scores: { tulsi: 3, blueflower: 3, organic: 1 } },
+          { text: "Enjoy warming ginger spice in my morning cup", emoji: "🫚", scores: { ginger: 5 } },
           { text: "Savor a unique, premium, non-alcoholic evening ritual", emoji: "🥃", scores: { rum: 4, whiskey: 4 } }
         ]
       },
@@ -947,7 +947,7 @@ function toggleNevisanMenu() {
       const whatsappUrl = `https://wa.me/919864245687?text=${whatsappMsg}`;
 
       try {
-        if (typeof fbq !== "undefined") {
+        if (typeof fbq === "function" && window.hasNevisanConsent?.()) {
           fbq("track", "Lead", { content_name: rec.name });
         }
       } catch (e) {}
@@ -1027,18 +1027,7 @@ function toggleNevisanMenu() {
     <button onclick="window.updateNevisanConsent(true)" style="background:#C9A84C;border:none;color:#15271B;font-weight:700;padding:8px 18px;border-radius:6px;font-size:16px;cursor:pointer;">Accept All</button>
   </div>
 </div>
-<script>
-  (function(){
-    try {
-      if(!localStorage.getItem('nevisan_cookie_consent')){
-        setTimeout(function(){
-          var b = document.getElementById('cookie-consent-banner');
-          if(b) b.style.display='block';
-        }, 1000);
-      }
-    }catch(e){}
-  })();
-</script>
+
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 {
-  "name": "Nevisan Tea — Single-Origin Assam Whole Leaf",
+  "name": "Nevisan Tea \u2014 Single-Origin Assam Whole Leaf",
   "short_name": "Nevisan Tea",
   "description": "100% whole-leaf, chemical-free single-origin Assam green teas from Golaghat.",
   "start_url": "/",
@@ -10,20 +10,15 @@
   "icons": [
     {
       "src": "/nevisan-logo.jpeg",
-      "sizes": "192x192",
+      "sizes": "800x800",
       "type": "image/jpeg",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/nevisan-logo.jpeg",
-      "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "/apple-touch-icon.png",
       "sizes": "180x180",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }

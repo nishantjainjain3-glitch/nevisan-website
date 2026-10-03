@@ -6,6 +6,7 @@
     <title>Flipkart Ads API Authorization | Nevisan Tea</title>
     <meta name="description" content="Secure OAuth 2.0 authorization callback portal for Nevisan Tea seller dashboard and marketplace advertising API integrations. Restricted administrative access.">
     <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -273,7 +274,7 @@
             <!-- Dynamic State View will render here -->
         </div>
         <p class="footer-note">
-            Nevisan Tea Private Endpoint &bull; <a href="/">Return to Store</a>
+            Nevisan Tea Authorization Utility &bull; <a href="/">Return to Store</a>
         </p>
     </main>
 
@@ -286,13 +287,21 @@
             const error = urlParams.get('error');
             const errorDescription = urlParams.get('error_description');
 
+            if (authCode || error) {
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
             if (authCode) {
-                const storedState = sessionStorage.getItem('oauth_state');
+                let storedState;
+                try { storedState = sessionStorage.getItem('oauth_state'); }
+                catch (e) {
+                    renderError('storage_unavailable', 'Session storage is required to verify authorization. Enable it and try again.');
+                    return;
+                }
                 if (!storedState || !state || state !== storedState) {
                     renderError('invalid_state', 'OAuth state validation failed. The state parameter returned by Flipkart is missing or did not match your session state. This may indicate an expired session or unauthorized CSRF attempt.');
                     return;
                 }
-                sessionStorage.removeItem('oauth_state');
+                try { sessionStorage.removeItem('oauth_state'); } catch (e) {}
                 if (window.history && window.history.replaceState) {
                     window.history.replaceState({}, document.title, window.location.pathname);
                 }
@@ -307,6 +316,10 @@
             }
 
             function copyToClipboard(text, buttonElement) {
+                if (!navigator.clipboard) {
+                    buttonElement.innerText = 'Select and copy the text';
+                    return;
+                }
                 navigator.clipboard.writeText(text).then(function() {
                     const originalText = buttonElement.innerText;
                     buttonElement.innerText = 'Copied!';
@@ -315,7 +328,13 @@
                         buttonElement.innerText = originalText;
                         buttonElement.classList.remove('copied');
                     }, 2000);
+                }).catch(function() {
+                    buttonElement.innerText = 'Select and copy the text';
                 });
+            }
+
+            function shellQuote(value) {
+                return "'" + value.replace(/'/g, "'\"'\"'") + "'";
             }
 
             function renderCodeSuccess(code, receivedState) {
@@ -338,7 +357,7 @@
                         <span>Local CLI Token Exchange Command</span>
                     </div>
                     <div class="code-box">
-                        <span id="auth-cmd-text">python flipkart_auth.py --code ${escapeHtml(code)}</span>
+                        <span id="auth-cmd-text">python flipkart_auth.py --code ${escapeHtml(shellQuote(code))}</span>
                         <button class="copy-btn" id="copy-cmd-btn">Copy Command</button>
                     </div>
 
@@ -352,7 +371,7 @@
                         <li>
                             <div class="step-num">2</div>
                             <div class="step-content">
-                                <strong>Run it in your project terminal.</strong> The script contacts Flipkart's token endpoint and writes your 6-month refresh token to <code>flipkart_tokens.json</code>.
+                                <strong>Run it in your project terminal.</strong> The script contacts Flipkart's token endpoint and saves the returned tokens to <code>flipkart_tokens.json</code>.
                             </div>
                         </li>
                         <li>
@@ -380,7 +399,7 @@
                     copyToClipboard(code, this);
                 });
                 document.getElementById('copy-cmd-btn').addEventListener('click', function() {
-                    copyToClipboard(`python flipkart_auth.py --code ${code}`, this);
+                    copyToClipboard(`python flipkart_auth.py --code ${shellQuote(code)}`, this);
                 });
             }
 
@@ -405,7 +424,8 @@
             }
 
             function renderConnectForm() {
-                const savedClientId = localStorage.getItem('flipkart_client_id') || '';
+                let savedClientId = '';
+                try { savedClientId = localStorage.getItem('flipkart_client_id') || ''; } catch (e) {}
 
                 container.innerHTML = `
                     <div class="card-header">
@@ -456,12 +476,16 @@
                         return;
                     }
 
-                    localStorage.setItem('flipkart_client_id', clientId);
+                    try { localStorage.setItem('flipkart_client_id', clientId); } catch (e) {}
 
                     const randomBytes = new Uint8Array(24);
                     (window.crypto || window.msCrypto).getRandomValues(randomBytes);
                     const stateToken = Array.from(randomBytes, b => b.toString(16).padStart(2, '0')).join('');
-                    sessionStorage.setItem('oauth_state', stateToken);
+                    try { sessionStorage.setItem('oauth_state', stateToken); }
+                    catch (e) {
+                        renderError('storage_unavailable', 'Session storage is required to verify authorization. Enable it and try again.');
+                        return;
+                    }
 
                     const redirectUri = 'https://nevisan.in/oauth/callback/';
                     const authUrl = 'https://api.flipkart.net/oauth-service/oauth/authorize' +

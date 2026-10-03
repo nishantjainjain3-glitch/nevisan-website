@@ -10,6 +10,8 @@ import json
 import base64
 import time
 import argparse
+import getpass
+import tempfile
 import urllib.request
 import urllib.parse
 import urllib.error
@@ -33,17 +35,33 @@ def load_env_file(filepath=ENV_FILE):
 
 
 def save_tokens(data, filepath=TOKENS_FILE):
+    if not isinstance(data, dict) or not data.get("access_token"):
+        raise ValueError("Token response did not contain an access token")
+    now = int(time.time())
+    expires_in = data.get("expires_in")
+    if expires_in is not None:
+        expires_in = int(expires_in)
+        if expires_in <= 0:
+            raise ValueError("Token response contained an invalid expiration")
     record = {
-        "access_token": data.get("access_token"),
+        "access_token": data["access_token"],
         "refresh_token": data.get("refresh_token"),
         "token_type": data.get("token_type", "Bearer"),
-        "expires_in": data.get("expires_in"),
+        "expires_in": expires_in,
         "scope": data.get("scope"),
-        "obtained_at": int(time.time()),
-        "expires_at": int(time.time()) + int(data.get("expires_in", 21600)) if data.get("expires_in") else None
+        "obtained_at": now,
+        "expires_at": now + expires_in if expires_in is not None else None
     }
-    with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(record, f, indent=2)
+    # Write privately and replace atomically so failed writes preserve old tokens.
+    directory = os.path.dirname(os.path.abspath(filepath))
+    fd, temporary = tempfile.mkstemp(prefix=".flipkart-tokens-", dir=directory)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(record, f, indent=2)
+        os.replace(temporary, filepath)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
     return record
 
 
@@ -69,7 +87,7 @@ def exchange_code_for_tokens(client_id, client_secret, auth_code, redirect_uri=D
     )
 
     try:
-        with urllib.request.urlopen(req) as resp:
+        with urllib.request.urlopen(req, timeout=30) as resp:
             resp_body = resp.read().decode("utf-8")
             data = json.loads(resp_body)
             record = save_tokens(data)
@@ -87,7 +105,9 @@ def exchange_code_for_tokens(client_id, client_secret, auth_code, redirect_uri=D
         sys.exit(1)
 
 
-def refresh_access_token(client_id, client_secret, refresh_token):
+def refresh_access_token(client_id, client_secret, refresh_token, filepath=TOKENS_FILE):
+    if not refresh_token:
+        raise ValueError("No refresh token available; authorize again")
     auth_bytes = f"{client_id}:{client_secret}".encode("utf-8")
     basic_auth = base64.b64encode(auth_bytes).decode("ascii")
 
@@ -108,15 +128,15 @@ def refresh_access_token(client_id, client_secret, refresh_token):
     )
 
     try:
-        with urllib.request.urlopen(req) as resp:
+        with urllib.request.urlopen(req, timeout=30) as resp:
             resp_body = resp.read().decode("utf-8")
             data = json.loads(resp_body)
-            if "refresh_token" not in data:
+            if not data.get("refresh_token"):
                 data["refresh_token"] = refresh_token
-            record = save_tokens(data)
+            record = save_tokens(data, filepath)
             print("[SUCCESS] Successfully refreshed Flipkart access token.")
             print(f"[INFO] New Access Token expires in {record.get('expires_in', 21600)} seconds.")
-            print(f"[INFO] Updated tokens saved to: {TOKENS_FILE}")
+            print(f"[INFO] Updated tokens saved to: {filepath}")
             return record
     except urllib.error.HTTPError as e:
         err_body = e.read().decode("utf-8", errors="replace")
@@ -137,14 +157,19 @@ def main():
     parser.add_argument("--refresh", action="store_true", help="Refresh existing access token using stored refresh token")
     args = parser.parse_args()
 
+    if not args.code and not args.refresh:
+        print("1. Open https://nevisan.in/oauth/callback/ and authorize your application.")
+        print("2. Run: python flipkart_auth.py --code <YOUR_CODE>")
+        return
+
     env_vars = load_env_file()
-    client_id = args.client_id or env_vars.get("FLIPKART_CLIENT_ID") or os.environ.get("FLIPKART_CLIENT_ID")
-    client_secret = args.client_secret or env_vars.get("FLIPKART_CLIENT_SECRET") or os.environ.get("FLIPKART_CLIENT_SECRET")
+    client_id = args.client_id or os.environ.get("FLIPKART_CLIENT_ID") or env_vars.get("FLIPKART_CLIENT_ID")
+    client_secret = args.client_secret or os.environ.get("FLIPKART_CLIENT_SECRET") or env_vars.get("FLIPKART_CLIENT_SECRET")
 
     if not client_id:
         client_id = input("Enter Flipkart Client ID: ").strip()
     if not client_secret:
-        client_secret = input("Enter Flipkart Client Secret: ").strip()
+        client_secret = getpass.getpass("Enter Flipkart Client Secret: ").strip()
 
     if not client_id or not client_secret:
         print("[ERROR] Both Client ID and Client Secret are required.", file=sys.stderr)

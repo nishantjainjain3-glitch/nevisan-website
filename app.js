@@ -47,7 +47,7 @@ const trackExternalClick = (e, t) => {
       "Ginger Green Tea": "GINGER",
     };
     const s = m[e];
-    if (s && typeof fbq !== "undefined") {
+    if (s && typeof fbq === "function" && window.hasNevisanConsent?.()) {
       fbq("trackCustom", "MarketplaceOutboundClick", {
         content_name: e,
         content_ids: [s],
@@ -79,6 +79,7 @@ function useInView(e = 0.15) {
     useEffect(() => {
       const a = t.current;
       if (!a) return;
+      if (typeof IntersectionObserver === "undefined") { n(!0); return; }
       const o = new IntersectionObserver(
         ([e]) => {
           e.isIntersecting && (n(!0), o.disconnect());
@@ -97,7 +98,7 @@ function useGsapReveal() {
       const t = e.current;
       if (!t) return;
       const a = t.querySelectorAll("[data-gsap-reveal]");
-      if (!a.length) return;
+      if (!a.length || typeof gsap === "undefined") return;
       const n = gsap.context(() => {
         gsap.from(a, {
           scrollTrigger: {
@@ -126,18 +127,22 @@ function AnimatedNumber({
   return (
     useEffect(() => {
       if (!a) return;
+      let frame;
       const t = performance.now(),
         o = (a) => {
           const r = Math.min((a - t) / n, 1),
             l = 1 - Math.pow(1 - r, 3);
-          (i(Math.round(l * e)), r < 1 && requestAnimationFrame(o));
+          (i(Math.round(l * e)), r < 1 && (frame = requestAnimationFrame(o)));
         };
-      requestAnimationFrame(o);
+      frame = requestAnimationFrame(o);
+      return () => cancelAnimationFrame(frame);
     }, [a, e, n]),
     React.createElement(React.Fragment, null, o + t)
   );
 }
-gsap.registerPlugin(ScrollTrigger);
+if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 const T = {
     teal: "#23412D",
     tealDark: "#15271B",
@@ -181,7 +186,7 @@ function CartProvider({ children: e }) {
               "Ginger Green Tea": "GINGER",
             };
             const s = m[e.name];
-            if (s && typeof fbq !== "undefined") {
+            if (s && typeof fbq === "function" && window.hasNevisanConsent?.()) {
               fbq("track", "AddToCart", {
                 content_ids: [s],
                 content_type: "product",
@@ -303,7 +308,7 @@ function openWhatsApp(e = "") {
       "Ginger Green Tea": "GINGER",
     };
     const s = m[e];
-    if (s && typeof fbq !== "undefined") {
+    if (s && typeof fbq === "function" && window.hasNevisanConsent?.()) {
       fbq("track", "Contact", {
         content_name: e,
         content_ids: [s],
@@ -449,7 +454,6 @@ function Nav({ page: e, setPage: t }) {
   };
 
   return React.createElement(React.Fragment, null,
-    React.createElement(CookieConsentBanner, null),
     React.createElement(
       "nav",
       {
@@ -907,7 +911,7 @@ function Hero({ setPage: e }) {
     useEffect(() => {
       const e = r.current,
         t = l.current;
-      if (!e || !t) return;
+      if (!e || !t || typeof gsap === "undefined") return;
       const a = gsap.context(() => {
         gsap.to(t, {
           scrollTrigger: {
@@ -1383,24 +1387,24 @@ const TEAS = [
   {
     name: "Lemongrass Green Tea",
     short:
-      "The one we reach for first thing. Bright, lemony, and kind to your stomach.",
-    tags: ["DIGESTION", "METABOLISM"],
+      "The one we reach for first thing. Bright, lemony, and refreshing.",
+    tags: ["CITRUS", "REFRESHING"],
     bg: "#d4edd8",
     color: "#3a7a50",
     img: "teas/lemongrass.webp?v=2",
     price: 499,
-    badge: "DIGESTION",
+    badge: "BRIGHT CITRUS",
     brew: "90°C · 2–3 min · Can steep twice",
     benefits: [
       {
         icon: "🌿",
-        title: "Digestive Comfort",
-        desc: "Lemongrass is traditionally used to soothe the digestive tract and ease bloating.",
+        title: "After-Meal Tea Ritual",
+        desc: "A bright citrus cup often enjoyed as a refreshing tea break after meals.",
       },
       {
         icon: "🔥",
-        title: "Metabolism Support",
-        desc: "Natural citral in lemongrass may help support healthy metabolic function.",
+        title: "Aromatic Character",
+        desc: "Aromatic lemongrass adds a crisp citrus character to whole-leaf Assam green tea.",
       },
       {
         icon: "💧",
@@ -1414,8 +1418,8 @@ const TEAS = [
       },
       {
         icon: "🦠",
-        title: "Gut-Friendly",
-        desc: "Lemongrass has been used traditionally to support digestive wellness.",
+        title: "Light Citrus Finish",
+        desc: "Enjoy the light citrus finish plain or as a chilled cup.",
       },
     ],
   },
@@ -1428,7 +1432,7 @@ const TEAS = [
     color: "#2a5a8a",
     img: "teas/blue-flower.webp?v=2",
     price: 499,
-    badge: "SKIN GLOW",
+    badge: "BLUE BOTANICALS",
     brew: "85°C · 2–3 min · No milk needed",
     benefits: [
       {
@@ -1438,8 +1442,8 @@ const TEAS = [
       },
       {
         icon: "🧠",
-        title: "Calm Focus",
-        desc: "A naturally caffeine-free option for moments when you want clarity without stimulation.",
+        title: "Slow Tea Break",
+        desc: "Butterfly pea petals bring a vivid blue color to this green-tea blend, which naturally contains caffeine.",
       },
       {
         icon: "✨",
@@ -1449,7 +1453,7 @@ const TEAS = [
       {
         icon: "😴",
         title: "Soothing Evening Cup",
-        desc: "A gentle, caffeine-free herbal tea perfect for winding down in the evening.",
+        desc: "A colorful green-tea blend to sip slowly. Consider its caffeine content when choosing your serving time.",
       },
       {
         icon: "🌈",
@@ -1479,12 +1483,12 @@ const TEAS = [
       {
         icon: "😊",
         title: "Mood Lifting",
-        desc: "Warm spice notes trigger feel-good responses, making it a perfect evening ritual.",
+        desc: "Warm spice notes make this a flavorful cup for a slow tea ritual.",
       },
       {
         icon: "💚",
         title: "Green Tea Antioxidants",
-        desc: "Assam green tea base delivers EGCG antioxidants that protect cells and reduce inflammation.",
+        desc: "A whole-leaf Assam green tea base with naturally occurring tea polyphenols.",
       },
       {
         icon: "🌿",
@@ -1501,29 +1505,29 @@ const TEAS = [
   {
     name: "Spearmint Green Tea",
     short:
-      "Uditi drinks this one every day. Gentle on hormones, lovely for the skin.",
-    tags: ["HORMONAL", "SKIN"],
+      "Uditi drinks this one every day. Cool mint, a clean finish, and a lovely aroma.",
+    tags: ["MINT", "REFRESHING"],
     bg: "#e8d4f0",
     color: "#6a3a8a",
     img: "teas/spearmint.webp?v=2",
     price: 499,
-    badge: "HORMONAL BALANCE",
+    badge: "COOL MINT",
     brew: "85°C · 2 min · Light and refreshing",
     benefits: [
       {
         icon: "⚖️",
-        title: "Hormonal Wellness",
+        title: "Refreshing Mint",
         desc: "A bright, cooling mint infusion with a clean, refreshing finish. Popular for its naturally uplifting character.",
       },
       {
         icon: "🧖",
-        title: "Skin-Friendly",
-        desc: "A gentle, refreshing tea that fits well into a holistic skincare routine.",
+        title: "Everyday Tea Ritual",
+        desc: "A refreshing mint cup to enjoy as part of your daily tea routine.",
       },
       {
         icon: "💨",
         title: "Fresh & Soothing",
-        desc: "Naturally refreshing — great for fresh breath and digestive comfort after meals.",
+        desc: "A bright mint aroma and a clean finish for an after-meal tea break.",
       },
       {
         icon: "🧠",
@@ -1533,7 +1537,7 @@ const TEAS = [
       {
         icon: "🌸",
         title: "Gentle & Soothing",
-        desc: "Spearmint has been used for centuries as a calming, anti-inflammatory herb.",
+        desc: "Spearmint adds a sweet, cool herbal character to whole-leaf green tea.",
       },
     ],
   },
@@ -1541,77 +1545,77 @@ const TEAS = [
     name: "Tulsi Green Tea",
     short:
       "Holy basil and Assam green. What we brew when life gets a little much.",
-    tags: ["IMMUNITY", "STRESS"],
+    tags: ["HERBAL", "AROMATIC"],
     bg: "#d4edd8",
     color: "#3a7a50",
     img: "teas/tulsi.webp?v=2",
     price: 499,
-    badge: "DAILY IMMUNITY",
+    badge: "HERBAL AROMA",
     brew: "90°C · 3–4 min · Best plain or with honey",
     benefits: [
       {
         icon: "🛡️",
-        title: "Immunity Support",
+        title: "Herbal Tradition",
         desc: "Tulsi (Holy Basil) has a long history in Ayurvedic tradition. A warming, herbaceous infusion with a distinctive clove-like aroma.",
       },
       {
         icon: "🧘",
-        title: "Stress & Calm",
-        desc: "Tulsi is traditionally used to promote calm focus and mental balance.",
+        title: "Quiet Tea Ritual",
+        desc: "An aromatic herbal cup for a quiet pause in your day.",
       },
       {
         icon: "🫁",
-        title: "Respiratory Comfort",
-        desc: "A soothing cup that many enjoy during seasonal changes for throat and chest comfort.",
+        title: "Seasonal Tea Ritual",
+        desc: "A warm herbal cup to enjoy during seasonal changes.",
       },
       {
         icon: "🩸",
-        title: "Metabolic Wellness",
-        desc: "Tulsi is traditionally used to support healthy blood sugar levels as part of a balanced lifestyle.",
+        title: "Whole-Leaf Character",
+        desc: "Holy basil adds a distinctive herbal character to whole-leaf Assam green tea.",
       },
       {
         icon: "🌱",
-        title: "Liver & Wellness",
-        desc: "Tulsi has been used in Ayurvedic practice to support liver function and overall well-being.",
+        title: "Daily Tea Ritual",
+        desc: "Enjoy Tulsi green tea for its botanical aroma and warm herbal flavor.",
       },
     ],
   },
   {
     name: "Chamomile Green Tea",
     short:
-      "Our wind-down cup. Soft, floral, and made for slow evenings and deeper sleep.",
-    tags: ["SLEEP", "CALMING"],
+      "Our wind-down cup. Soft, floral, and made for slow tea breaks.",
+    tags: ["FLORAL", "MELLOW"],
     bg: "#f5e9a0",
     color: "#8a6a10",
     img: "teas/chamomile.webp?v=2",
     price: 499,
-    badge: "SLEEP & CALM",
-    brew: "85°C · 4 min · Best before bed",
+    badge: "SOFT FLORAL",
+    brew: "85°C · 4 min · Soft floral cup",
     benefits: [
       {
         icon: "😴",
         title: "Relaxing Evening Tea",
-        desc: "Chamomile is a time-honoured herb traditionally used to promote relaxation and restful sleep.",
+        desc: "Whole chamomile flowers add a soft floral aroma to this green-tea blend.",
       },
       {
         icon: "😌",
         title: "Calm & Gentle",
-        desc: "A soothing, caffeine-free cup that helps you unwind without drowsiness during the day.",
+        desc: "A soft floral cup for a quiet tea break. This blend contains green tea and caffeine.",
       },
       {
         icon: "🫀",
-        title: "Heart-Friendly",
-        desc: "Chamomile contains antioxidants that may support cardiovascular wellness as part of a balanced diet.",
+        title: "Floral Character",
+        desc: "Chamomile flowers and whole-leaf green tea make a gently aromatic cup.",
       },
       {
         icon: "🍽️",
-        title: "Digestive Comfort",
-        desc: "Traditionally used to soothe stomach discomfort and aid digestion after meals.",
+        title: "After-Meal Tea Ritual",
+        desc: "Enjoy its soft floral character during a quiet tea break after meals.",
       },
       {
         icon: "🧴",
-        title: "Gentle on the Body",
-        desc: "Chamomile's anti-inflammatory properties have been valued for centuries for skin and body comfort.",
+        title: "Botanical Blend",
+        desc: "Whole flowers give this blend a distinctive floral character.",
       },
     ],
   },
@@ -1638,13 +1642,13 @@ const TEAS = [
       },
       {
         icon: "🔥",
-        title: "Metabolism Support",
-        desc: "Green tea catechins may help support healthy metabolic function as part of an active lifestyle.",
+        title: "Aromatic Character",
+        desc: "A whole-leaf green tea base complements the bold botanical flavor.",
       },
       {
         icon: "🧠",
-        title: "Calm Focus",
-        desc: "L-theanine and caffeine together provide steady, composed energy without jitters.",
+        title: "Slow Tea Break",
+        desc: "A whole-leaf tea blend to savor slowly; it naturally contains caffeine.",
       },
       {
         icon: "🌿",
@@ -1661,18 +1665,18 @@ const TEAS = [
     color: "#1b7a82",
     img: "teas/gaba.webp?v=2",
     price: 499,
-    badge: "STRESS RELIEF",
+    badge: "MELLOW OOLONG",
     brew: "85°C · 3 min · Nitrogen-anaerobic processed",
     benefits: [
       {
         icon: "🧘",
         title: "Calm & Relaxed",
-        desc: "GABA is a naturally occurring neurotransmitter associated with relaxation and calm.",
+        desc: "Nitrogen-processed oolong with a smooth, mellow character.",
       },
       {
         icon: "🧠",
         title: "Clear Mind",
-        desc: "A balanced cup that supports a calm, focused state without overstimulation.",
+        desc: "A balanced, mellow cup for a quiet pause in your day.",
       },
       {
         icon: "😴",
@@ -1686,8 +1690,8 @@ const TEAS = [
       },
       {
         icon: "❤️",
-        title: "Heart Wellness",
-        desc: "GABA oolong is traditionally enjoyed as part of a heart-healthy lifestyle.",
+        title: "Oolong Character",
+        desc: "Enjoy the distinctive depth and aroma of whole-leaf Assam oolong.",
       },
     ],
   },
@@ -1711,12 +1715,12 @@ const TEAS = [
       {
         icon: "⚡",
         title: "Gentle, Steady Energy",
-        desc: "Natural caffeine paired with L-theanine provides a calm, focused lift without jitters.",
+        desc: "Whole-leaf green tea naturally contains caffeine and L-theanine.",
       },
       {
         icon: "🛡️",
         title: "Antioxidant-Rich",
-        desc: "EGCG catechins are natural antioxidants that help protect cells from oxidative stress.",
+        desc: "Whole-leaf green tea contains naturally occurring catechins and polyphenols.",
       },
       {
         icon: "🏃",
@@ -1725,47 +1729,47 @@ const TEAS = [
       },
       {
         icon: "🧬",
-        title: "Long-Term Wellness",
-        desc: "Rich in polyphenols that may support healthy ageing and cognitive function over time.",
+        title: "Pure Tea Character",
+        desc: "An unblended cup for drinkers who enjoy the character of Assam whole-leaf tea.",
       },
     ],
   },
   {
     name: "Ginger Green Tea",
     short:
-      "Warming ginger blended with single-origin whole leaf green tea. Soothing, spicy, and perfect for immune support.",
-    tags: ["IMMUNITY", "WARMING"],
+      "Warming ginger blended with single-origin whole-leaf green tea. Aromatic, spicy, and perfect for a cozy tea break.",
+    tags: ["SPICY", "WARMING"],
     bg: "#fdf2e9",
     color: "#935116",
     img: "teas/ginger.webp?v=2",
     price: 499,
-    badge: "IMMUNE BOOST",
+    badge: "WARMING GINGER",
     brew: "85°C · 2–3 min · Best warm",
     benefits: [
       {
         icon: "🫚",
-        title: "Immune Support",
-        desc: "Ginger has been used for centuries as a warming herb to support the body's natural defences.",
+        title: "Ginger Aroma",
+        desc: "Ginger adds a familiar spicy aroma and a warming flavor.",
       },
       {
         icon: "🔥",
         title: "Warming & Comforting",
-        desc: "A naturally warming cup that soothes the throat and comforts the body.",
+        desc: "A hot cup with warming ginger spice and whole-leaf tea character.",
       },
       {
         icon: "😌",
-        title: "Digestive Comfort",
-        desc: "Ginger is traditionally used to ease nausea, motion sickness, and digestive discomfort.",
+        title: "After-Meal Tea Ritual",
+        desc: "Enjoy the spicy flavor as a tea break after meals.",
       },
       {
         icon: "💪",
-        title: "Anti-Inflammatory",
-        desc: "Ginger contains compounds that may help reduce inflammation and ease muscle soreness.",
+        title: "Spicy Botanical Blend",
+        desc: "Botanical ginger and whole-leaf Assam tea create a warm, spicy blend.",
       },
       {
         icon: "🩺",
-        title: "Metabolic Wellness",
-        desc: "Ginger is traditionally used to support healthy blood sugar levels and vascular function.",
+        title: "Whole-Leaf Character",
+        desc: "Whole-leaf green tea provides a fresh base for the ginger spice.",
       },
     ],
   },
@@ -2157,7 +2161,7 @@ function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
             "Ginger Green Tea": "GINGER",
           };
           const s = m[e.name];
-          if (s && typeof fbq !== "undefined") {
+          if (s && typeof fbq === "function" && window.hasNevisanConsent?.()) {
             fbq("track", "ViewContent", {
               content_ids: [s],
               content_type: "product",
@@ -6546,7 +6550,7 @@ const ritualTeas = {
       { p: 0.15, text: "Pouring boiling 100°C water... activating chamomile blossom oils." },
       { p: 0.40, text: "Honeyed apple fragrance expanding... soothing visual dispersion." },
       { p: 0.70, text: "Warm chamomile extracts and organic base blending fully." },
-      { p: 0.95, text: "Infusion complete. A sunny, completely caffeine-free sleep ritual." }
+      { p: 0.95, text: "Infusion complete. A sunny floral cup. This green-tea blend contains caffeine." }
     ]
   }
 };
@@ -7019,31 +7023,31 @@ function FAQSection() {
   const { isMobile: e } = useViewport(),
     [t, a] = useState(null);
       const frontFaqs = [
-    {
-      q: "Why is Nevisan Green Tea considered the best green tea available in the market?",
-      a: "Nevisan is superior to commercial supermarket tea in 6 key ways: 1) 100% Whole Intact Leaves (never pulverized CTC dust or paper bag fannings); 2) Single-Origin PGS-India Certified Organic Garden in Golaghat, Assam (100% pesticide-free); 3) Triple-Steeping (2–3 infusions per teaspoon, delivering 50–75 cups per pack at just ₹6–8/cup); 4) Naturally Low Caffeine (15–25mg) paired with high natural L-theanine for calm focus with zero jitters or crashes; 5) Real Farm Botanicals (whole chamomile flowers, spearmint for PCOS, butterfly pea, active gingerols); 6) Lab-Tested Pure Nutrition (0g sugar, 0g fat, 0g carbs, <1 kcal brewed).",
-    },
-    {
-      q: "Does Nevisan tea contain caffeine, and what are the nutritional values?",
-      a: "Nevisan whole-leaf green tea has naturally low caffeine (only 15–25mg per cup, about 1/5th of a cup of coffee) combined with high L-theanine for sustained calm focus with zero jitters or crashes. When brewed in hot water, every cup has Nil Fat (0g), Nil Carbohydrates (0g), Nil Sugar (0g), and Trace Calories (<1 kcal), making it 100% keto, diabetic, and fasting-friendly.",
-    },
-    {
-      q: "Where is Nevisan tea grown, and is it 100% chemical-free?",
-      a: "Every batch comes from our single-origin garden in Golaghat, upper Assam — a mineral-rich terroir in the Brahmaputra valley. All our teas are PGS-India organic certified and 100% free from synthetic pesticides, herbicides, and artificial flavors.",
-    },
-    {
-      q: "How do I brew whole-leaf green tea for the best taste?",
-      a: "Use 2 to 2.5g (about 1 teaspoon) of tea per cup in hot water at 85°C–90°C (just prior to a rolling boil). Steep for 1.5 to 2 minutes. Whole leaves release flavor gradually without bitterness.",
-    },
-    {
-      q: "Can I really steep Nevisan whole-leaf tea multiple times?",
-      a: "Yes! Because the leaf remains intact, different layers of flavor and aroma extract over consecutive brews. The second steep is often smoother, sweeter, and even lower in caffeine, giving you 50–75 cups from a single 50g pack.",
-    },
-    {
-      q: "Which Nevisan tea variety is best for my daily routine?",
-      a: "For morning digestion and energy: Lemongrass Green or Organic Green. For hormonal balance and PCOS: Spearmint Green. For calm sleep and relaxation: GABA Oolong or Chamomile Green. For stress relief: Tulsi Green. For a zero-alcohol evening drink: Rum or Whiskey Green.",
-    },
-  ];
+  {
+    "q": "What makes Nevisan whole-leaf tea distinctive?",
+    "a": "Nevisan offers whole-leaf teas sourced from Golaghat, Assam, with botanical blends including lemongrass, spearmint, tulsi and chamomile. Explore each pack for its ingredients, origin and brewing instructions."
+  },
+  {
+    "q": "Does Nevisan tea contain caffeine?",
+    "a": "Blends containing green tea or oolong naturally contain caffeine. The amount in your cup varies with the leaves, serving size and preparation. Adding herbs or flowers does not make a green-tea blend caffeine-free."
+  },
+  {
+    "q": "Where is Nevisan tea grown?",
+    "a": "Our whole-leaf tea is sourced from Golaghat in Assam. Each blend pairs that tea with its own botanical ingredients or leaves it unblended for a classic cup."
+  },
+  {
+    "q": "How do I brew whole-leaf green tea for the best taste?",
+    "a": "Follow the temperature, leaf quantity and steeping time on your chosen pack. Avoid boiling water for green tea and adjust your steeping time to taste."
+  },
+  {
+    "q": "Can I steep Nevisan whole-leaf tea more than once?",
+    "a": "Yes, you can re-steep whole leaves with fresh hot water. The flavor changes between infusions; follow the pack instructions and adjust each steep to your preference."
+  },
+  {
+    "q": "Which Nevisan tea variety suits my daily routine?",
+    "a": "Choose Lemongrass for citrus notes, Spearmint for cool mint, Tulsi for herbal aroma, Chamomile for a floral cup, GABA Oolong for a mellow flavor, and Ginger for spice. Rum and Whiskey blends offer distinctive non-alcoholic flavors. Consider the caffeine content when choosing your serving time."
+  }
+];
 
   return React.createElement(
     "section",
@@ -7645,7 +7649,7 @@ function OurStoryPage({ setPage: e }) {
             {
               num: "03",
               title: "The Alchemy of Flavor & Function",
-              desc: "We believe wellness shouldn't taste boring. We take our clean orthodox tea and blend it with organic botanicals—like Spearmint to balance hormones, GABA Oolong to calm an overactive mind, and pure Chamomile to restore sleep. Then, we add a touch of gourmet sophistication—infusing our leaves with rich, warm, non-alcoholic notes of charred oak Whiskey and sugarcane Rum.",
+              desc: "We believe tea should be full of character. Our whole-leaf blends offer cool Spearmint, mellow GABA Oolong, soft Chamomile flowers, and bold, non-alcoholic Whiskey and Rum notes. Choose the flavor that fits your tea ritual.",
             },
           ].map((item, idx) =>
             React.createElement(
@@ -9761,39 +9765,25 @@ function CookieConsentBanner() {
   const [visible, setVisible] = React.useState(false);
 
   React.useEffect(() => {
-    try {
-      const consent = localStorage.getItem("nevisan_cookie_consent");
-      if (!consent) {
-        const timer = setTimeout(() => setVisible(true), 1200);
-        return () => clearTimeout(timer);
-      }
-    } catch (e) {}
+    let consent = null;
+    try { consent = localStorage.getItem("nevisan_cookie_consent"); } catch (e) {}
+    let timer;
+    if (consent !== "accepted" && consent !== "declined") {
+      timer = setTimeout(() => setVisible(true), 1200);
+    }
+    const hide = () => { clearTimeout(timer); setVisible(false); };
+    window.addEventListener("nevisan-consent-change", hide);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("nevisan-consent-change", hide);
+    };
   }, []);
 
   const handleConsent = (accepted) => {
-    try {
-      if (typeof window.updateNevisanConsent === "function") {
-        window.updateNevisanConsent(accepted);
-      } else {
-        localStorage.setItem("nevisan_cookie_consent", accepted ? "accepted" : "declined");
-        if (typeof gtag === "function") {
-          gtag("consent", "update", {
-            ad_storage: accepted ? "granted" : "denied",
-            analytics_storage: accepted ? "granted" : "denied",
-            ad_user_data: accepted ? "granted" : "denied",
-            ad_personalization: accepted ? "granted" : "denied",
-          });
-        }
-        if (typeof fbq === "function") {
-          if (accepted) {
-            fbq("consent", "grant");
-          } else {
-            fbq("consent", "revoke");
-          }
-        }
-      }
-    } catch (e) {}
-    setVisible(false);
+    if (typeof window.updateNevisanConsent === "function") {
+      window.updateNevisanConsent(accepted);
+      setVisible(false);
+    }
   };
 
   if (!visible) return null;
@@ -9931,6 +9921,7 @@ function App() {
         React.createElement(CursorGlow, { "aria-hidden": "true" }),
         React.createElement(Nav, { page: e, setPage: i }),
         React.createElement("main", { id: "main-content" }, r),
+        React.createElement(CookieConsentBanner, null),
         React.createElement(CartFAB, null),
         React.createElement(WhatsAppFAB, null),
       ),
@@ -10258,7 +10249,7 @@ function CartSheet({ onClose: e }) {
                   const skus = t
                     .map((item) => m[item.tea.name])
                     .filter(Boolean);
-                  if (skus.length > 0 && typeof fbq !== "undefined") {
+                  if (skus.length > 0 && typeof fbq === "function" && window.hasNevisanConsent?.()) {
                     fbq("track", "InitiateCheckout", {
                       content_ids: skus,
                       content_type: "product",
@@ -10281,7 +10272,6 @@ function CartSheet({ onClose: e }) {
                   `https://wa.me/919864245687?text=${encodeURIComponent(`Hi Nevisan! I'd like to place an order:\n\n${a}\n\nTotal: ₹${o} (${i} packs × 50gm)\n\nPlease confirm my order and share delivery details.`)}`,
                   "_blank", "noopener,noreferrer",
                 ),
-                  n(),
                   e());
               },
               style: {

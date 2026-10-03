@@ -1,6 +1,6 @@
 /**
- * Nevisan Tea — Universal Cookie Consent & Google Consent Mode v2
- * Enforces Consent Mode v2 defaults and Meta Pixel consent site-wide.
+ * Nevisan Tea — Universal Cookie Consent & Analytics Gating
+ * Google Consent Mode v2 & Meta Pixel Bootstrap
  */
 (function() {
   var userConsent = null;
@@ -8,7 +8,7 @@
     userConsent = localStorage.getItem('nevisan_cookie_consent');
   } catch(e) {}
 
-  // 1. Google Consent Mode v2 Default (MUST run before gtag/GTM)
+  // 1. Google Consent Mode v2 Default (MUST run before any tags fire)
   window.dataLayer = window.dataLayer || [];
   function gtag(){ window.dataLayer.push(arguments); }
   window.gtag = window.gtag || gtag;
@@ -21,19 +21,17 @@
     'wait_for_update': 500
   });
 
-  // 2. Meta Pixel Consent Stub & Revocation before init
-  if (!window.fbq) {
-    var fbq = function() {
-      fbq.callMethod ? fbq.callMethod.apply(fbq, arguments) : fbq.queue.push(arguments);
-    };
-    if (!window._fbq) window._fbq = fbq;
-    fbq.push = fbq;
-    fbq.loaded = false;
-    fbq.version = '2.0';
-    fbq.queue = [];
-    window.fbq = fbq;
-  }
+  // 2. Official Meta Pixel Bootstrap & Prior-Consent Gating
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
 
+  // Enforce consent gating before any tracking events
   if (userConsent === 'accepted') {
     window.fbq('consent', 'grant');
   } else {

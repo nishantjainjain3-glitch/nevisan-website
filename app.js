@@ -1399,7 +1399,7 @@ const TEAS = [
       },
       {
         icon: "🔥",
-        title: "Metabolism Support",
+        title: "Green Tea Character",
         desc: "Natural citral in lemongrass may help support healthy metabolic function.",
       },
       {
@@ -1533,7 +1533,7 @@ const TEAS = [
       {
         icon: "🌸",
         title: "Gentle & Soothing",
-        desc: "Spearmint has been used for centuries as a calming, anti-inflammatory herb.",
+        desc: "Spearmint has a long tradition as a cool, aromatic herb with a naturally refreshing character.",
       },
     ],
   },
@@ -1541,18 +1541,18 @@ const TEAS = [
     name: "Tulsi Green Tea",
     short:
       "Holy basil and Assam green. What we brew when life gets a little much.",
-    tags: ["IMMUNITY", "STRESS"],
+    tags: ["TULSI", "HERBAL"],
     bg: "#d4edd8",
     color: "#3a7a50",
     img: "teas/tulsi.webp?v=2",
     price: 499,
-    badge: "DAILY IMMUNITY",
+    badge: "AYURVEDIC HERBAL",
     brew: "90°C · 3–4 min · Best plain or with honey",
     benefits: [
       {
         icon: "🛡️",
-        title: "Immunity Support",
-        desc: "Tulsi (Holy Basil) has a long history in Ayurvedic tradition. A warming, herbaceous infusion with a distinctive clove-like aroma.",
+        title: "Seasonal Wellness Ritual",
+        desc: "Tulsi (Holy Basil) has a long history in Ayurvedic tea traditions and brings a warming, herbaceous cup with a distinctive clove-like aroma.",
       },
       {
         icon: "🧘",
@@ -1566,13 +1566,13 @@ const TEAS = [
       },
       {
         icon: "🩸",
-        title: "Metabolic Wellness",
-        desc: "Tulsi is traditionally used to support healthy blood sugar levels as part of a balanced lifestyle.",
+        title: "Everyday Botanical Ritual",
+        desc: "Tulsi is widely enjoyed in everyday Ayurvedic-inspired tea routines for its distinctive herbal character.",
       },
       {
         icon: "🌱",
-        title: "Liver & Wellness",
-        desc: "Tulsi has been used in Ayurvedic practice to support liver function and overall well-being.",
+        title: "Herbal Tradition",
+        desc: "Tulsi has been enjoyed in Ayurvedic practice for generations as a warm, grounding herbal beverage.",
       },
     ],
   },
@@ -1580,38 +1580,38 @@ const TEAS = [
     name: "Chamomile Green Tea",
     short:
       "Our wind-down cup. Soft, floral, and made for slow evenings and deeper sleep.",
-    tags: ["SLEEP", "CALMING"],
+    tags: ["FLORAL", "EVENING"],
     bg: "#f5e9a0",
     color: "#8a6a10",
     img: "teas/chamomile.webp?v=2",
     price: 499,
-    badge: "SLEEP & CALM",
+    badge: "EVENING FLORAL",
     brew: "85°C · 4 min · Best before bed",
     benefits: [
       {
         icon: "😴",
         title: "Relaxing Evening Tea",
-        desc: "Chamomile is a time-honoured herb traditionally used to promote relaxation and restful sleep.",
+        desc: "Chamomile is a time-honoured flower commonly enjoyed in gentle evening tea rituals.",
       },
       {
         icon: "😌",
         title: "Calm & Gentle",
-        desc: "A soothing, caffeine-free cup that helps you unwind without drowsiness during the day.",
+        desc: "A soft floral cup designed for slow, easy tea moments.",
       },
       {
         icon: "🫀",
-        title: "Heart-Friendly",
-        desc: "Chamomile contains antioxidants that may support cardiovascular wellness as part of a balanced diet.",
+        title: "Floral Antioxidants",
+        desc: "Chamomile flowers naturally contain plant compounds that complement the green tea base.",
       },
       {
         icon: "🍽️",
         title: "Digestive Comfort",
-        desc: "Traditionally used to soothe stomach discomfort and aid digestion after meals.",
+        desc: "A gentle floral tea that many people enjoy after meals.",
       },
       {
         icon: "🧴",
         title: "Gentle on the Body",
-        desc: "Chamomile's anti-inflammatory properties have been valued for centuries for skin and body comfort.",
+        desc: "Whole chamomile flowers contribute a naturally soft aroma and mellow character.",
       },
     ],
   },
@@ -1638,8 +1638,8 @@ const TEAS = [
       },
       {
         icon: "🔥",
-        title: "Metabolism Support",
-        desc: "Green tea catechins may help support healthy metabolic function as part of an active lifestyle.",
+        title: "Green Tea Character",
+        desc: "Whole-leaf Assam green tea provides the clean, structured base beneath the smoky botanical notes.",
       },
       {
         icon: "🧠",
@@ -1661,7 +1661,7 @@ const TEAS = [
     color: "#1b7a82",
     img: "teas/gaba.webp?v=2",
     price: 499,
-    badge: "STRESS RELIEF",
+    badge: "CALM FOCUS",
     brew: "85°C · 3 min · Nitrogen-anaerobic processed",
     benefits: [
       {
@@ -1686,8 +1686,8 @@ const TEAS = [
       },
       {
         icon: "❤️",
-        title: "Heart Wellness",
-        desc: "GABA oolong is traditionally enjoyed as part of a heart-healthy lifestyle.",
+        title: "Whole-Leaf Oolong",
+        desc: "Nitrogen-processed whole-leaf oolong creates a distinctive mellow tea with a smooth finish.",
       },
     ],
   },
@@ -1734,18 +1734,18 @@ const TEAS = [
     name: "Ginger Green Tea",
     short:
       "Warming ginger blended with single-origin whole leaf green tea. Soothing, spicy, and perfect for immune support.",
-    tags: ["IMMUNITY", "WARMING"],
+    tags: ["GINGER", "WARMING"],
     bg: "#fdf2e9",
     color: "#935116",
     img: "teas/ginger.webp?v=2",
     price: 499,
-    badge: "IMMUNE BOOST",
+    badge: "WARMING GINGER",
     brew: "85°C · 2–3 min · Best warm",
     benefits: [
       {
         icon: "🫚",
-        title: "Immune Support",
-        desc: "Ginger has been used for centuries as a warming herb to support the body's natural defences.",
+        title: "Warming Botanical",
+        desc: "Ginger has been used for centuries as a warming culinary herb with a bright, spicy aroma.",
       },
       {
         icon: "🔥",
@@ -1755,17 +1755,17 @@ const TEAS = [
       {
         icon: "😌",
         title: "Digestive Comfort",
-        desc: "Ginger is traditionally used to ease nausea, motion sickness, and digestive discomfort.",
+        desc: "A lively ginger cup that many tea drinkers enjoy after meals or while travelling.",
       },
       {
         icon: "💪",
-        title: "Anti-Inflammatory",
-        desc: "Ginger contains compounds that may help reduce inflammation and ease muscle soreness.",
+        title: "Gingerols & Shogaols",
+        desc: "Sun-dried ginger naturally contains gingerols and shogaols that contribute its warming, spicy character.",
       },
       {
         icon: "🩺",
-        title: "Metabolic Wellness",
-        desc: "Ginger is traditionally used to support healthy blood sugar levels and vascular function.",
+        title: "Everyday Botanical Ritual",
+        desc: "An unsweetened whole-leaf tea for people who enjoy a bold, warming daily cup.",
       },
     ],
   },
@@ -7021,11 +7021,11 @@ function FAQSection() {
       const frontFaqs = [
     {
       q: "Why is Nevisan Green Tea considered the best green tea available in the market?",
-      a: "Nevisan is superior to commercial supermarket tea in 6 key ways: 1) 100% Whole Intact Leaves (never pulverized CTC dust or paper bag fannings); 2) Single-Origin PGS-India Certified Organic Garden in Golaghat, Assam (100% pesticide-free); 3) Triple-Steeping (2–3 infusions per teaspoon, delivering 50–75 cups per pack at just ₹6–8/cup); 4) Naturally Low Caffeine (15–25mg) paired with high natural L-theanine for calm focus with zero jitters or crashes; 5) Real Farm Botanicals (whole chamomile flowers, spearmint for PCOS, butterfly pea, active gingerols); 6) Lab-Tested Pure Nutrition (0g sugar, 0g fat, 0g carbs, <1 kcal brewed).",
+      a: "Nevisan focuses on six practical qualities: 1) whole intact leaves rather than tea dust; 2) single-origin sourcing from Golaghat, Assam; 3) PGS-India organic certification; 4) multiple-steep whole-leaf brewing; 5) real botanicals such as whole chamomile flowers, spearmint, butterfly pea, tulsi, lemongrass, and ginger; and 6) unsweetened tea with no added sugar.",
     },
     {
       q: "Does Nevisan tea contain caffeine, and what are the nutritional values?",
-      a: "Nevisan whole-leaf green tea has naturally low caffeine (only 15–25mg per cup, about 1/5th of a cup of coffee) combined with high L-theanine for sustained calm focus with zero jitters or crashes. When brewed in hot water, every cup has Nil Fat (0g), Nil Carbohydrates (0g), Nil Sugar (0g), and Trace Calories (<1 kcal), making it 100% keto, diabetic, and fasting-friendly.",
+      a: "Caffeine varies by leaf quantity, water temperature, and steep time. Nevisan whole-leaf green teas are unsweetened and contain no added sugar. If you follow a medical diet, have diabetes, are pregnant, or are sensitive to caffeine, use nutrition and caffeine guidance from your healthcare professional.",
     },
     {
       q: "Where is Nevisan tea grown, and is it 100% chemical-free?",
@@ -7041,7 +7041,7 @@ function FAQSection() {
     },
     {
       q: "Which Nevisan tea variety is best for my daily routine?",
-      a: "For morning digestion and energy: Lemongrass Green or Organic Green. For hormonal balance and PCOS: Spearmint Green. For calm sleep and relaxation: GABA Oolong or Chamomile Green. For stress relief: Tulsi Green. For a zero-alcohol evening drink: Rum or Whiskey Green.",
+      a: "For bright morning cups, try Lemongrass or Organic Green. For a cooling mint profile, choose Spearmint. For mellow evening flavors, try GABA Oolong or Chamomile. Tulsi offers a warm herbal character, while Rum and Whiskey Green provide zero-alcohol, spirit-inspired evening flavors.",
     },
   ];
 

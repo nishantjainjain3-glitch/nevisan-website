@@ -10,49 +10,12 @@
   <link rel="preload" as="image" href="/hero-mobile.webp?v=2" media="(max-width: 768px)" fetchpriority="high">
   <link rel="preload" as="image" href="https://nevisan.in/hero-bg.jpg" media="(min-width: 769px)" fetchpriority="high">
 
-  <link rel="alternate" type="application/ld+json" href="/llms-full.txt" title="LLMs Full Context">
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLMs Full Context">
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs Context">
 <meta charset="UTF-8">
 <link rel="manifest" href="manifest.json">
-<!-- Google Consent Mode v2 Setup -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-
-  var userConsent = null;
-  try {
-    userConsent = localStorage.getItem('nevisan_cookie_consent');
-  } catch(e) {}
-
-  gtag('consent', 'default', {
-    'ad_storage': userConsent === 'accepted' ? 'granted' : 'denied',
-    'analytics_storage': userConsent === 'accepted' ? 'granted' : 'denied',
-    'ad_user_data': userConsent === 'accepted' ? 'granted' : 'denied',
-    'ad_personalization': userConsent === 'accepted' ? 'granted' : 'denied',
-    'wait_for_update': 500
-  });
-
-  window.updateNevisanConsent = function(accepted) {
-    try {
-      localStorage.setItem('nevisan_cookie_consent', accepted ? 'accepted' : 'declined');
-      gtag('consent', 'update', {
-        'ad_storage': accepted ? 'granted' : 'denied',
-        'analytics_storage': accepted ? 'granted' : 'denied',
-        'ad_user_data': accepted ? 'granted' : 'denied',
-        'ad_personalization': accepted ? 'granted' : 'denied'
-      });
-      if (typeof fbq === 'function') {
-        if (accepted) {
-          fbq('consent', 'grant');
-        } else {
-          fbq('consent', 'revoke');
-        }
-      }
-    } catch(e) {}
-    var b = document.getElementById('cookie-consent-banner');
-    if (b) b.style.display = 'none';
-  };
-</script>
+<!-- Universal Cookie Consent & Google Consent Mode v2 -->
+  <script src="/consent.js"></script>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

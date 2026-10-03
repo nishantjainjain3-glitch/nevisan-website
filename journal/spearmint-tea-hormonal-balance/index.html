@@ -422,6 +422,8 @@
   <link rel="icon" type="image/jpeg" href="/nevisan-logo.jpeg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
+  <!-- Universal Cookie Consent & Google Consent Mode v2 -->
+  <script src="/consent.js"></script>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3Q7DNWTKP"></script>
   <script>
@@ -732,6 +734,15 @@
             <p><strong>Further reading:</strong> Read our buyer's guide on the <a href="/journal/best-spearmint-tea-for-pcos-in-india/">best spearmint tea for PCOS in India</a>, follow our practical <a href="/journal/pcos-spearmint-tea-daily-routine/">30-day PCOS daily routine</a>, or explore <a href="/journal/why-whole-leaf-tea-tastes-different/">why whole leaf tea tastes different</a>.</p>
         </div>
 
+                <div class="article-section" style="background: #f8f6f2; border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin: 30px 0;">
+            <h3 style="font-size: 1.1rem; color: var(--teal); margin-bottom: 12px; font-family: 'Playfair Display', Georgia, serif;">Scientific References &amp; Clinical Sources</h3>
+            <ol style="font-size: 0.85rem; line-height: 1.6; color: var(--muted); padding-left: 20px; margin: 0;">
+                <li style="margin-bottom: 8px;">Grant P. (2010). "Spearmint herbal tea has significant anti-androgen effects in polycystic ovarian syndrome." <em>Phytotherapy Research</em>, 24(2), 186–188. <a href="https://pubmed.ncbi.nlm.nih.gov/19585478/" target="_blank" rel="noopener nofollow" style="color: var(--teal); text-decoration: underline;">PMID: 19585478</a></li>
+                <li style="margin-bottom: 8px;">Akdoğan M., Tamer M. N., Cüre E., et al. (2007). "Effect of spearmint (<em>Mentha spicata</em> Labiatae) teas on androgen levels in women with hirsutism." <em>Phytotherapy Research</em>, 21(5), 444–447. <a href="https://pubmed.ncbi.nlm.nih.gov/17310494/" target="_blank" rel="noopener nofollow" style="color: var(--teal); text-decoration: underline;">PMID: 17310494</a></li>
+                <li style="margin-bottom: 8px;">Chacko S. M., Thambi P. T., Kuttan R., &amp; Nishigaki I. (2010). "Beneficial effects of green tea: A literature review." <em>Chinese Medicine</em>, 5, 13. <a href="https://pubmed.ncbi.nlm.nih.gov/20370896/" target="_blank" rel="noopener nofollow" style="color: var(--teal); text-decoration: underline;">PMID: 20370896</a></li>
+            </ol>
+        </div>
+
         <!-- CTA Block -->
         <div class="cta-section" role="complementary">
             <h2>Experience the Hormonal-Balancing Benefits of Spearmint Tea</h2>
@@ -757,8 +768,8 @@
 <div id="cookie-consent-banner" role="region" aria-label="Cookie Consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:480px;background:#15271B;color:#F8F6F2;padding:18px 22px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:99999;border:1px solid rgba(201,168,76,0.3);font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;">
   <p style="margin:0 0 12px 0;color:#E0DDD5;font-size:16px;">We use cookies to improve your browsing experience, analyze traffic, and support secure order processing in accordance with our <a href="/privacy-policy.html" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;justify-content:flex-end;">
-    <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','declined');" style="background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:16px;cursor:pointer;">Decline</button>
-    <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','accepted');" style="background:#C9A84C;border:none;color:#15271B;font-weight:700;padding:8px 18px;border-radius:6px;font-size:16px;cursor:pointer;">Accept All</button>
+    <button onclick="window.updateNevisanConsent(false)" style="background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:16px;cursor:pointer;">Decline</button>
+    <button onclick="window.updateNevisanConsent(true)" style="background:#C9A84C;border:none;color:#15271B;font-weight:700;padding:8px 18px;border-radius:6px;font-size:16px;cursor:pointer;">Accept All</button>
   </div>
 </div>
 <script>

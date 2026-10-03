@@ -985,13 +985,6 @@ function Hero({ setPage: e }) {
                 src: "tea-garden.mp4",
                 type: "video/mp4",
               }),
-              React.createElement("track", {
-                kind: "captions",
-                src: "captions.vtt",
-                srcLang: "en",
-                label: "English",
-                default: !0,
-              }),
             ),
       ),
       React.createElement("div", {
@@ -9946,7 +9939,7 @@ function App() {
 }
 function CartSheet({ onClose: e }) {
   const { cart: t, updateQty: a, clearCart: n } = useCart(),
-    o = (useViewport(), t.reduce((e, t) => e + 499 * t.qty, 0)),
+    o = (useViewport(), t.reduce((e, t) => e + (t.tea.price || 499) * t.qty, 0)),
     i = t.reduce((e, t) => e + t.qty, 0);
   return ReactDOM.createPortal(
     React.createElement(

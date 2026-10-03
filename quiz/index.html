@@ -35,6 +35,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Universal Cookie Consent & Google Consent Mode v2 -->
+  <script src="/consent.js"></script>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3Q7DNWTKP"></script>
   <script>
@@ -749,8 +751,8 @@ function toggleNevisanMenu() {
       gaba: {
         name: "GABA Oolong Tea",
         img: "../teas/gaba.png",
-        benefit: "Calm Focus & Anxiety Relief",
-        desc: "Premium nitrogen-processed oolong tea with elevated natural GABA levels. Quietens mental chatter, improves sleep quality, and lowers blood pressure. A clean, amber-gold cup that acts as a natural reset button for your nervous system.",
+        benefit: "Calm Focus & Evening Relaxation",
+        desc: "Premium nitrogen-processed oolong tea with elevated natural GABA levels. Helps quiet mental chatter, supports restful evening wind-down, and eases everyday nervous tension with a clean, amber-gold cup.",
         bg: "radial-gradient(circle, #eedfc5 0%, #fff 100%)",
         amazon: "https://www.amazon.in/dp/B0GTRBXKP8",
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHHXQAGVCGGGVF"
@@ -758,8 +760,8 @@ function toggleNevisanMenu() {
       chamomile: {
         name: "Chamomile Green Tea",
         img: "../teas/chamomile.png",
-        benefit: "Restful Sleep & Anxiety Support",
-        desc: "Whole chamomile flowers blended with low-caffeine Assam green tea. Chamomile contains apigenin, which gently binds to calming receptors in the brain to reduce anxiety and prepare your body for a peaceful, deep night's sleep.",
+        benefit: "Restful Sleep & Mindful Calm",
+        desc: "Whole chamomile flowers blended with low-caffeine Assam green tea. Chamomile contains apigenin, known for soothing evening comfort and preparing your body for a peaceful, deep night's sleep.",
         bg: "radial-gradient(circle, #fffbe8 0%, #fff 100%)",
         amazon: "https://www.amazon.in/dp/B0FV2QGRBM",
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHK53HCGSRWHAH"
@@ -767,8 +769,8 @@ function toggleNevisanMenu() {
       spearmint: {
         name: "Spearmint Green Tea",
         img: "../teas/spearmint.png",
-        benefit: "PCOS, Acne & Hormonal Balance",
-        desc: "Cool, sweet spearmint blended with whole leaf green tea. Spearmint has been clinically shown to naturally lower free testosterone levels, making it a highly effective daily ritual for women managing PCOS, hormonal acne, or unwanted facial hair.",
+        benefit: "Hormonal Balance & Clear Skin",
+        desc: "Cool, sweet spearmint blended with whole-leaf green tea. Spearmint has been traditionally studied for its anti-androgenic potential, creating a refreshing daily ritual to support hormonal balance and clear skin.",
         bg: "radial-gradient(circle, #eaf6ee 0%, #fff 100%)",
         amazon: "https://www.amazon.in/dp/B0GTR2GXW2",
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHHYQNAYYQHF5P"
@@ -844,8 +846,8 @@ function toggleNevisanMenu() {
         id: 0,
         title: "1. What is your primary wellness goal?",
         options: [
-          { text: "Reduce stress, anxiety, and sleep deeper", emoji: "💆", scores: { gaba: 3, chamomile: 3, tulsi: 1 } },
-          { text: "Manage PCOS, hormonal balance, or oily skin", emoji: "🌸", scores: { spearmint: 5 } },
+          { text: "Unwind from daily stress and sleep deeper", emoji: "💆", scores: { gaba: 3, chamomile: 3, tulsi: 1 } },
+          { text: "Support hormonal balance and skin clarity", emoji: "🌸", scores: { spearmint: 5 } },
           { text: "Support digestion, ease bloating, and boost metabolism", emoji: "🍋", scores: { lemongrass: 5 } },
           { text: "Strengthen immunity, get antioxidants, and feel sharp", emoji: "🛡️", scores: { tulsi: 3, blueflower: 3, organic: 1 } },
           { text: "Activate metabolism, boost immunity, and soothe digestion", emoji: "🫚", scores: { ginger: 5 } },
@@ -1037,8 +1039,8 @@ function toggleNevisanMenu() {
 <div id="cookie-consent-banner" role="region" aria-label="Cookie Consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:480px;background:#15271B;color:#F8F6F2;padding:18px 22px;border-radius: 12px;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:99999;border:1px solid rgba(201,168,76,0.3);font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;">
   <p style="margin:0 0 12px 0;color:#E0DDD5;font-size:16px;">We use cookies to improve your browsing experience, analyze traffic, and support secure order processing in accordance with our <a href="/privacy-policy.html" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;justify-content:flex-end;">
-    <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','declined');" style="background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:16px;cursor:pointer;">Decline</button>
-    <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','accepted');" style="background:#C9A84C;border:none;color:#15271B;font-weight:700;padding:8px 18px;border-radius:6px;font-size:16px;cursor:pointer;">Accept All</button>
+    <button onclick="window.updateNevisanConsent(false)" style="background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:16px;cursor:pointer;">Decline</button>
+    <button onclick="window.updateNevisanConsent(true)" style="background:#C9A84C;border:none;color:#15271B;font-weight:700;padding:8px 18px;border-radius:6px;font-size:16px;cursor:pointer;">Accept All</button>
   </div>
 </div>
 <script>

@@ -288,13 +288,19 @@
 
             if (authCode) {
                 const storedState = sessionStorage.getItem('oauth_state');
-                if (storedState && state && state !== storedState) {
-                    renderError('invalid_state', 'OAuth state validation failed. The state parameter returned by Flipkart did not match your session state. This may indicate an expired session or unauthorized callback.');
+                if (!storedState || !state || state !== storedState) {
+                    renderError('invalid_state', 'OAuth state validation failed. The state parameter returned by Flipkart is missing or did not match your session state. This may indicate an expired session or unauthorized CSRF attempt.');
                     return;
                 }
                 sessionStorage.removeItem('oauth_state');
+                if (window.history && window.history.replaceState) {
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }
                 renderCodeSuccess(authCode, state);
             } else if (error) {
+                if (window.history && window.history.replaceState) {
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }
                 renderError(error, errorDescription);
             } else {
                 renderConnectForm();
@@ -452,7 +458,9 @@
 
                     localStorage.setItem('flipkart_client_id', clientId);
 
-                    const stateToken = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+                    const randomBytes = new Uint8Array(24);
+                    (window.crypto || window.msCrypto).getRandomValues(randomBytes);
+                    const stateToken = Array.from(randomBytes, b => b.toString(16).padStart(2, '0')).join('');
                     sessionStorage.setItem('oauth_state', stateToken);
 
                     const redirectUri = 'https://nevisan.in/oauth/callback/';

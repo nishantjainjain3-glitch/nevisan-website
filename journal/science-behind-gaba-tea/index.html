@@ -412,6 +412,8 @@
   <link rel="icon" type="image/jpeg" href="/nevisan-logo.jpeg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
+  <!-- Universal Cookie Consent & Google Consent Mode v2 -->
+  <script src="/consent.js"></script>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3Q7DNWTKP"></script>
   <script>
@@ -861,6 +863,15 @@ Effects Noted:
             </section>
         </div>
 
+                <div class="article-section" style="background: #f8f6f2; border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin: 30px 0;">
+            <h3 style="font-size: 1.1rem; color: var(--teal); margin-bottom: 12px; font-family: 'Playfair Display', Georgia, serif;">Scientific References &amp; Clinical Sources</h3>
+            <ol style="font-size: 0.85rem; line-height: 1.6; color: var(--muted); padding-left: 20px; margin: 0;">
+                <li style="margin-bottom: 8px;">Yamatsu A., Nakamura Y., Sadakane M., et al. (2016). "Effect of oral γ-aminobutyric acid (GABA) administration on sleep and its absorption in humans." <em>Food Science and Biotechnology</em>, 25(2), 547–551. <a href="https://pubmed.ncbi.nlm.nih.gov/30263282/" target="_blank" rel="noopener nofollow" style="color: var(--teal); text-decoration: underline;">PMID: 30263282</a></li>
+                <li style="margin-bottom: 8px;">Boonstra E., de Kleijn R., Colzato L. S., et al. (2015). "Neurotransmitters as food supplements: the effects of GABA on brain and behavior." <em>Frontiers in Psychology</em>, 6, 1520. <a href="https://pubmed.ncbi.nlm.nih.gov/26500580/" target="_blank" rel="noopener nofollow" style="color: var(--teal); text-decoration: underline;">PMID: 26500580</a></li>
+                <li style="margin-bottom: 8px;">Hepsomali P., Groeger J. A., Nishihira J., &amp; Scholey A. (2020). "Effects of Oral Gamma-Aminobutyric Acid (GABA) Administration on Stress and Sleep in Humans: A Systematic Review." <em>Frontiers in Neuroscience</em>, 14, 923. <a href="https://pubmed.ncbi.nlm.nih.gov/33041775/" target="_blank" rel="noopener nofollow" style="color: var(--teal); text-decoration: underline;">PMID: 33041775</a></li>
+            </ol>
+        </div>
+
         <!-- CTA Block -->
         <div class="cta-section" role="complementary">
             <h2>Ready to Experience the Calm Focus of GABA Tea?</h2>
@@ -886,8 +897,8 @@ Effects Noted:
 <div id="cookie-consent-banner" role="region" aria-label="Cookie Consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:480px;background:#15271B;color:#F8F6F2;padding:18px 22px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:99999;border:1px solid rgba(201,168,76,0.3);font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;">
   <p style="margin:0 0 12px 0;color:#E0DDD5;font-size:16px;">We use cookies to improve your browsing experience, analyze traffic, and support secure order processing in accordance with our <a href="/privacy-policy.html" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;justify-content:flex-end;">
-    <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','declined');" style="background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:16px;cursor:pointer;">Decline</button>
-    <button onclick="document.getElementById('cookie-consent-banner').style.display='none';localStorage.setItem('nevisan_cookie_consent','accepted');" style="background:#C9A84C;border:none;color:#15271B;font-weight:700;padding:8px 18px;border-radius:6px;font-size:16px;cursor:pointer;">Accept All</button>
+    <button onclick="window.updateNevisanConsent(false)" style="background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:16px;cursor:pointer;">Decline</button>
+    <button onclick="window.updateNevisanConsent(true)" style="background:#C9A84C;border:none;color:#15271B;font-weight:700;padding:8px 18px;border-radius:6px;font-size:16px;cursor:pointer;">Accept All</button>
   </div>
 </div>
 <script>

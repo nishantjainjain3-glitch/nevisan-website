@@ -79,6 +79,7 @@ function useInView(e = 0.15) {
     useEffect(() => {
       const a = t.current;
       if (!a) return;
+      if (typeof IntersectionObserver !== "function") { n(!0); return; }
       const o = new IntersectionObserver(
         ([e]) => {
           e.isIntersecting && (n(!0), o.disconnect());
@@ -95,7 +96,7 @@ function useGsapReveal() {
   return (
     useEffect(() => {
       const t = e.current;
-      if (!t) return;
+      if (!t || typeof gsap === "undefined" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       const a = t.querySelectorAll("[data-gsap-reveal]");
       if (!a.length) return;
       const n = gsap.context(() => {
@@ -455,6 +456,7 @@ function Nav({ page: e, setPage: t }) {
       {
         role: "navigation",
         "aria-label": "Main navigation",
+        className: "premium-nav",
         style: {
           position: "fixed",
           top: 0,
@@ -530,7 +532,7 @@ function Nav({ page: e, setPage: t }) {
                     key: item.label,
                     href: item.href,
                     style: {
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
                       fontSize: 14.5,
                       fontWeight: 500,
                       color: item.label.includes("★") ? "#D4AF37" : "rgba(255,255,255,0.85)",
@@ -554,7 +556,7 @@ function Nav({ page: e, setPage: t }) {
                   style: {
                     background: "none",
                     border: "none",
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontSize: 14.5,
                     fontWeight: 500,
                     color: e === item.id ? T.gold : "rgba(255,255,255,0.85)",
@@ -586,7 +588,7 @@ function Nav({ page: e, setPage: t }) {
                   fontSize: 14,
                   fontWeight: 700,
                   cursor: "pointer",
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                   whiteSpace: "nowrap",
                   transition: "transform 200ms, box-shadow 200ms",
                   boxShadow: "0 2px 12px rgba(201,168,76,0.35)",
@@ -623,7 +625,7 @@ function Nav({ page: e, setPage: t }) {
                   fontSize: 13.5,
                   fontWeight: 600,
                   cursor: "pointer",
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   display: "flex",
                   alignItems: "center",
                   gap: 4,
@@ -807,7 +809,7 @@ function Nav({ page: e, setPage: t }) {
                   fontSize: 15,
                   fontWeight: 700,
                   cursor: "pointer",
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -830,7 +832,7 @@ function Nav({ page: e, setPage: t }) {
                   fontSize: 15,
                   fontWeight: 700,
                   cursor: "pointer",
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                 },
               },
               "💬 Order on WhatsApp",
@@ -871,7 +873,7 @@ function Ticker() {
           {
             key: t,
             style: {
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: 16,
               fontWeight: 600,
               letterSpacing: "0.12em",
@@ -894,55 +896,7 @@ function Ticker() {
   );
 }
 function Hero({ setPage }) {
-  return React.createElement(
-    "section",
-    { className: "premium-hero", "aria-labelledby": "premium-hero-title" },
-    React.createElement(
-      "div",
-      { className: "premium-hero__inner" },
-      React.createElement(
-        "div",
-        { className: "premium-hero__copy" },
-        React.createElement("p", { className: "premium-hero__eyebrow" }, "FROM GOLAGHAT, ASSAM"),
-        React.createElement(
-          "h1",
-          { id: "premium-hero-title", className: "premium-hero__title" },
-          "Tea worth",
-          React.createElement("br"),
-          React.createElement("em", null, "slowing down for.")
-        ),
-        React.createElement(
-          "p",
-          { className: "premium-hero__description" },
-          "Whole-leaf teas from a single origin in Assam. Discover ten distinctive varieties, and make a little room for your daily tea ritual."
-        ),
-        React.createElement(
-          "div",
-          { className: "premium-hero__actions" },
-          React.createElement("button", { type: "button", className: "premium-hero__shop", onClick: () => setPage("Collection") }, "Shop the Collection", React.createElement("span", { "aria-hidden": "true" }, " →")),
-          React.createElement("button", { type: "button", className: "premium-hero__story", onClick: () => setPage("Our Story") }, "Our Assam Story")
-        ),
-        React.createElement(
-          "ul",
-          { className: "premium-hero__details", "aria-label": "Our tea collection" },
-          ["Whole leaf", "Single origin", "Ten varieties"].map(detail => React.createElement("li", { key: detail }, detail))
-        )
-      ),
-      React.createElement(
-        "figure",
-        { className: "premium-hero__figure" },
-        React.createElement("a", { href: "/products/gaba-oolong-tea/", className: "premium-hero__image-link", "aria-label": "Discover GABA Oolong Tea" },
-          React.createElement("img", { src: "/teas/gaba-lifestyle.webp", alt: "Nevisan GABA Oolong Tea with a golden cup of tea in a sunlit setting", width: 1254, height: 1254, fetchPriority: "high", decoding: "async", className: "premium-hero__image" })
-        ),
-        React.createElement(
-          "figcaption",
-          { className: "premium-hero__caption" },
-          React.createElement("div", null, React.createElement("span", { className: "premium-hero__caption-label" }, "DISCOVER THE COLLECTION"), React.createElement("a", { href: "/products/gaba-oolong-tea/", className: "premium-hero__product" }, "GABA Oolong Tea")),
-          React.createElement("a", { href: "/products/gaba-oolong-tea/", className: "premium-hero__discover", "aria-label": "View GABA Oolong Tea" }, "Explore →")
-        )
-      )
-    )
-  );
+  return React.createElement(NevisanPremium.Hero, { setPage });
 }
 function RippleButton({
   children: e,
@@ -1395,7 +1349,7 @@ function TagChip({ label: e, color: t }) {
     "span",
     {
       style: {
-        fontFamily: "'Inter'",
+        fontFamily: "'Plus Jakarta Sans'",
         fontSize: 16,
         fontWeight: 600,
         letterSpacing: "0.08em",
@@ -1474,7 +1428,7 @@ function BuyModal({ tea: e, onClose: t }) {
               "span",
               {
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   fontWeight: 700,
                   letterSpacing: "0.12em",
@@ -1549,7 +1503,7 @@ function BuyModal({ tea: e, onClose: t }) {
                 display: "flex",
                 alignItems: "center",
                 gap: 14,
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
                 transition: "filter 0.2s",
               },
               onMouseEnter: (e) => (e.currentTarget.style.filter = "brightness(1.08)"),
@@ -1596,7 +1550,7 @@ function BuyModal({ tea: e, onClose: t }) {
                 display: "flex",
                 alignItems: "center",
                 gap: 14,
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
                 transition: "filter 0.2s",
               },
               onMouseEnter: (e) => (e.currentTarget.style.filter = "brightness(1.08)"),
@@ -1640,7 +1594,7 @@ function BuyModal({ tea: e, onClose: t }) {
                 display: "flex",
                 alignItems: "center",
                 gap: 14,
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
                 transition: "filter 0.2s",
               },
               onMouseEnter: (e) => (e.currentTarget.style.filter = "brightness(1.08)"),
@@ -1671,447 +1625,9 @@ function BuyModal({ tea: e, onClose: t }) {
 }
 
 
-function TeaCard({ tea: e, onView: t, onImageClick: a, index: n = 0 }) {
-  const { isMobile: mobile } = useViewport();
-  const [o, i] = useState(!1),
-    [r, l] = useState(!1),
-    [s, c] = useState({ x: 0, y: 0 }),
-    [d, m] = useState(!1),
-    [p, g] = useInView(0.1);
-  const profiles = {
-    "GABA Oolong Tea": {
-      palate: "Malty, Wild Honey, Stone Fruit",
-      brew: "85°C · 3 Mins · 3 Steeps",
-      badge: "Signature Reserve"
-    },
-    "Lemongrass Green Tea": {
-      palate: "Crisp Citrus, Grassy, Mild Sweetness",
-      brew: "90°C · 2–3 Mins · 2 Steeps",
-      badge: "Citrus Digestion"
-    },
-    "Spearmint Green Tea": {
-      palate: "Refreshing Mint, Clean Finish",
-      brew: "85°C · 2 Mins · Cooling",
-      badge: "Cooling Mint"
-    },
-    "Rum Green Tea": {
-      palate: "Spiced Rum, Sugarcane, Oak",
-      brew: "90°C · 3 Mins · Hot or Iced",
-      badge: "Spiced Rum Botanicals"
-    },
-    "Whiskey Green Tea": {
-      palate: "Oaky Smoke, Malt, Sweetness",
-      brew: "90°C · 3 Mins · Bold",
-      badge: "Smoky Oak Reserve"
-    },
-    "Blue Flower Green Tea": {
-      palate: "Cobalt Blue, Mild Floral, Sweet",
-      brew: "85°C · 2–3 Mins · No Milk",
-      badge: "Color Magic"
-    },
-    "Tulsi Green Tea": {
-      palate: "Spicy Tulsi, Herbaceous Warmth",
-      brew: "90°C · 3–4 Mins · Ayurvedic",
-      badge: "Ayurvedic Classic"
-    },
-    "Chamomile Green Tea": {
-      palate: "Honeyed Apples, Sweet Floral",
-      brew: "85°C · 4 Mins · Bedtime",
-      badge: "Bedtime Floral"
-    },
-    "Organic Green Tea": {
-      palate: "Vegetal, Umami, Clean Grassy",
-      brew: "80°C · 2 Mins · Pure Leaf",
-      badge: "Estate Organic"
-    },
-    "Ginger Green Tea": {
-      palate: "Spicy Ginger, Honeyed Warmth",
-      brew: "85°C · 2–3 Mins · Warming",
-      badge: "Warming Wellness"
-    },
-    "GABA Oolong Tea": {
-      palate: "Stone-fruit, Toasty Amber, Smooth Honey",
-      brew: "85°C · 2 Mins · Nitrogen Fermented",
-      badge: "Artisan Oolong"
-    }
-  };
-  const prof = profiles[e.name] || {
-    palate: "Malty, Sweet, Smooth",
-    brew: e.brew || "85°C · 2 Mins",
-    badge: e.badge || "Organic Reserve"
-  };
-  const f = useCallback((e) => {
-    if (!p.current) return;
-    const t = p.current.getBoundingClientRect();
-    c({
-      x: 10 * ((e.clientX - t.left) / t.width - 0.5),
-      y: -10 * ((e.clientY - t.top) / t.height - 0.5),
-    });
-  }, []);
-
-  return React.createElement(
-    "div",
-    {
-      id: teaSlug(e.name),
-      ref: p,
-      className: "card-hover-lift",
-      onMouseEnter: () => i(!0),
-      onMouseLeave: () => {
-        (i(!1), c({ x: 0, y: 0 }), m(!1));
-      },
-      onMouseMove: f,
-      onTouchStart: () => l(!0),
-      onTouchEnd: () => l(!1),
-      onClick: () => {
-        try {
-          const m = {
-            "Lemongrass Green Tea": "KT-8GBE-8MZG",
-            "Blue Flower Green Tea": "BlueFlower-1",
-            "Rum Green Tea": "RUM-1",
-            "Spearmint Green Tea": "Spearmint",
-            "Tulsi Green Tea": "MK-H5LY-IRK3",
-            "Chamomile Green Tea": "Chamomile-1",
-            "Whiskey Green Tea": "9E-23FO-LL8Q",
-            "GABA Oolong Tea": "GABA",
-            "Organic Green Tea": "Unflavoured-1",
-            "Ginger Green Tea": "GINGER",
-          };
-          const s = m[e.name];
-          if (s && typeof fbq !== "undefined") {
-            fbq("track", "ViewContent", {
-              content_ids: [s],
-              content_type: "product",
-              value: e.price || 499,
-              currency: "INR",
-            });
-          }
-        } catch (err) {}
-        t(e);
-      },
-      style: {
-        background: "#ffffff",
-        borderRadius: 16,
-        overflow: "hidden",
-        boxShadow: o
-          ? "0 18px 45px rgba(21, 39, 27, 0.16), 0 4px 12px rgba(0,0,0,0.06)"
-          : "0 2px 10px rgba(0,0,0,0.05)",
-        border: "1px solid rgba(21, 39, 27, 0.08)",
-        transform: o
-          ? `perspective(900px) rotateX(${s.y}deg) rotateY(${s.x}deg) translateY(-5px) scale(1.01)`
-          : r
-            ? "perspective(900px) scale(0.98)"
-            : "perspective(900px) rotateX(0) rotateY(0) translateY(0) scale(1)",
-        transition: o
-          ? "box-shadow 200ms ease, transform 100ms ease"
-          : "box-shadow 300ms ease, transform 300ms ease, opacity 0.5s ease-out, translate 0.5s ease-out",
-        cursor: "pointer",
-        opacity: g ? 1 : 0,
-        translate: g ? "0 0" : "0 24px",
-        transitionDelay: 0.05 * n + "s",
-        display: "flex",
-        flexDirection: "column",
-      },
-    },
-    React.createElement(
-      "div",
-      {
-        style: {
-          background: e.bg || "#f4f6f3",
-          height: 180,
-          minHeight: 180,
-          overflow: "hidden",
-          position: "relative",
-          cursor: "zoom-in",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        },
-        onClick: (t) => {
-          t.stopPropagation();
-          a && a(e.img, e.name);
-        },
-      },
-      e.img
-        ? React.createElement("img", {
-            src: e.img,
-            alt: `${e.name} - Nevisan single origin Assam tea`,
-            loading: "lazy",
-            width: "360",
-            height: "180",
-            style: {
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              transform: o ? "scale(1.06)" : "scale(1)",
-              transition: "transform 400ms ease",
-            },
-          })
-        : React.createElement(
-            "span",
-            { style: { fontSize: 44, opacity: 0.7 } },
-            "🍃",
-          ),
-      React.createElement(
-        "div",
-        {
-          style: {
-            position: "absolute",
-            bottom: 8,
-            right: 8,
-            background: "rgba(0,0,0,0.65)",
-            color: "#fff",
-            fontSize: 11,
-            fontWeight: 600,
-            padding: "3px 8px",
-            borderRadius: 6,
-            backdropFilter: "blur(4px)",
-            letterSpacing: "0.04em",
-          },
-        },
-        "🔍 Zoom",
-      ),
-      e.bestseller &&
-        React.createElement(
-          "div",
-          {
-            style: {
-              position: "absolute",
-              top: 10,
-              right: 10,
-              background: T.gold,
-              color: T.tealDark,
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: "0.08em",
-              padding: "4px 9px",
-              borderRadius: 9999,
-              boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
-            },
-          },
-          "★ BESTSELLER",
-        ),
-      e.badge &&
-        !e.bestseller &&
-        React.createElement(
-          "div",
-          {
-            style: {
-              position: "absolute",
-              top: 10,
-              right: 10,
-              background: "#15271B",
-              color: "#fff",
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: "0.08em",
-              padding: "4px 9px",
-              borderRadius: 9999,
-            },
-          },
-          "✓ " + e.badge,
-        ),
-    ),
-    React.createElement(
-      "div",
-      {
-        style: {
-          padding: "16px 18px 18px",
-          display: "flex",
-          flexDirection: "column",
-          flex: 1,
-        },
-      },
-      React.createElement(
-        "span",
-        {
-          style: {
-            fontFamily: "'Inter'",
-            fontSize: 12,
-            fontWeight: 700,
-            letterSpacing: "0.12em",
-            color: T.gold,
-            textTransform: "uppercase",
-            marginBottom: 4,
-          },
-        },
-        prof.badge,
-      ),
-      React.createElement(
-        "h3",
-        {
-          style: {
-            fontFamily: "'Playfair Display', Georgia, serif",
-            fontWeight: 700,
-            fontSize: 19,
-            color: "#15271B",
-            marginBottom: 6,
-            lineHeight: 1.25,
-          },
-        },
-        e.name,
-      ),
-      React.createElement(
-        "p",
-        {
-          style: {
-            fontFamily: "'Inter'",
-            fontSize: 13,
-            color: "#5C7064",
-            lineHeight: 1.45,
-            marginBottom: 12,
-            minHeight: 38,
-          },
-        },
-        e.short,
-      ),
-      React.createElement(
-        "div",
-        {
-          style: {
-            background: "#F8F6F2",
-            borderRadius: 8,
-            padding: "14px 14px",
-            marginBottom: 14,
-            fontSize: 12,
-            display: "flex",
-            flexDirection: "column",
-            gap: 6,
-          },
-        },
-        React.createElement(
-          "div",
-          { style: { display: "flex" } },
-          React.createElement("strong", { style: { width: 62, color: "#15271B", flexShrink: 0 } }, "Palate:"),
-          React.createElement("span", { style: { color: "#5C7064" } }, prof.palate),
-        ),
-        React.createElement(
-          "div",
-          { style: { display: "flex" } },
-          React.createElement("strong", { style: { width: 62, color: "#15271B", flexShrink: 0 } }, "Brewing:"),
-          React.createElement("span", { style: { color: "#5C7064" } }, prof.brew),
-        ),
-      ),
-      React.createElement(
-        "div",
-        {
-          style: {
-            marginTop: "auto",
-            borderTop: "1px solid #E2DDD5",
-            paddingTop: 12,
-          },
-        },
-        React.createElement(
-          "div",
-          {
-            style: {
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginBottom: 10,
-            },
-          },
-          React.createElement(
-            "div",
-            null,
-            React.createElement(
-              "span",
-              {
-                style: {
-                  fontFamily: "'Inter'",
-                  fontSize: 18,
-                  fontWeight: 700,
-                  color: "#15271B",
-                },
-              },
-              "₹499",
-            ),
-            React.createElement(
-              "span",
-              {
-                style: {
-                  fontFamily: "'Inter'",
-                  fontSize: 13,
-                  color: "#5C7064",
-                  marginLeft: 4,
-                },
-              },
-              "· 50g",
-            ),
-          ),
-          React.createElement(
-            "button",
-            {
-              onClick: (a) => {
-                a.stopPropagation();
-                t(e);
-              },
-              style: {
-                background: "#F4F7F4",
-                color: "#15271B",
-                border: "1.5px solid #15271B",
-                borderRadius: 8,
-                padding: "8px 16px",
-                fontSize: 14,
-                fontWeight: 600,
-                cursor: "pointer",
-                fontFamily: "'Inter'",
-                letterSpacing: "0.03em",
-                transition: "all 150ms",
-              },
-              onMouseEnter: (e) => {
-                e.currentTarget.style.background = "#15271B";
-                e.currentTarget.style.color = "#ffffff";
-              },
-              onMouseLeave: (e) => {
-                e.currentTarget.style.background = "#F4F7F4";
-                e.currentTarget.style.color = "#15271B";
-              },
-            },
-            "Details →",
-          ),
-        ),
-        React.createElement(
-          "button",
-          {
-            onClick: (e) => {
-              e.stopPropagation();
-              m(!0);
-            },
-            style: {
-              width: "100%",
-              background: "#15271B",
-              color: "#ffffff",
-              border: "none",
-              borderRadius: 8,
-              padding: "10px 12px",
-              fontSize: 16,
-              fontWeight: 600,
-              cursor: "pointer",
-              fontFamily: "'Inter'",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 6,
-              boxShadow: "0 2px 6px rgba(21, 39, 27, 0.2)",
-              transition: "filter 150ms, transform 100ms",
-            },
-            onMouseEnter: (e) => {
-              e.currentTarget.style.filter = "brightness(1.15)";
-              e.currentTarget.style.transform = "translateY(-1px)";
-            },
-            onMouseLeave: (e) => {
-              e.currentTarget.style.filter = "none";
-              e.currentTarget.style.transform = "none";
-            },
-          },
-          "Buy Now →",
-        ),
-        d && React.createElement(BuyModal, { tea: e, onClose: () => m(!1) }),
-      ),
-    ),
-  );
+function TeaCard({ tea, onView, onImageClick }) {
+  return React.createElement(NevisanPremium.TeaCard, { tea, onView, onImageClick, BuyModal });
 }
-
 function ImageLightbox({ img: e, name: t, onClose: a }) {
   return (
     useEffect(() => {
@@ -2268,7 +1784,7 @@ function CollectionPage({}) {
             "span",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
@@ -2299,7 +1815,7 @@ function CollectionPage({}) {
           "p",
           {
             style: {
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               color: T.textMuted,
               maxWidth: 480,
@@ -2341,7 +1857,7 @@ function CollectionPage({}) {
                 fontSize: 16,
                 fontWeight: 600,
                 cursor: "pointer",
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 transform: isSelected ? "scale(1.02)" : "scale(1)",
                 transition: "all 200ms ease",
               }
@@ -2502,7 +2018,7 @@ function CollectionPage({}) {
                           "span",
                           {
                             style: {
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
                               fontSize: 20,
                               fontWeight: 700,
                               color: T.teal,
@@ -2514,7 +2030,7 @@ function CollectionPage({}) {
                           "span",
                           {
                             style: {
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
                               fontSize: 16,
                               color: T.textMuted,
                             },
@@ -2594,7 +2110,7 @@ function CollectionPage({}) {
                           fontSize: 16,
                           fontWeight: 600,
                           cursor: "pointer",
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -2636,7 +2152,7 @@ function CollectionPage({}) {
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
                           },
                         },
                         "Amazon",
@@ -2660,7 +2176,7 @@ function CollectionPage({}) {
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
                           },
                         },
                         "Flipkart",
@@ -2676,7 +2192,7 @@ function CollectionPage({}) {
                       "p",
                       {
                         style: {
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
                           fontSize: 16,
                           color: T.textMuted,
                           lineHeight: 1.6,
@@ -2693,7 +2209,7 @@ function CollectionPage({}) {
                           "div",
                           {
                             style: {
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
                               fontSize: 16,
                               letterSpacing: "0.13em",
                               color: T.teal,
@@ -2735,7 +2251,7 @@ function CollectionPage({}) {
                                 "div",
                                 {
                                   style: {
-                                    fontFamily: "'Inter'",
+                                    fontFamily: "'Plus Jakarta Sans'",
                                     fontSize: 16,
                                     fontWeight: 600,
                                     color: T.text,
@@ -2747,7 +2263,7 @@ function CollectionPage({}) {
                                 "div",
                                 {
                                   style: {
-                                    fontFamily: "'Inter'",
+                                    fontFamily: "'Plus Jakarta Sans'",
                                     fontSize: 16,
                                     color: T.textMuted,
                                     lineHeight: 1.5,
@@ -2784,7 +2300,7 @@ function CollectionPage({}) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
                                 fontSize: 16,
                                 letterSpacing: "0.12em",
                                 color: T.teal,
@@ -2799,7 +2315,7 @@ function CollectionPage({}) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
                                 fontSize: 16,
                                 color: T.textMuted,
                               },
@@ -2933,7 +2449,7 @@ function CollectionPage({}) {
                         "span",
                         {
                           style: {
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
                             fontSize: 24,
                             fontWeight: 700,
                             color: T.teal,
@@ -2945,7 +2461,7 @@ function CollectionPage({}) {
                         "span",
                         {
                           style: {
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
                             fontSize: 16,
                             color: T.textMuted,
                           },
@@ -2957,7 +2473,7 @@ function CollectionPage({}) {
                       "p",
                       {
                         style: {
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
                           fontSize: 16,
                           color: T.textMuted,
                           lineHeight: 1.6,
@@ -2990,7 +2506,7 @@ function CollectionPage({}) {
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -3032,7 +2548,7 @@ function CollectionPage({}) {
                               fontSize: 16,
                               fontWeight: 600,
                               cursor: "pointer",
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
                             },
                           },
                           "Amazon",
@@ -3056,7 +2572,7 @@ function CollectionPage({}) {
                               fontSize: 16,
                               fontWeight: 600,
                               cursor: "pointer",
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
                             },
                           },
                           "Flipkart",
@@ -3089,7 +2605,7 @@ function CollectionPage({}) {
                           "div",
                           {
                             style: {
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
                               fontSize: 16,
                               letterSpacing: "0.13em",
                               color: T.teal,
@@ -3139,7 +2655,7 @@ function CollectionPage({}) {
                                   "div",
                                   {
                                     style: {
-                                      fontFamily: "'Inter'",
+                                      fontFamily: "'Plus Jakarta Sans'",
                                       fontSize: 16,
                                       fontWeight: 600,
                                       color: T.text,
@@ -3152,7 +2668,7 @@ function CollectionPage({}) {
                                   "div",
                                   {
                                     style: {
-                                      fontFamily: "'Inter'",
+                                      fontFamily: "'Plus Jakarta Sans'",
                                       fontSize: 16,
                                       color: T.textMuted,
                                       lineHeight: 1.55,
@@ -3191,7 +2707,7 @@ function CollectionPage({}) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
                                 fontSize: 16,
                                 letterSpacing: "0.12em",
                                 color: T.teal,
@@ -3206,7 +2722,7 @@ function CollectionPage({}) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
                                 fontSize: 16,
                                 color: T.textMuted,
                               },
@@ -3394,7 +2910,7 @@ function PhilosophySection() {
           {
             "data-gsap-reveal": !0,
             style: {
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               fontWeight: 600,
               letterSpacing: "0.16em",
@@ -3427,7 +2943,7 @@ function PhilosophySection() {
           {
             "data-gsap-reveal": !0,
             style: {
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               color: "rgba(255,255,255,0.72)",
               lineHeight: 1.75,
@@ -3465,7 +2981,7 @@ function PhilosophySection() {
               {
                 key: e,
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   fontWeight: 500,
                   letterSpacing: "0.08em",
@@ -3554,7 +3070,7 @@ function PhilosophySection() {
                 "div",
                 {
                   style: {
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     color: "rgba(255,255,255,0.65)",
                     lineHeight: 1.6,
@@ -3650,7 +3166,7 @@ function BuyCard({ c: e, inView: t, index: a }) {
       "p",
       {
         style: {
-          fontFamily: "'Inter'",
+          fontFamily: "'Plus Jakarta Sans'",
           fontSize: 16,
           color: e.primary ? "rgba(255,255,255,0.75)" : T.textMuted,
           marginBottom: 28,
@@ -3673,7 +3189,7 @@ function BuyCard({ c: e, inView: t, index: a }) {
           fontSize: 16,
           fontWeight: 600,
           cursor: "pointer",
-          fontFamily: "'Inter'",
+          fontFamily: "'Plus Jakarta Sans'",
           display: "flex",
           marginTop: "auto",
           alignItems: "center",
@@ -3744,7 +3260,7 @@ function WhereToBuy() {
           "span",
           {
             style: {
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               fontWeight: 600,
               letterSpacing: "0.14em",
@@ -3775,7 +3291,7 @@ function WhereToBuy() {
         "p",
         {
           style: {
-            fontFamily: "'Inter'",
+            fontFamily: "'Plus Jakarta Sans'",
             fontSize: 16,
             color: T.textMuted,
             marginBottom: n ? 36 : 56,
@@ -3798,7 +3314,7 @@ function WhereToBuy() {
             key: e.name,
             c: e,
             inView: t, index: a, }), ), ),
-React.createElement("div", { style: { textAlign: "center", marginTop: 48, marginBottom: 32 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "14px 32px", fontFamily: "'Inter'", fontSize: 16, fontWeight: 600, textDecoration: "none", cursor: "pointer" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "View All 380+ Customer Reviews", React.createElement("span", null, "→"))),
+React.createElement("div", { style: { textAlign: "center", marginTop: 48, marginBottom: 32 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "14px 32px", fontFamily: "'Plus Jakarta Sans'", fontSize: 16, fontWeight: 600, textDecoration: "none", cursor: "pointer" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "View All 380+ Customer Reviews", React.createElement("span", null, "→"))),
     ),
   );
 }
@@ -3855,7 +3371,7 @@ function ReviewCard({ r: e, inView: t, index: a }) {
       "div",
       {
         style: {
-          fontFamily: "'Inter'",
+          fontFamily: "'Plus Jakarta Sans'",
           fontSize: 16,
           fontWeight: 600,
           color: T.teal,
@@ -3865,7 +3381,7 @@ function ReviewCard({ r: e, inView: t, index: a }) {
     ),
     React.createElement(
       "div",
-      { style: { fontFamily: "'Inter'", fontSize: 16, color: T.textMuted } },
+      { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 16, color: T.textMuted } },
       e.loc,
     ),
   );
@@ -3908,7 +3424,7 @@ function StarRating({ value: e, onChange: t }) {
     ),
     React.createElement(
       "span",
-      { style: { fontFamily: "'Inter'", fontSize: 13, color: "#5C7064", marginLeft: 8 } },
+      { style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 13, color: "#5C7064", marginLeft: 8 } },
       (a || e) > 0 ? (a || e) + " of 5 stars" : "(Click to rate)"
     )
   );
@@ -3929,7 +3445,7 @@ function ReviewForm() {
       padding: "11px 14px",
       border: "1.5px solid #e0dcd4",
       borderRadius: 10,
-      fontFamily: "'Inter'",
+      fontFamily: "'Plus Jakarta Sans'",
       fontSize: 16,
       color: "#1a1a1a",
       background: "#fff",
@@ -3962,7 +3478,7 @@ function ReviewForm() {
           "p",
           {
             style: {
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               color: "#666",
               lineHeight: 1.7,
@@ -3985,7 +3501,7 @@ function ReviewForm() {
               borderRadius: 9999,
               padding: "10px 28px",
               cursor: "pointer",
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
             },
           },
@@ -4029,7 +3545,7 @@ function ReviewForm() {
           "p",
           {
             style: {
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               color: "#5f6f70",
               marginBottom: 24,
@@ -4044,7 +3560,7 @@ function ReviewForm() {
             "div",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 letterSpacing: "0.1em",
                 color: "#5f6f70",
@@ -4077,7 +3593,7 @@ function ReviewForm() {
               {
                 htmlFor: "wholesale-name",
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   letterSpacing: "0.1em",
                   color: "#5f6f70",
@@ -4107,7 +3623,7 @@ function ReviewForm() {
               {
                 htmlFor: "wholesale-city",
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   letterSpacing: "0.1em",
                   color: "#5f6f70",
@@ -4137,7 +3653,7 @@ function ReviewForm() {
             {
               htmlFor: "wholesale-tea",
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 letterSpacing: "0.1em",
                 color: "#5f6f70",
@@ -4185,7 +3701,7 @@ function ReviewForm() {
             {
               htmlFor: "wholesale-review",
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 letterSpacing: "0.1em",
                 color: "#5f6f70",
@@ -4214,7 +3730,7 @@ function ReviewForm() {
             "div",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 color: "#e8312a",
                 marginBottom: 14,
@@ -4235,7 +3751,7 @@ function ReviewForm() {
               borderRadius: 12,
               padding: "14px",
               cursor: "pointer",
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               fontWeight: 600,
               transition: "filter 200ms",
@@ -4250,7 +3766,7 @@ function ReviewForm() {
           "p",
           {
             style: {
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               color: "#767676",
               textAlign: "center",
@@ -4298,7 +3814,7 @@ function Testimonials() {
             "span",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
@@ -4330,11 +3846,11 @@ function Testimonials() {
           "p",
           {
             "data-gsap-reveal": !0,
-            style: { fontFamily: "'Inter'", fontSize: 16, color: T.textMuted },
+            style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 16, color: T.textMuted },
           },
           "Sincere words from our community of tea drinkers. Direct and unedited reviews.",
         ),
-        React.createElement("div", { style: { textAlign: "center", marginTop: 20, marginBottom: 32 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "12px 28px", fontFamily: "'Inter'", fontSize: 15, fontWeight: 600, textDecoration: "none", cursor: "pointer", boxShadow: "0 4px 16px rgba(21,39,27,0.18)" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "Explore Customer Reviews & Tasting Notes", React.createElement("span", null, "→"))),
+        React.createElement("div", { style: { textAlign: "center", marginTop: 20, marginBottom: 32 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "12px 28px", fontFamily: "'Plus Jakarta Sans'", fontSize: 15, fontWeight: 600, textDecoration: "none", cursor: "pointer", boxShadow: "0 4px 16px rgba(21,39,27,0.18)" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "Explore Customer Reviews & Tasting Notes", React.createElement("span", null, "→"))),
       ),
       React.createElement(
         "div",
@@ -4393,7 +3909,7 @@ function Testimonials() {
             key: e.name,
             r: e,
             inView: t, index: a, }), ), ),
-React.createElement("div", { style: { textAlign: "center", marginBottom: 48 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "14px 32px", fontFamily: "'Inter'", fontSize: 16, fontWeight: 600, textDecoration: "none", cursor: "pointer" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "View All 380+ Customer Reviews", React.createElement("span", null, "→"))),
+React.createElement("div", { style: { textAlign: "center", marginBottom: 48 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "14px 32px", fontFamily: "'Plus Jakarta Sans'", fontSize: 16, fontWeight: 600, textDecoration: "none", cursor: "pointer" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "View All 380+ Customer Reviews", React.createElement("span", null, "→"))),
       React.createElement(
         "div",
         { style: { maxWidth: 680, margin: "0 auto" } },
@@ -4418,7 +3934,7 @@ React.createElement("div", { style: { textAlign: "center", marginBottom: 48 } },
               "span",
               {
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   fontWeight: 600,
                   letterSpacing: "0.14em",
@@ -4494,7 +4010,7 @@ function Footer({ setPage: e }) {
             "p",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 lineHeight: 1.7,
                 color: "rgba(255,255,255,0.7)",
@@ -4520,7 +4036,7 @@ function Footer({ setPage: e }) {
                 fontSize: 16,
                 fontWeight: 600,
                 cursor: "pointer",
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 display: "flex",
                 alignItems: "center",
                 gap: 6,
@@ -4550,7 +4066,7 @@ function Footer({ setPage: e }) {
                   border: "1px solid rgba(255,255,255,0.2)",
                   borderRadius: 6,
                   padding: "5px 12px",
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: "rgba(255,255,255,0.6)",
                   letterSpacing: "0.06em",
@@ -4565,7 +4081,7 @@ function Footer({ setPage: e }) {
                   border: "1px solid rgba(255,255,255,0.2)",
                   borderRadius: 6,
                   padding: "5px 12px",
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: "rgba(255,255,255,0.6)",
                   letterSpacing: "0.06em",
@@ -4582,7 +4098,7 @@ function Footer({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
@@ -4611,7 +4127,7 @@ function Footer({ setPage: e }) {
                 key: t,
                 href: `/products/${s}/`,
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
@@ -4636,7 +4152,7 @@ function Footer({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
@@ -4664,7 +4180,7 @@ function Footer({ setPage: e }) {
                       : e(t);
                 },
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
@@ -4687,7 +4203,7 @@ function Footer({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
@@ -4719,7 +4235,7 @@ function Footer({ setPage: e }) {
                 key: e,
                 onClick: () => window.open(t, "_blank", "noopener,noreferrer"),
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: "rgba(255,255,255,0.55)",
                   marginBottom: 10,
@@ -4752,7 +4268,7 @@ function Footer({ setPage: e }) {
           "span",
           {
             style: {
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               color: "rgba(255,255,255,0.35)",
               display: "flex",
@@ -4812,7 +4328,7 @@ function Footer({ setPage: e }) {
               {
                 key: e,
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   fontWeight: 600,
                   letterSpacing: "0.06em",
@@ -4831,206 +4347,26 @@ function Footer({ setPage: e }) {
   );
 }
 function CollectionSection({ setPage: e }) {
-  const t = TEAS.slice(0, 3),
-    a = useGsapReveal(),
-    { isMobile: n, isTablet: o } = useViewport(),
-    i = n ? "1fr" : o ? "repeat(2,1fr)" : "repeat(3,1fr)",
+  const { isMobile: n } = useViewport(),
     [r, l] = useState(null),
     [activeLightbox, setActiveLightbox] = useState(null);
+  const featured = ["GABA Oolong Tea", "Spearmint Green Tea", "Blue Flower Green Tea"].map(name => TEAS.find(tea => tea.name === name));
   return React.createElement(
-    "div",
-    { style: { background: T.cream, padding: n ? "60px 20px" : "100px 32px" } },
-    React.createElement(
-      "div",
-      { style: { maxWidth: 1200, margin: "0 auto" } },
-      React.createElement(
-        "a",
-        {
-          href: "/quiz",
-          style: {
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 16,
-            flexWrap: "wrap",
-            background:
-              "linear-gradient(135deg," + T.tealDark + "," + T.teal + ")",
-            borderRadius: 16,
-            padding: n ? "20px 22px" : "22px 32px",
-            marginBottom: n ? 28 : 40,
-            textDecoration: "none",
-            boxShadow: "0 8px 28px rgba(15,63,69,0.18)",
-            transition: "transform 200ms,box-shadow 200ms",
-          },
-          onMouseEnter: (e) => {
-            ((e.currentTarget.style.transform = "translateY(-2px)"),
-              (e.currentTarget.style.boxShadow =
-                "0 12px 36px rgba(15,63,69,0.28)"));
-          },
-          onMouseLeave: (e) => {
-            ((e.currentTarget.style.transform = "translateY(0)"),
-              (e.currentTarget.style.boxShadow =
-                "0 8px 28px rgba(15,63,69,0.18)"));
-          },
-        },
-        React.createElement(
-          "div",
-          { style: { display: "flex", alignItems: "center", gap: 14 } },
-          React.createElement(
-            "span",
-            { style: { fontSize: 30 } },
-            "\uD83C\uDF75",
-          ),
-          React.createElement(
-            "div",
-            null,
-            React.createElement(
-              "div",
-              {
-                style: {
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontSize: n ? 17 : 20,
-                  color: T.white,
-                  marginBottom: 2,
-                },
-              },
-              "Not sure which tea is for you?",
-            ),
-            React.createElement(
-              "div",
-              {
-                style: {
-                  fontFamily: "'Inter'",
-                  fontSize: 16,
-                  color: "rgba(255,255,255,0.75)",
-                },
-              },
-              "Take our 2-minute quiz and find your perfect match.",
-            ),
-          ),
+    "section",
+    { className: "lux-collection", id: "premium-collection", "aria-labelledby": "lux-collection-title" },
+    React.createElement("div", { className: "lux-collection__inner" },
+      React.createElement("div", { className: "lux-collection__header" },
+        React.createElement("div", null,
+          React.createElement("p", { className: "lux-eyebrow" }, "THE NEVISAN COLLECTION"),
+          React.createElement("h2", { id: "lux-collection-title" }, "Find your everyday extraordinary."),
+          React.createElement("p", { className: "lux-collection__intro" }, "From a toasty oolong to refreshing mint and delicate florals. Every cup begins with whole Assam leaves.")
         ),
-        React.createElement(
-          "span",
-          {
-            style: {
-              background: T.gold,
-              color: T.tealDark,
-              padding: "11px 24px",
-              borderRadius: 9999,
-              fontFamily: "'Inter'",
-              fontSize: 16,
-              fontWeight: 600,
-              whiteSpace: "nowrap",
-            },
-          },
-          "Take the Quiz \u2192",
-        ),
+        React.createElement("button", { type: "button", className: "lux-collection__view-all", onClick: () => e("Collection") }, "Explore all ten teas ↗")
       ),
-      React.createElement(
-        "div",
-        {
-          ref: a,
-          style: {
-            display: "flex",
-            flexDirection: n ? "column" : "row",
-            justifyContent: "space-between",
-            alignItems: n ? "flex-start" : "flex-end",
-            gap: n ? 16 : 0,
-            marginBottom: n ? 32 : 48,
-          },
-        },
-        React.createElement(
-          "div",
-          null,
-          React.createElement(
-            "div",
-            {
-              "data-gsap-reveal": !0,
-              style: {
-                display: "flex",
-                alignItems: "center",
-                gap: 16,
-                marginBottom: 14,
-              },
-            },
-            React.createElement("div", {
-              style: { height: 1, width: 48, background: T.gold },
-            }),
-            React.createElement(
-              "span",
-              {
-                style: {
-                  fontFamily: "'Inter'",
-                  fontSize: 16,
-                  fontWeight: 600,
-                  letterSpacing: "0.14em",
-                  color: T.teal,
-                  textTransform: "uppercase",
-                },
-              },
-              "The Collection",
-            ),
-          ),
-          React.createElement(
-            "h2",
-            {
-              "data-gsap-reveal": !0,
-              style: {
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontWeight: 400,
-                fontSize: "clamp(24px, 3.5vw, 46px)",
-                color: T.text,
-              },
-            },
-            "Ten varieties, one origin",
-          ),
-        ),
-        React.createElement(
-          "button",
-          {
-            "data-gsap-reveal": !0,
-            onClick: () => e("Collection"),
-            style: {
-              background: "transparent",
-              color: T.teal,
-              border: `1.5px solid ${T.teal}`,
-              borderRadius: 9999,
-              padding: "10px 28px",
-              fontSize: 16,
-              fontWeight: 500,
-              cursor: "pointer",
-              fontFamily: "'Inter'",
-              whiteSpace: "nowrap",
-              transition: "background 200ms, color 200ms",
-              alignSelf: n ? "flex-start" : "auto",
-            },
-            onMouseEnter: (e) => {
-              ((e.currentTarget.style.background = T.teal),
-                (e.currentTarget.style.color = T.white));
-            },
-            onMouseLeave: (e) => {
-              ((e.currentTarget.style.background = "transparent"),
-                (e.currentTarget.style.color = T.teal));
-            },
-          },
-          "View all →",
-        ),
+      React.createElement("div", { className: "lux-collection__grid" },
+        featured.map(tea => React.createElement(TeaCard, { key: tea.name, tea, onView: l, onImageClick: (img, name) => setActiveLightbox({ img, name }) }))
       ),
-      React.createElement(
-        "div",
-        {
-          style: { display: "grid", gridTemplateColumns: i, gap: n ? 16 : 24 },
-        },
-        t.map((e, t) =>
-          React.createElement(TeaCard, {
-            key: e.name,
-            tea: e,
-            onView: l,
-            onImageClick: (img, name) => setActiveLightbox({ img, name }),
-            index: t,
-          }),
-        ),
-      ),
+      React.createElement("a", { className: "lux-collection__quiz", href: "/quiz/" }, "Looking for your first cup?", React.createElement("span", null, "Find your tea ↗"))
     ),
     r &&
       ReactDOM.createPortal(
@@ -5165,7 +4501,7 @@ function CollectionSection({ setPage: e }) {
                           "span",
                           {
                             style: {
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
                               fontSize: 20,
                               fontWeight: 700,
                               color: T.teal,
@@ -5177,7 +4513,7 @@ function CollectionSection({ setPage: e }) {
                           "span",
                           {
                             style: {
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
                               fontSize: 16,
                               color: T.textMuted,
                             },
@@ -5257,7 +4593,7 @@ function CollectionSection({ setPage: e }) {
                           fontSize: 16,
                           fontWeight: 600,
                           cursor: "pointer",
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -5299,7 +4635,7 @@ function CollectionSection({ setPage: e }) {
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
                           },
                         },
                         "Amazon",
@@ -5323,7 +4659,7 @@ function CollectionSection({ setPage: e }) {
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
                           },
                         },
                         "Flipkart",
@@ -5339,7 +4675,7 @@ function CollectionSection({ setPage: e }) {
                       "p",
                       {
                         style: {
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
                           fontSize: 16,
                           color: T.textMuted,
                           lineHeight: 1.6,
@@ -5356,7 +4692,7 @@ function CollectionSection({ setPage: e }) {
                           "div",
                           {
                             style: {
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
                               fontSize: 16,
                               letterSpacing: "0.13em",
                               color: T.teal,
@@ -5398,7 +4734,7 @@ function CollectionSection({ setPage: e }) {
                                 "div",
                                 {
                                   style: {
-                                    fontFamily: "'Inter'",
+                                    fontFamily: "'Plus Jakarta Sans'",
                                     fontSize: 16,
                                     fontWeight: 600,
                                     color: T.text,
@@ -5410,7 +4746,7 @@ function CollectionSection({ setPage: e }) {
                                 "div",
                                 {
                                   style: {
-                                    fontFamily: "'Inter'",
+                                    fontFamily: "'Plus Jakarta Sans'",
                                     fontSize: 16,
                                     color: T.textMuted,
                                     lineHeight: 1.5,
@@ -5447,7 +4783,7 @@ function CollectionSection({ setPage: e }) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
                                 fontSize: 16,
                                 letterSpacing: "0.12em",
                                 color: T.teal,
@@ -5462,7 +4798,7 @@ function CollectionSection({ setPage: e }) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
                                 fontSize: 16,
                                 color: T.textMuted,
                               },
@@ -5590,7 +4926,7 @@ function CollectionSection({ setPage: e }) {
                         "span",
                         {
                           style: {
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
                             fontSize: 24,
                             fontWeight: 700,
                             color: T.teal,
@@ -5602,7 +4938,7 @@ function CollectionSection({ setPage: e }) {
                         "span",
                         {
                           style: {
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
                             fontSize: 16,
                             color: T.textMuted,
                           },
@@ -5614,7 +4950,7 @@ function CollectionSection({ setPage: e }) {
                       "p",
                       {
                         style: {
-                          fontFamily: "'Inter'",
+                          fontFamily: "'Plus Jakarta Sans'",
                           fontSize: 16,
                           color: T.textMuted,
                           lineHeight: 1.6,
@@ -5647,7 +4983,7 @@ function CollectionSection({ setPage: e }) {
                             fontSize: 16,
                             fontWeight: 600,
                             cursor: "pointer",
-                            fontFamily: "'Inter'",
+                            fontFamily: "'Plus Jakarta Sans'",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -5689,7 +5025,7 @@ function CollectionSection({ setPage: e }) {
                               fontSize: 16,
                               fontWeight: 600,
                               cursor: "pointer",
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
                             },
                           },
                           "Amazon",
@@ -5713,7 +5049,7 @@ function CollectionSection({ setPage: e }) {
                               fontSize: 16,
                               fontWeight: 600,
                               cursor: "pointer",
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
                             },
                           },
                           "Flipkart",
@@ -5728,7 +5064,7 @@ function CollectionSection({ setPage: e }) {
                           "div",
                           {
                             style: {
-                              fontFamily: "'Inter'",
+                              fontFamily: "'Plus Jakarta Sans'",
                               fontSize: 16,
                               letterSpacing: "0.13em",
                               color: T.teal,
@@ -5770,7 +5106,7 @@ function CollectionSection({ setPage: e }) {
                                 "div",
                                 {
                                   style: {
-                                    fontFamily: "'Inter'",
+                                    fontFamily: "'Plus Jakarta Sans'",
                                     fontSize: 16,
                                     fontWeight: 600,
                                     color: T.text,
@@ -5783,7 +5119,7 @@ function CollectionSection({ setPage: e }) {
                                 "div",
                                 {
                                   style: {
-                                    fontFamily: "'Inter'",
+                                    fontFamily: "'Plus Jakarta Sans'",
                                     fontSize: 16,
                                     color: T.textMuted,
                                     lineHeight: 1.55,
@@ -5821,7 +5157,7 @@ function CollectionSection({ setPage: e }) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
                                 fontSize: 16,
                                 letterSpacing: "0.12em",
                                 color: T.teal,
@@ -5836,7 +5172,7 @@ function CollectionSection({ setPage: e }) {
                             "div",
                             {
                               style: {
-                                fontFamily: "'Inter'",
+                                fontFamily: "'Plus Jakarta Sans'",
                                 fontSize: 16,
                                 color: T.textMuted,
                               },
@@ -5892,7 +5228,7 @@ function InstagramReels() {
             "div",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.18em",
@@ -5933,7 +5269,7 @@ function InstagramReels() {
               color: "#fff",
               borderRadius: 9999,
               padding: "10px 20px",
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               fontWeight: 600,
             },
@@ -6095,7 +5431,7 @@ function InstagramReels() {
                 "div",
                 {
                   style: {
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     fontWeight: 700,
                     letterSpacing: "0.1em",
@@ -6109,7 +5445,7 @@ function InstagramReels() {
                 "div",
                 {
                   style: {
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     color: "#fff",
                     opacity: 0.9,
@@ -6172,468 +5508,7 @@ const ritualTeas = {
 };
 
 function HowToBrewSection() {
-  const { isMobile: e } = useViewport();
-  const [selectedTeaKey, setSelectedTeaKey] = useState('oolong');
-  const [temp, setTemp] = useState(90);
-  const [time, setTime] = useState(3);
-  const [isBrewing, setIsBrewing] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [swirlSpeed, setSwirlSpeed] = useState(1);
-  const [bubbles, setBubbles] = useState([]);
-  const [statusText, setStatusText] = useState("Ready to steep at 90°C for 3 Min");
-  const steamCanvasRef = useRef(null);
-
-  const config = ritualTeas[selectedTeaKey];
-
-  useEffect(() => {
-    if (!isBrewing) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    let animFrame;
-    const start = Date.now();
-    const duration = time * 4000;
-    
-    const spawnBubble = () => {
-      const id = Math.random();
-      const newBubble = {
-        id,
-        left: Math.random() * 130 + 10,
-        size: Math.random() * 3 + 1.5,
-        duration: Math.random() * 1.5 + 0.8
-      };
-      setBubbles(prev => [...prev, newBubble]);
-      setTimeout(() => {
-        setBubbles(prev => prev.filter(b => b.id !== id));
-      }, (newBubble.duration + 0.5) * 1000);
-    };
-
-    const tick = () => {
-      const elapsed = Date.now() - start;
-      const currentProgress = Math.min(elapsed / duration, 1);
-      
-      setProgress(currentProgress);
-      setSwirlSpeed(Math.max(0.08, 1 - currentProgress * 1.1));
-      
-      if (Math.random() > 0.92) {
-        spawnBubble();
-      }
-
-      const matchedStep = config.steps.find((s, idx) => {
-        const next = config.steps[idx + 1];
-        return currentProgress >= s.p && (!next || currentProgress < next.p);
-      });
-      if (matchedStep) {
-        setStatusText(matchedStep.text);
-      }
-
-      if (elapsed < duration) {
-        animFrame = requestAnimationFrame(tick);
-      } else {
-        setIsBrewing(false);
-        setStatusText("Infusion complete. Savor the untamed cup.");
-      }
-    };
-    
-    animFrame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(animFrame);
-  }, [isBrewing, selectedTeaKey, time]);
-
-  useEffect(() => {
-    const canvas = steamCanvasRef.current;
-    if (!canvas) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const ctx = canvas.getContext('2d');
-    
-    let animFrame;
-    let w = (canvas.width = canvas.offsetWidth);
-    let h = (canvas.height = canvas.offsetHeight);
-    
-    let particles = [];
-    
-    const loop = () => {
-      ctx.clearRect(0, 0, w, h);
-      if (!isBrewing) return;
-      
-      const threshold = 1 - (temp - 70) / 60;
-      if (Math.random() > Math.min(0.85, 0.4 + threshold)) {
-        particles.push({
-          x: w / 2 + (Math.random() - 0.5) * 110,
-          y: h - 10,
-          vx: (Math.random() - 0.5) * 0.35,
-          vy: -(Math.random() * 0.65 + 0.35 + (temp - 70) * 0.01),
-          r: Math.random() * 6 + 3,
-          alpha: Math.random() * 0.16 + 0.08
-        });
-      }
-      
-      particles.forEach((p, idx) => {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.r += 0.07;
-        p.alpha -= 0.003;
-        
-        if (p.alpha <= 0 || p.y < 0) {
-          particles.splice(idx, 1);
-          return;
-        }
-        
-        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      
-      animFrame = requestAnimationFrame(loop);
-    };
-    
-    if (isBrewing) {
-      loop();
-    } else {
-      ctx.clearRect(0, 0, w, h);
-    }
-    
-    return () => cancelAnimationFrame(animFrame);
-  }, [isBrewing, temp]);
-
-  const selectRitualTea = (key) => {
-    if (isBrewing) return;
-    setSelectedTeaKey(key);
-    const tc = ritualTeas[key];
-    setTemp(tc.temp);
-    setTime(tc.time);
-    setProgress(0);
-    setStatusText(`Ready to steep at ${tc.temp}°C for ${tc.time} Min`);
-  };
-
-  const startSteeping = () => {
-    if (isBrewing) return;
-    setProgress(0);
-    setSwirlSpeed(1);
-    setBubbles([]);
-    setIsBrewing(true);
-    setStatusText("Pouring water... waking the leaf.");
-  };
-
-  const liquidHeight = isBrewing ? 85 : (progress >= 1 ? 85 : 0);
-  
-  let liquidColor = 'transparent';
-  if (isBrewing || progress >= 1) {
-    if (progress <= 0.25) {
-      liquidColor = 'rgba(255, 255, 255, 0.15)';
-    } else {
-      liquidColor = config.color;
-    }
-  }
-
-  const leafElements = Array.from({ length: 8 }).map((_, idx) => {
-    const timeFactor = Date.now() / (300 * swirlSpeed);
-    const angle = timeFactor + idx * (Math.PI / 4);
-    const leafScale = 0.2 + progress * 0.95;
-    
-    let left = 20 + idx * 16;
-    let bottom = 10;
-    let rot = 0;
-    let trans = "all 1.5s ease-out";
-    
-    if (isBrewing) {
-      if (swirlSpeed > 0.15) {
-        left = Math.sin(angle) * 45 + 70;
-        bottom = Math.cos(angle * 1.5) * 45 + 75;
-        rot = angle * 60;
-        trans = "none";
-      } else {
-        bottom = 10 + Math.sin(Date.now() / 1000 + idx) * 3;
-        left = (15 + idx * 18) + Math.cos(Date.now() / 1500 + idx) * 2;
-        rot = idx * 45 - 60 + Math.sin(Date.now() / 2000 + idx) * 5;
-      }
-    } else {
-      bottom = 12;
-      left = 15 + idx * 18;
-      rot = idx * 40 - 80;
-    }
-    
-    return React.createElement("div", {
-      key: idx,
-      className: "liquid-leaf",
-      style: {
-        left,
-        bottom,
-        transform: `rotate(${rot}deg) scale(${isBrewing ? leafScale : (progress >= 1 ? 1.15 : 0.2)})`,
-        opacity: isBrewing ? 0.85 : (progress >= 1 ? 0.55 : 0),
-        transition: trans
-      }
-    });
-  });
-
-  return React.createElement(
-    "section",
-    {
-      id: "brew-ritual",
-      style: {
-        background: T.tealDark,
-        padding: e ? "64px 20px" : "100px 32px",
-        color: T.white,
-        borderTop: "1px solid rgba(255,255,255,0.08)",
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
-        boxShadow: "inset 0 20px 40px rgba(0,0,0,0.15)"
-      }
-    },
-    React.createElement(
-      "div",
-      { style: { maxWidth: 1100, margin: "0 auto" } },
-      React.createElement(
-        "div",
-        {
-          style: {
-            display: "grid",
-            gridTemplateColumns: e ? "1fr" : "0.95fr 1.05fr",
-            gap: e ? "48px" : "80px",
-            alignItems: "center"
-          }
-        },
-        React.createElement(
-          "div",
-          { style: { display: "flex", flexDirection: "column", gap: 36 } },
-          React.createElement(
-            "div",
-            null,
-            React.createElement(
-              "div",
-              { style: { display: "flex", alignItems: "center", gap: 16, marginBottom: 14 } },
-              React.createElement("div", { style: { height: 1, width: 48, background: T.gold } }),
-              React.createElement(
-                "span",
-                {
-                  style: {
-                    fontFamily: "'Inter'",
-                    fontSize: 16,
-                    fontWeight: 600,
-                    letterSpacing: "0.06em",
-                    color: "#D4AF37"
-                  }
-                },
-                "Interactive Steeping"
-              ),
-              React.createElement("div", { style: { height: 1, width: 48, background: T.gold } })
-            ),
-            React.createElement(
-              "h2",
-              {
-                style: {
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(26px, 3.5vw, 44px)",
-                  color: T.white,
-                  marginBottom: 14
-                }
-              },
-              "The Brewing Ritual"
-            ),
-            React.createElement(
-              "p",
-              {
-                style: {
-                  fontFamily: "'Inter'",
-                  fontSize: 16,
-                  color: T.tealLight,
-                  lineHeight: 1.7
-                }
-              },
-              "Experience the sensory transition of whole leaves unfolding in our custom brewing glass. Adjust parameters to release their natural aroma."
-            )
-          ),
-          React.createElement(
-            "div",
-            {
-              style: {
-                display: "grid",
-                gridTemplateColumns: "repeat(4, 1fr)",
-                gap: 12
-              }
-            },
-            ['oolong', 'green', 'black', 'herbal'].map((key) =>
-              React.createElement(
-                "button",
-                {
-                  key: key,
-                  onClick: () => selectRitualTea(key),
-                  disabled: isBrewing,
-                  style: {
-                    background: selectedTeaKey === key ? T.gold : "rgba(255,255,255,0.08)",
-                    border: `1.5px solid ${selectedTeaKey === key ? T.gold : "rgba(255,255,255,0.35)"}`,
-                    color: selectedTeaKey === key ? T.tealDark : "#ffffff",
-                    padding: "12px",
-                    borderRadius: 8,
-                    cursor: isBrewing ? "not-allowed" : "pointer",
-                    fontSize: 16,
-                    fontWeight: 600,
-                    textTransform: "capitalize",
-                    transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease",
-                    fontFamily: "'Inter'"
-                  }
-                },
-                key
-              )
-            )
-          ),
-          React.createElement(
-            "div",
-            { style: { display: "flex", flexDirection: "column", gap: 10 } },
-            React.createElement(
-              "div",
-              { style: { display: "flex", justifyContent: "space-between", fontSize: 16, fontWeight: 600 } },
-              React.createElement("span", null, "Water Temperature"),
-              React.createElement("span", { style: { color: T.gold } }, temp + "°C")
-            ),
-            React.createElement("input", {
-              type: "range",
-              min: 70,
-              max: 100,
-              value: temp,
-              disabled: isBrewing,
-              "aria-label": "Water temperature",
-              onChange: (x) => {
-                setTemp(Number(x.target.value));
-                setStatusText(`Ready to steep at ${x.target.value}°C for ${time} Min`);
-              },
-              style: {
-                width: "100%",
-                height: 8,
-                accentColor: T.gold,
-                background: "rgba(255,255,255,0.25)",
-                borderRadius: 4,
-                cursor: isBrewing ? "not-allowed" : "pointer",
-              },
-              onFocus: (e) => (e.target.style.boxShadow = "0 0 0 3px rgba(27,122,130,0.4)"),
-              onBlur: (e) => (e.target.style.boxShadow = "none")
-            })
-          ),
-          React.createElement(
-            "div",
-            { style: { display: "flex", flexDirection: "column", gap: 10 } },
-            React.createElement(
-              "div",
-              { style: { display: "flex", justifyContent: "space-between", fontSize: 16, fontWeight: 600 } },
-              React.createElement("span", null, "Steeping Time"),
-              React.createElement("span", { style: { color: T.gold } }, time + " Min")
-            ),
-            React.createElement("input", {
-              type: "range",
-              min: 1,
-              max: 6,
-              value: time,
-              disabled: isBrewing,
-              "aria-label": "Steeping time",
-              onChange: (x) => {
-                setTime(Number(x.target.value));
-                setStatusText(`Ready to steep at ${temp}°C for ${x.target.value} Min`);
-              },
-              style: {
-                width: "100%",
-                height: 8,
-                accentColor: T.gold,
-                background: "rgba(255,255,255,0.25)",
-                borderRadius: 4,
-                cursor: isBrewing ? "not-allowed" : "pointer",
-              },
-              onFocus: (e) => (e.target.style.boxShadow = "0 0 0 3px rgba(27,122,130,0.4)"),
-              onBlur: (e) => (e.target.style.boxShadow = "none")
-            })
-          ),
-          React.createElement(
-            "div",
-            null,
-            React.createElement(
-              "button",
-              {
-                onClick: startSteeping,
-                disabled: isBrewing,
-                style: {
-                  background: isBrewing ? "rgba(255,255,255,0.1)" : T.gold,
-                  color: isBrewing ? "rgba(255,255,255,0.3)" : T.tealDark,
-                  border: "none",
-                  padding: "16px 36px",
-                  borderRadius: 8,
-                  fontSize: 16,
-                  fontWeight: 700,
-                  cursor: isBrewing ? "not-allowed" : "pointer",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  transition: "background-color 200ms ease, color 200ms ease, transform 160ms var(--ease-out)",
-                  fontFamily: "'Inter'"
-                }
-              },
-              isBrewing ? "Steeping..." : "Start Infusion"
-            )
-          )
-        ),
-        React.createElement(
-          "div",
-          {
-            style: {
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              background: "rgba(0, 0, 0, 0.25)",
-              border: "1px solid rgba(255, 255, 255, 0.05)",
-              borderRadius: 16,
-              padding: "48px 32px",
-              boxShadow: "inset 0 4px 30px rgba(0,0,0,0.4)"
-            }
-          },
-          React.createElement(
-            "div",
-            { style: { position: "relative", width: 170, height: 210 } },
-            React.createElement("div", { className: "glass-mug-outline" }),
-            React.createElement("div", { className: "glass-mug-inner-wall" }),
-            React.createElement("div", { className: "glass-mug-handle" }),
-            React.createElement("canvas", { ref: steamCanvasRef, id: "steam-canvas", "aria-hidden": "true" }),
-            React.createElement(
-              "div",
-              {
-                id: "liquid-fill",
-                className: "tea-liquid-fill",
-                style: {
-                  height: liquidHeight + '%',
-                  backgroundColor: liquidColor
-                }
-              },
-              leafElements,
-              bubbles.map(b =>
-                React.createElement("div", {
-                  key: b.id,
-                  className: "liquid-bubble",
-                  style: {
-                    left: b.left,
-                    width: b.size,
-                    height: b.size,
-                    animation: `bubble-up ${b.duration}s ease-out forwards`
-                  }
-                })
-              )
-            )
-          ),
-          React.createElement(
-            "div",
-            {
-              style: {
-                textAlign: "center",
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: "1.2rem",
-                color: T.gold,
-                marginTop: 32,
-                minHeight: "3.5rem",
-                maxWidth: 350,
-                lineHeight: 1.4
-              }
-            },
-            statusText
-          )
-        )
-      )
-    )
-  );
+  return React.createElement(NevisanPremium.Ritual);
 }
 function FAQSection() {
   const { isMobile: e } = useViewport(),
@@ -6695,7 +5570,7 @@ function FAQSection() {
             "span",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
@@ -6726,7 +5601,7 @@ function FAQSection() {
           "p",
           {
             style: {
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 15,
               color: T.textMuted,
               maxWidth: 540,
@@ -6771,7 +5646,7 @@ function FAQSection() {
                   alignItems: "center",
                   gap: 16,
                   cursor: "pointer",
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                 },
               },
               React.createElement(
@@ -6813,7 +5688,7 @@ function FAQSection() {
                 {
                   style: {
                     padding: e ? "0 18px 18px" : "0 24px 22px",
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     color: T.textMuted,
                     lineHeight: 1.7,
@@ -6850,7 +5725,7 @@ function FAQSection() {
               color: "#ffffff",
               borderRadius: 9999,
               padding: "14px 32px",
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 15,
               fontWeight: 600,
               textDecoration: "none",
@@ -6882,7 +5757,7 @@ function FAQSection() {
               color: "#fff",
               borderRadius: 9999,
               padding: "10px 22px",
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 13,
               fontWeight: 600,
               textDecoration: "none",
@@ -7053,7 +5928,7 @@ function TrustBadges() {
             "span",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 500,
                 color: "#2a3a3b",
@@ -7073,8 +5948,7 @@ function HomePage({ setPage: e }) {
     "div",
     { style: { animation: "page-enter 0.4s ease both" } },
     React.createElement(Hero, { setPage: e }),
-    React.createElement(Ticker, null),
-    React.createElement(TrustBadges, null),
+    React.createElement(NevisanPremium.OriginStrip, null),
     React.createElement(CollectionSection, { setPage: e }),
     React.createElement(PhilosophySection, null),
     React.createElement(HowToBrewSection, null),
@@ -7138,7 +6012,7 @@ function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
         "div",
         {
           style: {
-            fontFamily: "'Inter'",
+            fontFamily: "'Plus Jakarta Sans'",
             fontSize: 16,
             fontWeight: 600,
             letterSpacing: "0.2em",
@@ -7178,7 +6052,7 @@ function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
           "p",
           {
             style: {
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               color: "rgba(255,255,255,0.72)",
               maxWidth: 500,
@@ -7216,7 +6090,7 @@ function OurStoryPage({ setPage: e }) {
             "span",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.16em",
@@ -7313,7 +6187,7 @@ function OurStoryPage({ setPage: e }) {
                   "p",
                   {
                     style: {
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       color: T.textMuted,
                       lineHeight: 1.75,
@@ -7586,7 +6460,7 @@ function ArticleModal({ post: e, onClose: t }) {
                 "span",
                 {
                   style: {
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     letterSpacing: "0.14em",
                     color: T.gold,
@@ -7632,7 +6506,7 @@ function ArticleModal({ post: e, onClose: t }) {
               "span",
               {
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: T.textMuted,
                 },
@@ -7656,7 +6530,7 @@ function ArticleModal({ post: e, onClose: t }) {
                 {
                   key: t,
                   style: {
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     color: T.text,
                     lineHeight: 1.8,
@@ -7690,7 +6564,7 @@ function ArticleModal({ post: e, onClose: t }) {
                     borderRadius: 9999,
                     padding: "10px 22px",
                     cursor: "pointer",
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     fontWeight: 600,
                   },
@@ -7708,7 +6582,7 @@ function ArticleModal({ post: e, onClose: t }) {
                     borderRadius: 9999,
                     padding: "10px 22px",
                     cursor: "pointer",
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                   },
                 },
@@ -7800,7 +6674,7 @@ function JournalPage({ setPage: e }) {
                   "span",
                   {
                     style: {
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       letterSpacing: "0.14em",
                       color: T.gold,
@@ -7815,7 +6689,7 @@ function JournalPage({ setPage: e }) {
                   "span",
                   {
                     style: {
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       color: T.textMuted,
                     },
@@ -7841,7 +6715,7 @@ function JournalPage({ setPage: e }) {
                 "p",
                 {
                   style: {
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     color: T.textMuted,
                     lineHeight: 1.7,
@@ -7854,7 +6728,7 @@ function JournalPage({ setPage: e }) {
                 {
                   style: {
                     marginTop: 18,
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     color: T.teal,
                     fontWeight: 600,
@@ -7939,7 +6813,7 @@ function AboutPage({ setPage: e }) {
             "p",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 color: T.textMuted,
                 lineHeight: 1.8,
@@ -7952,7 +6826,7 @@ function AboutPage({ setPage: e }) {
             "p",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 color: T.textMuted,
                 lineHeight: 1.8,
@@ -8012,7 +6886,7 @@ function AboutPage({ setPage: e }) {
               React.createElement(
                 "span",
                 {
-                  style: { fontFamily: "'Inter'", fontSize: 16, color: T.text },
+                  style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 16, color: T.text },
                 },
                 e.text,
               ),
@@ -8030,7 +6904,7 @@ function AboutPage({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.18em",
@@ -8059,7 +6933,7 @@ function AboutPage({ setPage: e }) {
             "p",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 color: T.textMuted,
                 lineHeight: 1.75,
@@ -8088,7 +6962,7 @@ function AboutPage({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 letterSpacing: "0.16em",
                 color: T.gold,
@@ -8130,7 +7004,7 @@ function AboutPage({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 600,
                 color: T.teal,
@@ -8142,7 +7016,7 @@ function AboutPage({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 color: T.textMuted,
                 marginTop: 2,
@@ -8221,7 +7095,7 @@ function AboutPage({ setPage: e }) {
                 "div",
                 {
                   style: {
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     fontWeight: 700,
                     letterSpacing: "0.16em",
@@ -8249,7 +7123,7 @@ function AboutPage({ setPage: e }) {
                 "p",
                 {
                   style: {
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     color: T.textMuted,
                     lineHeight: 1.75,
@@ -8288,7 +7162,7 @@ function AboutPage({ setPage: e }) {
           "p",
           {
             style: {
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               color: "rgba(255,255,255,0.8)",
               lineHeight: 1.7,
@@ -8309,7 +7183,7 @@ function AboutPage({ setPage: e }) {
               borderRadius: 9999,
               padding: "13px 32px",
               cursor: "pointer",
-              fontFamily: "'Inter'",
+              fontFamily: "'Plus Jakarta Sans'",
               fontSize: 16,
               fontWeight: 700,
             },
@@ -8453,7 +7327,7 @@ function CertificationsPage({ setPage: e }) {
                   "div",
                   {
                     style: {
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       color: e.color,
                       fontWeight: 600,
@@ -8468,7 +7342,7 @@ function CertificationsPage({ setPage: e }) {
               "p",
               {
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: T.textMuted,
                   lineHeight: 1.7,
@@ -8538,7 +7412,7 @@ function WholesalePage({ setPage: e }) {
             "span",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
@@ -8640,7 +7514,7 @@ function WholesalePage({ setPage: e }) {
               "div",
               {
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: T.textMuted,
                   lineHeight: 1.65,
@@ -8674,7 +7548,7 @@ function WholesalePage({ setPage: e }) {
             "div",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.14em",
@@ -8747,7 +7621,7 @@ function WholesalePage({ setPage: e }) {
                   "span",
                   {
                     style: {
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       color: T.text,
                     },
@@ -8770,7 +7644,7 @@ function WholesalePage({ setPage: e }) {
               "div",
               {
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   fontWeight: 600,
                   color: T.teal,
@@ -8785,7 +7659,7 @@ function WholesalePage({ setPage: e }) {
               "div",
               {
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: T.textMuted,
                   lineHeight: 1.6,
@@ -8827,7 +7701,7 @@ function WholesalePage({ setPage: e }) {
             "p",
             {
               style: {
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 fontSize: 16,
                 color: T.textMuted,
                 marginBottom: 24,
@@ -8864,7 +7738,7 @@ function WholesalePage({ setPage: e }) {
                   "label",
                   {
                     style: {
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       fontWeight: 600,
                       color: T.teal,
@@ -8887,7 +7761,7 @@ function WholesalePage({ setPage: e }) {
                     padding: "11px 14px",
                     borderRadius: 10,
                     border: "1.5px solid #e8e4de",
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     color: T.text,
                     background: "#fff",
@@ -8905,7 +7779,7 @@ function WholesalePage({ setPage: e }) {
                 "label",
                 {
                   style: {
-                    fontFamily: "'Inter'",
+                    fontFamily: "'Plus Jakarta Sans'",
                     fontSize: 16,
                     fontWeight: 600,
                     color: T.teal,
@@ -8928,7 +7802,7 @@ function WholesalePage({ setPage: e }) {
                   padding: "11px 14px",
                   borderRadius: 10,
                   border: "1.5px solid #e8e4de",
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: T.text,
                   background: "#fff",
@@ -8958,7 +7832,7 @@ function WholesalePage({ setPage: e }) {
                   fontSize: 16,
                   fontWeight: 700,
                   cursor: "pointer",
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -8999,7 +7873,7 @@ function ContactPage({ setPage: e }) {
       padding: "12px 16px",
       border: "1.5px solid #e0dcd4",
       borderRadius: 10,
-      fontFamily: "'Inter'",
+      fontFamily: "'Plus Jakarta Sans'",
       fontSize: 16,
       color: T.text,
       background: T.white,
@@ -9102,7 +7976,7 @@ function ContactPage({ setPage: e }) {
                   "div",
                   {
                     style: {
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       letterSpacing: "0.12em",
                       color: T.textMuted,
@@ -9116,7 +7990,7 @@ function ContactPage({ setPage: e }) {
                   "div",
                   {
                     style: {
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       color: e.action ? T.teal : T.text,
                       fontWeight: e.action ? 500 : 400,
@@ -9141,7 +8015,7 @@ function ContactPage({ setPage: e }) {
               "p",
               {
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: "rgba(255,255,255,0.85)",
                   lineHeight: 1.7,
@@ -9161,7 +8035,7 @@ function ContactPage({ setPage: e }) {
                   borderRadius: 9999,
                   padding: "10px 24px",
                   cursor: "pointer",
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   fontWeight: 600,
                 },
@@ -9205,7 +8079,7 @@ function ContactPage({ setPage: e }) {
                   "p",
                   {
                     style: {
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       color: T.textMuted,
                     },
@@ -9224,7 +8098,7 @@ function ContactPage({ setPage: e }) {
                       borderRadius: 9999,
                       padding: "10px 28px",
                       cursor: "pointer",
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                     },
                   },
@@ -9263,7 +8137,7 @@ function ContactPage({ setPage: e }) {
                     "label",
                     {
                       style: {
-                        fontFamily: "'Inter'",
+                        fontFamily: "'Plus Jakarta Sans'",
                         fontSize: 16,
                         color: T.textMuted,
                         letterSpacing: "0.08em",
@@ -9291,7 +8165,7 @@ function ContactPage({ setPage: e }) {
                     "label",
                     {
                       style: {
-                        fontFamily: "'Inter'",
+                        fontFamily: "'Plus Jakarta Sans'",
                         fontSize: 16,
                         color: T.textMuted,
                         letterSpacing: "0.08em",
@@ -9321,7 +8195,7 @@ function ContactPage({ setPage: e }) {
                     "label",
                     {
                       style: {
-                        fontFamily: "'Inter'",
+                        fontFamily: "'Plus Jakarta Sans'",
                         fontSize: 16,
                         color: T.textMuted,
                         letterSpacing: "0.08em",
@@ -9356,7 +8230,7 @@ function ContactPage({ setPage: e }) {
                       borderRadius: 12,
                       padding: "14px",
                       cursor: "pointer",
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       fontWeight: 600,
                       transition: "filter 200ms",
@@ -9436,7 +8310,7 @@ function CookieConsentBanner() {
         boxShadow: "0 10px 30px rgba(0,0,0,0.35)",
         zIndex: 99999,
         border: "1px solid rgba(201,168,76,0.3)",
-        fontFamily: "'Inter', sans-serif",
+        fontFamily: "'Plus Jakarta Sans', sans-serif",
         fontSize: "13.5px",
         lineHeight: "1.5",
         animation: "fadeIn 0.3s ease"
@@ -9626,7 +8500,7 @@ function CartSheet({ onClose: e }) {
               "div",
               {
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: T.textMuted,
                   marginTop: 2,
@@ -9719,7 +8593,7 @@ function CartSheet({ onClose: e }) {
                   "div",
                   {
                     style: {
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       fontWeight: 600,
                       color: T.text,
@@ -9733,7 +8607,7 @@ function CartSheet({ onClose: e }) {
                   "div",
                   {
                     style: {
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       fontWeight: 700,
                       color: T.teal,
@@ -9778,7 +8652,7 @@ function CartSheet({ onClose: e }) {
                   "span",
                   {
                     style: {
-                      fontFamily: "'Inter'",
+                      fontFamily: "'Plus Jakarta Sans'",
                       fontSize: 16,
                       fontWeight: 700,
                       color: T.text,
@@ -9836,7 +8710,7 @@ function CartSheet({ onClose: e }) {
               "span",
               {
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: T.textMuted,
                 },
@@ -9847,7 +8721,7 @@ function CartSheet({ onClose: e }) {
               "span",
               {
                 style: {
-                  fontFamily: "'Inter'",
+                  fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 22,
                   fontWeight: 700,
                   color: T.teal,
@@ -9914,7 +8788,7 @@ function CartSheet({ onClose: e }) {
                 fontSize: 16,
                 fontWeight: 700,
                 cursor: "pointer",
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -9992,7 +8866,7 @@ function CartFAB() {
                 justifyContent: "center",
                 fontSize: 16,
                 fontWeight: 700,
-                fontFamily: "'Inter'",
+                fontFamily: "'Plus Jakarta Sans'",
               },
             },
             n,
@@ -10020,7 +8894,7 @@ function AddToCartBtn({ tea: e, onAdded: t }) {
         fontSize: 16,
         fontWeight: 700,
         cursor: "pointer",
-        fontFamily: "'Inter'",
+        fontFamily: "'Plus Jakarta Sans'",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

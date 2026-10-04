@@ -893,434 +893,54 @@ function Ticker() {
     ),
   );
 }
-function Hero({ setPage: e }) {
-  const [t, a] = useState(!1),
-    [n, o] = useInView(0.1),
-    { isMobile: i } = useViewport(),
-    r = useRef(null),
-    l = useRef(null);
-  return (
-    useEffect(() => {
-      const e = setTimeout(() => a(!0), 200);
-      return () => clearTimeout(e);
-    }, []),
-    useEffect(() => {
-      const e = r.current,
-        t = l.current;
-      if (!e || !t) return;
-      const a = gsap.context(() => {
-        gsap.to(t, {
-          scrollTrigger: {
-            trigger: e,
-            start: "top top",
-            end: "bottom top",
-            scrub: !0,
-          },
-          scale: 1.5,
-          opacity: 0,
-          transformOrigin: "center center",
-          ease: "none",
-        });
-      });
-      return () => a.revert();
-    }, []),
+function Hero({ setPage }) {
+  return React.createElement(
+    "section",
+    { className: "premium-hero", "aria-labelledby": "premium-hero-title" },
     React.createElement(
       "div",
-      {
-        ref: r,
-        style: {
-          position: "relative",
-          height: i ? "auto" : "100vh",
-          minHeight: i ? 640 : 740,
-          overflow: "hidden",
-          background: T.tealDark,
-        },
-      },
+      { className: "premium-hero__inner" },
       React.createElement(
         "div",
-        {
-          ref: l,
-          style: {
-            position: "absolute",
-            inset: 0,
-            zIndex: 0,
-            overflow: "hidden",
-          },
-        },
-        i
-          ? React.createElement("img", {
-              src: "hero-mobile.webp?v=2",
-              alt: "Nevisan tea garden in Golaghat Assam - single origin whole leaf tea",
-              fetchpriority: "high",
-              width: "800",
-              height: "1200",
-              style: {
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center",
-                filter: "saturate(1.1) brightness(0.78)",
-              },
-            })
-          : React.createElement(
-              "video",
-              {
-                autoPlay: !0,
-                muted: !0,
-                loop: !0,
-                playsInline: !0,
-                poster: "hero-bg.webp",
-                style: {
-                  position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  filter: "saturate(1.15) brightness(0.78)",
-                },
-              },
-              React.createElement("source", {
-                src: "tea-garden.mp4",
-                type: "video/mp4",
-              }),
-            ),
-      ),
-      React.createElement("div", {
-        style: {
-          position: "absolute",
-          inset: 0,
-          zIndex: 3,
-          background:
-            "linear-gradient(to right, rgba(8,28,18,0.72) 0%, rgba(8,28,18,0.45) 40%, rgba(8,28,18,0.15) 70%, rgba(8,28,18,0.02) 100%)",
-          pointerEvents: "none",
-        },
-      }),
-      React.createElement("div", {
-        style: {
-          position: "absolute",
-          inset: 0,
-          zIndex: 3,
-          background:
-            "linear-gradient(to top, rgba(5,18,10,0.75) 0%, rgba(5,18,10,0.2) 22%, transparent 42%)",
-          pointerEvents: "none",
-        },
-      }),
-      React.createElement(
-        "div",
-        {
-          style: {
-            position: "relative",
-            zIndex: 10,
-            maxWidth: 1200,
-            margin: "0 auto",
-            padding: i ? "92px 22px 36px" : "104px 40px 40px",
-            minHeight: i ? 640 : "100%",
-            boxSizing: "border-box",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          },
-        },
+        { className: "premium-hero__copy" },
+        React.createElement("p", { className: "premium-hero__eyebrow" }, "FROM GOLAGHAT, ASSAM"),
+        React.createElement(
+          "h1",
+          { id: "premium-hero-title", className: "premium-hero__title" },
+          "Tea worth",
+          React.createElement("br"),
+          React.createElement("em", null, "slowing down for.")
+        ),
+        React.createElement(
+          "p",
+          { className: "premium-hero__description" },
+          "Whole-leaf teas from a single origin in Assam. Discover ten distinctive varieties, and make a little room for your daily tea ritual."
+        ),
         React.createElement(
           "div",
-          { style: { maxWidth: i ? "100%" : 620 } },
-          React.createElement(
-            "div",
-            {
-              style: {
-                fontFamily: "'Inter'",
-                fontSize: 16,
-                fontWeight: 600,
-                letterSpacing: "0.18em",
-                color: "#D4AF37",
-                textTransform: "uppercase",
-                marginBottom: 24,
-                opacity: t ? 1 : 0,
-                transform: t ? "translateY(0)" : "translateY(20px)",
-                transition:
-                  "opacity 0.7s ease-out 0.1s, transform 0.7s ease-out 0.1s",
-                display: "flex",
-                alignItems: "center",
-                gap: 12,
-              },
-            },
-            React.createElement("div", {
-              style: { width: 32, height: 1, background: T.gold },
-            }),
-            "Single Origin · Golaghat, Assam",
-            React.createElement("div", {
-              style: { width: 32, height: 1, background: T.gold },
-            }),
-          ),
-          React.createElement(
-            "div",
-            { style: { overflow: "hidden", marginBottom: 4 } },
-            React.createElement(
-              "h1",
-              {
-                style: {
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(44px, 5.5vw, 78px)",
-                  lineHeight: 1.08,
-                  color: T.white,
-                  opacity: t ? 1 : 0,
-                  transform: t ? "translateY(0)" : "translateY(40px)",
-                  transition:
-                    "opacity 0.8s ease-out 0.25s, transform 0.8s ease-out 0.25s",
-                },
-              },
-              "Tea as it was",
-            ),
-          ),
-          React.createElement(
-            "div",
-            {
-              style: {
-                overflow: "hidden",
-                marginBottom: 28,
-                position: "relative",
-                display: "inline-block",
-              },
-            },
-            React.createElement(
-              "span",
-              {
-                style: {
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontWeight: 400,
-                  fontStyle: "italic",
-                  fontSize: "clamp(44px, 5.5vw, 78px)",
-                  lineHeight: 1.08,
-                  color: "#D4AF37",
-                  opacity: t ? 1 : 0,
-                  transform: t ? "translateY(0)" : "translateY(40px)",
-                  transition:
-                    "opacity 0.8s ease-out 0.45s, transform 0.8s ease-out 0.45s",
-                  display: "block",
-                  animation: t
-                    ? "gold-pulse 4s ease-in-out 1.5s infinite"
-                    : "none",
-                },
-              },
-              "meant to grow.",
-            ),
-            React.createElement("div", {
-              style: {
-                position: "absolute",
-                bottom: 6,
-                left: 0,
-                height: 2,
-                background: `linear-gradient(to right, ${T.gold}, transparent)`,
-                width: t ? "100%" : "0%",
-                transition: "width 1.1s ease-out 1.1s",
-              },
-            }),
-          ),
-          React.createElement(
-            "p",
-            {
-              style: {
-                fontFamily: "'Inter'",
-                fontSize: 17,
-                lineHeight: 1.75,
-                color: "rgba(255,255,255,0.72)",
-                maxWidth: 460,
-                marginBottom: 44,
-                opacity: t ? 1 : 0,
-                transform: t ? "translateY(0)" : "translateY(24px)",
-                transition:
-                  "opacity 0.8s ease-out 0.65s, transform 0.8s ease-out 0.65s",
-              },
-            },
-            "Ten varieties, one origin. One garden in Golaghat, Assam. Whole leaf, chemical-free, steeped in nothing but intention.",
-          ),
-          React.createElement(
-            "a",
-            {
-              href: "/reviews/",
-              style: {
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                marginBottom: 28,
-                textDecoration: "none",
-                background: "rgba(21, 39, 27, 0.75)",
-                border: "1px solid rgba(201,168,76,0.45)",
-                borderRadius: 9999,
-                padding: "8px 20px",
-                backdropFilter: "blur(6px)",
-                cursor: "pointer",
-                width: "fit-content",
-              },
-            },
-            React.createElement("span", { style: { color: "#C9A84C", fontSize: 14 } }, "★★★★★"),
-            React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 14, color: "#fff", fontWeight: 600 } }, "4.9/5 Rating"),
-            React.createElement("span", { style: { fontFamily: "'Inter'", fontSize: 14, color: "rgba(255,255,255,0.8)" } }, "· Customer Reviews & Community Ratings ›")
-          ),
-          React.createElement(
-            "div",
-            {
-              style: {
-                display: "flex",
-                gap: 16,
-                flexWrap: "wrap",
-                opacity: t ? 1 : 0,
-                transform: t ? "translateY(0)" : "translateY(20px)",
-                transition:
-                  "opacity 0.8s ease-out 0.85s, transform 0.8s ease-out 0.85s",
-              },
-            },
-            React.createElement(
-              RippleButton,
-              {
-                onClick: () => e("Collection"),
-                style: {
-                  background: T.gold,
-                  color: T.tealDark,
-                  border: "none",
-                  borderRadius: 9999,
-                  padding: "15px 40px",
-                  fontSize: 16,
-                  fontWeight: 600,
-                  cursor: "pointer",
-                  fontFamily: "'Inter'",
-                  boxShadow: "0 4px 20px rgba(201,168,76,0.35)",
-                },
-                hoverStyle: {
-                  transform: "scale(1.05)",
-                  boxShadow: "0 8px 32px rgba(201,168,76,0.55)",
-                },
-              },
-              "Explore Collection",
-            ),
-            React.createElement(
-              "button",
-              {
-                onClick: () => e("Our Story"),
-                style: {
-                  background: "transparent",
-                  color: T.white,
-                  border: "1px solid rgba(255,255,255,0.35)",
-                  borderRadius: 9999,
-                  padding: "15px 36px",
-                  fontSize: 16,
-                  fontWeight: 400,
-                  cursor: "pointer",
-                  fontFamily: "'Inter'",
-                  transition: "border-color 200ms, background 200ms",
-                  backdropFilter: "blur(8px)",
-                },
-                onMouseEnter: (e) => {
-                  ((e.currentTarget.style.borderColor =
-                    "rgba(255,255,255,0.7)"),
-                    (e.currentTarget.style.background =
-                      "rgba(255,255,255,0.08)"));
-                },
-                onMouseLeave: (e) => {
-                  ((e.currentTarget.style.borderColor =
-                    "rgba(255,255,255,0.35)"),
-                    (e.currentTarget.style.background = "transparent"));
-                },
-              },
-              "Our Story",
-            ),
-          ),
-          React.createElement(
-            "div",
-            {
-              ref: n,
-              style: {
-                display: "flex",
-                gap: i ? 28 : 40,
-                marginTop: i ? 40 : 56,
-                opacity: t ? 1 : 0,
-                transition: "opacity 0.8s ease-out 1.1s",
-              },
-            },
-            [
-              { label: "Varieties", target: 10, suffix: "" },
-              { label: "Origin", target: 1, suffix: "" },
-              { label: "Organic", target: 100, suffix: "%" },
-            ].map(({ label: e, target: a, suffix: n }) =>
-              React.createElement(
-                "div",
-                { key: e, style: { textAlign: "left" } },
-                React.createElement(
-                  "div",
-                  {
-                    style: {
-                      fontFamily: "'Playfair Display', Georgia, serif",
-                      fontSize: 32,
-                      color: T.gold,
-                      lineHeight: 1,
-                      fontWeight: 400,
-                    },
-                  },
-                  React.createElement(AnimatedNumber, {
-                    target: a,
-                    suffix: n,
-                    inView: o && t,
-                  }),
-                ),
-                React.createElement(
-                  "div",
-                  {
-                    style: {
-                      fontFamily: "'Inter'",
-                      fontSize: 16,
-                      color: "rgba(255,255,255,0.45)",
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      marginTop: 5,
-                    },
-                  },
-                  e,
-                ),
-              ),
-            ),
-          ),
+          { className: "premium-hero__actions" },
+          React.createElement("button", { type: "button", className: "premium-hero__shop", onClick: () => setPage("Collection") }, "Shop the Collection", React.createElement("span", { "aria-hidden": "true" }, " →")),
+          React.createElement("button", { type: "button", className: "premium-hero__story", onClick: () => setPage("Our Story") }, "Our Assam Story")
         ),
+        React.createElement(
+          "ul",
+          { className: "premium-hero__details", "aria-label": "Our tea collection" },
+          ["Whole leaf", "Single origin", "Ten varieties"].map(detail => React.createElement("li", { key: detail }, detail))
+        )
       ),
       React.createElement(
-        "div",
-        {
-          style: {
-            position: "absolute",
-            bottom: 36,
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 8,
-            zIndex: 10,
-          },
-        },
-        React.createElement("div", {
-          style: {
-            width: 1,
-            height: 48,
-            background:
-              "linear-gradient(to bottom, transparent, rgba(255,255,255,0.4))",
-            animation: "float 2.5s ease-in-out infinite",
-          },
-        }),
-        React.createElement(
-          "span",
-          {
-            style: {
-              fontSize: 16,
-              color: "rgba(255,255,255,0.35)",
-              letterSpacing: "0.14em",
-              fontFamily: "'Inter'",
-            },
-          },
-          "SCROLL",
+        "figure",
+        { className: "premium-hero__figure" },
+        React.createElement("a", { href: "/products/gaba-oolong-tea/", className: "premium-hero__image-link", "aria-label": "Discover GABA Oolong Tea" },
+          React.createElement("img", { src: "/teas/gaba-lifestyle.webp", alt: "Nevisan GABA Oolong Tea with a golden cup of tea in a sunlit setting", width: 1254, height: 1254, fetchPriority: "high", decoding: "async", className: "premium-hero__image" })
         ),
-      ),
+        React.createElement(
+          "figcaption",
+          { className: "premium-hero__caption" },
+          React.createElement("div", null, React.createElement("span", { className: "premium-hero__caption-label" }, "DISCOVER THE COLLECTION"), React.createElement("a", { href: "/products/gaba-oolong-tea/", className: "premium-hero__product" }, "GABA Oolong Tea")),
+          React.createElement("a", { href: "/products/gaba-oolong-tea/", className: "premium-hero__discover", "aria-label": "View GABA Oolong Tea" }, "Explore →")
+        )
+      )
     )
   );
 }

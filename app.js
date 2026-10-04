@@ -5747,7 +5747,7 @@ function FAQSection() {
               e.currentTarget.style.transform = "none";
             },
           },
-          "View All 330+ Questions in the Complete FAQ Hub →",
+          "View All 277 Questions in the Complete FAQ Hub →",
         ),
         React.createElement(
           "a",

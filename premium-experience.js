@@ -115,6 +115,7 @@
     const [buy, setBuy] = useState(false);
     const root = useRef(null);
     useTilt(root);
+    const productUrl = `/products/${tea.name.toLowerCase().replace(/\s+/g, '-')}/`;
     const notes = {
       'GABA Oolong Tea':'Toasty amber, stone fruit and smooth honey.',
       'Spearmint Green Tea':'Refreshing mint with a clean, bright finish.',
@@ -129,16 +130,16 @@
     };
     return h('article', { ref: root, className: 'lux-tea-card', id: tea.name.toLowerCase().replace(/\s+/g, '-') },
       h('button', { type: 'button', className: 'lux-tea-card__image', onClick: () => onImageClick ? onImageClick(tea.img, tea.name) : onView(tea), 'aria-label': `Enlarge ${tea.name} photograph` },
-        h('img', { src: tea.img, alt: `${tea.name} — Nevisan whole-leaf Assam tea`, width: 1254, height: 1254, loading: 'lazy', decoding: 'async' }),
+        h('img', { src: tea.img, srcSet: `${tea.img.replace('.webp', '-640.webp')} 640w, ${tea.img} 1254w`, sizes: '(max-width: 520px) calc(100vw - 48px), (max-width: 900px) calc((100vw - 80px) / 2), 400px', alt: `${tea.name} — Nevisan whole-leaf Assam tea`, width: 1254, height: 1254, loading: 'lazy', decoding: 'async' }),
         h('span', { className: 'lux-tea-card__zoom', 'aria-hidden': 'true' }, '+')
       ),
       h('div', { className: 'lux-tea-card__body' },
         h('p', { className: 'lux-tea-card__origin' }, tea.name === 'GABA Oolong Tea' ? 'ASSAM · OOLONG' : 'ASSAM · GREEN TEA'),
-        h('h3', null, h('button', { type: 'button', onClick: () => onView(tea) }, tea.name)),
+        h('h3', null, h('a', { href: productUrl }, tea.name)),
         h('p', { className: 'lux-tea-card__notes' }, notes[tea.name] || 'Whole-leaf character, from Golaghat, Assam.'),
         h('div', { className: 'lux-tea-card__bottom' },
           h('p', { className: 'lux-tea-card__price' }, `₹${tea.price || 499}`, h('span', null, ' / 50g')),
-          h('button', { type: 'button', className: 'lux-tea-card__discover', onClick: () => onView(tea), 'aria-label': `Discover ${tea.name}` }, 'Discover ↗')
+          h('a', { href: productUrl, className: 'lux-tea-card__discover', 'aria-label': `View ${tea.name} product page` }, 'View product ↗')
         ),
         h('button', { type: 'button', className: 'lux-tea-card__buy', onClick: () => setBuy(true) }, 'Choose your store'),
         buy && h(BuyModal, { tea, onClose: () => setBuy(false) })

@@ -40,7 +40,7 @@
 .lux-tea-card__body { padding:25px 24px 22px; }
 .lux-tea-card__origin { margin:0 0 12px; font-size:9px; letter-spacing:.16em; font-weight:600; color:#7c7259; }
 .lux-tea-card h3 { margin:0 0 12px; line-height:1.25; }
-.lux-tea-card h3 button { padding:0; border:0; background:none; text-align:left; cursor:pointer; font:400 clamp(21px,2vw,27px)/1.25 'Playfair Display',Georgia,serif; color:var(--lux-ink); }
+.lux-tea-card h3 :is(button,a) { padding:0; border:0; background:none; text-align:left; cursor:pointer; font:400 clamp(21px,2vw,27px)/1.25 'Playfair Display',Georgia,serif; color:var(--lux-ink); }
 .lux-tea-card__notes { min-height:42px; margin:0 0 18px; color:#63705d; font-size:12px; line-height:1.7; }
 .lux-tea-card__bottom { display:flex; align-items:center; justify-content:space-between; gap:10px; border-top:1px solid #e2ddd2; padding-top:18px; }
 .lux-tea-card__price { margin:0; font-size:16px; font-weight:500; color:var(--lux-ink); }
@@ -124,7 +124,7 @@
   .lux-collection__grid { grid-template-columns:1fr; gap:30px; }
   .lux-collection__grid .lux-tea-card:last-child { display:block; }
   .lux-tea-card__body { padding:24px; }
-  .lux-tea-card h3 button { font-size:26px; }
+  .lux-tea-card h3 :is(button,a) { font-size:26px; }
   .lux-ritual__stage { height:330px; }
 }
 @media (prefers-reduced-motion:reduce) {
@@ -132,3 +132,5 @@
   .lux-button,.lux-tea-card__buy { transition:none; }
   #nev-scroll-progress { display:none; }
 }
+
+.lux-tea-card h3 a,.lux-tea-card__discover { text-decoration:none; }

@@ -5962,32 +5962,32 @@ const POSTS = [
   {
     "title": "Butterfly Pea Green Tea: A Colourful Buying Guide",
     "slug": "best-blue-tea-butterfly-pea-flower-india",
-    "excerpt": "Delicate florals and a vivid blue cup. A practical guide to ingredients, caffeine, brewing and choosing tea by taste.'s guide to choosing the best blue butterfly pea flower tea (Aparajita) in India. Learn the science of anthocyanins for skin, hair, and color-shifting brews."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "Chamomile Green Tea: Choosing a Floral Cup",
     "slug": "best-chamomile-tea-for-sleep-in-india",
-    "excerpt": "Soft florals with honeyed apple notes. A practical guide to ingredients, caffeine, brewing and choosing tea by taste.'s guide to choosing the best chamomile tea for sleep in India. Compare whole-flower German chamomile, tea bag dust, apigenin content, and evening calm."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "Choose Your Green Tea by Taste and Routine",
     "slug": "best-green-tea-for-weight-loss-energy-sleep",
-    "excerpt": "Fresh, grassy notes and whole-leaf character. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "Whole-Leaf Green Tea: A Practical Buying Guide",
     "slug": "best-green-tea-for-weight-loss-in-india",
-    "excerpt": "Fresh, grassy notes and whole-leaf character. A practical guide to ingredients, caffeine, brewing and choosing tea by taste.'s guide to finding the best green tea for weight loss in India. Discover why unbroken whole leaves deliver more EGCG catechins and zero bitterness."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "Spearmint Green Tea: Ingredients, Taste and Brewing",
     "slug": "best-spearmint-tea-for-pcos-in-india",
-    "excerpt": "Refreshing mint with a clean, bright finish. A practical guide to ingredients, caffeine, brewing and choosing tea by taste.'s guide to choosing the best spearmint tea for PCOS in India. Compare whole-leaf Mentha spicata, tea bag fannings, and green tea combinations."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "Butterfly Pea Green Tea: Colour, Taste and Brewing",
     "slug": "blue-butterfly-pea-flower-tea",
-    "excerpt": "Delicate florals and a vivid blue cup. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "Blue Butterfly Pea Flower Magic Lemon Mocktail Recipe",
@@ -5997,7 +5997,7 @@ const POSTS = [
   {
     "title": "Chamomile Green Tea: A Floral Tea Ritual",
     "slug": "chamomile-green-tea-evening-blend",
-    "excerpt": "Soft florals with honeyed apple notes. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "How to Cold Brew Whole Leaf Green Tea",
@@ -6017,12 +6017,12 @@ const POSTS = [
   {
     "title": "Green Tea: Ingredients, Caffeine and Everyday Brewing",
     "slug": "green-tea-health-benefits-complete-guide",
-    "excerpt": "Fresh, grassy notes and whole-leaf character. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "Green Tea and Coffee: Two Different Cups",
     "slug": "green-tea-vs-coffee-caffeine",
-    "excerpt": "Choose tea by taste, ingredients and brewing preference."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "How to Buy Real Green Tea in India: What to Look For and What to Avoid",
@@ -6032,7 +6032,7 @@ const POSTS = [
   {
     "title": "Choose Tea by Flavour and Routine",
     "slug": "how-to-choose-right-tea-for-your-lifestyle",
-    "excerpt": "Choose tea by taste, ingredients and brewing preference."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "How to Get Three Steeps from One Serving: The Complete Guide to Maximizing Your Whole Leaf Tea Experience",
@@ -6047,7 +6047,7 @@ const POSTS = [
   {
     "title": "Tea for Your Morning and Evening Rituals",
     "slug": "morning-vs-evening-teas",
-    "excerpt": "Choose tea by taste, ingredients and brewing preference."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "Non-Alcoholic Botanical Whiskey & Rum Teas",
@@ -6062,7 +6062,7 @@ const POSTS = [
   {
     "title": "A Daily Spearmint Tea Ritual",
     "slug": "pcos-spearmint-tea-daily-routine",
-    "excerpt": "Refreshing mint with a clean, bright finish. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "Rum Green Tea: How We Made It",
@@ -6072,12 +6072,12 @@ const POSTS = [
   {
     "title": "GABA Oolong Tea: The Leaf, the Cup and the Ritual",
     "slug": "science-behind-gaba-tea",
-    "excerpt": "Toasty amber, stone fruit and smooth honey. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "Getting to Know Spearmint Green Tea",
     "slug": "spearmint-tea-hormonal-balance",
-    "excerpt": "Refreshing mint with a clean, bright finish. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "The Real Cost of Cheap Tea Bags",
@@ -6087,7 +6087,7 @@ const POSTS = [
   {
     "title": "Tulsi Green Tea: An Herbaceous Assam Blend",
     "slug": "tulsi-green-tea-adaptogen",
-    "excerpt": "Herbaceous warmth with a fragrant tulsi note. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
   },
   {
     "title": "The Ultimate Guide to Green Tea in India: From Leaf to Cup",

@@ -82,7 +82,7 @@ def check():
                     result = subprocess.run(['node', '--check', temporary.name], capture_output=True, text=True)
                     if result.returncode:
                         errors.append(f'{relative}: inline JavaScript syntax error: {result.stderr}')
-    for name in ['app.js', 'consent.js', 'premium-experience.js']:
+    for name in ['app.js', 'consent.js', 'premium-experience.js', 'product-atelier.js', 'site-polish.js']:
         result = subprocess.run(['node', '--check', str(ROOT / name)], capture_output=True, text=True)
         if result.returncode:
             errors.append(f'{name}: {result.stderr}')

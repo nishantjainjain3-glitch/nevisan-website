@@ -1,6 +1,6 @@
 # Nevisan website audit — 5 October 2026
 
-Status: fixes published; final browser interaction recheck pending because the browser/workspace environment disconnected. Do not mark the project fully signed off from this record alone.
+Status: published fixes and the final desktop browser interaction recheck completed. The earlier browser interruption was resolved on 5 October 2026. Physical-device, marketplace-account and business-document checks remain outside the verified scope.
 
 ## Published changes
 
@@ -36,12 +36,19 @@ Used Wikipedia’s Signs of AI writing as an editorial reference, not an authors
 
 After the final deployment, independent page retrieval confirmed the corrected privacy title, updated AI-readable guide and revised GABA journal article. This confirms published text, not interactive viewer behaviour.
 
-## Remaining sign-off checks
+## Final live recheck completed
 
-1. Restore a working browser session and repeat the deployed product viewer’s rapid close/reopen and Escape sequences, confirming scrolling and focus return correctly. Two regression tests already pass.
-2. Verify the deployed message-field accessible name, company/certification copy and journal return-link styling in the browser; capture a fresh screenshot.
-3. Test real iPhone/Android and Safari devices. Source review and automated fallbacks are not physical-device testing.
-4. Check current Amazon/Flipkart listing availability, stock and delivery in the owner’s marketplace accounts. No checkout was completed.
-5. Owner confirmation of pack declarations, current certification coverage, company facts and business policy details remains necessary; this audit does not certify legal compliance.
-6. Import genuine offline customer feedback when its original records are provided. Do not publish generated or unverified reviews as customer testimony.
-7. Analytics dashboards and a PageSpeed score were not independently verified. The PageSpeed API quota blocked the earlier attempt.
+- Repeated GABA image-viewer open/close three times and used Escape. Each close restored normal page scrolling and returned keyboard focus to the image button.
+- Opened and dismissed the full-size viewer on all ten deployed product pages. All loaded `product-gallery.js?v=2`, restored scrolling and returned focus correctly.
+- Confirmed the deployed contact message field has the accessible name `Message` and the privacy title is `Privacy Policy | Nevisan Tea`.
+- Confirmed the revised company and certification copy, journal stylesheet version 4 and return navigation to `/journal/`.
+- Captured and visually inspected a fresh desktop screenshot of the live GABA product page.
+- The AI-readable guide was confirmed through independent published-page retrieval. This browser blocked its text-file download route; no claim of browser interaction with that file is made.
+
+## Remaining owner/device/account checks
+
+1. Test real iPhone/Android and Safari devices. Source review and automated fallbacks are not physical-device testing.
+2. Check current Amazon/Flipkart listing availability, stock and delivery in the owner’s marketplace accounts. No checkout was completed.
+3. Owner confirmation of pack declarations, current certification coverage, company facts and business policy details remains necessary; this audit does not certify legal compliance.
+4. Reviews are deferred at the owner's request. The supplied review export was not published or changed.
+5. Analytics dashboards and a PageSpeed score were not independently verified. The PageSpeed API quota blocked the earlier attempt.

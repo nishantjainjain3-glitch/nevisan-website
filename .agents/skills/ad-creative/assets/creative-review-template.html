@@ -141,8 +141,9 @@
   .err { background: #fbeaea; border: 1px solid #e6b7b7; color: #8a2b2b; border-radius: 10px; padding: 14px 16px; font-size: 13px; }
   footer { margin-top: 40px; text-align: center; font-size: 12px; color: var(--muted); }
 </style>
+<link rel="stylesheet" href="/site-polish.css?v=1">
 </head>
-<body>
+<body class="premium-site">
 
 <!-- DATA — replace this JSON with your project (see the comment at the top of the file). -->
 <script type="application/json" id="review-data">
@@ -396,5 +397,6 @@ function renderAll() { renderConcepts(); renderToggles(); renderPost(); renderBo
 renderProject();
 renderAll();
 </script>
+<script src="/site-polish.js?v=1" defer></script>
 </body>
 </html>

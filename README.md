@@ -45,3 +45,11 @@ python flipkart_ads_client.py --refresh
 Before merging or deploying, visually check desktop and mobile layouts, product links, quiz results and WhatsApp cart handoff. Confirm live analytics events and consent changes in Google/Meta tools. Inspect live headers: `_headers` only takes effect on hosts that support it; GitHub Pages does not apply that file.
 
 Research journal articles and customer quotations are retained. This code cleanup is not a certification of scientific claims, product certifications or live marketplace availability.
+
+## Premium presentation
+
+`site-polish.css` supplies the shared editorial design. `product-atelier.js` uses CSS 3D transforms and the supplied front photographs for an interactive packaging preview. Rotation stays within a front-facing range; generic sides are illustrative and do not claim to reproduce the printed back panel. The scene requires no WebGL or animation loop, preserves vertical touch scrolling, supports keyboard range input and handles a missing image.
+
+Product sales copy and the FAQ focus on ingredients, taste, brewing and ordering. Aggregate ratings, unattributed verified testimonials and unsupported product-specific lab figures were removed. Existing packaging artwork and statutory declarations are retained as supplied; certificates, packaging claims, seller inventory and marketplace terms require their own source records.
+
+The cloud browser supports desktop review; physical iPhone and Android testing is still outstanding.

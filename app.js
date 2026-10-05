@@ -958,394 +958,316 @@ function RippleButton({
 const teaSlug = (name) => name.toLowerCase().replace(/\s+/g, "-");
 const TEAS = [
   {
-    name: "Lemongrass Green Tea",
-    short:
-      "The one we reach for first thing. Bright, lemony, and refreshing.",
-    tags: ["CITRUS", "REFRESHING"],
-    bg: "#d4edd8",
-    color: "#3a7a50",
-    img: "teas/lemongrass-lifestyle.webp",
-    price: 499,
-    badge: "BRIGHT CITRUS",
-    brew: "90°C · 2–3 min · Can steep twice",
-    benefits: [
-      {
-        icon: "🌿",
-        title: "After-Meal Tea Ritual",
-        desc: "A bright citrus cup often enjoyed as a refreshing tea break after meals.",
-      },
-      {
-        icon: "🔥",
-        title: "Aromatic Character",
-        desc: "Aromatic lemongrass adds a crisp citrus character to whole-leaf Assam green tea.",
-      },
-      {
-        icon: "💧",
-        title: "Hydrating & Refreshing",
-        desc: "A naturally hydrating herbal tea with a bright, citrusy flavour.",
-      },
-      {
-        icon: "😌",
-        title: "Calming",
-        desc: "Gentle and soothing — a pleasant mid-day cup to help you unwind.",
-      },
-      {
-        icon: "🦠",
-        title: "Light Citrus Finish",
-        desc: "Enjoy the light citrus finish plain or as a chilled cup.",
-      },
+    "name": "Lemongrass Green Tea",
+    "short": "Bright citrus with a gentle grassy finish.",
+    "tags": [
+      "WHOLE LEAF",
+      "ASSAM"
     ],
+    "bg": "#d4edd8",
+    "color": "#3a7a50",
+    "img": "teas/lemongrass-lifestyle.webp",
+    "price": 499,
+    "badge": "BRIGHT CITRUS",
+    "brew": "90°C · 2–3 min · Can steep twice",
+    "benefits": [
+      {
+        "icon": "🌿",
+        "title": "Tasting character",
+        "desc": "Bright citrus with a gentle grassy finish."
+      },
+      {
+        "icon": "☕",
+        "title": "Your brewing ritual",
+        "desc": "Follow your pack’s brewing guide and adjust the strength to taste."
+      },
+      {
+        "icon": "🍃",
+        "title": "Whole-leaf tea",
+        "desc": "Green and oolong teas naturally contain caffeine."
+      }
+    ]
   },
   {
-    name: "Blue Flower Green Tea",
-    short:
-      "Add a drop of lemon and watch it turn purple. Calming, antioxidant-rich, a little magic.",
-    tags: ["CALMING", "ANTIOXIDANT"],
-    bg: "#c8dff0",
-    color: "#2a5a8a",
-    img: "teas/blue-flower-lifestyle.webp",
-    price: 499,
-    badge: "BLUE BOTANICALS",
-    brew: "85°C · 2–3 min · No milk needed",
-    benefits: [
-      {
-        icon: "🫐",
-        title: "Antioxidant-Rich",
-        desc: "Butterfly pea flower contains anthocyanins, the same compounds found in blueberries.",
-      },
-      {
-        icon: "🧠",
-        title: "Slow Tea Break",
-        desc: "Butterfly pea petals bring a vivid blue color to this green-tea blend, which naturally contains caffeine.",
-      },
-      {
-        icon: "✨",
-        title: "Vibrant & Fun",
-        desc: "The colour-changing effect makes every cup a visual experience — add lemon for the surprise.",
-      },
-      {
-        icon: "😴",
-        title: "Soothing Evening Cup",
-        desc: "A colorful green-tea blend to sip slowly. Consider its caffeine content when choosing your serving time.",
-      },
-      {
-        icon: "🌈",
-        title: "Colour-Changing Fun",
-        desc: "Add lemon and watch it shift from blue to purple — a natural pH reaction.",
-      },
+    "name": "Blue Flower Green Tea",
+    "short": "Delicate florals and a vivid blue cup.",
+    "tags": [
+      "WHOLE LEAF",
+      "ASSAM"
     ],
+    "bg": "#c8dff0",
+    "color": "#2a5a8a",
+    "img": "teas/blue-flower-lifestyle.webp",
+    "price": 499,
+    "badge": "BLUE BOTANICALS",
+    "brew": "85°C · 2–3 min · No milk needed",
+    "benefits": [
+      {
+        "icon": "🌿",
+        "title": "Tasting character",
+        "desc": "Delicate florals and a vivid blue cup."
+      },
+      {
+        "icon": "☕",
+        "title": "Your brewing ritual",
+        "desc": "Follow your pack’s brewing guide and adjust the strength to taste."
+      },
+      {
+        "icon": "🍃",
+        "title": "Whole-leaf tea",
+        "desc": "Green and oolong teas naturally contain caffeine."
+      }
+    ]
   },
   {
-    name: "Rum Green Tea",
-    short:
-      "Took us 14 tries to get right. All the warmth of aged rum, zero alcohol.",
-    tags: ["NON-ALC", "EXOTIC"],
-    bg: "#f5e9a0",
-    color: "#8a6a10",
-    img: "teas/rum-lifestyle.webp",
-    price: 499,
-    badge: "ZERO ALCOHOL",
-    bestseller: !0,
-    brew: "90°C · 3 min · Excellent hot or iced",
-    benefits: [
-      {
-        icon: "🍹",
-        title: "100% Non-Alcoholic",
-        desc: "All the warmth of aged rum — crafted entirely from natural botanicals. Zero alcohol.",
-      },
-      {
-        icon: "😊",
-        title: "Mood Lifting",
-        desc: "Warm spice notes make this a flavorful cup for a slow tea ritual.",
-      },
-      {
-        icon: "💚",
-        title: "Green Tea Antioxidants",
-        desc: "A whole-leaf Assam green tea base with naturally occurring tea polyphenols.",
-      },
-      {
-        icon: "🌿",
-        title: "Natural Botanicals Only",
-        desc: "Flavour comes from a precise blend of natural herbs and spices — zero artificial additives.",
-      },
-      {
-        icon: "🔄",
-        title: "Multi-Steep Value",
-        desc: "Whole leaf quality means 2–3 full-flavoured steeps from every single serving.",
-      },
+    "name": "Rum Green Tea",
+    "short": "Sugarcane warmth, spices and oak notes.",
+    "tags": [
+      "WHOLE LEAF",
+      "ASSAM"
     ],
+    "bg": "#f5e9a0",
+    "color": "#8a6a10",
+    "img": "teas/rum-lifestyle.webp",
+    "price": 499,
+    "badge": "ZERO ALCOHOL",
+    "bestseller": true,
+    "brew": "90°C · 3 min · Excellent hot or iced",
+    "benefits": [
+      {
+        "icon": "🌿",
+        "title": "Tasting character",
+        "desc": "Sugarcane warmth, spices and oak notes."
+      },
+      {
+        "icon": "☕",
+        "title": "Your brewing ritual",
+        "desc": "Follow your pack’s brewing guide and adjust the strength to taste."
+      },
+      {
+        "icon": "🍃",
+        "title": "Whole-leaf tea",
+        "desc": "Green and oolong teas naturally contain caffeine."
+      }
+    ]
   },
   {
-    name: "Spearmint Green Tea",
-    short:
-      "Uditi drinks this one every day. Cool mint, a clean finish, and a lovely aroma.",
-    tags: ["MINT", "REFRESHING"],
-    bg: "#e8d4f0",
-    color: "#6a3a8a",
-    img: "teas/spearmint-lifestyle.webp",
-    price: 499,
-    badge: "COOL MINT",
-    brew: "85°C · 2 min · Light and refreshing",
-    benefits: [
-      {
-        icon: "⚖️",
-        title: "Refreshing Mint",
-        desc: "A bright, cooling mint infusion with a clean, refreshing finish. Popular for its naturally uplifting character.",
-      },
-      {
-        icon: "🧖",
-        title: "Everyday Tea Ritual",
-        desc: "A refreshing mint cup to enjoy as part of your daily tea routine.",
-      },
-      {
-        icon: "💨",
-        title: "Fresh & Soothing",
-        desc: "A bright mint aroma and a clean finish for an after-meal tea break.",
-      },
-      {
-        icon: "🧠",
-        title: "Mental Refreshment",
-        desc: "The bright, minty flavour of spearmint is naturally uplifting and clarifying.",
-      },
-      {
-        icon: "🌸",
-        title: "Gentle & Soothing",
-        desc: "Spearmint adds a sweet, cool herbal character to whole-leaf green tea.",
-      },
+    "name": "Spearmint Green Tea",
+    "short": "Refreshing mint with a clean, bright finish.",
+    "tags": [
+      "WHOLE LEAF",
+      "ASSAM"
     ],
+    "bg": "#e8d4f0",
+    "color": "#6a3a8a",
+    "img": "teas/spearmint-lifestyle.webp",
+    "price": 499,
+    "badge": "COOL MINT",
+    "brew": "85°C · 2 min · Light and refreshing",
+    "benefits": [
+      {
+        "icon": "🌿",
+        "title": "Tasting character",
+        "desc": "Refreshing mint with a clean, bright finish."
+      },
+      {
+        "icon": "☕",
+        "title": "Your brewing ritual",
+        "desc": "Follow your pack’s brewing guide and adjust the strength to taste."
+      },
+      {
+        "icon": "🍃",
+        "title": "Whole-leaf tea",
+        "desc": "Green and oolong teas naturally contain caffeine."
+      }
+    ]
   },
   {
-    name: "Tulsi Green Tea",
-    short:
-      "Holy basil and Assam green. What we brew when life gets a little much.",
-    tags: ["HERBAL", "AROMATIC"],
-    bg: "#d4edd8",
-    color: "#3a7a50",
-    img: "teas/tulsi-lifestyle.webp",
-    price: 499,
-    badge: "HERBAL AROMA",
-    brew: "90°C · 3–4 min · Best plain or with honey",
-    benefits: [
-      {
-        icon: "🛡️",
-        title: "Herbal Tradition",
-        desc: "Tulsi (Holy Basil) has a long history in Ayurvedic tradition. A warming, herbaceous infusion with a distinctive clove-like aroma.",
-      },
-      {
-        icon: "🧘",
-        title: "Quiet Tea Ritual",
-        desc: "An aromatic herbal cup for a quiet pause in your day.",
-      },
-      {
-        icon: "🫁",
-        title: "Seasonal Tea Ritual",
-        desc: "A warm herbal cup to enjoy during seasonal changes.",
-      },
-      {
-        icon: "🩸",
-        title: "Whole-Leaf Character",
-        desc: "Holy basil adds a distinctive herbal character to whole-leaf Assam green tea.",
-      },
-      {
-        icon: "🌱",
-        title: "Daily Tea Ritual",
-        desc: "Enjoy Tulsi green tea for its botanical aroma and warm herbal flavor.",
-      },
+    "name": "Tulsi Green Tea",
+    "short": "Herbaceous warmth with a fragrant tulsi note.",
+    "tags": [
+      "WHOLE LEAF",
+      "ASSAM"
     ],
+    "bg": "#d4edd8",
+    "color": "#3a7a50",
+    "img": "teas/tulsi-lifestyle.webp",
+    "price": 499,
+    "badge": "HERBAL AROMA",
+    "brew": "90°C · 3–4 min · Best plain or with honey",
+    "benefits": [
+      {
+        "icon": "🌿",
+        "title": "Tasting character",
+        "desc": "Herbaceous warmth with a fragrant tulsi note."
+      },
+      {
+        "icon": "☕",
+        "title": "Your brewing ritual",
+        "desc": "Follow your pack’s brewing guide and adjust the strength to taste."
+      },
+      {
+        "icon": "🍃",
+        "title": "Whole-leaf tea",
+        "desc": "Green and oolong teas naturally contain caffeine."
+      }
+    ]
   },
   {
-    name: "Chamomile Green Tea",
-    short:
-      "Our wind-down cup. Soft, floral, and made for slow tea breaks.",
-    tags: ["FLORAL", "MELLOW"],
-    bg: "#f5e9a0",
-    color: "#8a6a10",
-    img: "teas/chamomile-lifestyle.webp",
-    price: 499,
-    badge: "SOFT FLORAL",
-    brew: "85°C · 4 min · Soft floral cup",
-    benefits: [
-      {
-        icon: "😴",
-        title: "Relaxing Evening Tea",
-        desc: "Whole chamomile flowers add a soft floral aroma to this green-tea blend.",
-      },
-      {
-        icon: "😌",
-        title: "Calm & Gentle",
-        desc: "A soft floral cup for a quiet tea break. This blend contains green tea and caffeine.",
-      },
-      {
-        icon: "🫀",
-        title: "Floral Character",
-        desc: "Chamomile flowers and whole-leaf green tea make a gently aromatic cup.",
-      },
-      {
-        icon: "🍽️",
-        title: "After-Meal Tea Ritual",
-        desc: "Enjoy its soft floral character during a quiet tea break after meals.",
-      },
-      {
-        icon: "🧴",
-        title: "Botanical Blend",
-        desc: "Whole flowers give this blend a distinctive floral character.",
-      },
+    "name": "Chamomile Green Tea",
+    "short": "Soft florals with honeyed apple notes.",
+    "tags": [
+      "WHOLE LEAF",
+      "ASSAM"
     ],
+    "bg": "#f5e9a0",
+    "color": "#8a6a10",
+    "img": "teas/chamomile-lifestyle.webp",
+    "price": 499,
+    "badge": "SOFT FLORAL",
+    "brew": "85°C · 4 min · Soft floral cup",
+    "benefits": [
+      {
+        "icon": "🌿",
+        "title": "Tasting character",
+        "desc": "Soft florals with honeyed apple notes."
+      },
+      {
+        "icon": "☕",
+        "title": "Your brewing ritual",
+        "desc": "Follow your pack’s brewing guide and adjust the strength to taste."
+      },
+      {
+        "icon": "🍃",
+        "title": "Whole-leaf tea",
+        "desc": "Green and oolong teas naturally contain caffeine."
+      }
+    ]
   },
   {
-    name: "Whiskey Green Tea",
-    short: "Smoky, bold and grown-up. For whiskey nights, without the whiskey.",
-    tags: ["NON-ALC", "BOLD"],
-    bg: "#e0d4c8",
-    color: "#5a4030",
-    img: "teas/whiskey-lifestyle.webp",
-    price: 499,
-    badge: "ZERO ALCOHOL",
-    brew: "90°C · 3 min · Bold, best enjoyed slowly",
-    benefits: [
-      {
-        icon: "🥃",
-        title: "Zero Alcohol",
-        desc: "All the bold, smoky warmth of aged whiskey — crafted entirely from natural botanicals.",
-      },
-      {
-        icon: "💚",
-        title: "Green Tea Antioxidants",
-        desc: "Assam green tea delivers EGCG catechins, a natural antioxidant found in all green teas.",
-      },
-      {
-        icon: "🔥",
-        title: "Aromatic Character",
-        desc: "A whole-leaf green tea base complements the bold botanical flavor.",
-      },
-      {
-        icon: "🧠",
-        title: "Slow Tea Break",
-        desc: "A whole-leaf tea blend to savor slowly; it naturally contains caffeine.",
-      },
-      {
-        icon: "🌿",
-        title: "All Natural",
-        desc: "Bold depth comes from a precise blend of natural woody botanicals — no artificial smoke.",
-      },
+    "name": "Whiskey Green Tea",
+    "short": "A bold cup with malt and smoky oak notes.",
+    "tags": [
+      "WHOLE LEAF",
+      "ASSAM"
     ],
+    "bg": "#e0d4c8",
+    "color": "#5a4030",
+    "img": "teas/whiskey-lifestyle.webp",
+    "price": 499,
+    "badge": "ZERO ALCOHOL",
+    "brew": "90°C · 3 min · Bold, best enjoyed slowly",
+    "benefits": [
+      {
+        "icon": "🌿",
+        "title": "Tasting character",
+        "desc": "A bold cup with malt and smoky oak notes."
+      },
+      {
+        "icon": "☕",
+        "title": "Your brewing ritual",
+        "desc": "Follow your pack’s brewing guide and adjust the strength to taste."
+      },
+      {
+        "icon": "🍃",
+        "title": "Whole-leaf tea",
+        "desc": "Green and oolong teas naturally contain caffeine."
+      }
+    ]
   },
   {
-    name: "GABA Oolong Tea",
-    short: "Calm without the fog. The cup we keep close on the busy days.",
-    tags: ["RELAXATION", "FOCUS"],
-    bg: "#c0e0dc",
-    color: "#1b7a82",
-    img: "teas/gaba-lifestyle.webp",
-    price: 499,
-    badge: "MELLOW OOLONG",
-    brew: "85°C · 3 min · Nitrogen-anaerobic processed",
-    benefits: [
-      {
-        icon: "🧘",
-        title: "Calm & Relaxed",
-        desc: "Nitrogen-processed oolong with a smooth, mellow character.",
-      },
-      {
-        icon: "🧠",
-        title: "Clear Mind",
-        desc: "A balanced, mellow cup for a quiet pause in your day.",
-      },
-      {
-        icon: "😴",
-        title: "Evening Wind-Down",
-        desc: "A naturally mellow tea perfect for transitioning into a restful evening.",
-      },
-      {
-        icon: "💪",
-        title: "Post-Workout Recovery",
-        desc: "A soothing cup to enjoy after exercise as part of a balanced recovery routine.",
-      },
-      {
-        icon: "❤️",
-        title: "Oolong Character",
-        desc: "Enjoy the distinctive depth and aroma of whole-leaf Assam oolong.",
-      },
+    "name": "GABA Oolong Tea",
+    "short": "Toasty amber, stone fruit and smooth honey.",
+    "tags": [
+      "WHOLE LEAF",
+      "ASSAM"
     ],
+    "bg": "#c0e0dc",
+    "color": "#1b7a82",
+    "img": "teas/gaba-lifestyle.webp",
+    "price": 499,
+    "badge": "MELLOW OOLONG",
+    "brew": "85°C · 3 min · Nitrogen-anaerobic processed",
+    "benefits": [
+      {
+        "icon": "🌿",
+        "title": "Tasting character",
+        "desc": "Toasty amber, stone fruit and smooth honey."
+      },
+      {
+        "icon": "☕",
+        "title": "Your brewing ritual",
+        "desc": "Follow your pack’s brewing guide and adjust the strength to taste."
+      },
+      {
+        "icon": "🍃",
+        "title": "Whole-leaf tea",
+        "desc": "Green and oolong teas naturally contain caffeine."
+      }
+    ]
   },
   {
-    name: "Organic Green Tea",
-    short:
-      "Where it all began. Pure whole-leaf Assam green from our single garden in Golaghat.",
-    tags: ["ORGANIC", "PURE"],
-    bg: "#c8e8c0",
-    color: "#2a6a2a",
-    img: "teas/organic-lifestyle.webp",
-    price: 499,
-    badge: "ORGANIC",
-    brew: "80°C · 2 min · Never boiling water",
-    benefits: [
-      {
-        icon: "🌱",
-        title: "PGS-India Certified Organic",
-        desc: "Certified organic by the Participatory Guarantee System of India — grown without synthetic pesticides or chemicals.",
-      },
-      {
-        icon: "⚡",
-        title: "Gentle, Steady Energy",
-        desc: "Whole-leaf green tea naturally contains caffeine and L-theanine.",
-      },
-      {
-        icon: "🛡️",
-        title: "Antioxidant-Rich",
-        desc: "Whole-leaf green tea contains naturally occurring catechins and polyphenols.",
-      },
-      {
-        icon: "🏃",
-        title: "Active Lifestyle Support",
-        desc: "Green tea is a popular choice for those pursuing an active, health-conscious lifestyle.",
-      },
-      {
-        icon: "🧬",
-        title: "Pure Tea Character",
-        desc: "An unblended cup for drinkers who enjoy the character of Assam whole-leaf tea.",
-      },
+    "name": "Organic Green Tea",
+    "short": "Fresh, grassy notes and whole-leaf character.",
+    "tags": [
+      "WHOLE LEAF",
+      "ASSAM"
     ],
+    "bg": "#c8e8c0",
+    "color": "#2a6a2a",
+    "img": "teas/organic-lifestyle.webp",
+    "price": 499,
+    "badge": "ORGANIC",
+    "brew": "80°C · 2 min · Never boiling water",
+    "benefits": [
+      {
+        "icon": "🌿",
+        "title": "Tasting character",
+        "desc": "Fresh, grassy notes and whole-leaf character."
+      },
+      {
+        "icon": "☕",
+        "title": "Your brewing ritual",
+        "desc": "Follow your pack’s brewing guide and adjust the strength to taste."
+      },
+      {
+        "icon": "🍃",
+        "title": "Whole-leaf tea",
+        "desc": "Green and oolong teas naturally contain caffeine."
+      }
+    ]
   },
   {
-    name: "Ginger Green Tea",
-    short:
-      "Warming ginger blended with single-origin whole-leaf green tea. Aromatic, spicy, and perfect for a cozy tea break.",
-    tags: ["SPICY", "WARMING"],
-    bg: "#fdf2e9",
-    color: "#935116",
-    img: "teas/ginger-lifestyle.webp",
-    price: 499,
-    badge: "WARMING GINGER",
-    brew: "85°C · 2–3 min · Best warm",
-    benefits: [
-      {
-        icon: "🫚",
-        title: "Ginger Aroma",
-        desc: "Ginger adds a familiar spicy aroma and a warming flavor.",
-      },
-      {
-        icon: "🔥",
-        title: "Warming & Comforting",
-        desc: "A hot cup with warming ginger spice and whole-leaf tea character.",
-      },
-      {
-        icon: "😌",
-        title: "After-Meal Tea Ritual",
-        desc: "Enjoy the spicy flavor as a tea break after meals.",
-      },
-      {
-        icon: "💪",
-        title: "Spicy Botanical Blend",
-        desc: "Botanical ginger and whole-leaf Assam tea create a warm, spicy blend.",
-      },
-      {
-        icon: "🩺",
-        title: "Whole-Leaf Character",
-        desc: "Whole-leaf green tea provides a fresh base for the ginger spice.",
-      },
+    "name": "Ginger Green Tea",
+    "short": "Ginger warmth with a mellow green-tea finish.",
+    "tags": [
+      "WHOLE LEAF",
+      "ASSAM"
     ],
-  },
+    "bg": "#fdf2e9",
+    "color": "#935116",
+    "img": "teas/ginger-lifestyle.webp",
+    "price": 499,
+    "badge": "WARMING GINGER",
+    "brew": "85°C · 2–3 min · Best warm",
+    "benefits": [
+      {
+        "icon": "🌿",
+        "title": "Tasting character",
+        "desc": "Ginger warmth with a mellow green-tea finish."
+      },
+      {
+        "icon": "☕",
+        "title": "Your brewing ritual",
+        "desc": "Follow your pack’s brewing guide and adjust the strength to taste."
+      },
+      {
+        "icon": "🍃",
+        "title": "Whole-leaf tea",
+        "desc": "Green and oolong teas naturally contain caffeine."
+      }
+    ]
+  }
 ];
 function TagChip({ label: e, color: t }) {
   return React.createElement(
@@ -3320,7 +3242,7 @@ function WhereToBuy() {
             key: e.name,
             c: e,
             inView: t, index: a, }), ), ),
-React.createElement("div", { style: { textAlign: "center", marginTop: 48, marginBottom: 32 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "14px 32px", fontFamily: "'Plus Jakarta Sans'", fontSize: 16, fontWeight: 600, textDecoration: "none", cursor: "pointer" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "View All 380+ Customer Reviews", React.createElement("span", null, "→"))),
+React.createElement("div", { style: { textAlign: "center", marginTop: 48, marginBottom: 32 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "14px 32px", fontFamily: "'Plus Jakarta Sans'", fontSize: 16, fontWeight: 600, textDecoration: "none", cursor: "pointer" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "Explore marketplace feedback", React.createElement("span", null, "→"))),
     ),
   );
 }
@@ -3784,204 +3706,15 @@ function ReviewForm() {
       );
 }
 function Testimonials() {
-  const [e, t] = useInView(0.1),
-    a = useGsapReveal(),
-    { isMobile: n, isTablet: o } = useViewport();
-  return React.createElement(
-    "div",
-    {
-      style: {
-        background: T.creamDark,
-        padding: n ? "64px 20px" : "100px 32px",
-      },
-    },
-    React.createElement(
-      "div",
-      { style: { maxWidth: 1200, margin: "0 auto" } },
-      React.createElement(
-        "div",
-        { ref: a, style: { textAlign: "center", marginBottom: n ? 36 : 56 } },
-        React.createElement(
-          "div",
-          {
-            "data-gsap-reveal": !0,
-            style: {
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 16,
-              marginBottom: 16,
-            },
-          },
-          React.createElement("div", {
-            style: { height: 1, width: 60, background: T.gold },
-          }),
-          React.createElement(
-            "span",
-            {
-              style: {
-                fontFamily: "'Plus Jakarta Sans'",
-                fontSize: 16,
-                fontWeight: 600,
-                letterSpacing: "0.14em",
-                color: T.teal,
-                textTransform: "uppercase",
-              },
-            },
-            "Guestbook",
-          ),
-          React.createElement("div", {
-            style: { height: 1, width: 60, background: T.gold },
-          }),
-        ),
-        React.createElement(
-          "h2",
-          {
-            "data-gsap-reveal": !0,
-            style: {
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontWeight: 400,
-              fontSize: "clamp(24px, 3.5vw, 44px)",
-              color: T.text,
-              marginBottom: 12,
-            },
-          },
-          "The Guestbook",
-        ),
-        React.createElement(
-          "p",
-          {
-            "data-gsap-reveal": !0,
-            style: { fontFamily: "'Plus Jakarta Sans'", fontSize: 16, color: T.textMuted },
-          },
-          "Sincere words from our community of tea drinkers. Direct and unedited reviews.",
-        ),
-        React.createElement("div", { style: { textAlign: "center", marginTop: 20, marginBottom: 32 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "12px 28px", fontFamily: "'Plus Jakarta Sans'", fontSize: 15, fontWeight: 600, textDecoration: "none", cursor: "pointer", boxShadow: "0 4px 16px rgba(21,39,27,0.18)" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "Explore Customer Reviews & Tasting Notes", React.createElement("span", null, "→"))),
-      ),
-      React.createElement(
-        "div",
-        {
-          ref: e,
-          style: {
-            display: "grid",
-            gridTemplateColumns: n
-              ? "1fr"
-              : o
-                ? "repeat(2,1fr)"
-                : "repeat(3,1fr)",
-            gap: n ? 16 : 28,
-            marginBottom: n ? 48 : 72,
-          },
-        },
-        [
-          {
-            text: "I\u2019ve tried many green teas, but this one really stands out. The aroma is fresh, and the taste is smooth without any bitterness. You can actually feel the natural flavor of the tea leaves, and it\u2019s perfect for both morning energy and evening relaxation. The best part \u2014 it can be steeped twice and still tastes great! Definitely worth the price.",
-            name: "Uditijain",
-            loc: "Verified Amazon Purchase \u2022 Flavor: Whiskey",
-            rating: 5,
-          },
-          {
-            text: "Awesome flavour.. it really do taste like rum.. all natural flavour.. no added sweeteners.. best product.. will surely will purchase more..",
-            name: "Ridhi",
-            loc: "Verified Amazon Purchase \u2022 Flavor: Exotic Rum",
-            rating: 5,
-          },
-          {
-            text: "Great taste, absolutely loved it! Can\u2019t wait to try all the delicious flavours and enjoy every single one of them soon!",
-            name: "Chandraprakash Shyamsukha",
-            loc: "Verified Amazon Purchase \u2022 Flavor: Lemongrass",
-            rating: 5,
-          },
-          {
-            text: "I'm very impressed with NEVISAN's Lemongrass Tea. It has a wonderfully fresh and zesty aroma right out of the package. The tea brews into a beautiful pale yellow and has a crisp, clean, and smooth citrus flavor. It's not bitter at all, just incredibly refreshing with a hint of natural sweetness. It's a fantastic, high-quality, caffeine-free tea. Highly recommended!",
-            name: "Dinesh tiwari",
-            loc: "Verified Amazon Purchase \u2022 Flavor: Lemongrass",
-            rating: 5,
-          },
-          {
-            text: "Tried different flavours...really enjoyed it\nHighly recommend buying the blue flower and lemongrass flavour.\nAssam tea at its best..great work team",
-            name: "Amazon Customer",
-            loc: "Verified Amazon Purchase \u2022 Flavor: Blue Flower",
-            rating: 5,
-          },
-          {
-            text: "Best green tea so far ...in spearmint flavour...From Nevisan",
-            name: "Richa Jain",
-            loc: "Verified Buyer \u2022 Flavor: Spearmint",
-            rating: 5,
-          },
-        ].map((e, a) =>
-          React.createElement(ReviewCard, {
-            key: e.name,
-            r: e,
-            inView: t, index: a, }), ), ),
-React.createElement("div", { style: { textAlign: "center", marginBottom: 48 } }, React.createElement("a", { href: "/reviews/", style: { display: "inline-flex", alignItems: "center", gap: 10, background: T.teal, color: T.white, border: `1.5px solid ${T.gold}`, borderRadius: 9999, padding: "14px 32px", fontFamily: "'Plus Jakarta Sans'", fontSize: 16, fontWeight: 600, textDecoration: "none", cursor: "pointer" } }, React.createElement("span", { style: { color: T.gold } }, "★"), "View All 380+ Customer Reviews", React.createElement("span", null, "→"))),
-      React.createElement(
-        "div",
-        { style: { maxWidth: 680, margin: "0 auto" } },
-        React.createElement(
-          "div",
-          { style: { textAlign: "center", marginBottom: 32 } },
-          React.createElement(
-            "div",
-            {
-              style: {
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 16,
-                marginBottom: 14,
-              },
-            },
-            React.createElement("div", {
-              style: { height: 1, width: 48, background: T.gold },
-            }),
-            React.createElement(
-              "span",
-              {
-                style: {
-                  fontFamily: "'Plus Jakarta Sans'",
-                  fontSize: 16,
-                  fontWeight: 600,
-                  letterSpacing: "0.14em",
-                  color: T.teal,
-                  textTransform: "uppercase",
-                },
-              },
-              "Share Yours",
-            ),
-            React.createElement("div", {
-              style: { height: 1, width: 48, background: T.gold },
-            }),
-          ),
-          React.createElement(
-            "h3",
-            {
-              style: {
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontWeight: 400,
-                fontSize: "clamp(22px, 3vw, 34px)",
-                color: T.text,
-              },
-            },
-            "Tried Nevisan tea?",
-          ),
-        ),
-        React.createElement(
-          "div",
-          {
-            style: {
-              background: T.white,
-              borderRadius: 20,
-              boxShadow: "0 4px 28px rgba(0,0,0,0.08)",
-              overflow: "hidden",
-            },
-          },
-          React.createElement(ReviewForm, null),
-        ),
-      ),
-    ),
-  );
+  return React.createElement("section", {className:"polish-review"},
+    React.createElement("div", {className:"polish-review__inner"},
+      React.createElement("div", null,
+        React.createElement("p", {className:"lux-eyebrow",style:{color:"#7e6840"}}, "THE NEVISAN COMMUNITY"),
+        React.createElement("h2", null, "Every cup has a story."),
+        React.createElement("p", null, "Read current feedback on the marketplace where you shop, or share your own experience with Nevisan.")),
+      React.createElement("div", {className:"polish-review__links"},
+        React.createElement("a", {href:"/reviews/"}, "Explore tea notes & reviews ↗"),
+        React.createElement("a", {href:"/quiz/"}, "Find your first cup ↗"))));
 }
 function Footer({ setPage: e }) {
   const { isMobile: t } = useViewport();
@@ -5514,7 +5247,7 @@ const ritualTeas = {
 };
 
 function HowToBrewSection() {
-  return React.createElement(NevisanPremium.Ritual);
+  return React.createElement(NevisanAtelier.ProductAtelier);
 }
 function FAQSection() {
   const { isMobile: e } = useViewport(),
@@ -5747,7 +5480,7 @@ function FAQSection() {
               e.currentTarget.style.transform = "none";
             },
           },
-          "View All 277 Questions in the Complete FAQ Hub →",
+          "View All 40 Questions in the Complete FAQ Hub →",
         ),
         React.createElement(
           "a",
@@ -6212,554 +5945,183 @@ function OurStoryPage({ setPage: e }) {
 }
 const POSTS = [
   {
-    title: "Why Whole Leaf Tea Tastes Different",
-    slug: "why-whole-leaf-tea-tastes-different",
-    date: "August 2025",
-    tag: "CRAFT",
-    excerpt:
-      "Most commercial teas use broken leaves and dust — it brews fast but loses the complex flavour compounds locked in whole leaves.",
-    body: [
-      "Walk into any supermarket and pick up a tea bag. Tear it open. What you'll find is CTC — Cut, Tear, Curl — a method that reduces whole tea leaves into tiny granules optimised for speed and colour, not taste.",
-      "Whole leaf tea is different in every way. The entire leaf is kept intact through processing, which means the essential oils, amino acids (especially L-theanine), and flavour compounds remain locked inside — releasing slowly and fully as the leaf unfurls in hot water.",
-      "This is why Nevisan teas can be steeped two or three times. The first steep releases the brighter, more aromatic top notes. The second steep — after a minute of rest — brings out the deeper, more rounded body of the tea. By the third, you're getting the subtle, surprisingly sweet finish that tea drinkers in Japan and Taiwan have known about for centuries.",
-      "When you buy whole leaf, you're not just buying tea. You're buying the full story of the leaf — from how it grew, to how it was processed, to what it becomes in your cup.",
-    ],
+    "title": "5 Ways to Tell If Your Green Tea Is Adulterated",
+    "slug": "5-ways-to-tell-if-your-green-tea-is-adulterated",
+    "excerpt": "The Indian green tea market is full of artificial blends and dust fannings. Here are five clear visual and taste signs your green tea is adulterated or stale."
   },
   {
-    title: "The Science Behind GABA Tea",
-    slug: "science-behind-gaba-tea",
-    date: "September 2025",
-    tag: "WELLNESS",
-    excerpt:
-      "GABA is your brain's natural calming signal. Here's how Nevisan's oolong leaves are processed to naturally amplify it.",
-    body: [
-      "GABA — gamma-aminobutyric acid — is the primary inhibitory neurotransmitter in your brain. In simple terms, it's the signal your nervous system sends to slow down, stop over-firing, and relax. Low GABA is associated with anxiety, poor sleep, and mental restlessness.",
-      "Most teas contain very little GABA naturally. But when oolong tea leaves are exposed to nitrogen-rich, oxygen-free environments during processing (a technique developed in Japan in the 1980s), the leaves undergo a specific biochemical reaction that dramatically increases GABA content — often by 4 to 10 times.",
-      "Nevisan's GABA Oolong is processed using this exact anaerobic method. The result is a tea that supports deep relaxation and mental clarity without sedation. Unlike chamomile (which promotes sleep), GABA tea allows you to be calm and focused simultaneously.",
-      "Regular consumption has been studied for supporting peaceful evening relaxation, improved sleep quality, and calm focus — making it one of the most sought-after teas in our collection.",
-    ],
+    "title": "The Art of Tea Tasting: A Beginner's Guide",
+    "slug": "art-of-tea-tasting-beginners-guide",
+    "excerpt": "Master the art of tea tasting. Learn how to evaluate whole-leaf Assam teas by examining dry leaf integrity, infusion liquor, floral aroma, and smooth finish."
   },
   {
-    title: "Golaghat: India's Hidden Tea Belt",
-    slug: "golaghat-indias-hidden-tea-belt",
-    date: "October 2025",
-    tag: "ORIGIN",
-    excerpt:
-      "While Darjeeling gets the headlines, Golaghat in upper Assam quietly produces some of the boldest, most complex teas in the world.",
-    body: [
-      'Ask most people to name an Indian tea region and they\'ll say Darjeeling. The "Champagne of teas" has built a widespread reputation over 150 years of marketing. But among tea professionals and serious drinkers, a different region commands deep respect: Golaghat, in upper Assam.',
-      "Golaghat sits in the Brahmaputra valley, where the soil is a unique combination of red clay, alluvial deposits from the river, and centuries of decomposed organic matter. The humidity is extreme — averaging 80% year round — and the temperature swings between seasons create a plant under constant gentle stress, which forces it to develop complex defensive compounds that translate directly into flavour.",
-      "Every Nevisan tea comes from a single garden in Golaghat. This matters because single-origin means traceability — you know exactly where your tea came from, who grew it, and how it was processed. There are no blends covering up lesser-quality leaves. What's in the pack is exactly what grew in that garden.",
-      "This is the foundational commitment behind Nevisan: one origin, one standard, complete transparency.",
-    ],
+    "title": "The Complete Guide to Assam Whole Leaf Tea",
+    "slug": "assam-whole-leaf-tea-guide",
+    "excerpt": "Comprehensive guide to Assam whole-leaf green and oolong teas. Learn why unbroken estate leaves preserve antioxidants and deliver multiple sweet infusions."
   },
   {
-    title: "How to Get Three Steeps from One Serving",
-    slug: "how-to-get-three-steeps",
-    date: "November 2025",
-    tag: "BREWING",
-    excerpt:
-      "Whole leaf teas open up with each steep. The first is bold, the second more rounded, the third surprisingly sweet.",
-    body: [
-      "One of the most common mistakes people make with whole leaf tea is throwing it away after the first steep. This is like eating only the crust of a sourdough loaf.",
-      "Here's how to get the most from every serving of Nevisan tea:",
-      'First Steep: Use water at the temperature specified on your tea (typically 80–90°C). Steep for 2–3 minutes. This releases the brightest, most aromatic compounds — the "top notes" of the tea. This is the boldest, most characteristic cup.',
-      "Second Steep: Let the leaves rest for 60 seconds after draining. Add fresh water at the same temperature. Steep for 2–3 minutes. The body opens up further. You'll notice the cup is softer, more rounded — often more complex than the first.",
-      "Third Steep: Rest again, then steep for 3–4 minutes. This is where the subtle sweetness lives. Many experienced drinkers consider this their favourite cup of the three.",
-      "Pro tip: Don't squeeze or press the leaves — this releases bitterness. Let the water do the work.",
-    ],
+    "title": "Butterfly Pea Green Tea: A Colourful Buying Guide",
+    "slug": "best-blue-tea-butterfly-pea-flower-india",
+    "excerpt": "Delicate florals and a vivid blue cup. A practical guide to ingredients, caffeine, brewing and choosing tea by taste.'s guide to choosing the best blue butterfly pea flower tea (Aparajita) in India. Learn the science of anthocyanins for skin, hair, and color-shifting brews."
   },
   {
-    title: "Rum Green Tea: How We Made It",
-    slug: "rum-green-tea-how-we-made-it",
-    date: "December 2025",
-    tag: "CRAFT",
-    excerpt:
-      "No alcohol. No artificial flavour. Just 14 attempts and a precise cold-infusion technique using natural botanicals.",
-    body: [
-      "The idea came from a simple question: what if you could drink something that felt like a warm evening without the alcohol? Not a mocktail — those still require mixing and equipment. A tea. Something you could brew in a cup and that would genuinely evoke the character of aged rum.",
-      "The challenge was that rum's complexity comes from barrel ageing — a process that creates hundreds of interacting chemical compounds over years. No single botanical can replicate that. So we built it from multiple elements: a warm Assam green base, naturally sweet botanicals for the caramel undertone, a specific herb for the warm etheric note, and a precise cold-infusion technique that allows the botanicals to integrate without the bitterness that heat extraction creates.",
-      "Attempts 1 through 8 were too sweet. 9 and 10 were too sharp. 11 was close but lacked warmth. 12 tasted like dessert. 13 was almost right — but the finish wasn't there.",
-      "Attempt 14 hit the balance. The first sip is warming and slightly sweet. The mid-palate opens up with the herbal depth. The finish is clean with a slight spice. We've made no changes since.",
-    ],
+    "title": "Chamomile Green Tea: Choosing a Floral Cup",
+    "slug": "best-chamomile-tea-for-sleep-in-india",
+    "excerpt": "Soft florals with honeyed apple notes. A practical guide to ingredients, caffeine, brewing and choosing tea by taste.'s guide to choosing the best chamomile tea for sleep in India. Compare whole-flower German chamomile, tea bag dust, apigenin content, and evening calm."
   },
   {
-    title: "Morning vs Evening Teas: A Simple Guide",
-    slug: "morning-vs-evening-teas",
-    date: "January 2026",
-    tag: "WELLNESS",
-    excerpt:
-      "Lemongrass and Spearmint for mornings. Chamomile and GABA for evenings. Here's why each tea works best at certain times.",
-    body: [
-      "Not all teas are equal at all hours. The compounds in each variety interact differently with your body depending on where you are in your daily rhythm. Here's how to match your Nevisan tea to your time of day:",
-      "Morning (6am – 12pm): Organic Green Tea or Lemongrass Green Tea. Both deliver clean caffeine combined with L-theanine — a calm, sustained alertness without the jittery edge of coffee. Lemongrass adds a bright, citrusy note that's refreshing after overnight fasting. Spearmint works well mid-morning for a cooling, minty pick-me-up.",
-      "Afternoon (12pm – 5pm): Rum or Whiskey Green Tea. The bold character suits the afternoon energy dip, while the green tea base maintains mental alertness. Blue Flower is also excellent here — it's visually striking and mildly calming without making you sleepy.",
-      "Evening (5pm – bedtime): Chamomile or GABA Oolong. Chamomile for those who want a gentle, floral cup to wind down. GABA Oolong for those who want to relax while staying mentally present — ideal for creative work or quiet reading.",
-      "Tulsi works at any hour — its warm, herbaceous character makes it a versatile choice whether you need a gentle start to the day or a calming cup in the evening.",
-    ],
+    "title": "Choose Your Green Tea by Taste and Routine",
+    "slug": "best-green-tea-for-weight-loss-energy-sleep",
+    "excerpt": "Fresh, grassy notes and whole-leaf character. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
   },
   {
-    title:
-      "Blue Butterfly Pea Flower Tea: What Makes It Turn Purple and Why It's Worth Drinking",
-    slug: "blue-butterfly-pea-flower-tea",
-    date: "February 2026",
-    tag: "WELLNESS",
-    excerpt:
-      "Blue butterfly pea flower tea gets its colour from anthocyanins — natural pigments that give the tea its vivid blue hue and make it a visually striking addition to any cup.",
-    body: [
-      "Blue butterfly pea flower tea is made from the dried petals of Clitoria ternatea, a plant native to Southeast Asia and parts of India. The flowers produce a vivid cobalt-blue infusion unlike anything else in the plant world. When blended with green tea, as in Nevisan's Blue Flower Green, the result is a cup that's visually striking and nutritionally interesting — not just a novelty drink for social media.",
-      "The blue colour comes from anthocyanins, a class of flavonoid antioxidants also found in blueberries and red cabbage. These pigments are pH-sensitive, which is why adding lemon juice to blue butterfly pea tea shifts it from blue to violet to pink. The science behind the colour change is simple acid-base chemistry — the anthocyanins acting as natural indicators responding to the acidity of the liquid.",
-      "The anthocyanins in butterfly pea flower are the same class of pigments found in blueberries and red cabbage. These natural compounds give the tea its vivid colour and are part of what makes it nutritionally interesting. The flower also contains proanthocyanidins, which contribute to its antioxidant profile. Compared to many common herbal teas, butterfly pea flower offers a distinctive combination of visual appeal and natural compounds.",
-      "When blue butterfly pea is paired with a light green tea base, you get the grassy, umami notes of green tea alongside the subtly earthy, almost woody flavour of the flower. The caffeine level stays moderate, making it suitable in the afternoon. Look for blends where the green tea is whole-leaf and the flower petals are actually visible — not ground into the blend and hiding in a bag.",
-    ],
+    "title": "Whole-Leaf Green Tea: A Practical Buying Guide",
+    "slug": "best-green-tea-for-weight-loss-in-india",
+    "excerpt": "Fresh, grassy notes and whole-leaf character. A practical guide to ingredients, caffeine, brewing and choosing tea by taste.'s guide to finding the best green tea for weight loss in India. Discover why unbroken whole leaves deliver more EGCG catechins and zero bitterness."
   },
   {
-    title:
-      "Spearmint Tea: A Refreshing Mint Infusion with a Rich History",
-    slug: "spearmint-tea-refreshing-mint",
-    date: "March 2026",
-    tag: "WELLNESS",
-    excerpt:
-      "Spearmint tea is a bright, cooling mint infusion with a long history of use across cultures. Here's what makes it a distinctive and enjoyable cup.",
-    body: [
-      "Spearmint tea is one of the more popular herbal infusions worldwide, valued for its bright, cooling character and clean, refreshing finish. Unlike peppermint, spearmint is milder and sweeter, with lower menthol content that makes it gentler on the palate. When blended with green tea, as in Nevisan's Spearmint Green, the result is a cup that's both uplifting and smooth — the mint brightness balanced by the grassy depth of whole-leaf Assam green tea.",
-      "Spearmint has been used for centuries across different cultures for its distinctive flavour and aromatic qualities. The essential oils in spearmint leaves, particularly carvone, give the tea its characteristic minty aroma and cooling sensation. These volatile compounds are best preserved in whole-leaf blends, where the leaves are cut rather than ground — allowing the oils to release gradually during steeping.",
-      "Spearmint is different from peppermint — it's milder, sweeter, and lower in menthol. When blended with green tea, as in Nevisan's Spearmint Green, the result is a bright, cooling cup with a clean finish. The green tea adds antioxidants and L-theanine, making the combination genuinely refreshing rather than just pleasant.",
-      "If you're exploring spearmint tea, consistency matters more than quantity. Two cups a day for several weeks is a good way to develop an appreciation for its flavour profile. Whole-leaf spearmint blended with real green tea is worth seeking out over fannings-based bags, where the volatile oils that carry most of spearmint's character have largely dissipated.",
-      "Spearmint is different from peppermint — it's milder, sweeter, and lower in menthol. When blended with green tea, as in Nevisan's Spearmint Green, the result is a bright, cooling cup with a clean finish. The green tea adds antioxidants and L-theanine, making the combination genuinely useful rather than just pleasant.",
-      "If you're exploring spearmint tea for hormonal reasons, consistency matters more than quantity. Two cups a day for several weeks is what the research used — not a single strong brew once in a while. Whole-leaf spearmint blended with real green tea is worth seeking out over fannings-based bags, where the volatile oils that carry most of spearmint's active compounds have largely dissipated.",
-    ],
+    "title": "Spearmint Green Tea: Ingredients, Taste and Brewing",
+    "slug": "best-spearmint-tea-for-pcos-in-india",
+    "excerpt": "Refreshing mint with a clean, bright finish. A practical guide to ingredients, caffeine, brewing and choosing tea by taste.'s guide to choosing the best spearmint tea for PCOS in India. Compare whole-leaf Mentha spicata, tea bag fannings, and green tea combinations."
   },
   {
-    title: "Tulsi Green Tea: A Warming Ayurvedic Blend with Single-Origin Assam Tea",
-    slug: "tulsi-green-tea-ayurvedic-blend",
-    date: "April 2026",
-    tag: "WELLNESS",
-    excerpt:
-      "Tulsi, or holy basil, has a long history in Indian tradition — blended with Assam green tea, it creates a warming, herbaceous cup with a distinctive clove-like aroma.",
-    body: [
-      "Tulsi, known botanically as Ocimum tenuiflorum and commonly called holy basil, is one of the most revered plants in Indian tradition. It has been used in Ayurvedic practice for centuries, valued for its distinctive flavour and aromatic qualities. The plant contains eugenol, ursolic acid, and rosmarinic acid — compounds that contribute to its characteristic clove-like, slightly peppery aroma and warm, herbaceous taste.",
-      "When tulsi is blended with green tea, the pairing is unusually well-suited. Green tea brings antioxidants, mild caffeine, and L-theanine. Tulsi adds its own set of natural compounds, along with a distinct clove-like, slightly peppery aroma. The flavour combination is warming without being heavy, and the herbaceous character of tulsi complements the calm focus that L-theanine supports.",
-      "Nevisan's Tulsi Green uses whole holy basil leaves alongside Assam green tea, keeping the ratio balanced so neither ingredient overwhelms the other. The result is a cup that's both grounding and refreshing — the kind of tea that works well in the morning or during a quiet afternoon break. Brew at around 90°C for three to four minutes to get the full flavour from both ingredients.",
-      "For anyone looking to reduce daily stimulant load while still supporting focus, tulsi green tea is a useful starting point. It has enough caffeine to be functional in the morning without the cortisol spike of coffee. It's also one of the few blends where the Indian heritage of the herb is fully intact — tulsi grown in India, paired with tea grown in India, brewed simply at around 80°C for two to three minutes.",
-    ],
+    "title": "Butterfly Pea Green Tea: Colour, Taste and Brewing",
+    "slug": "blue-butterfly-pea-flower-tea",
+    "excerpt": "Delicate florals and a vivid blue cup. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
   },
   {
-    title:
-      "Chamomile Green Tea: Why This Evening Blend Works Better Than Either Alone",
-    slug: "chamomile-green-tea-evening-blend",
-    date: "May 2026",
-    tag: "WELLNESS",
-    excerpt:
-      "Chamomile and green tea together offer something neither delivers alone — the calming properties of chamomile with the antioxidant depth of whole-leaf green tea.",
-    body: [
-      "Chamomile is one of the most widely consumed herbal teas in the world, usually drunk on its own before bed. Green tea is usually positioned as a morning drink. Pairing them sounds counterintuitive, but the combination works because green tea brewed at lower temperatures and shorter times keeps caffeine low while retaining its antioxidant content. Blended with chamomile, it creates an evening cup that does not sacrifice nutritional value just to be caffeine-light.",
-      "The active compound in chamomile most associated with its calming effects is apigenin, a flavonoid that contributes to the tea's naturally soothing character. Chamomile has been used for centuries as a gentle evening infusion, and its floral, slightly sweet flavour makes it one of the most widely consumed herbal teas in the world. It is a well-loved herb with a long history of use as a calming evening cup.",
-      "Green tea brings EGCG, the primary catechin in green tea and one of the most researched antioxidants in the food supply. L-theanine promotes alpha-wave activity in the brain — relaxed alertness rather than sedation. In the evening, both chamomile and L-theanine point in the same direction: calm without grogginess.",
-      "Nevisan's Chamomile Green uses whole chamomile flowers alongside Assam green tea leaves. The brew is best kept around 75 to 80°C and steeped for no more than two minutes — chamomile can turn bitter if over-steeped, and green tea gets astringent above 90°C. Done right, the cup is floral, slightly sweet, and genuinely useful as part of a wind-down routine.",
-    ],
+    "title": "Blue Butterfly Pea Flower Magic Lemon Mocktail Recipe",
+    "slug": "blue-pea-lemon-mocktail-recipe",
+    "excerpt": "Easy recipe for an all-natural color-changing blue butterfly pea flower mocktail using whole-leaf tea, fresh citrus juice, sparkling water, and pure honey."
   },
   {
-    title:
-      "Green Tea vs Coffee: The Caffeine Difference Nobody Explains Properly",
-    slug: "green-tea-vs-coffee-caffeine",
-    date: "May 2026",
-    tag: "WELLNESS",
-    excerpt:
-      "Green tea has less caffeine than coffee, but L-theanine changes how your body processes it entirely — and that difference matters more than the number.",
-    body: [
-      "A standard cup of coffee contains roughly 80 to 120mg of caffeine. A cup of green tea contains between 20 and 50mg depending on variety, steeping time, and water temperature. On paper, coffee wins if you need a strong stimulant hit. But the comparison stops being straightforward once you factor in what else is in each cup. Coffee delivers caffeine in relative isolation. Green tea delivers caffeine alongside L-theanine, an amino acid that changes the experience significantly.",
-      "L-theanine promotes relaxed alertness by increasing alpha-wave activity in the brain and moderating the excitatory effects of caffeine. Many people describe green tea as producing focus without the edge — concentration that does not tip into anxiety or jitteriness. Studies pairing caffeine and L-theanine have found improved attention and accuracy on cognitive tasks compared to caffeine alone. This is consistent across multiple controlled trials.",
-      "For people who experience cortisol spikes with coffee — the mid-morning crash, afternoon slump, difficulty sleeping — green tea often behaves differently. The slower caffeine curve means less of a spike and less of a subsequent dip. Brewing single-origin whole-leaf tea, like Nevisan's Organic Green, gives you more control over caffeine content than a standardised tea bag does — lower temperature and shorter steeping time both reduce it further.",
-      "The other variable people overlook is added sugar and milk. Most coffee consumption in India involves significant sugar and milk, which independently contributes to energy spikes and crashes. Green tea is most often drunk plain, which removes that variable. If the goal is sustained, clean energy without a 3pm crash, switching from coffee to a high-quality whole-leaf green tea is one of the most practical single changes you can make to a daily routine.",
-    ],
+    "title": "Chamomile Green Tea: A Floral Tea Ritual",
+    "slug": "chamomile-green-tea-evening-blend",
+    "excerpt": "Soft florals with honeyed apple notes. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
   },
   {
-    title:
-      "How to Buy Real Green Tea in India: What to Look For and What to Avoid",
-    slug: "how-to-buy-real-green-tea-india",
-    date: "May 2026",
-    tag: "CRAFT",
-    excerpt:
-      "Most green tea sold in India is low-grade CTC or artificially flavoured — here is how to tell the difference before you buy.",
-    body: [
-      'The Indian packaged tea market is dominated by CTC — Cut, Tear, Curl — a processing method designed for strong, fast-brewing chai. Some companies sell what they label as "green tea" using CTC-processed leaves that have been lightly dried rather than fully oxidised. The result looks like green tea on packaging, but the flavour, antioxidant content, and brewing behaviour are all different. If your green tea brews dark and bitter in under a minute, it is almost certainly CTC.',
-      "Whole-leaf green tea should look like leaves, not uniform pellets or dust. When you open a packet of genuine whole-leaf tea, you should be able to identify the leaf structure — rolled, twisted, or flat depending on variety, but visibly leaf-like. Fresh green tea has a grassy, vegetal, sometimes floral aroma. If it smells of artificial flavouring or very little at all, the tea is either old or misrepresented.",
-      'Single-origin matters for green tea more than most categories. A brand that specifies the garden, district, and harvest gives you information you can verify. A brand that says only "Himalayan green tea" or "premium Indian blend" is telling you nothing traceable. Nevisan sources exclusively from a single garden in Golaghat, Assam — one origin, one standard, no blending to cover inconsistency.',
-      "Chemical-free cultivation is rarely disclosed but increasingly important. Most commercial Indian tea, including tea sold as green, is grown with synthetic pesticides. Whole-leaf, single-origin teas from smaller gardens are more likely to use minimal inputs — not because smaller gardens are automatically virtuous, but because the economics work differently when selling whole leaf at a premium. Ask brands directly: do they test for pesticide residues? Reluctance to answer is itself information.",
-      "Finally, price is a rough signal. Genuinely good whole-leaf green tea is not cheap to produce. If you are buying green tea in India for under ₹200 for 100g, you are almost certainly not getting whole-leaf, single-origin, chemical-free tea regardless of what the packaging says. Hand-picking, careful processing, and proper storage all cost money. Brands that price accordingly are reflecting real cost of production, not overcharging.",
-    ],
+    "title": "How to Cold Brew Whole Leaf Green Tea",
+    "slug": "cold-brew-green-tea-guide",
+    "excerpt": "Simple step-by-step cold brew guide for whole-leaf Assam green tea. Extract natural l-theanine and smooth sweetness with zero bitterness or harsh tannins."
   },
+  {
+    "title": "How to Make Refreshing Cold-Brew Lemongrass Iced Tea",
+    "slug": "cold-brew-lemongrass-iced-tea",
+    "excerpt": "How to cold-brew whole-leaf lemongrass green tea for a crisp, refreshing, citrus iced tea that naturally aids post-meal digestion and keeps you hydrated."
+  },
+  {
+    "title": "Golaghat: India's Hidden Tea Belt",
+    "slug": "golaghat-indias-hidden-tea-belt",
+    "excerpt": "Explore Golaghat, Assam premier fertile tea belt where Nevisan hand-harvests unbroken, single-estate organic whole-leaf teas direct from our heritage garden."
+  },
+  {
+    "title": "Green Tea: Ingredients, Caffeine and Everyday Brewing",
+    "slug": "green-tea-health-benefits-complete-guide",
+    "excerpt": "Fresh, grassy notes and whole-leaf character. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+  },
+  {
+    "title": "Green Tea and Coffee: Two Different Cups",
+    "slug": "green-tea-vs-coffee-caffeine",
+    "excerpt": "Choose tea by taste, ingredients and brewing preference."
+  },
+  {
+    "title": "How to Buy Real Green Tea in India: What to Look For and What to Avoid",
+    "slug": "how-to-buy-real-green-tea-india",
+    "excerpt": "The Indian tea market is filled with multi-garden blends and misleading labels. Learn how to verify genuine single-origin, PGS-India certified whole-leaf Assam teas."
+  },
+  {
+    "title": "Choose Tea by Flavour and Routine",
+    "slug": "how-to-choose-right-tea-for-your-lifestyle",
+    "excerpt": "Choose tea by taste, ingredients and brewing preference."
+  },
+  {
+    "title": "How to Get Three Steeps from One Serving: The Complete Guide to Maximizing Your Whole Leaf Tea Experience",
+    "slug": "how-to-get-three-steeps",
+    "excerpt": "Master the art of multiple steeping to extract maximum flavor, benefits, and value from your whole leaf Assam tea. Learn steep-by-steep techniques, temperature guides, and variety-specific tips for optimal tea appreciation."
+  },
+  {
+    "title": "How to Store Green Tea at Home (and What Ruins It)",
+    "slug": "how-to-store-green-tea-at-home",
+    "excerpt": "Most drinkers store green tea improperly. Learn how to protect your delicate whole leaves from light, air, humidity, and heat to preserve aroma and antioxidants."
+  },
+  {
+    "title": "Tea for Your Morning and Evening Rituals",
+    "slug": "morning-vs-evening-teas",
+    "excerpt": "Choose tea by taste, ingredients and brewing preference."
+  },
+  {
+    "title": "Non-Alcoholic Botanical Whiskey & Rum Teas",
+    "slug": "non-alcoholic-botanical-whiskey-rum-tea",
+    "excerpt": "Explore how Nevisan crafts charred oak whiskey and spiced rum green teas using whole Assam leaves and 100% alcohol-free botanical extracts for evening relax."
+  },
+  {
+    "title": "Organic Green Tea vs Regular Green Tea: What's the Real Difference?",
+    "slug": "organic-green-tea-vs-regular-green-tea",
+    "excerpt": "Is organic green tea worth the price? Discover the differences in estate soil health, zero chemical pesticides, antioxidant retention, and pure cup flavor."
+  },
+  {
+    "title": "A Daily Spearmint Tea Ritual",
+    "slug": "pcos-spearmint-tea-daily-routine",
+    "excerpt": "Refreshing mint with a clean, bright finish. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+  },
+  {
+    "title": "Rum Green Tea: How We Made It",
+    "slug": "rum-green-tea-how-we-made-it",
+    "excerpt": "It took 14 recipe iterations to capture authentic spiced rum warmth without a drop of alcohol. Learn how we craft our 0.0% alcohol lifestyle whole-leaf blend."
+  },
+  {
+    "title": "GABA Oolong Tea: The Leaf, the Cup and the Ritual",
+    "slug": "science-behind-gaba-tea",
+    "excerpt": "Toasty amber, stone fruit and smooth honey. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+  },
+  {
+    "title": "Getting to Know Spearmint Green Tea",
+    "slug": "spearmint-tea-hormonal-balance",
+    "excerpt": "Refreshing mint with a clean, bright finish. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+  },
+  {
+    "title": "The Real Cost of Cheap Tea Bags",
+    "slug": "the-real-cost-of-cheap-tea-bags",
+    "excerpt": "Commercial supermarket tea bags contain microplastics, dust fannings, and heavy tannins. Learn why whole-leaf Assam tea delivers superior health value per cup."
+  },
+  {
+    "title": "Tulsi Green Tea: An Herbaceous Assam Blend",
+    "slug": "tulsi-green-tea-adaptogen",
+    "excerpt": "Herbaceous warmth with a fragrant tulsi note. A practical guide to ingredients, caffeine, brewing and choosing tea by taste."
+  },
+  {
+    "title": "The Ultimate Guide to Green Tea in India: From Leaf to Cup",
+    "slug": "ultimate-guide-to-green-tea-in-india",
+    "excerpt": "The definitive guide to green tea in India: harvest seasons, single-origin vs blended estates, polyphenol content, and how to brew without any bitter taste."
+  },
+  {
+    "title": "What PGS-India Certification Actually Means for Your Cup",
+    "slug": "what-pgs-india-certification-means",
+    "excerpt": "Learn what PGS-India Organic certification means for your cup. How peer-reviewed, zero-chemical natural farming protects Assam tea soil and consumer health."
+  },
+  {
+    "title": "Why We Don't Blend Across Gardens",
+    "slug": "why-we-dont-blend-across-gardens",
+    "excerpt": "Most commercial brands blend leaves across dozens of estates to mask poor quality. Nevisan bottles exclusively single-estate Golaghat harvest for pure traceability."
+  },
+  {
+    "title": "Why Whole Leaf Tea Tastes Different",
+    "slug": "why-whole-leaf-tea-tastes-different",
+    "excerpt": "Whole-leaf teas preserve delicate cellular essential oils that release gradually across 3 steeps, eliminating the harsh bitterness found in crushed tea bags."
+  },
+  {
+    "title": "Why Your Green Tea Tastes Bitter (and How to Fix It)",
+    "slug": "why-your-green-tea-tastes-bitter",
+    "excerpt": "Bitter green tea is caused by boiling water and crushed tea dust. Learn how simple temperature adjustments and whole-leaf Assam tea yield a smooth, naturally sweet cup."
+  }
 ];
-function ArticleModal({ post: e, onClose: t }) {
-  return (
-    useEffect(() => {
-      const e = (e) => {
-        "Escape" === e.key && t();
-      };
-      return (
-        window.addEventListener("keydown", e),
-        (document.body.style.overflow = "hidden"),
-        () => {
-          (window.removeEventListener("keydown", e),
-            (document.body.style.overflow = ""));
-        }
-      );
-    }, []),
-    ReactDOM.createPortal(
-      React.createElement(
-        "div",
-        {
-          onClick: t,
-          role: "dialog",
-          "aria-modal": "true",
-          "aria-label": "Article",
-          style: {
-            position: "fixed",
-            inset: 0,
-            background: "rgba(15,63,69,0.75)",
-            zIndex: 400,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "20px",
-            backdropFilter: "blur(4px)",
-            animation: "overlay-fade 0.2s ease both",
-          },
-        },
-        React.createElement(
-          "div",
-          {
-            onClick: (e) => e.stopPropagation(),
-            style: {
-              background: T.cream,
-              borderRadius: 20,
-              maxWidth: 680,
-              width: "100%",
-              maxHeight: "88vh",
-              display: "flex",
-              flexDirection: "column",
-              boxShadow: "0 32px 100px rgba(0,0,0,0.35)",
-              animation: "page-enter 0.3s ease both",
-            },
-          },
-          React.createElement(
-            "div",
-            {
-              style: {
-                padding: "28px 32px 20px",
-                borderBottom: `1px solid ${T.border}`,
-                flexShrink: 0,
-              },
-            },
-            React.createElement(
-              "div",
-              {
-                style: {
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  marginBottom: 10,
-                },
-              },
-              React.createElement(
-                "span",
-                {
-                  style: {
-                    fontFamily: "'Plus Jakarta Sans'",
-                    fontSize: 16,
-                    letterSpacing: "0.14em",
-                    color: T.gold,
-                    background: "rgba(201,168,76,0.12)",
-                    padding: "4px 10px",
-                    borderRadius: 9999,
-                  },
-                },
-                e.tag,
-              ),
-              React.createElement(
-                "button",
-                {
-                  onClick: t,
-                  "aria-label": "Close article",
-                  style: {
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                    fontSize: 20,
-                    color: T.textMuted,
-                    padding: 4,
-                  },
-                },
-                "✕",
-              ),
-            ),
-            React.createElement(
-              "h2",
-              {
-                style: {
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontWeight: 400,
-                  fontSize: 24,
-                  color: T.text,
-                  lineHeight: 1.3,
-                  marginBottom: 6,
-                },
-              },
-              e.title,
-            ),
-            React.createElement(
-              "span",
-              {
-                style: {
-                  fontFamily: "'Plus Jakarta Sans'",
-                  fontSize: 16,
-                  color: T.textMuted,
-                },
-              },
-              e.date,
-            ),
-          ),
-          React.createElement(
-            "div",
-            {
-              style: {
-                padding: "24px 32px 32px",
-                overflowY: "auto",
-                flex: 1,
-                minHeight: 0,
-              },
-            },
-            e.body.map((e, t) =>
-              React.createElement(
-                "p",
-                {
-                  key: t,
-                  style: {
-                    fontFamily: "'Plus Jakarta Sans'",
-                    fontSize: 16,
-                    color: T.text,
-                    lineHeight: 1.8,
-                    marginBottom: 18,
-                  },
-                },
-                e,
-              ),
-            ),
-            React.createElement(
-              "div",
-              {
-                style: {
-                  marginTop: 28,
-                  paddingTop: 20,
-                  borderTop: `1px solid ${T.border}`,
-                  display: "flex",
-                  gap: 12,
-                },
-              },
-              React.createElement(
-                "button",
-                {
-                  onClick: () => {
-                    (openWhatsApp(), t());
-                  },
-                  style: {
-                    background: "#25D366",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: 9999,
-                    padding: "10px 22px",
-                    cursor: "pointer",
-                    fontFamily: "'Plus Jakarta Sans'",
-                    fontSize: 16,
-                    fontWeight: 600,
-                  },
-                },
-                "💬 Order Tea",
-              ),
-              React.createElement(
-                "button",
-                {
-                  onClick: t,
-                  style: {
-                    background: "transparent",
-                    color: T.teal,
-                    border: `1.5px solid ${T.teal}`,
-                    borderRadius: 9999,
-                    padding: "10px 22px",
-                    cursor: "pointer",
-                    fontFamily: "'Plus Jakarta Sans'",
-                    fontSize: 16,
-                  },
-                },
-                "← Back to Journal",
-              ),
-            ),
-          ),
-        ),
-      ),
-      document.body,
-    )
-  );
-}
-function JournalPage({ setPage: e }) {
-  const { isMobile: t } = useViewport(),
-    [a, n] = useState(null);
-  return React.createElement(
-    "div",
-    {
-      style: {
-        background: T.cream,
-        minHeight: "100vh",
-        animation: "page-enter 0.45s ease both",
-      },
-    },
-    React.createElement(PageHero, {
-      photo: PAGE_PHOTOS.journal,
-      label: "The Nevisan Journal",
-      title: "Stories from the garden",
-      subtitle: "Craft, origin, wellness and brewing guides — everything tea.",
-    }),
-    React.createElement(
-      "div",
-      {
-        style: {
-          maxWidth: 1100,
-          margin: "0 auto",
-          padding: t ? "48px 20px 80px" : "64px 40px 100px",
-        },
-      },
-      React.createElement("div", { style: { display: "none" } }),
-      React.createElement(
-        "div",
-        {
-          style: {
-            display: "grid",
-            gridTemplateColumns: t ? "1fr" : "repeat(3, 1fr)",
-            gap: t ? 20 : 28,
-          },
-        },
-        POSTS.slice()
-          .reverse()
-          .map((e, t) =>
-            React.createElement(
-              "div",
-              {
-                key: t,
-                onClick: () => n(e),
-                style: {
-                  background: T.white,
-                  borderRadius: 16,
-                  padding: "28px 24px",
-                  boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-                  cursor: "pointer",
-                  transition: "transform 200ms, box-shadow 200ms",
-                },
-                onMouseEnter: (e) => {
-                  ((e.currentTarget.style.transform = "translateY(-4px)"),
-                    (e.currentTarget.style.boxShadow =
-                      "0 8px 28px rgba(0,0,0,0.10)"));
-                },
-                onMouseLeave: (e) => {
-                  ((e.currentTarget.style.transform = "none"),
-                    (e.currentTarget.style.boxShadow =
-                      "0 2px 12px rgba(0,0,0,0.06)"));
-                },
-              },
-              React.createElement(
-                "div",
-                {
-                  style: {
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: 14,
-                  },
-                },
-                React.createElement(
-                  "span",
-                  {
-                    style: {
-                      fontFamily: "'Plus Jakarta Sans'",
-                      fontSize: 16,
-                      letterSpacing: "0.14em",
-                      color: T.gold,
-                      background: "rgba(201,168,76,0.12)",
-                      padding: "4px 10px",
-                      borderRadius: 9999,
-                    },
-                  },
-                  e.tag,
-                ),
-                React.createElement(
-                  "span",
-                  {
-                    style: {
-                      fontFamily: "'Plus Jakarta Sans'",
-                      fontSize: 16,
-                      color: T.textMuted,
-                    },
-                  },
-                  e.date,
-                ),
-              ),
-              React.createElement(
-                "h3",
-                {
-                  style: {
-                    fontFamily: "'Playfair Display', Georgia, serif",
-                    fontWeight: 400,
-                    fontSize: 18,
-                    color: T.text,
-                    lineHeight: 1.4,
-                    marginBottom: 12,
-                  },
-                },
-                e.title,
-              ),
-              React.createElement(
-                "p",
-                {
-                  style: {
-                    fontFamily: "'Plus Jakarta Sans'",
-                    fontSize: 16,
-                    color: T.textMuted,
-                    lineHeight: 1.7,
-                  },
-                },
-                e.excerpt,
-              ),
-              React.createElement(
-                "div",
-                {
-                  style: {
-                    marginTop: 18,
-                    fontFamily: "'Plus Jakarta Sans'",
-                    fontSize: 16,
-                    color: T.teal,
-                    fontWeight: 600,
-                    letterSpacing: "0.05em",
-                  },
-                },
-                React.createElement(
-                  "a",
-                  {
-                    href: "/journal/" + e.slug,
-                    onClick: (e) => {
-                      e.stopPropagation();
-                    },
-                    style: { color: "inherit", textDecoration: "none" },
-                  },
-                  "Read more →",
-                ),
-              ),
-            ),
-          ),
-      ),
-    ),
-    React.createElement(Footer, { setPage: e }),
-    a && React.createElement(ArticleModal, { post: a, onClose: () => n(null) }),
-  );
+function JournalPage({setPage}) {
+ return React.createElement("div", {className:"premium-site"},
+  React.createElement(PageHero,{photo:PAGE_PHOTOS.journal,label:"THE NEVISAN JOURNAL",title:"Stories from leaf to cup",subtitle:"Origin, flavour and thoughtful brewing. Find a new way to enjoy your everyday tea."}),
+  React.createElement("div",{className:"journal-wrapper",style:{paddingTop:48}},
+   React.createElement("ul",{className:"post-list"},POSTS.map(post=>React.createElement("li",{className:"post-item",key:post.slug},
+    React.createElement("a",{className:"post-link",href:"/journal/"+post.slug+"/"},React.createElement("h2",{className:"post-title"},post.title),React.createElement("p",{className:"post-excerpt"},post.excerpt),React.createElement("span",null,"Read the guide ↗")))))),
+  React.createElement(Footer,{setPage}));
 }
 function AboutPage({ setPage: e }) {
   const { isMobile: t } = useViewport();

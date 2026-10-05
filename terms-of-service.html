@@ -18,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,7 +33,7 @@
     body {
       background-color: var(--cream);
       color: var(--ink);
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
       line-height: 1.7;
       min-height: 100vh;
       display: flex;
@@ -147,22 +147,21 @@
   <meta property="og:image" content="https://nevisan.in/hero-bg.jpg">
   <meta property="og:url" content="https://nevisan.in/terms-of-service.html">
   <meta property="og:type" content="website">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Terms of Service | Nevisan Tea",
-    "description": "Terms of Service for Nevisan Tea. Read about our ordering, shipping, 18-month shelf life, return, and cancellation policies.",
-    "url": "https://nevisan.in/terms-of-service.html",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Nevisan Tea",
-      "url": "https://nevisan.in/"
-    }
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Terms of Service | Nevisan Tea",
+  "description": "Terms of Service for Nevisan Tea. Read about our ordering, shipping, 18-month shelf life, return, and cancellation policies.",
+  "url": "https://nevisan.in/terms-of-service.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nevisan Tea",
+    "url": "https://nevisan.in/"
   }
-  </script>
+}</script>
+<link rel="stylesheet" href="/site-polish.css?v=1">
 </head>
-<body>
+<body class="premium-site">
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav aria-label="Main navigation">
     <a class="nav-logo" href="https://nevisan.in/">NEVISAN</a>
@@ -200,7 +199,7 @@
 
     <h2>7. Customer Grievance Redressal Mechanism</h2>
     <p>In accordance with Rule 4(4) and Rule 5(3) of the Consumer Protection (E-Commerce) Rules, 2020, Nevisan Tea has designated a Grievance Officer to resolve all consumer inquiries, refund requests, and complaints:</p>
-    <div class="card-box" style="background: #F8F6F2; border: 1.5px solid #E2DDD5; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-family: 'Inter', sans-serif; line-height: 1.6;">
+    <div class="card-box" style="background: #F8F6F2; border: 1.5px solid #E2DDD5; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6;">
       <strong>Grievance Officer:</strong> Mahabir Enterprise<br>
       <strong>Registered Address:</strong> Citi Point, G.S. Road, Guwahati, Assam - 781008, India<br>
       <strong>Email:</strong> <a href="mailto:care@nevisan.in" style="color: #15271B; font-weight: 600;">care@nevisan.in</a><br>
@@ -236,7 +235,7 @@
   </footer>
 
 <!-- ── COOKIE CONSENT BANNER (DPDP & GDPR) ── -->
-<div id="cookie-consent-banner" role="region" aria-label="Cookie Consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:480px;background:#15271B;color:#F8F6F2;padding:18px 22px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:99999;border:1px solid rgba(201,168,76,0.3);font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;">
+<div id="cookie-consent-banner" role="region" aria-label="Cookie Consent" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:480px;background:#15271B;color:#F8F6F2;padding:18px 22px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:99999;border:1px solid rgba(201,168,76,0.3);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.5;">
   <p style="margin:0 0 12px 0;color:#E0DDD5;font-size:16px;">We use cookies to improve your browsing experience, analyze traffic, and support secure order processing in accordance with our <a href="/privacy-policy.html" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;justify-content:flex-end;">
     <button onclick="window.updateNevisanConsent(false)" style="background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:16px;cursor:pointer;">Decline</button>
@@ -256,5 +255,6 @@
   })();
 </script>
 
+<script src="/site-polish.js?v=1" defer></script>
 </body>
 </html>

@@ -7748,7 +7748,12 @@ function App() {
   const [e, t] = useState(() => getNevisanPageFromUrl(window.location.href)),
     [a, n] = useState("undefined" != typeof window ? window.innerWidth : 1200);
   useEffect(() => {
-    const syncPage = () => t(getNevisanPageFromUrl(window.location.href));
+    const syncPage = () => {
+      const page = getNevisanPageFromUrl(window.location.href);
+      if (page === "Journal") { window.location.replace("/journal/"); return; }
+      t(page);
+    };
+    syncPage();
     window.addEventListener("popstate", syncPage);
     window.addEventListener("hashchange", syncPage);
     return () => {
@@ -7765,6 +7770,7 @@ function App() {
   }, []);
   const o = { isMobile: a < 768, isTablet: a < 1024 },
     i = (e) => {
+      if (e === "Journal") { window.location.assign("/journal/"); return; }
       const url = new URL(window.location.href);
       url.searchParams.delete("tea");
       url.searchParams.delete("page");

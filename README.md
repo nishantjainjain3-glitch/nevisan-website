@@ -44,7 +44,7 @@ python flipkart_ads_client.py --refresh
 
 Before merging or deploying, visually check desktop and mobile layouts, product links, quiz results and WhatsApp cart handoff. Confirm live analytics events and consent changes in Google/Meta tools. Inspect live headers: `_headers` only takes effect on hosts that support it; GitHub Pages does not apply that file.
 
-Research journal articles and customer quotations are retained. This code cleanup is not a certification of scientific claims, product certifications or live marketplace availability.
+The content review does not certify product certifications, packaging claims or live marketplace availability.
 
 ## Premium presentation
 
@@ -53,3 +53,7 @@ Research journal articles and customer quotations are retained. This code cleanu
 Product sales copy and the FAQ focus on ingredients, taste, brewing and ordering. Aggregate ratings, unattributed verified testimonials and unsupported product-specific lab figures were removed. Existing packaging artwork and statutory declarations are retained as supplied; certificates, packaging claims, seller inventory and marketplace terms require their own source records.
 
 The cloud browser supports desktop review; physical iPhone and Android testing is still outstanding.
+
+## Signature product pages
+
+All ten products have individual tasting stories, breadcrumbs, accessible image selectors, front/back or ritual views, full-size native dialog viewing and a safe-area-aware mobile purchase bar. `product-gallery.js` progressively enhances static images: purchase links and the first image remain usable without JavaScript. Arrow keys, Home and End navigate the image choices; Escape closes the native viewer and returns focus. Secondary image failures restore the main photograph.

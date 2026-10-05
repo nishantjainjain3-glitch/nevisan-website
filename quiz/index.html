@@ -684,7 +684,7 @@ function toggleNevisanMenu() {
     <div class="quiz-card" id="quiz-card">
       <div id="quiz-flow">
         <div class="quiz-header">
-          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: var(--teal); margin: 0 0 6px;">Question 1 of 3</h2>
+          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: var(--teal); margin: 0 0 6px;" id="quiz-progress" aria-live="polite">Question 1 of 3</h2>
           <p style="color: var(--muted); font-size: 16px; margin: 0 0 16px;">Answer 3 quick questions to discover your personalized Nevisan tea match.</p>
         </div>
         
@@ -871,6 +871,7 @@ function toggleNevisanMenu() {
 
     // Start rendering the first question
     function renderQuestion() {
+      document.getElementById("quiz-progress").textContent = `Question ${currentStep + 1} of ${questions.length}`;
       // Update step dots
       for (let i = 0; i < 3; i++) {
         const dot = document.getElementById(`dot-${i}`);
@@ -994,7 +995,7 @@ function toggleNevisanMenu() {
       document.getElementById("quiz-card").innerHTML = `
         <div id="quiz-flow">
           <div class="quiz-header">
-          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: var(--teal); margin: 0 0 6px;">Question 1 of 3</h2>
+          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: var(--teal); margin: 0 0 6px;" id="quiz-progress" aria-live="polite">Question 1 of 3</h2>
             <p>Answer 3 quick questions to discover your personalized Nevisan tea match.</p>
           </div>
           

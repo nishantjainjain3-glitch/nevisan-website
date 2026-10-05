@@ -17,3 +17,5 @@ Product pages contain current pack details, ingredients, brewing instructions an
 - Lemongrass Green Tea: https://nevisan.in/products/lemongrass-green-tea/
 - Rum Green Tea: https://nevisan.in/products/rum-green-tea/
 - Whiskey Green Tea: https://nevisan.in/products/whiskey-green-tea/
+
+- How to brew (hot tea, iced tea and re-steeping): https://nevisan.in/how-to-brew/

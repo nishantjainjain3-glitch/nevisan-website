@@ -392,6 +392,7 @@ function Nav({ page: e, setPage: t }) {
     { label: "Wholesale", id: "Wholesale", href: "/bulk/" },
     { label: "Locations", id: "Locations", href: "/locations/" },
     { label: "FAQ", id: "FAQ", href: "/faq" },
+    { label: "How to Brew", id: "How to Brew", href: "/how-to-brew/" },
   ];
 
   // Full links list for mobile drawer & navigation
@@ -400,6 +401,7 @@ function Nav({ page: e, setPage: t }) {
     "Our Story",
     "Reviews",
     "Tea Quiz",
+    "How to Brew",
     "Wholesale",
     "About",
     "Contact",
@@ -712,6 +714,9 @@ function Nav({ page: e, setPage: t }) {
                 React.createElement("span", { style: { color: "#C9A84C", fontSize: 18 } }, "★"),
                 "Customer Reviews",
               );
+            }
+            if (item === "How to Brew") {
+              return React.createElement("a", {key:item, href:"/how-to-brew/", style:{fontFamily:"'Playfair Display', Georgia, serif",fontSize:24,color:"rgba(255,255,255,0.9)",padding:"12px 0",textDecoration:"none",borderBottom:"1px solid rgba(255,255,255,0.08)"}}, "How to Brew");
             }
             if (item === "Tea Quiz") {
               return React.createElement(
@@ -3917,6 +3922,7 @@ function Footer({ setPage: e }) {
             "About",
             "Certifications",
             "Journal",
+            "How to Brew",
             "Wholesale",
             "FAQ",
             "Quiz",
@@ -3925,7 +3931,7 @@ function Footer({ setPage: e }) {
               "a",
               {
                 key: t,
-                href: ({About:"/#company",Certifications:"/#certifications",Journal:"/journal/",Wholesale:"/bulk/",FAQ:"/faq/",Quiz:"/quiz/"})[t],
+                href: ({About:"/#company",Certifications:"/#certifications",Journal:"/journal/","How to Brew":"/how-to-brew/",Wholesale:"/bulk/",FAQ:"/faq/",Quiz:"/quiz/"})[t],
                 style: {
                   fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,

@@ -369,6 +369,7 @@
     gtag('config', 'G-W3Q7DNWTKP');
   </script>
   <link rel="stylesheet" href="/site-polish.css?v=4">
+  <link rel="stylesheet" href="/reviews/reviews.css?v=1">
 </head>
 <body class="premium-site">
 
@@ -7267,6 +7268,11 @@ function toggleNevisanMenu() {
         </div>
     </div>
 
+    <div class="reviews-pagination">
+      <p id="reviewsStatus" role="status" aria-live="polite"></p>
+      <button type="button" id="showMoreReviews" class="filter-btn" hidden>Show more reviews</button>
+    </div>
+
     <!-- Leave a Review Box -->
     <section class="leave-review-box">
       <h2>Have You Brewed Nevisan Tea?</h2>
@@ -7295,19 +7301,38 @@ function toggleNevisanMenu() {
         btn.setAttribute('aria-selected', 'true');
       }
 
-      const cards = document.querySelectorAll('.review-card');
-      cards.forEach(c => {
-        const cat = c.getAttribute('data-category');
-        const plat = c.getAttribute('data-platform');
-        if (category === 'all' || cat === category || plat === category) {
-          c.style.display = 'flex';
-        } else {
-          c.style.display = 'none';
-        }
-      });
+      selectedCategory = category;
+      reviewLimit = 12;
+      renderReviews();
+    }
+
+    let selectedCategory = 'all';
+    let reviewLimit = 12;
+    function renderReviews() {
+      const matches = [...document.querySelectorAll('.review-card')].filter(card =>
+        selectedCategory === 'all' || card.dataset.category === selectedCategory ||
+        card.dataset.platform === selectedCategory);
+      document.querySelectorAll('.review-card').forEach(card => { card.style.display = 'none'; });
+      matches.slice(0, reviewLimit).forEach(card => { card.style.display = 'flex'; });
+      document.getElementById('reviewsStatus').textContent =
+        `Showing ${Math.min(reviewLimit, matches.length)} of ${matches.length} reviews`;
+      document.getElementById('showMoreReviews').hidden = reviewLimit >= matches.length;
     }
 
     window.addEventListener('DOMContentLoaded', () => {
+      renderReviews();
+      document.getElementById('showMoreReviews').addEventListener('click', () => {
+        const firstNew = [...document.querySelectorAll('.review-card')].filter(card =>
+          selectedCategory === 'all' || card.dataset.category === selectedCategory ||
+          card.dataset.platform === selectedCategory)[reviewLimit];
+        reviewLimit += 12;
+        renderReviews();
+        if (firstNew) {
+          const link = firstNew.querySelector('a');
+          if (link) link.focus({preventScroll: true});
+          firstNew.scrollIntoView({block: 'start'});
+        }
+      });
       const hash = window.location.hash.replace('#', '');
       if (hash) {
         const targetBtn = document.querySelector(`.filter-btn[onclick*="'${hash}'"]`);

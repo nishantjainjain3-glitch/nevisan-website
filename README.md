@@ -48,7 +48,7 @@ The content review does not certify product certifications, packaging claims or 
 
 ## Premium presentation
 
-`site-polish.css` supplies the shared editorial design. `product-atelier.js` presents the complete supplied lifestyle images for all ten teas, with a second ritual view for GABA, Spearmint, Blue Flower and Ginger. It preserves artwork proportions, supports keyboard-accessible selectors and a missing-image fallback. The previous illustrative CSS pouch extrusion has been replaced following visual feedback.
+`site-polish.css` supplies the shared editorial design. `product-atelier.js` presents the complete supplied lifestyle images for all ten teas, with a second ritual view for every tea. It preserves artwork proportions, supports keyboard-accessible selectors and a missing-image fallback. The previous illustrative CSS pouch extrusion has been replaced following visual feedback.
 
 Product sales copy and the FAQ focus on ingredients, taste, brewing and ordering. Aggregate ratings, unattributed verified testimonials and unsupported product-specific lab figures were removed. Existing packaging artwork and statutory declarations are retained as supplied; certificates, packaging claims, seller inventory and marketplace terms require their own source records.
 
@@ -57,3 +57,5 @@ The cloud browser supports desktop review; physical iPhone and Android testing i
 ## Signature product pages
 
 All ten products have individual tasting stories, breadcrumbs, accessible image selectors, front/back or ritual views, full-size native dialog viewing and a safe-area-aware mobile purchase bar. `product-gallery.js` progressively enhances static images: purchase links and the first image remain usable without JavaScript. Arrow keys, Home and End navigate the image choices; Escape closes the native viewer and returns focus. Secondary image failures restore the main photograph.
+
+All ten product galleries now include front-of-pouch artwork. Chamomile, Lemongrass, Tulsi, Organic, Rum and Whiskey also include two recovered ritual/serving images, for five views per page. Images are optimised WebP files with preserved aspect ratios.

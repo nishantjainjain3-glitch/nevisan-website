@@ -404,7 +404,7 @@
 
 
 
-<link rel="stylesheet" href="/site-polish.css?v=1">
+<link rel="stylesheet" href="/site-polish.css?v=3">
 </head>
 <body class="premium-site">
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -646,8 +646,8 @@
   <a href="https://nevisan.in/reviews/" class="nevisan-drawer-link nevisan-drawer-link--gold" onclick="toggleNevisanMenu()"><span style="color:#C9A84C;">★</span>Customer Reviews</a>
   <a href="https://nevisan.in/quiz/" class="nevisan-drawer-link active" onclick="toggleNevisanMenu()">Tea Finder Quiz</a>
   <a href="https://nevisan.in/bulk/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">Wholesale &amp; Bulk Supply</a>
-  <a href="https://nevisan.in/locations/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">Delivery Locations (8 Metros)</a>
-  <a href="https://nevisan.in/faq/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">FAQ &amp; Health Guide</a>
+  <a href="https://nevisan.in/locations/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">Delivery &amp; Locations</a>
+  <a href="https://nevisan.in/faq/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">FAQ &amp; Brewing Guide</a>
   <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px;">
     <a href="https://nevisan.in/#collection" class="nevisan-btn-shop" style="text-align: center; padding: 14px; display: block; margin: 0;" onclick="toggleNevisanMenu()">Shop the Collection</a>
     <a href="https://wa.me/919864245687?text=Hi%20Nevisan!%20I%20would%20like%20to%20place%20an%20order." class="nevisan-btn-order-mobile" style="text-align: center; padding: 14px; justify-content: center;" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
@@ -676,8 +676,8 @@ function toggleNevisanMenu() {
   <header class="hero-quiz-banner" style="background: linear-gradient(180deg, var(--teal) 0%, #1c3324 100%); color: #FFFFFF; padding: 100px 24px 20px; text-align: center;">
       <div style="max-width: 800px; margin: 0 auto;">
         <span style="font-size: 14px; letter-spacing: 0.15em; text-transform: none; color: var(--gold); font-weight: 700; margin-bottom: 12px; display: inline-block; background: rgba(201,168,76,0.15); padding: 4px 14px; border-radius: 99px; border: 1px solid rgba(201,168,76,0.3);">Tea Match Discovery</span>
-        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 4.5vw, 44px); font-weight: 400; line-height: 1.2; margin: 10px 0 12px;">Find Your Perfect Tea Blend</h1>
-        <p style="font-size: 16px; color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto;">Take our 60-second sommelier quiz to discover your personalized whole-leaf Assam match based on your tea preferences and daily routine.</p>
+        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 4.5vw, 44px); font-weight: 400; line-height: 1.2; margin: 10px 0 12px;">Find a tea you will enjoy</h1>
+        <p style="font-size: 16px; color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto;">Answer three questions about taste and your tea break. We will suggest a blend to try.</p>
       </div>
     </header>
     <div class="quiz-wrapper" id="main-content">
@@ -732,6 +732,7 @@ function toggleNevisanMenu() {
     // Teas Database
     const teas = {
       gaba: {
+        slug: "gaba-oolong-tea",
         name: "GABA Oolong Tea",
         img: "../teas/gaba-lifestyle.webp",
         benefit: "Toasty Oolong & Smooth Honey Notes",
@@ -741,6 +742,7 @@ function toggleNevisanMenu() {
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHHXQAGVCGGGVF"
       },
       chamomile: {
+        slug: "chamomile-green-tea",
         name: "Chamomile Green Tea",
         img: "../teas/chamomile-lifestyle.webp",
         benefit: "Soft Floral & Evening Tea Rituals",
@@ -750,6 +752,7 @@ function toggleNevisanMenu() {
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHK53HCGSRWHAH"
       },
       spearmint: {
+        slug: "spearmint-green-tea",
         name: "Spearmint Green Tea",
         img: "../teas/spearmint-lifestyle.webp",
         benefit: "Cool Mint & Everyday Refreshment",
@@ -759,6 +762,7 @@ function toggleNevisanMenu() {
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHHYQNAYYQHF5P"
       },
       lemongrass: {
+        slug: "lemongrass-green-tea",
         name: "Lemongrass Green Tea",
         img: "../teas/lemongrass-lifestyle.webp",
         benefit: "Bright Citrus & After-Meal Refreshment",
@@ -768,6 +772,7 @@ function toggleNevisanMenu() {
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHHEGBGZ5XCXVZ"
       },
       tulsi: {
+        slug: "tulsi-green-tea",
         name: "Tulsi Green Tea",
         img: "../teas/tulsi-lifestyle.webp",
         benefit: "Fragrant Tulsi & Herbal Character",
@@ -777,6 +782,7 @@ function toggleNevisanMenu() {
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHK7GXBJDKC9XM"
       },
       blueflower: {
+        slug: "blue-flower-green-tea",
         name: "Blue Flower Green Tea",
         img: "../teas/blue-flower-lifestyle.webp",
         benefit: "Delicate Florals & A Vivid Blue Cup",
@@ -786,6 +792,7 @@ function toggleNevisanMenu() {
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHK2XFGHV2GRYA"
       },
       rum: {
+        slug: "rum-green-tea",
         name: "Rum Green Tea",
         img: "../teas/rum-lifestyle.webp",
         benefit: "Exotic Warming evening ritual (Non-Alcoholic)",
@@ -795,6 +802,7 @@ function toggleNevisanMenu() {
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHK6GMGQAUZDZS"
       },
       whiskey: {
+        slug: "whiskey-green-tea",
         name: "Whiskey Green Tea",
         img: "../teas/whiskey-lifestyle.webp",
         benefit: "Sophisticated Woody & Smoky Tea (Non-Alcoholic)",
@@ -804,15 +812,17 @@ function toggleNevisanMenu() {
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHHEJ9YS493UA2"
       },
       organic: {
+        slug: "organic-green-tea",
         name: "Organic Green Tea (Classic)",
         img: "../teas/organic-lifestyle.webp",
         benefit: "Fresh, Grassy & Unblended Assam Tea",
-        desc: "Our pure, pesticide-free, single-garden whole leaf Assam green tea. Full of fresh, clean, and grassy notes. Perfect for purists who appreciate unflavored tea craft.",
+        desc: "Our plain whole-leaf green tea from Golaghat, Assam. A fresh, grassy cup for anyone who wants to taste the leaf without an added botanical.",
         bg: "radial-gradient(circle, #f2f7ec 0%, #fff 100%)",
         amazon: "https://www.amazon.in/dp/B0FV2N83XD",
         flipkart: "https://www.flipkart.com/product/p/itme?pid=TEAHK63NTFXN8CGS"
       },
       ginger: {
+        slug: "ginger-green-tea",
         name: "Ginger Green Tea",
         img: "../teas/ginger-lifestyle.webp",
         benefit: "Ginger Warmth & A Zingy Finish",
@@ -829,27 +839,27 @@ function toggleNevisanMenu() {
         id: 0,
         title: "1. What kind of tea break are you looking for?",
         options: [
-          { text: "Enjoy a mellow, floral evening tea ritual", emoji: "💆", scores: { gaba: 3, chamomile: 3, tulsi: 1 } },
-          { text: "Enjoy a cool, refreshing mint cup", emoji: "🌸", scores: { spearmint: 5 } },
-          { text: "Enjoy bright citrus refreshment after meals", emoji: "🍋", scores: { lemongrass: 5 } },
-          { text: "Explore herbal aromas and colorful botanical blends", emoji: "🛡️", scores: { tulsi: 3, blueflower: 3, organic: 1 } },
-          { text: "Enjoy warming ginger spice in my morning cup", emoji: "🫚", scores: { ginger: 5 } },
-          { text: "Savor a unique, premium, non-alcoholic evening ritual", emoji: "🥃", scores: { rum: 4, whiskey: 4 } }
+          { text: "A mellow or floral cup", emoji: "💆", scores: { gaba: 3, chamomile: 3, tulsi: 1 } },
+          { text: "A fresh mint cup", emoji: "🌸", scores: { spearmint: 5 } },
+          { text: "A citrus cup after a meal", emoji: "🍋", scores: { lemongrass: 5 } },
+          { text: "Herbal aromas or a colourful cup", emoji: "🛡️", scores: { tulsi: 3, blueflower: 3, organic: 1 } },
+          { text: "Warming ginger in the morning", emoji: "🫚", scores: { ginger: 5 } },
+          { text: "A smoky or spiced tea", emoji: "🥃", scores: { rum: 4, whiskey: 4 } }
         ]
       },
       {
         id: 1,
         title: "2. What kind of flavor profile do you prefer?",
         options: [
-          { text: "Mellow, smooth, and slightly earthy/floral", emoji: "🍂", scores: { gaba: 3, blueflower: 3 } },
-          { text: "Sweet, comforting, and soothing chamomile floral", emoji: "🌼", scores: { chamomile: 4 } },
-          { text: "Cool, clean, and refreshing mint", emoji: "🍃", scores: { spearmint: 4 } },
-          { text: "Citrusy, zesty, and refreshing lemon notes", emoji: "🍋", scores: { lemongrass: 4 } },
-          { text: "Warm, spicy, and grounding herbal notes", emoji: "🌿", scores: { tulsi: 4 } },
-          { text: "Warm, spicy, and grounding with a zingy kick", emoji: "🫚", scores: { ginger: 4 } },
-          { text: "Sweet, rich spices like dark aged rum", emoji: "🍹", scores: { rum: 4 } },
-          { text: "Woody, bold, and smoky like peated whiskey", emoji: "🪵", scores: { whiskey: 4 } },
-          { text: "Pure, fresh, clean, and classic grassy green tea", emoji: "🍵", scores: { organic: 4 } }
+          { text: "Mellow or lightly floral", emoji: "🍂", scores: { gaba: 3, blueflower: 3 } },
+          { text: "Soft chamomile florals", emoji: "🌼", scores: { chamomile: 4 } },
+          { text: "Fresh spearmint", emoji: "🍃", scores: { spearmint: 4 } },
+          { text: "Bright lemon notes", emoji: "🍋", scores: { lemongrass: 4 } },
+          { text: "Fragrant tulsi", emoji: "🌿", scores: { tulsi: 4 } },
+          { text: "Ginger warmth", emoji: "🫚", scores: { ginger: 4 } },
+          { text: "Warm rum-inspired spice", emoji: "🍹", scores: { rum: 4 } },
+          { text: "Smoky whiskey-inspired notes", emoji: "🪵", scores: { whiskey: 4 } },
+          { text: "Plain, grassy green tea", emoji: "🍵", scores: { organic: 4 } }
         ]
       },
       {
@@ -884,7 +894,7 @@ function toggleNevisanMenu() {
 
       const q = questions[currentStep];
       container.innerHTML = `
-        <h2 class="question-title">${q.title}</h2>
+        <h2 class="question-title" tabindex="-1">${q.title}</h2>
         <div class="options-list">
           ${q.options.map((opt, index) => `
             <button class="option-btn" onclick="selectOption(${index})">
@@ -903,6 +913,7 @@ function toggleNevisanMenu() {
       if (currentStep < 2) {
         currentStep++;
         renderQuestion();
+        container.querySelector(".question-title").focus({preventScroll:true});
       } else {
         showResults();
       }
@@ -958,9 +969,10 @@ function toggleNevisanMenu() {
           <div class="result-image-container">
             <img src="${rec.img}" alt="${rec.name}">
           </div>
-          <h2 class="result-title">${rec.name}</h2>
+          <h2 class="result-title" tabindex="-1">${rec.name}</h2>
           <div class="result-benefit">Tasting profile: ${rec.benefit}</div>
           <p class="result-desc">${rec.desc}</p>
+          <p><a class="result-product-link" href="/products/${rec.slug}/">View this tea and all product images →</a></p>
           
           <div class="buy-options-header">Choose Where To Buy</div>
           <div class="buy-grid">
@@ -980,6 +992,7 @@ function toggleNevisanMenu() {
           </button>
         </div>
       `;
+      document.querySelector(".result-title").focus({preventScroll:true});
     }
 
     // Restart Quiz

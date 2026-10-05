@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bulk & Wholesale Tea Orders | Nevisan Tea</title>
-    <meta name="description" content="Wholesale green tea for cafes, hotels, retail stores, and corporate gifting. Bulk orders from our Golaghat garden — PGS-India certified, whole-leaf, unblended. Pan-India delivery.">
+    <meta name="description" content="Wholesale green tea for cafes, hotels, retail stores, and corporate gifting. Choose blends from our Assam whole-leaf collection. Request availability, packaging options and a delivery quote.">
     <link rel="canonical" href="https://nevisan.in/bulk/">
     <meta property="og:title" content="Bulk & Wholesale Tea Orders | Nevisan Tea">
     <meta property="og:description" content="Wholesale green tea for cafes, hotels, retail stores, and corporate gifting. Bulk orders from our Golaghat garden.">
@@ -143,12 +143,12 @@
   </script>
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bulk & Wholesale Tea Orders | Nevisan Tea">
-  <meta name="twitter:description" content="Wholesale green tea for cafes, hotels, retail stores, and corporate gifting. Bulk orders from our Golaghat garden — PGS-India certified, whole-leaf, unblended. Pan-India delivery.">
+  <meta name="twitter:description" content="Wholesale green tea for cafes, hotels, retail stores, and corporate gifting. Choose blends from our Assam whole-leaf collection. Request availability, packaging options and a delivery quote.">
   <meta name="twitter:image" content="https://nevisan.in/hero-bg.jpg">
 
 
 
-<link rel="stylesheet" href="/site-polish.css?v=1">
+<link rel="stylesheet" href="/site-polish.css?v=3">
 </head>
 <body class="premium-site">
 
@@ -384,8 +384,8 @@
   <a href="https://nevisan.in/reviews/" class="nevisan-drawer-link nevisan-drawer-link--gold" onclick="toggleNevisanMenu()"><span style="color:#C9A84C;">★</span>Customer Reviews</a>
   <a href="https://nevisan.in/quiz/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">Tea Finder Quiz</a>
   <a href="https://nevisan.in/bulk/" class="nevisan-drawer-link active" onclick="toggleNevisanMenu()">Wholesale &amp; Bulk Supply</a>
-  <a href="https://nevisan.in/locations/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">Delivery Locations (8 Metros)</a>
-  <a href="https://nevisan.in/faq/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">FAQ &amp; Health Guide</a>
+  <a href="https://nevisan.in/locations/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">Delivery &amp; Locations</a>
+  <a href="https://nevisan.in/faq/" class="nevisan-drawer-link " onclick="toggleNevisanMenu()">FAQ &amp; Brewing Guide</a>
   <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px;">
     <a href="https://nevisan.in/#collection" class="nevisan-btn-shop" style="text-align: center; padding: 14px; display: block; margin: 0;" onclick="toggleNevisanMenu()">Shop the Collection</a>
     <a href="https://wa.me/919864245687?text=Hi%20Nevisan!%20I%20would%20like%20to%20place%20an%20order." class="nevisan-btn-order-mobile" style="text-align: center; padding: 14px; justify-content: center;" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
@@ -421,10 +421,10 @@ function toggleNevisanMenu() {
 
         <div class="bulk-section">
             <h2>Why Buy Bulk from Nevisan?</h2>
-            <p>Most wholesale tea comes from brokers who blend across gardens and warehouses. We don't. When you order bulk from Nevisan, you get the same whole-leaf, single-origin, PGS-India certified tea that we sell individually — supplied directly from our estate at wholesale rates. No quality compromise. No blending. No middlemen.</p>
+            <p>Choose from the Nevisan whole-leaf collection for a cafe, hotel, retail store or gift order. Tell us which blends, quantity and packaging you need, and we can discuss availability and a quotation.</p>
             <ul>
                 <li>Same whole-leaf, single-origin tea — no downgrade for bulk orders</li>
-                <li>PGS-India certified organic — verified, not self-declared</li>
+                <li>Product and certification documents available on request</li>
                 <li>Pan-India delivery via Amazon and Flipkart, or direct WhatsApp</li>
                 <li>Fresh stock — we don't hoard inventory for months</li>
                 <li>Custom blends available for corporate gifting (minimum 50kg)</li>
@@ -474,7 +474,7 @@ function toggleNevisanMenu() {
 
         <div class="inquiry-form" style="margin-top: 2.5rem;">
             <h2>Send Your Requirement for Pricing</h2>
-            <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 1rem;">Fill in the requirement form below and we will get back to you with our wholesale prices and quotation within 24 hours. For immediate assistance, you can also message us directly on WhatsApp at +91 98642 45687.</p>
+            <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 1rem;">Fill in the form to prepare a WhatsApp enquiry. Review the draft and send it to request availability and a quotation. You can also contact us directly at +91 98642 45687.</p>
             <form id="bulkInquiryForm" onsubmit="handleBulkSubmit(event)">
                 <div class="form-group">
                     <label for="name">Your Name</label>
@@ -504,6 +504,7 @@ function toggleNevisanMenu() {
                 </div>
                 <button type="submit" class="form-submit">Send Requirement via WhatsApp</button>
             </form>
+            <p id="bulkDraftStatus" role="status"></p>
             <script>
             function handleBulkSubmit(e) {
                 e.preventDefault();
@@ -525,7 +526,11 @@ function toggleNevisanMenu() {
                 }
                 var text = lines.join('\n');
                 var waUrl = 'https://wa.me/919864245687?text=' + encodeURIComponent(text);
-                window.open(waUrl, '_blank');
+                window.open(waUrl, '_blank', 'noopener,noreferrer');
+                var status = document.getElementById('bulkDraftStatus');
+                status.replaceChildren();
+                status.append('Your draft is ready. Review it and press Send in WhatsApp. ');
+                var link = document.createElement('a'); link.href = waUrl; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = 'Open your draft →'; status.append(link);
             }
             </script>
         </div>
@@ -546,15 +551,15 @@ function toggleNevisanMenu() {
             </div>
             <div class="faq-item">
                 <h3>How long does delivery take?</h3>
-                <p>Pan-India delivery via Amazon and Flipkart takes 3–5 business days. For bulk orders above 25kg, we use dedicated courier partners with 2–3 day delivery.</p>
+                <p>Confirm the dispatch estimate, shipping cost and delivery time in your quotation. Marketplace orders use the delivery estimate shown at checkout.</p>
             </div>
             <div class="faq-item">
                 <h3>Do you offer custom branding for corporate gifts?</h3>
-                <p>Yes. For orders above 50kg, we can customize the pouch design with your brand logo and messaging. Lead time is 7–10 days for custom packaging.</p>
+                <p>Yes. For orders above 50kg, we can customize the pouch design with your brand logo and messaging. Confirm the artwork and production lead time in your quotation.</p>
             </div>
             <div class="faq-item">
                 <h3>Is the bulk tea the same quality as individual pouches?</h3>
-                <p>Exactly the same. We don't downgrade quality for bulk orders. Same whole-leaf, same PGS-India certification, same garden origin — direct from our estate at wholesale pricing.</p>
+                <p>Bulk enquiries cover the same collection. Confirm the blend, pack size, batch and any documentation you need when requesting a quotation.</p>
             </div>
         </div>
     </main>

@@ -34,7 +34,7 @@
         h('div',{className:'atelier__copy'},
           h('p',{className:'lux-eyebrow'},'ONE ORIGIN. YOUR EXPRESSION.'),
           h('h2',{id:'atelier-title'},'A leaf from Assam.',h('br'),h('em',null,'A ritual of your own.')),
-          h('p',{className:'atelier__intro'},'Explore the collection, find your flavour, and let the first steep become a moment worth keeping.'),
+          h('p',{className:'atelier__intro'},'Explore the collection, find your flavour, and try a cup that fits your day.'),
           h('div',{className:'atelier__choices',role:'group','aria-label':'Choose your tea'},teas.map((item,index)=>h('button',{type:'button',key:item.key,'aria-pressed':index===selected,onClick:()=>choose(index)},item.name.replace(' Green Tea','').replace(' Oolong Tea',' Oolong')))),
           h('div',{className:'atelier__profile','aria-live':'polite'},h('h3',null,tea.name),h('p',null,tea.notes),h('dl',null,h('div',null,h('dt',null,'Water'),h('dd',null,tea.water)),h('div',null,h('dt',null,'First steep'),h('dd',null,tea.time)),h('div',null,h('dt',null,'Pack'),h('dd',null,'50g · ₹499')))),
           h('a',{className:'lux-button lux-button--ivory',href:`/products/${tea.slug}/`},'Explore this tea ↗'),

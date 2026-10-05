@@ -488,7 +488,7 @@ function Nav({ page: e, setPage: t }) {
         },
         /* Logo Brand Block */
         React.createElement(
-          "div",
+          "a",
           {
             style: {
               cursor: "pointer",
@@ -497,7 +497,8 @@ function Nav({ page: e, setPage: t }) {
               gap: 12,
               flexShrink: 0,
             },
-            onClick: () => c("Home"),
+            href: "/", "aria-label": "Nevisan home",
+            onClick: event => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) { event.preventDefault(); c("Home"); } },
           },
           React.createElement(NevLogo, { size: 40 }),
           React.createElement(
@@ -847,8 +848,8 @@ function Nav({ page: e, setPage: t }) {
 }
 function Ticker() {
   const e = [
-      "PESTICIDE-FREE",
-      "FSSAI APPROVED",
+      "PACKED IN GUWAHATI",
+      "FSSAI LICENSED",
       "CAN BE STEEPED TWICE",
       "HANDCRAFTED IN ASSAM",
       "SINGLE ORIGIN",
@@ -1446,7 +1447,7 @@ function BuyModal({ tea: e, onClose: t }) {
               React.createElement(
                 "div",
                 { style: { fontSize: 13, opacity: 0.9, marginTop: 2 } },
-                "Direct garden supply · Free delivery guidance",
+                "Order enquiries and delivery details",
               ),
             ),
             React.createElement("span", { style: { fontSize: 20, fontWeight: 700 } }, "›"),
@@ -1493,7 +1494,7 @@ function BuyModal({ tea: e, onClose: t }) {
               React.createElement(
                 "div",
                 { style: { fontSize: 13, opacity: 0.8, marginTop: 2 } },
-                "Prime fast delivery · Secure Amazon payment",
+                "Check price, seller and delivery on Amazon",
               ),
             ),
             React.createElement("span", { style: { fontSize: 20, fontWeight: 700 } }, "›"),
@@ -1537,7 +1538,7 @@ function BuyModal({ tea: e, onClose: t }) {
               React.createElement(
                 "div",
                 { style: { fontSize: 13, opacity: 0.9, marginTop: 2 } },
-                "Official brand store · Reliable pan-India shipping",
+                "Check price, seller and delivery on Flipkart",
               ),
             ),
             React.createElement("span", { style: { fontSize: 20, fontWeight: 700 } }, "›"),
@@ -1740,7 +1741,7 @@ function CollectionPage({}) {
               marginBottom: 16,
             },
           },
-          "Ten varieties, one origin",
+          "Choose your flavour",
         ),
         React.createElement(
           "p",
@@ -1770,7 +1771,7 @@ function CollectionPage({}) {
         [
           { label: "All Teas", value: "ALL" },
           { label: "Green Teas", value: "GREEN" },
-          { label: "Wellness", value: "WELLNESS" },
+          { label: "Botanical Blends", value: "BOTANICAL" },
           { label: "Specialty Blends", value: "SPECIALTY" }
         ].map(filter => {
           const isSelected = activeFilter === filter.value;
@@ -1778,7 +1779,7 @@ function CollectionPage({}) {
             "button",
             {
               key: filter.value,
-              onClick: () => setActiveFilter(filter.value),
+              onClick: () => setActiveFilter(filter.value), "aria-pressed": isSelected,
               style: {
                 background: isSelected ? "#1F2E24" : "rgba(31, 46, 36, 0.04)",
                 color: isSelected ? "#F8F6F2" : "#1F2E24",
@@ -1805,8 +1806,8 @@ function CollectionPage({}) {
         TEAS.filter(tea => {
           if (activeFilter === "ALL") return true;
           if (activeFilter === "GREEN") return tea.name !== "GABA Oolong Tea";
-          if (activeFilter === "WELLNESS") {
-            return ["Lemongrass Green Tea", "Blue Flower Green Tea", "Spearmint Green Tea", "Tulsi Green Tea", "Chamomile Green Tea", "Ginger Green Tea", "Organic Green Tea"].includes(tea.name);
+          if (activeFilter === "BOTANICAL") {
+            return ["Lemongrass Green Tea", "Blue Flower Green Tea", "Spearmint Green Tea", "Tulsi Green Tea", "Chamomile Green Tea", "Ginger Green Tea"].includes(tea.name);
           }
           if (activeFilter === "SPECIALTY") {
             return ["GABA Oolong Tea", "Whiskey Green Tea", "Rum Green Tea"].includes(tea.name);
@@ -2707,7 +2708,7 @@ function PhilosophySection() {
           React.createElement("path", { d: "M12 7v5l4 2" }),
         ),
         title: "Can be steeped twice",
-        desc: "Whole leaf quality means the second steep is as rewarding as the first. Better value, richer taste.",
+        desc: "Try a second steep in the same session. Taste as you go and stop when the cup is too light for you.",
       },
       {
         icon: React.createElement(
@@ -2727,8 +2728,8 @@ function PhilosophySection() {
           }),
           React.createElement("path", { d: "m9 12 2 2 4-4" }),
         ),
-        title: "Chemical-free, always",
-        desc: "Pesticide-free from soil to seal. PGS-India organic certified. No exceptions.",
+        title: "Read the pack, know the tea",
+        desc: "Check the ingredients, batch details and declarations on your pouch. Ask us if you need help reading them.",
       },
       {
         icon: React.createElement(
@@ -2777,7 +2778,7 @@ function PhilosophySection() {
             d: "M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15",
           }),
         ),
-        title: "Handcrafted, not manufactured",
+        title: "Packed with care",
         desc: "Each batch made by Tailor Made Tea of Golaghat. Small batch, intentional process.",
       },
     ],
@@ -2888,7 +2889,7 @@ function PhilosophySection() {
               marginBottom: 20,
             },
           },
-          "Most people in India have drunk Assam tea their whole lives — and most of it has been broken leaves, dust, and blends made for volume, not flavour. We grew up here. We knew what the actual leaf tasted like. And we couldn't unsee the gap.",
+          "Nevisan brings whole-leaf tea from Golaghat, Assam, to your everyday cup. Start with the plain green tea, then explore the mint, floral and spiced blends to find what you enjoy.",
         ),
         React.createElement(
           "p",
@@ -2903,7 +2904,7 @@ function PhilosophySection() {
               marginBottom: 32,
             },
           },
-          '"Every pack of Nevisan holds the same leaf that wealthy buyers in Japan and Europe have been paying a premium for. We just think you deserved to have it too."',
+          'A cup, a strainer and a few minutes are enough. Good tea should be easy to make your own.',
         ),
         React.createElement(
           "div",
@@ -3144,7 +3145,7 @@ function WhereToBuy() {
     a = [
       {
         name: "Order via WhatsApp",
-        desc: "Direct from Nevisan · Freshest stock · Personal service",
+        desc: "Order directly and ask us about your tea",
         cta: "💬 Order on WhatsApp",
         icon: "🌿",
         action: () => openWhatsApp(),
@@ -3153,7 +3154,7 @@ function WhereToBuy() {
       },
       {
         name: "Amazon India",
-        desc: "Fast delivery nationwide",
+        desc: "Check delivery availability for your address",
         cta: "📦 Shop on Amazon",
         icon: "📦",
         action: () =>
@@ -3165,7 +3166,7 @@ function WhereToBuy() {
       },
       {
         name: "Flipkart",
-        desc: "Fast delivery · Easy checkout",
+        desc: "See current stock and delivery details",
         cta: "🛍️ Shop on Flipkart",
         icon: "🛍️",
         action: () =>
@@ -3921,18 +3922,15 @@ function Footer({ setPage: e }) {
             "Quiz",
           ].map((t) =>
             React.createElement(
-              "div",
+              "a",
               {
                 key: t,
-                onClick: () => {
-                  "FAQ" === t ? (window.location.href = "/faq") : "Quiz" === t ? (window.location.href = "/quiz") : "Wholesale" === t ? (window.location.href = "/bulk/") : "Locations" === t ? (window.location.href = "/locations/")
-                      : e(t);
-                },
+                href: ({About:"/#company",Certifications:"/#certifications",Journal:"/journal/",Wholesale:"/bulk/",FAQ:"/faq/",Quiz:"/quiz/"})[t],
                 style: {
                   fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: "rgba(255,255,255,0.55)",
-                  marginBottom: 10,
+                  marginBottom: 10, display: "block", textDecoration: "none",
                   cursor: "pointer",
                   transition: "color 150ms",
                 },
@@ -3979,15 +3977,15 @@ function Footer({ setPage: e }) {
             },
           ].map(({ label: e, url: t }) =>
             React.createElement(
-              "div",
+              "a",
               {
                 key: e,
-                onClick: () => window.open(t, "_blank", "noopener,noreferrer"),
+                href: t, target: "_blank", rel: "noopener noreferrer",
                 style: {
                   fontFamily: "'Plus Jakarta Sans'",
                   fontSize: 16,
                   color: "rgba(255,255,255,0.55)",
-                  marginBottom: 10,
+                  marginBottom: 10, display: "block", textDecoration: "none",
                   cursor: "pointer",
                   transition: "color 150ms",
                 },
@@ -4107,7 +4105,7 @@ function CollectionSection({ setPage: e }) {
       React.createElement("div", { className: "lux-collection__header" },
         React.createElement("div", null,
           React.createElement("p", { className: "lux-eyebrow" }, "THE NEVISAN COLLECTION"),
-          React.createElement("h2", { id: "lux-collection-title" }, "Find your everyday extraordinary."),
+          React.createElement("h2", { id: "lux-collection-title" }, "Find your next cup."),
           React.createElement("p", { className: "lux-collection__intro" }, "From a toasty oolong to refreshing mint and delicate florals. Every cup begins with whole Assam leaves.")
         ),
         React.createElement("button", { type: "button", className: "lux-collection__view-all", onClick: () => e("Collection") }, "Explore all ten teas ↗")
@@ -5357,7 +5355,7 @@ function FAQSection() {
               margin: "0 auto",
             },
           },
-          "Core answers about our single-origin Golaghat harvest, brewing ritual, and express delivery.",
+          "Answers about ingredients, brewing and placing an order.",
         ),
       ),
       React.createElement(
@@ -5384,6 +5382,7 @@ function FAQSection() {
               "button",
               {
                 onClick: () => a(isOpened ? null : o),
+                "aria-expanded": isOpened, "aria-controls": "home-faq-answer-" + o,
                 style: {
                   width: "100%",
                   textAlign: "left",
@@ -5434,7 +5433,7 @@ function FAQSection() {
             isOpened &&
               React.createElement(
                 "div",
-                {
+                { id: "home-faq-answer-" + o,
                   style: {
                     padding: e ? "0 18px 18px" : "0 24px 22px",
                     fontFamily: "'Plus Jakarta Sans'",
@@ -5490,7 +5489,7 @@ function FAQSection() {
               e.currentTarget.style.transform = "none";
             },
           },
-          "View All 40 Questions in the Complete FAQ Hub →",
+          "See all 40 questions →",
         ),
         React.createElement(
           "a",
@@ -5823,7 +5822,7 @@ function OurStoryPage({ setPage: e }) {
       label: "Single Origin · Golaghat, Assam",
       title: "Where every leaf begins",
       subtitle:
-        "We grew up next to the world's best tea gardens — and decided the rest of India should taste them too.",
+        "Our tea begins in Golaghat, Assam. Explore the leaf, the blends and the way you like to brew.",
     }),
     React.createElement(PhilosophySection, null),
     React.createElement(
@@ -5862,7 +5861,7 @@ function OurStoryPage({ setPage: e }) {
                 lineHeight: 1.25,
               },
             },
-            "The Journey of the Perfect Leaf"
+            "From Golaghat to your cup"
           )
         ),
         React.createElement(
@@ -5877,17 +5876,17 @@ function OurStoryPage({ setPage: e }) {
           [
             {
               num: "01",
-              title: "The Assam Sourcing (Golaghat)",
-              desc: "Deep in the rolling hills of Golaghat, Assam, near the paths of the Brahmaputra River, grow our whole orthodox tea leaves. Sourced directly from our estate, every batch is handcrafted in small quantities to preserve the raw, whole-leaf character of single-origin Assam tea. We respect the soil, and in return, it gives us some of the boldest, most complex teas in the world.",
+              title: "Our Assam source",
+              desc: "Our tea leaves come from Golaghat, Assam. That source is the starting point for the green tea and oolong in our collection. Nevisan is packed and marketed from Guwahati.",
             },
             {
               num: "02",
-              title: "The Antidote to 'Bitter Dust'",
-              desc: "Most commercial green teas are made from leftover 'tea dust' swept from factory floors and packed into paper tea bags, resulting in a bitter, astringent cup. Nevisan is the antidote. We pack only whole, unbroken leaves that gently unfurl in hot water, releasing a naturally sweet, smooth flavor that can be steeped twice. No bitterness, just pure leaf.",
+              title: "Room for the leaf to open",
+              desc: "Whole leaves need room to brew. Use a roomy strainer, follow the guide on your pack and pour the tea off the leaves when it reaches the strength you like.",
             },
             {
               num: "03",
-              title: "The Alchemy of Flavor & Function",
+              title: "Choose the flavour you enjoy",
               desc: "We believe tea should be full of character. Our whole-leaf blends offer cool Spearmint, mellow GABA Oolong, soft Chamomile flowers, and bold, non-alcoholic Whiskey and Rum notes. Choose the flavor that fits your tea ritual.",
             },
           ].map((item, idx) =>
@@ -5955,174 +5954,174 @@ function OurStoryPage({ setPage: e }) {
 }
 const POSTS = [
   {
-    "title": "5 Ways to Tell If Your Green Tea Is Adulterated",
-    "slug": "5-ways-to-tell-if-your-green-tea-is-adulterated",
-    "excerpt": "The Indian green tea market is full of artificial blends and dust fannings. Here are five clear visual and taste signs your green tea is adulterated or stale."
-  },
-  {
-    "title": "The Art of Tea Tasting: A Beginner's Guide",
-    "slug": "art-of-tea-tasting-beginners-guide",
-    "excerpt": "Master the art of tea tasting. Learn how to evaluate whole-leaf Assam teas by examining dry leaf integrity, infusion liquor, floral aroma, and smooth finish."
-  },
-  {
-    "title": "The Complete Guide to Assam Whole Leaf Tea",
-    "slug": "assam-whole-leaf-tea-guide",
-    "excerpt": "Comprehensive guide to Assam whole-leaf green and oolong teas. Learn why unbroken estate leaves preserve antioxidants and deliver multiple sweet infusions."
-  },
-  {
-    "title": "Butterfly Pea Green Tea: A Colourful Buying Guide",
-    "slug": "best-blue-tea-butterfly-pea-flower-india",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
-  },
-  {
-    "title": "Chamomile Green Tea: Choosing a Floral Cup",
-    "slug": "best-chamomile-tea-for-sleep-in-india",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
-  },
-  {
-    "title": "Choose Your Green Tea by Taste and Routine",
-    "slug": "best-green-tea-for-weight-loss-energy-sleep",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
-  },
-  {
-    "title": "Whole-Leaf Green Tea: A Practical Buying Guide",
-    "slug": "best-green-tea-for-weight-loss-in-india",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
-  },
-  {
-    "title": "Spearmint Green Tea: Ingredients, Taste and Brewing",
-    "slug": "best-spearmint-tea-for-pcos-in-india",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
-  },
-  {
-    "title": "Butterfly Pea Green Tea: Colour, Taste and Brewing",
-    "slug": "blue-butterfly-pea-flower-tea",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
-  },
-  {
-    "title": "Blue Butterfly Pea Flower Magic Lemon Mocktail Recipe",
-    "slug": "blue-pea-lemon-mocktail-recipe",
-    "excerpt": "Easy recipe for an all-natural color-changing blue butterfly pea flower mocktail using whole-leaf tea, fresh citrus juice, sparkling water, and pure honey."
-  },
-  {
-    "title": "Chamomile Green Tea: A Floral Tea Ritual",
-    "slug": "chamomile-green-tea-evening-blend",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
-  },
-  {
-    "title": "How to Cold Brew Whole Leaf Green Tea",
-    "slug": "cold-brew-green-tea-guide",
-    "excerpt": "Simple step-by-step cold brew guide for whole-leaf Assam green tea. Extract natural l-theanine and smooth sweetness with zero bitterness or harsh tannins."
-  },
-  {
-    "title": "How to Make Refreshing Cold-Brew Lemongrass Iced Tea",
-    "slug": "cold-brew-lemongrass-iced-tea",
-    "excerpt": "How to cold-brew whole-leaf lemongrass green tea for a crisp, refreshing, citrus iced tea that naturally aids post-meal digestion and keeps you hydrated."
-  },
-  {
-    "title": "Golaghat: India's Hidden Tea Belt",
-    "slug": "golaghat-indias-hidden-tea-belt",
-    "excerpt": "Explore Golaghat, Assam premier fertile tea belt where Nevisan hand-harvests unbroken, single-estate organic whole-leaf teas direct from our heritage garden."
-  },
-  {
-    "title": "Green Tea: Ingredients, Caffeine and Everyday Brewing",
-    "slug": "green-tea-health-benefits-complete-guide",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
-  },
-  {
-    "title": "Green Tea and Coffee: Two Different Cups",
-    "slug": "green-tea-vs-coffee-caffeine",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
-  },
-  {
-    "title": "How to Buy Real Green Tea in India: What to Look For and What to Avoid",
-    "slug": "how-to-buy-real-green-tea-india",
-    "excerpt": "The Indian tea market is filled with multi-garden blends and misleading labels. Learn how to verify genuine single-origin, PGS-India certified whole-leaf Assam teas."
-  },
-  {
-    "title": "Choose Tea by Flavour and Routine",
-    "slug": "how-to-choose-right-tea-for-your-lifestyle",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
-  },
-  {
-    "title": "How to Get Three Steeps from One Serving: The Complete Guide to Maximizing Your Whole Leaf Tea Experience",
-    "slug": "how-to-get-three-steeps",
-    "excerpt": "Master the art of multiple steeping to extract maximum flavor, benefits, and value from your whole leaf Assam tea. Learn steep-by-steep techniques, temperature guides, and variety-specific tips for optimal tea appreciation."
-  },
-  {
-    "title": "How to Store Green Tea at Home (and What Ruins It)",
-    "slug": "how-to-store-green-tea-at-home",
-    "excerpt": "Most drinkers store green tea improperly. Learn how to protect your delicate whole leaves from light, air, humidity, and heat to preserve aroma and antioxidants."
-  },
-  {
-    "title": "Tea for Your Morning and Evening Rituals",
-    "slug": "morning-vs-evening-teas",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
-  },
-  {
-    "title": "Non-Alcoholic Botanical Whiskey & Rum Teas",
-    "slug": "non-alcoholic-botanical-whiskey-rum-tea",
-    "excerpt": "Explore how Nevisan crafts charred oak whiskey and spiced rum green teas using whole Assam leaves and 100% alcohol-free botanical extracts for evening relax."
-  },
-  {
-    "title": "Organic Green Tea vs Regular Green Tea: What's the Real Difference?",
-    "slug": "organic-green-tea-vs-regular-green-tea",
-    "excerpt": "Is organic green tea worth the price? Discover the differences in estate soil health, zero chemical pesticides, antioxidant retention, and pure cup flavor."
-  },
-  {
-    "title": "A Daily Spearmint Tea Ritual",
-    "slug": "pcos-spearmint-tea-daily-routine",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
-  },
-  {
-    "title": "Rum Green Tea: How We Made It",
-    "slug": "rum-green-tea-how-we-made-it",
-    "excerpt": "It took 14 recipe iterations to capture authentic spiced rum warmth without a drop of alcohol. Learn how we craft our 0.0% alcohol lifestyle whole-leaf blend."
-  },
-  {
-    "title": "GABA Oolong Tea: The Leaf, the Cup and the Ritual",
     "slug": "science-behind-gaba-tea",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
+    "title": "GABA Oolong Tea: Getting to Know the Cup",
+    "excerpt": "Meet Nevisan GABA Oolong Tea: its toasty character, how to brew a first cup and what to look for in a second steep."
   },
   {
-    "title": "Getting to Know Spearmint Green Tea",
     "slug": "spearmint-tea-hormonal-balance",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
+    "title": "Getting to Know Spearmint Green Tea",
+    "excerpt": "What spearmint brings to a green-tea blend, how the cup tastes and how to find a brew you enjoy."
   },
   {
-    "title": "The Real Cost of Cheap Tea Bags",
-    "slug": "the-real-cost-of-cheap-tea-bags",
-    "excerpt": "Commercial supermarket tea bags contain microplastics, dust fannings, and heavy tannins. Learn why whole-leaf Assam tea delivers superior health value per cup."
+    "slug": "best-spearmint-tea-for-pcos-in-india",
+    "title": "Buying Spearmint Green Tea: Check the Ingredients",
+    "excerpt": "Compare spearmint tea by its ingredients, pack size, source and brewing instructions before choosing a blend."
   },
   {
-    "title": "Tulsi Green Tea: An Herbaceous Assam Blend",
+    "slug": "pcos-spearmint-tea-daily-routine",
+    "title": "A Daily Spearmint Tea Ritual",
+    "excerpt": "A simple way to make spearmint green tea part of your day, with room to adjust the strength to your taste."
+  },
+  {
+    "slug": "best-chamomile-tea-for-sleep-in-india",
+    "title": "Chamomile Green Tea: Choosing a Floral Cup",
+    "excerpt": "Understand the difference between chamomile green tea and a pure chamomile infusion before buying."
+  },
+  {
+    "slug": "chamomile-green-tea-evening-blend",
+    "title": "Chamomile Green Tea: A Floral Tea Ritual",
+    "excerpt": "Make a gentle floral cup of chamomile green tea and adjust it without losing the character of the leaf."
+  },
+  {
+    "slug": "best-blue-tea-butterfly-pea-flower-india",
+    "title": "Butterfly Pea Green Tea: A Buying Guide",
+    "excerpt": "What to check when buying blue flower tea, from the green-tea base to serving size and colour."
+  },
+  {
+    "slug": "blue-butterfly-pea-flower-tea",
+    "title": "Butterfly Pea Green Tea: Colour and Taste",
+    "excerpt": "Explore the blue flower blend as a drink: a mild floral cup, a green-tea base and a colour change with lemon."
+  },
+  {
     "slug": "tulsi-green-tea-adaptogen",
-    "excerpt": "A practical guide to tea ingredients, flavour, caffeine and brewing. Choose an everyday cup by taste and routine."
+    "title": "Tulsi Green Tea: An Herbaceous Assam Blend",
+    "excerpt": "Get to know tulsi green tea through its aroma, green-tea base and a straightforward first brew."
   },
   {
-    "title": "The Ultimate Guide to Green Tea in India: From Leaf to Cup",
-    "slug": "ultimate-guide-to-green-tea-in-india",
-    "excerpt": "The definitive guide to green tea in India: harvest seasons, single-origin vs blended estates, polyphenol content, and how to brew without any bitter taste."
+    "slug": "best-green-tea-for-weight-loss-in-india",
+    "title": "Whole-Leaf Green Tea: A Practical Buying Guide",
+    "excerpt": "Choose whole-leaf green tea by flavour, ingredients, pack size and brewing needs rather than a weight-loss promise."
   },
   {
-    "title": "What PGS-India Certification Actually Means for Your Cup",
-    "slug": "what-pgs-india-certification-means",
-    "excerpt": "Learn what PGS-India Organic certification means for your cup. How peer-reviewed, zero-chemical natural farming protects Assam tea soil and consumer health."
+    "slug": "best-green-tea-for-weight-loss-energy-sleep",
+    "title": "Choose Your Green Tea by Taste and Routine",
+    "excerpt": "Match green tea to the flavours and tea breaks you enjoy, with clear expectations about caffeine."
   },
   {
-    "title": "Why We Don't Blend Across Gardens",
-    "slug": "why-we-dont-blend-across-gardens",
-    "excerpt": "Most commercial brands blend leaves across dozens of estates to mask poor quality. Nevisan bottles exclusively single-estate Golaghat harvest for pure traceability."
+    "slug": "green-tea-health-benefits-complete-guide",
+    "title": "Green Tea: Ingredients, Caffeine and Brewing",
+    "excerpt": "A clear starting point for green tea: read the ingredients, understand caffeine and brew a cup to your taste."
   },
   {
-    "title": "Why Whole Leaf Tea Tastes Different",
+    "slug": "green-tea-vs-coffee-caffeine",
+    "title": "Green Tea and Coffee: Two Different Cups",
+    "excerpt": "Compare the taste, preparation and caffeine expectations of green tea and coffee without relying on a fixed caffeine claim."
+  },
+  {
+    "slug": "how-to-choose-right-tea-for-your-lifestyle",
+    "title": "Choose Tea by Flavour and Routine",
+    "excerpt": "A short guide to choosing between plain green tea, oolong, mint, floral and warming Nevisan blends."
+  },
+  {
+    "slug": "morning-vs-evening-teas",
+    "title": "Tea for Your Morning and Evening Rituals",
+    "excerpt": "Choose a tea break around your taste and caffeine preferences, without assuming an evening blend is caffeine-free."
+  },
+  {
+    "slug": "rum-green-tea-how-we-made-it",
+    "title": "Rum Green Tea: A Warm, Spiced Cup",
+    "excerpt": "Taste Nevisan Rum Green Tea as a spirit-inspired blend, with warm sugarcane, spice and oak notes."
+  },
+  {
+    "slug": "non-alcoholic-botanical-whiskey-rum-tea",
+    "title": "Whiskey and Rum Green Tea: Two Flavour Profiles",
+    "excerpt": "Compare the smoky malt notes of Whiskey Green Tea with the warmer spice and sugarcane notes of Rum Green Tea."
+  },
+  {
     "slug": "why-whole-leaf-tea-tastes-different",
-    "excerpt": "Whole-leaf teas preserve delicate cellular essential oils that release gradually across 3 steeps, eliminating the harsh bitterness found in crushed tea bags."
+    "title": "Why Whole-Leaf Tea Tastes Different",
+    "excerpt": "Notice how leaf size, brewing time and room to unfurl affect your whole-leaf tea."
   },
   {
-    "title": "Why Your Green Tea Tastes Bitter (and How to Fix It)",
+    "slug": "why-we-dont-blend-across-gardens",
+    "title": "Why We Choose Tea from Golaghat",
+    "excerpt": "Why origin matters to Nevisan, and how to distinguish the source of a tea leaf from the ingredients in a blend."
+  },
+  {
+    "slug": "golaghat-indias-hidden-tea-belt",
+    "title": "Golaghat: Where Our Tea Begins",
+    "excerpt": "Meet the Golaghat, Assam origin behind Nevisan’s green tea and oolong collection."
+  },
+  {
+    "slug": "what-pgs-india-certification-means",
+    "title": "What PGS-India Certification Means",
+    "excerpt": "Understand PGS-India’s peer-appraisal approach and the details to check on an organic certificate."
+  },
+  {
+    "slug": "organic-green-tea-vs-regular-green-tea",
+    "title": "Organic and Other Green Teas: What to Compare",
+    "excerpt": "Compare green teas through certification, ingredients, freshness and taste rather than assuming a label guarantees the better cup."
+  },
+  {
+    "slug": "5-ways-to-tell-if-your-green-tea-is-adulterated",
+    "title": "Five Checks Before You Buy Green Tea",
+    "excerpt": "Check a green-tea pack’s ingredients, seal, dates, seller and documentation; taste alone cannot establish purity."
+  },
+  {
+    "slug": "how-to-buy-real-green-tea-india",
+    "title": "How to Buy Green Tea in India",
+    "excerpt": "A practical checklist for buying green tea online: ingredients, source, weight, dates and seller details."
+  },
+  {
+    "slug": "the-real-cost-of-cheap-tea-bags",
+    "title": "Comparing the Cost of Tea per Cup",
+    "excerpt": "Work out the cost of a tea serving from the pack weight and leaf amount, with a clear example for a 50g Nevisan pouch."
+  },
+  {
     "slug": "why-your-green-tea-tastes-bitter",
-    "excerpt": "Bitter green tea is caused by boiling water and crushed tea dust. Learn how simple temperature adjustments and whole-leaf Assam tea yield a smooth, naturally sweet cup."
+    "title": "Why Green Tea Tastes Bitter: Adjusting Your Brew",
+    "excerpt": "Change time, temperature or leaf amount to find a green-tea brew that suits you."
+  },
+  {
+    "slug": "how-to-store-green-tea-at-home",
+    "title": "How to Store Green Tea at Home",
+    "excerpt": "Keep dry tea sealed and away from moisture, heat, light and strong smells, using the date and instructions on your pack."
+  },
+  {
+    "slug": "how-to-get-three-steeps",
+    "title": "Getting More Than One Steep from Whole-Leaf Tea",
+    "excerpt": "Try a second and third steep during the same tea session, adjusting by taste without promising a fixed number of cups."
+  },
+  {
+    "slug": "art-of-tea-tasting-beginners-guide",
+    "title": "Tea Tasting: A Guide for Your First Comparison",
+    "excerpt": "Taste two teas side by side, notice aroma and texture, and keep notes you can use for the next brew."
+  },
+  {
+    "slug": "assam-whole-leaf-tea-guide",
+    "title": "A Guide to Assam Whole-Leaf Tea",
+    "excerpt": "Understand leaf size, green tea and oolong, and how to start brewing Assam whole-leaf tea."
+  },
+  {
+    "slug": "ultimate-guide-to-green-tea-in-india",
+    "title": "Green Tea in India: From Pack to Cup",
+    "excerpt": "A practical introduction to choosing, brewing and storing green tea, with a starting point in the Nevisan collection."
+  },
+  {
+    "slug": "cold-brew-green-tea-guide",
+    "title": "Cold-Brew Green Tea: A Small First Batch",
+    "excerpt": "Try a small refrigerated batch of whole-leaf green tea and adjust the amount to suit your taste."
+  },
+  {
+    "slug": "cold-brew-lemongrass-iced-tea",
+    "title": "Lemongrass Iced Tea: A Small Cold Brew",
+    "excerpt": "Make a small refrigerated lemongrass green-tea brew, then taste it plain or with a little lime."
+  },
+  {
+    "slug": "blue-pea-lemon-mocktail-recipe",
+    "title": "Blue Flower Tea with Lemon and Sparkling Water",
+    "excerpt": "Make a blue flower green-tea drink with ice, lemon and sparkling water, tasting as you add the citrus."
   }
 ];
 function JournalPage({setPage}) {
@@ -6148,7 +6147,7 @@ function AboutPage({ setPage: e }) {
       photo: PAGE_PHOTOS.about,
       label: "Our Story",
       title:
-        "We grew up next to the world's best tea. And drank mediocre tea anyway.",
+        "Whole-leaf Assam tea, packed with care in Guwahati.",
       subtitle: "Until we decided to do something about it.",
     }),
     React.createElement(
@@ -6198,7 +6197,7 @@ function AboutPage({ setPage: e }) {
                 marginBottom: 16,
               },
             },
-            "Growing up in Guwahati, we watched Assam's most beautiful teas leave on trucks — only to return as broken dust inside someone else's brand. We drank that dust like everyone else. Until we stopped and asked: what does the actual leaf taste like?",
+            "We want more people to enjoy the whole-leaf tea grown in Assam. Nevisan offers a plain green tea, a toasty oolong and blends with mint, flowers and warming spice notes.",
           ),
           React.createElement(
             "p",
@@ -6210,7 +6209,7 @@ function AboutPage({ setPage: e }) {
                 lineHeight: 1.8,
               },
             },
-            "That question led us to Golaghat. To Tailor Made Tea — a small processing house that handles the leaf the way it deserves to be handled. One garden. Whole leaves. Nothing added. That's Nevisan.",
+            "Our leaves come from Golaghat and our packs are marketed by Mahabir Enterprise in Guwahati. Each product page includes pack artwork, ingredients and brewing guidance so you can choose a tea with clear expectations.",
           ),
         ),
         React.createElement(
@@ -6240,13 +6239,13 @@ function AboutPage({ setPage: e }) {
             },
             {
               icon: "✅",
-              text: "PGS-India certified organic — pesticide-free from soil to seal",
+              text: "Organic declarations — see your pack and request current documents",
             },
-            { icon: "🔬", text: "FSSAI certified — food safety compliant" },
+            { icon: "🔬", text: "FSSAI licence details shown on the pack" },
             { icon: "📦", text: "Small batch — freshness sealed in every pack" },
             {
               icon: "💬",
-              text: "Direct to consumer — no middlemen, fresher stock",
+              text: "Order directly through WhatsApp or choose a marketplace",
             },
           ].map((e, t) =>
             React.createElement(
@@ -6319,7 +6318,7 @@ function AboutPage({ setPage: e }) {
                 margin: "0 auto",
               },
             },
-            "Nevisan didn't start with a business plan. It started with a frustration — and a question neither of us could stop asking: why does the world's best tea region produce tea that most Indians never actually taste?",
+            "Nevisan is based in Guwahati, with tea sourced from Golaghat. We built the collection around flavours we want customers to explore, from plain whole-leaf tea to mint, citrus and floral blends.",
           ),
         ),
         React.createElement(
@@ -6363,7 +6362,7 @@ function AboutPage({ setPage: e }) {
                 marginBottom: 20,
               },
             },
-            "When we started Nevisan, we weren't trying to build a tea company. We just wanted to drink the tea we grew up next to but could never actually find in a shop. So we went to the gardens in Golaghat ourselves, met the growers, and brought back the whole leaf, the good stuff that usually gets exported or blended away. Every tea we sell is one we drink at home, every single day. And if something is ever not right, message us on WhatsApp. A real person, one of us, will reply.",
+            "Thank you for choosing Nevisan. Try the tea plain on your first brew, then adjust it to your taste. If you need help choosing a blend, reading a pack or sorting out an order, contact us on WhatsApp or at care@nevisan.in.",
           ),
           React.createElement(
             "div",
@@ -6417,13 +6416,13 @@ function AboutPage({ setPage: e }) {
               initials: "NJ",
               name: "Nishant Jain",
               role: "Founder",
-              bio: "Nishant grew up in Guwahati with tea gardens practically in his backyard — and somehow the tea at home was still mediocre. That contradiction never sat right with him. Nevisan is his answer to it: get the real leaf, and get it to the people who deserve it.",
+              bio: "Nishant is a founder of Nevisan, based in Guwahati, Assam. For questions about the collection or an order, contact the Nevisan team.",
             },
             {
               initials: "UJ",
               name: "Uditi Jain",
               role: "Founder & Creative Director",
-              bio: "Uditi believes the way something feels matters as much as what it does. She shapes every part of what you experience with Nevisan — the words, the design, the moment you open the pack — so that drinking good tea also feels like a small, meaningful ritual.",
+              bio: "Uditi is a founder and creative director of Nevisan. The collection pairs whole-leaf tea with a considered presentation, from the pouch to the product gallery.",
             },
           ].map((e) =>
             React.createElement(
@@ -6589,7 +6588,7 @@ function CertificationsPage({ setPage: e }) {
       label: "Trust & Transparency",
       title: "Our Certifications",
       subtitle:
-        "Every claim we make is backed by a third-party certification or verifiable standard.",
+        "Read the licence details below. Contact us for current sourcing and certification documents for your pack.",
     }),
     React.createElement(
       "div",
@@ -6612,18 +6611,18 @@ function CertificationsPage({ setPage: e }) {
         },
         [
           {
-            name: "FSSAI Certified",
+            name: "FSSAI licence details",
             number: "FSSAI 10325001000313 (Marketer) · FSSAI 20321120000114 (Manufacturer)",
             icon: "\ud83c\udfdb",
             color: "#1b4f8a",
-            desc: "Food Safety and Standards Authority of India. Nevisan meets all regulatory requirements for food safety, labelling and hygiene standards set by the Government of India.",
+            desc: "Marketer and manufacturer licence numbers are listed here and on the packaging. A licence number is not a product-specific laboratory report.",
           },
           {
             name: "PGS-India Organic",
             number: "PGS Organic Certified",
             icon: "\ud83c\udf3f",
             color: "#2a6a2a",
-            desc: "Participatory Guarantee System of India - a government-recognised organic certification. Guarantees our teas are grown without synthetic pesticides, chemical fertilisers or GMOs.",
+            desc: "PGS-India uses a participatory assurance process. Ask us for the current certificate and its product coverage before relying on a certification claim.",
           },
           {
             name: "GST Registered",
@@ -7318,16 +7317,16 @@ function ContactPage({ setPage: e }) {
             { icon: "🌐", label: "Website", value: "nevisan.in", action: null },
           ].map((e, t) =>
             React.createElement(
-              "div",
+              e.action ? "button" : "div",
               {
-                key: t,
+                key: t, type: e.action ? "button" : undefined,
                 onClick: e.action || void 0,
                 style: {
                   display: "flex",
                   gap: 16,
                   alignItems: "flex-start",
                   marginBottom: 28,
-                  cursor: e.action ? "pointer" : "default",
+                  cursor: e.action ? "pointer" : "default", background: "none", border: "none", padding: 0, textAlign: "left", width: "100%",
                 },
               },
               React.createElement(
@@ -7451,7 +7450,7 @@ function ContactPage({ setPage: e }) {
                       marginBottom: 10,
                     },
                   },
-                  "Message sent!",
+                  "Your WhatsApp draft is ready",
                 ),
                 React.createElement(
                   "p",
@@ -7462,8 +7461,9 @@ function ContactPage({ setPage: e }) {
                       color: T.textMuted,
                     },
                   },
-                  "We've opened WhatsApp with your message. We'll reply within a few hours.",
+                  "Review your draft and press Send in WhatsApp to contact us. Opening the draft does not send your message.",
                 ),
+                React.createElement("a", { href: `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hi Nevisan! My name is ${a.name}. ${a.message} (Reply to: ${a.email})`)}`, target: "_blank", rel: "noopener noreferrer", style: { display: "block", marginTop: 18, color: T.teal } }, "Open your WhatsApp draft →"),
                 React.createElement(
                   "button",
                   {
@@ -7480,7 +7480,7 @@ function ContactPage({ setPage: e }) {
                       fontSize: 16,
                     },
                   },
-                  "Send another",
+                  "Return to the form",
                 ),
               )
             : React.createElement(

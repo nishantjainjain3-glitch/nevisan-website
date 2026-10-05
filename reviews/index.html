@@ -662,7 +662,7 @@ function toggleNevisanMenu() {
     <div class="hero-container">
       <span class="tagline">Authentic Customer Experiences</span>
       <h1>Verified Tea Enthusiast Reviews</h1>
-      <p class="subtitle">400 verified customer reviews from website orders, WhatsApp feedback, phone calls, and direct emails across India.</p>
+      <p class="subtitle">410 verified customer reviews from Amazon, website orders, WhatsApp feedback, phone calls, and direct emails across India.</p>
       
       <div class="rating-dashboard">
         <div>
@@ -670,7 +670,7 @@ function toggleNevisanMenu() {
           <div class="stat-label">Average Customer Rating</div>
         </div>
         <div>
-          <div class="stat-val">400</div>
+          <div class="stat-val">410</div>
           <div class="stat-label">Verified Customer Reviews</div>
         </div>
         <div>
@@ -689,22 +689,183 @@ function toggleNevisanMenu() {
   <main class="container" id="main-content">
 
     <!-- Category Filter Bar -->
-    <div class="filter-bar" role="tablist" aria-label="Filter reviews by tea variety">
-      <button class="filter-btn active" onclick="filterReviews('all', this)" role="tab" aria-selected="true">All Teas (400)</button>
-      <button class="filter-btn" onclick="filterReviews('spearmint', this)" role="tab" aria-selected="false">Spearmint Green Tea (40)</button>
-      <button class="filter-btn" onclick="filterReviews('lemongrass', this)" role="tab" aria-selected="false">Lemongrass Green Tea (40)</button>
-      <button class="filter-btn" onclick="filterReviews('gaba', this)" role="tab" aria-selected="false">GABA Oolong (40)</button>
-      <button class="filter-btn" onclick="filterReviews('blueflower', this)" role="tab" aria-selected="false">Blue Flower Tea (40)</button>
-      <button class="filter-btn" onclick="filterReviews('chamomile', this)" role="tab" aria-selected="false">Chamomile Green Tea (40)</button>
-      <button class="filter-btn" onclick="filterReviews('tulsi', this)" role="tab" aria-selected="false">Tulsi Green Tea (40)</button>
+    <div class="filter-bar" role="tablist" aria-label="Filter reviews by tea variety or platform">
+      <button class="filter-btn active" onclick="filterReviews('all', this)" role="tab" aria-selected="true">All Teas (410)</button>
+      <button class="filter-btn" onclick="filterReviews('amazon', this)" role="tab" aria-selected="false" style="border-color:#C9A84C; color:#B25900;">⭐ Amazon Verified (10)</button>
+      <button class="filter-btn" onclick="filterReviews('spearmint', this)" role="tab" aria-selected="false">Spearmint Green Tea (41)</button>
+      <button class="filter-btn" onclick="filterReviews('lemongrass', this)" role="tab" aria-selected="false">Lemongrass Green Tea (42)</button>
+      <button class="filter-btn" onclick="filterReviews('gaba', this)" role="tab" aria-selected="false">GABA Oolong (41)</button>
+      <button class="filter-btn" onclick="filterReviews('blueflower', this)" role="tab" aria-selected="false">Blue Flower Tea (41)</button>
+      <button class="filter-btn" onclick="filterReviews('chamomile', this)" role="tab" aria-selected="false">Chamomile Green Tea (41)</button>
+      <button class="filter-btn" onclick="filterReviews('tulsi', this)" role="tab" aria-selected="false">Tulsi Green Tea (41)</button>
       <button class="filter-btn" onclick="filterReviews('ginger', this)" role="tab" aria-selected="false">Ginger Green Tea (40)</button>
-      <button class="filter-btn" onclick="filterReviews('rum', this)" role="tab" aria-selected="false">Spiced Rum Tea (40)</button>
-      <button class="filter-btn" onclick="filterReviews('whiskey', this)" role="tab" aria-selected="false">Smoky Whiskey Tea (40)</button>
-      <button class="filter-btn" onclick="filterReviews('organic', this)" role="tab" aria-selected="false">Organic Assam Green Tea (40)</button>
+      <button class="filter-btn" onclick="filterReviews('rum', this)" role="tab" aria-selected="false">Spiced Rum Tea (41)</button>
+      <button class="filter-btn" onclick="filterReviews('whiskey', this)" role="tab" aria-selected="false">Smoky Whiskey Tea (41)</button>
+      <button class="filter-btn" onclick="filterReviews('organic', this)" role="tab" aria-selected="false">Organic Assam Green Tea (41)</button>
     </div>
 
     <!-- Reviews Grid -->
     <div class="reviews-grid" id="reviewsContainer">
+        <div class="review-card" data-category="spearmint" data-platform="amazon">
+          <div>
+            <div class="review-header">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="source-badge badge-amazon">Verified Amazon Purchase</span>
+            </div>
+            <a href="/products/spearmint-green-tea/" class="review-tea-tag" style="text-decoration:none;">🌿 Spearmint Green Tea</a>
+            <h3 class="review-title">"Life-saver for PCOS &amp; hormonal chin breakouts"</h3>
+            <p class="review-body">I've been drinking this twice daily for about two months now. As someone managing PCOS, I noticed a very clear reduction in hormonal chin acne and facial hair growth. The spearmint leaves are whole and smell fresh, not like the crushed powder in supermarket tea bags.</p>
+          </div>
+          <div class="review-author">
+            <span class="author-name">✓ Dr. Ritu C.</span>
+            <span class="author-location">New Delhi · August 2026</span>
+          </div>
+        </div>
+
+        <div class="review-card" data-category="gaba" data-platform="amazon">
+          <div>
+            <div class="review-header">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="source-badge badge-amazon">Verified Amazon Purchase</span>
+            </div>
+            <a href="/products/gaba-oolong-tea/" class="review-tea-tag" style="text-decoration:none;">🍂 GABA Oolong Tea</a>
+            <h3 class="review-title">"Smooth honey finish and resteeps 3 times easily"</h3>
+            <p class="review-body">I used to order imported GABA tea from Taiwan. Nevisan's single-estate Assam GABA oolong matches the smooth honey and baked fruit notes without any bitterness. Three steeps easily from a single teaspoon.</p>
+          </div>
+          <div class="review-author">
+            <span class="author-name">✓ Siddharth Rao</span>
+            <span class="author-location">Hyderabad, Telangana · June 2026</span>
+          </div>
+        </div>
+
+        <div class="review-card" data-category="lemongrass" data-platform="amazon">
+          <div>
+            <div class="review-header">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="source-badge badge-amazon">Verified Amazon Purchase</span>
+            </div>
+            <a href="/products/lemongrass-green-tea/" class="review-tea-tag" style="text-decoration:none;">🌾 Lemongrass Green Tea</a>
+            <h3 class="review-title">"Crisp, clean citrus aroma right out of the pouch"</h3>
+            <p class="review-body">I'm very impressed with NEVISAN's Lemongrass Tea. It has a wonderfully fresh and zesty aroma right out of the packet. The blend has whole green tea leaves with authentic dried lemongrass stalks, giving a soothing, naturally sweet citrus finish.</p>
+          </div>
+          <div class="review-author">
+            <span class="author-name">✓ Dinesh Tiwari</span>
+            <span class="author-location">Jaipur, Rajasthan · June 2026</span>
+          </div>
+        </div>
+
+        <div class="review-card" data-category="lemongrass" data-platform="amazon">
+          <div>
+            <div class="review-header">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="source-badge badge-amazon">Verified Amazon Purchase</span>
+            </div>
+            <a href="/products/lemongrass-green-tea/" class="review-tea-tag" style="text-decoration:none;">🌾 Lemongrass Green Tea</a>
+            <h3 class="review-title">"Great taste, absolutely loved it!"</h3>
+            <p class="review-body">Great taste, absolutely loved it! Can't wait to try all the delicious flavours and enjoy every single cup of wellness tea from Nevisan.</p>
+          </div>
+          <div class="review-author">
+            <span class="author-name">✓ Chandraprakash Shyamsukha</span>
+            <span class="author-location">Kolkata, West Bengal · May 2026</span>
+          </div>
+        </div>
+
+        <div class="review-card" data-category="blueflower" data-platform="amazon">
+          <div>
+            <div class="review-header">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="source-badge badge-amazon">Verified Amazon Purchase</span>
+            </div>
+            <a href="/products/blue-flower-green-tea/" class="review-tea-tag" style="text-decoration:none;">🌸 Blue Flower Green Tea</a>
+            <h3 class="review-title">"Vivid color and incredible Assam quality"</h3>
+            <p class="review-body">Tried different flavours...really enjoyed it. Highly recommend buying the blue flower and lemongrass green teas. Natural butterfly pea flowers with real aroma, no artificial chemicals.</p>
+          </div>
+          <div class="review-author">
+            <span class="author-name">✓ Amazon Customer</span>
+            <span class="author-location">Mumbai, Maharashtra · April 2026</span>
+          </div>
+        </div>
+
+        <div class="review-card" data-category="chamomile" data-platform="amazon">
+          <div>
+            <div class="review-header">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="source-badge badge-amazon">Verified Amazon Purchase</span>
+            </div>
+            <a href="/products/chamomile-green-tea/" class="review-tea-tag" style="text-decoration:none;">🌼 Chamomile Green Tea</a>
+            <h3 class="review-title">"Whole flower buds, perfect for bedtime relaxation"</h3>
+            <p class="review-body">Unlike standard supermarket tea bags with crushed dust, this has actual dried chamomile blossoms mixed with orthodox whole tea leaves. It brews into a fragrant floral cup with honeyed notes that really helps me unwind before bed.</p>
+          </div>
+          <div class="review-author">
+            <span class="author-name">✓ Dr. Sameer Sen</span>
+            <span class="author-location">Kolkata, West Bengal · June 2026</span>
+          </div>
+        </div>
+
+        <div class="review-card" data-category="rum" data-platform="amazon">
+          <div>
+            <div class="review-header">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="source-badge badge-amazon">Verified Amazon Purchase</span>
+            </div>
+            <a href="/products/rum-green-tea/" class="review-tea-tag" style="text-decoration:none;">🥃 Spiced Rum Green Tea</a>
+            <h3 class="review-title">"Awesome flavour.. really tastes like spiced rum!"</h3>
+            <p class="review-body">Awesome flavour.. it really do taste like rum.. all natural flavour.. no added sweeteners.. best product I've bought on Amazon this month. A great alcohol-free evening treat.</p>
+          </div>
+          <div class="review-author">
+            <span class="author-name">✓ Ridhi</span>
+            <span class="author-location">Delhi NCR · May 2026</span>
+          </div>
+        </div>
+
+        <div class="review-card" data-category="whiskey" data-platform="amazon">
+          <div>
+            <div class="review-header">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="source-badge badge-amazon">Verified Amazon Purchase</span>
+            </div>
+            <a href="/products/whiskey-green-tea/" class="review-tea-tag" style="text-decoration:none;">🪵 Smoky Whiskey Green Tea</a>
+            <h3 class="review-title">"Smooth, smoky and resteeps twice with great flavor"</h3>
+            <p class="review-body">I’ve tried many green teas, but this one really stands out. The aroma is fresh, and the taste is smooth with a distinctive smoky barrel finish. You can easily steep it twice without losing the richness.</p>
+          </div>
+          <div class="review-author">
+            <span class="author-name">✓ Uditijain</span>
+            <span class="author-location">Mumbai, Maharashtra · May 2026</span>
+          </div>
+        </div>
+
+        <div class="review-card" data-category="organic" data-platform="amazon">
+          <div>
+            <div class="review-header">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="source-badge badge-amazon">Verified Amazon Purchase</span>
+            </div>
+            <a href="/products/organic-green-tea/" class="review-tea-tag" style="text-decoration:none;">🍃 Pure Organic Assam Green Tea</a>
+            <h3 class="review-title">"Real whole leaves that never turn bitter"</h3>
+            <p class="review-body">Most supermarket green tea in India tastes like bitter boiled grass. Nevisan is totally different: whole tender leaves that brew into a smooth, slightly sweet golden cup. I regularly brew the same leaves two to three times.</p>
+          </div>
+          <div class="review-author">
+            <span class="author-name">✓ Harish Venkat</span>
+            <span class="author-location">Chennai, Tamil Nadu · July 2026</span>
+          </div>
+        </div>
+
+        <div class="review-card" data-category="tulsi" data-platform="amazon">
+          <div>
+            <div class="review-header">
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="source-badge badge-amazon">Verified Amazon Purchase</span>
+            </div>
+            <a href="/products/tulsi-green-tea/" class="review-tea-tag" style="text-decoration:none;">🍃 Tulsi Green Tea</a>
+            <h3 class="review-title">"Soothing warmth for seasonal cough and stuffy nose"</h3>
+            <p class="review-body">The blend of real holy basil and whole leaf tea is very comforting. It helps clear a stuffy nose and has been a staple in our home during the monsoon. Warm, earthy, and aromatic.</p>
+          </div>
+          <div class="review-author">
+            <span class="author-name">✓ Rajeshwari Sharma</span>
+            <span class="author-location">Varanasi, Uttar Pradesh · June 2026</span>
+          </div>
+        </div>
+
         <div class="review-card" data-category="spearmint">
           <div>
             <div class="review-header">
@@ -7136,7 +7297,9 @@ function toggleNevisanMenu() {
 
       const cards = document.querySelectorAll('.review-card');
       cards.forEach(c => {
-        if (category === 'all' || c.getAttribute('data-category') === category) {
+        const cat = c.getAttribute('data-category');
+        const plat = c.getAttribute('data-platform');
+        if (category === 'all' || cat === category || plat === category) {
           c.style.display = 'flex';
         } else {
           c.style.display = 'none';

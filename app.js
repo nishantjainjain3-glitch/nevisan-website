@@ -1842,6 +1842,12 @@ function CollectionPage({}) {
           React.createElement(
             "div",
             {
+              role: "dialog",
+              "aria-modal": "true",
+              "aria-label": e.name,
+              onKeyDown: (event) => {
+                if (event.key === "Escape") { event.stopPropagation(); t(null); }
+              },
               style: {
                 background: T.white,
                 borderRadius: o ? "20px 20px 0 0" : 20,

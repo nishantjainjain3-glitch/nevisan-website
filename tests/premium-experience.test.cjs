@@ -98,3 +98,11 @@ test('Navigating away disposes GPU objects once and removes all observers and li
   for(const target of [e.host,e.document,e.motion])for(const group of target.listeners.values())assert.equal(group.size,0);
   assert(e.observers.every(o=>o.disconnected));
 });
+test('every collection card provides native links to its full product page',()=>{
+ const e=environment();
+ for(const name of ['GABA Oolong Tea','Spearmint Green Tea','Blue Flower Green Tea','Ginger Green Tea','Organic Green Tea','Tulsi Green Tea','Lemongrass Green Tea','Chamomile Green Tea','Rum Green Tea','Whiskey Green Tea']){
+  const nodes=elements(e.premium.TeaCard({tea:{name,img:'/teas/example-lifestyle.webp'},onView(){throw Error('Preview should not intercept product links');},onImageClick(){},BuyModal(){}}));
+  const links=nodes.filter(n=>n.type==='a');const expected='/products/'+name.toLowerCase().replace(/\s+/g,'-')+'/';assert.equal(links.length,2);assert(links.every(n=>n.props.href===expected));
+ }
+ e.controller.dispose();
+});

@@ -1556,15 +1556,17 @@ function TeaCard({ tea, onView, onImageClick }) {
 function ImageLightbox({ img: e, name: t, onClose: a }) {
   return (
     useEffect(() => {
+      const previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
       const e = (e) => {
         "Escape" === e.key && a();
       };
       return (
         window.addEventListener("keydown", e),
-        () => window.removeEventListener("keydown", e)
+        () => { window.removeEventListener("keydown", e); document.body.style.overflow = previousOverflow; }
       );
     }, []),
-    React.createElement(
+    ReactDOM.createPortal(React.createElement(
       "div",
       {
         onClick: a,
@@ -1579,7 +1581,7 @@ function ImageLightbox({ img: e, name: t, onClose: a }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: 24,
+          padding: "24px 24px 110px",
           animation: "overlay-fade 0.2s ease both",
           cursor: "zoom-out",
         },
@@ -1615,7 +1617,7 @@ function ImageLightbox({ img: e, name: t, onClose: a }) {
         onClick: (e) => e.stopPropagation(),
         style: {
           maxWidth: "90vw",
-          maxHeight: "88vh",
+          maxHeight: "calc(100vh - 160px)",
           objectFit: "contain",
           borderRadius: 12,
           boxShadow: "0 32px 100px rgba(0,0,0,0.6)",
@@ -1633,13 +1635,14 @@ function ImageLightbox({ img: e, name: t, onClose: a }) {
             fontFamily: "'Playfair Display', Georgia, serif",
             fontSize: 16,
             color: "rgba(255,255,255,0.75)",
-            pointerEvents: "none",
-            whiteSpace: "nowrap",
+            textAlign: "center",
+            maxWidth: "90vw",
           },
         },
-        t,
+        React.createElement("span", { style: { display: "block", marginBottom: 8 } }, t),
+        React.createElement("a", { href: `/products/${t.toLowerCase().replace(/\s+/g, "-")}/`, onClick: (event) => event.stopPropagation(), style: { color: "#fff", fontFamily: "Plus Jakarta Sans, Arial, sans-serif", fontSize: 14, display: "inline-block", padding: "8px 16px", border: "1px solid rgba(255,255,255,.5)", borderRadius: 3, textDecoration: "none" } }, "View product page \u2197"),
       ),
-    )
+    ), document.body)
   );
 }
 function CollectionPage({}) {
@@ -1863,6 +1866,7 @@ function CollectionPage({}) {
               },
               onClick: (e) => e.stopPropagation(),
             },
+            React.createElement("a", { href: `/products/${e.name.toLowerCase().replace(/\s+/g, "-")}/`, style: { display: "block", padding: "16px 20px", color: T.teal, fontWeight: 600 } }, "View full product page \u2197"),
             o &&
               React.createElement("div", {
                 style: {

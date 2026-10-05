@@ -17,7 +17,9 @@
           gallery.querySelector('.signature-gallery__caption').textContent = 'This view is unavailable. Showing the main product image.';
         }
       });
-      function close() { if (dialog && dialog.open) dialog.close(); }
+      function close() {
+        if (dialog && dialog.open) { document.body.style.overflow = previousOverflow; dialog.close(); }
+      }
       choices.forEach((button, index) => {
         button.addEventListener('keydown', event => {
           if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
@@ -44,7 +46,8 @@
           const image = document.createElement('img');
           toolbar.append(title, dismiss); dialog.append(toolbar, image); document.body.append(dialog);
           dialog.addEventListener('click', event => { if (event.target === dialog) close(); });
-          dialog.addEventListener('close', () => { document.body.style.overflow = previousOverflow; zoom.focus({preventScroll:true}); });
+          dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
+          dialog.addEventListener('close', () => { if (!dialog.open) { document.body.style.overflow = previousOverflow; zoom.focus({preventScroll:true}); } });
         }
         dialog.querySelector('p').textContent = main.alt;
         const image = dialog.querySelector('img'); image.src = main.src; image.alt = main.alt;

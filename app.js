@@ -1683,7 +1683,7 @@ function CollectionPage({}) {
       photo: PAGE_PHOTOS.collection,
       label: "The Collection",
       title: "Ten varieties, one origin",
-      subtitle: "Every leaf from Golaghat — whole, unblended, handcrafted.",
+      subtitle: "Whole-leaf Assam tea, with plain, floral, mint and spice flavours.",
     }),
     React.createElement(Ticker, null),
     React.createElement(
@@ -1754,7 +1754,7 @@ function CollectionPage({}) {
               margin: "0 auto",
             },
           },
-          "Every leaf from Golaghat. Every blend intentional. Find yours.",
+          "Compare the tasting notes and choose a tea you would like to try.",
         ),
       ),
       React.createElement(
@@ -6148,7 +6148,7 @@ function AboutPage({ setPage: e }) {
       label: "Our Story",
       title:
         "Whole-leaf Assam tea, packed with care in Guwahati.",
-      subtitle: "Until we decided to do something about it.",
+      subtitle: "Meet the collection and the people behind Nevisan.",
     }),
     React.createElement(
       "div",
@@ -6533,7 +6533,7 @@ function AboutPage({ setPage: e }) {
               marginBottom: 16,
             },
           },
-          "We're not a corporation. We're a family.",
+          "Talk to the Nevisan team",
         ),
         React.createElement(
           "p",
@@ -6547,7 +6547,7 @@ function AboutPage({ setPage: e }) {
               margin: "0 auto 28px",
             },
           },
-          "Mahabir Enterprise, Guwahati — that's us. A husband, a wife, and a conviction that people across India deserve to taste what Assam's gardens are actually capable of. Every order we get still feels personal. We want it to stay that way.",
+          "Nevisan is marketed by Mahabir Enterprise in Guwahati. If you have a question about a tea, its packaging or an order, contact us directly. We can help you compare the blends and check the details before you buy.",
         ),
         React.createElement(
           "button",
@@ -6629,21 +6629,21 @@ function CertificationsPage({ setPage: e }) {
             number: "GSTIN 18AFAPJ8203P1Z7",
             icon: "\ud83d\udcbc",
             color: "#722f37",
-            desc: "Registered under Goods and Services Tax, Government of India. Verifies Nevisan as a legally compliant tax-paying enterprise.",
+            desc: "GST registration details for Mahabir Enterprise are available with your invoice and business documentation.",
           },
           {
-            name: "Single Origin Verified",
+            name: "Assam sourcing",
             number: "Golaghat, Assam",
             icon: "\ud83d\udccd",
             color: "#8a4a10",
-            desc: "Every Nevisan variety is sourced from a single garden in Golaghat, Assam. We provide complete traceability from leaf to pack - no blending, no substitution.",
+            desc: "Our tea is sourced from Golaghat, Assam. Botanical and flavoured blends contain additional ingredients; check the declaration on your pack. Contact us for batch and sourcing documents.",
           },
           {
-            name: "Whole Leaf Standard",
+            name: "Whole-leaf tea",
             number: "No CTC \u2022 No Dust \u2022 No Fannings",
             icon: "\ud83c\udf43",
             color: "#1b7a82",
-            desc: "All Nevisan teas use only whole or large-broken leaves. We do not use CTC (cut-tear-curl) processed tea, fannings, or dust in any product.",
+            desc: "The collection uses whole or large-broken tea leaves. The product galleries show the leaves and pack artwork so you can see what you are choosing.",
           },
         ].map((e, t) =>
           React.createElement(
@@ -7584,6 +7584,7 @@ function ContactPage({ setPage: e }) {
                     "MESSAGE",
                   ),
                   React.createElement("textarea", {
+                    "aria-label": "Message",
                     required: !0,
                     rows: 4,
                     style: { ...r, resize: "vertical" },

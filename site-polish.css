@@ -199,3 +199,6 @@ html { scroll-padding-top:88px; }
 .premium-site .journal-sources { border-top:1px solid var(--site-line); padding-top:20px; }
 .result-product-link { display:inline-block; padding:12px 0; color:#15271b; text-underline-offset:4px; }
 @media(max-width:600px) { .premium-site .journal-cover img { height:280px; } .premium-site .journal-article .journal-title { font-size:38px; } }
+
+.journal-article .back-link { display:inline-block; margin-bottom:12px; color:var(--site-ink, #183a2a); text-underline-offset:4px; }
+.journal-article .lux-eyebrow { font-size:12px; letter-spacing:.14em; font-weight:600; }

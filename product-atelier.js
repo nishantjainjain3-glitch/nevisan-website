@@ -19,7 +19,7 @@
     const [view, setView] = React.useState('pack');
     const [failed, setFailed] = React.useState(false);
     const tea = teas[selected];
-    const details = {gaba:'gaba-ritual',spearmint:'spearmint-cup','blue-flower':'blue-flower-cup',ginger:'ginger-cup'};
+    const details = {gaba:'gaba-ritual',spearmint:'spearmint-cup','blue-flower':'blue-flower-cup',ginger:'ginger-cup',organic:'organic-ritual',tulsi:'tulsi-ritual',chamomile:'chamomile-ritual',lemongrass:'lemongrass-ritual',rum:'rum-ritual',whiskey:'whiskey-ritual'};
     const choose = index => { setSelected(index); setView('pack'); setFailed(false); };
     const detail = details[tea.key];
     const image = view === 'back' ? `/teas/packaging/${tea.key}-back.webp` : view === 'ritual' && detail ? `/teas/editorial/${detail}.webp` : `/teas/${tea.key}-lifestyle.webp`;

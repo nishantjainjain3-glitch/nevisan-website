@@ -1581,7 +1581,7 @@ function ImageLightbox({ img: e, name: t, onClose: a }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: 24,
+          padding: "24px 24px 110px",
           animation: "overlay-fade 0.2s ease both",
           cursor: "zoom-out",
         },
@@ -1617,7 +1617,7 @@ function ImageLightbox({ img: e, name: t, onClose: a }) {
         onClick: (e) => e.stopPropagation(),
         style: {
           maxWidth: "90vw",
-          maxHeight: "88vh",
+          maxHeight: "calc(100vh - 160px)",
           objectFit: "contain",
           borderRadius: 12,
           boxShadow: "0 32px 100px rgba(0,0,0,0.6)",

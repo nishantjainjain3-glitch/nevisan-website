@@ -48,7 +48,7 @@ Research journal articles and customer quotations are retained. This code cleanu
 
 ## Premium presentation
 
-`site-polish.css` supplies the shared editorial design. `product-atelier.js` uses CSS 3D transforms and the supplied front photographs for an interactive packaging preview. Rotation stays within a front-facing range; generic sides are illustrative and do not claim to reproduce the printed back panel. The scene requires no WebGL or animation loop, preserves vertical touch scrolling, supports keyboard range input and handles a missing image.
+`site-polish.css` supplies the shared editorial design. `product-atelier.js` presents the complete supplied lifestyle images for all ten teas, with a second ritual view for GABA, Spearmint, Blue Flower and Ginger. It preserves artwork proportions, supports keyboard-accessible selectors and a missing-image fallback. The previous illustrative CSS pouch extrusion has been replaced following visual feedback.
 
 Product sales copy and the FAQ focus on ingredients, taste, brewing and ordering. Aggregate ratings, unattributed verified testimonials and unsupported product-specific lab figures were removed. Existing packaging artwork and statutory declarations are retained as supplied; certificates, packaging claims, seller inventory and marketplace terms require their own source records.
 

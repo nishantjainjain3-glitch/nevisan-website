@@ -6836,17 +6836,17 @@ function WholesalePage({ setPage: e }) {
           {
             icon: "☕",
             title: "Cafés & Restaurants",
-            desc: "Serve premium single-origin Assam tea on your menu. Each pack is 50gm — minimum order 20–30 packs.",
+            desc: "Serve premium single-origin Assam tea on your menu. Supplied in 50g packets. Tell us how many packets you need.",
           },
           {
             icon: "🏨",
             title: "Hotels & Resorts",
-            desc: "In-room and restaurant tea service. Each pack is 50gm, perfect for individual servings.",
+            desc: "In-room and restaurant tea service. Supplied in 50g packets for your tea service.",
           },
           {
             icon: "🎁",
             title: "Corporate Gifting",
-            desc: "Custom tea gift boxes for employees, clients, and corporate events. Minimum 20 packs per order.",
+            desc: "50g tea packets for employees, clients and corporate events. Share the number of packets and your preferred teas.",
           },
           {
             icon: "🛒",
@@ -6967,8 +6967,8 @@ function WholesalePage({ setPage: e }) {
               },
             },
             [
-              { icon: "✓", text: "Each pack is 50gm" },
-              { icon: "✓", text: "Minimum order: 20–30 packs per variety" },
+              { icon: "✓", text: "Each packet is 50g" },
+              { icon: "✓", text: "Choose the number of packets you need" },
               { icon: "✓", text: "Pan-India delivery" },
               { icon: "✓", text: "Dedicated account manager" },
               { icon: "✓", text: "Response within 24 hours" },
@@ -7110,8 +7110,8 @@ function WholesalePage({ setPage: e }) {
               },
               {
                 key: "qty",
-                label: "Estimated Monthly Quantity",
-                placeholder: "e.g. 20 packs, 50 packs (each 50gm)",
+                label: "Number of 50g Packets",
+                placeholder: "e.g. 50",
               },
             ].map((e) =>
               React.createElement(
@@ -7134,6 +7134,9 @@ function WholesalePage({ setPage: e }) {
                   e.label,
                 ),
                 React.createElement("input", {
+                  type: e.key === "qty" ? "number" : "text",
+                  min: e.key === "qty" ? 1 : undefined,
+                  step: e.key === "qty" ? 1 : undefined,
                   value: a[e.key],
                   onChange: (t) =>
                     n((a) => ({ ...a, [e.key]: t.target.value })),
@@ -7178,7 +7181,7 @@ function WholesalePage({ setPage: e }) {
                 value: a.message,
                 onChange: (e) => n((t) => ({ ...t, message: e.target.value })),
                 placeholder:
-                  "Custom packaging, specific varieties, delivery frequency…",
+                  "Preferred teas and packets per tea, delivery date and location…",
                 rows: 3,
                 style: {
                   width: "100%",
@@ -7200,8 +7203,12 @@ function WholesalePage({ setPage: e }) {
               "button",
               {
                 onClick: () => {
+                  if (!Number.isSafeInteger(Number(a.qty)) || Number(a.qty) < 1) {
+                    window.alert("Enter a whole number of 50g packets (at least 1).");
+                    return;
+                  }
                   window.open(
-                    `https://wa.me/919864245687?text=${encodeURIComponent(`Hi Nevisan! I'd like to inquire about wholesale/bulk ordering.\n\nName: ${a.name}\nBusiness: ${a.business}\nBusiness Type: ${a.type}\nEstimated Quantity: ${a.qty}\nMessage: ${a.message}`)}`,
+                    `https://wa.me/919864245687?text=${encodeURIComponent(`Hi Nevisan! I'd like to inquire about wholesale/bulk ordering.\n\nName: ${a.name}\nBusiness: ${a.business}\nBusiness Type: ${a.type}\nQuantity: ${a.qty} packets × 50g each\nMessage: ${a.message}`)}`,
                     "_blank", "noopener,noreferrer",
                   );
                 },

@@ -419,56 +419,23 @@ function toggleNevisanMenu() {
 
     <main class="bulk-wrapper">
         <h1 class="bulk-title">Bulk & Wholesale Tea Orders</h1>
-        <p class="bulk-subtitle">Tea for cafes, hotels, retail stores and corporate gifts. Share your quantity and preferred blends to request a quotation.</p>
+        <p class="bulk-subtitle">Tea for cafes, hotels, retail stores and corporate gifts. All teas come in 50g packets. Share the number of packets and your preferred blends to request a quotation.</p>
 
         <div class="bulk-section">
             <h2>Why Buy Bulk from Nevisan?</h2>
-            <p>Choose from the Nevisan whole-leaf collection for a cafe, hotel, retail store or gift order. Tell us which blends, quantity and packaging you need, and we can discuss availability and a quotation.</p>
+            <p>Choose from the Nevisan whole-leaf collection for a cafe, hotel, retail store or gift order. Every packet contains 50g of tea. Tell us which blends and how many packets you need, and we can discuss availability and a quotation.</p>
             <ul>
                 <li>Whole-leaf teas from the Nevisan collection</li>
                 <li>Product and certification documents available on request</li>
                 <li>Pan-India delivery via Amazon and Flipkart, or direct WhatsApp</li>
                 <li>Confirm batch and packing details with your quotation</li>
-                <li>Custom blends available for corporate gifting (minimum 50kg)</li>
+                <li>50g packets for retail, cafe supply and corporate gifts</li>
             </ul>
         </div>
 
         <div class="bulk-section">
-            <h2>Wholesale Order Volumes</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div>
-                        <div class="pricing-tier">Starter &amp; Trial</div>
-                        <div class="pricing-qty">5–9 kg</div>
-                        <div class="pricing-price">Quote on Request</div>
-                    </div>
-                    <div class="pricing-desc">For boutique cafés, trial menus, and small specialty retailers.</div>
-                </div>
-                <div class="pricing-card featured">
-                    <div>
-                        <div class="pricing-tier">Cafés &amp; Dining</div>
-                        <div class="pricing-qty">10–24 kg</div>
-                        <div class="pricing-price">Quote on Request</div>
-                    </div>
-                    <div class="pricing-desc">For busy restaurants, tearooms, and regular beverage programs.</div>
-                </div>
-                <div class="pricing-card">
-                    <div>
-                        <div class="pricing-tier">Retail &amp; Distribution</div>
-                        <div class="pricing-qty">25–49 kg</div>
-                        <div class="pricing-price">Quote on Request</div>
-                    </div>
-                    <div class="pricing-desc">For gourmet organic stores, supermarkets, and regional partners.</div>
-                </div>
-                <div class="pricing-card">
-                    <div>
-                        <div class="pricing-tier">Enterprise &amp; Gifting</div>
-                        <div class="pricing-qty">50 kg+</div>
-                        <div class="pricing-price">Custom Solutions</div>
-                    </div>
-                    <div class="pricing-desc">For corporate gift sets, branded packaging, and custom blends.</div>
-                </div>
-            </div>
+            <h2>Order by Number of Packets</h2>
+            <p>We supply 50g packets only. Enter the total number of packets you need, then list your preferred teas in the notes. For a mixed order, you can write: 20 Organic Green Tea packets + 30 Spearmint Green Tea packets = 50 packets.</p>
             <div style="background: #fffdf5; border: 1.5px solid var(--gold); border-radius: 12px; padding: 1.25rem 1.5rem; margin-top: 1.25rem;">
                 <p style="margin: 0; color: var(--ink); line-height: 1.6; font-size: 0.95rem;"><strong>Have a requirement?</strong> Contact us with your details and we will provide you with custom wholesale prices tailored to your order quantity, varieties, and delivery schedule.</p>
             </div>
@@ -490,19 +457,20 @@ function toggleNevisanMenu() {
                     <label for="type">Order Type</label>
                     <select id="type" name="type" required>
                         <option value="">Select type</option>
-                        <option value="bulk">Bulk tea pouches (5kg+)</option>
+                        <option value="bulk">Bulk order — 50g packets</option>
                         <option value="corporate">Corporate gifting</option>
                         <option value="retail">Retail partnership</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="qty">Estimated Quantity &amp; Preferred Blends</label>
-                    <input type="text" id="qty" name="qty" placeholder="e.g., 10kg mixed, 20kg Organic Green Tea" required>
+                    <label for="qty">Number of 50g Packets</label>
+                    <input type="number" id="qty" name="qty" min="1" step="1" inputmode="numeric" placeholder="e.g. 50" aria-describedby="packetHelp" required>
+                    <p id="packetHelp">Each packet contains 50g. Enter a whole number of packets.</p>
                 </div>
                 <div class="form-group">
                     <label for="message">Specific Requirements / Notes</label>
-                    <textarea id="message" name="message" placeholder="Any specific varieties, packaging requirements, timeline, or delivery notes?"></textarea>
+                    <textarea id="message" name="message" placeholder="Preferred teas and packets per tea, delivery date, and delivery location"></textarea>
                 </div>
                 <button type="submit" class="form-submit">Send Requirement via WhatsApp</button>
             </form>
@@ -510,6 +478,7 @@ function toggleNevisanMenu() {
             <script>
             function handleBulkSubmit(e) {
                 e.preventDefault();
+                if (!document.getElementById('bulkInquiryForm').reportValidity()) return;
                 var name = (document.getElementById('name').value || '').trim();
                 var business = (document.getElementById('business').value || '').trim();
                 var type = (document.getElementById('type').value || '').trim();
@@ -521,7 +490,7 @@ function toggleNevisanMenu() {
                     '• Name: ' + name,
                     '• Business: ' + business,
                     '• Order Type: ' + type,
-                    '• Estimated Quantity: ' + qty
+                    '• Quantity: ' + qty + ' packets × 50g each'
                 ];
                 if (message) {
                     lines.push('• Notes: ' + message);
@@ -540,8 +509,8 @@ function toggleNevisanMenu() {
         <div class="bulk-section">
             <h2>Frequently Asked Questions</h2>
             <div class="faq-item">
-                <h3>What's the minimum order quantity?</h3>
-                <p>5kg (100 pouches of 50g each). For corporate gifting, the minimum is 50kg with custom packaging options.</p>
+                <h3>What pack size do you supply?</h3>
+                <p>We supply 50g packets only. Tell us how many packets you need and which teas you prefer; we will confirm availability and pricing for your requirement.</p>
             </div>
             <div class="faq-item">
                 <h3>How do I receive wholesale pricing?</h3>
@@ -556,8 +525,8 @@ function toggleNevisanMenu() {
                 <p>Confirm the dispatch estimate, shipping cost and delivery time in your quotation. Marketplace orders use the delivery estimate shown at checkout.</p>
             </div>
             <div class="faq-item">
-                <h3>Do you offer custom branding for corporate gifts?</h3>
-                <p>Yes. For orders above 50kg, we can customize the pouch design with your brand logo and messaging. Confirm the artwork and production lead time in your quotation.</p>
+                <h3>Can I order packets for corporate gifts?</h3>
+                <p>Yes. Request the number of 50g packets you need and share your preferred teas, delivery date and location. We will confirm the quotation and availability.</p>
             </div>
             <div class="faq-item">
                 <h3>Is the bulk tea the same quality as individual pouches?</h3>

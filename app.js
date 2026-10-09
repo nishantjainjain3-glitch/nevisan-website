@@ -92,30 +92,21 @@ function useInView(e = 0.15) {
   );
 }
 function useGsapReveal() {
-  const e = useRef(null);
-  return (
-    useEffect(() => {
-      const t = e.current;
-      if (!t || typeof gsap === "undefined" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      const a = t.querySelectorAll("[data-gsap-reveal]");
-      if (!a.length || typeof gsap === "undefined") return;
-      const n = gsap.context(() => {
-        gsap.from(a, {
-          scrollTrigger: {
-            trigger: t,
-            start: "top 82%",
-            end: "top 28%",
-            scrub: 0.8,
-          },
-          y: 72,
-          opacity: 0,
-          stagger: 0.1,
-        });
-      }, t);
-      return () => n.revert();
-    }, []),
-    e
-  );
+  const ref = useRef(null);
+  useEffect(() => {
+    const root = ref.current;
+    if (!root || !window.IntersectionObserver || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        if (entry.target.animate) entry.target.animate([{opacity:0,transform:"translateY(20px)"},{opacity:1,transform:"translateY(0)"}],{duration:500,easing:"ease-out"});
+        observer.unobserve(entry.target);
+      });
+    }, {threshold:0.1});
+    root.querySelectorAll("[data-gsap-reveal]").forEach(node => observer.observe(node));
+    return () => observer.disconnect();
+  }, []);
+  return ref;
 }
 function AnimatedNumber({
   target: e,

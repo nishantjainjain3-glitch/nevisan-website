@@ -6846,7 +6846,7 @@ function WholesalePage({ setPage: e }) {
           {
             icon: "🎁",
             title: "Corporate Gifting",
-            desc: "Custom tea gift boxes for employees, clients, and corporate events. Minimum 20 packs per order.",
+            desc: "50g tea packets for employees, clients and corporate events. Share the number of packets and your preferred teas.",
           },
           {
             icon: "🛒",

@@ -326,7 +326,7 @@ function openWhatsApp(e = "") {
     }
   } catch (err) {}
   window.open(
-    `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(e ? `Hi Nevisan! I would like to order *${e}* (MRP ₹499 · 50 gm). Please help me with the order details.` : "Hi Nevisan! I would like to order your tea. Please help me with the details.")}`,
+    `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(e ? `Hi Nevisan! I would like to order *${e}* (MRP ₹499 · 1 packet × 50g). Please confirm packet quantity, availability and delivery details.` : "Hi Nevisan! I would like to order your tea. Please help me with the details.")}`,
     "_blank", "noopener,noreferrer",
   );
 }

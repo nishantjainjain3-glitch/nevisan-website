@@ -755,7 +755,7 @@ function Nav({ page: e, setPage: t }) {
                     borderBottom: "1px solid rgba(255,255,255,0.08)",
                   },
                 },
-                "FAQ & Health Guide",
+                "FAQ & Brewing Guide",
               );
             }
             if (item === "Locations") {
@@ -775,7 +775,7 @@ function Nav({ page: e, setPage: t }) {
                     borderBottom: "1px solid rgba(255,255,255,0.08)",
                   },
                 },
-                "Locations (8 Metros)",
+                "Delivery & Locations",
               );
             }
             return React.createElement(

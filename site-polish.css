@@ -211,6 +211,8 @@ html { scroll-padding-top:88px; }
 .premium-site .hero-reviews h1 { color:#f6f2e9; }
 .premium-site .source-badge { border-radius:3px; }
 .premium-site .nevisan-nav-container { gap:24px; }
+nav a[aria-label="Nevisan home"] { text-decoration:none; }
+.premium-site .nevisan-btn-order-mobile { color:#192d20 !important; }
 
 /* Keep intrinsic gallery widths inside the product grid on narrow screens. */
 .premium-product .product-intro { grid-template-columns:minmax(0,1.08fr) minmax(0,1fr); }

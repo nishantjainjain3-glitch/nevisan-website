@@ -202,6 +202,17 @@ html { scroll-padding-top:88px; }
 
 .journal-article .back-link { display:inline-block; margin-bottom:12px; color:var(--site-ink, #183a2a); text-underline-offset:4px; }
 .journal-article .lux-eyebrow { font-size:12px; letter-spacing:.14em; font-weight:600; }
+.packet-label { display:block; font-size:12px; margin:0 0 8px; color:var(--site-ink); }
+[data-packet-quantity] { width:110px; min-height:48px; border:1px solid var(--site-line); background:#fcfaf5; color:var(--site-ink); padding:10px 14px; border-radius:3px; font:16px 'Plus Jakarta Sans',Arial,sans-serif; }
+.packet-note { font-size:12px; color:var(--site-muted); margin:8px 0 20px; }
+.premium-site :is(.inquiry-form,.pricing-card,.faq-item,.review-card) { border-radius:4px; box-shadow:none; background:#fcfaf5; }
+.premium-site :is(.filter-btn,.form-submit,.buy-btn) { border-radius:3px; min-height:44px; }
+.premium-site .hero-reviews .subtitle { color:#d4dacd; }
+.premium-site .hero-reviews h1 { color:#f6f2e9; }
+.premium-site .source-badge { border-radius:3px; }
+.premium-site .nevisan-nav-container { gap:24px; }
+nav a[aria-label="Nevisan home"] { text-decoration:none; }
+.premium-site .nevisan-btn-order-mobile { color:#192d20 !important; }
 
 /* Keep intrinsic gallery widths inside the product grid on narrow screens. */
 .premium-product .product-intro { grid-template-columns:minmax(0,1.08fr) minmax(0,1fr); }

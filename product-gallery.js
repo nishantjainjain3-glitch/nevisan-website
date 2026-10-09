@@ -28,6 +28,7 @@
           choices[next].focus(); choices[next].click();
         });
         button.addEventListener('click', () => {
+        if (main.removeAttribute) main.removeAttribute("srcset");
         main.src = button.dataset.gallerySrc;
         main.alt = button.dataset.galleryAlt;
         gallery.querySelector('.signature-gallery__caption').textContent = button.dataset.galleryAlt + '. Open the image to explore the detail.';

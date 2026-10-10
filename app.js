@@ -5691,7 +5691,7 @@ function TrustBadges() {
 function HomePage({ setPage: e }) {
   return React.createElement(
     "div",
-    { style: { animation: "page-enter 0.4s ease both" } },
+    { className: "nevisan-home" },
     React.createElement(Hero, { setPage: e }),
     React.createElement(NevisanPremium.OriginStrip, null),
     React.createElement(CollectionSection, { setPage: e }),

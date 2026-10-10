@@ -82,7 +82,7 @@
     }, [showVideo, paused]);
     return h('section', { ref: root, className: 'cinematic-hero', 'aria-labelledby': 'cinematic-title' },
       h('picture', { className: 'cinematic-hero__backdrop' },
-        h('source', { media: '(max-width: 768px)', srcSet: '/hero-mobile.webp?v=2' }),
+        h('source', { media: '(max-width: 768px)', srcSet: '/hero-mobile-fast.webp?v=1' }),
         h('img', { src: '/hero-bg.webp', alt: '', fetchPriority: 'high', width: 1280, height: 720 })
       ),
       showVideo && h('video', { ref: video, className: 'cinematic-hero__video', muted: true, loop: true, playsInline: true, preload: 'none', poster: '/hero-bg.webp', 'aria-hidden': 'true', onPlay: () => setPlaying(true), onPause: () => setPlaying(false) }, h('source', { src: '/tea-garden.mp4', type: 'video/mp4' })),

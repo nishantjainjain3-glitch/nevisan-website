@@ -4,7 +4,6 @@
 <head>
   <!-- Performance & Preload Optimizations for Mobile Core Web Vitals -->
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -15,20 +14,8 @@
 <!-- Universal Cookie Consent & Google Consent Mode v2 -->
   <script src="/consent.js?v=2"></script>
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WN76CRVR');</script>
-<!-- End Google Tag Manager -->
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W3Q7DNWTKP"></script>
-<script>
-  gtag('js', new Date());
-  gtag('config', 'G-W3Q7DNWTKP');
-</script>
-<!-- End Meta Pixel Code -->
+<!-- Analytics keeps queued events while initial rendering takes priority. -->
+<script src="/analytics-loader.js?v=1" defer></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#15271B">
@@ -597,7 +584,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="dns-prefetch" href="https://www.google-analytics.com">
 <link rel="preload" as="script" href="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous">
 <link rel="preload" as="script" href="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous">
-<link rel="preload" as="script" href="/app.js?v=84">
+<link rel="preload" as="script" href="/app.js?v=85">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"></noscript>
 <style>
@@ -1033,7 +1020,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="/premium-experience.css?v=3">
 <link rel="preload" as="image" href="/hero-bg.webp" media="(min-width: 769px)" fetchpriority="high">
-<link rel="preload" as="image" href="/hero-mobile.webp?v=2" media="(max-width: 768px)" fetchpriority="high">
+<link rel="preload" as="image" href="/hero-mobile-fast.webp?v=1" media="(max-width: 768px)" fetchpriority="high">
 <link rel="stylesheet" href="/site-polish.css?v=6">
 </head>
 <body class="premium-site">
@@ -1069,7 +1056,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <div id="root">
     <section class="cinematic-hero" aria-labelledby="cinematic-title">
-      <picture class="cinematic-hero__backdrop"><source media="(max-width: 768px)" srcset="/hero-mobile.webp?v=2"><img src="/hero-bg.webp" alt="" width="1280" height="720" fetchpriority="high"></picture>
+      <picture class="cinematic-hero__backdrop"><source media="(max-width: 768px)" srcset="/hero-mobile-fast.webp?v=1"><img src="/hero-bg.webp" alt="" width="1280" height="720" fetchpriority="high"></picture>
       <div class="cinematic-hero__shade" aria-hidden="true"></div>
       <div class="cinematic-hero__content">
         <p class="lux-eyebrow">NEVISAN · GOLAGHAT, ASSAM</p>
@@ -1081,9 +1068,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <noscript><p style="padding:24px;text-align:center">Explore our <a href="/products/gaba-oolong-tea/">GABA Oolong</a>, <a href="/products/spearmint-green-tea/">Spearmint</a>, <a href="/products/blue-flower-green-tea/">Blue Flower</a> and <a href="/products/ginger-green-tea/">Ginger teas</a>.</p></noscript>
   </div>
 
-<script src="/premium-experience.js?v=3" defer></script>
+<script src="/premium-experience.js?v=4" defer></script>
 <script src="/product-atelier.js?v=5" defer></script>
-<script src="/app.js?v=84" defer></script>
+<script src="/app.js?v=85" defer></script>
 
 
 

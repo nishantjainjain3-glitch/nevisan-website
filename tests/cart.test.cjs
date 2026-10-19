@@ -83,3 +83,14 @@ test('activated cart checkout opens the selected teas and quantities without cle
  const url=new URL(destination,'https://nevisan.in');assert.equal(url.pathname,'/checkout/');assert.deepEqual(JSON.parse(url.searchParams.get('items')),[{handle:'ginger-green-tea',quantity:2}]);
  assert.equal(env.provider().cart[0].qty,2);assert.equal(env.opened.length,0);
 });
+
+test('homepage direct store choices and generic order actions use Nevisan Pay; support stays WhatsApp',()=>{
+ const env=app();let destination;
+ env.context.window.location={assign:value=>destination=value};
+ vm.runInContext(fs.readFileSync('checkout/cart-bridge.js','utf8'),env.context);
+ vm.runInContext('openWhatsApp("Ginger Green Tea")',env.context);
+ let url=new URL(destination,'https://nevisan.in');
+ assert.deepEqual(JSON.parse(url.searchParams.get('items')),[{handle:'ginger-green-tea',quantity:1}]);
+ vm.runInContext('openWhatsApp()',env.context);assert.equal(destination,'/checkout/');assert.equal(env.opened.length,0);
+ vm.runInContext('openNevisanSupport()',env.context);url=new URL(env.opened[0][0]);assert.equal(url.hostname,'wa.me');assert.match(url.searchParams.get('text'),/question/);
+});

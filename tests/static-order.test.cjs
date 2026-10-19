@@ -42,3 +42,11 @@ test('international addresses and phone numbers survive the WhatsApp handoff',()
  for(const text of ['United Kingdom','SW1A 1AA','+447700900000','449.00'])assert.ok(message.includes(text));
  assert.ok(!message.includes('\nIndia\n'));
 });
+
+test('desktop devices are distinguished from phones and iPad desktop mode for payment guidance',()=>{
+ assert.equal(api.mobileDevice('Mozilla/5.0 (Windows NT 10.0; Win64; x64)'),false);
+ assert.equal(api.mobileDevice('Mozilla/5.0 (Macintosh; Intel Mac OS X)',0),false);
+ assert.equal(api.mobileDevice('Mozilla/5.0 (Linux; Android 14)'),true);
+ assert.equal(api.mobileDevice('Mozilla/5.0 (iPhone; CPU iPhone OS 18_0)'),true);
+ assert.equal(api.mobileDevice('Mozilla/5.0 (Macintosh; Intel Mac OS X)',5),true);
+});

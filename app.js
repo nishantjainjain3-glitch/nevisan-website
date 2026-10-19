@@ -284,7 +284,15 @@ function CursorGlow() {
   );
 }
 const WA_NUMBER = "919864245687";
+function openNevisanSupport() {
+  window.open('https://wa.me/919864245687?text=' + encodeURIComponent('Hi Nevisan! I have a question about your tea or an order.'), '_blank', 'noopener,noreferrer');
+}
 function openWhatsApp(e = "") {
+  if (window.NEVISAN_CART_CHECKOUT?.enabled) {
+    if (e) window.NEVISAN_CART_CHECKOUT.open([{tea:{name:e},qty:1}]);
+    else window.location.assign('/checkout/');
+    return;
+  }
   try {
     const m = {
       "Lemongrass Green Tea": "KT-8GBE-8MZG",
@@ -575,7 +583,7 @@ function Nav({ page: e, setPage: t }) {
             React.createElement(
               "button",
               {
-                onClick: () => c("Collection"),
+                onClick: () => openWhatsApp(),
                 style: {
                   background: T.gold,
                   color: T.tealDark,
@@ -835,7 +843,7 @@ function Nav({ page: e, setPage: t }) {
                   fontFamily: "'Plus Jakarta Sans'",
                 },
               },
-              "💬 Order on WhatsApp",
+              "💬 Checkout · UPI",
             ),
           ),
         ),
@@ -1444,12 +1452,12 @@ function BuyModal({ tea: e, onClose: t }) {
               React.createElement(
                 "div",
                 { style: { fontWeight: 600, fontSize: 16 } },
-                "Order Direct via WhatsApp",
+                "Buy from Nevisan · UPI",
               ),
               React.createElement(
                 "div",
                 { style: { fontSize: 13, opacity: 0.9, marginTop: 2 } },
-                "Order enquiries and delivery details",
+                "Free shipping · 50g packets · Nevisan Pay",
               ),
             ),
             React.createElement("span", { style: { fontSize: 20, fontWeight: 700 } }, "›"),
@@ -2063,7 +2071,7 @@ function CollectionPage({}) {
                         },
                       },
                       React.createElement("span", null, "💬"),
-                      " Order via WhatsApp",
+                      " Buy from Nevisan · UPI",
                     ),
                     React.createElement(
                       "div",
@@ -2459,7 +2467,7 @@ function CollectionPage({}) {
                           },
                         },
                         React.createElement("span", null, "💬"),
-                        " Order via WhatsApp",
+                        " Buy from Nevisan · UPI",
                       ),
                       React.createElement(
                         "div",
@@ -3146,9 +3154,9 @@ function WhereToBuy() {
   const [e, t] = useInView(0.1),
     a = [
       {
-        name: "Order via WhatsApp",
-        desc: "Order directly and ask us about your tea",
-        cta: "💬 Order on WhatsApp",
+        name: "Buy from Nevisan · UPI",
+        desc: "50g packets, free shipping and prepaid UPI",
+        cta: "💬 Checkout · UPI",
         icon: "🌿",
         action: () => openWhatsApp(),
         primary: !0,
@@ -3238,7 +3246,7 @@ function WhereToBuy() {
             marginBottom: n ? 36 : 56,
           },
         },
-        "Order directly via WhatsApp or find us on Amazon and Flipkart",
+        "Buy from Nevisan with UPI, or choose Amazon and Flipkart",
       ),
       React.createElement(
         "div",
@@ -3799,7 +3807,7 @@ function Footer({ setPage: e }) {
               onMouseLeave: (e) => (e.currentTarget.style.filter = "none"),
             },
             React.createElement("span", null, "💬"),
-            " Order on WhatsApp",
+            " Checkout · UPI",
           ),
           React.createElement(
             "div",
@@ -4355,7 +4363,7 @@ function CollectionSection({ setPage: e }) {
                         },
                       },
                       React.createElement("span", null, "💬"),
-                      " Order via WhatsApp",
+                      " Buy from Nevisan · UPI",
                     ),
                     React.createElement(
                       "div",
@@ -4745,7 +4753,7 @@ function CollectionSection({ setPage: e }) {
                           },
                         },
                         React.createElement("span", null, "💬"),
-                        " Order via WhatsApp",
+                        " Buy from Nevisan · UPI",
                       ),
                       React.createElement(
                         "div",
@@ -6248,7 +6256,7 @@ function AboutPage({ setPage: e }) {
             { icon: "📦", text: "Small batch — freshness sealed in every pack" },
             {
               icon: "💬",
-              text: "Order directly through WhatsApp or choose a marketplace",
+              text: "Order through Nevisan Pay or choose a marketplace",
             },
           ].map((e, t) =>
             React.createElement(
@@ -6555,7 +6563,7 @@ function AboutPage({ setPage: e }) {
         React.createElement(
           "button",
           {
-            onClick: () => openWhatsApp(),
+            onClick: () => openNevisanSupport(),
             style: {
               background: T.gold,
               color: T.tealDark,
@@ -7310,7 +7318,7 @@ function ContactPage({ setPage: e }) {
               icon: "💬",
               label: "WhatsApp (fastest)",
               value: "+91 98642 45687",
-              action: () => openWhatsApp(),
+              action: () => openNevisanSupport(),
             },
             {
               icon: "📧",
@@ -7414,7 +7422,7 @@ function ContactPage({ setPage: e }) {
             React.createElement(
               "button",
               {
-                onClick: () => openWhatsApp(),
+                onClick: () => openNevisanSupport(),
                 style: {
                   background: "#25D366",
                   color: T.white,
@@ -8323,7 +8331,7 @@ function WhatsAppFAB() {
     React.createElement(
       "a",
       {
-        href: "https://wa.me/919864245687?text=Hi%20Nevisan!%20I%27d%20like%20to%20order%20some%20tea.",
+        href: "https://wa.me/919864245687?text=Hi%20Nevisan!%20I%20have%20a%20question%20about%20your%20tea.",
         target: "_blank",
         rel: "noopener noreferrer",
         style: {

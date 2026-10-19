@@ -4,6 +4,7 @@
   const $ = id => document.getElementById(id);
   const notice = message => { $('notice').textContent = message; };
   const form = $('checkout-form');
+  const mobile = api.mobileDevice(navigator.userAgent,navigator.maxTouchPoints);
   let request = null;
   const international = country => !['india','in','bharat'].includes(country.trim().toLowerCase());
   function addressRules() {
@@ -36,7 +37,7 @@
   }
   function update() {
     if(request) edit();
-    try { const items=read(); $('summary').textContent=`${items.reduce((s,i)=>s+i.quantity,0)} packets · Total ${api.money(api.total(items))} · Free shipping`; $('prepare').disabled=!items.length; }
+    try { const items=read(); const packets=items.reduce((s,i)=>s+i.quantity,0); $('summary').textContent=`${packets} packet${packets===1?'':'s'} · Total ${api.money(api.total(items))} · Free shipping`; $('prepare').disabled=!items.length; }
     catch(error) { $('summary').textContent=error.message; $('prepare').disabled=true; }
   }
   function edit() { request=null; $('payment-panel').hidden=true; form.hidden=false; $('payment-details').hidden=true; $('bank-reference').value=''; $('international-confirmed').checked=false; notice('Review your details before preparing a new payment request.'); }
@@ -52,7 +53,11 @@
       $('order-review').replaceChildren();
       for(const line of [`Reference: ${reference}`,...items.map(i=>`${i.title}: ${i.quantity} × 50g — ${api.money(i.quantity*i.price)}`),`Total: ${api.money(api.total(items))} · Free shipping`,`${customer.first_name} ${customer.last_name} · ${customer.phone}`,...['address_1','address_2','city','province','postal_code'].map(k=>customer[k]).filter(Boolean),customer.country]) { const p=document.createElement('p'); p.textContent=line; $('order-review').append(p); }
       $('availability').href=api.build(items,customer,reference,'',true);
-      $('upi-intent').href=api.upi(items,reference);
+      $('upi-intent').href=mobile ? api.upi(items,reference) : '#payment-help';
+      $('upi-intent').textContent=mobile ? 'Open UPI app on this phone' : 'How to pay from this computer';
+      $('payment-help').textContent=mobile
+        ? 'Use an installed UPI app. If it does not open, open this checkout in your phone’s normal browser, or download the QR and select it from your UPI app’s photo gallery scanner. You can also copy the UPI ID and enter the exact total manually.'
+        : 'UPI apps run on your phone. Open your phone’s UPI app and scan this QR on the computer screen. Enter the exact total shown above. This computer cannot open the UPI app installed on your phone.';
       $('payment-total').textContent=api.money(api.total(items));
       $('send-payment').href=api.build(items,customer,reference);
       $('international-confirmation').hidden=!international(customer.country); $('international-confirmed').checked=false; $('payment-details').hidden=international(customer.country);
@@ -61,6 +66,14 @@
     } catch(error) { notice(error.message); }
   });
   $('international-confirmed').addEventListener('change',()=>{if(request)$('payment-details').hidden=!$('international-confirmed').checked;});
+  $('upi-intent').addEventListener('click',event=>{
+    if(!mobile){event.preventDefault();$('payment-help').focus();$('payment-help').scrollIntoView({block:'center',behavior:'smooth'});}
+    else notice('Opening your installed UPI app. If nothing opens, follow the QR or UPI ID instructions below. Returning here does not confirm payment.');
+  });
+  $('copy-upi').addEventListener('click',async()=>{
+    try { await navigator.clipboard.writeText('mahavirpaltan@icici'); $('copy-status').textContent='UPI ID copied. Check BINODJAIN and the exact order total before paying.'; }
+    catch { $('copy-status').textContent='Copy this UPI ID manually: mahavirpaltan@icici'; }
+  });
   $('send-payment').addEventListener('click',event=>{
     if(!request || (international(request.customer.country) && !$('international-confirmed').checked) || !$('bank-reference').reportValidity()){event.preventDefault();return;}
     $('send-payment').href=api.build(request.items,request.customer,request.reference,$('bank-reference').value);

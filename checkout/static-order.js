@@ -27,6 +27,9 @@
   function upi(items, reference) {
     return 'upi://pay?' + new URLSearchParams({pa:'mahavirpaltan@icici',pn:'BINODJAIN',am:total(items).toFixed(2),cu:'INR',tn:`Nevisan ${reference}`}).toString();
   }
-  root.NevisanStaticOrder = {selection,money,total,build,upi};
+  function mobileDevice(userAgent, touchPoints = 0) {
+    return /Android|iPhone|iPad|iPod/i.test(userAgent) || (/Macintosh/i.test(userAgent) && touchPoints > 1);
+  }
+  root.NevisanStaticOrder = {selection,money,total,build,upi,mobileDevice};
   if (typeof module === 'object') module.exports = root.NevisanStaticOrder;
 })(typeof window === 'object' ? window : globalThis);

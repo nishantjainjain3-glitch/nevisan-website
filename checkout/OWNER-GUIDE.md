@@ -17,3 +17,7 @@ Prices are maintained in checkout/catalog.js and must match homepage/product pri
 There is no automatic bank verification, receipt, status polling, inventory reservation, screenshot upload, refund or order synchronisation into Medusa. A reference is created locally and is lost if the page reloads before the customer saves/sends it. Nevisan receives nothing until the customer sends the WhatsApp message. No contact/address is stored by the checkout in browser storage or sent to analytics.
 
 Disable website checkout by setting enabled:false in cart-bridge.js; product/cart actions then return to their existing WhatsApp enquiry flow.
+
+Desktop checkout shows QR instructions rather than trying to launch a phone app. Customers can download the merchant QR or copy the UPI ID. On supported phones the UPI link opens an installed app; if the browser blocks app launching, customers can use their normal phone browser, the QR/gallery scanner or manually enter the UPI ID. Opening an app never verifies payment.
+
+Shopping navigation, homepage direct-store choices and all ten product-page order actions connect to Nevisan Pay. Support chats and wholesale quotation forms remain WhatsApp enquiries.

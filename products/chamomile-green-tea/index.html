@@ -860,7 +860,7 @@
 
       </div>
 
-      <a href="https://nevisan.in/#collection" class="nevisan-btn-shop">Shop Now</a>
+      <a href="/checkout/" class="nevisan-btn-shop">Shop Now</a>
 
     </div>
 
@@ -870,7 +870,7 @@
 
     <div class="nevisan-mobile-controls">
 
-      <a href="https://wa.me/919864245687?text=Hi%20Nevisan%21%20I%20would%20like%20to%20order%20Chamomile%20Green%20Tea.%0AQuantity%3A%201%20packet%20%C3%97%2050g%20each.%0APlease%20confirm%20availability%2C%20price%20and%20delivery%20details." class="nevisan-btn-order-mobile" target="_blank" rel="noopener">💬 Order</a>
+      <a data-nevisan-order href="/checkout/?items=%5B%7B%22handle%22%3A%22chamomile-green-tea%22%2C%22quantity%22%3A1%7D%5D" class="nevisan-btn-order-mobile" rel="noopener">💬 Order</a>
 
       <button class="nevisan-mobile-toggle" id="nevisanMobileToggle" aria-label="Toggle navigation menu" onclick="toggleNevisanMenu()">
 
@@ -914,7 +914,7 @@
 
     <a href="https://nevisan.in/#collection" class="nevisan-btn-shop" style="text-align: center; padding: 14px; display: block; margin: 0;" onclick="toggleNevisanMenu()">Shop the Collection</a>
 
-    <a href="https://wa.me/919864245687?text=Hi%20Nevisan%21%20I%20would%20like%20to%20order%20Chamomile%20Green%20Tea.%0AQuantity%3A%201%20packet%20%C3%97%2050g%20each.%0APlease%20confirm%20availability%2C%20price%20and%20delivery%20details." class="nevisan-btn-order-mobile" style="text-align: center; padding: 14px; justify-content: center;" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
+    <a data-nevisan-order href="/checkout/?items=%5B%7B%22handle%22%3A%22chamomile-green-tea%22%2C%22quantity%22%3A1%7D%5D" class="nevisan-btn-order-mobile" style="text-align: center; padding: 14px; justify-content: center;" rel="noopener">💬 Checkout · UPI</a>
 
   </div>
 
@@ -1018,9 +1018,9 @@ function toggleNevisanMenu() {
 
         <div class="product-buy-actions" id="buy-this-tea"><p class="product-return-note"><strong>Non-returnable food product.</strong> For damaged packaging or an incorrect item, contact us within 48 hours of delivery with unboxing photos. <a href="/terms-of-service.html#returns">Read our returns policy</a>.</p><label class="packet-label" for="packetQuantity">Number of 50g packets</label><input id="packetQuantity" data-packet-quantity type="number" min="1" step="1" value="1" inputmode="numeric" aria-describedby="packetNote"><p id="packetNote" class="packet-note">Each packet contains 50g. Choose a whole number of packets.</p><p class="buy-label">CHOOSE WHERE TO BUY</p>
 
-            <a class="btn-whatsapp" href="https://wa.me/919864245687?text=Hi%20Nevisan%21%20I%20would%20like%20to%20order%20Chamomile%20Green%20Tea.%0AQuantity%3A%201%20packet%20%C3%97%2050g%20each.%0APlease%20confirm%20availability%2C%20price%20and%20delivery%20details.">
+            <a data-nevisan-order class="btn-whatsapp" href="/checkout/?items=%5B%7B%22handle%22%3A%22chamomile-green-tea%22%2C%22quantity%22%3A1%7D%5D">
 
-                <span>💬</span> Order directly via WhatsApp
+                <span>💬</span> Buy from Nevisan · UPI
 
             </a>
 
@@ -1218,7 +1218,7 @@ function toggleNevisanMenu() {
 
       <div class="sticky-btns">
 
-        <a href="https://wa.me/919864245687?text=Hi%20Nevisan%21%20I%20would%20like%20to%20order%20Chamomile%20Green%20Tea.%0AQuantity%3A%201%20packet%20%C3%97%2050g%20each.%0APlease%20confirm%20availability%2C%20price%20and%20delivery%20details." target="_blank" rel="noopener" class="sticky-btn sticky-wa">💬 WhatsApp</a>
+        <a data-nevisan-order href="/checkout/?items=%5B%7B%22handle%22%3A%22chamomile-green-tea%22%2C%22quantity%22%3A1%7D%5D" rel="noopener" class="sticky-btn sticky-wa">Checkout · UPI</a>
 
         <a href="https://www.amazon.in/dp/B0FV2QGRBM" target="_blank" rel="noopener" class="sticky-btn sticky-amz">📦 Amazon</a>
 
@@ -1232,7 +1232,7 @@ function toggleNevisanMenu() {
 
 <script src="/checkout/cart-bridge.js?v=2" defer></script>
 
-<script src="/product-order.js?v=2" defer></script>
+<script src="/product-order.js?v=3" defer></script>
 
 </body>
 

@@ -1,6 +1,6 @@
-/* Load before app.js. Activation stays off until the backend and payment host are live. */
+/* Nevisan standalone QR and customer-initiated WhatsApp checkout. */
 window.NEVISAN_CART_CHECKOUT = {
-  enabled: false,
+  enabled: true,
   url(cart) {
     if (!Array.isArray(cart) || !cart.length || cart.length > 10) throw new Error("Choose your teas first.");
     const items = cart.map(({tea, qty}) => {
@@ -9,7 +9,7 @@ window.NEVISAN_CART_CHECKOUT = {
       if (!allowed.includes(handle) || !Number.isSafeInteger(qty) || qty < 1 || qty > 1000) throw new Error("Please review your packet quantities.");
       return {handle,quantity:qty};
     });
-    // Carry handles and packet counts only. Medusa resolves prices and stock.
+    // Carry handles and packet counts only. Checkout uses the published Nevisan catalogue.
     return "/checkout/?items=" + encodeURIComponent(JSON.stringify(items));
   },
   open(cart) { window.location.assign(this.url(cart)); }

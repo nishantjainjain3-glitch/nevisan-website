@@ -68,3 +68,18 @@ test('WhatsApp handoff includes quantities and total and preserves the cart', ()
   assert.equal(env.provider().cart[0].qty,2);
   assert.equal(env.tracked.length,0);
 });
+
+test('activated cart checkout opens the selected teas and quantities without clearing the cart',()=>{
+ const env=app(); let destination;
+ env.context.window.location={assign:value=>destination=value};
+ vm.runInContext(fs.readFileSync('checkout/cart-bridge.js','utf8'),env.context);
+ env.provider().addToCart({name:'Ginger Green Tea',price:389});
+ env.provider().addToCart({name:'Ginger Green Tea',price:389});
+ env.context.cartValue=env.provider();
+ vm.runInContext('CartCtx.value = cartValue; ViewportCtx.value = {isMobile:false,isTablet:false}',env.context);
+ const tree=vm.runInContext('CartSheet({onClose:()=>{}})',env.context);
+ function find(node){if(!node||typeof node!=='object')return null;if(node.type==='button'&&node.children.includes('Checkout · Free shipping · UPI'))return node;for(const child of node.children||[]){const result=find(child);if(result)return result;}}
+ const button=find(tree);assert.ok(button);button.props.onClick();
+ const url=new URL(destination,'https://nevisan.in');assert.equal(url.pathname,'/checkout/');assert.deepEqual(JSON.parse(url.searchParams.get('items')),[{handle:'ginger-green-tea',quantity:2}]);
+ assert.equal(env.provider().cart[0].qty,2);assert.equal(env.opened.length,0);
+});

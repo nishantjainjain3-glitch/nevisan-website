@@ -15,7 +15,7 @@ test('packet counts update all order actions and block invalid quantities', () =
     assert.equal(blocked,true);
   }
 });
-test('activated product actions carry the selected packet count into Medusa checkout',()=>{
+test('activated product actions carry the selected packet count into Nevisan Pay checkout',()=>{
  const input={value:'2',events:{},setCustomValidity(message){this.error=message},reportValidity(){return !this.error},addEventListener(name,fn){this.events[name]=fn}};
  const links=Array.from({length:4},()=>({events:{},addEventListener(name,fn){this.events[name]=fn},removeAttribute(name){this[name]=undefined}}));
  const document={readyState:'complete',querySelector(selector){return selector==='h1'?{textContent:'GABA Oolong Tea'}:input},querySelectorAll(){return links}};

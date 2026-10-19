@@ -22,7 +22,7 @@ class Metadata(HTMLParser):
             self.href=None;self.excerpt=None
 
 def metadata(path):
-    p=Metadata();p.feed(path.read_text());return p
+    p=Metadata();p.feed(path.read_text(encoding='utf-8'));return p
 class ContentTests(unittest.TestCase):
     def test_both_journal_lists_use_the_canonical_description(self):
         entries=metadata(ROOT/'journal/index.html').entries
@@ -30,7 +30,7 @@ class ContentTests(unittest.TestCase):
         for url,excerpt in entries:
             target=ROOT/urlsplit(url).path.strip('/')/'index.html'
             self.assertEqual(' '.join(excerpt.split()),' '.join(metadata(target).description.split()),str(target))
-        posts=json.loads(re.search(r'const POSTS = (\[.*?\]);',(ROOT/'app.js').read_text(),re.S)[1])
+        posts=json.loads(re.search(r'const POSTS = (\[.*?\]);',(ROOT/'app.js').read_text(encoding='utf-8'),re.S)[1])
         for post in posts:
             target=ROOT/'journal'/post['slug']/'index.html'
             self.assertEqual(post['excerpt'],metadata(target).description,post['slug'])
@@ -43,5 +43,5 @@ class ContentTests(unittest.TestCase):
             elif isinstance(value,list):
                 for child in value:visit(child)
         for path in ROOT.rglob('*.html'):
-            for block in re.findall(r'<script\b[^>]*type="application/ld\+json"[^>]*>(.*?)</script>',path.read_text(),re.S):
+            for block in re.findall(r'<script\b[^>]*type="application/ld\+json"[^>]*>(.*?)</script>',path.read_text(encoding='utf-8'),re.S):
                 visit(json.loads(block))

@@ -3,16 +3,16 @@
   'use strict';
   const h = React.createElement;
   const teas = [
-    { key:'gaba', name:'GABA Oolong Tea', slug:'gaba-oolong-tea', notes:'Toasty amber. Stone fruit. Smooth honey.', water:'85°C', time:'2–3 minutes', accent:'#bc9445' },
-    { key:'spearmint', name:'Spearmint Green Tea', slug:'spearmint-green-tea', notes:'Fresh mint. A clean, bright finish.', water:'85°C', time:'2 minutes', accent:'#288e80' },
-    { key:'blue-flower', name:'Blue Flower Green Tea', slug:'blue-flower-green-tea', notes:'Soft florals. A vivid blue cup.', water:'85°C', time:'2–3 minutes', accent:'#577fa9' },
-    { key:'ginger', name:'Ginger Green Tea', slug:'ginger-green-tea', notes:'Ginger warmth. Mellow green tea.', water:'85°C', time:'2–3 minutes', accent:'#a79443' },
-    {key:'organic',name:'Organic Green Tea',slug:'organic-green-tea',notes:'Fresh, grassy notes. Whole-leaf character.',water:'85°C',time:'2 minutes'},
-    {key:'tulsi',name:'Tulsi Green Tea',slug:'tulsi-green-tea',notes:'Herbaceous warmth. Fragrant tulsi.',water:'85°C',time:'2 minutes'},
-    {key:'chamomile',name:'Chamomile Green Tea',slug:'chamomile-green-tea',notes:'Soft florals. Honeyed apple notes.',water:'85°C',time:'2 minutes'},
-    {key:'lemongrass',name:'Lemongrass Green Tea',slug:'lemongrass-green-tea',notes:'Bright citrus. A gentle grassy finish.',water:'85°C',time:'2 minutes'},
-    {key:'rum',name:'Rum Green Tea',slug:'rum-green-tea',notes:'Sugarcane warmth. Spice and oak.',water:'85°C',time:'2 minutes'},
-    {key:'whiskey',name:'Whiskey Green Tea',slug:'whiskey-green-tea',notes:'Malt character. Smoky oak notes.',water:'85°C',time:'2 minutes'}
+    { key:'gaba', name:'GABA Oolong Tea', slug:'gaba-oolong-tea',price:449, notes:'Toasty amber. Stone fruit. Smooth honey.', water:'85°C', time:'2–3 minutes', accent:'#bc9445' },
+    { key:'spearmint', name:'Spearmint Green Tea', slug:'spearmint-green-tea',price:399, notes:'Fresh mint. A clean, bright finish.', water:'85°C', time:'2 minutes', accent:'#288e80' },
+    { key:'blue-flower', name:'Blue Flower Green Tea', slug:'blue-flower-green-tea',price:379, notes:'Soft florals. A vivid blue cup.', water:'85°C', time:'2–3 minutes', accent:'#577fa9' },
+    { key:'ginger', name:'Ginger Green Tea', slug:'ginger-green-tea',price:389, notes:'Ginger warmth. Mellow green tea.', water:'85°C', time:'2–3 minutes', accent:'#a79443' },
+    {key:'organic',name:'Organic Green Tea',slug:'organic-green-tea',price:279,notes:'Fresh, grassy notes. Whole-leaf character.',water:'85°C',time:'2 minutes'},
+    {key:'tulsi',name:'Tulsi Green Tea',slug:'tulsi-green-tea',price:299,notes:'Herbaceous warmth. Fragrant tulsi.',water:'85°C',time:'2 minutes'},
+    {key:'chamomile',name:'Chamomile Green Tea',slug:'chamomile-green-tea',price:329,notes:'Soft florals. Honeyed apple notes.',water:'85°C',time:'2 minutes'},
+    {key:'lemongrass',name:'Lemongrass Green Tea',slug:'lemongrass-green-tea',price:299,notes:'Bright citrus. A gentle grassy finish.',water:'85°C',time:'2 minutes'},
+    {key:'rum',name:'Rum Green Tea',slug:'rum-green-tea',price:399,notes:'Sugarcane warmth. Spice and oak.',water:'85°C',time:'2 minutes'},
+    {key:'whiskey',name:'Whiskey Green Tea',slug:'whiskey-green-tea',price:399,notes:'Malt character. Smoky oak notes.',water:'85°C',time:'2 minutes'}
   ];
   function ProductAtelier() {
     const [selected, setSelected] = React.useState(0);
@@ -36,7 +36,7 @@
           h('h2',{id:'atelier-title'},'A leaf from Assam.',h('br'),h('em',null,'A ritual of your own.')),
           h('p',{className:'atelier__intro'},'Explore the collection, find your flavour, and try a cup that fits your day.'),
           h('div',{className:'atelier__choices',role:'group','aria-label':'Choose your tea'},teas.map((item,index)=>h('button',{type:'button',key:item.key,'aria-pressed':index===selected,onClick:()=>choose(index)},item.name.replace(' Green Tea','').replace(' Oolong Tea',' Oolong')))),
-          h('div',{className:'atelier__profile','aria-live':'polite'},h('h3',null,tea.name),h('p',null,tea.notes),h('dl',null,h('div',null,h('dt',null,'Water'),h('dd',null,tea.water)),h('div',null,h('dt',null,'First steep'),h('dd',null,tea.time)),h('div',null,h('dt',null,'Pack'),h('dd',null,'50g · ₹499')))),
+          h('div',{className:'atelier__profile','aria-live':'polite'},h('h3',null,tea.name),h('p',null,tea.notes),h('dl',null,h('div',null,h('dt',null,'Water'),h('dd',null,tea.water)),h('div',null,h('dt',null,'First steep'),h('dd',null,tea.time)),h('div',null,h('dt',null,'Pack'),h('dd',null,'50g · ₹' + tea.price)))),
           h('a',{className:'lux-button lux-button--ivory',href:`/products/${tea.slug}/`},'Explore this tea ↗'),
           h('p',{className:'atelier__footnote'},'Follow the brewing guide on your pack, then adjust to taste. Green and oolong teas naturally contain caffeine.')
         )

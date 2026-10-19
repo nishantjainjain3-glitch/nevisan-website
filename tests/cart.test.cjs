@@ -47,8 +47,10 @@ test('cart tracking requires consent even when a pixel function already exists',
 });
 test('WhatsApp handoff includes quantities and total and preserves the cart', () => {
   const env = app();
-  env.provider().addToCart({name:'Ginger Green Tea',price:499});
-  env.provider().addToCart({name:'Ginger Green Tea',price:499});
+  const tea = vm.runInContext("TEAS.find(tea => tea.name === 'Ginger Green Tea')",env.context);
+  assert.equal(tea.price,389);
+  env.provider().addToCart(tea);
+  env.provider().addToCart(tea);
   env.context.cartValue = env.provider();
   vm.runInContext('CartCtx.value = cartValue; ViewportCtx.value = {isMobile:false,isTablet:false}',env.context);
   const tree = vm.runInContext('CartSheet({onClose:()=>{}})',env.context);
@@ -61,8 +63,8 @@ test('WhatsApp handoff includes quantities and total and preserves the cart', ()
   assert.ok(button);
   button.props.onClick();
   const url = new URL(env.opened[0][0]);
-  assert.ok(url.searchParams.get('text').includes('Ginger Green Tea x2 = ₹998'));
-  assert.ok(url.searchParams.get('text').includes('Total: ₹998'));
+  assert.ok(url.searchParams.get('text').includes('Ginger Green Tea x2 = ₹778'));
+  assert.ok(url.searchParams.get('text').includes('Total: ₹778'));
   assert.equal(env.provider().cart[0].qty,2);
   assert.equal(env.tracked.length,0);
 });

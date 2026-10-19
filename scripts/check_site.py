@@ -5,6 +5,7 @@ from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 import json
+import os
 import re
 import subprocess
 import sys
@@ -50,7 +51,7 @@ def check():
             continue
         pages += 1
         page = Page()
-        page.feed(path.read_text())
+        page.feed(path.read_text(encoding='utf-8'))
         relative = path.relative_to(ROOT)
         for identifier, count in Counter(page.ids).items():
             if count > 1:
@@ -76,18 +77,24 @@ def check():
                 except ValueError as error:
                     errors.append(f'{relative}: invalid JSON-LD: {error}')
             elif not attributes.get('src') and body.strip():
-                with tempfile.NamedTemporaryFile(suffix='.js', mode='w') as temporary:
+                temporary = tempfile.NamedTemporaryFile(suffix='.js', mode='w', encoding='utf-8', delete=False)
+                try:
                     temporary.write(body)
-                    temporary.flush()
+                    temporary.close()
                     result = subprocess.run(['node', '--check', temporary.name], capture_output=True, text=True)
                     if result.returncode:
                         errors.append(f'{relative}: inline JavaScript syntax error: {result.stderr}')
+                finally:
+                    try:
+                        os.unlink(temporary.name)
+                    except OSError:
+                        pass
     for name in ['app.js', 'consent.js', 'premium-experience.js', 'product-atelier.js', 'site-polish.js', 'product-gallery.js']:
         result = subprocess.run(['node', '--check', str(ROOT / name)], capture_output=True, text=True)
         if result.returncode:
             errors.append(f'{name}: {result.stderr}')
 
-    faq = (ROOT / 'faq/index.html').read_text()
+    faq = (ROOT / 'faq/index.html').read_text(encoding='utf-8')
     questions = {}
     counts = {}
     for block in re.findall(r'<section class="faq-section-block".*?</section>', faq, re.S):
@@ -117,10 +124,10 @@ def check():
             for item in data['mainEntity']:
                 if questions.get(item['name']) != item['acceptedAnswer']['text']:
                     errors.append(f'FAQ schema does not match visible answer: {item["name"]}')
-    app = (ROOT / 'app.js').read_text()
+    app = (ROOT / 'app.js').read_text(encoding='utf-8')
     front = json.loads(re.search(r'const frontFaqs = (\[.*?\]);', app, re.S)[1])
     parser = Page()
-    parser.feed((ROOT / 'index.html').read_text())
+    parser.feed((ROOT / 'index.html').read_text(encoding='utf-8'))
     for attributes, body in parser.scripts:
         if attributes.get('type') != 'application/ld+json':
             continue

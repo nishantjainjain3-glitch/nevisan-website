@@ -53,14 +53,14 @@ const trackExternalClick = (e, t) => {
         content_ids: [s],
         content_type: "product",
         destination: t,
-        value: 499,
+        value: getTeaPrice(e),
         currency: "INR",
       });
       fbq("track", "InitiateCheckout", {
         content_name: e,
         content_ids: [s],
         content_type: "product",
-        value: 499,
+        value: getTeaPrice(e),
         currency: "INR",
       });
     }
@@ -181,7 +181,7 @@ function CartProvider({ children: e }) {
               fbq("track", "AddToCart", {
                 content_ids: [s],
                 content_type: "product",
-                value: e.price || 499,
+                value: e.price || getTeaPrice(e.name),
                 currency: "INR",
               });
             }
@@ -304,20 +304,20 @@ function openWhatsApp(e = "") {
         content_name: e,
         content_ids: [s],
         content_type: "product",
-        value: 499,
+        value: getTeaPrice(e),
         currency: "INR",
       });
       fbq("track", "InitiateCheckout", {
         content_name: e,
         content_ids: [s],
         content_type: "product",
-        value: 499,
+        value: getTeaPrice(e),
         currency: "INR",
       });
     }
   } catch (err) {}
   window.open(
-    `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(e ? `Hi Nevisan! I would like to order *${e}* (MRP ₹499 · 1 packet × 50g). Please confirm packet quantity, availability and delivery details.` : "Hi Nevisan! I would like to order your tea. Please help me with the details.")}`,
+    `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(e ? `Hi Nevisan! I would like to order *${e}* (₹${getTeaPrice(e)} · 1 packet × 50g). Please confirm packet quantity, availability and delivery details.` : "Hi Nevisan! I would like to order your tea. Please help me with the details.")}`,
     "_blank", "noopener,noreferrer",
   );
 }
@@ -964,7 +964,7 @@ const TEAS = [
     "bg": "#d4edd8",
     "color": "#3a7a50",
     "img": "teas/lemongrass-lifestyle.webp",
-    "price": 499,
+    "price": 299,
     "badge": "BRIGHT CITRUS",
     "brew": "90°C · 2–3 min · Can steep twice",
     "benefits": [
@@ -995,7 +995,7 @@ const TEAS = [
     "bg": "#c8dff0",
     "color": "#2a5a8a",
     "img": "teas/blue-flower-lifestyle.webp",
-    "price": 499,
+    "price": 379,
     "badge": "BLUE BOTANICALS",
     "brew": "85°C · 2–3 min · No milk needed",
     "benefits": [
@@ -1026,7 +1026,7 @@ const TEAS = [
     "bg": "#f5e9a0",
     "color": "#8a6a10",
     "img": "teas/rum-lifestyle.webp",
-    "price": 499,
+    "price": 399,
     "badge": "ZERO ALCOHOL",
     "bestseller": true,
     "brew": "90°C · 3 min · Excellent hot or iced",
@@ -1058,7 +1058,7 @@ const TEAS = [
     "bg": "#e8d4f0",
     "color": "#6a3a8a",
     "img": "teas/spearmint-lifestyle.webp",
-    "price": 499,
+    "price": 399,
     "badge": "COOL MINT",
     "brew": "85°C · 2 min · Light and refreshing",
     "benefits": [
@@ -1089,7 +1089,7 @@ const TEAS = [
     "bg": "#d4edd8",
     "color": "#3a7a50",
     "img": "teas/tulsi-lifestyle.webp",
-    "price": 499,
+    "price": 299,
     "badge": "HERBAL AROMA",
     "brew": "90°C · 3–4 min · Best plain or with honey",
     "benefits": [
@@ -1120,7 +1120,7 @@ const TEAS = [
     "bg": "#f5e9a0",
     "color": "#8a6a10",
     "img": "teas/chamomile-lifestyle.webp",
-    "price": 499,
+    "price": 329,
     "badge": "SOFT FLORAL",
     "brew": "85°C · 4 min · Soft floral cup",
     "benefits": [
@@ -1151,7 +1151,7 @@ const TEAS = [
     "bg": "#e0d4c8",
     "color": "#5a4030",
     "img": "teas/whiskey-lifestyle.webp",
-    "price": 499,
+    "price": 399,
     "badge": "ZERO ALCOHOL",
     "brew": "90°C · 3 min · Bold, best enjoyed slowly",
     "benefits": [
@@ -1182,7 +1182,7 @@ const TEAS = [
     "bg": "#c0e0dc",
     "color": "#1b7a82",
     "img": "teas/gaba-lifestyle.webp",
-    "price": 499,
+    "price": 449,
     "badge": "MELLOW OOLONG",
     "brew": "85°C · 3 min · Nitrogen-anaerobic processed",
     "benefits": [
@@ -1213,7 +1213,7 @@ const TEAS = [
     "bg": "#c8e8c0",
     "color": "#2a6a2a",
     "img": "teas/organic-lifestyle.webp",
-    "price": 499,
+    "price": 279,
     "badge": "ORGANIC",
     "brew": "80°C · 2 min · Never boiling water",
     "benefits": [
@@ -1244,7 +1244,7 @@ const TEAS = [
     "bg": "#fdf2e9",
     "color": "#935116",
     "img": "teas/ginger-lifestyle.webp",
-    "price": 499,
+    "price": 389,
     "badge": "WARMING GINGER",
     "brew": "85°C · 2–3 min · Best warm",
     "benefits": [
@@ -1266,6 +1266,12 @@ const TEAS = [
     ]
   }
 ];
+function getTeaPrice(name) {
+  const tea = TEAS.find(tea => tea.name === name);
+  if (!tea) throw new Error("Unknown tea price");
+  return tea.price;
+}
+
 function TagChip({ label: e, color: t }) {
   return React.createElement(
     "span",
@@ -1959,7 +1965,7 @@ function CollectionPage({}) {
                               color: T.teal,
                             },
                           },
-                          "MRP ₹499",
+                          "₹" + e.price,
                         ),
                         React.createElement(
                           "span",
@@ -2390,7 +2396,7 @@ function CollectionPage({}) {
                             color: T.teal,
                           },
                         },
-                        "MRP ₹499",
+                        "₹" + e.price,
                       ),
                       React.createElement(
                         "span",
@@ -4251,7 +4257,7 @@ function CollectionSection({ setPage: e }) {
                               color: T.teal,
                             },
                           },
-                          "MRP ₹499",
+                          "₹" + r.price,
                         ),
                         React.createElement(
                           "span",
@@ -4676,7 +4682,7 @@ function CollectionSection({ setPage: e }) {
                             color: T.teal,
                           },
                         },
-                        "MRP ₹499",
+                        "₹" + r.price,
                       ),
                       React.createElement(
                         "span",
@@ -7828,7 +7834,7 @@ function App() {
 }
 function CartSheet({ onClose: e }) {
   const { cart: t, updateQty: a, clearCart: n } = useCart(),
-    o = (useViewport(), t.reduce((e, t) => e + (t.tea.price || 499) * t.qty, 0)),
+    o = (useViewport(), t.reduce((e, t) => e + (t.tea.price || getTeaPrice(t.tea.name)) * t.qty, 0)),
     i = t.reduce((e, t) => e + t.qty, 0);
   return ReactDOM.createPortal(
     React.createElement(
@@ -8009,7 +8015,7 @@ function CartSheet({ onClose: e }) {
                     },
                   },
                   "₹",
-                  (e.tea.price || 499) * e.qty,
+                  (e.tea.price || getTeaPrice(e.tea.name)) * e.qty,
                 ),
               ),
               React.createElement(
@@ -8131,6 +8137,11 @@ function CartSheet({ onClose: e }) {
             {
               className: "shine-button",
               onClick: () => {
+                if (window.NEVISAN_CART_CHECKOUT?.enabled) {
+                  try { window.NEVISAN_CART_CHECKOUT.open(t); }
+                  catch (error) { window.alert(error.message); }
+                  return;
+                }
                 try {
                   const m = {
                     "Lemongrass Green Tea": "KT-8GBE-8MZG",
@@ -8164,7 +8175,7 @@ function CartSheet({ onClose: e }) {
                   }
                 } catch (err) {}
                 const a = t
-                  .map((e) => `• ${e.tea.name} x${e.qty} = ₹${(e.tea.price || 499) * e.qty}`)
+                  .map((e) => `• ${e.tea.name} x${e.qty} = ₹${(e.tea.price || getTeaPrice(e.tea.name)) * e.qty}`)
                   .join("\n");
                 (window.open(
                   `https://wa.me/919864245687?text=${encodeURIComponent(`Hi Nevisan! I'd like to place an order:\n\n${a}\n\nTotal: ₹${o} (${i} packs × 50gm)\n\nPlease confirm my order and share delivery details.`)}`,
@@ -8199,7 +8210,7 @@ function CartSheet({ onClose: e }) {
                 d: "M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.523 5.836L.057 23.643a.5.5 0 00.625.601l5.963-1.583A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.045-1.395l-.361-.214-3.741.993.984-3.648-.235-.374A9.808 9.808 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z",
               }),
             ),
-            "Place Order via WhatsApp",
+            window.NEVISAN_CART_CHECKOUT?.enabled ? "Checkout · Free shipping · UPI" : "Place Order via WhatsApp",
           ),
         ),
       ),

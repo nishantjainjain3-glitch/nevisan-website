@@ -32,7 +32,8 @@ def main():
     faq = faq.replace('direct WhatsApp ordering', 'Nevisan Pay ordering')
     faq = faq.replace('Product pages link to Nevisan Pay ordering, Amazon and Flipkart. Choose the channel that suits you and confirm its current stock, delivery and return terms.', 'Product pages link to Nevisan Pay, Amazon and Flipkart. For direct orders, follow the Nevisan Pay steps below. Marketplace orders follow the selected marketplace’s delivery and return terms.')
     old_price = 'All 50g loose-leaf tea packs are priced between ₹279 and ₹449 depending on the blend, with live pricing matched to our Amazon store. All prices are fully inclusive of GST and applicable taxes, with complimentary pan-India delivery via India Post to any serviceable PIN code.'
-    faq = faq.replace(old_price, 'The current 50g tea collection is priced between ₹279 and ₹449, depending on the blend. Check the displayed price before paying. Direct website prices are in INR, include applicable taxes and include free shipping. International delivery arrangements must be confirmed before payment; marketplace prices and shipping terms are shown by the selected seller.')
+    prices = [p['price'] for p in json.loads((ROOT / 'content/product-catalog.json').read_text(encoding='utf-8'))['products']]
+    faq = faq.replace(old_price, f'The current 50g tea collection is priced between ₹{min(prices)} and ₹{max(prices)}, depending on the blend. Check the displayed price before paying. Direct website prices are in INR, include applicable taxes and include free shipping. International delivery arrangements must be confirmed before payment; marketplace prices and shipping terms are shown by the selected seller.')
     general_match = next(m for m in re.finditer(r'<section class="faq-section-block".*?</section>', faq, re.S) if 'Where can I order?' in m[0])
     general = general_match[0]
     for question, answer in FAQS:

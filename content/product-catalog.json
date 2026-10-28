@@ -1,0 +1,167 @@
+{
+  "verified_at": "2026-10-28",
+  "price_basis": "Amazon India standard one-time 50g selling prices, excluding bank offers and cashback; manually checked, not a live price feed.",
+  "information_basis": "Ingredients and directions checked against each linked Amazon listing. Manufacturer names and MRP confirmed by the owner on 2026-10-28; physical pouch declarations take precedence.",
+  "products": [
+    {
+      "handle": "blue-flower-green-tea",
+      "name": "Blue Flower Green Tea",
+      "price": 349,
+      "mrp": 499,
+      "net_weight_g": 50,
+      "ingredients": "Organic Whole-Leaf Green Tea (Camellia sinensis), Dried Butterfly Pea Flowers (Clitoria ternatea).",
+      "description": "Whole-leaf Assam green tea with dried butterfly pea flowers. A floral, blue-coloured cup. 50g loose-leaf packet; contains caffeine.",
+      "manufacturer": "Tailor Made Tea",
+      "brew": {
+        "water": "85–90°C",
+        "leaves": "2–2.5g per cup",
+        "time": "1.5–2 minutes"
+      },
+      "amazon_url": "https://www.amazon.in/dp/B0FTZ7KQ5B"
+    },
+    {
+      "handle": "chamomile-green-tea",
+      "name": "Chamomile Green Tea",
+      "price": 299,
+      "mrp": 499,
+      "net_weight_g": 50,
+      "ingredients": "Organic Whole-Leaf Green Tea (Camellia sinensis), Chamomile Flowers (Matricaria chamomilla).",
+      "description": "Whole-leaf Assam green tea with chamomile flowers and soft floral notes. 50g loose-leaf packet. This green-tea blend contains caffeine.",
+      "manufacturer": "Tailor Made Tea",
+      "brew": {
+        "water": "85–90°C",
+        "leaves": "2–2.5g per cup",
+        "time": "2 minutes"
+      },
+      "amazon_url": "https://www.amazon.in/dp/B0FV2QGRBM"
+    },
+    {
+      "handle": "gaba-oolong-tea",
+      "name": "GABA Oolong Tea",
+      "price": 449,
+      "mrp": 499,
+      "net_weight_g": 50,
+      "ingredients": "Whole-Leaf Assam Oolong Tea (Camellia sinensis).",
+      "description": "Whole-leaf Assam GABA oolong with toasty, stone-fruit and honey-like notes. 50g loose-leaf packet, manufactured by GABA Tea Pvt. Ltd. Contains caffeine.",
+      "manufacturer": "GABA TEA PVT. LTD.",
+      "brew": {
+        "water": "85–90°C",
+        "leaves": "2–2.5g per cup",
+        "time": "2 minutes"
+      },
+      "amazon_url": "https://www.amazon.in/dp/B0GTRBXKP8"
+    },
+    {
+      "handle": "ginger-green-tea",
+      "name": "Ginger Green Tea",
+      "price": 299,
+      "mrp": 499,
+      "net_weight_g": 50,
+      "ingredients": "Whole-Leaf Green Tea (Camellia sinensis), Dried Ginger Flakes (Zingiber officinale), Natural Ginger Flavour.",
+      "description": "Whole-leaf Assam green tea with dried ginger flakes and natural ginger flavour. A warming, fragrant cup. 50g loose-leaf packet; contains caffeine.",
+      "manufacturer": "Tailor Made Tea",
+      "brew": {
+        "water": "85–90°C",
+        "leaves": "2–2.5g per cup",
+        "time": "1.5–2 minutes"
+      },
+      "amazon_url": "https://www.amazon.in/dp/B0H6PZYPMP"
+    },
+    {
+      "handle": "lemongrass-green-tea",
+      "name": "Lemongrass Green Tea",
+      "price": 279,
+      "mrp": 499,
+      "net_weight_g": 50,
+      "ingredients": "Organic Whole-Leaf Green Tea (Camellia sinensis), Dried Lemongrass Stalks (Cymbopogon).",
+      "description": "Whole-leaf Assam green tea with dried lemongrass stalks and bright citrus notes. 50g loose-leaf packet for hot or iced tea. Contains caffeine.",
+      "manufacturer": "Tailor Made Tea",
+      "brew": {
+        "water": "85–90°C",
+        "leaves": "2–2.5g per cup",
+        "time": "1.5–2 minutes"
+      },
+      "amazon_url": "https://www.amazon.in/dp/B0FSZSZ1ZM"
+    },
+    {
+      "handle": "organic-green-tea",
+      "name": "Organic Green Tea",
+      "price": 259,
+      "mrp": 499,
+      "net_weight_g": 50,
+      "ingredients": "Organic Whole-Leaf Green Tea (Camellia sinensis).",
+      "description": "Organic whole-leaf Assam green tea with fresh, grassy notes. An unflavoured 50g loose-leaf packet. Contains caffeine; follow the pouch brewing guide.",
+      "manufacturer": "Tailor Made Tea",
+      "brew": {
+        "water": "85–90°C",
+        "leaves": "2–2.5g per cup",
+        "time": "1.5–2 minutes"
+      },
+      "amazon_url": "https://www.amazon.in/dp/B0FV2N83XD"
+    },
+    {
+      "handle": "rum-green-tea",
+      "name": "Rum Green Tea",
+      "price": 389,
+      "mrp": 499,
+      "net_weight_g": 50,
+      "ingredients": "Whole-Leaf Green Tea (Camellia sinensis), Natural Rum Flavour.",
+      "description": "Whole-leaf Assam green tea with natural rum flavour and warm molasses and vanilla notes. Non-alcoholic 50g loose-leaf packet; contains caffeine.",
+      "manufacturer": "Tailor Made Tea",
+      "brew": {
+        "water": "85–90°C",
+        "leaves": "2–2.5g per cup",
+        "time": "1.5–2 minutes"
+      },
+      "amazon_url": "https://www.amazon.in/dp/B0FV2QVGVL"
+    },
+    {
+      "handle": "spearmint-green-tea",
+      "name": "Spearmint Green Tea",
+      "price": 349,
+      "mrp": 499,
+      "net_weight_g": 50,
+      "ingredients": "Organic Whole-Leaf Green Tea (Camellia sinensis), Spearmint Leaves (Mentha spicata).",
+      "description": "Whole-leaf Assam green tea with spearmint leaves and a cool mint finish. 50g loose-leaf packet for hot or iced tea. Contains caffeine.",
+      "manufacturer": "Tailor Made Tea",
+      "brew": {
+        "water": "85–90°C",
+        "leaves": "2–2.5g per cup",
+        "time": "1.5–2 minutes"
+      },
+      "amazon_url": "https://www.amazon.in/dp/B0GTR2GXW2"
+    },
+    {
+      "handle": "tulsi-green-tea",
+      "name": "Tulsi Green Tea",
+      "price": 279,
+      "mrp": 499,
+      "net_weight_g": 50,
+      "ingredients": "Organic Whole-Leaf Green Tea (Camellia sinensis), Holy Basil Leaves (Ocimum sanctum).",
+      "description": "Whole-leaf Assam green tea with holy basil (tulsi) leaves and a fragrant herbal character. 50g loose-leaf packet. Contains caffeine.",
+      "manufacturer": "Tailor Made Tea",
+      "brew": {
+        "water": "85–90°C",
+        "leaves": "2–2.5g per cup",
+        "time": "1.5–2 minutes"
+      },
+      "amazon_url": "https://www.amazon.in/dp/B0FSZVRPSG"
+    },
+    {
+      "handle": "whiskey-green-tea",
+      "name": "Whiskey Green Tea",
+      "price": 349,
+      "mrp": 499,
+      "net_weight_g": 50,
+      "ingredients": "Whole-Leaf Green Tea, Natural Whiskey Flavour.",
+      "description": "Whole-leaf Assam green tea with natural whiskey flavour and smoky malt and oak notes. Non-alcoholic 50g loose-leaf packet; contains caffeine.",
+      "manufacturer": "Tailor Made Tea",
+      "brew": {
+        "water": "85–90°C",
+        "leaves": "2–2.5g per cup",
+        "time": "1.5–2 minutes"
+      },
+      "amazon_url": "https://www.amazon.in/dp/B0FSZXVWXD"
+    }
+  ]
+}

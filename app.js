@@ -972,9 +972,9 @@ const TEAS = [
     "bg": "#d4edd8",
     "color": "#3a7a50",
     "img": "teas/lemongrass-lifestyle.webp",
-    "price": 299,
+    "price": 279,
     "badge": "BRIGHT CITRUS",
-    "brew": "90°C · 2–3 min · Can steep twice",
+    "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
       {
         "icon": "🌿",
@@ -1003,9 +1003,9 @@ const TEAS = [
     "bg": "#c8dff0",
     "color": "#2a5a8a",
     "img": "teas/blue-flower-lifestyle.webp",
-    "price": 379,
+    "price": 349,
     "badge": "BLUE BOTANICALS",
-    "brew": "85°C · 2–3 min · No milk needed",
+    "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
       {
         "icon": "🌿",
@@ -1034,10 +1034,9 @@ const TEAS = [
     "bg": "#f5e9a0",
     "color": "#8a6a10",
     "img": "teas/rum-lifestyle.webp",
-    "price": 399,
+    "price": 389,
     "badge": "ZERO ALCOHOL",
-    "bestseller": true,
-    "brew": "90°C · 3 min · Excellent hot or iced",
+    "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
       {
         "icon": "🌿",
@@ -1066,9 +1065,9 @@ const TEAS = [
     "bg": "#e8d4f0",
     "color": "#6a3a8a",
     "img": "teas/spearmint-lifestyle.webp",
-    "price": 399,
+    "price": 349,
     "badge": "COOL MINT",
-    "brew": "85°C · 2 min · Light and refreshing",
+    "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
       {
         "icon": "🌿",
@@ -1097,9 +1096,9 @@ const TEAS = [
     "bg": "#d4edd8",
     "color": "#3a7a50",
     "img": "teas/tulsi-lifestyle.webp",
-    "price": 299,
+    "price": 279,
     "badge": "HERBAL AROMA",
-    "brew": "90°C · 3–4 min · Best plain or with honey",
+    "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
       {
         "icon": "🌿",
@@ -1128,9 +1127,9 @@ const TEAS = [
     "bg": "#f5e9a0",
     "color": "#8a6a10",
     "img": "teas/chamomile-lifestyle.webp",
-    "price": 329,
+    "price": 299,
     "badge": "SOFT FLORAL",
-    "brew": "85°C · 4 min · Soft floral cup",
+    "brew": "85–90°C · 2 minutes · 2–2.5g per cup",
     "benefits": [
       {
         "icon": "🌿",
@@ -1159,9 +1158,9 @@ const TEAS = [
     "bg": "#e0d4c8",
     "color": "#5a4030",
     "img": "teas/whiskey-lifestyle.webp",
-    "price": 399,
+    "price": 349,
     "badge": "ZERO ALCOHOL",
-    "brew": "90°C · 3 min · Bold, best enjoyed slowly",
+    "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
       {
         "icon": "🌿",
@@ -1192,7 +1191,7 @@ const TEAS = [
     "img": "teas/gaba-lifestyle.webp",
     "price": 449,
     "badge": "MELLOW OOLONG",
-    "brew": "85°C · 3 min · Nitrogen-anaerobic processed",
+    "brew": "85–90°C · 2 minutes · 2–2.5g per cup",
     "benefits": [
       {
         "icon": "🌿",
@@ -1221,9 +1220,9 @@ const TEAS = [
     "bg": "#c8e8c0",
     "color": "#2a6a2a",
     "img": "teas/organic-lifestyle.webp",
-    "price": 279,
+    "price": 259,
     "badge": "ORGANIC",
-    "brew": "80°C · 2 min · Never boiling water",
+    "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
       {
         "icon": "🌿",
@@ -1252,9 +1251,9 @@ const TEAS = [
     "bg": "#fdf2e9",
     "color": "#935116",
     "img": "teas/ginger-lifestyle.webp",
-    "price": 389,
+    "price": 299,
     "badge": "WARMING GINGER",
-    "brew": "85°C · 2–3 min · Best warm",
+    "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
       {
         "icon": "🌿",

@@ -1,12 +1,12 @@
 {
   "verified_at": "2026-10-28",
-  "price_basis": "Amazon India standard one-time 50g selling prices, excluding bank offers and cashback; manually checked, not a live price feed.",
+  "price_basis": "Owner instruction on 2026-10-28: display and charge the confirmed ₹499 MRP for every 50g packet. No public discounts. Personalised discounts are discussed directly on WhatsApp before payment.",
   "information_basis": "Ingredients and directions checked against each linked Amazon listing. Manufacturer names and MRP confirmed by the owner on 2026-10-28; physical pouch declarations take precedence.",
   "products": [
     {
       "handle": "blue-flower-green-tea",
       "name": "Blue Flower Green Tea",
-      "price": 349,
+      "price": 499,
       "mrp": 499,
       "net_weight_g": 50,
       "ingredients": "Organic Whole-Leaf Green Tea (Camellia sinensis), Dried Butterfly Pea Flowers (Clitoria ternatea).",
@@ -22,7 +22,7 @@
     {
       "handle": "chamomile-green-tea",
       "name": "Chamomile Green Tea",
-      "price": 299,
+      "price": 499,
       "mrp": 499,
       "net_weight_g": 50,
       "ingredients": "Organic Whole-Leaf Green Tea (Camellia sinensis), Chamomile Flowers (Matricaria chamomilla).",
@@ -38,7 +38,7 @@
     {
       "handle": "gaba-oolong-tea",
       "name": "GABA Oolong Tea",
-      "price": 449,
+      "price": 499,
       "mrp": 499,
       "net_weight_g": 50,
       "ingredients": "Whole-Leaf Assam Oolong Tea (Camellia sinensis).",
@@ -54,7 +54,7 @@
     {
       "handle": "ginger-green-tea",
       "name": "Ginger Green Tea",
-      "price": 299,
+      "price": 499,
       "mrp": 499,
       "net_weight_g": 50,
       "ingredients": "Whole-Leaf Green Tea (Camellia sinensis), Dried Ginger Flakes (Zingiber officinale), Natural Ginger Flavour.",
@@ -70,7 +70,7 @@
     {
       "handle": "lemongrass-green-tea",
       "name": "Lemongrass Green Tea",
-      "price": 279,
+      "price": 499,
       "mrp": 499,
       "net_weight_g": 50,
       "ingredients": "Organic Whole-Leaf Green Tea (Camellia sinensis), Dried Lemongrass Stalks (Cymbopogon).",
@@ -86,7 +86,7 @@
     {
       "handle": "organic-green-tea",
       "name": "Organic Green Tea",
-      "price": 259,
+      "price": 499,
       "mrp": 499,
       "net_weight_g": 50,
       "ingredients": "Organic Whole-Leaf Green Tea (Camellia sinensis).",
@@ -102,7 +102,7 @@
     {
       "handle": "rum-green-tea",
       "name": "Rum Green Tea",
-      "price": 389,
+      "price": 499,
       "mrp": 499,
       "net_weight_g": 50,
       "ingredients": "Whole-Leaf Green Tea (Camellia sinensis), Natural Rum Flavour.",
@@ -118,7 +118,7 @@
     {
       "handle": "spearmint-green-tea",
       "name": "Spearmint Green Tea",
-      "price": 349,
+      "price": 499,
       "mrp": 499,
       "net_weight_g": 50,
       "ingredients": "Organic Whole-Leaf Green Tea (Camellia sinensis), Spearmint Leaves (Mentha spicata).",
@@ -134,7 +134,7 @@
     {
       "handle": "tulsi-green-tea",
       "name": "Tulsi Green Tea",
-      "price": 279,
+      "price": 499,
       "mrp": 499,
       "net_weight_g": 50,
       "ingredients": "Organic Whole-Leaf Green Tea (Camellia sinensis), Holy Basil Leaves (Ocimum sanctum).",
@@ -150,7 +150,7 @@
     {
       "handle": "whiskey-green-tea",
       "name": "Whiskey Green Tea",
-      "price": 349,
+      "price": 499,
       "mrp": 499,
       "net_weight_g": 50,
       "ingredients": "Whole-Leaf Green Tea, Natural Whiskey Flavour.",

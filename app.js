@@ -994,7 +994,7 @@ const TEAS = [
     "bg": "#d4edd8",
     "color": "#3a7a50",
     "img": "teas/lemongrass-lifestyle.webp",
-    "price": 279,
+    "price": 499,
     "badge": "BRIGHT CITRUS",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
@@ -1025,7 +1025,7 @@ const TEAS = [
     "bg": "#c8dff0",
     "color": "#2a5a8a",
     "img": "teas/blue-flower-lifestyle.webp",
-    "price": 349,
+    "price": 499,
     "badge": "BLUE BOTANICALS",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
@@ -1056,7 +1056,7 @@ const TEAS = [
     "bg": "#f5e9a0",
     "color": "#8a6a10",
     "img": "teas/rum-lifestyle.webp",
-    "price": 389,
+    "price": 499,
     "badge": "ZERO ALCOHOL",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
@@ -1087,7 +1087,7 @@ const TEAS = [
     "bg": "#e8d4f0",
     "color": "#6a3a8a",
     "img": "teas/spearmint-lifestyle.webp",
-    "price": 349,
+    "price": 499,
     "badge": "COOL MINT",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
@@ -1118,7 +1118,7 @@ const TEAS = [
     "bg": "#d4edd8",
     "color": "#3a7a50",
     "img": "teas/tulsi-lifestyle.webp",
-    "price": 279,
+    "price": 499,
     "badge": "HERBAL AROMA",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
@@ -1149,7 +1149,7 @@ const TEAS = [
     "bg": "#f5e9a0",
     "color": "#8a6a10",
     "img": "teas/chamomile-lifestyle.webp",
-    "price": 299,
+    "price": 499,
     "badge": "SOFT FLORAL",
     "brew": "85–90°C · 2 minutes · 2–2.5g per cup",
     "benefits": [
@@ -1180,7 +1180,7 @@ const TEAS = [
     "bg": "#e0d4c8",
     "color": "#5a4030",
     "img": "teas/whiskey-lifestyle.webp",
-    "price": 349,
+    "price": 499,
     "badge": "ZERO ALCOHOL",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
@@ -1211,7 +1211,7 @@ const TEAS = [
     "bg": "#c0e0dc",
     "color": "#1b7a82",
     "img": "teas/gaba-lifestyle.webp",
-    "price": 449,
+    "price": 499,
     "badge": "MELLOW OOLONG",
     "brew": "85–90°C · 2 minutes · 2–2.5g per cup",
     "benefits": [
@@ -1242,7 +1242,7 @@ const TEAS = [
     "bg": "#c8e8c0",
     "color": "#2a6a2a",
     "img": "teas/organic-lifestyle.webp",
-    "price": 259,
+    "price": 499,
     "badge": "ORGANIC",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [
@@ -1273,7 +1273,7 @@ const TEAS = [
     "bg": "#fdf2e9",
     "color": "#935116",
     "img": "teas/ginger-lifestyle.webp",
-    "price": 299,
+    "price": 499,
     "badge": "WARMING GINGER",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
     "benefits": [

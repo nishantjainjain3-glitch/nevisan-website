@@ -57,6 +57,8 @@ def main():
             text = re.sub(fr'(<meta {attr}="{key}" content=")[^"]*(">)', lambda m: m[1] + escape(value, quote=True) + m[2], text)
         text = re.sub(r'(<div class="product-price"><strong>)₹\d+', lambda m: m[1] + f"₹{p['price']}", text)
         text = re.sub(r'(<div class="sticky-price">\s*)₹\d+', lambda m: m[1] + f"₹{p['price']}", text)
+        text = text.replace('50g · inclusive of all taxes', 'MRP · 50g · inclusive of all taxes').replace('MRP · MRP ·', 'MRP ·')
+        text = text.replace('50g · whole leaf', 'MRP · 50g · whole leaf').replace('MRP · MRP ·', 'MRP ·')
         text = re.sub(r'<p><strong>Ingredients:</strong>.*?</p>', '<p><strong>Ingredients:</strong> ' + escape(p['ingredients']) + ' Refer to your current pouch for the complete ingredient declaration.</p>', text)
         for label, value in [('Water', p['brew']['water']), ('Leaves', p['brew']['leaves']), ('First steep', p['brew']['time'])]:
             text = re.sub(fr'(<dt>{label}</dt><dd>).*?(</dd>)', lambda m: m[1] + escape(value) + m[2], text)
@@ -118,13 +120,16 @@ def main():
         text = path.read_text(encoding='utf-8')
         text = re.sub(r'between ₹\d+ and ₹\d+', f'between ₹{minimum} and ₹{maximum}', text)
         text = re.sub(r'from ₹\d+ to ₹\d+', f'from ₹{minimum} to ₹{maximum}', text)
+        if minimum == maximum:
+            text = text.replace(f'The current 50g tea collection is priced between ₹{minimum} and ₹{maximum}, depending on the blend.', f'Every 50g packet is listed at its MRP of ₹{minimum}.')
+            text = text.replace(f'with selling prices ranging from ₹{minimum} to ₹{maximum}', f'and are listed at that MRP')
         if name.startswith('faq/'):
             text = text.replace('id="faq-status" aria-live="polite">40 questions', 'id="faq-status" aria-live="polite">43 questions')
         write(path, text)
     cost_path = ROOT / 'journal/the-real-cost-of-cheap-tea-bags/index.html'
     cost_text = cost_path.read_text(encoding='utf-8')
     price = BY_HANDLE['organic-green-tea']['price']
-    example = f'A 50g pouch gives about 20–25 first servings when you use 2–2.5g per cup. At the current Organic Green Tea selling price of ₹{price}, that is approximately ₹{price/25:.2f}–₹{price/20:.2f} per first serving. Direct orders include free shipping. This example uses the displayed selling price, not the ₹499 MRP; check the product page for the current price. Using more leaf gives fewer servings.'
+    example = f'A 50g pouch gives about 20–25 first servings when you use 2–2.5g per cup. At the listed MRP of ₹{price}, that is approximately ₹{price/25:.2f}–₹{price/20:.2f} per first serving. Direct orders include free shipping. Check the product page for the current listed price. Using more leaf gives fewer servings.'
     cost_text = re.sub(r'<p(?: id="cost-example")?>A 50g pouch.*?</p>', '<p id="cost-example">' + example + '</p>', cost_text)
     cost_text = cost_text.replace('Updated 5 October 2026', 'Updated 28 October 2026')
     write(cost_path, cost_text)

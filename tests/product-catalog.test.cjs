@@ -22,6 +22,8 @@ test('all customer price surfaces and pack weights agree with the checked catalo
     assert.ok(detail.includes('Maximum Retail Price (MRP):</strong> ₹499'));
     assert.equal(p.net_weight_g, 50);
     assert.equal(p.mrp, 499);
+    assert.equal(p.price, p.mrp, 'The owner lists every packet at MRP; private quotes are handled on WhatsApp.');
+    assert.ok(!/<del\b|nevisan-price__saving|\d+% off/.test(detail), 'No public discount or crossed-out price.');
     assert.ok(p.price > 0 && p.price <= p.mrp);
     const product = entities(detail).find(x => x['@type'] === 'Product');
     const home = homeProducts.find(x => x.url.endsWith(`/${p.handle}/`));

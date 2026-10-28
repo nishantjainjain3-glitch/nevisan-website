@@ -138,7 +138,7 @@
         h('h3', null, h('a', { href: productUrl }, tea.name)),
         h('p', { className: 'lux-tea-card__notes' }, notes[tea.name] || 'Whole-leaf character, from Golaghat, Assam.'),
         h('div', { className: 'lux-tea-card__bottom' },
-          h('p', { className: 'lux-tea-card__price' }, `₹${tea.price || 499}`, h('span', null, ' / 50g')),
+          h('p', { className: 'lux-tea-card__price' }, `MRP ₹${tea.price || 499}`, h('span', null, ' / 50g')),
           h('a', { href: productUrl, className: 'lux-tea-card__discover', 'aria-label': `View ${tea.name} product page` }, 'View product ↗')
         ),
         h('button', { type: 'button', className: 'lux-tea-card__buy', onClick: () => setBuy(true) }, 'Choose your store'),

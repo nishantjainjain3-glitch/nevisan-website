@@ -24,7 +24,7 @@
   const inputs = catalog.map(tea => {
     const row = document.createElement('div'); row.className = 'product';
     const description = document.createElement('div'); const heading = document.createElement('h3'); heading.textContent = tea.title.replace(/^Nevisan /,'');
-    const price = document.createElement('p'); price.textContent = `${api.money(tea.price)} · 50g packet`;
+    const price = document.createElement('p'); price.textContent = `MRP ${api.money(tea.price)} · 50g packet`;
     description.append(heading,price);
     const label = document.createElement('label'); label.className = 'packet-label'; label.textContent = 'Packets';
     const input = document.createElement('input'); input.type='number'; input.min='0'; input.max='1000'; input.step='1'; input.value=String(initial.find(i=>i.handle===tea.handle)?.quantity || 0); input.setAttribute('aria-label',tea.title + ' packet quantity');

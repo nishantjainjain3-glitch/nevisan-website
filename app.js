@@ -5295,6 +5295,18 @@ function FAQSection() {
   {
     "q": "Which Nevisan tea variety suits my daily routine?",
     "a": "Choose Lemongrass for citrus notes, Spearmint for cool mint, Tulsi for herbal aroma, Chamomile for a floral cup, GABA Oolong for a mellow flavor, and Ginger for spice. Rum and Whiskey blends offer distinctive non-alcoholic flavors. Consider the caffeine content when choosing your serving time."
+  },
+  {
+    "q": "How do I order directly through Nevisan Pay?",
+    "a": "Choose your teas and the number of 50g packets in Nevisan Pay. Enter your delivery details, review the INR total and pay the exact amount by UPI. Open WhatsApp, attach your payment screenshot and press Send. Keep your NEV request reference. Nevisan confirms your order after checking the actual ICICI bank credit and accepting the order; opening the payment app or preparing a message is not confirmation."
+  },
+  {
+    "q": "Where do you deliver and when will my order arrive?",
+    "a": "Direct orders include free shipping. Within India, we deliver via India Post to serviceable PIN codes. International delivery is available by arrangement: confirm your destination, delivery arrangements and order total with Nevisan on WhatsApp before paying. Indian orders are usually dispatched within 24–48 hours after payment verification and order acceptance, with an estimated 3–7 business days in transit after dispatch. These are estimates, not guaranteed dates. International schedules are confirmed individually. Tracking is shared on WhatsApp after dispatch."
+  },
+  {
+    "q": "Can I return my tea?",
+    "a": "Tea is a non-returnable food product. We do not accept change-of-mind returns or exchanges. If your item is damaged, incorrect or defective, contact Nevisan promptly with your NEV reference and photos of the item and packaging; reporting within 48 hours of delivery where possible helps us investigate. We will review the issue and arrange the appropriate remedy. This policy does not affect your rights under applicable law."
   }
 ];
 
@@ -5500,7 +5512,7 @@ function FAQSection() {
               e.currentTarget.style.transform = "none";
             },
           },
-          "See all 40 questions →",
+          "See all 43 questions →",
         ),
         React.createElement(
           "a",

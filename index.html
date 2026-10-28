@@ -50,8 +50,7 @@
 <meta name="twitter:image" content="https://nevisan.in/hero-bg.jpg" />
 
 <!-- Structured Data: Organization + WebSite + Products + FAQ -->
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -567,19 +566,40 @@
             "@type": "Answer",
             "text": "Choose Lemongrass for citrus notes, Spearmint for cool mint, Tulsi for herbal aroma, Chamomile for a floral cup, GABA Oolong for a mellow flavor, and Ginger for spice. Rum and Whiskey blends offer distinctive non-alcoholic flavors. Consider the caffeine content when choosing your serving time."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I order directly through Nevisan Pay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose your teas and the number of 50g packets in Nevisan Pay. Enter your delivery details, review the INR total and pay the exact amount by UPI. Open WhatsApp, attach your payment screenshot and press Send. Keep your NEV request reference. Nevisan confirms your order after checking the actual ICICI bank credit and accepting the order; opening the payment app or preparing a message is not confirmation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do you deliver and when will my order arrive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Direct orders include free shipping. Within India, we deliver via India Post to serviceable PIN codes. International delivery is available by arrangement: confirm your destination, delivery arrangements and order total with Nevisan on WhatsApp before paying. Indian orders are usually dispatched within 24–48 hours after payment verification and order acceptance, with an estimated 3–7 business days in transit after dispatch. These are estimates, not guaranteed dates. International schedules are confirmed individually. Tracking is shared on WhatsApp after dispatch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I return my tea?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tea is a non-returnable food product. We do not accept change-of-mind returns or exchanges. If your item is damaged, incorrect or defective, contact Nevisan promptly with your NEV reference and photos of the item and packaging; reporting within 48 hours of delivery where possible helps us investigate. We will review the issue and arrange the appropriate remedy. This policy does not affect your rights under applicable law."
+          }
         }
       ]
     }
   ]
-}
-</script>
+}</script>
 
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": []
-}
-</script>
+}</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -589,12 +609,12 @@
 <link rel="dns-prefetch" href="https://www.google-analytics.com">
 <link rel="preload" as="script" href="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous">
 <link rel="preload" as="script" href="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous">
-<link rel="preload" as="script" href="/app.js?v=88">
+<link rel="preload" as="script" href="/app.js?v=89">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"></noscript>
 <style>
   @font-face { font-family: 'Playfair Display'; font-display: swap; }
-  
+
   :root {
     --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
     --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -632,7 +652,7 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Plus Jakarta Sans', sans-serif; background: #F8F6F2; color: #1F2E24; overflow-x: hidden; }
-  
+
   @keyframes ticker {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
@@ -852,7 +872,7 @@
     #nev-scroll-progress { display: none; }
   }
 
-  
+
 
   /* Emil: active scale on ALL buttons */
   button:active { transform: scale(0.97) !important; }
@@ -1027,6 +1047,7 @@
 <link rel="preload" as="image" href="/hero-bg.webp" media="(min-width: 769px)" fetchpriority="high">
 <link rel="preload" as="image" href="/hero-mobile-fast.webp?v=1" media="(max-width: 768px)" fetchpriority="high">
 <link rel="stylesheet" href="/site-polish.css?v=6">
+<link rel="stylesheet" href="/order-policy.css?v=1">
 </head>
 <body class="premium-site">
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -1052,9 +1073,9 @@
   <!-- CSS-only scroll progress bar (MWG animation-timeline) -->
   <div id="nev-scroll-progress" aria-hidden="true"></div>
 
-  
-  
-  
+
+
+
 
 
 
@@ -1076,10 +1097,12 @@
 <script src="/premium-experience.js?v=4" defer></script>
 <script src="/product-atelier.js?v=6" defer></script>
 <script src="/checkout/cart-bridge.js?v=2" defer></script>
-<script src="/app.js?v=88" defer></script>
+<script src="/app.js?v=89" defer></script>
 
 
 
 <script src="/site-polish.js?v=1" defer></script>
+
+<!-- nevisan-order-policy:start --><aside class="nevisan-order-policy" aria-label="Ordering and delivery policy"><details><summary>Ordering, delivery &amp; no returns</summary><h2>How to order</h2><p>Choose your teas and the number of 50g packets in Nevisan Pay. Enter your delivery details, review the INR total and pay the exact amount by UPI. Open WhatsApp, attach your payment screenshot and press Send. Keep your NEV request reference. Nevisan confirms your order after checking the actual ICICI bank credit and accepting the order; opening the payment app or preparing a message is not confirmation.</p><h2>Delivery</h2><p>Direct orders include free shipping. Within India, we deliver via India Post to serviceable PIN codes. International delivery is available by arrangement: confirm your destination, delivery arrangements and order total with Nevisan on WhatsApp before paying. Indian orders are usually dispatched within 24–48 hours after payment verification and order acceptance, with an estimated 3–7 business days in transit after dispatch. These are estimates, not guaranteed dates. International schedules are confirmed individually. Tracking is shared on WhatsApp after dispatch.</p><h2>No returns</h2><p>Tea is a non-returnable food product. We do not accept change-of-mind returns or exchanges. If your item is damaged, incorrect or defective, contact Nevisan promptly with your NEV reference and photos of the item and packaging; reporting within 48 hours of delivery where possible helps us investigate. We will review the issue and arrange the appropriate remedy. This policy does not affect your rights under applicable law.</p><h2>Order support</h2><p>For payment, delivery or tracking help, WhatsApp +91 98642 45687 or email care@nevisan.in and quote your NEV reference. If your account was debited, do not pay again while awaiting review.</p><h2>Marketplace orders</h2><p>Amazon and Flipkart orders are placed and supported through the selected marketplace. Its displayed price, delivery estimate and applicable return or refund terms govern that purchase.</p><p><a href="/checkout/">Order with Nevisan Pay</a> · <a href="/terms-of-service.html#ordering">Read the full policy</a> · <a href="https://wa.me/919864245687">Contact Nevisan</a></p></details></aside><!-- nevisan-order-policy:end -->
 </body>
 </html>

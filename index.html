@@ -50,7 +50,8 @@
 <meta name="twitter:image" content="https://nevisan.in/hero-bg.jpg" />
 
 <!-- Structured Data: Organization + WebSite + Products + FAQ -->
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -258,13 +259,44 @@
     {
       "@type": "Product",
       "name": "Nevisan Organic Green Tea",
-      "description": "Fresh, grassy notes and whole-leaf character. Whole-leaf Assam tea.",
+      "description": "Organic whole-leaf Assam green tea with fresh, grassy notes. An unflavoured 50g loose-leaf packet. Contains caffeine; follow the pouch brewing guide.",
       "brand": {
         "@type": "Brand",
         "name": "Nevisan"
       },
       "image": "https://nevisan.in/teas/organic-lifestyle.webp",
       "url": "https://nevisan.in/products/organic-green-tea/",
+      "offers": {
+        "@type": "Offer",
+        "price": "259",
+        "priceCurrency": "INR",
+        "seller": {
+          "@type": "Organization",
+          "name": "Nevisan Tea"
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IN",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://nevisan.in/terms-of-service.html#returns"
+        }
+      },
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": 50,
+        "unitCode": "GRM"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Nevisan Lemongrass Green Tea",
+      "description": "Whole-leaf Assam green tea with dried lemongrass stalks and bright citrus notes. 50g loose-leaf packet for hot or iced tea. Contains caffeine.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Nevisan"
+      },
+      "image": "https://nevisan.in/teas/lemongrass-lifestyle.webp",
+      "url": "https://nevisan.in/products/lemongrass-green-tea/",
       "offers": {
         "@type": "Offer",
         "price": "279",
@@ -279,38 +311,17 @@
           "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
           "merchantReturnLink": "https://nevisan.in/terms-of-service.html#returns"
         }
-      }
-    },
-    {
-      "@type": "Product",
-      "name": "Nevisan Lemongrass Green Tea",
-      "description": "Bright citrus with a gentle grassy finish. Whole-leaf Assam tea.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Nevisan"
       },
-      "image": "https://nevisan.in/teas/lemongrass-lifestyle.webp",
-      "url": "https://nevisan.in/products/lemongrass-green-tea/",
-      "offers": {
-        "@type": "Offer",
-        "price": "299",
-        "priceCurrency": "INR",
-        "seller": {
-          "@type": "Organization",
-          "name": "Nevisan Tea"
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "IN",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-          "merchantReturnLink": "https://nevisan.in/terms-of-service.html#returns"
-        }
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": 50,
+        "unitCode": "GRM"
       }
     },
     {
       "@type": "Product",
       "name": "Nevisan Blue Flower Green Tea",
-      "description": "Delicate florals and a vivid blue cup. Whole-leaf Assam tea.",
+      "description": "Whole-leaf Assam green tea with dried butterfly pea flowers. A floral, blue-coloured cup. 50g loose-leaf packet; contains caffeine.",
       "brand": {
         "@type": "Brand",
         "name": "Nevisan"
@@ -319,7 +330,7 @@
       "url": "https://nevisan.in/products/blue-flower-green-tea/",
       "offers": {
         "@type": "Offer",
-        "price": "379",
+        "price": "349",
         "priceCurrency": "INR",
         "seller": {
           "@type": "Organization",
@@ -331,12 +342,17 @@
           "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
           "merchantReturnLink": "https://nevisan.in/terms-of-service.html#returns"
         }
+      },
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": 50,
+        "unitCode": "GRM"
       }
     },
     {
       "@type": "Product",
       "name": "Nevisan Rum Green Tea",
-      "description": "Sugarcane warmth, spices and oak notes. Whole-leaf Assam tea.",
+      "description": "Whole-leaf Assam green tea with natural rum flavour and warm molasses and vanilla notes. Non-alcoholic 50g loose-leaf packet; contains caffeine.",
       "brand": {
         "@type": "Brand",
         "name": "Nevisan"
@@ -345,7 +361,7 @@
       "url": "https://nevisan.in/products/rum-green-tea/",
       "offers": {
         "@type": "Offer",
-        "price": "399",
+        "price": "389",
         "priceCurrency": "INR",
         "seller": {
           "@type": "Organization",
@@ -357,12 +373,17 @@
           "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
           "merchantReturnLink": "https://nevisan.in/terms-of-service.html#returns"
         }
+      },
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": 50,
+        "unitCode": "GRM"
       }
     },
     {
       "@type": "Product",
       "name": "Nevisan Spearmint Green Tea",
-      "description": "Refreshing mint with a clean, bright finish. Whole-leaf Assam tea.",
+      "description": "Whole-leaf Assam green tea with spearmint leaves and a cool mint finish. 50g loose-leaf packet for hot or iced tea. Contains caffeine.",
       "brand": {
         "@type": "Brand",
         "name": "Nevisan"
@@ -371,7 +392,7 @@
       "url": "https://nevisan.in/products/spearmint-green-tea/",
       "offers": {
         "@type": "Offer",
-        "price": "399",
+        "price": "349",
         "priceCurrency": "INR",
         "seller": {
           "@type": "Organization",
@@ -383,18 +404,54 @@
           "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
           "merchantReturnLink": "https://nevisan.in/terms-of-service.html#returns"
         }
+      },
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": 50,
+        "unitCode": "GRM"
       }
     },
     {
       "@type": "Product",
       "name": "Nevisan Tulsi Green Tea",
-      "description": "Herbaceous warmth with a fragrant tulsi note. Whole-leaf Assam tea.",
+      "description": "Whole-leaf Assam green tea with holy basil (tulsi) leaves and a fragrant herbal character. 50g loose-leaf packet. Contains caffeine.",
       "brand": {
         "@type": "Brand",
         "name": "Nevisan"
       },
       "image": "https://nevisan.in/teas/tulsi-lifestyle.webp",
       "url": "https://nevisan.in/products/tulsi-green-tea/",
+      "offers": {
+        "@type": "Offer",
+        "price": "279",
+        "priceCurrency": "INR",
+        "seller": {
+          "@type": "Organization",
+          "name": "Nevisan Tea"
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IN",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://nevisan.in/terms-of-service.html#returns"
+        }
+      },
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": 50,
+        "unitCode": "GRM"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Nevisan Chamomile Green Tea",
+      "description": "Whole-leaf Assam green tea with chamomile flowers and soft floral notes. 50g loose-leaf packet. This green-tea blend contains caffeine.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Nevisan"
+      },
+      "image": "https://nevisan.in/teas/chamomile-lifestyle.webp",
+      "url": "https://nevisan.in/products/chamomile-green-tea/",
       "offers": {
         "@type": "Offer",
         "price": "299",
@@ -409,38 +466,17 @@
           "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
           "merchantReturnLink": "https://nevisan.in/terms-of-service.html#returns"
         }
-      }
-    },
-    {
-      "@type": "Product",
-      "name": "Nevisan Chamomile Green Tea",
-      "description": "Soft florals with honeyed apple notes. Whole-leaf Assam tea.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Nevisan"
       },
-      "image": "https://nevisan.in/teas/chamomile-lifestyle.webp",
-      "url": "https://nevisan.in/products/chamomile-green-tea/",
-      "offers": {
-        "@type": "Offer",
-        "price": "329",
-        "priceCurrency": "INR",
-        "seller": {
-          "@type": "Organization",
-          "name": "Nevisan Tea"
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "IN",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-          "merchantReturnLink": "https://nevisan.in/terms-of-service.html#returns"
-        }
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": 50,
+        "unitCode": "GRM"
       }
     },
     {
       "@type": "Product",
       "name": "Nevisan Whiskey Green Tea",
-      "description": "A bold cup with malt and smoky oak notes. Whole-leaf Assam tea.",
+      "description": "Whole-leaf Assam green tea with natural whiskey flavour and smoky malt and oak notes. Non-alcoholic 50g loose-leaf packet; contains caffeine.",
       "brand": {
         "@type": "Brand",
         "name": "Nevisan"
@@ -449,7 +485,7 @@
       "url": "https://nevisan.in/products/whiskey-green-tea/",
       "offers": {
         "@type": "Offer",
-        "price": "399",
+        "price": "349",
         "priceCurrency": "INR",
         "seller": {
           "@type": "Organization",
@@ -461,12 +497,17 @@
           "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
           "merchantReturnLink": "https://nevisan.in/terms-of-service.html#returns"
         }
+      },
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": 50,
+        "unitCode": "GRM"
       }
     },
     {
       "@type": "Product",
       "name": "Nevisan GABA Oolong Tea",
-      "description": "Toasty amber, stone fruit and smooth honey. Whole-leaf Assam tea.",
+      "description": "Whole-leaf Assam GABA oolong with toasty, stone-fruit and honey-like notes. 50g loose-leaf packet, manufactured by GABA Tea Pvt. Ltd. Contains caffeine.",
       "brand": {
         "@type": "Brand",
         "name": "Nevisan"
@@ -487,12 +528,17 @@
           "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
           "merchantReturnLink": "https://nevisan.in/terms-of-service.html#returns"
         }
+      },
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": 50,
+        "unitCode": "GRM"
       }
     },
     {
       "@type": "Product",
       "name": "Nevisan Ginger Green Tea",
-      "description": "Ginger warmth with a mellow green-tea finish. Whole-leaf Assam tea.",
+      "description": "Whole-leaf Assam green tea with dried ginger flakes and natural ginger flavour. A warming, fragrant cup. 50g loose-leaf packet; contains caffeine.",
       "brand": {
         "@type": "Brand",
         "name": "Nevisan"
@@ -502,7 +548,7 @@
       "offers": {
         "@type": "Offer",
         "url": "https://nevisan.in/products/ginger-green-tea/",
-        "price": "389",
+        "price": "299",
         "priceCurrency": "INR",
         "seller": {
           "@type": "Organization",
@@ -514,6 +560,11 @@
           "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
           "merchantReturnLink": "https://nevisan.in/terms-of-service.html#returns"
         }
+      },
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": 50,
+        "unitCode": "GRM"
       }
     },
     {
@@ -594,12 +645,15 @@
       ]
     }
   ]
-}</script>
+}
+</script>
 
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": []
-}</script>
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -609,7 +663,7 @@
 <link rel="dns-prefetch" href="https://www.google-analytics.com">
 <link rel="preload" as="script" href="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous">
 <link rel="preload" as="script" href="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous">
-<link rel="preload" as="script" href="/app.js?v=89">
+<link rel="preload" as="script" href="/app.js?v=90">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"></noscript>
 <style>
@@ -1097,7 +1151,7 @@
 <script src="/premium-experience.js?v=4" defer></script>
 <script src="/product-atelier.js?v=6" defer></script>
 <script src="/checkout/cart-bridge.js?v=2" defer></script>
-<script src="/app.js?v=89" defer></script>
+<script src="/app.js?v=90" defer></script>
 
 
 

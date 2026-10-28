@@ -30,6 +30,6 @@ test('all ten product pages have usable static checkout links and quantity-updat
   const links=[...html.matchAll(/<a\b[^>]*data-nevisan-order[^>]*>/g)];
   assert.equal(links.length,4,file);
   for(const [tag] of links){const href=tag.match(/href="([^"]+)"/)[1];const url=new URL(href,'https://nevisan.in');assert.equal(url.pathname,'/checkout/');assert.deepEqual(JSON.parse(url.searchParams.get('items')),[{handle:entry.name,quantity:1}]);}
-  assert.ok(html.includes('product-order.js?v=3'),file);
+  assert.ok(html.includes('product-order.js?v=4'),file);
  }
 });

@@ -155,14 +155,36 @@ const T = {
     updateQty: () => {},
     clearCart: () => {},
   });
+function readSavedCart() {
+  try {
+    const saved = JSON.parse(window.sessionStorage.getItem('nevisan-cart-v1') || '[]');
+    if (!Array.isArray(saved) || saved.length > TEAS.length) return [];
+    const seen = new Set();
+    return saved.map(item => {
+      const tea = TEAS.find(tea => tea.name === item.name);
+      if (!tea || seen.has(item.name) || !Number.isSafeInteger(item.qty) || item.qty < 1 || item.qty > 1000) throw new Error('Invalid saved cart');
+      seen.add(item.name);
+      return {tea, qty:item.qty};
+    });
+  } catch { return []; }
+}
+function saveCart(cart) {
+  try {
+    window.sessionStorage.setItem('nevisan-cart-v1', JSON.stringify(cart.map(({tea,qty}) => ({name:tea.name,qty}))));
+  } catch { /* Shopping still works when browser storage is unavailable. */ }
+}
 function CartProvider({ children: e }) {
-  const [t, a] = useState([]);
+  const [t, a] = useState(readSavedCart);
+  useEffect(() => saveCart(t), [t]);
   return React.createElement(
     CartCtx.Provider,
     {
       value: {
         cart: t,
         addToCart: (e) => {
+          const known = TEAS.find(tea => tea.name === e?.name);
+          if (!known) return;
+          e = known;
           try {
             const m = {
               "Lemongrass Green Tea": "KT-8GBE-8MZG",
@@ -189,16 +211,16 @@ function CartProvider({ children: e }) {
           a((t) =>
             t.find((t) => t.tea.name === e.name)
               ? t.map((t) =>
-                  t.tea.name === e.name ? { ...t, qty: t.qty + 1 } : t,
+                  t.tea.name === e.name ? { ...t, qty: Math.min(1000, t.qty + 1) } : t,
                 )
               : [...t, { tea: e, qty: 1 }],
           );
         },
-        updateQty: (e, t) =>
+        updateQty: (e, t) => Number.isSafeInteger(t) &&
           a((a) =>
             a
               .map((a) =>
-                a.tea.name === e ? { ...a, qty: Math.max(0, a.qty + t) } : a,
+                a.tea.name === e ? { ...a, qty: Math.min(1000, Math.max(0, a.qty + t)) } : a,
               )
               .filter((e) => e.qty > 0),
           ),
@@ -1301,10 +1323,12 @@ function TagChip({ label: e, color: t }) {
 function BuyModal({ tea: e, onClose: t }) {
   const { isMobile: n } = useViewport();
   useEffect(() => {
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
     const e = (e) => "Escape" === e.key && t();
     return (
       window.addEventListener("keydown", e),
-      () => window.removeEventListener("keydown", e)
+      () => { window.removeEventListener("keydown", e); document.body.style.overflow = overflow; }
     );
   }, [t]);
   return ReactDOM.createPortal(
@@ -1323,7 +1347,7 @@ function BuyModal({ tea: e, onClose: t }) {
           inset: 0,
           background: "rgba(15, 39, 27, 0.65)",
           backdropFilter: "blur(6px)",
-          zIndex: 9999,
+          zIndex: 100000,
           display: "flex",
           alignItems: n ? "flex-end" : "center",
           justifyContent: "center",
@@ -1340,6 +1364,9 @@ function BuyModal({ tea: e, onClose: t }) {
             borderRadius: n ? "24px 24px 0 0" : 20,
             width: "100%",
             maxWidth: 460,
+            maxHeight: "100dvh",
+            overflowY: "auto",
+            overscrollBehavior: "contain",
             padding: n ? "24px 20px 32px" : "28px 24px",
             boxShadow: "0 24px 60px rgba(0,0,0,0.3)",
             border: `1px solid ${T.border}`,
@@ -1561,7 +1588,7 @@ function BuyModal({ tea: e, onClose: t }) {
 
 
 function TeaCard({ tea, onView, onImageClick }) {
-  return React.createElement(NevisanPremium.TeaCard, { tea, onView, onImageClick, BuyModal });
+  return React.createElement(NevisanPremium.TeaCard, { tea, onView, onImageClick, BuyModal, AddToCartBtn });
 }
 function ImageLightbox({ img: e, name: t, onClose: a }) {
   return (
@@ -7855,6 +7882,13 @@ function CartSheet({ onClose: e }) {
   const { cart: t, updateQty: a, clearCart: n } = useCart(),
     o = (useViewport(), t.reduce((e, t) => e + (t.tea.price || getTeaPrice(t.tea.name)) * t.qty, 0)),
     i = t.reduce((e, t) => e + t.qty, 0);
+  useEffect(() => {
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const close = event => { if (event.key === 'Escape') e(); };
+    window.addEventListener('keydown', close);
+    return () => { window.removeEventListener('keydown', close); document.body.style.overflow = overflow; };
+  }, [e]);
   return ReactDOM.createPortal(
     React.createElement(
       "div",
@@ -7866,7 +7900,7 @@ function CartSheet({ onClose: e }) {
           position: "fixed",
           inset: 0,
           background: "rgba(0,0,0,0.55)",
-          zIndex: 400,
+          zIndex: 100000,
           display: "flex",
           alignItems: "flex-end",
           justifyContent: "center",
@@ -7882,6 +7916,7 @@ function CartSheet({ onClose: e }) {
             width: "100%",
             maxWidth: 500,
             maxHeight: "85vh",
+            overscrollBehavior: "contain",
             display: "flex",
             flexDirection: "column",
             animation: "slide-up 0.3s ease both",
@@ -7941,8 +7976,8 @@ function CartSheet({ onClose: e }) {
                 background: "rgba(0,0,0,0.07)",
                 border: "none",
                 borderRadius: "50%",
-                width: 32,
-                height: 32,
+                width: 44,
+                height: 44,
                 cursor: "pointer",
                 fontSize: 16,
                 display: "flex",
@@ -7955,7 +7990,8 @@ function CartSheet({ onClose: e }) {
         ),
         React.createElement(
           "div",
-          { style: { overflowY: "auto", flex: 1, padding: "12px 20px" } },
+          { style: { overflowY: "auto", overscrollBehavior: "contain", minHeight: 0, flex: 1, padding: "12px 20px" } },
+          !t.length && React.createElement('p', {role:'status'}, 'Your cart is empty. Choose a tea to start your order.'),
           t.map((e) =>
             React.createElement(
               "div",
@@ -8008,7 +8044,7 @@ function CartSheet({ onClose: e }) {
               ),
               React.createElement(
                 "div",
-                { style: { flex: 1, minWidth: 0 } },
+                { style: { flex: 1, minWidth: 0, overflowWrap: "anywhere" } },
                 React.createElement(
                   "div",
                   {
@@ -8051,9 +8087,10 @@ function CartSheet({ onClose: e }) {
                   "button",
                   {
                     onClick: () => a(e.tea.name, -1),
+                    "aria-label": `Remove one ${e.tea.name} packet`,
                     style: {
-                      width: 30,
-                      height: 30,
+                      width: 44,
+                      height: 44,
                       borderRadius: "50%",
                       border: `1.5px solid ${T.teal}`,
                       background: "none",
@@ -8086,9 +8123,11 @@ function CartSheet({ onClose: e }) {
                   "button",
                   {
                     onClick: () => a(e.tea.name, 1),
+                    "aria-label": `Add one ${e.tea.name} packet`,
+                    disabled: e.qty >= 1000,
                     style: {
-                      width: 30,
-                      height: 30,
+                      width: 44,
+                      height: 44,
                       borderRadius: "50%",
                       background: T.teal,
                       border: "none",
@@ -8111,7 +8150,7 @@ function CartSheet({ onClose: e }) {
           "div",
           {
             style: {
-              padding: "16px 20px 28px",
+              padding: "16px 20px max(28px, env(safe-area-inset-bottom))",
               borderTop: "1px solid #f0f0f0",
               flexShrink: 0,
             },
@@ -8155,6 +8194,7 @@ function CartSheet({ onClose: e }) {
             "button",
             {
               className: "shine-button",
+              disabled: !t.length,
               onClick: () => {
                 if (window.NEVISAN_CART_CHECKOUT?.enabled) {
                   try { window.NEVISAN_CART_CHECKOUT.open(t); }
@@ -8231,6 +8271,7 @@ function CartSheet({ onClose: e }) {
             ),
             window.NEVISAN_CART_CHECKOUT?.enabled ? "Checkout · Free shipping · UPI" : "Place Order via WhatsApp",
           ),
+          React.createElement('button', {type:'button', onClick:e, style:{width:'100%',marginTop:12,padding:12,minHeight:44,border:'1px solid #23412D',background:'transparent',color:T.teal,cursor:'pointer'}}, 'Continue shopping'),
         ),
       ),
     ),
@@ -8241,7 +8282,7 @@ function CartFAB() {
   const { cart: e } = useCart(),
     [t, a] = useState(!1),
     n = e.reduce((e, t) => e + t.qty, 0);
-  return 0 === n
+  return 0 === n && !t
     ? null
     : React.createElement(
         React.Fragment,
@@ -8305,15 +8346,20 @@ function AddToCartBtn({ tea: e, onAdded: t }) {
   return React.createElement(
     "button",
     {
+      type: "button",
+      "aria-label": `Add ${e.name} to cart`,
+      "aria-live": "polite",
       onClick: () => {
         (a(e), o(!0), setTimeout(() => o(!1), 1500), t && t());
       },
       style: {
         width: "100%",
+        marginTop: 10,
+        minHeight: 44,
         background: n ? T.teal : T.tealDark,
         color: "#fff",
         border: "none",
-        borderRadius: 9999,
+        borderRadius: 3,
         padding: "13px",
         fontSize: 16,
         fontWeight: 700,

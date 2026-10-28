@@ -1,11 +1,11 @@
-/* A packet count shared by every WhatsApp action on a product page. */
+/* A packet count shared by purchase actions; support links remain support. */
 (function () {
   'use strict';
   function start() {
     const input = document.querySelector('[data-packet-quantity]');
     if (!input) return;
     const name = document.querySelector('h1').textContent.trim();
-    const links = Array.from(document.querySelectorAll('a[data-nevisan-order], a[href*="wa.me/"]'));
+    const links = Array.from(document.querySelectorAll('a[data-nevisan-order]'));
     function update() {
       const count = Number(input.value);
       const valid = Number.isSafeInteger(count) && count >= 1 && count <= 1000;

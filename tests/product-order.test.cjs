@@ -25,3 +25,17 @@ test('activated product actions carry the selected packet count into Nevisan Pay
  vm.runInContext(fs.readFileSync('product-order.js','utf8'),context);
  for(const link of links){const url=new URL(link.href,'https://nevisan.in');assert.equal(url.pathname,'/checkout/');assert.deepEqual(JSON.parse(url.searchParams.get('items')),[{handle:'gaba-oolong-tea',quantity:2}]);}
 });
+
+test('quantity changes never rewrite or validate WhatsApp support links',()=>{
+ const input={value:'2',events:{},setCustomValidity(message){this.error=message},reportValidity(){return !this.error},addEventListener(name,fn){this.events[name]=fn}};
+ const purchase={events:{},addEventListener(name,fn){this.events[name]=fn},removeAttribute(){}};
+ const support={href:'https://wa.me/919864245687',events:{},addEventListener(name,fn){this.events[name]=fn},removeAttribute(){}};
+ const document={readyState:'complete',querySelector(selector){return selector==='h1'?{textContent:'Ginger Green Tea'}:input},querySelectorAll(selector){return selector.includes('href*')?[purchase,support]:[purchase]}};
+ const context=vm.createContext({document,window:{},encodeURIComponent});
+ vm.runInContext(fs.readFileSync('checkout/cart-bridge.js','utf8'),context);
+ vm.runInContext(fs.readFileSync('product-order.js','utf8'),context);
+ input.value='0';input.events.input();
+ assert.equal(support.href,'https://wa.me/919864245687');
+ assert.equal(support.events.click,undefined);
+ assert.ok(purchase.href.startsWith('/checkout/'));
+});

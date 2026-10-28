@@ -12,6 +12,7 @@
     form.elements.phone.pattern=abroad ? '\\+?[0-9]{7,15}' : '(?:\\+91[ ]?)?[6-9][0-9]{9}';
     form.elements.postal_code.pattern=abroad ? '.{1,20}' : '[1-9][0-9]{5}';
     form.elements.postal_code.required=!abroad;
+    form.elements.postal_code.inputMode=abroad ? 'text' : 'numeric';
   }
   form.elements.country.addEventListener('input',addressRules);
   addressRules();
@@ -35,9 +36,16 @@
     if (inputs.some(({input})=>input.value.trim()==='') || raw.some(i=>!Number.isSafeInteger(i.quantity)||i.quantity<0||i.quantity>1000)) throw new Error('Use whole packet quantities between 0 and 1000.');
     return api.selection(raw.filter(i=>i.quantity>0),catalog);
   }
-  function update() {
+  function update(remember=false) {
     if(request) edit();
-    try { const items=read(); const packets=items.reduce((s,i)=>s+i.quantity,0); $('summary').textContent=`${packets} packet${packets===1?'':'s'} · Total ${api.money(api.total(items))} · Free shipping`; $('prepare').disabled=!items.length; }
+    try {
+      const items=read(); const packets=items.reduce((s,i)=>s+i.quantity,0);
+      $('summary').textContent=`${packets} packet${packets===1?'':'s'} · Total ${api.money(api.total(items))} · Free shipping`; $('prepare').disabled=!items.length;
+      if(remember) {
+        try { api.rememberCart(items,window.sessionStorage); } catch {}
+        const url=new URL(location.href);url.searchParams.set('items',JSON.stringify(items.map(({handle,quantity})=>({handle,quantity}))));history.replaceState(null,'',url);
+      }
+    }
     catch(error) { $('summary').textContent=error.message; $('prepare').disabled=true; }
   }
   function edit() { request=null; $('payment-panel').hidden=true; form.hidden=false; $('payment-details').hidden=true; $('bank-reference').value=''; $('international-confirmed').checked=false; notice('Review your details before preparing a new payment request.'); }
@@ -80,7 +88,7 @@
     notice('After WhatsApp opens, attach your screenshot and press Send. Payment remains subject to Nevisan’s bank-credit review.');
   });
   $('edit-order').addEventListener('click',()=>{edit();form.elements.first_name.focus();});
-  $('new-order').addEventListener('click',()=>{edit();form.reset();addressRules();inputs.forEach(({input})=>input.value='0');update();notice('Choose teas for your new request.');});
+  $('new-order').addEventListener('click',()=>{edit();form.reset();addressRules();inputs.forEach(({input})=>input.value='0');update(true);notice('Choose teas for your new request.');});
   update();
   if(!$('notice').textContent.includes('Please choose'))notice('Complimentary shipping. International delivery is confirmed with Nevisan on WhatsApp. Payment is verified manually.');
 })();

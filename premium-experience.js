@@ -111,7 +111,7 @@
   function OriginStrip() {
     return h('div', { className: 'origin-strip', 'aria-label': 'Nevisan tea essentials' }, ['Whole leaf', 'Single-origin Assam', 'Ten distinctive varieties', 'Packed with care in Guwahati'].map(text => h('span', { key: text }, text)));
   }
-  function TeaCard({ tea, onView, onImageClick, BuyModal }) {
+  function TeaCard({ tea, onView, onImageClick, BuyModal, AddToCartBtn }) {
     const [buy, setBuy] = useState(false);
     const root = useRef(null);
     useTilt(root);
@@ -142,6 +142,7 @@
           h('a', { href: productUrl, className: 'lux-tea-card__discover', 'aria-label': `View ${tea.name} product page` }, 'View product ↗')
         ),
         h('button', { type: 'button', className: 'lux-tea-card__buy', onClick: () => setBuy(true) }, 'Choose your store'),
+        AddToCartBtn && h(AddToCartBtn, { tea }),
         buy && h(BuyModal, { tea, onClose: () => setBuy(false) })
       )
     );

@@ -27,13 +27,22 @@ test('WhatsApp includes complete selection, delivery and manual payment review w
  assert.throws(()=>api.build(items,customer,'NEV-QATEST-12345678','123'));
  assert.match(new URL(api.build(items,customer,'NEV-QATEST-12345678','',true)).searchParams.get('text'),/before I pay/);
 });
-test('static checkout has no backend dependency or persistent customer storage',()=>{
+test('static checkout has no backend dependency and stores no customer or payment details',()=>{
  const html=fs.readFileSync('checkout/index.html','utf8');
  assert.ok(html.includes('static-checkout.js'));
  assert.ok(!html.includes('src="checkout.js')&&!html.includes('src="config.js')&&!html.includes('local-config.js'));
  const js=fs.readFileSync('checkout/static-checkout.js','utf8');
- assert.ok(!/fetch\(|localStorage|sessionStorage/.test(js));
+ assert.ok(!/fetch\(|localStorage/.test(js));
+ assert.ok(js.includes('api.rememberCart(items,window.sessionStorage)'));
  for(const tea of catalog){const html=fs.readFileSync(`products/${tea.handle}/index.html`,'utf8');assert.ok(html.includes('cart-bridge.js?v=2'));assert.ok(html.includes(`₹${tea.price}`));}
+});
+
+test('checkout cart memory contains only tea identities and packet counts',()=>{
+ let saved;
+ const items=api.selection([{handle:'ginger-green-tea',quantity:2}],catalog);
+ api.rememberCart(items,{setItem:(key,value)=>{assert.equal(key,'nevisan-cart-v1');saved=JSON.parse(value)}});
+ assert.deepEqual(saved,[{name:'Ginger Green Tea',qty:2}]);
+ assert.doesNotThrow(()=>api.rememberCart(items,{setItem(){throw new Error('Blocked')}}));
 });
 test('international addresses and phone numbers survive the WhatsApp handoff',()=>{
  const items=api.selection([{handle:'gaba-oolong-tea',quantity:1}],catalog);

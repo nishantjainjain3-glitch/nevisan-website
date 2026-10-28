@@ -30,6 +30,11 @@
   function mobileDevice(userAgent, touchPoints = 0) {
     return /Android|iPhone|iPad|iPod/i.test(userAgent) || (/Macintosh/i.test(userAgent) && touchPoints > 1);
   }
-  root.NevisanStaticOrder = {selection,money,total,build,upi,mobileDevice};
+  function rememberCart(items, storage) {
+    // Only product identities/counts: never delivery details, prices or payment data.
+    try { storage.setItem('nevisan-cart-v1', JSON.stringify(items.map(item => ({name:item.title.replace(/^Nevisan /,''),qty:item.quantity})))); }
+    catch { /* Cart storage is optional. */ }
+  }
+  root.NevisanStaticOrder = {selection,money,total,build,upi,mobileDevice,rememberCart};
   if (typeof module === 'object') module.exports = root.NevisanStaticOrder;
 })(typeof window === 'object' ? window : globalThis);

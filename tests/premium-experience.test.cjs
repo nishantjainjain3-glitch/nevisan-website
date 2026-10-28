@@ -51,6 +51,14 @@ function environment({ reduced = false, webglFails = false, missingThree = false
   return {controller,frames,objects,observers,host,document,motion,premium:window.NevisanPremium,counts:()=>({ready,failure})};
 }
 function elements(tree) { return [tree,...tree.children.flat(Infinity).filter(item=>item&&typeof item==='object').flatMap(elements)]; }
+
+test('the visible collection card exposes its cart action alongside store choices',()=>{
+ const e=environment();const cartComponent=()=>null;
+ const nodes=elements(e.premium.TeaCard({tea:{name:'Ginger Green Tea',price:299,img:'teas/ginger-lifestyle.webp'},onView(){},BuyModal:()=>null,AddToCartBtn:cartComponent}));
+ assert.ok(nodes.some(n=>n.type===cartComponent&&n.props.tea.name==='Ginger Green Tea'));
+ assert.ok(nodes.some(n=>n.type==='button'&&n.children.includes('Choose your store')));
+ e.controller.dispose();
+});
 test('Hero avoids video downloads on mobile, reduced motion, and data saver',()=>{
   for(const options of [{wide:false},{reduced:true},{saveData:true}]){
     const e=environment(options);const nodes=elements(e.premium.Hero({setPage(){}}));assert.equal(nodes.filter(n=>n.type==='video').length,0);assert.equal(nodes.filter(n=>n.type==='picture').length,1);e.controller.dispose();

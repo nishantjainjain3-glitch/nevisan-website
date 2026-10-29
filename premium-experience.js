@@ -4,10 +4,10 @@
   const h = React.createElement;
   const { useEffect, useRef, useState } = React;
   const ritualTeas = [
-    { name: 'GABA Oolong Tea', slug: 'gaba-oolong-tea', image: 'gaba', colour: '#ba671b', notes: 'Toasty amber · smooth honey', temp: '85°C', time: '2–3 minutes' },
-    { name: 'Spearmint Green Tea', slug: 'spearmint-green-tea', image: 'spearmint', colour: '#b6a43c', notes: 'Fresh mint · clean finish', temp: '85°C', time: '2 minutes' },
-    { name: 'Blue Flower Green Tea', slug: 'blue-flower-green-tea', image: 'blue-flower', colour: '#3658be', notes: 'Soft floral · a vivid blue cup', temp: '85°C', time: '2–3 minutes' },
-    { name: 'Ginger Green Tea', slug: 'ginger-green-tea', image: 'ginger', colour: '#ad8226', notes: 'Ginger warmth · mellow green tea', temp: '85°C', time: '2–3 minutes' }
+    { name: 'GABA Oolong Tea', slug: 'gaba-oolong-tea', image: 'gaba', colour: '#ba671b', notes: 'Toasty amber · smooth honey', temp:'85–90°C', time:'2 minutes' },
+    { name: 'Spearmint Green Tea', slug: 'spearmint-green-tea', image: 'spearmint', colour: '#b6a43c', notes: 'Fresh mint · clean finish', temp:'85–90°C', time:'1.5–2 minutes' },
+    { name: 'Blue Flower Green Tea', slug: 'blue-flower-green-tea', image: 'blue-flower', colour: '#3658be', notes: 'Soft floral · a vivid blue cup', temp:'85–90°C', time:'1.5–2 minutes' },
+    { name: 'Ginger Green Tea', slug: 'ginger-green-tea', image: 'ginger', colour: '#ad8226', notes: 'Ginger warmth · mellow green tea', temp:'85–90°C', time:'1.5–2 minutes' }
   ];
   function useReducedMotion() {
     const [reduced, setReduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);

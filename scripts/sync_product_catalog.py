@@ -93,6 +93,19 @@ def main():
         tea.pop('bestseller', None)
     app = app[:match.start(1)] + json.dumps(teas, ensure_ascii=False, indent=2) + app[match.end(1):]
     write(app_path, app)
+    # Keep both homepage tea selectors aligned with the verified catalogue.
+    for filename in ['product-atelier.js', 'premium-experience.js']:
+        path = ROOT / filename
+        text = path.read_text(encoding='utf-8')
+        def homepage_tea(match):
+            row = match[0]
+            p = BY_HANDLE[re.search(r"slug:\s*'([^']+)'", row)[1]]
+            row = re.sub(r'price:\s*\d+', lambda _: 'price:' + str(p['price']), row)
+            row = re.sub(r"(water|temp):\s*'[^']*'", lambda m: m[1] + ":'" + p['brew']['water'] + "'", row)
+            row = re.sub(r"time:\s*'[^']*'", lambda _: "time:'" + p['brew']['time'] + "'", row)
+            return row
+        text = re.sub(r"\{[^{}\n]*slug:\s*'[^']+'[^{}\n]*\}", homepage_tea, text)
+        write(path, text)
     checkout = [{'handle': p['handle'], 'title': 'Nevisan ' + p['name'], 'price': p['price']} for p in PRODUCTS]
     write(ROOT / 'checkout/catalog.js', 'window.NEVISAN_TEAS = ' + json.dumps(checkout, ensure_ascii=False, indent=2) + ';\n')
 

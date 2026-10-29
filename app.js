@@ -2815,7 +2815,7 @@ function PhilosophySection() {
           }),
         ),
         title: "Packed with care",
-        desc: "Each batch made by Tailor Made Tea of Golaghat. Small batch, intentional process.",
+        desc: "GABA Oolong is manufactured by GABA Tea Pvt. Ltd.; our other nine teas by Tailor Made Tea. Packed and marketed by Mahabir Enterprise, Guwahati.",
       },
     ],
     { isMobile: o } = useViewport();

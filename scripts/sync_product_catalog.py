@@ -117,6 +117,9 @@ def main():
         for entity in data.get('@graph', []):
             if entity.get('@type') == 'Product':
                 product_entity(entity, BY_HANDLE[entity['url'].rstrip('/').split('/')[-1]])
+            if entity.get('@type') == 'ItemList':
+                for item in entity.get('itemListElement', []):
+                    item['name'] = 'Nevisan ' + BY_HANDLE[item['url'].rstrip('/').split('/')[-1]]['name']
     home = schema(home, home_schema).replace('app.js?v=89', 'app.js?v=90')
     write(home_path, home)
     checkout_path = ROOT / 'checkout/index.html'
@@ -148,6 +151,8 @@ def main():
     cost_text = re.sub(r'<p(?: id="cost-example")?>A 50g pouch.*?</p>', '<p id="cost-example">' + example + '</p>', cost_text)
     cost_text = cost_text.replace('Updated 5 October 2026', 'Updated 28 October 2026')
     write(cost_path, cost_text)
+    from build_home_collection import build
+    build()
     print(f'Synchronized {len(PRODUCTS)} products, checkout, collection, structured data and brewing guide.')
 
 

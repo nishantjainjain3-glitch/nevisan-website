@@ -129,12 +129,12 @@
       'Whiskey Green Tea':'A bold cup with malt and smoky oak notes.'
     };
     return h('article', { ref: root, className: 'lux-tea-card', id: tea.name.toLowerCase().replace(/\s+/g, '-') },
-      h('button', { type: 'button', className: 'lux-tea-card__image', onClick: () => onImageClick ? onImageClick(tea.img, tea.name) : onView(tea), 'aria-label': `Enlarge ${tea.name} photograph` },
+      h('button', { type: 'button', className: 'lux-tea-card__image', onClick: () => onImageClick ? onImageClick(tea.img, tea.name + ' — illustration') : onView(tea), 'aria-label': `Enlarge ${tea.name} illustration` },
         h('img', { src: tea.img, srcSet: `${tea.img.replace('.webp', '-640.webp')} 640w, ${tea.img} 1254w`, sizes: '(max-width: 520px) calc(100vw - 48px), (max-width: 900px) calc((100vw - 80px) / 2), 400px', alt: `${tea.name} — Nevisan whole-leaf Assam tea`, width: 1254, height: 1254, loading: 'lazy', decoding: 'async' }),
         h('span', { className: 'lux-tea-card__zoom', 'aria-hidden': 'true' }, '+')
       ),
       h('div', { className: 'lux-tea-card__body' },
-        h('p', { className: 'lux-tea-card__origin' }, tea.name === 'GABA Oolong Tea' ? 'ASSAM · OOLONG' : 'ASSAM · GREEN TEA'),
+        h('p', { className: 'lux-tea-card__origin' }, tea.name === 'GABA Oolong Tea' ? 'ASSAM · OOLONG · ILLUSTRATION' : 'ASSAM · GREEN TEA · ILLUSTRATION'),
         h('h3', null, h('a', { href: productUrl }, tea.name)),
         h('p', { className: 'lux-tea-card__notes' }, notes[tea.name] || 'Whole-leaf character, from Golaghat, Assam.'),
         h('div', { className: 'lux-tea-card__bottom' },
@@ -288,7 +288,7 @@
         h('div',{className:'lux-ritual__visual'},
           h('p',{className:'lux-eyebrow lux-ritual__visual-label'},'THE WHOLE-LEAF EXPERIENCE'),
           h('div',{ref:host,className:`lux-ritual__stage${ready?' is-ready':''}`,'aria-label':'An artistic glass cup with tea and whole leaves'},
-            h('img',{className:'lux-ritual__fallback',src:`/teas/${tea.image}-lifestyle.webp`,alt:tea.name,width:1254,height:1254,loading:'lazy'})
+            h('img',{className:'lux-ritual__fallback',src:`/teas/display/${tea.image}.webp`,alt:tea.name+' — illustration',width:1254,height:1254,loading:'lazy'})
           ),
           ready && h('label',{className:'lux-ritual__rotation'},'Explore the cup',h('input',{type:'range',min:-70,max:70,value:angle,'aria-label':'Rotate tea cup',onChange:event=>{setAngle(Number(event.target.value));controller.current&&controller.current.rotate(event.target.value);}}))
         ),

@@ -16,20 +16,16 @@
   ];
   function ProductAtelier() {
     const [selected, setSelected] = React.useState(0);
-    const [view, setView] = React.useState('pack');
     const [failed, setFailed] = React.useState(false);
     const tea = teas[selected];
-    const details = {gaba:'gaba-ritual',spearmint:'spearmint-cup','blue-flower':'blue-flower-cup',ginger:'ginger-branded-ritual',organic:'organic-branded-ritual',tulsi:'tulsi-ritual',chamomile:'chamomile-branded-ritual',lemongrass:'lemongrass-branded-ritual',rum:'rum-ritual',whiskey:'whiskey-ritual'};
-    const choose = index => { setSelected(index); setView('pack'); setFailed(false); };
-    const detail = details[tea.key];
-    const image = view === 'back' ? `/teas/packaging/${tea.key}-back.webp` : view === 'ritual' && detail ? `/teas/editorial/${detail}.webp` : `/teas/${tea.key}-lifestyle.webp`;
+    const choose = index => { setSelected(index); setFailed(false); };
+    const image = `/teas/display/${tea.key}.webp`;
     return h('section',{className:'atelier',id:'brew-ritual','aria-labelledby':'atelier-title',style:{'--pack-accent':tea.accent}},
       h('div',{className:'atelier__inner'},
         h('div',{className:'atelier__visual'},
           h('p',{className:'lux-eyebrow'},'THE NEVISAN ATELIER'),
-          h('figure',{className:'atelier__image'},failed ? h('div',{className:'atelier__unavailable'},h('span',null,'NEVISAN'),h('strong',null,tea.name)) : h('img',{key:image,src:image,width:1254,height:1254,alt:`${tea.name} — ${view === 'back' ? 'back of pouch artwork' : view === 'ritual' ? 'tea ritual scene' : 'pouch and tea scene'}`,loading:'lazy',decoding:'async',onError:()=>setFailed(true)})),
-          h('div',{className:'atelier__views',role:'group','aria-label':'Choose product image'},(detail ? ['pack','back','ritual'] : ['pack','back']).map(item=>h('button',{type:'button',key:item,'aria-pressed':view===item,onClick:()=>{setView(item);setFailed(false);}},item==='pack'?'Pouch & tea':item==='back'?'Back of pouch':'Tea ritual'))),
-          h('p',{className:'atelier__caption'},'Whole leaves. Beautiful cups. Everyday rituals.')
+          h('figure',{className:'atelier__image'},failed ? h('div',{className:'atelier__unavailable'},h('span',null,'NEVISAN'),h('strong',null,tea.name)) : h('img',{key:image,src:image,srcSet:`${image.replace('.webp','-640.webp')} 640w, ${image} 1254w`,sizes:'(max-width: 768px) calc(100vw - 40px), 600px',width:1254,height:1254,alt:`${tea.name} — illustrative tea image`,loading:'lazy',decoding:'async',onError:()=>setFailed(true)})),
+          h('p',{className:'atelier__caption'},'Tea illustrations, not current packet photographs. Product declarations and documentation are listed separately.')
         ),
         h('div',{className:'atelier__copy'},
           h('p',{className:'lux-eyebrow'},'ONE ORIGIN. YOUR EXPRESSION.'),

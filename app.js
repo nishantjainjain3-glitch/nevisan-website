@@ -875,11 +875,11 @@ function Nav({ page: e, setPage: t }) {
 function Ticker() {
   const e = [
       "PACKED IN GUWAHATI",
-      "FSSAI LICENSED",
+      "INGREDIENTS LISTED",
       "CAN BE STEEPED TWICE",
       "HANDCRAFTED IN ASSAM",
       "SINGLE ORIGIN",
-      "PGS-INDIA ORGANIC",
+      "50G PACKETS",
       "MADE IN INDIA",
       "WHOLE LEAF",
     ],
@@ -993,7 +993,7 @@ const TEAS = [
     ],
     "bg": "#d4edd8",
     "color": "#3a7a50",
-    "img": "teas/lemongrass-lifestyle.webp",
+    "img": "teas/display/lemongrass.webp",
     "price": 499,
     "badge": "BRIGHT CITRUS",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
@@ -1024,7 +1024,7 @@ const TEAS = [
     ],
     "bg": "#c8dff0",
     "color": "#2a5a8a",
-    "img": "teas/blue-flower-lifestyle.webp",
+    "img": "teas/display/blue-flower.webp",
     "price": 499,
     "badge": "BLUE BOTANICALS",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
@@ -1055,7 +1055,7 @@ const TEAS = [
     ],
     "bg": "#f5e9a0",
     "color": "#8a6a10",
-    "img": "teas/rum-lifestyle.webp",
+    "img": "teas/display/rum.webp",
     "price": 499,
     "badge": "ZERO ALCOHOL",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
@@ -1086,7 +1086,7 @@ const TEAS = [
     ],
     "bg": "#e8d4f0",
     "color": "#6a3a8a",
-    "img": "teas/spearmint-lifestyle.webp",
+    "img": "teas/display/spearmint.webp",
     "price": 499,
     "badge": "COOL MINT",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
@@ -1117,7 +1117,7 @@ const TEAS = [
     ],
     "bg": "#d4edd8",
     "color": "#3a7a50",
-    "img": "teas/tulsi-lifestyle.webp",
+    "img": "teas/display/tulsi.webp",
     "price": 499,
     "badge": "HERBAL AROMA",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
@@ -1148,7 +1148,7 @@ const TEAS = [
     ],
     "bg": "#f5e9a0",
     "color": "#8a6a10",
-    "img": "teas/chamomile-lifestyle.webp",
+    "img": "teas/display/chamomile.webp",
     "price": 499,
     "badge": "SOFT FLORAL",
     "brew": "85–90°C · 2 minutes · 2–2.5g per cup",
@@ -1179,7 +1179,7 @@ const TEAS = [
     ],
     "bg": "#e0d4c8",
     "color": "#5a4030",
-    "img": "teas/whiskey-lifestyle.webp",
+    "img": "teas/display/whiskey.webp",
     "price": 499,
     "badge": "ZERO ALCOHOL",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
@@ -1210,7 +1210,7 @@ const TEAS = [
     ],
     "bg": "#c0e0dc",
     "color": "#1b7a82",
-    "img": "teas/gaba-lifestyle.webp",
+    "img": "teas/display/gaba.webp",
     "price": 499,
     "badge": "MELLOW OOLONG",
     "brew": "85–90°C · 2 minutes · 2–2.5g per cup",
@@ -1241,7 +1241,7 @@ const TEAS = [
     ],
     "bg": "#c8e8c0",
     "color": "#2a6a2a",
-    "img": "teas/organic-lifestyle.webp",
+    "img": "teas/display/organic.webp",
     "price": 499,
     "badge": "ORGANIC",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
@@ -1272,7 +1272,7 @@ const TEAS = [
     ],
     "bg": "#fdf2e9",
     "color": "#935116",
-    "img": "teas/ginger-lifestyle.webp",
+    "img": "teas/display/ginger.webp",
     "price": 499,
     "badge": "WARMING GINGER",
     "brew": "85–90°C · 1.5–2 minutes · 2–2.5g per cup",
@@ -2946,9 +2946,9 @@ function PhilosophySection() {
           "div",
           { style: { display: "flex", gap: 10, flexWrap: "wrap" } },
           [
-            "PGS-INDIA ORGANIC",
-            "FSSAI LICENSED",
-            "FOOD SAFETY, ASSAM",
+            "50G PACKETS",
+            "INGREDIENTS LISTED",
+            "BREWING GUIDE INCLUDED",
             "MADE IN INDIA",
           ].map((e) =>
             React.createElement(
@@ -3858,7 +3858,7 @@ function Footer({ setPage: e }) {
                   letterSpacing: "0.06em",
                 },
               },
-              "FSSAI 10325001000313 (Marketer) · FSSAI 20321120000114 (Manufacturer)",
+              "Mahabir Enterprise: 10325001000313 (marketer) · Tailor Made Tea: 20321120000114 (nine green teas) · GABA TEA PVT. LTD.: 20325120000477 (GABA Oolong)",
             ),
             React.createElement(
               "div",
@@ -4106,7 +4106,7 @@ function Footer({ setPage: e }) {
         React.createElement(
           "div",
           { style: { display: "flex", gap: 8, flexWrap: "wrap" } },
-          ["PGS ORGANIC", "FSSAI", "MADE IN INDIA"].map((e) =>
+          ["WHOLE-LEAF TEA", "FSSAI", "MADE IN INDIA"].map((e) =>
             React.createElement(
               "span",
               {
@@ -5588,7 +5588,7 @@ function TrustBadges() {
           React.createElement("path", { d: "M9 13c1 0 2.5 1.5 2.5 2.5" }),
           React.createElement("path", { d: "M5 21l3-3" }),
         ),
-        label: "PGS Organic Certified",
+        label: "50g whole-leaf packets",
       },
       {
         icon: React.createElement(
@@ -5628,7 +5628,7 @@ function TrustBadges() {
           }),
           React.createElement("path", { d: "m9 12 2 2 4-4" }),
         ),
-        label: "Chemical Free, Always",
+        label: "Clear ingredient information",
       },
       {
         icon: React.createElement(
@@ -5649,7 +5649,7 @@ function TrustBadges() {
           React.createElement("path", { d: "M12 22c0-6-4-9-6-12 3 1 5 3 6 6" }),
           React.createElement("path", { d: "M12 14v8" }),
         ),
-        label: "100% Whole Leaf",
+        label: "Whole-leaf tea",
       },
       {
         icon: React.createElement(
@@ -5762,7 +5762,7 @@ const PAGE_PHOTOS = {
   collection: "3.webp",
   journal: "4.webp",
   wholesale: "5.webp",
-  certifications: "6.webp",
+  certifications: "/teas/display/gaba.webp",
   contact: "7.webp",
 };
 function PageHero({ photo: e, label: t, title: a, subtitle: n }) {
@@ -6635,7 +6635,7 @@ function CertificationsPage({ setPage: e }) {
     React.createElement(PageHero, {
       photo: PAGE_PHOTOS.certifications,
       label: "Trust & Transparency",
-      title: "Our Certifications",
+      title: "Product Information & Documentation",
       subtitle:
         "Read the licence details below. Contact us for current sourcing and certification documents for your pack.",
     }),
@@ -6661,17 +6661,17 @@ function CertificationsPage({ setPage: e }) {
         [
           {
             name: "FSSAI licence details",
-            number: "FSSAI 10325001000313 (Marketer) · FSSAI 20321120000114 (Manufacturer)",
+            number: "Mahabir Enterprise: 10325001000313 (marketer) · Tailor Made Tea: 20321120000114 (nine green teas) · GABA TEA PVT. LTD.: 20325120000477 (GABA Oolong)",
             icon: "\ud83c\udfdb",
             color: "#1b4f8a",
-            desc: "Marketer and manufacturer licence numbers are listed here and on the packaging. A licence number is not a product-specific laboratory report.",
+            desc: "These numbers reproduce the product and business declarations. Current validity and activity scope should be checked against the official licence record. FSSAI licensing is separate from organic certification and product laboratory testing.",
           },
           {
-            name: "PGS-India Organic",
-            number: "PGS Organic Certified",
+            name: "Organic certification information",
+            number: "Product-specific evidence required",
             icon: "\ud83c\udf3f",
             color: "#2a6a2a",
-            desc: "PGS-India uses a participatory assurance process. Ask us for the current certificate and its product coverage before relying on a certification claim.",
+            desc: "Current organic certificates are not published here. Organic wording in product names or supplier declarations is not proof that every Nevisan tea is certified. Ask for the relevant operator, validity and product scope before relying on a claim.",
           },
           {
             name: "GST Registered",
@@ -6692,7 +6692,7 @@ function CertificationsPage({ setPage: e }) {
             number: "No CTC \u2022 No Dust \u2022 No Fannings",
             icon: "\ud83c\udf43",
             color: "#1b7a82",
-            desc: "The collection uses whole or large-broken tea leaves. The product galleries show the leaves and pack artwork so you can see what you are choosing.",
+            desc: "The collection uses whole or large-broken tea leaves. The galleries currently use clearly labelled tea illustrations. They do not establish current packet appearance, certification or batch details.",
           },
         ].map((e, t) =>
           React.createElement(
@@ -7015,7 +7015,7 @@ function WholesalePage({ setPage: e }) {
               { icon: "✓", text: "Pan-India delivery" },
               { icon: "✓", text: "Dedicated account manager" },
               { icon: "✓", text: "Response within 24 hours" },
-              { icon: "✓", text: "PGS Organic certified supply" },
+              { icon: "✓", text: "Product-specific documentation enquiries" },
             ].map((e, t) =>
               React.createElement(
                 "div",

@@ -94,7 +94,8 @@ def main():
         html = re.sub(r'(?m)^[ \t]+$', '', html)
         if '/order-policy.css?v=1' not in html:
             html = html.replace('</head>', '<link rel="stylesheet" href="/order-policy.css?v=1">\n</head>', 1)
-        position = html.rfind('<footer')
+        position = html.rfind('<!-- nevisan-brand-footer:start -->')
+        if position == -1: position = html.rfind('<footer')
         if position == -1: position = html.rfind('</body>')
         html = html[:position] + block() + '\n' + html[position:]
         if path == ROOT / 'index.html':

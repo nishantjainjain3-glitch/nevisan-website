@@ -41,7 +41,7 @@
       --muted: #5a6a6b;
       --border: rgba(201, 168, 76, 0.3);
     }
-    
+
     body { padding-top: 72px !important; 
       font-family: 'Plus Jakarta Sans', sans-serif;
       background: var(--cream);
@@ -364,7 +364,7 @@
       .quiz-card { padding: 24px; }
       .quiz-wrapper { padding: 20px 10px; }
     }
-  
+
     .skip-link {
       position: absolute;
       top: -100px;
@@ -405,9 +405,13 @@
 
 
 <link rel="stylesheet" href="/site-polish.css?v=6">
+<link rel="stylesheet" href="/brand-system.css?v=1">
+<script src="/brand-shell.js?v=1" defer></script>
+<meta name="theme-color" content="#15271b">
 </head>
-<body class="premium-site">
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<body class="brand-unified premium-site">
+<!-- nevisan-brand-header:start --><a class="brand-skip" href="#main-content">Skip to content</a><nav class="brand-header" aria-label="Main navigation"><div class="brand-header__inner"><a class="brand-wordmark" href="/" aria-label="Nevisan Tea home"><img src="/nevisan-logo.jpeg" width="36" height="36" alt=""><span>NEVISAN</span></a><div class="brand-header__links"><a href="/#collection">Collection</a><a href="/compare/">Compare teas</a><a href="/#about">Our Assam story</a></div><div class="brand-header__actions"><a class="brand-order" href="/checkout/">Shop teas</a><details class="brand-menu"><summary aria-label="More navigation">Menu <span aria-hidden="true">☰</span></summary><div class="brand-menu__panel"><a href="/#collection">Collection</a><a href="/compare/">Compare teas</a><a href="/#about">Our Assam story</a><a href="/how-to-brew/">How to brew</a><a href="/journal/">Journal</a><a href="/bulk/">Wholesale</a><a href="/locations/">Delivery & locations</a><a href="/faq/">Questions & answers</a><a href="/contact.html">Contact</a></div></details></div></div></nav><!-- nevisan-brand-header:end -->
+
 
 <style id="nevisan-unified-nav-css">
 .nevisan-global-nav {
@@ -607,38 +611,7 @@
 
 
 <!-- Universal Luxury Nevisan Navigation Header -->
-<nav class="nevisan-global-nav" role="navigation" aria-label="Main navigation">
-  <div class="nevisan-nav-container">
-    <a href="https://nevisan.in/" class="nevisan-nav-brand">
-      <img src="https://nevisan.in/nevisan-logo.jpeg" alt="Nevisan Logo" class="nevisan-nav-logo" width="40" height="40" />
-      <span class="nevisan-nav-title">NEVISAN</span>
-    </a>
-    
-    <div class="nevisan-nav-right">
-      <div class="nevisan-nav-links">
-        <a href="https://nevisan.in/#collection" class="nevisan-nav-link">Collection</a>
-        <a href="https://nevisan.in/#about" class="nevisan-nav-link">Our Story</a>
-        <a href="https://nevisan.in/reviews/" class="nevisan-nav-link nevisan-nav-link--gold"><span style="color:#C9A84C;">★</span>Reviews</a>
-        <a href="https://nevisan.in/quiz/" class="nevisan-nav-link active">Tea Quiz</a>
-        <a href="https://nevisan.in/bulk/" class="nevisan-nav-link ">Wholesale</a>
-        <a href="https://nevisan.in/locations/" class="nevisan-nav-link ">Locations</a>
-        <a href="https://nevisan.in/faq/" class="nevisan-nav-link ">FAQ</a>
-        <a href="/how-to-brew/" class="nevisan-nav-link">How to Brew</a>
-      </div>
-      <a href="/checkout/" class="nevisan-btn-shop">Shop Now</a>
-    </div>
 
-    <!-- Mobile Header Actions (WhatsApp + Hamburger) -->
-    <div class="nevisan-mobile-controls">
-      <a href="/checkout/" class="nevisan-btn-order-mobile" rel="noopener">💬 Order</a>
-      <button class="nevisan-mobile-toggle" id="nevisanMobileToggle" aria-label="Toggle navigation menu" onclick="toggleNevisanMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </div>
-</nav>
 
 <!-- Full Mobile Slideout Drawer Menu -->
 <div class="nevisan-mobile-drawer" id="nevisanMobileDrawer">
@@ -689,7 +662,7 @@ function toggleNevisanMenu() {
           <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: var(--teal); margin: 0 0 6px;" id="quiz-progress" aria-live="polite">Question 1 of 3</h2>
           <p style="color: var(--muted); font-size: 16px; margin: 0 0 16px;">Answer 3 quick questions to discover your personalized Nevisan tea match.</p>
         </div>
-        
+
         <div class="steps">
           <div class="step-dot active" id="dot-0"></div>
           <div class="step-dot" id="dot-1"></div>
@@ -703,10 +676,7 @@ function toggleNevisanMenu() {
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2026 Nevisan Tea &nbsp;·&nbsp; Single-Origin Assam Tea from Golaghat &nbsp;·&nbsp; <a href="https://nevisan.in/">nevisan.in</a></p>
-    <p style="margin-top: 6px; font-size: 14px; opacity: 0.8;">FSSAI 10325001000313 · Support: care@nevisan.in · +91-9864245687</p>
-  </footer>
+  <!-- nevisan-brand-footer:start --><footer class="brand-footer"><div class="brand-footer__inner"><div class="brand-footer__story"><a class="brand-wordmark" href="/" aria-label="Nevisan Tea home"><img src="/nevisan-logo.jpeg" width="36" height="36" alt=""><span>NEVISAN</span></a><p>Whole-leaf Assam tea.<br>A ritual of your own.</p><p>Packed and marketed by Mahabir Enterprise, Guwahati, Assam.</p></div><div><h2>Find your tea</h2><a href="/#collection">The collection</a><a href="/compare/">Compare all ten teas</a><a href="/quiz/">Tea finder quiz</a><a href="/how-to-brew/">Brewing guide</a></div><div><h2>Here to help</h2><a href="/terms-of-service.html#order-updates">Payment & tracking help</a><a href="/terms-of-service.html#shipping">Delivery information</a><a href="/terms-of-service.html#returns">No returns & product support</a><a href="/bulk/">Wholesale enquiries</a><a href="/faq/">Questions & answers</a></div><div><h2>Talk to Nevisan</h2><a href="https://wa.me/919864245687">WhatsApp +91 98642 45687</a><a href="mailto:care@nevisan.in">care@nevisan.in</a><a href="https://www.instagram.com/nevisan.tea/">Instagram</a><a href="/contact.html">Contact & business details</a><a href="/reviews/">Tea notes & reviews</a></div></div><div class="brand-footer__bottom"><span>© 2026 Nevisan Tea · Mahabir Enterprise</span><div><a href="/terms-of-service.html">Terms</a><a href="/privacy-policy.html">Privacy</a></div><span>Marketer FSSAI 10325001000313 · GSTIN 18AFAPJ8203P1Z7</span></div></footer><!-- nevisan-brand-footer:end -->
 
   <script>
     window.trackQuizClick = function(teaKey, platform) {
@@ -911,7 +881,7 @@ function toggleNevisanMenu() {
     // Handle user option selection
     window.selectOption = function(optionIndex) {
       userSelections.push(questions[currentStep].options[optionIndex]);
-      
+
       if (currentStep < 2) {
         currentStep++;
         renderQuestion();
@@ -941,7 +911,7 @@ function toggleNevisanMenu() {
       // Find the highest score tea
       let recommendedKey = "organic"; // Default fallback
       let highestScore = -1;
-      
+
       for (const key in scores) {
         if (scores[key] > highestScore) {
           highestScore = scores[key];
@@ -975,7 +945,7 @@ function toggleNevisanMenu() {
           <div class="result-benefit">Tasting profile: ${rec.benefit}</div>
           <p class="result-desc">${rec.desc}</p>
           <p><a class="result-product-link" href="/products/${rec.slug}/">View this tea and all product images →</a></p>
-          
+
           <div class="buy-options-header">Choose Where To Buy</div>
           <div class="buy-grid">
             <a href="${whatsappUrl}" target="_blank" rel="noopener" class="buy-btn buy-whatsapp" onclick="trackQuizClick('${recommendedKey}', 'WhatsApp')">
@@ -988,7 +958,7 @@ function toggleNevisanMenu() {
               🛒 Buy on Flipkart
             </a>
           </div>
-          
+
           <button class="restart-btn" onclick="restartQuiz()">
             ↺ Take Quiz Again
           </button>
@@ -1001,7 +971,7 @@ function toggleNevisanMenu() {
     window.restartQuiz = function() {
       currentStep = 0;
       userSelections.length = 0;
-      
+
       // Reset card styling
       const card = document.getElementById("quiz-card");
       card.style.background = "rgba(255, 255, 255, 0.72)";
@@ -1013,7 +983,7 @@ function toggleNevisanMenu() {
           <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: var(--teal); margin: 0 0 6px;" id="quiz-progress" aria-live="polite">Question 1 of 3</h2>
             <p>Answer 3 quick questions to discover your personalized Nevisan tea match.</p>
           </div>
-          
+
           <div class="steps">
             <div class="step-dot active" id="dot-0"></div>
             <div class="step-dot" id="dot-1"></div>

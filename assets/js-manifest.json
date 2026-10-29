@@ -1,0 +1,17 @@
+{
+  "app.js": {
+    "output": "assets/app.min.js",
+    "source_sha256": "6022a7ba4cf7d00a3698cd52dfebc6d175a9e10b1ef5a011ad60c4da7eaa9d72",
+    "output_sha256": "aaecbc3f0f75fa223f0eca12e47b2bb570f84b8dd8be667d7378cb390501125a"
+  },
+  "premium-experience.js": {
+    "output": "assets/premium-experience.min.js",
+    "source_sha256": "5067b1d453ce5e448b7238598327724aff816a97106f9dbd0071fe6865568d68",
+    "output_sha256": "247ac7443b8806e87e9b1c70c88e2e93011954d0c737fc19bbbc14b41a4ed788"
+  },
+  "product-atelier.js": {
+    "output": "assets/product-atelier.min.js",
+    "source_sha256": "df98330942e6f9fb4c88b1e82fd6e3103b1a18847b065f3f6001e49f8e08e502",
+    "output_sha256": "c2eb960360021ad69863770509ffc230cd0db8657fea526ba550e35b6e8db415"
+  }
+}

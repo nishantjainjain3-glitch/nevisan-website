@@ -21,7 +21,8 @@
       'Shipping: FREE', `Total payable: ${money(total(items))}`, '', `Customer: ${customer.first_name} ${customer.last_name}`, `Mobile: ${customer.phone}`, `Email: ${customer.email}`,
       'Delivery address:', ...['address_1','address_2','city','province','postal_code'].map(k => customer[k]).filter(Boolean), customer.country || 'India', '',
       availability ? 'Please confirm delivery to my address and my tea selection before I pay.' : `Please check the actual ICICI bank credit and confirm my order. UTR: ${utr || 'I will add it here'}. I will attach my payment screenshot before pressing Send.`,
-      'This is a customer-prepared request; payment and order acceptance require Nevisan’s verification.'].join('\n');
+      'This is a customer-prepared request; payment and order acceptance require Nevisan’s verification.',
+      availability ? 'Please reply with the delivery arrangements and total before payment.' : 'Please reply on WhatsApp with payment received and order accepted after verification, and confirm the teas, packet quantities, paid total and delivery address. Please share the carrier name, tracking number and tracking link after dispatch.'].join('\n');
     return 'https://wa.me/919864245687?text=' + encodeURIComponent(message);
   }
   function upi(items, reference) {

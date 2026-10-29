@@ -34,6 +34,19 @@ test('checkout explains manual sending and provides the delivery and no-returns 
  assert.ok(form.includes('/terms-of-service.html#shipping'));
  assert.ok(form.includes('non-returnable for change of mind'));
 });
+
+test('order journey distinguishes request, bank verification, acceptance, dispatch and carrier tracking',()=>{
+ const checkout=fs.readFileSync('checkout/index.html','utf8');
+ const terms=fs.readFileSync('terms-of-service.html','utf8');
+ assert.ok(checkout.includes('not a live status tracker'));
+ assert.ok(checkout.includes('Request prepared — not yet confirmed'));
+ assert.ok(checkout.includes('after payment verification and order acceptance'));
+ assert.ok(checkout.includes('/terms-of-service.html#order-updates'));
+ const updates=unescape(terms.match(/<section id="order-updates">(.*?)<\/section>/s)[1].replace(/<[^>]*>/g,''));
+ for(const key of ['verification','confirmation','dispatch','tracking'])assert.ok(updates.includes(policy[key]),key);
+ assert.ok(policy.tracking.includes('NEV request reference is not a courier tracking number'));
+ assert.ok(policy.confirmation.includes('does not automatically confirm payments'));
+});
 test('delivery and no-returns terms retain product support and do not turn screenshots into payment confirmation',()=>{
  const html=fs.readFileSync('terms-of-service.html','utf8');
  for(const id of ['ordering','shipping','returns'])assert.ok(html.includes(`id="${id}"`));

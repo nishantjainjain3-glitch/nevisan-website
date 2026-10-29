@@ -16,7 +16,7 @@ test('shopping navigation across all public pages links to checkout rather than 
   for(const match of html.matchAll(/<a\b[^>]*>.*?<\/a>/gs)){
    const tag=match[0]; const text=tag.replace(/<[^>]+>/g,'').trim().toLowerCase();
    if(['shop now','shop teas','shop tea'].includes(text)){
-    checked++;assert.match(tag,/href="\/checkout\/"/,file);
+    checked++;const href=tag.match(/href="([^"]+)"/)[1];assert.equal(new URL(href,'https://nevisan.in').pathname,'/checkout/',file);
    }
    assert.ok(!tag.includes('wa.me/919864245687?text=Hi%20Nevisan!%20I%20would%20like%20to%20place%20an%20order.'),file);
   }

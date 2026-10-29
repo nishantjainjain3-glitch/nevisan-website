@@ -23,7 +23,7 @@ test('every customer page exposes the same ordering, delivery, support and no-re
   for(const value of Object.values(policy))assert.ok(text.includes(value),file);
   assert.ok(html.includes('/order-policy.css?v=1'),file);
  }
- assert.equal(count,57);
+ assert.equal(count,58);
 });
 test('checkout explains manual sending and provides the delivery and no-returns terms before payment',()=>{
  const html=fs.readFileSync('checkout/index.html','utf8');

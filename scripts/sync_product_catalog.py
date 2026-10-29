@@ -48,6 +48,8 @@ def write(path, text):
 
 
 def main():
+    from build_tea_comparison import build
+    build()
     for p in PRODUCTS:
         path = ROOT / 'products' / p['handle'] / 'index.html'
         text = path.read_text(encoding='utf-8')

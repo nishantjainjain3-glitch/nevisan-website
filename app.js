@@ -6019,8 +6019,8 @@ const POSTS = [
   },
   {
     "slug": "pcos-spearmint-tea-daily-routine",
-    "title": "A Daily Spearmint Tea Ritual",
-    "excerpt": "A simple way to make spearmint green tea part of your day, with room to adjust the strength to your taste."
+    "title": "Spearmint Tea and PCOS: Know What Is in Your Cup",
+    "excerpt": "Understand the difference between spearmint herbal tea and Nevisan’s caffeinated green-tea blend, the limits of research and how to brew for taste."
   },
   {
     "slug": "best-chamomile-tea-for-sleep-in-india",
@@ -6054,13 +6054,13 @@ const POSTS = [
   },
   {
     "slug": "best-green-tea-for-weight-loss-energy-sleep",
-    "title": "Choose Your Green Tea by Taste and Routine",
-    "excerpt": "Match green tea to the flavours and tea breaks you enjoy, with clear expectations about caffeine."
+    "title": "Green Tea for Energy, Sleep or Weight Loss? Choose Carefully",
+    "excerpt": "Separate green-tea flavour choices from weight-loss and sleep promises. Compare caffeinated Nevisan blends and plan a practical first brew."
   },
   {
     "slug": "green-tea-health-benefits-complete-guide",
-    "title": "Green Tea: Ingredients, Caffeine and Brewing",
-    "excerpt": "A clear starting point for green tea: read the ingredients, understand caffeine and brew a cup to your taste."
+    "title": "Green Tea: Benefits Claims, Caffeine and Ingredients",
+    "excerpt": "Read green-tea health claims carefully, distinguish brewed tea from extracts, check caffeine and ingredients, and prepare a measured first cup."
   },
   {
     "slug": "green-tea-vs-coffee-caffeine",
@@ -6069,8 +6069,8 @@ const POSTS = [
   },
   {
     "slug": "how-to-choose-right-tea-for-your-lifestyle",
-    "title": "Choose Tea by Flavour and Routine",
-    "excerpt": "A short guide to choosing between plain green tea, oolong, mint, floral and warming Nevisan blends."
+    "title": "Which Nevisan Tea Should I Choose? A Flavour Guide",
+    "excerpt": "Choose a Nevisan tea by mint, citrus, floral, warming or toasty flavour, then compare ingredients, caffeine and practical brewing needs."
   },
   {
     "slug": "morning-vs-evening-teas",
@@ -6109,8 +6109,8 @@ const POSTS = [
   },
   {
     "slug": "organic-green-tea-vs-regular-green-tea",
-    "title": "Organic and Other Green Teas: What to Compare",
-    "excerpt": "Compare green teas through certification, ingredients, freshness and taste rather than assuming a label guarantees the better cup."
+    "title": "Organic vs Other Green Tea: What to Check Before Buying",
+    "excerpt": "Compare organic status separately from flavour, ingredients, freshness and price, and know which certification questions to ask a tea seller."
   },
   {
     "slug": "5-ways-to-tell-if-your-green-tea-is-adulterated",
@@ -6119,8 +6119,8 @@ const POSTS = [
   },
   {
     "slug": "how-to-buy-real-green-tea-india",
-    "title": "How to Buy Green Tea in India",
-    "excerpt": "A practical checklist for buying green tea online: ingredients, source, weight, dates and seller details."
+    "title": "How to Buy Green Tea in India: A Pack Checklist",
+    "excerpt": "Check green-tea ingredients, net weight, price per gram, manufacturer, dates and seller details, with a worked Nevisan 50g example."
   },
   {
     "slug": "the-real-cost-of-cheap-tea-bags",
@@ -6144,13 +6144,13 @@ const POSTS = [
   },
   {
     "slug": "art-of-tea-tasting-beginners-guide",
-    "title": "Tea Tasting: A Guide for Your First Comparison",
-    "excerpt": "Taste two teas side by side, notice aroma and texture, and keep notes you can use for the next brew."
+    "title": "Tea Tasting for Beginners: Compare Two Cups",
+    "excerpt": "A practical two-cup tea tasting with measured leaves, an aroma checklist, a note-taking template and fixes for bitter or weak green tea."
   },
   {
     "slug": "assam-whole-leaf-tea-guide",
-    "title": "A Guide to Assam Whole-Leaf Tea",
-    "excerpt": "Understand leaf size, green tea and oolong, and how to start brewing Assam whole-leaf tea."
+    "title": "Assam Whole-Leaf Tea: Green Tea, Oolong and Your First Brew",
+    "excerpt": "Understand Assam origin, whole-leaf format and green versus oolong processing, then compare two Nevisan teas with their pouch brewing guides."
   },
   {
     "slug": "ultimate-guide-to-green-tea-in-india",
@@ -6159,13 +6159,13 @@ const POSTS = [
   },
   {
     "slug": "cold-brew-green-tea-guide",
-    "title": "Cold-Brew Green Tea: A Small First Batch",
-    "excerpt": "Try a small refrigerated batch of whole-leaf green tea and adjust the amount to suit your taste."
+    "title": "Cold Brew or Iced Green Tea? Start with the Pack Guide",
+    "excerpt": "Learn the difference between cold infusion and chilled hot-brewed tea, how to check cold-brew suitability and how to avoid a watery iced cup."
   },
   {
     "slug": "cold-brew-lemongrass-iced-tea",
-    "title": "Lemongrass Iced Tea: A Small Cold Brew",
-    "excerpt": "Make a small refrigerated lemongrass green-tea brew, then taste it plain or with a little lime."
+    "title": "Lemongrass Iced Green Tea: Brew Hot, Serve Chilled",
+    "excerpt": "Make a small lemongrass iced tea using Nevisan’s hot-brew guide, with clear measures, chilling steps and ways to adjust ice and lime."
   },
   {
     "slug": "blue-pea-lemon-mocktail-recipe",

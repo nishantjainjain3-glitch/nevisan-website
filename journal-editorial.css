@@ -1,0 +1,24 @@
+.journal-guide .journal-meta a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.journal-guide .journal-cover{margin:2rem 0}
+.journal-guide .journal-cover img{display:block;width:100%;height:auto;border-radius:16px}
+.journal-guide figcaption{font-size:.875rem;color:#5c7064;line-height:1.6;margin-top:.7rem}
+.journal-guide .journal-section section{margin:2.5rem 0}
+.journal-guide .journal-section h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.4rem,4vw,1.8rem);line-height:1.3;margin-bottom:1rem;scroll-margin-top:6rem}
+.journal-guide .journal-section p{margin-bottom:1.1rem}
+.journal-guide .journal-section :is(ol,ul){padding-left:1.35rem;margin:1rem 0 1.4rem}
+.journal-guide .journal-section li{margin-bottom:.8rem;padding-left:.25rem;line-height:1.8}
+.journal-guide .journal-section a,.journal-start a{color:#23412d;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.journal-toc,.journal-pack,.journal-editorial,.journal-start{background:#efeee7;border:1px solid #dcd8cc;border-radius:16px;padding:1.5rem;margin:2rem 0}
+.journal-toc{position:static;display:block;height:auto;box-shadow:none}
+.journal-toc h2,.journal-start h2{font-family:'Playfair Display',Georgia,serif;font-size:1.35rem;margin-bottom:.75rem}
+.journal-toc a{display:block;min-height:44px;padding:.6rem 0;color:#23412d;line-height:1.5;text-underline-offset:3px}
+.journal-note{border-left:3px solid #b8984d;padding:1rem 1.25rem;background:#fffdf8}
+.journal-pack h3{margin:.75rem 0;font-size:1.1rem}
+.journal-pack dl,.journal-choices{margin:1rem 0}
+.journal-pack dt,.journal-choices dt{font-weight:700;margin-top:1rem}
+.journal-pack dd,.journal-choices dd{margin:.25rem 0 1rem;line-height:1.8}
+.journal-guide .journal-editorial h2{font-size:1.15rem}
+.journal-guide .journal-editorial p{font-size:.95rem;line-height:1.8}
+.journal-start ul{padding-left:1.25rem;margin-top:1rem}
+.journal-start a{display:inline-block;padding:.55rem 0;line-height:1.6}
+@media(max-width:480px){.journal-toc,.journal-pack,.journal-editorial,.journal-start{padding:1.1rem}.journal-guide .journal-cover{margin:1.5rem 0}}

@@ -13,9 +13,14 @@ BASE = 'https://nevisan.in/'
 
 class Metadata(HTMLParser):
     def __init__(self):
-        super().__init__(); self.canonical=''; self.robots=''; self.title=''; self.description=''; self.in_title=False; self.h1=0; self.links=[]
+        super().__init__(); self.canonical=''; self.robots=''; self.title=''; self.description=''; self.in_title=False; self.h1=0; self.links=[]; self.meta_errors=[]
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
+        if tag=='meta':
+            allowed={'charset','name','content','property','http-equiv','itemprop','id','scheme','lang','dir'}
+            unexpected=[key for key,_ in attrs if key not in allowed and not key.startswith('data-')]
+            if unexpected: self.meta_errors.append('malformed meta attributes: '+', '.join(unexpected))
+            if len(a)!=len(attrs): self.meta_errors.append('duplicate meta attribute')
         if tag=='title': self.in_title=True
         if tag=='h1': self.h1+=1
         if tag=='link' and a.get('rel')=='canonical': self.canonical=a.get('href','')
@@ -45,6 +50,7 @@ def audit():
         if any(x in path.parts for x in ['.git','.agents','node_modules']): continue
         text=path.read_text(encoding='utf-8'); name=path.relative_to(ROOT).as_posix()
         p=Metadata(); p.feed(text)
+        errors.extend(name+': '+error for error in p.meta_errors)
         if '<main' not in text and name not in ['index.html','quiz/index.html']: continue
         if 'noindex' not in p.robots.lower():
             expected=BASE+(name[:-10] if name.endswith('index.html') else name)

@@ -85,7 +85,7 @@
   $('send-payment').addEventListener('click',event=>{
     if(!request || (international(request.customer.country) && !$('international-confirmed').checked) || !$('bank-reference').reportValidity()){event.preventDefault();return;}
     $('send-payment').href=api.build(request.items,request.customer,request.reference,$('bank-reference').value);
-    notice('After WhatsApp opens, attach your screenshot and press Send. Payment remains subject to Nevisan’s bank-credit review.');
+    notice('WhatsApp still needs you to attach your screenshot and press Send. Then wait for Nevisan’s reply confirming payment received and order accepted. This page cannot detect sending or verify payment. If debited, do not pay again while awaiting review.');
   });
   $('edit-order').addEventListener('click',()=>{edit();form.elements.first_name.focus();});
   $('new-order').addEventListener('click',()=>{edit();form.reset();addressRules();inputs.forEach(({input})=>input.value='0');update(true);notice('Choose teas for your new request.');});

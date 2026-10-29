@@ -14,7 +14,7 @@ FAQS = [
 ]
 
 def block():
-    sections = [('How to order', 'ordering'), ('Delivery', 'delivery'), ('No returns', 'returns'), ('Order support', 'support'), ('Marketplace orders', 'marketplaces')]
+    sections = [('How to order', 'ordering'), ('Payment verification', 'verification'), ('Order confirmation', 'confirmation'), ('Dispatch', 'dispatch'), ('Tracking your parcel', 'tracking'), ('Delivery', 'delivery'), ('No returns', 'returns'), ('Order support', 'support'), ('Marketplace orders', 'marketplaces')]
     body = ''.join(f'<h2>{title}</h2><p>{escape(POLICY[key])}</p>' for title, key in sections)
     return START + '<aside class="nevisan-order-policy" aria-label="Ordering and delivery policy"><details><summary>Ordering, delivery &amp; no returns</summary>' + body + '<p><a href="/checkout/">Order with Nevisan Pay</a> · <a href="/terms-of-service.html#ordering">Read the full policy</a> · <a href="https://wa.me/919864245687">Contact Nevisan</a></p></details></aside>' + END
 
@@ -26,6 +26,14 @@ def update_schema(text, transform):
     return re.sub(r'(<script\b[^>]*type="application/ld\+json"[^>]*>)(.*?)(</script>)', replace, text, flags=re.S)
 
 def main():
+    terms_path = ROOT / 'terms-of-service.html'
+    terms = terms_path.read_text(encoding='utf-8')
+    updates = '<section id="order-updates"><h2>Order confirmation, payment review &amp; tracking</h2>' + ''.join('<h3>' + title + '</h3><p>' + escape(POLICY[key]) + '</p>' for title, key in [('Payment verification', 'verification'), ('Order confirmation', 'confirmation'), ('Dispatch', 'dispatch'), ('Tracking your parcel', 'tracking')]) + '</section>'
+    if '<section id="order-updates">' in terms:
+        terms = re.sub(r'<section id="order-updates">.*?</section>', lambda _: updates, terms, flags=re.S)
+    else:
+        terms = terms.replace('<h2 id="shipping">', updates + '\n<h2 id="shipping">')
+    terms_path.write_text(terms, encoding='utf-8')
     faq_path = ROOT / 'faq/index.html'
     faq = faq_path.read_text(encoding='utf-8')
     # Fix older direct-channel descriptions in both visible text and structured data.

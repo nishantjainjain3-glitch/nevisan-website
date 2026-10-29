@@ -14,7 +14,7 @@
         if (main.getAttribute('src') !== originalSrc) {
           main.src = originalSrc; main.alt = originalAlt;
           choices.forEach((choice, index) => choice.setAttribute('aria-pressed', String(index === 0)));
-          gallery.querySelector('.signature-gallery__caption').textContent = 'This view is unavailable. Showing the main tea illustration; it is not a current packet photograph or certification evidence.';
+          gallery.querySelector('.signature-gallery__caption').textContent = 'This view is unavailable. Showing the main product image.';
         }
       });
       function close() {
@@ -31,7 +31,7 @@
         if (main.removeAttribute) main.removeAttribute("srcset");
         main.src = button.dataset.gallerySrc;
         main.alt = button.dataset.galleryAlt;
-        gallery.querySelector('.signature-gallery__caption').textContent = button.dataset.galleryAlt + '. Illustrative imagery, not a current packet photograph or certification evidence.';
+        gallery.querySelector('.signature-gallery__caption').textContent = button.dataset.galleryAlt + '. Open the image to explore the detail.';
         choices.forEach(choice => choice.setAttribute('aria-pressed', String(choice === button)));
         });
       });
@@ -50,7 +50,7 @@
           dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
           dialog.addEventListener('close', () => { if (!dialog.open) { document.body.style.overflow = previousOverflow; zoom.focus({preventScroll:true}); } });
         }
-        dialog.querySelector('p').textContent = main.alt + '. Not a current packet photograph or certification evidence.';
+        dialog.querySelector('p').textContent = main.alt;
         const image = dialog.querySelector('img'); image.src = main.src; image.alt = main.alt;
         previousOverflow = document.body.style.overflow;
         document.body.style.overflow = 'hidden';

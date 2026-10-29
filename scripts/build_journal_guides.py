@@ -37,13 +37,6 @@ def build_main(guide, image, alt):
         dimensions = 'width="640" height="640"'
     else:
         dimensions = 'width="1254" height="1254"'
-    if '/teas/display/' in image:
-        sizes = json.loads((ROOT/'teas/display/dimensions.json').read_text(encoding='utf-8'))
-        key = Path(image).stem.replace('-640','')
-        width,height = sizes[key]
-        if '-640' in image:
-            height=round(height*640/width); width=640
-        dimensions=f'width="{width}" height="{height}"'
     return f'''<main id="main-content" class="journal-wrapper journal-article journal-guide">
 <a class="back-link" href="/journal/">← Back to the journal</a>
 <p class="lux-eyebrow">NEVISAN JOURNAL</p>

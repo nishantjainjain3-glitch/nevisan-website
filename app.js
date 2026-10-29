@@ -5753,7 +5753,7 @@ function HomePage({ setPage: e }) {
     React.createElement(Testimonials, null),
     React.createElement(InstagramReels, null),
     React.createElement(FAQSection, null),
-    React.createElement(Footer, { setPage: e }),
+    null /* Shared static brand shell */,
   );
 }
 const PAGE_PHOTOS = {
@@ -5998,7 +5998,7 @@ function OurStoryPage({ setPage: e }) {
         )
       )
     ),
-    React.createElement(Footer, { setPage: e }),
+    null /* Shared static brand shell */,
   );
 }
 const POSTS = [
@@ -6179,7 +6179,7 @@ function JournalPage({setPage}) {
   React.createElement("div",{className:"journal-wrapper",style:{paddingTop:48}},
    React.createElement("ul",{className:"post-list"},POSTS.map(post=>React.createElement("li",{className:"post-item",key:post.slug},
     React.createElement("a",{className:"post-link",href:"/journal/"+post.slug+"/"},React.createElement("h2",{className:"post-title"},post.title),React.createElement("p",{className:"post-excerpt"},post.excerpt),React.createElement("span",null,"Read the guide ↗")))))),
-  React.createElement(Footer,{setPage}));
+  null /* Shared static brand shell */);
 }
 function AboutPage({ setPage: e }) {
   const { isMobile: t } = useViewport();
@@ -6618,7 +6618,7 @@ function AboutPage({ setPage: e }) {
         ),
       ),
     ),
-    React.createElement(Footer, { setPage: e }),
+    null /* Shared static brand shell */,
   );
 }
 function CertificationsPage({ setPage: e }) {
@@ -6780,7 +6780,7 @@ function CertificationsPage({ setPage: e }) {
         ),
       ),
     ),
-    React.createElement(Footer, { setPage: e }),
+    null /* Shared static brand shell */,
   );
 }
 function WholesalePage({ setPage: e }) {
@@ -7294,7 +7294,7 @@ function WholesalePage({ setPage: e }) {
         ),
       ),
     ),
-    React.createElement(Footer, { setPage: e }),
+    null /* Shared static brand shell */,
   );
 }
 function ContactPage({ setPage: e }) {
@@ -7681,7 +7681,7 @@ function ContactPage({ setPage: e }) {
         ),
       ),
     ),
-    React.createElement(Footer, { setPage: e }),
+    null /* Shared static brand shell */,
   );
 }
 
@@ -7846,7 +7846,7 @@ function App() {
               React.Fragment,
               null,
               React.createElement(CollectionPage, { setPage: i }),
-              React.createElement(Footer, { setPage: i }),
+              null /* Shared static brand shell */,
             )
           : "Our Story" === e
             ? React.createElement(OurStoryPage, { setPage: i })
@@ -7869,7 +7869,7 @@ function App() {
         { value: o },
         React.createElement(ScrollProgress, { "aria-hidden": "true" }),
         React.createElement(CursorGlow, { "aria-hidden": "true" }),
-        React.createElement(Nav, { page: e, setPage: i }),
+        null /* Shared static brand shell */,
         React.createElement("main", { id: "main-content" }, r),
         React.createElement(CookieConsentBanner, null),
         React.createElement(CartFAB, null),

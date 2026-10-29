@@ -4150,7 +4150,7 @@ function CollectionSection({ setPage: e }) {
       React.createElement("div", { className: "lux-collection__grid" },
         featured.map(tea => React.createElement(TeaCard, { key: tea.name, tea, onView: l, onImageClick: (img, name) => setActiveLightbox({ img, name }) }))
       ),
-      React.createElement("a", { className: "lux-collection__quiz", href: "/quiz/" }, "Looking for your first cup?", React.createElement("span", null, "Find your tea ↗"))
+      React.createElement("a", { className: "lux-collection__quiz", href: "/compare/" }, "Which tea is right for you?", React.createElement("span", null, "Compare all ten teas ↗"))
     ),
     r &&
       ReactDOM.createPortal(

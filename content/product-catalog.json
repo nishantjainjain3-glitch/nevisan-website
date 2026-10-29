@@ -17,7 +17,8 @@
         "leaves": "2–2.5g per cup",
         "time": "1.5–2 minutes"
       },
-      "amazon_url": "https://www.amazon.in/dp/B0FTZ7KQ5B"
+      "amazon_url": "https://www.amazon.in/dp/B0FTZ7KQ5B",
+      "flavour": "Delicate florals; a vivid blue cup."
     },
     {
       "handle": "chamomile-green-tea",
@@ -33,7 +34,8 @@
         "leaves": "2–2.5g per cup",
         "time": "2 minutes"
       },
-      "amazon_url": "https://www.amazon.in/dp/B0FV2QGRBM"
+      "amazon_url": "https://www.amazon.in/dp/B0FV2QGRBM",
+      "flavour": "Soft florals with honeyed apple notes."
     },
     {
       "handle": "gaba-oolong-tea",
@@ -49,7 +51,8 @@
         "leaves": "2–2.5g per cup",
         "time": "2 minutes"
       },
-      "amazon_url": "https://www.amazon.in/dp/B0GTRBXKP8"
+      "amazon_url": "https://www.amazon.in/dp/B0GTRBXKP8",
+      "flavour": "Toasty amber, stone fruit and a honey-like finish."
     },
     {
       "handle": "ginger-green-tea",
@@ -65,7 +68,8 @@
         "leaves": "2–2.5g per cup",
         "time": "1.5–2 minutes"
       },
-      "amazon_url": "https://www.amazon.in/dp/B0H6PZYPMP"
+      "amazon_url": "https://www.amazon.in/dp/B0H6PZYPMP",
+      "flavour": "Ginger warmth with a mellow green-tea finish."
     },
     {
       "handle": "lemongrass-green-tea",
@@ -81,7 +85,8 @@
         "leaves": "2–2.5g per cup",
         "time": "1.5–2 minutes"
       },
-      "amazon_url": "https://www.amazon.in/dp/B0FSZSZ1ZM"
+      "amazon_url": "https://www.amazon.in/dp/B0FSZSZ1ZM",
+      "flavour": "Bright citrus with a gentle grassy finish."
     },
     {
       "handle": "organic-green-tea",
@@ -97,7 +102,8 @@
         "leaves": "2–2.5g per cup",
         "time": "1.5–2 minutes"
       },
-      "amazon_url": "https://www.amazon.in/dp/B0FV2N83XD"
+      "amazon_url": "https://www.amazon.in/dp/B0FV2N83XD",
+      "flavour": "Fresh, grassy notes and whole-leaf character."
     },
     {
       "handle": "rum-green-tea",
@@ -113,7 +119,8 @@
         "leaves": "2–2.5g per cup",
         "time": "1.5–2 minutes"
       },
-      "amazon_url": "https://www.amazon.in/dp/B0FV2QVGVL"
+      "amazon_url": "https://www.amazon.in/dp/B0FV2QVGVL",
+      "flavour": "Warm molasses and vanilla notes."
     },
     {
       "handle": "spearmint-green-tea",
@@ -129,7 +136,8 @@
         "leaves": "2–2.5g per cup",
         "time": "1.5–2 minutes"
       },
-      "amazon_url": "https://www.amazon.in/dp/B0GTR2GXW2"
+      "amazon_url": "https://www.amazon.in/dp/B0GTR2GXW2",
+      "flavour": "Refreshing mint with a clean, bright finish."
     },
     {
       "handle": "tulsi-green-tea",
@@ -145,7 +153,8 @@
         "leaves": "2–2.5g per cup",
         "time": "1.5–2 minutes"
       },
-      "amazon_url": "https://www.amazon.in/dp/B0FSZVRPSG"
+      "amazon_url": "https://www.amazon.in/dp/B0FSZVRPSG",
+      "flavour": "Herbaceous warmth with a fragrant tulsi note."
     },
     {
       "handle": "whiskey-green-tea",
@@ -161,7 +170,8 @@
         "leaves": "2–2.5g per cup",
         "time": "1.5–2 minutes"
       },
-      "amazon_url": "https://www.amazon.in/dp/B0FSZXVWXD"
+      "amazon_url": "https://www.amazon.in/dp/B0FSZXVWXD",
+      "flavour": "Smoky malt and oak notes."
     }
   ]
 }

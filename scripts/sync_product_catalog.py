@@ -153,6 +153,8 @@ def main():
     write(cost_path, cost_text)
     from build_home_collection import build
     build()
+    from build_product_benefits import build as build_benefits
+    build_benefits()
     print(f'Synchronized {len(PRODUCTS)} products, checkout, collection, structured data and brewing guide.')
 
 

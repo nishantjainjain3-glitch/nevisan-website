@@ -26,7 +26,7 @@ class ProductBenefitsTests(unittest.TestCase):
                     self.assertIn(escape(benefit['title']),block)
                     self.assertIn(escape(benefit['text']),block)
                 self.assertLess(text.index('id="why-choose"'),text.index('<h2>Make it your ritual</h2>'))
-                self.assertIn('/product-benefits.css?v=1',text)
+                self.assertIn('/product-benefits.css?v=2',text)
                 self.assertIn('Contains caffeine.',block)
 
     def test_ingredient_research_is_linked_and_kept_out_of_benefit_promises(self):
@@ -52,3 +52,15 @@ class ProductBenefitsTests(unittest.TestCase):
         self.assertIn('cultured human skin cells',CONTENT['products']['blue-flower-green-tea']['research']['text'])
         self.assertIn('no significant improvement',CONTENT['products']['spearmint-green-tea']['research']['text'])
         self.assertIn('does not mean all green teas',CONTENT['products']['organic-green-tea']['research']['text'])
+
+    def test_visible_health_findings_include_evidence_and_limits(self):
+        for handle,data in CONTENT['products'].items():
+            with self.subTest(tea=handle):
+                health=data['health']
+                text=(ROOT/'products'/handle/'index.html').read_text(encoding='utf-8')
+                visible=text.split('<div class="tea-health"',1)[1].split('<div class="tea-reasons">',1)[0]
+                for field in ('title','finding','limits','level'):
+                    self.assertIn(escape(health[field]),visible)
+                self.assertIn(health['source']['url'],visible)
+                self.assertIn('not clinically established benefits',visible)
+                self.assertNotIn('<details',visible)

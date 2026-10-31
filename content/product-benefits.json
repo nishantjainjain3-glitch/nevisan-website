@@ -5,92 +5,358 @@
     "lemongrass-green-tea": {
       "intro": "A bright, citrus-style cup for anyone who enjoys a fresh change from plain green tea.",
       "benefits": [
-        {"title": "Citrus aroma, gently grassy finish", "text": "Dried lemongrass stalks bring their distinctive aroma to the whole-leaf green-tea base. Try it plain before adding lemon or sweetener."},
-        {"title": "Enjoy it warm or chilled", "text": "Brew using the pouch’s hot-water directions, strain and chill promptly for an iced serving. Adjust ice and additions to your taste."},
-        {"title": "Make a simpler tea break", "text": "A loose-leaf option to enjoy without adding sugar or syrup. You choose the strength and what goes into the finished cup."}
+        {
+          "title": "Citrus aroma, gently grassy finish",
+          "text": "Dried lemongrass stalks bring their distinctive aroma to the whole-leaf green-tea base. Try it plain before adding lemon or sweetener."
+        },
+        {
+          "title": "Enjoy it warm or chilled",
+          "text": "Brew using the pouch’s hot-water directions, strain and chill promptly for an iced serving. Adjust ice and additions to your taste."
+        },
+        {
+          "title": "Make a simpler tea break",
+          "text": "A loose-leaf option to enjoy without adding sugar or syrup. You choose the strength and what goes into the finished cup."
+        }
       ],
-      "research": {"title": "Lemongrass and uric acid: what was studied?", "text": "A small study reported changes in uric acid when older women ate lemongrass stems in prepared fish dishes. It did not test lemongrass green tea. Its results do not establish that this blend lowers uric acid or helps manage gout.", "sources": [{"label": "Read the lemongrass food-intervention study", "url": "https://oamjms.eu/index.php/mjms/article/view/5203"}]}
+      "research": {
+        "title": "Lemongrass and uric acid: what was studied?",
+        "text": "A small study reported changes in uric acid when older women ate lemongrass stems in prepared fish dishes. It did not test lemongrass green tea. Its results do not establish that this blend lowers uric acid or helps manage gout.",
+        "sources": [
+          {
+            "label": "Read the lemongrass food-intervention study",
+            "url": "https://oamjms.eu/index.php/mjms/article/view/5203"
+          }
+        ]
+      },
+      "health": {
+        "title": "Lemongrass: antioxidant potential",
+        "finding": "Laboratory research on lemongrass-and-ginger infusions found antioxidant activity, including free-radical scavenging. This is a promising property of the tested plant preparations.",
+        "limits": "Laboratory antioxidant activity is not proof of a health benefit in people. Preparation, plant parts and proportions differ from this blend; this does not establish uric-acid or gout benefits.",
+        "level": "Laboratory evidence",
+        "source": {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11583708/",
+          "label": "Read the infusion antioxidant study"
+        }
+      }
     },
     "ginger-green-tea": {
       "intro": "Choose a warming ginger flavour with a mellow whole-leaf green-tea finish.",
       "benefits": [
-        {"title": "Ginger character in every brew", "text": "Dried ginger flakes and natural ginger flavour give this blend its warming, fragrant taste. It is a flavour choice when plain green tea feels too grassy."},
-        {"title": "A cup that fits your taste", "text": "Start with the pouch’s short steep, then change one brewing setting at a time to find the strength you enjoy."},
-        {"title": "Your choice of additions", "text": "Taste the first cup plain. The ginger character lets you explore an aromatic drink without automatically adding syrup or sweetener."}
+        {
+          "title": "Ginger character in every brew",
+          "text": "Dried ginger flakes and natural ginger flavour give this blend its warming, fragrant taste. It is a flavour choice when plain green tea feels too grassy."
+        },
+        {
+          "title": "A cup that fits your taste",
+          "text": "Start with the pouch’s short steep, then change one brewing setting at a time to find the strength you enjoy."
+        },
+        {
+          "title": "Your choice of additions",
+          "text": "Taste the first cup plain. The ginger character lets you explore an aromatic drink without automatically adding syrup or sweetener."
+        }
       ],
-      "research": {"title": "Ginger research: nausea and thyroid questions", "text": "NCCIH describes research on ginger for some kinds of nausea, mostly using supplements. A pilot thyroid study reported symptom improvements using ginger-powder capsules alongside unchanged levothyroxine treatment. Neither establishes the same benefit from this tea, whose ginger dose is not measured. Do not replace or change thyroid medication on the basis of a tea choice.", "sources": [{"label": "NCCIH: ginger evidence and safety", "url": "https://www.nccih.nih.gov/health/ginger"}, {"label": "Read the pilot ginger-capsule thyroid trial", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8794674/"}]}
+      "research": {
+        "title": "Ginger research: nausea and thyroid questions",
+        "text": "NCCIH describes research on ginger for some kinds of nausea, mostly using supplements. A pilot thyroid study reported symptom improvements using ginger-powder capsules alongside unchanged levothyroxine treatment. Neither establishes the same benefit from this tea, whose ginger dose is not measured. Do not replace or change thyroid medication on the basis of a tea choice.",
+        "sources": [
+          {
+            "label": "NCCIH: ginger evidence and safety",
+            "url": "https://www.nccih.nih.gov/health/ginger"
+          },
+          {
+            "label": "Read the pilot ginger-capsule thyroid trial",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8794674/"
+          }
+        ]
+      },
+      "health": {
+        "title": "Ginger: potential relief from some nausea",
+        "finding": "Research summarized by NCCIH suggests ginger may help nausea and vomiting associated with pregnancy. Ginger supplements may also lessen menstrual-cramp severity.",
+        "limits": "Most studies used supplements, not a ginger-green-tea drink. The ginger dose in this cup is unmeasured, so equivalent relief is not established. During pregnancy or when taking medicines, discuss herbal products with your clinician.",
+        "level": "Human research; mainly supplements",
+        "source": {
+          "url": "https://www.nccih.nih.gov/health/ginger/",
+          "label": "NCCIH: ginger research"
+        }
+      }
     },
     "gaba-oolong-tea": {
       "intro": "A toastier alternative to green tea, with an amber cup and a rounded, honey-like finish.",
       "benefits": [
-        {"title": "Explore a different tea style", "text": "Whole-leaf Assam oolong offers toasty and stone-fruit notes. The honey-like tasting description does not mean honey has been added."},
-        {"title": "Make time for a measured pause", "text": "A cup, a roomy strainer and a two-minute first steep give you a straightforward tea ritual. Strain the leaves before taking your time with the cup."},
-        {"title": "Discover the leaf itself", "text": "The declared ingredient is whole-leaf oolong tea. Brew the first cup plain to explore its character without added botanical flavours."}
+        {
+          "title": "Explore a different tea style",
+          "text": "Whole-leaf Assam oolong offers toasty and stone-fruit notes. The honey-like tasting description does not mean honey has been added."
+        },
+        {
+          "title": "Make time for a measured pause",
+          "text": "A cup, a roomy strainer and a two-minute first steep give you a straightforward tea ritual. Strain the leaves before taking your time with the cup."
+        },
+        {
+          "title": "Discover the leaf itself",
+          "text": "The declared ingredient is whole-leaf oolong tea. Brew the first cup plain to explore its character without added botanical flavours."
+        }
       ],
-      "research": {"title": "GABA tea research: stress is not migraine evidence", "text": "A small study of GABA-fortified oolong examined immediate stress ratings and heart-rate variability in healthy young adults. It did not test migraine relief or Nevisan’s tea. We do not have a measured GABA dose or clinical results for this product, so this research cannot support a migraine-help claim for the blend.", "sources": [{"label": "Read the GABA-fortified oolong study", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6443991/"}]}
+      "research": {
+        "title": "GABA tea research: stress is not migraine evidence",
+        "text": "A small study of GABA-fortified oolong examined immediate stress ratings and heart-rate variability in healthy young adults. It did not test migraine relief or Nevisan’s tea. We do not have a measured GABA dose or clinical results for this product, so this research cannot support a migraine-help claim for the blend.",
+        "sources": [
+          {
+            "label": "Read the GABA-fortified oolong study",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6443991/"
+          }
+        ]
+      },
+      "health": {
+        "title": "GABA oolong: early stress-response research",
+        "finding": "A small study of 30 healthy young adults found lower immediate stress ratings and changes in heart-rate variability after tea. Both regular and GABA-enriched oolong groups showed changes over time.",
+        "limits": "These preliminary findings do not establish that GABA tea works better than regular tea for stress. Nevisan’s GABA content has not been measured, and the study did not establish migraine relief. This tea contains caffeine.",
+        "level": "Small human tea study",
+        "source": {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6443991/",
+          "label": "Read the oolong stress study"
+        }
+      }
     },
     "tulsi-green-tea": {
       "intro": "A fragrant, herbaceous blend for people who enjoy the familiar character of tulsi.",
       "benefits": [
-        {"title": "Tulsi leaves, green-tea character", "text": "Holy basil leaves bring a leafy, aromatic note to the whole-leaf green-tea base. Choose it for a more herbaceous cup than the plain tea."},
-        {"title": "A familiar botanical ritual", "text": "Enjoy the tulsi aroma in a simple brewed drink. Start without additions so you can notice the herb and tea separately."},
-        {"title": "Adjust the cup to your routine", "text": "Measure a small portion, use a timer and strain fully. Loose leaf lets you adjust preparation instead of committing to a fixed-strength ready-made drink."}
+        {
+          "title": "Tulsi leaves, green-tea character",
+          "text": "Holy basil leaves bring a leafy, aromatic note to the whole-leaf green-tea base. Choose it for a more herbaceous cup than the plain tea."
+        },
+        {
+          "title": "A familiar botanical ritual",
+          "text": "Enjoy the tulsi aroma in a simple brewed drink. Start without additions so you can notice the herb and tea separately."
+        },
+        {
+          "title": "Adjust the cup to your routine",
+          "text": "Measure a small portion, use a timer and strain fully. Loose leaf lets you adjust preparation instead of committing to a fixed-strength ready-made drink."
+        }
       ],
-      "research": {"title": "Tulsi and immunity: preparation matters", "text": "A small trial in healthy volunteers investigated immune-system markers using a tulsi leaf extract. An extract study does not establish that drinking this green-tea blend boosts immunity or prevents infections. The amount and preparation of tulsi in a brewed cup differ from a concentrated research product.", "sources": [{"label": "Read the tulsi leaf-extract trial", "url": "https://pubmed.ncbi.nlm.nih.gov/21619917/"}]}
+      "research": {
+        "title": "Tulsi and immunity: preparation matters",
+        "text": "A small trial in healthy volunteers investigated immune-system markers using a tulsi leaf extract. An extract study does not establish that drinking this green-tea blend boosts immunity or prevents infections. The amount and preparation of tulsi in a brewed cup differ from a concentrated research product.",
+        "sources": [
+          {
+            "label": "Read the tulsi leaf-extract trial",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21619917/"
+          }
+        ]
+      },
+      "health": {
+        "title": "Tulsi: early immune-function findings",
+        "finding": "A small randomized trial of tulsi leaf extract found increases in certain immune-signalling molecules and immune-cell measures after four weeks. This suggests an effect on immune activity worth further study.",
+        "limits": "The study analysed 22 healthy volunteers and used extract capsules, not brewed tulsi green tea. Changes in immune markers do not prove fewer infections or stronger everyday immunity from this blend.",
+        "level": "Small human extract trial",
+        "source": {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21619917/",
+          "label": "Read the tulsi immune-marker trial"
+        }
+      }
     },
     "chamomile-green-tea": {
       "intro": "Soft florals and honeyed apple-like notes for a gentle-tasting tea break.",
       "benefits": [
-        {"title": "A softer floral flavour", "text": "Chamomile flowers add their floral character to whole-leaf green tea. Apple-like and honeyed notes describe taste, not added apple or honey."},
-        {"title": "A simple moment to slow down", "text": "Set aside a few minutes to prepare and enjoy a warm cup. Choose the ritual for its flavour and the break it gives your day."},
-        {"title": "Know which chamomile you are choosing", "text": "This blend includes green tea and contains caffeine. It suits someone seeking a floral green tea, rather than a pure, caffeine-free chamomile infusion."}
+        {
+          "title": "A softer floral flavour",
+          "text": "Chamomile flowers add their floral character to whole-leaf green tea. Apple-like and honeyed notes describe taste, not added apple or honey."
+        },
+        {
+          "title": "A simple moment to slow down",
+          "text": "Set aside a few minutes to prepare and enjoy a warm cup. Choose the ritual for its flavour and the break it gives your day."
+        },
+        {
+          "title": "Know which chamomile you are choosing",
+          "text": "This blend includes green tea and contains caffeine. It suits someone seeking a floral green tea, rather than a pure, caffeine-free chamomile infusion."
+        }
       ],
-      "research": {"title": "Chamomile and sleep: keep caffeine in view", "text": "Chamomile has been studied for sleep, but NCCIH reports very limited evidence for insomnia. Results from chamomile supplements or pure herbal preparations cannot establish a sleep benefit for this caffeinated green-tea blend. If avoiding caffeine is part of your bedtime routine, choose an appropriate caffeine-free drink instead.", "sources": [{"label": "NCCIH: chamomile evidence and safety", "url": "https://www.nccih.nih.gov/health/chamomile/"}]}
+      "research": {
+        "title": "Chamomile and sleep: keep caffeine in view",
+        "text": "Chamomile has been studied for sleep, but NCCIH reports very limited evidence for insomnia. Results from chamomile supplements or pure herbal preparations cannot establish a sleep benefit for this caffeinated green-tea blend. If avoiding caffeine is part of your bedtime routine, choose an appropriate caffeine-free drink instead.",
+        "sources": [
+          {
+            "label": "NCCIH: chamomile evidence and safety",
+            "url": "https://www.nccih.nih.gov/health/chamomile/"
+          }
+        ]
+      },
+      "health": {
+        "title": "Chamomile: preliminary anxiety research",
+        "finding": "NCCIH reports that early studies of chamomile dietary supplements suggest a possible benefit for generalized anxiety disorder and associated depression.",
+        "limits": "Evidence is preliminary and concerns supplements, not this tea. Reliable evidence for insomnia is very limited. This caffeinated green-tea blend is not equivalent to a pure caffeine-free chamomile infusion or a sleep treatment.",
+        "level": "Preliminary human supplement research",
+        "source": {
+          "url": "https://www.nccih.nih.gov/health/chamomile/",
+          "label": "NCCIH: chamomile research"
+        }
+      }
     },
     "spearmint-green-tea": {
       "intro": "Refreshing mint aroma with a clean green-tea finish, served at the strength you enjoy.",
       "benefits": [
-        {"title": "A fresh mint-flavoured cup", "text": "Spearmint leaves bring a distinctive mint character to whole-leaf green tea. Try it when you want an aromatic alternative to the unflavoured leaf."},
-        {"title": "Enjoy the aroma without extra additions", "text": "Brew and taste the first cup plain. You can enjoy the mint note without automatically adding a sweetener or flavoured syrup."},
-        {"title": "Hot or chilled, prepared your way", "text": "Follow the hot-brew directions and strain fully. Enjoy warm, or chill the strained tea promptly for a fresh-tasting iced serving."}
+        {
+          "title": "A fresh mint-flavoured cup",
+          "text": "Spearmint leaves bring a distinctive mint character to whole-leaf green tea. Try it when you want an aromatic alternative to the unflavoured leaf."
+        },
+        {
+          "title": "Enjoy the aroma without extra additions",
+          "text": "Brew and taste the first cup plain. You can enjoy the mint note without automatically adding a sweetener or flavoured syrup."
+        },
+        {
+          "title": "Hot or chilled, prepared your way",
+          "text": "Follow the hot-brew directions and strain fully. Enjoy warm, or chill the strained tea promptly for a fresh-tasting iced serving."
+        }
       ],
-      "research": {"title": "Spearmint, PCOS and PCOD: what the trial tested", "text": "A short trial in women with PCOS reported hormone changes with spearmint herbal tea, but no significant improvement in the objective hair-growth rating during the trial. It did not test this caffeinated spearmint-and-green-tea blend. That evidence does not establish PCOS/PCOD management, fertility benefits or a hormone-balancing effect for this product.", "sources": [{"label": "Read the randomized spearmint herbal-tea trial", "url": "https://pubmed.ncbi.nlm.nih.gov/19585478/"}]}
+      "research": {
+        "title": "Spearmint, PCOS and PCOD: what the trial tested",
+        "text": "A short trial in women with PCOS reported hormone changes with spearmint herbal tea, but no significant improvement in the objective hair-growth rating during the trial. It did not test this caffeinated spearmint-and-green-tea blend. That evidence does not establish PCOS/PCOD management, fertility benefits or a hormone-balancing effect for this product.",
+        "sources": [
+          {
+            "label": "Read the randomized spearmint herbal-tea trial",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19585478/"
+          }
+        ]
+      },
+      "health": {
+        "title": "Spearmint: hormone findings in PCOS research",
+        "finding": "In a 30-day randomized trial, women with PCOS who drank spearmint herbal tea twice daily had lower free and total testosterone. Participants also reported improvement in unwanted hair symptoms.",
+        "limits": "The objective hair-growth rating did not improve significantly. The short study did not test this green-tea blend or establish fertility benefits, overall PCOS management or a general hormone-balancing effect.",
+        "level": "Short human herbal-tea trial",
+        "source": {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/19585478/",
+          "label": "Read the spearmint trial"
+        }
+      }
     },
     "organic-green-tea": {
       "intro": "The unflavoured reference in the collection: a fresh, grassy whole-leaf cup to make your own.",
       "benefits": [
-        {"title": "Taste the tea without added flavouring", "text": "The declared ingredient is whole-leaf green tea alone. It is a useful starting point before exploring mint, flowers or warming blends."},
-        {"title": "Build an unsweetened tea habit", "text": "Enjoy it plain as an alternative to your usual sweetened drink. The additions you choose matter; this is not a promise of weight loss."},
-        {"title": "Find your preferred strength", "text": "Loose leaf lets you measure each portion and adjust preparation. Start with the pouch guide, then change time or leaf quantity one at a time."}
+        {
+          "title": "Taste the tea without added flavouring",
+          "text": "The declared ingredient is whole-leaf green tea alone. It is a useful starting point before exploring mint, flowers or warming blends."
+        },
+        {
+          "title": "Build an unsweetened tea habit",
+          "text": "Enjoy it plain as an alternative to your usual sweetened drink. The additions you choose matter; this is not a promise of weight loss."
+        },
+        {
+          "title": "Find your preferred strength",
+          "text": "Loose leaf lets you measure each portion and adjust preparation. Start with the pouch guide, then change time or leaf quantity one at a time."
+        }
       ],
-      "research": {"title": "Green tea and weight: modest, variable research results", "text": "NCCIH notes that catechins and caffeine in green tea and its extracts may have a modest effect on body weight, with results depending on the preparation and person. That does not mean all green teas produce weight loss, and no such result has been established for this Nevisan product. Organic status does not establish greater weight-loss benefits.", "sources": [{"label": "NCCIH: green-tea research and safety", "url": "https://www.nccih.nih.gov/health/green-tea"}]}
+      "research": {
+        "title": "Green tea and weight: modest, variable research results",
+        "text": "NCCIH notes that catechins and caffeine in green tea and its extracts may have a modest effect on body weight, with results depending on the preparation and person. That does not mean all green teas produce weight loss, and no such result has been established for this Nevisan product. Organic status does not establish greater weight-loss benefits.",
+        "sources": [
+          {
+            "label": "NCCIH: green-tea research and safety",
+            "url": "https://www.nccih.nih.gov/health/green-tea"
+          }
+        ]
+      },
+      "health": {
+        "title": "Green tea: modest weight and cholesterol findings",
+        "finding": "NCCIH reports that green-tea catechins and caffeine may have a modest effect on body weight. Trials also found small reductions in total and LDL cholesterol, mostly using green-tea extracts.",
+        "limits": "Effects depend on preparation and the individual. This does not establish weight loss or cholesterol reduction from this product, and organic status does not establish extra health benefits.",
+        "level": "Human research; many extract studies",
+        "source": {
+          "url": "https://www.nccih.nih.gov/health/green-tea",
+          "label": "NCCIH: green-tea research"
+        }
+      }
     },
     "blue-flower-green-tea": {
       "intro": "A colourful floral cup that makes the tea itself part of the serving experience.",
       "benefits": [
-        {"title": "A beautiful cup to serve", "text": "Dried butterfly pea flowers bring a vivid blue colour to this green-tea blend. Choose a clear cup if you want to enjoy the appearance as well as the aroma."},
-        {"title": "Delicate floral character", "text": "The flowers accompany a whole-leaf green-tea base. Taste it plain first so you can notice the gentle floral and tea notes."},
-        {"title": "Make an occasion of a simple brew", "text": "Prepare using the pouch guide, strain and serve warm. For an iced presentation, chill the strained hot brew promptly before serving."}
+        {
+          "title": "A beautiful cup to serve",
+          "text": "Dried butterfly pea flowers bring a vivid blue colour to this green-tea blend. Choose a clear cup if you want to enjoy the appearance as well as the aroma."
+        },
+        {
+          "title": "Delicate floral character",
+          "text": "The flowers accompany a whole-leaf green-tea base. Taste it plain first so you can notice the gentle floral and tea notes."
+        },
+        {
+          "title": "Make an occasion of a simple brew",
+          "text": "Prepare using the pouch guide, strain and serve warm. For an iced presentation, chill the strained hot brew promptly before serving."
+        }
       ],
-      "research": {"title": "Butterfly pea and beauty: laboratory findings are not drinking results", "text": "Research on butterfly pea extract has examined oxidative stress in cultured human skin cells. That is laboratory evidence, not a trial showing that drinking this tea improves skin, hair or appearance. A colourful cup can be a beautiful serving choice without promising a beauty benefit to the body.", "sources": [{"label": "Read the skin-cell laboratory study", "url": "https://pubmed.ncbi.nlm.nih.gov/29464849/"}]}
+      "research": {
+        "title": "Butterfly pea and beauty: laboratory findings are not drinking results",
+        "text": "Research on butterfly pea extract has examined oxidative stress in cultured human skin cells. That is laboratory evidence, not a trial showing that drinking this tea improves skin, hair or appearance. A colourful cup can be a beautiful serving choice without promising a beauty benefit to the body.",
+        "sources": [
+          {
+            "label": "Read the skin-cell laboratory study",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29464849/"
+          }
+        ]
+      },
+      "health": {
+        "title": "Butterfly pea: early antioxidant findings in people",
+        "finding": "A small crossover trial in 15 healthy men found increased blood antioxidant capacity after a butterfly-pea flower-extract beverage. When taken with sucrose, the extract also reduced the short-term glucose and insulin response.",
+        "limits": "The trial used measured extract doses and tracked effects for hours. It did not test Nevisan’s blend, long-term health, diabetes treatment or improvements in skin, hair or beauty.",
+        "level": "Small short-term human extract-beverage trial",
+        "source": {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5759795/",
+          "label": "Read the butterfly-pea beverage trial"
+        }
+      }
     },
     "rum-green-tea": {
       "intro": "Warm molasses and vanilla-style notes in a non-alcoholic, spirit-inspired green tea.",
       "benefits": [
-        {"title": "Spirit-inspired flavour, without alcohol", "text": "Natural rum flavour gives the whole-leaf green tea its distinctive character. Choose it for a non-alcoholic flavour experience, not an alcoholic drink."},
-        {"title": "Explore a different kind of green tea", "text": "A choice for people drawn to warmer flavour notes rather than mint or florals. Read the ingredient line if you prefer to avoid added natural flavouring."},
-        {"title": "Serve it simply", "text": "Try the first brew plain before adding sweetener. Enjoy warm, or chill the strained hot brew promptly for an iced variation."}
+        {
+          "title": "Spirit-inspired flavour, without alcohol",
+          "text": "Natural rum flavour gives the whole-leaf green tea its distinctive character. Choose it for a non-alcoholic flavour experience, not an alcoholic drink."
+        },
+        {
+          "title": "Explore a different kind of green tea",
+          "text": "A choice for people drawn to warmer flavour notes rather than mint or florals. Read the ingredient line if you prefer to avoid added natural flavouring."
+        },
+        {
+          "title": "Serve it simply",
+          "text": "Try the first brew plain before adding sweetener. Enjoy warm, or chill the strained hot brew promptly for an iced variation."
+        }
       ],
-      "note": "The benefits here are flavour, format and serving choices. Natural rum flavour does not establish a medicinal benefit. This green-tea blend contains caffeine."
+      "note": "The benefits here are flavour, format and serving choices. Natural rum flavour does not establish a medicinal benefit. This green-tea blend contains caffeine.",
+      "health": {
+        "title": "Rum flavour, with a green-tea base",
+        "finding": "Green tea has been researched for modest effects on weight and blood cholesterol, often using extracts. These findings concern the tea ingredients, not the rum flavour.",
+        "limits": "There is no established extra health benefit from the added flavour. This non-alcoholic blend contains caffeine; health effects have not been established for the finished product.",
+        "level": "Green-tea ingredient research; not a flavoured-blend trial",
+        "source": {
+          "url": "https://www.nccih.nih.gov/health/green-tea",
+          "label": "NCCIH: green-tea research"
+        }
+      }
     },
     "whiskey-green-tea": {
       "intro": "Smoky malt and oak-style character for a bold, non-alcoholic tea experience.",
       "benefits": [
-        {"title": "Whiskey-inspired, non-alcoholic character", "text": "Natural whiskey flavour brings the spirit-inspired profile to a whole-leaf green-tea base. It is a tea choice, not an alcoholic whiskey."},
-        {"title": "A bolder flavour direction", "text": "Choose the smoky, malty profile when you want something different from grassy, floral or mint flavours. The notes describe taste rather than a health effect."},
-        {"title": "Enjoy warm or over ice", "text": "Use the pouch’s hot-brew directions and strain completely. Serve warm, or chill promptly before adding ice; adjust additions after tasting."}
+        {
+          "title": "Whiskey-inspired, non-alcoholic character",
+          "text": "Natural whiskey flavour brings the spirit-inspired profile to a whole-leaf green-tea base. It is a tea choice, not an alcoholic whiskey."
+        },
+        {
+          "title": "A bolder flavour direction",
+          "text": "Choose the smoky, malty profile when you want something different from grassy, floral or mint flavours. The notes describe taste rather than a health effect."
+        },
+        {
+          "title": "Enjoy warm or over ice",
+          "text": "Use the pouch’s hot-brew directions and strain completely. Serve warm, or chill promptly before adding ice; adjust additions after tasting."
+        }
       ],
-      "note": "The benefits here are flavour, format and serving choices. Natural whiskey flavour does not establish a medicinal benefit. This green-tea blend contains caffeine."
+      "note": "The benefits here are flavour, format and serving choices. Natural whiskey flavour does not establish a medicinal benefit. This green-tea blend contains caffeine.",
+      "health": {
+        "title": "Whiskey flavour, with a green-tea base",
+        "finding": "Green tea has been researched for modest effects on weight and blood cholesterol, often using extracts. These findings concern the tea ingredients, not the whiskey flavour.",
+        "limits": "There is no established extra health benefit from the added flavour. This non-alcoholic blend contains caffeine; health effects have not been established for the finished product.",
+        "level": "Green-tea ingredient research; not a flavoured-blend trial",
+        "source": {
+          "url": "https://www.nccih.nih.gov/health/green-tea",
+          "label": "NCCIH: green-tea research"
+        }
+      }
     }
   }
 }

@@ -13,3 +13,9 @@
 .tea-why-choose :is(.tea-research-date,.tea-choice-note){font-size:.875rem;line-height:1.8;color:#536052}
 .tea-compare-link{display:inline-block;min-height:44px;padding:.6rem 0}
 @media(max-width:700px){.tea-reasons{grid-template-columns:1fr;gap:.75rem}.tea-research summary{padding:.9rem 1rem}.tea-research>div{padding:0 1rem 1rem}}
+.tea-health{margin:1.5rem 0;padding:1.4rem;border:1px solid #d8cfbc;border-radius:12px;background:#f8f6f0}
+.tea-why-choose .tea-health h3{font-family:'Playfair Display',Georgia,serif;color:#23412d;font-size:1.35rem;line-height:1.45;margin:.5rem 0}
+.tea-health .tea-evidence-level{font-size:.85rem;font-weight:600;color:#52634f}
+.tea-health p{max-width:78ch}
+.tea-health a{display:inline-block;min-height:44px;padding:.65rem 0;overflow-wrap:anywhere}
+@media(max-width:700px){.tea-health{padding:1rem}.tea-why-choose .tea-health h3{font-size:1.2rem}}

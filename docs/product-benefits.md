@@ -23,3 +23,8 @@ Recheck the date and evidence before materially changing a research note.
 Keep the short caffeine notice visible, especially for Chamomile Green Tea.
 Don't add medical benefit keywords to Product schema or search descriptions
 merely because a study is discussed on the page.
+
+
+## Visible ingredient-health research
+
+All ten pages now show a health research panel before the flavour cards. Each panel records a finding, evidence type, preparation-specific limits and a primary or official source. Human biomarkers are not presented as proven clinical outcomes; laboratory results are labelled. GABA copy acknowledges changes in both tea groups. Rum and whiskey use green-tea evidence without attributing health benefits to flavouring. Photos, certification details, prices and checkout remain unchanged.

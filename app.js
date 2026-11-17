@@ -8219,6 +8219,24 @@ function CartSheet({ onClose: e }) {
               o,
             ),
           ),
+          t.length === 1 && React.createElement(
+            "div",
+            {
+              style: {
+                marginBottom: 12,
+                padding: "8px 12px",
+                background: "rgba(35,65,45,0.06)",
+                borderRadius: 8,
+                fontSize: 13,
+                color: T.teal,
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+              },
+            },
+            React.createElement("span", null, "💡"),
+            "Tip: Pair with an evening tea like Chamomile or Spearmint for your day-and-night ritual.",
+          ),
           React.createElement(
             "button",
             {

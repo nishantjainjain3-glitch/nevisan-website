@@ -73,6 +73,7 @@ test('activated cart checkout opens the selected teas and quantities without cle
  const env=app(); let destination;
  env.context.window.location={assign:value=>destination=value};
  vm.runInContext(fs.readFileSync('checkout/cart-bridge.js','utf8'),env.context);
+ env.context.window.NEVISAN_CART_CHECKOUT.enabled=true;
  env.provider().addToCart({name:'Ginger Green Tea',price:499});
  env.provider().addToCart({name:'Ginger Green Tea',price:499});
  env.context.cartValue=env.provider();
@@ -84,15 +85,23 @@ test('activated cart checkout opens the selected teas and quantities without cle
  assert.equal(env.provider().cart[0].qty,2);assert.equal(env.opened.length,0);
 });
 
-test('homepage direct store choices and generic order actions use Nevisan Pay; support stays WhatsApp',()=>{
- const env=app();let destination;
- env.context.window.location={assign:value=>destination=value};
+test('homepage direct store choices and generic order actions open WhatsApp directly with address template; support stays WhatsApp',()=>{
+ const env=app();
  vm.runInContext(fs.readFileSync('checkout/cart-bridge.js','utf8'),env.context);
  vm.runInContext('openWhatsApp("Ginger Green Tea")',env.context);
- let url=new URL(destination,'https://nevisan.in');
- assert.deepEqual(JSON.parse(url.searchParams.get('items')),[{handle:'ginger-green-tea',quantity:1}]);
- vm.runInContext('openWhatsApp()',env.context);assert.equal(destination,'/checkout/');assert.equal(env.opened.length,0);
- vm.runInContext('openNevisanSupport()',env.context);url=new URL(env.opened[0][0]);assert.equal(url.hostname,'wa.me');assert.match(url.searchParams.get('text'),/question/);
+ let url=new URL(env.opened[0][0]);
+ assert.equal(url.hostname,'wa.me');
+ assert.ok(url.searchParams.get('text').includes('Ginger Green Tea'));
+ assert.ok(url.searchParams.get('text').includes('Delivery Details:'));
+ assert.ok(url.searchParams.get('text').includes('PIN Code:'));
+ vm.runInContext('openWhatsApp()',env.context);
+ url=new URL(env.opened[1][0]);
+ assert.equal(url.hostname,'wa.me');
+ assert.ok(url.searchParams.get('text').includes('Delivery Details:'));
+ vm.runInContext('openNevisanSupport()',env.context);
+ url=new URL(env.opened[2][0]);
+ assert.equal(url.hostname,'wa.me');
+ assert.match(url.searchParams.get('text'),/question/);
 });
 
 test('cart uses current catalog prices and enforces checkout packet limits',()=>{
@@ -139,8 +148,7 @@ test('empty carts disable checkout and expose a continue-shopping action',()=>{
 });
 
 test('every store-choice action routes the selected tea to the correct destination',()=>{
- const env=app();let direct;
- env.context.window.location={assign:value=>direct=value};
+ const env=app();
  vm.runInContext(fs.readFileSync('checkout/cart-bridge.js','utf8'),env.context);
  const teas=vm.runInContext('TEAS',env.context);
  function nodes(tree){if(!tree||typeof tree!=='object')return [];return [tree,...(tree.children||[]).flat(Infinity).flatMap(nodes)]}
@@ -148,10 +156,12 @@ test('every store-choice action routes the selected tea to the correct destinati
  for(const tea of teas){
   env.context.selectedTea=tea;
   const choices=nodes(vm.runInContext('BuyModal({tea:selectedTea,onClose:()=>{}})',env.context)).filter(n=>n.type==='button');
-  choices.find(n=>text(n).includes('Buy from Nevisan')).props.onClick();
-  const checkout=new URL(direct,'https://nevisan.in');
-  assert.equal(checkout.pathname,'/checkout/');
-  assert.equal(JSON.parse(checkout.searchParams.get('items'))[0].handle,tea.name.toLowerCase().replace(/\s+/g,'-'));
+  choices.find(n=>text(n).includes('Order Direct via WhatsApp')).props.onClick();
+  const waUrl=new URL(env.opened.at(-1)[0]);
+  assert.equal(waUrl.hostname,'wa.me');
+  assert.ok(waUrl.searchParams.get('text').includes(tea.name));
+  assert.ok(waUrl.searchParams.get('text').includes('Delivery Details:'));
+  assert.ok(waUrl.searchParams.get('text').includes('PIN Code:'));
   choices.find(n=>text(n).includes('Buy on Amazon')).props.onClick();
   assert.equal(env.opened.at(-1)[0],vm.runInContext('getDirectAmazonUrl(selectedTea.name)',env.context));
   assert.match(env.opened.at(-1)[0],/^https:\/\/www.amazon.in\/dp\/[A-Z0-9]+$/);

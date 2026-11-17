@@ -58,6 +58,8 @@
       if(['first_name','last_name','address_1','city','country','province'].some(key=>!customer[key]))throw new Error('Please complete your delivery details.');
       const reference='NEV-'+new Date().toISOString().slice(0,10).replace(/-/g,'')+'-'+crypto.randomUUID().slice(0,8).toUpperCase();
       request={items,customer,reference};
+      const waUrl=api.build(items,customer,reference);
+      try { window.open(waUrl,'_blank','noopener,noreferrer'); } catch {}
       $('order-review').replaceChildren();
       for(const line of [`Reference: ${reference}`,...items.map(i=>`${i.title}: ${i.quantity} × 50g — ${api.money(i.quantity*i.price)}`),`Total: ${api.money(api.total(items))} · Free shipping`,`${customer.first_name} ${customer.last_name} · ${customer.phone}`,...['address_1','address_2','city','province','postal_code'].map(k=>customer[k]).filter(Boolean),customer.country]) { const p=document.createElement('p'); p.textContent=line; $('order-review').append(p); }
       $('availability').href=api.build(items,customer,reference,'',true);
@@ -67,10 +69,10 @@
         ? 'Use an installed UPI app. If it does not open, open this checkout in your phone’s normal browser, or download the QR and select it from your UPI app’s photo gallery scanner. You can also copy the UPI ID and enter the exact total manually.'
         : 'UPI apps run on your phone. Open your phone’s UPI app and scan this QR on the computer screen. Enter the exact total shown above. This computer cannot open the UPI app installed on your phone.';
       $('payment-total').textContent=api.money(api.total(items));
-      $('send-payment').href=api.build(items,customer,reference);
+      $('send-payment').href=waUrl;
       $('international-confirmation').hidden=!international(customer.country); $('international-confirmed').checked=false; $('payment-details').hidden=international(customer.country);
       form.hidden=true; $('payment-panel').hidden=false; $('payment-panel').focus();
-      notice('Request prepared on this device. Send it on WhatsApp so Nevisan can receive it. Keep this page open until you finish.');
+      notice('Opening WhatsApp with your order and delivery details. Send the message on WhatsApp to complete your order.');
     } catch(error) { notice(error.message); }
   });
   $('international-confirmed').addEventListener('change',()=>{if(request)$('payment-details').hidden=!$('international-confirmed').checked;});

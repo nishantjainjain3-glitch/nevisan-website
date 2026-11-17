@@ -16,8 +16,32 @@
         links.forEach(link => { link.href = url; link.textContent = 'Checkout · UPI'; link.removeAttribute('target'); });
         return;
       }
-      const message = `Hi Nevisan! I would like to order ${name}.\nQuantity: ${count} packet${count === 1 ? '' : 's'} × 50g each.\nPlease confirm availability, price and delivery details.`;
-      links.forEach(link => { link.href = 'https://wa.me/919864245687?text=' + encodeURIComponent(message); });
+      const total = count * 499;
+      const message = [
+        `Hi Nevisan! I would like to order ${name}.`,
+        `Quantity: ${count} packet${count === 1 ? '' : 's'} × 50g each (₹${total} · Free shipping).`,
+        '',
+        'Delivery Details:',
+        '• Name: ',
+        '• Phone: ',
+        '• Address: ',
+        '• City & State: ',
+        '• PIN Code: ',
+        '',
+        'Please confirm my order and share UPI payment details.'
+      ].join('\n');
+      links.forEach(link => {
+        link.href = 'https://wa.me/919864245687?text=' + encodeURIComponent(message);
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        if (link.classList?.contains?.('sticky-wa') || link.classList?.contains?.('sticky-btn')) {
+          link.textContent = '💬 WhatsApp';
+        } else if (link.classList?.contains?.('nevisan-btn-order-mobile')) {
+          link.textContent = '💬 Order on WhatsApp';
+        } else if (link.classList?.contains?.('btn-whatsapp')) {
+          link.innerHTML = '<span>💬</span> Order directly via WhatsApp';
+        }
+      });
     }
     input.addEventListener('input', update);
     links.forEach(link => link.addEventListener('click', event => {

@@ -37,5 +37,5 @@ test('quantity changes never rewrite or validate WhatsApp support links',()=>{
  input.value='0';input.events.input();
  assert.equal(support.href,'https://wa.me/919864245687');
  assert.equal(support.events.click,undefined);
- assert.ok(purchase.href.startsWith('/checkout/'));
+ assert.ok(purchase.href.startsWith('https://wa.me/919864245687'));
 });

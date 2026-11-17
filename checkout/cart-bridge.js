@@ -1,6 +1,6 @@
 /* Nevisan standalone QR and customer-initiated WhatsApp checkout. */
 window.NEVISAN_CART_CHECKOUT = {
-  enabled: true,
+  enabled: false,
   url(cart) {
     if (!Array.isArray(cart) || !cart.length || cart.length > 10) throw new Error("Choose your teas first.");
     const items = cart.map(({tea, qty}) => {

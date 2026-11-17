@@ -346,8 +346,37 @@ function openWhatsApp(e = "") {
       });
     }
   } catch (err) {}
+  const price = e ? getTeaPrice(e) : 499;
+  const message = e
+    ? [
+        `Hi Nevisan! I would like to order *${e}* (₹${price} · 1 packet × 50g · Free shipping).`,
+        '',
+        'Delivery Details:',
+        '• Name: ',
+        '• Phone: ',
+        '• Address: ',
+        '• City & State: ',
+        '• PIN Code: ',
+        '',
+        'Please confirm my order and share UPI payment details.'
+      ].join('\n')
+    : [
+        'Hi Nevisan! I would like to order Nevisan tea.',
+        '',
+        'Tea(s) & Quantity:',
+        '• ',
+        '',
+        'Delivery Details:',
+        '• Name: ',
+        '• Phone: ',
+        '• Address: ',
+        '• City & State: ',
+        '• PIN Code: ',
+        '',
+        'Please confirm availability and share UPI payment details.'
+      ].join('\n');
   window.open(
-    `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(e ? `Hi Nevisan! I would like to order *${e}* (₹${getTeaPrice(e)} · 1 packet × 50g). Please confirm packet quantity, availability and delivery details.` : "Hi Nevisan! I would like to order your tea. Please help me with the details.")}`,
+    `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`,
     "_blank", "noopener,noreferrer",
   );
 }
@@ -865,7 +894,7 @@ function Nav({ page: e, setPage: t }) {
                   fontFamily: "'Plus Jakarta Sans'",
                 },
               },
-              "💬 Checkout · UPI",
+              "💬 Order on WhatsApp",
             ),
           ),
         ),
@@ -1478,12 +1507,12 @@ function BuyModal({ tea: e, onClose: t }) {
               React.createElement(
                 "div",
                 { style: { fontWeight: 600, fontSize: 16 } },
-                "Buy from Nevisan · UPI",
+                "Order Direct via WhatsApp",
               ),
               React.createElement(
                 "div",
                 { style: { fontSize: 13, opacity: 0.9, marginTop: 2 } },
-                "Free shipping · 50g packets · Nevisan Pay",
+                "Order enquiries and delivery details",
               ),
             ),
             React.createElement("span", { style: { fontSize: 20, fontWeight: 700 } }, "›"),
@@ -2097,7 +2126,7 @@ function CollectionPage({}) {
                         },
                       },
                       React.createElement("span", null, "💬"),
-                      " Buy from Nevisan · UPI",
+                      " Order via WhatsApp",
                     ),
                     React.createElement(
                       "div",
@@ -2493,7 +2522,7 @@ function CollectionPage({}) {
                           },
                         },
                         React.createElement("span", null, "💬"),
-                        " Buy from Nevisan · UPI",
+                        " Order via WhatsApp",
                       ),
                       React.createElement(
                         "div",
@@ -3180,9 +3209,9 @@ function WhereToBuy() {
   const [e, t] = useInView(0.1),
     a = [
       {
-        name: "Buy from Nevisan · UPI",
-        desc: "50g packets, free shipping and prepaid UPI",
-        cta: "💬 Checkout · UPI",
+        name: "Order via WhatsApp",
+        desc: "Order directly and ask us about your tea",
+        cta: "💬 Order on WhatsApp",
         icon: "🌿",
         action: () => openWhatsApp(),
         primary: !0,
@@ -3272,7 +3301,7 @@ function WhereToBuy() {
             marginBottom: n ? 36 : 56,
           },
         },
-        "Buy from Nevisan with UPI, or choose Amazon and Flipkart",
+        "Order directly via WhatsApp or find us on Amazon and Flipkart",
       ),
       React.createElement(
         "div",
@@ -3833,7 +3862,7 @@ function Footer({ setPage: e }) {
               onMouseLeave: (e) => (e.currentTarget.style.filter = "none"),
             },
             React.createElement("span", null, "💬"),
-            " Checkout · UPI",
+            " Order on WhatsApp",
           ),
           React.createElement(
             "div",
@@ -4389,7 +4418,7 @@ function CollectionSection({ setPage: e }) {
                         },
                       },
                       React.createElement("span", null, "💬"),
-                      " Buy from Nevisan · UPI",
+                      " Order via WhatsApp",
                     ),
                     React.createElement(
                       "div",
@@ -4779,7 +4808,7 @@ function CollectionSection({ setPage: e }) {
                           },
                         },
                         React.createElement("span", null, "💬"),
-                        " Buy from Nevisan · UPI",
+                        " Order via WhatsApp",
                       ),
                       React.createElement(
                         "div",
@@ -6294,7 +6323,7 @@ function AboutPage({ setPage: e }) {
             { icon: "📦", text: "Small batch — freshness sealed in every pack" },
             {
               icon: "💬",
-              text: "Order through Nevisan Pay or choose a marketplace",
+              text: "Order directly through WhatsApp or choose a marketplace",
             },
           ].map((e, t) =>
             React.createElement(
@@ -8236,8 +8265,24 @@ function CartSheet({ onClose: e }) {
                 const a = t
                   .map((e) => `• ${e.tea.name} x${e.qty} = ₹${(e.tea.price || getTeaPrice(e.tea.name)) * e.qty}`)
                   .join("\n");
+                const message = [
+                  "Hi Nevisan! I'd like to place an order:",
+                  '',
+                  a,
+                  '',
+                  `Total: ₹${o} (${i} packs × 50g · Free shipping)`,
+                  '',
+                  'Delivery Details:',
+                  '• Name: ',
+                  '• Phone: ',
+                  '• Address: ',
+                  '• City & State: ',
+                  '• PIN Code: ',
+                  '',
+                  'Please confirm my order and share UPI payment details.'
+                ].join('\n');
                 (window.open(
-                  `https://wa.me/919864245687?text=${encodeURIComponent(`Hi Nevisan! I'd like to place an order:\n\n${a}\n\nTotal: ₹${o} (${i} packs × 50gm)\n\nPlease confirm my order and share delivery details.`)}`,
+                  `https://wa.me/919864245687?text=${encodeURIComponent(message)}`,
                   "_blank", "noopener,noreferrer",
                 ),
                   e());
